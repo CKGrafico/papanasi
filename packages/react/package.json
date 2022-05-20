@@ -1,13 +1,13 @@
 {
-  "name": "papanasi-react",
+  "name": "@papanasi/react",
   "version": "0.0.0",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi React UI Library",
-  "main": "dist/papanasi-react.es.js",
-  "module": "dist/papanasi-react.es.js",
+  "main": "dist/react.es.js",
+  "module": "dist/react.es.js",
   "scripts": {
     "build": "vite build",
     "build:watch": "vite build --watch"
   },
-  "types": "./src/papanasi-react.d.ts"
+  "types": "./src/react.d.ts"
 }
