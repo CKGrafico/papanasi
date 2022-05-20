@@ -1,0 +1,13 @@
+{
+  "name": "papanasi-html",
+  "version": "0.0.0",
+  "author": "ckgrafico/papanasi",
+  "description": "Papanasi HTML UI Library",
+  "main": "dist/papanasi-html.es.js",
+  "module": "dist/papanasi-html.es.js",
+  "scripts": {
+    "build": "vite build",
+    "build:watch": "vite build --watch"
+  },
+  "types": "./src/papanasi-html.d.ts"
+}
