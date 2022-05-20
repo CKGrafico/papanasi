@@ -1,0 +1,12 @@
+{
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "allowBranch": "main",
+      "conventionalCommits": true,
+      "ignoreChanges": ["*.md", ".spec.ts", ".stories.ts"]
+    }
+  },
+  "packages": ["packages/*"],
+  "version": "independent"
+}
