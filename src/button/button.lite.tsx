@@ -1,5 +1,5 @@
 export type ButtonProps = {
-  name: string;
+  name?: string;
 };
 
 export default function Button(props: ButtonProps) {
