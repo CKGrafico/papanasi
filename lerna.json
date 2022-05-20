@@ -4,9 +4,15 @@
     "publish": {
       "allowBranch": "main",
       "conventionalCommits": true,
-      "ignoreChanges": ["*.md", ".spec.ts", ".stories.ts"]
+      "ignoreChanges": [
+        "*.md",
+        ".spec.ts",
+        ".stories.ts"
+      ]
     }
   },
-  "packages": ["packages/*"],
-  "version": "independent"
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.0.1"
 }

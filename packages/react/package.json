@@ -9,5 +9,8 @@
     "build": "vite build",
     "build:watch": "vite build --watch"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "types": "./src/react.d.ts"
 }

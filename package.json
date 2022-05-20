@@ -1,6 +1,6 @@
 {
   "name": "papanasi",
-  "version": "0.0.0",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "build": "run-s build:**",
@@ -8,6 +8,7 @@
     "build:mitosis": "mitosis build",
     "build:dts": "npx copyfiles src/**/*.d.ts packages/react",
     "build:lerna": "lerna run build",
+    "release": "lerna publish",
     "lint": "run-p lint:**",
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./src/**/*.(css)\" --fix",
