@@ -2,5 +2,6 @@ module.exports = {
   files: 'src/**/*.lite.tsx',
   dest: 'packages',
   options: {},
-  targets: ['react', 'html', 'angular']
+  targets: ['react', 'webcomponent', 'angular', 'vue'],
+  extensions: ['jsx', 'js', 'js', 'vue']
 };
