@@ -13,3 +13,5 @@ A Component...
 * ...should be compatible with StoryBook.
 * ...should be inspired in other UI Libraries to don't reinvent the wheel.
 * ...should be easy to create new variants.
+
+## WARNING: THIS IS AN ALPHA DONT USE IT YET
