@@ -1,0 +1,16 @@
+{
+  "name": "@papanasi/webcomponents",
+  "version": "0.0.3",
+  "author": "ckgrafico/papanasi",
+  "description": "Papanasi Web Components UI Library",
+  "main": "dist/webcomponents.es.js",
+  "module": "dist/webcomponents.es.js",
+  "scripts": {
+    "build": "vite build",
+    "build:watch": "vite build --watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "./src/webcomponents.d.ts"
+}
