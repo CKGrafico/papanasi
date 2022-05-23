@@ -3,5 +3,5 @@ module.exports = {
   dest: 'packages',
   options: {},
   targets: ['react', 'webcomponent', 'angular', 'vue', 'html'],
-  extensions: ['jsx', 'js', 'js', 'vue', 'html']
+  extensions: ['jsx', 'js', 'ts', 'vue', 'html']
 };

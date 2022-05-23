@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
-    "build": "babel src/button.jsx --out-file dist/button.jsx"
+    "build": "babel --config-file ./babel.config.js src/** --out-dir dist"
   },
   "publishConfig": {
     "access": "public"
