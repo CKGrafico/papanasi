@@ -3,9 +3,11 @@
   "version": "0.0.7",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi React UI Library",
-  "main": "src/index.js",
-  "module": "src/index.js",
-  "scripts": {},
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "build": "babel src/button.jsx --out-file dist/button.jsx"
+  },
   "publishConfig": {
     "access": "public"
   },
