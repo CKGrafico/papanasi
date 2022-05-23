@@ -5,10 +5,7 @@
   "description": "Papanasi Vue UI Library",
   "main": "src/index.js",
   "module": "src/index.js",
-  "scripts": {
-    "build": "vite build",
-    "build:watch": "vite build --watch"
-  },
+  "scripts": {},
   "publishConfig": {
     "access": "public"
   },

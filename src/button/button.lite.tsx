@@ -1,12 +1,8 @@
 export type ButtonProps = {
-  name?: string;
-  color?: string;
+  variant?: string;
+  children?: any;
 };
 
 export default function Button(props: ButtonProps) {
-  return (
-    <button>
-      {props.name} {props.color}
-    </button>
-  );
+  return <button class={`pa-button ${props.variant ? `pa-button--${props.variant}` : ''} `}>{props.children}</button>;
 }
