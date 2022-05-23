@@ -1,1 +1,1 @@
-export * from './button.lite';
+export * as Button from './button.lite';
