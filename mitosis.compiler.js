@@ -14,7 +14,7 @@ function compile(filepath) {
     const outPath = `${config.dest}/${target}`;
 
     fs.mkdirSync(`${outPath}/src`);
-    fs.copyFileSync('./src/index.ts', `${outPath}/src/index.ts`);
+    fs.copyFileSync('./src/index.ts', `${outPath}/src/index.js`);
 
     compileCommand.run({
       parameters: {

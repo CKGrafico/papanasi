@@ -3,8 +3,8 @@
   "version": "0.0.4",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Angular UI Library",
-  "main": "dist/angular.es.js",
-  "module": "dist/angular.es.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "build": "vite build",
     "build:watch": "vite build --watch"

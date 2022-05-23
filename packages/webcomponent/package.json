@@ -3,8 +3,8 @@
   "version": "0.0.4",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
-  "main": "dist/webcomponents.es.js",
-  "module": "dist/webcomponents.es.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "build": "vite build",
     "build:watch": "vite build --watch"

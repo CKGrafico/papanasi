@@ -3,8 +3,8 @@
   "version": "0.0.4",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Vue UI Library",
-  "main": "dist/vue.es.js",
-  "module": "dist/vue.es.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "build": "vite build",
     "build:watch": "vite build --watch"
