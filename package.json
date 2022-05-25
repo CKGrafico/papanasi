@@ -13,7 +13,9 @@
     "lint:styles": "stylelint \"./src/**/*.(css)\" --fix",
     "lint:editor": "eclint fix"
   },
-  "dependencies": {},
+  "dependencies": {
+    "prepend-file": "^2.0.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.0",
@@ -23,6 +25,9 @@
     "@babel/preset-typescript": "^7.17.12",
     "@builder.io/mitosis": "^0.0.56-11",
     "@builder.io/mitosis-cli": "^0.0.17-10",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.18.0",
     "@typescript-eslint/parser": "~5.18.0",
@@ -39,14 +44,14 @@
     "prettier-stylelint": "^0.4.2",
     "replace-in-file": "^6.3.2",
     "rimraf": "^3.0.2",
+    "rollup": "^2.74.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "stylelint": "^14.8.2",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-prettier": "^2.0.0",
     "ts-node": "9.1.1",
-    "typescript": "~4.6.2",
-    "vite": "^2.6.11",
-    "vite-dts": "^1.0.4"
+    "typescript": "~4.6.2"
   },
   "husky": {
     "hooks": {

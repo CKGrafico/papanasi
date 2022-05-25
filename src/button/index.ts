@@ -1,1 +1,1 @@
-export * from './button.lite';
+export { default } from './button.lite';

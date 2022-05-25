@@ -15,3 +15,5 @@ A Component...
 * ...should be easy to create new variants.
 
 ## WARNING: THIS IS AN ALPHA DONT USE IT YET
+
+// https://dev.to/alexeagleson/how-to-create-and-publish-a-react-component-library-2oe
