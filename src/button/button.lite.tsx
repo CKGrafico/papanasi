@@ -1,6 +1,6 @@
 export type ButtonProps = {
   variant?: string;
-  children?: any; // TODO
+  children?: any; // TODO change
 };
 
 export default function Button(props: ButtonProps) {

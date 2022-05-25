@@ -5,6 +5,9 @@
   "description": "Papanasi React UI Library",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "exports": {
+    ".": "./dist/"
+  },
   "scripts": {
     "build": "babel --config-file ./babel.config.js src/** --out-dir dist"
   },
