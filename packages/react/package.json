@@ -3,23 +3,27 @@
   "version": "0.0.12",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi React UI Library",
-  "files": [
-    "dist"
-  ],
   "main": "./dist/papanasi-react.umd.js",
   "module": "./dist/papanasi-react.es.js",
+  "types": "./src/react.d.ts",
   "exports": {
     ".": {
       "import": "./dist/papanasi-react.es.js",
       "require": "./dist/papanasi-react.umd.js"
     }
   },
+  "peerDependencies": {
+    "react": "^16.8.0 || 17.x",
+    "react-dom": "^16.8.0 || 17.x"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build"
   },
   "publishConfig": {
     "access": "public"
   },
-  "types": "./src/react.d.ts",
   "gitHead": "2d0ca06271a799e38e834e483bd0f0ce4f3c4b73"
 }
