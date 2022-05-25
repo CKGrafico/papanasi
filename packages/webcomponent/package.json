@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/webcomponents",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
   "main": "dist/index.js",
