@@ -19,7 +19,6 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "yarn",
     "build": "rollup -c"
   },
   "publishConfig": {
