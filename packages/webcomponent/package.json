@@ -1,15 +1,25 @@
 {
   "name": "@papanasi/webcomponents",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "./dist/papanasi-webcomponents.umd.js",
+  "module": "./dist/papanasi-webcomponents.es.js",
+  "types": "./src/papanasi-webcomponents.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/papanasi-webcomponents.es.js",
+      "require": "./dist/papanasi-webcomponents.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "babel --config-file ./babel.config.js src/** --out-dir dist"
+    "build": "rollup -c"
   },
   "publishConfig": {
     "access": "public"
   },
-  "types": "./src/webcomponents.d.ts"
+  "gitHead": "2d0ca06271a799e38e834e483bd0f0ce4f3c4b73"
 }
