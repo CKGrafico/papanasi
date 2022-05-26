@@ -5,7 +5,7 @@
   "description": "Papanasi React UI Library",
   "main": "./dist/papanasi-react.umd.js",
   "module": "./dist/papanasi-react.es.js",
-  "types": "./src/papanasi-react.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/papanasi-react.es.js",

@@ -44,6 +44,9 @@ function compile(filepath) {
     }
 
     if (target === 'webcomponent') {
+      // Ignore types
+      prependFile.sync(outFile, '//@ts-nocheck \n');
+
       // Make component exportable
       const data = fs.readFileSync(outFile, 'utf8');
       const result = data.replace(/class /, 'export default class ').replace(/customElements\.define.*/g, '');

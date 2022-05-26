@@ -5,7 +5,7 @@
   "description": "Papanasi Angular UI Library",
   "main": "./dist/papanasi-angular.umd.js",
   "module": "./dist/papanasi-angular.es.js",
-  "types": "./src/papanasi-angular.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/papanasi-angular.es.js",
@@ -13,12 +13,13 @@
     }
   },
   "peerDependencies": {
-    "angular": "^12.0.0"
+    "@angular/core": "^13.0.0"
   },
   "files": [
     "dist"
   ],
   "scripts": {
+    "prebuild": "yarn",
     "build": "rollup -c"
   },
   "publishConfig": {

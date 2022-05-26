@@ -5,7 +5,7 @@
   "description": "Papanasi Vue UI Library",
   "main": "./dist/papanasi-vue.umd.js",
   "module": "./dist/papanasi-vue.es.js",
-  "types": "./src/papanasi-vue.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/papanasi-vue.es.js",

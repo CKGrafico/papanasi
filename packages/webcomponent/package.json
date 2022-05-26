@@ -5,7 +5,7 @@
   "description": "Papanasi Web Components UI Library",
   "main": "./dist/papanasi-webcomponents.umd.js",
   "module": "./dist/papanasi-webcomponents.es.js",
-  "types": "./src/papanasi-webcomponents.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/papanasi-webcomponents.es.js",
