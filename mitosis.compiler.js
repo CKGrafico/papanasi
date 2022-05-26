@@ -37,9 +37,17 @@ function compile(filepath) {
     }
 
     if (target === 'vue') {
+      // Add .vue to index
       const data = fs.readFileSync(`${outPath}/src/index.js`, 'utf8');
       const result = data.replace(/\'\;/g, ".vue';");
       fs.writeFileSync(`${outPath}/src/index.js`, result, 'utf8');
+    }
+
+    if (target === 'webcomponent') {
+      // Make component exportable
+      const data = fs.readFileSync(outFile, 'utf8');
+      const result = data.replace(/class /, 'export default class ').replace(/customElements\.define.*/g, '');
+      fs.writeFileSync(outFile, result, 'utf8');
     }
   });
 }
