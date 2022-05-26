@@ -1,16 +1,28 @@
 {
   "name": "@papanasi/angular",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Angular UI Library",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "./dist/papanasi-angular.umd.js",
+  "module": "./dist/papanasi-angular.es.js",
+  "types": "./src/papanasi-angular.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/papanasi-angular.es.js",
+      "require": "./dist/papanasi-angular.umd.js"
+    }
+  },
+  "peerDependencies": {
+    "angular": "^12.0.0"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "babel --config-file ./babel.config.js src/** --out-dir dist"
+    "build": "rollup -c"
   },
   "publishConfig": {
     "access": "public"
   },
-  "types": "./src/angular.d.ts",
   "gitHead": "2d0ca06271a799e38e834e483bd0f0ce4f3c4b73"
 }
