@@ -35,6 +35,12 @@ function compile(filepath) {
     if (target === 'react') {
       prependFile.sync(outFile, 'import React from "react"; \n');
     }
+
+    if (target === 'vue') {
+      const data = fs.readFileSync(`${outPath}/src/index.js`, 'utf8');
+      const result = data.replace(/\'\;/g, ".vue';");
+      fs.writeFileSync(`${outPath}/src/index.js`, result, 'utf8');
+    }
   });
 }
 

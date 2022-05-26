@@ -5,7 +5,7 @@ const typescript = require('@rollup/plugin-typescript');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 // const dts = require('rollup-plugin-dts');
 
-module.exports = (dir, packageJson) => {
+module.exports = (dir, packageJson, plugins = [], external = []) => {
   return [
     {
       input: path.resolve(dir, 'src/index.js'),
@@ -21,7 +21,9 @@ module.exports = (dir, packageJson) => {
           sourcemap: true
         }
       ],
+      external,
       plugins: [
+        ...plugins,
         peerDepsExternal(),
         resolve.nodeResolve(),
         commonjs(),
