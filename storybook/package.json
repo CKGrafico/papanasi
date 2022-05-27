@@ -8,9 +8,9 @@
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@storybook/addon-actions": "^6.5.5",
+    "@storybook/addon-docs": "^6.5.5",
     "@storybook/addon-essentials": "^6.5.5",
     "@storybook/addon-interactions": "^6.5.5",
-    "@storybook/addon-links": "^6.5.5",
     "@storybook/builder-webpack4": "^6.5.5",
     "@storybook/manager-webpack4": "^6.5.5",
     "@storybook/react": "^6.5.5",

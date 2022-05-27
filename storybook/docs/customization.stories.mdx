@@ -1,0 +1,98 @@
+import { Meta, Description } from '@storybook/addon-docs/blocks';
+
+<Meta title="Customization" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+
+# Customization
+
+When you load a **papanasi** component and you've previously loaded the corresponding `papanasi.css` file, a basic style library will be added to the component.
+To easy customize the different components that this library brings, we have provided two different methods, using **BEM Classes** and **CSS Custom Properties**.
+
+## BEM Classes
+
+We are always exporting CSS classes in our components and we use [BEM to decide the names](http://getbem.com) for each part of the component.
+
+Example of BEM classes:
+
+```html
+<div class="pa-author pa-author--primary pa-author--rounded">
+  <span class="pa-author__name">Quique</span>
+  <span class="pa-author__subtitle">Spain</span>
+</div>
+```
+
+## CSS Custom Properties
+
+We have defined a list of custom properties that we use to customize the components. You can easily override them in your project.
+
+For example if we want to modify the variants, there are 3 different groups of properties:
+
+```css
+/* Color Primary */
+--pa-color-primary-brightest: #b9daff;
+--pa-color-primary-brighter: #a4cfff;
+--pa-color-primary-bright: #53a5ff;
+--pa-color-primary-normal: #017aff;
+--pa-color-primary-dark: #005fc8;
+--pa-color-primary-darker: #004590;
+--pa-color-primary-darkest: #002a58;
+
+/* Color Secondary */
+--pa-color-secondary-brightest: #eeeaff;
+--pa-color-secondary-brighter: #cec1ff;
+--pa-color-secondary-bright: #ad99ff;
+--pa-color-secondary-normal: #6c47ff;
+--pa-color-secondary-dark: #3f0fff;
+--pa-color-secondary-darker: #2b00d6;
+--pa-color-secondary-darkest: #20009e;
+
+/* Color Tertiary */
+--pa-color-tertiary-brightest: #fde2e8;
+--pa-color-tertiary-brighter: #fbbccb;
+--pa-color-tertiary-bright: #f896ad;
+--pa-color-tertiary-normal: #f34971;
+--pa-color-tertiary-dark: #f01448;
+--pa-color-tertiary-darker: #bf0d37;
+--pa-color-tertiary-darkest: #8b0928;
+```
+
+We have also defined some alert variants to be used in some components:
+
+```css
+/* Color Info */
+--pa-color-info-brightest: #a3f5fe;
+--pa-color-info-brighter: #8ff2fe;
+--pa-color-info-bright: #67eefe;
+--pa-color-info-normal: #02d0e8;
+--pa-color-info-dark: #029eb0;
+--pa-color-info-darker: #016c79;
+--pa-color-info-darkest: #013a41;
+
+/* Color Success */
+--pa-color-success-brightest: #cbf4e6;
+--pa-color-success-brighter: #baf0de;
+--pa-color-success-bright: #99e9ce;
+--pa-color-success-normal: #34d39d;
+--pa-color-success-dark: #25aa7d;
+--pa-color-success-darker: #1b7c5b;
+--pa-color-success-darkest: #114e39;
+
+/* Color Warning */
+--pa-color-warning-brightest: #fff7e3;
+--pa-color-warning-brighter: #ffe5a5;
+--pa-color-warning-bright: #ffd97d;
+--pa-color-warning-normal: #ffc12b;
+--pa-color-warning-dark: #f2ab00;
+--pa-color-warning-darker: #ba8300;
+--pa-color-warning-darkest: #825c00;
+
+/* Color Error */
+--pa-color-error-brightest: #fcdada;
+--pa-color-error-brighter: #f9b5b5;
+--pa-color-error-bright: #f58f8f;
+--pa-color-error-normal: #f15050;
+--pa-color-error-dark: #e71414;
+--pa-color-error-darker: #b30f0f;
+--pa-color-error-darkest: #5c0404;
+```
+
+There are some other custom properties that you can easily modify, please check the [complete list in the repository](https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css).

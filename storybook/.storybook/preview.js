@@ -1,7 +1,7 @@
 import '../storybook.css';
 
 export const parameters = {
-  layout: 'none',
+  viewMode: 'docs',
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
