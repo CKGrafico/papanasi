@@ -1,3 +1,4 @@
+import { ArgsTable, Description, Primary, PRIMARY_STORY, Stories, Subtitle, Title } from '@storybook/addon-docs';
 import React from 'react';
 import { Button } from '../../packages/react/src';
 import { alertVariants, variants } from '../helpers';
@@ -106,9 +107,16 @@ export default {
   component,
   parameters: {
     docs: {
-      description: {
-        component: description
-      }
+      page: () => (
+        <>
+          <Subtitle />
+          <Description />
+          <Primary />
+          <ArgsTable story={PRIMARY_STORY} />
+          <Stories />
+          <Title />
+        </>
+      )
     }
   }
 };
