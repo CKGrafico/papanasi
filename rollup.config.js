@@ -2,6 +2,7 @@ const commonjs = require('@rollup/plugin-commonjs');
 const resolve = require('@rollup/plugin-node-resolve');
 const path = require('path');
 const typescript = require('rollup-plugin-ts');
+const postcss = require('rollup-plugin-postcss');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const dts = require('rollup-plugin-dts');
 
@@ -27,7 +28,8 @@ module.exports = (dir, packageJson, plugins = [], external = []) => {
         peerDepsExternal(),
         resolve.nodeResolve(),
         commonjs(),
-        typescript({ tsconfig: path.resolve(__dirname, './tsconfig.json') })
+        typescript({ tsconfig: path.resolve(__dirname, './tsconfig.json') }),
+        postcss(require('./postcss.config.js'))
       ]
     },
     {

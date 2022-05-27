@@ -1,3 +1,80 @@
+@import '../../styles/main.css';
+
 .pa-button {
-  color: #ff00ff;
+  @mixin shared-styles;
+
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  background-color: var(--pa-color-basic-brightest);
+  background-image: none;
+  border-color: var(--pa-color-basic-bright);
+  border-radius: var(--pa-border-radius-small);
+  border-style: solid;
+  border-width: var(--pa-border-width-small);
+  color: var(--pa-color-basic-darker);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: var(--pa-font-weight-medium);
+  padding: 0.4rem 1rem;
+  text-align: center;
+  touch-action: manipulation;
+  transition-duration: var(--pa-transition-duration-normal);
+  transition-property: var(--pa-transition-colors);
+  user-select: none;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--pa-color-basic-brighter);
+    border-color: var(--pa-color-basic-normal);
+  }
+
+  @each $variant in primary, secondary, tertiary, info, success, warning, error {
+    &--$(variant) {
+      background-color: var(--pa-color-$(variant)-normal);
+      border-color: transparent;
+      color: var(--pa-color-basic-brightest);
+
+      &:hover {
+        background-color: var(--pa-color-$(variant)-dark);
+        border-color: var(--pa-color-$(variant)-dark);
+      }
+    }
+
+    &--outline&--$(variant) {
+      background-color: transparent;
+      border-color: var(--pa-color-$(variant)-normal);
+      color: var(--pa-color-$(variant)-dark);
+
+      &:hover {
+        background-color: var(--pa-color-$(variant)-brightest);
+        border-color: var(--pa-color-$(variant)-dark);
+        color: var(--pa-color-$(variant)-darker);
+      }
+    }
+  }
+
+  @each $variant in info, success, warning, error {
+    &--$(variant) {
+      background-color: var(--pa-color-$(variant)-bright);
+      color: var(--pa-color-$(variant)-darkest);
+
+      &:hover {
+        background-color: var(--pa-color-$(variant)-normal);
+        border-color: var(--pa-color-$(variant)-normal);
+      }
+    }
+
+    &--outline&--$(variant) {
+      background-color: transparent;
+      border-color: var(--pa-color-$(variant)-bright);
+      color: var(--pa-color-$(variant)-normal);
+
+      &:hover {
+        background-color: var(--pa-color-$(variant)-brightest);
+        border-color: var(--pa-color-$(variant)-normal);
+        color: var(--pa-color-$(variant)-darker);
+      }
+    }
+  }
 }

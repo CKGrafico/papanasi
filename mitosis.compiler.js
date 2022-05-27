@@ -32,7 +32,13 @@ function compile(filepath) {
       print: printTools.print
     });
 
+    // Fix css imports
+    const data = fs.readFileSync(outFile, 'utf8');
+    const result = data.replace(/import \{\} from ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
+    fs.writeFileSync(outFile, result, 'utf8');
+
     if (target === 'react') {
+      // Add react import
       prependFile.sync(outFile, 'import React from "react"; \n');
     }
 
