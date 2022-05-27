@@ -37,6 +37,17 @@ export const Default = Template.bind({});
 Default.args = {
   outline: false
 };
+Default.argTypes = {
+  outline: {
+    description: 'Modify button to be outline',
+    table: {
+      defaultValue: { summary: 'false' }
+    },
+    control: {
+      type: 'boolean'
+    }
+  }
+};
 
 export default {
   title,
