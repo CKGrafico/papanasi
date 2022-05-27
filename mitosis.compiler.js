@@ -14,9 +14,12 @@ function compile(filepath) {
   config.targets.forEach(async (target, i) => {
     const outPath = `${config.dest}/${target}`;
     const outFile = `${outPath}/${filepath.replace(`/${file.base}`, '')}.${config.extensions[i]}`;
+    const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
 
-    fs.mkdirSync(`${outPath}/src`);
-    fs.copyFileSync('./src/index.ts', `${outPath}/src/index.js`);
+    if (isFirstCompilation) {
+      fs.mkdirSync(`${outPath}/src`);
+      fs.copyFileSync('./src/index.ts', `${outPath}/src/index.js`);
+    }
 
     await compileCommand.run({
       parameters: {
@@ -42,10 +45,10 @@ function compile(filepath) {
       prependFile.sync(outFile, 'import React from "react"; \n');
     }
 
-    if (target === 'vue') {
+    if (target === 'vue' && isFirstCompilation) {
       // Add .vue to index
       const data = fs.readFileSync(`${outPath}/src/index.js`, 'utf8');
-      const result = data.replace(/\'\;/g, ".vue';");
+      const result = data.replace(/\'\;/g, ".vue';").replace(/\.css\.vue/g, '.css');
       fs.writeFileSync(`${outPath}/src/index.js`, result, 'utf8');
     }
 

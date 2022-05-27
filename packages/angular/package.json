@@ -5,6 +5,7 @@
   "description": "Papanasi Angular UI Library",
   "main": "./dist/papanasi-angular.umd.js",
   "module": "./dist/papanasi-angular.es.js",
+  "style": "./dist/papanasi.css",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {

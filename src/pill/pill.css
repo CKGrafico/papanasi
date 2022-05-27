@@ -1,0 +1,32 @@
+@import '../../styles/mixins.css';
+
+.pa-pill {
+  @mixin shared-styles;
+
+  background-color: var(--pa-color-basic-brightest);
+  border-color: var(--pa-color-basic-bright);
+  border-radius: 10rem;
+  color: var(--pa-color-basic-darker);
+  display: inline-block;
+  font-size: var(--pa-font-size-small);
+  font-weight: var(--pa-font-weight-medium);
+  padding: 0.2rem 0.45rem;
+  text-align: center;
+  transition-duration: var(--pa-transition-duration-normal);
+  transition-property: var(--pa-transition-colors);
+
+  @each $variant in primary, secondary, tertiary, info, success, warning, error {
+    &--$(variant) {
+      background-color: var(--pa-color-$(variant)-normal);
+      border-color: transparent;
+      color: var(--pa-color-basic-brightest);
+    }
+  }
+
+  @each $variant in info, success, warning, error {
+    &--$(variant) {
+      background-color: var(--pa-color-$(variant)-bright);
+      color: var(--pa-color-$(variant)-darkest);
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@import '../../styles/main.css';
+@import '../../styles/mixins.css';
 
 .pa-button {
   @mixin shared-styles;
@@ -22,7 +22,6 @@
   transition-duration: var(--pa-transition-duration-normal);
   transition-property: var(--pa-transition-colors);
   user-select: none;
-  white-space: nowrap;
 
   &:hover {
     background-color: var(--pa-color-basic-brighter);

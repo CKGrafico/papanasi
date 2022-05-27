@@ -6,6 +6,6 @@ module.exports = {
     require('postcss-mixins'),
     require('autoprefixer')
   ],
-  extract: 'styles/papanasi.css',
+  extract: 'papanasi.css',
   inject: false
 };
