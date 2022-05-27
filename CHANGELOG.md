@@ -11,6 +11,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [0.1.2](https://github.com/CKGrafico/papanasi/compare/v0.1.0...v0.1.2) (2022-05-27)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
 
 
 **Note:** Version bump only for package papanasi
