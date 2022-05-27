@@ -12,6 +12,7 @@
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./src/**/*.(css)\" --fix",
     "lint:editor": "eclint fix",
+    "storybook": "yarn build && yarn --cwd ./storybook storybook",
     "version": "lerna version"
   },
   "dependencies": {},
@@ -48,7 +49,7 @@
     "stylelint-config-standard": "^25.0.0",
     "stylelint-prettier": "^2.0.0",
     "ts-node": "10.8.0",
-    "typescript": "~4.7.2"
+    "typescript": "~4.6.2"
   },
   "husky": {
     "hooks": {
