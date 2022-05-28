@@ -2,7 +2,7 @@ import React from 'react';
 import { alertVariants, variants } from '../../helpers';
 import { Pill } from '../../packages/react/src';
 
-const title = 'Pill';
+const title = 'Components/Pill';
 const component = Pill;
 const description = `Todo`;
 
