@@ -12,6 +12,7 @@
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./src/**/*.(css)\" --fix",
     "lint:editor": "eclint fix",
+    "postinstall": "yarn --cwd ./storybook install",
     "storybook": "yarn build && yarn --cwd ./storybook storybook",
     "add-version": "lerna version --add-version 0.1.0",
     "from-package": "lerna publish from-package --force-publish"
