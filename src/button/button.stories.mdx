@@ -15,6 +15,16 @@ import { alertVariants, variants } from '../../helpers';
       control: {
         type: 'boolean'
       }
+    },
+    disabled: {
+      name: 'Disabled',
+      description: 'Modify button to be outlined',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
     }
   }}
 />
@@ -55,10 +65,13 @@ You can customize variants changing the variables, more info in the [variables p
   <Story
     name="Default"
     args={{
-      outline: false
+      outline: false,
+      disabled: false
     }}
   >
-    {Template.bind({})}
+    {(args, { globals: { locale } }) => {
+      return Template.bind({});
+    }}
   </Story>
 </Canvas>
 
