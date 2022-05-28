@@ -1,6 +1,6 @@
 import React from 'react';
+import { alertVariants, variants } from '../../helpers';
 import { Pill } from '../../packages/react/src';
-import { alertVariants, variants } from '../helpers';
 
 const title = 'Pill';
 const component = Pill;

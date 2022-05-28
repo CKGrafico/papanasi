@@ -1,4 +1,4 @@
-import '../storybook.css';
+import '../styles/storybook.css';
 
 export const parameters = {
   viewMode: 'docs',
