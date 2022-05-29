@@ -1,13 +1,3 @@
-# papanasi
-
-Papanasi is the Frontend UI library to use cross Frameworks. A set of components to use in React, Vue, Angular, and more.
-
-## Manifesto
-
-## WARNING: THIS IS AN ALPHA DONT USE IT YET
-
-<a id="logos" class="anchor" aria-hidden="true" href="#logos"></a><br/>
-
 <h1 align="center">
   <p align="center">Papanasi - Universal UI Library</p>
   <a href="#"><img src="https://raw.githubusercontent.com/CKGrafico/Papanasi/docs/resources/logo.png"  width="150" alt="Papanasi"></a>
