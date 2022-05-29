@@ -15,7 +15,7 @@
   transition-duration: var(--pa-transition-duration-normal);
   transition-property: var(--pa-transition-colors);
 
-  @each $variant in primary, secondary, tertiary, info, success, warning, error {
+  @each $variant in primary, secondary, tertiary {
     &--$(variant) {
       background-color: var(--pa-color-$(variant)-normal);
       border-color: transparent;
@@ -23,10 +23,10 @@
     }
   }
 
-  @each $variant in info, success, warning, error {
-    &--$(variant) {
-      background-color: var(--pa-color-$(variant)-bright);
-      color: var(--pa-color-$(variant)-darkest);
+  @each $intent in info, success, warning, error {
+    &--$(intent) {
+      background-color: var(--pa-color-$(intent)-bright);
+      color: var(--pa-color-$(intent)-darkest);
     }
   }
 }

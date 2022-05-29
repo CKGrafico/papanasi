@@ -28,7 +28,7 @@
     border-color: var(--pa-color-basic-normal);
   }
 
-  @each $variant in primary, secondary, tertiary, info, success, warning, error {
+  @each $variant in primary, secondary, tertiary {
     &--$(variant) {
       background-color: var(--pa-color-$(variant)-normal);
       border-color: transparent;
@@ -53,26 +53,27 @@
     }
   }
 
-  @each $variant in info, success, warning, error {
-    &--$(variant) {
-      background-color: var(--pa-color-$(variant)-bright);
-      color: var(--pa-color-$(variant)-darkest);
+  @each $intent in info, success, warning, error {
+    &.is-$(intent) {
+      background-color: var(--pa-color-$(intent)-bright);
+      color: var(--pa-color-$(intent)-darkest);
+      border-color: transparent;
 
       &:hover {
-        background-color: var(--pa-color-$(variant)-normal);
-        border-color: var(--pa-color-$(variant)-normal);
+        background-color: var(--pa-color-$(intent)-normal);
+        border-color: var(--pa-color-$(intent)-normal);
       }
     }
 
-    &--outline&--$(variant) {
+    &--outline&.is-$(intent) {
       background-color: transparent;
-      border-color: var(--pa-color-$(variant)-bright);
-      color: var(--pa-color-$(variant)-normal);
+      border-color: var(--pa-color-$(intent)-bright);
+      color: var(--pa-color-$(intent)-normal);
 
       &:hover {
-        background-color: var(--pa-color-$(variant)-brightest);
-        border-color: var(--pa-color-$(variant)-normal);
-        color: var(--pa-color-$(variant)-darker);
+        background-color: var(--pa-color-$(intent)-brightest);
+        border-color: var(--pa-color-$(intent)-normal);
+        color: var(--pa-color-$(intent)-darker);
       }
     }
   }

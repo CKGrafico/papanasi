@@ -1,5 +1,5 @@
 import React from 'react';
-import { alertVariants, variants } from '../../helpers';
+import { variants } from '../../models';
 import { Pill } from '../../packages/react/src';
 
 const title = 'Components/Pill';
@@ -11,18 +11,8 @@ const Template = (args) => (
     <ul>
       {variants.map((variant) => (
         <li key={variant.key}>
-          <Pill {...args} variant={variant.key}>
-            {variant.name}
-          </Pill>
-        </li>
-      ))}
-    </ul>
-
-    <ul>
-      {alertVariants.map((variant) => (
-        <li key={variant.key}>
-          <Pill {...args} variant={variant.key}>
-            {variant.name}
+          <Pill {...args} variant={variant.value}>
+            {variant.key}
           </Pill>
         </li>
       ))}

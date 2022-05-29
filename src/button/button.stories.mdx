@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { Button } from '../../packages/react';
-import { alertVariants, variants } from '../../helpers';
+import { variants, Intent, intents } from '../../models';
 
 <Meta
   title="Components/Button"
@@ -25,6 +25,15 @@ import { alertVariants, variants } from '../../helpers';
       control: {
         type: 'boolean'
       }
+    },
+    intent: {
+      name: 'Intent',
+      description: 'Specify a temporary intent for the button',
+      table: {
+        defaultValue: { summary: Intent.None }
+      },
+      options: intents.map((x) => x.value),
+      control: { type: 'select' }
     }
   }}
 />
@@ -34,17 +43,8 @@ export const Template = (args) => (
     <ul>
       {variants.map((variant) => (
         <li key={variant.key}>
-          <Button {...args} variant={variant.key}>
-            {variant.name}
-          </Button>
-        </li>
-      ))}
-    </ul>
-    <ul>
-      {alertVariants.map((variant) => (
-        <li key={variant.key}>
-          <Button {...args} variant={variant.key}>
-            {variant.name}
+          <Button {...args} variant={variant.value}>
+            {variant.key}
           </Button>
         </li>
       ))}
@@ -55,7 +55,7 @@ export const Template = (args) => (
 # Button
 
 Buttons allow to take actions in the app, and are used for navigation, forms, or any other task.
-There are 3 different variants **"primary"**, **"secondary"** and **"tertiary"**, but also other 4 alert variants **"info"**, **"success"**, **"warning"** and **"error"**.
+There are 3 different variants **"primary"**, **"secondary"** and **"tertiary"** or the one you decide to create, but also other 4 intents **"info"**, **"success"**, **"warning"** and **"error"**.
 
 You can customize variants changing the variables, more info in the [variables page](/docs/start--page)
 
@@ -69,9 +69,7 @@ You can customize variants changing the variables, more info in the [variables p
       disabled: false
     }}
   >
-    {(args, { globals: { locale } }) => {
-      return Template.bind({});
-    }}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
