@@ -44,13 +44,13 @@ $ yarn add @papanasi/{library}
 ```
 
 If you need to more information, there are readmes specialized for each library.
-* **[Angular:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/angular-icon.svg" align="right" width="30" title="Angular">
+* **[Angular:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/angular-icon.svg" align="right" width="30" title="Angular">
 
-* **[React:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/react.svg" align="right" width="30" title="React">
+* **[React:](https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/react.svg" align="right" width="30" title="React">
 
-* **[Vue:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/vue.svg" align="right" width="30" title="Vue">
+* **[Vue:](https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/vue.svg" align="right" width="30" title="Vue">
 
-* **[Web components:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/w3c.svg" align="right" width="30" title="W3C">
+* **[Web components:](https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/w3c.svg" align="right" width="30" title="W3C">
 
 ### 🔨 Components status
 
