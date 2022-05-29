@@ -5,7 +5,7 @@
 
 ### 🔍 Overview
 
-🥯Papanasi is a UI library to use cross Frameworks. A set of components to use in React, Vue, Angular, Web Components and more. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
+🥯Papanasi is a **UI library to use cross Frameworks**. A set of components to use in React, Vue, Angular, Web Components and more. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
 
 > WARNING: THIS IS AN ALPHA DONT USE IT YET, IS UNDER DEVELOPMENT.
 
@@ -23,15 +23,15 @@
 
 This library born as a pet project to create universal components, easy to extend in any project and easy to use with any framework, is based in the next **manifesto**:
 
-A Component...
-* ...should be cross-libraries but the code should be written once.
-* ...should have a minimun style and should be easy to extend it via CSS by the user.
-* ...should provide an optional style library.
-* ...should be easy to wrap to set basic properties for the project where is used.
+**A Component**...
+* ...should be **cross-libraries** but the code should be written once.
+* ...should have a **minimun style** and should be easy to extend it via CSS by the user.
+* ...should provide an **optional style** library.
+* ...should be **easy to wrap** to set basic properties for the project where is used.
 * ...should be three-shakable.
-* ...should be compatible with StoryBook.
-* ...should be inspired in other UI Libraries to don't reinvent the wheel.
-* ...should be easy to create new variants.
+* ...should be compatible with **StoryBook**.
+* ...should be inspired in other UI Libraries to **don't reinvent the wheel**.
+* ...should be easy to create new **variants**.
 
 ### 📚 Setup and scripts
 
@@ -40,14 +40,17 @@ $ npm install @papanasi/{library}
 ```
 
 ```shell
-$yarn add @papanasi/{library}
+$ yarn add @papanasi/{library}
 ```
 
 If you need to more information, there are readmes specialized for each library.
-* **[Angular:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/angular-icon.svg" align="right" width="35" title="Angular">
-* **[React:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/react.svg" align="right" width="35" title="React">
-* **[Vue:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/vue.svg" align="right" width="35" title="Vue">
-* **[Web components:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/w3c.svg" align="right" width="35" title="W3C">
+* **[Angular:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/angular-icon.svg" align="right" width="30" title="Angular">
+
+* **[React:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/react.svg" align="right" width="30" title="React">
+
+* **[Vue:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/vue.svg" align="right" width="30" title="Vue">
+
+* **[Web components:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md)** Readme file<img src="https://cdn.svgporn.com/logos/w3c.svg" align="right" width="30" title="W3C">
 
 ### 🔨 Components status
 
