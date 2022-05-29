@@ -82,9 +82,12 @@
   --pa-font-weight-normal: 400;
   --pa-font-weight-medium: 500;
 
+  /* Outline */
+  --pa-outline-width: 4px;
+
   /* Transition */
   --pa-transition-all: all;
-  --pa-transition-colors: background-color, border-color, color, fill, stroke;
+  --pa-transition-colors: background-color, border-color, color, fill, stroke, outline-color;
   --pa-transition-opacity: opacity;
   --pa-transition-shadow: box-shadow;
   --pa-transition-transform: transform;

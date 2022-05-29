@@ -16,6 +16,7 @@
   cursor: pointer;
   display: inline-block;
   font-weight: var(--pa-font-weight-medium);
+  outline: var(--pa-outline-width) solid transparent;
   padding: 0.4rem 1rem;
   text-align: center;
   touch-action: manipulation;
@@ -28,6 +29,10 @@
     border-color: var(--pa-color-basic-normal);
   }
 
+  &:active {
+    outline-color: var(--pa-color-basic-brighter);
+  }
+
   @each $variant in primary, secondary, tertiary {
     &--$(variant) {
       background-color: var(--pa-color-$(variant)-normal);
@@ -37,6 +42,10 @@
       &:hover {
         background-color: var(--pa-color-$(variant)-dark);
         border-color: var(--pa-color-$(variant)-dark);
+      }
+
+      &:active {
+        outline-color: var(--pa-color-$(variant)-brighter);
       }
     }
 
@@ -62,6 +71,10 @@
       &:hover {
         background-color: var(--pa-color-$(intent)-normal);
         border-color: var(--pa-color-$(intent)-normal);
+      }
+
+      &:active {
+        outline-color: var(--pa-color-$(intent)-brighter);
       }
     }
 

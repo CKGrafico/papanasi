@@ -13,7 +13,7 @@
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./styles/**/*.(css)\" --fix",
     "lint:editor": "eclint fix",
-    "storybook": "start-storybook -p 6006 --no-manager-cache",
+    "storybook": "start-storybook --no-manager-cache -p 6006",
     "build-storybook": "build-storybook",
     "add-version": "lerna version --add-version 0.1.0",
     "from-package": "lerna publish from-package --force-publish"
