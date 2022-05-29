@@ -1,0 +1,11 @@
+@import '../../styles/mixins.css';
+
+.pa-row {
+  @mixin shared-styles;
+
+  display: flex;
+
+  &.is-debug {
+    background-color: var(--pa-color-debug);
+  }
+}

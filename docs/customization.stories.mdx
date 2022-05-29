@@ -28,6 +28,24 @@ Example of SMACSS States:
 <div class="pa-author is-disabled">...</div>
 ```
 
+The previous convention plus **Reponsive Suffixes** are part of **BEMIT** and we use them to make the component more responsive, those where introduced in [CSS Wizardy blog post](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/) and an example of this used could be:
+
+```html
+<div class="pa-author is-hidden@xs">...</div>
+```
+
+Our configured **Responsive Suffixes** are the same as our default breakpoints:
+
+```css
+--pa-breakpoint-xxs: 360px; // @xxs
+--pa-breakpoint-xs: 640px; // @xs
+--pa-breakpoint-s: 768px; // @s
+--pa-breakpoint-m: 1024px; // @m
+--pa-breakpoint-l: 1280px; // @l
+--pa-breakpoint-xl: 1440px; // @xl
+--pa-breakpoint-xxl: 1920px; // @xxs
+```
+
 ## CSS Custom Properties
 
 We have defined a list of custom properties that we use to customize the components. You can easily override them in your project.

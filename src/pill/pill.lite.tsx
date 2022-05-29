@@ -1,5 +1,4 @@
 import { useMetadata } from '@builder.io/mitosis';
-import React from 'react';
 import { Dynamic, Intent, Variant } from '../../models';
 import './pill.css';
 

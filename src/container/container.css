@@ -1,0 +1,16 @@
+@import '../../styles/mixins.css';
+
+.pa-container {
+  @mixin shared-styles;
+
+  width: 100%;
+  max-width: var(--pa-grid-container-max-width);
+
+  &--fluid {
+    max-width: 100%;
+  }
+
+  &.is-debug {
+    box-shadow: 0 0 1px 1px var(--pa-color-debug);
+  }
+}

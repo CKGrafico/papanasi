@@ -3,6 +3,15 @@
   --pa-border-radius-small: 4px;
   --pa-border-width-small: 1px;
 
+  /* Breakpoints */
+  --pa-breakpoint-xxs: 360px;
+  --pa-breakpoint-xs: 640px;
+  --pa-breakpoint-s: 768px;
+  --pa-breakpoint-m: 1024px;
+  --pa-breakpoint-l: 1280px;
+  --pa-breakpoint-xl: 1440px;
+  --pa-breakpoint-xxl: 1920px;
+
   /* Color Basic */
   --pa-color-basic-brightest: #ffffff;
   --pa-color-basic-brighter: #f3f3f5;
@@ -11,6 +20,7 @@
   --pa-color-basic-dark: #686c7c;
   --pa-color-basic-darker: #464b5f;
   --pa-color-basic-darkest: #101116;
+  --pa-color-debug: rgba(126, 67, 81, 0.2);
 
   /* Color Primary */
   --pa-color-primary-brightest: #b9daff;
@@ -81,6 +91,10 @@
   --pa-font-size: 1rem;
   --pa-font-weight-normal: 400;
   --pa-font-weight-medium: 500;
+
+  /* Grid */
+  --pa-grid-gutter: 1.5rem;
+  --pa-grid-max-width: var(--pa-breakpoint-xl);
 
   /* Outline */
   --pa-outline-width: 4px;
