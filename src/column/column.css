@@ -21,14 +21,14 @@
         @mixin column $value, 12;
       }
     }
-  }
 
-  @mixin breakpoint-modifier auto {
-    @mixin column-default;
-  }
+    @mixin breakpoint-modifier $breakpoint, auto {
+      @mixin column-default;
+    }
 
-  @mixin breakpoint-modifier hidden {
-    display: none;
+    @mixin breakpoint-modifier $breakpoint, hidden {
+      display: none;
+    }
   }
 
   &.is-debug {
