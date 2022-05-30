@@ -3,3 +3,4 @@ node_modules/
 packages/**/dist/
 packages/**/src/
 *.log
+storybook-static/
