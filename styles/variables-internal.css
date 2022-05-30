@@ -4,6 +4,7 @@
 
 :root {
   --internal-columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+  --internal-columns-total: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11;
   --internal-breakpoints: xxs, xs, s, m, l, xl, xxl;
   --internal-flex-directions: row, column, row-reverse, column-reverse;
 }

@@ -18,7 +18,7 @@
   @each $breakpoint in var(--internal-breakpoints) {
     @each $value in var(--internal-columns) {
       @mixin breakpoint-modifier $breakpoint, $value {
-        @mixin column $value, 12;
+        @mixin column $value, var(--internal-columns-total);
       }
     }
 
