@@ -3,7 +3,7 @@ import { Breakpoint, breakpoints } from '../models';
 export function getBreakpointClasses(props: { [key: string]: string | number }, prefix = '') {
   const usedBreakpoints = Object.entries(props)
     .filter(([key]: [Breakpoint, string]) => breakpoints.find((x) => x.value === key))
-    .filter((x) => x[0] && x[1]);
+    .filter((x) => x[0] && (x[1] !== '' || x[1] !== null || x[1] !== undefined));
 
   const breakpointsClasses = usedBreakpoints.map(([key, value]: [Breakpoint, string]) => prefix + value + '@' + key);
 
