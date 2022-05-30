@@ -26,7 +26,7 @@
       @mixin column-default;
     }
 
-    @mixin breakpoint-modifier $breakpoint, hidden {
+    @mixin breakpoint-modifier $breakpoint, 0 {
       display: none;
     }
   }
