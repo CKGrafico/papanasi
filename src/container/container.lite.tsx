@@ -1,10 +1,11 @@
 import { useMetadata } from '@builder.io/mitosis';
+import { Children } from '../../../models';
 import './container.css';
 
 export type ContainerProps = {
   fluid?: boolean;
   debug?: boolean;
-  children?: any; // TODO change
+  children?: Children;
 };
 
 useMetadata({ isAttachedToShadowDom: true });

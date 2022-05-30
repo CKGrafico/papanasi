@@ -49,7 +49,10 @@ function compile(filepath) {
     if (target === 'vue' && isFirstCompilation) {
       // Add .vue to index
       const data = fs.readFileSync(`${outPath}/src/index.js`, 'utf8');
-      const result = data.replace(/\'\;/g, ".vue';").replace(/\.css\.vue/g, '.css');
+      const result = data
+        .replace(/\'\;/g, ".vue';")
+        .replace(/\.css\.vue/g, '.css')
+        .replace(/helpers\.vue/g, 'helpers');
       fs.writeFileSync(`${outPath}/src/index.js`, result, 'utf8');
     }
 

@@ -1,5 +1,5 @@
 import { useMetadata } from '@builder.io/mitosis';
-import { Dynamic, Intent, Variant } from '../../models';
+import { Children, Dynamic, Intent, Variant } from '../../../models';
 import './button.css';
 
 export type ButtonProps = {
@@ -7,7 +7,7 @@ export type ButtonProps = {
   intent?: Dynamic<Intent>;
   outline?: boolean;
   disabled?: boolean;
-  children?: any; // TODO change
+  children?: Children;
 };
 
 useMetadata({ isAttachedToShadowDom: true });

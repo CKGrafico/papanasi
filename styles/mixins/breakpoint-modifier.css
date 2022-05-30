@@ -1,0 +1,8 @@
+@define-mixin breakpoint-modifier $value {
+  @each $breakpoint in xxs, xs, s, m, l, xl, xxl {
+    /* We are using a class because nowadays you cannot have a custom property in a media query */
+    body.breakpoint-$(breakpoint) &--$(value)\@$(breakpoint) {
+      @mixin-content;
+    }
+  }
+}

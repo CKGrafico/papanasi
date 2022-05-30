@@ -1,39 +1,14 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { Row } from '../../packages/react';
 import { variants, Intent, intents } from '../../models';
+import { getBreakpointArgTypes, getDebugArgTypes } from '../../helpers';
 
 <Meta
   title="Layout/Row"
   component={Row}
   argTypes={{
-    xxs: {
-      name: 'XXS',
-      description: 'Direction in XXS',
-      table: {
-        defaultValue: { summary: '' }
-      },
-      options: ['row', 'column', 'row-reverse', 'column-reverse'],
-      control: { type: 'select' }
-    },
-    m: {
-      name: 'M',
-      description: 'Direction in XXS',
-      table: {
-        defaultValue: { summary: '' }
-      },
-      options: ['row', 'column', 'row-reverse', 'column-reverse'],
-      control: { type: 'select' }
-    },
-    debug: {
-      name: 'Debug',
-      description: 'Show debugging styles',
-      table: {
-        defaultValue: { summary: 'false' }
-      },
-      control: {
-        type: 'boolean'
-      }
-    }
+    ...getBreakpointArgTypes('Direction in {breakpoint}', ['', 'row', 'column', 'row-reverse', 'column-reverse']),
+    ...getDebugArgTypes()
   }}
 />
 

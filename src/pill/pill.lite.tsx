@@ -1,12 +1,12 @@
 import { useMetadata } from '@builder.io/mitosis';
-import { Dynamic, Intent, Variant } from '../../models';
+import { Children, Dynamic, Intent, Variant } from '../../../models';
 import './pill.css';
 
 export type PillProps = {
   variant?: Dynamic<Variant>;
   intent?: Dynamic<Intent>;
   disabled?: boolean;
-  children?: any; // TODO change
+  children?: Children;
 };
 
 useMetadata({ isAttachedToShadowDom: true });

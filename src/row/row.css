@@ -8,4 +8,10 @@
   &.is-debug {
     background-color: var(--pa-color-debug);
   }
+
+  @each $value in row, column, row-reverse, column-reverse {
+    @mixin breakpoint-modifier $value {
+      flex-direction: $value;
+    }
+  }
 }
