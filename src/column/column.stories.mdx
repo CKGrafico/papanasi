@@ -1,24 +1,42 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Row, Container } from '../../packages/react';
+import { Column, Container, Row } from '../../packages/react';
 import { variants, Intent, intents } from '../../models';
 import { getBreakpointArgTypes, getDebugArgTypes } from '../../helpers';
 
 <Meta
-  title="Layout/Row"
-  component={Row}
+  title="Layout/Column"
+  component={Column}
   argTypes={{
-    ...getBreakpointArgTypes('Direction in {breakpoint}', ['', 'row', 'column', 'row-reverse', 'column-reverse']),
+    ...getBreakpointArgTypes('Column spacing in {breakpoint}', [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      'auto',
+      'hidden'
+    ]),
     ...getDebugArgTypes()
   }}
 />
 
 export const Template = (args) => (
   <Container debug={args.debug}>
-    <Row {...args}>Row</Row>
+    <Row debug={args.debug}>
+      <Column {...args}>Column</Column>
+    </Row>
   </Container>
 );
 
-# Row
+# Column
 
 Todo..
 
@@ -35,7 +53,7 @@ Todo..
   </Story>
 </Canvas>
 
-<ArgsTable story="Default" of={Row} />
+<ArgsTable story="Default" of={Column} />
 
 ## How to use this component
 

@@ -1,0 +1,38 @@
+@import '../../styles/build.css';
+
+@define-mixin column $size, $columns {
+  flex: 0 0 calc($size / $columns * 100%);
+  max-width: calc($size / $columns * 100%);
+}
+
+@define-mixin column-default {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+}
+
+.pa-column {
+  @mixin shared-styles;
+  @mixin column-default;
+
+  @each $breakpoint in var(--internal-breakpoints) {
+    @each $value in var(--internal-columns) {
+      @mixin breakpoint-modifier $breakpoint, $value {
+        @mixin column $value, 12;
+      }
+    }
+  }
+
+  @mixin breakpoint-modifier auto {
+    @mixin column-default;
+  }
+
+  @mixin breakpoint-modifier hidden {
+    display: none;
+  }
+
+  &.is-debug {
+    background-color: var(--pa-color-debug);
+    box-shadow: 0 0 0 2px var(--pa-color-debug), 0 0 0 2px var(--pa-color-debug);
+  }
+}

@@ -1,4 +1,4 @@
-@import '../../styles/mixins.css';
+@import '../../styles/build.css';
 
 .pa-container {
   @mixin shared-styles;
@@ -11,6 +11,6 @@
   }
 
   &.is-debug {
-    box-shadow: 0 0 1px 1px var(--pa-color-debug);
+    box-shadow: 0 0 0 2px var(--pa-color-debug);
   }
 }

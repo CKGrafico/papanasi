@@ -56,7 +56,7 @@ If you need to more information, there are readmes specialized for each library.
 ### 🔨 Components status
 
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/80) - Button
-* ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0) - Grid
+* ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/30) - Grid
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/30) - Pill
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0) - Tabs
 

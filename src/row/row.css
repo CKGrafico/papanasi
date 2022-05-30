@@ -1,4 +1,4 @@
-@import '../../styles/mixins.css';
+@import '../../styles/build.css';
 
 .pa-row {
   @mixin shared-styles;
@@ -7,11 +7,14 @@
 
   &.is-debug {
     background-color: var(--pa-color-debug);
+    box-shadow: 0 0 0 2px var(--pa-color-debug);
   }
 
-  @each $value in row, column, row-reverse, column-reverse {
-    @mixin breakpoint-modifier $value {
-      flex-direction: $value;
+  @each $breakpoint in var(--internal-breakpoints) {
+    @each $value in var(--internal-flex-directions) {
+      @mixin breakpoint-modifier $breakpoint, $value {
+        flex-direction: $value;
+      }
     }
   }
 }
