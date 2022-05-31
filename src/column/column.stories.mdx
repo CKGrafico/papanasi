@@ -1,21 +1,40 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { Column, Container, Row } from '../../packages/react';
 import { variants, Intent, intents } from '../../models';
-import { getBreakpointArgTypes, getDebugArgTypes } from '../../helpers';
+import { getBreakpointArgTypes } from '../../helpers';
 
 <Meta
   title="Layout/Column"
   component={Column}
   argTypes={{
-    ...getBreakpointArgTypes('Column spacing in {breakpoint}', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto']),
-    ...getDebugArgTypes()
+    ...getBreakpointArgTypes('Column size in {breakpoint}', [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      'content',
+      'fill',
+      'hide'
+    ])
   }}
 />
 
 export const Template = (args) => (
-  <Container debug={args.debug}>
-    <Row debug={args.debug}>
-      <Column {...args}>Column</Column>
+  <Container>
+    <Row>
+      <Column {...args} className="is-highlighted">
+        Column
+      </Column>
+      <Column>Column Auto</Column>
+      <Column>Column Auto</Column>
     </Row>
   </Container>
 );
@@ -27,12 +46,7 @@ Todo..
 # Showcase
 
 <Canvas>
-  <Story
-    name="Default"
-    args={{
-      debug: true
-    }}
-  >
+  <Story name="Default" args={{}}>
     {Template.bind({})}
   </Story>
 </Canvas>

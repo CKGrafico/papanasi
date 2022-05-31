@@ -12895,7 +12895,7 @@ postcss-at-rules-variables@^0.3.0:
   resolved "https://registry.yarnpkg.com/postcss-at-rules-variables/-/postcss-at-rules-variables-0.3.0.tgz#b51bb34c4a0b926204b60be2b43b44e74457706c"
   integrity sha512-TmzLAG17XTsRYSqcpk96zXie+oU30Tn0F5f8mgSD3JagIAmhWUH7/3CLxY8XL8BhqiIjGiCSMuolIxwB4TE4NA==
 
-postcss-calc@^8.2.3:
+postcss-calc@^8.2.3, postcss-calc@^8.2.4:
   version "8.2.4"
   resolved "https://registry.yarnpkg.com/postcss-calc/-/postcss-calc-8.2.4.tgz#77b9c29bfcbe8a07ff6693dc87050828889739a5"
   integrity sha512-SmWMSJmB8MRnnULldx0lQIyhSNvuDl9HfrZkaqqE/WHAhToYsAvDq+yAsA/kIyINDszOp3Rh0GFoNuH5Ypsm3Q==

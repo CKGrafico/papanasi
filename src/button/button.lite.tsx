@@ -1,5 +1,5 @@
 import { useMetadata } from '@builder.io/mitosis';
-import { Children, Dynamic, Intent, Variant } from '../../../models';
+import { Dynamic, Intent, SharedProps, Variant } from '../../../models';
 import './button.css';
 
 export type ButtonProps = {
@@ -7,8 +7,7 @@ export type ButtonProps = {
   intent?: Dynamic<Intent>;
   outline?: boolean;
   disabled?: boolean;
-  children?: Children;
-};
+} & SharedProps;
 
 useMetadata({ isAttachedToShadowDom: true });
 
@@ -20,7 +19,9 @@ export default function Button(props: ButtonProps) {
         (props.variant ? ' pa-button--' + props.variant : '') +
         (props.outline ? ' pa-button--outline' : '') +
         (props.intent ? ' is-' + props.intent : '') +
-        (props.disabled ? ' is-disabled' : '')
+        (props.disabled ? ' is-disabled' : '') +
+        ' ' +
+        (props.className || props.class || '')
       }
     >
       {props.children}

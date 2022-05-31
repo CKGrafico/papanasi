@@ -1,10 +1,35 @@
-ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0.5rem;
+@import './build.css';
+
+* {
+  box-sizing: border-box;
 }
 
-li {
-  margin-right: 0.5rem;
+body {
+  font-family: var(--pa-font-family);
+  font-size: var(--pa-font-size);
+  font-weight: var(--pa-font-weight-normal);
+}
+
+.pa-container {
+  box-shadow: 0 0 0 2px var(--pa-color-primary-brightest);
+  color: var(--pa-color-primary-darkest);
+  font-weight: var(--pa-font-weight-medium);
+  padding: 0.15rem;
+}
+
+.pa-row {
+  @mixin background-opacity var(--pa-color-primary-brightest), 0.2;
+  color: var(--pa-color-primary-darkest);
+  padding: 0.25rem;
+}
+
+.pa-column {
+  @mixin background-opacity var(--pa-color-primary-brightest), 0.4;
+  color: var(--pa-color-primary-darkest);
+  padding: 0.25rem;
+  justify-content: center;
+
+  &.is-highlighted {
+    @mixin background-opacity var(--pa-color-primary-brightest), 0.8;
+  }
 }

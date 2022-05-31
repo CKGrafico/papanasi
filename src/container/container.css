@@ -9,8 +9,4 @@
   &--fluid {
     max-width: 100%;
   }
-
-  &.is-debug {
-    box-shadow: 0 0 0 2px var(--pa-color-debug);
-  }
 }

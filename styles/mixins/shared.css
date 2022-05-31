@@ -1,4 +1,2 @@
 @define-mixin shared-styles {
-  font-family: var(--pa-font-family);
-  font-weight: var(--pa-font-weight-normal);
 }

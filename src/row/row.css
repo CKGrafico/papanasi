@@ -4,11 +4,7 @@
   @mixin shared-styles;
 
   display: flex;
-
-  &.is-debug {
-    background-color: var(--pa-color-debug);
-    box-shadow: 0 0 0 2px var(--pa-color-debug);
-  }
+  flex-wrap: wrap;
 
   @each $breakpoint in var(--internal-breakpoints) {
     @each $value in var(--internal-flex-directions) {

@@ -1,13 +1,12 @@
 import { useMetadata } from '@builder.io/mitosis';
-import { Children, Dynamic, Intent, Variant } from '../../../models';
+import { Dynamic, Intent, SharedProps, Variant } from '../../../models';
 import './pill.css';
 
 export type PillProps = {
   variant?: Dynamic<Variant>;
   intent?: Dynamic<Intent>;
   disabled?: boolean;
-  children?: Children;
-};
+} & SharedProps;
 
 useMetadata({ isAttachedToShadowDom: true });
 
@@ -18,7 +17,9 @@ export default function Pill(props: PillProps) {
         'pa-pill' +
         (props.variant ? ' pa-pill--' + props.variant : '') +
         (props.intent ? ' is-' + props.intent : '') +
-        (props.disabled ? ' is-disabled' : '')
+        (props.disabled ? ' is-disabled' : '') +
+        ' ' +
+        (props.className || props.class || '')
       }
     >
       {props.children}

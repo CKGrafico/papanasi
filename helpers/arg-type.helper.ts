@@ -17,18 +17,3 @@ export function getBreakpointArgTypes(description, options) {
 
   return argTypes;
 }
-
-export function getDebugArgTypes() {
-  return {
-    debug: {
-      name: 'debug',
-      description: 'Show debugging styles',
-      table: {
-        defaultValue: { summary: 'false' }
-      },
-      control: {
-        type: 'boolean'
-      }
-    }
-  };
-}

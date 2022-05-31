@@ -5,34 +5,38 @@
   max-width: calc($size / $columns * 100%);
 }
 
-@define-mixin column-default {
-  flex: 0 0 auto;
-  width: auto;
-  max-width: none;
+@define-mixin column-fill {
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
 }
 
 .pa-column {
   @mixin shared-styles;
-  @mixin column-default;
+  @mixin column-fill;
 
   @each $breakpoint in var(--internal-breakpoints) {
     @each $value in var(--internal-columns) {
       @mixin breakpoint-modifier $breakpoint, $value {
         @mixin column $value, var(--internal-columns-total);
+        display: flex;
       }
     }
 
-    @mixin breakpoint-modifier $breakpoint, auto {
-      @mixin column-default;
+    @mixin breakpoint-modifier $breakpoint, content {
+      flex: 0 0 auto;
+      width: auto;
+      max-width: none;
+      display: flex;
     }
 
-    @mixin breakpoint-modifier $breakpoint, 0 {
+    @mixin breakpoint-modifier $breakpoint, fill {
+      @mixin column-fill;
+    }
+
+    @mixin breakpoint-modifier $breakpoint, hide {
       display: none;
     }
-  }
-
-  &.is-debug {
-    background-color: var(--pa-color-debug);
-    box-shadow: 0 0 0 2px var(--pa-color-debug), 0 0 0 2px var(--pa-color-debug);
   }
 }

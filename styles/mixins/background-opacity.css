@@ -1,0 +1,7 @@
+@define-mixin background-opacity $color, $opacity {
+  background-image: linear-gradient(
+    to bottom,
+    $color calc(($opacity - 1) * 10000%),
+    transparent calc($opacity * 10000%)
+  );
+}
