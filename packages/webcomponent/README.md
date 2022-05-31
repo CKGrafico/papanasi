@@ -55,7 +55,7 @@ If you need to more information, there are readmes specialized for each library.
 
 ### 📗 Documentation
 
-To learn more about Papanasi, check [its documentation](#).
+To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
 
 ### 📃 License
 
