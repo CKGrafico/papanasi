@@ -1,0 +1,85 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Column, Container, Row } from '../../packages/react';
+import { variants, Intent, intents } from '../../models';
+import { getBreakpointArgTypes } from '../../helpers';
+
+<Meta
+  title="Layout/Grid"
+  component={Column}
+  argTypes={{
+    fluid: {
+      name: 'Container: fluid',
+      description: 'Let the container grow to max',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    },
+    direction: {
+      name: 'Rows: Direction',
+      description: 'Direction of the columns inside the rows',
+      table: {
+        defaultValue: { summary: '' }
+      },
+      options: ['', 'row', 'column', 'row-reverse', 'column-reverse'],
+      control: { type: 'select' }
+    },
+    ...getBreakpointArgTypes('Columns: Size in {breakpoint}', [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      'content',
+      'fill',
+      'hide'
+    ])
+  }}
+/>
+
+export const Template = (args) => (
+  <Container fluid={args.fluid}>
+    <Row xs={args.direction}>
+      <Column {...args}>Row 1 of 3 - Column 1 of 3</Column>
+      <Column {...args}>Row 1 of 3 - Column 2 of 3</Column>
+      <Column {...args}>Row 1 of 3 - Column 3 of 3</Column>
+    </Row>
+    <Row xs={args.direction}>
+      <Column {...args}>Row 2 of 3 - Column 1 of 3</Column>
+      <Column {...args}>Row 2 of 3 - Column 2 of 3</Column>
+      <Column {...args}>Row 2 of 3 - Column 3 of 3</Column>
+    </Row>
+    <Row xs={args.direction}>
+      <Column {...args}>Row 3 of 3 - Column 1 of 3</Column>
+      <Column {...args}>Row 3 of 3 - Column 2 of 3</Column>
+      <Column {...args}>Row 3 of 3 - Column 3 of 3</Column>
+    </Row>
+  </Container>
+);
+
+# Grid
+
+Todo..
+
+# Showcase
+
+<Canvas>
+  <Story name="Default" args={{ fluid: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" of={Column} />
+
+## How to use this component
+
+Todo
