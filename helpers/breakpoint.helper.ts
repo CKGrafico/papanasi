@@ -22,7 +22,6 @@ export function initBreakpointChecker() {
 
   function onChangeMedia(media, matches) {
     const className = `breakpoint-${media.trim()}`;
-    console.log(className, matches);
 
     if (matches) {
       $body.classList.add(className);

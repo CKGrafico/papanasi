@@ -8,15 +8,11 @@ const description = `Todo`;
 
 const Template = (args) => (
   <>
-    <ul>
-      {variants.map((variant) => (
-        <li key={variant.key}>
-          <Pill {...args} variant={variant.value}>
-            {variant.key}
-          </Pill>
-        </li>
-      ))}
-    </ul>
+    {variants.map((variant) => (
+      <Pill key={variant.key} {...args} variant={variant.value}>
+        {variant.key}
+      </Pill>
+    ))}
   </>
 );
 

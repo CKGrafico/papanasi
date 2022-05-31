@@ -46,25 +46,28 @@ import { getBreakpointArgTypes } from '../../helpers';
   }}
 />
 
-export const Template = (args) => (
-  <Container fluid={args.fluid}>
-    <Row xs={args.direction}>
-      <Column {...args}>Row 1 of 3 - Column 1 of 3</Column>
-      <Column {...args}>Row 1 of 3 - Column 2 of 3</Column>
-      <Column {...args}>Row 1 of 3 - Column 3 of 3</Column>
-    </Row>
-    <Row xs={args.direction}>
-      <Column {...args}>Row 2 of 3 - Column 1 of 3</Column>
-      <Column {...args}>Row 2 of 3 - Column 2 of 3</Column>
-      <Column {...args}>Row 2 of 3 - Column 3 of 3</Column>
-    </Row>
-    <Row xs={args.direction}>
-      <Column {...args}>Row 3 of 3 - Column 1 of 3</Column>
-      <Column {...args}>Row 3 of 3 - Column 2 of 3</Column>
-      <Column {...args}>Row 3 of 3 - Column 3 of 3</Column>
-    </Row>
-  </Container>
-);
+export const Template = (args) => {
+  const { fluid, direction, ...column } = args;
+  return (
+    <Container fluid={fluid}>
+      <Row xs={direction}>
+        <Column {...column}>Row 1 of 3 - Column 1 of 3</Column>
+        <Column {...column}>Row 1 of 3 - Column 2 of 3</Column>
+        <Column {...column}>Row 1 of 3 - Column 3 of 3</Column>
+      </Row>
+      <Row xs={direction}>
+        <Column {...column}>Row 2 of 3 - Column 1 of 3</Column>
+        <Column {...column}>Row 2 of 3 - Column 2 of 3</Column>
+        <Column {...column}>Row 2 of 3 - Column 3 of 3</Column>
+      </Row>
+      <Row xs={direction}>
+        <Column {...column}>Row 3 of 3 - Column 1 of 3</Column>
+        <Column {...column}>Row 3 of 3 - Column 2 of 3</Column>
+        <Column {...column}>Row 3 of 3 - Column 3 of 3</Column>
+      </Row>
+    </Container>
+  );
+};
 
 # Grid
 
