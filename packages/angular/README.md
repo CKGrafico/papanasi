@@ -56,6 +56,7 @@ If you need to more information, there are readmes specialized for each library.
 ### 📗 Documentation
 
 To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
+You can also try the [**CodeSandbox demo**](https://codesandbox.io/s/papanasi-angular-7bzn8h).
 
 ### 📃 License
 
