@@ -1,6 +1,6 @@
 <h1 align="center">
+  <a href="#"><img src="https://raw.githubusercontent.com/CKGrafico/Papanasi/docs/resources/logo.svg"  width="150" alt="Papanasi"></a>
   <p align="center">Papanasi - Universal UI Library</p>
-  <a href="#"><img src="https://raw.githubusercontent.com/CKGrafico/Papanasi/docs/resources/logo.png"  width="150" alt="Papanasi"></a>
 </h1>
 
 ### 🔍 Overview

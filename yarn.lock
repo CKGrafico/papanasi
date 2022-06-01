@@ -1177,14 +1177,14 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@builder.io/mitosis-cli@^0.0.17-10":
-  version "0.0.17-10"
-  resolved "https://registry.yarnpkg.com/@builder.io/mitosis-cli/-/mitosis-cli-0.0.17-10.tgz#df401a0e3bee84ea21784278196a4c91bc82d783"
-  integrity sha512-Lpr6e3Tq8NLiyGa0De/8BS7WzSh4winRLrgt45hNijVOWuauVwol+4zhrxFinvztfXF2gGU5Fc8IegiH0mIvYw==
+"@builder.io/mitosis-cli@0.0.17-12":
+  version "0.0.17-12"
+  resolved "https://registry.yarnpkg.com/@builder.io/mitosis-cli/-/mitosis-cli-0.0.17-12.tgz#e175d33ad7e8352a1fa9b210a5934afed388efe9"
+  integrity sha512-HV/E8USmaXsGgoZPtIuwQbWAX1ImjNrFQRmRdHu/PQbOoBYLI/yTihZjfRr1beiR1vfgfILze8zDHryNYZL2fQ==
   dependencies:
     "@babel/core" "^7.17.8"
     "@babel/preset-typescript" "^7.16.7"
-    "@builder.io/mitosis" "0.0.56-10"
+    "@builder.io/mitosis" "0.0.56-13"
     "@vue/compiler-sfc" "^3.1.5"
     babel-preset-solid "^1.3.13"
     chalk "^4.1.0"
@@ -1203,10 +1203,10 @@
     vue-template-es2015-compiler "^1.9.1"
     vue-template-validator "^1.1.5"
 
-"@builder.io/mitosis@0.0.56-10":
-  version "0.0.56-10"
-  resolved "https://registry.yarnpkg.com/@builder.io/mitosis/-/mitosis-0.0.56-10.tgz#c626e890fb27af42457798ade37035a4be5fbf34"
-  integrity sha512-YGWvlx+kq6pZT1hIHPWp4UXReWpFz55B6BnJJLQH+CO5LgFronij9qzG1kCx9fa569xxOJbN+lQsgHRpL4VhWQ==
+"@builder.io/mitosis@0.0.56-13":
+  version "0.0.56-13"
+  resolved "https://registry.yarnpkg.com/@builder.io/mitosis/-/mitosis-0.0.56-13.tgz#0da7c1b302e5476f05426d43239986417ea1bcd6"
+  integrity sha512-9b1kpEdpKjg1qVl+fbrNj4lOo4ta/tCHhmo6TkZH/y8bpMSYPGAGWnn5d6H4KzriBtMfzMdzhML/rzYyH1H2EQ==
   dependencies:
     "@angular/compiler" "^11.2.11"
     "@babel/core" "7.14.5"
