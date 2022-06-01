@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { Button } from '../../packages/react';
 import { variants, Intent, intents } from '../../models';
+import { Customization } from '../../.storybook/components';
 
 <Meta
   title="Components/Button"
@@ -18,7 +19,7 @@ import { variants, Intent, intents } from '../../models';
     },
     disabled: {
       name: 'disabled',
-      description: 'Modify button to be outlined',
+      description: 'Disable actions in the button',
       table: {
         defaultValue: { summary: 'false' }
       },
@@ -55,7 +56,7 @@ There are 3 different variants `primary`, `secondary` and `tertiary` or the one 
 
 You can customize variants changing the variables, more info in the [variables page](/docs/start--page)
 
-# Showcase
+## Showcase
 
 <Canvas>
   <Story
@@ -68,6 +69,12 @@ You can customize variants changing the variables, more info in the [variables p
     {Template.bind({})}
   </Story>
 </Canvas>
+
+### Customization
+
+<Customization />
+
+### Properties
 
 <ArgsTable story="Default" of={Button} />
 
@@ -98,7 +105,7 @@ export default function App() {
 ### Vue
 
 ```js
-<script>
+<script lang="ts">
 import { Button } from "@papanasi/vue";
 import "@papanasi/vue/dist/papanasi.css";
 export default {
