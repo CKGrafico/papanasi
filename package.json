@@ -18,7 +18,9 @@
     "add-version": "lerna version --add-version 0.1.0",
     "from-package": "lerna publish from-package --force-publish"
   },
-  "dependencies": {},
+  "dependencies": {
+    "highlight.js": "^11.5.1"
+  },
   "devDependencies": {
     "@angular/core": "^13.3.10",
     "@babel/core": "^7.18.2",

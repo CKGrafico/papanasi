@@ -1,0 +1,5 @@
+@import '../../styles/build.css';
+
+.pa-code {
+  @mixin shared-styles;
+}
