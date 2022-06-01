@@ -1,4 +1,5 @@
 import '../styles/storybook.css';
+import { Themes } from './theme';
 
 export const parameters = {
   viewMode: 'docs',
@@ -14,7 +15,11 @@ export const parameters = {
     storySort: {
       order: ['Documentation', 'Layout', ['Container', 'Row', 'Column', 'Grid'], 'Components']
     }
-  }
+  },
+  docs: {
+    theme: Themes.docs
+  },
+  components: {}
 };
 
 export const decorators = [
