@@ -1,6 +1,6 @@
 <h1 align="center">
-  export default config<a href="#"><img src="https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-text.svg"  width="300" alt="Papanasi"></a>
-  <p align="center">Papanasi - Universal UI Library</p>
+  export default config<a href="#"><img src="https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-text.svg"  width="400" alt="Papanasi"></a>
+  <p align="center">The Universal UI Library</p>
 </h1>
 
 ### 🔍 Overview
