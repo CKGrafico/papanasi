@@ -18,7 +18,7 @@ function compile(filepath) {
 
     if (isFirstCompilation) {
       fs.mkdirSync(`${outPath}/src`);
-      fs.copyFileSync('./src/index.ts', `${outPath}/src/index.js`);
+      fs.copyFileSync('./src/index.ts', `${outPath}/src/index.ts`);
     }
 
     await compileCommand.run({
@@ -48,12 +48,12 @@ function compile(filepath) {
 
     if (target === 'vue' && isFirstCompilation) {
       // Add .vue to index
-      const data = fs.readFileSync(`${outPath}/src/index.js`, 'utf8');
+      const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
       const result = data
         .replace(/\'\;/g, ".vue';")
         .replace(/\.css\.vue/g, '.css')
         .replace(/helpers\.vue/g, 'helpers');
-      fs.writeFileSync(`${outPath}/src/index.js`, result, 'utf8');
+      fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
 
     if (target === 'webcomponent') {
