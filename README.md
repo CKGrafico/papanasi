@@ -55,8 +55,8 @@ If you need to more information, there are readmes specialized for each library.
 
 ### 🔨 Components status
 
-* ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/80) - Button
-* ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/30) - Grid
+* ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100) - Button
+* ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100) - Grid
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/30) - Pill
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0) - Tabs
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0) - Code
@@ -64,7 +64,11 @@ If you need to more information, there are readmes specialized for each library.
 
 ### 📗 Documentation
 
-To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
+* To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
+* You can also try the [**Angular CodeSandbox demo**](https://codesandbox.io/s/papanasi-angular-7bzn8h).
+* Or the [**React CodeSandbox demo**](https://codesandbox.io/s/papanasi-react-orfn30).
+* We have also a [**Vue CodeSandbox demo**](https://codesandbox.io/s/papanasi-vue-vygq4m).
+* And finally the [**Web Components CodeSandbox demo**](https://codesandbox.io/s/papanasi-webcomponents-27zsfr).
 
 ### 📃 License
 

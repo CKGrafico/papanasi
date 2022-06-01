@@ -51,7 +51,7 @@ export const Template = (args) => (
 # Button
 
 Buttons allow to take actions in the app, and are used for navigation, forms, or any other task.
-There are 3 different variants **"primary"**, **"secondary"** and **"tertiary"** or the one you decide to create, but also other 4 intents **"info"**, **"success"**, **"warning"** and **"error"**.
+There are 3 different variants `primary`, `secondary` and `tertiary` or the one you decide to create, but also other 4 intents `info`, `success`, `warning` and `error`.
 
 You can customize variants changing the variables, more info in the [variables page](/docs/start--page)
 
@@ -119,4 +119,8 @@ export default {
 import { Button } from '@papanasi/webcomponents';
 import '@papanasi/webcomponents/dist/papanasi.css';
 customElements.get('pa-button') || customElements.define('pa-button', Button);
+```
+
+```html
+<pa-button variant="primary" outline>Primary</pa-button>
 ```

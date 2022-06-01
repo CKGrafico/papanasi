@@ -23,7 +23,7 @@ export const Template = (args) => <Container {...args}>Container</Container>;
 
 # Container
 
-Todo..
+Containers are the most simple element from layout category, are use to contain any other elements as wrapper and will adapt its width to `--pa-grid-container-max-width` or can be adapted to `100%` using `fluid` property.
 
 # Showcase
 
@@ -42,4 +42,50 @@ Todo..
 
 ## How to use this component
 
-Todo
+### Angular
+
+```js
+import { Container } from '@papanasi/angular';
+import '@papanasi/angular/dist/papanasi.css';
+/* TODO */
+```
+
+### React
+
+```js
+import { Container } from '@papanasi/react';
+import '@papanasi/react/dist/papanasi.css';
+export default function App() {
+  return <Container fluid>Your content</Container>;
+}
+```
+
+### Vue
+
+```js
+<script>
+import { Container } from "@papanasi/vue";
+import "@papanasi/vue/dist/papanasi.css";
+export default {
+  name: "App",
+  components: {
+    Container,
+  },
+};
+</script>
+<template>
+  <Container :fluid="true">Your Content</Container>
+</template>
+```
+
+### Web Components
+
+```js
+import { Container } from '@papanasi/webcomponents';
+import '@papanasi/webcomponents/dist/papanasi.css';
+customElements.get('pa-container') || customElements.define('pa-container', Container);
+```
+
+```html
+<pa-container fluid>Your content</pa-container>
+```

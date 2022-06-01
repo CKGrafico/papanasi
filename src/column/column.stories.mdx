@@ -1,5 +1,5 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Column, Container, Row } from '../../packages/react';
+import { Column, Container, Column } from '../../packages/react';
 import { variants, Intent, intents } from '../../models';
 import { getBreakpointArgTypes } from '../../helpers';
 
@@ -29,19 +29,21 @@ import { getBreakpointArgTypes } from '../../helpers';
 
 export const Template = (args) => (
   <Container>
-    <Row>
+    <Column>
       <Column {...args} className="is-highlighted">
         Column
       </Column>
       <Column>Column Auto</Column>
       <Column>Column Auto</Column>
-    </Row>
+    </Column>
   </Container>
 );
 
 # Column
 
-Todo..
+Columns are layout elements that will be essential to create grids, they work very well if being children of rows, but can work also alone.
+
+The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, `xl` and `xxl` and the supported sizes are: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `content`, `fill` and `hide`.
 
 # Showcase
 
@@ -55,4 +57,54 @@ Todo..
 
 ## How to use this component
 
-Todo
+### Angular
+
+```js
+import { Column } from '@papanasi/angular';
+import '@papanasi/angular/dist/papanasi.css';
+/* TODO */
+```
+
+### React
+
+```js
+import { Column } from '@papanasi/react';
+import '@papanasi/react/dist/papanasi.css';
+export default function App() {
+  return (
+    <Column m="2" l="fill">
+      Your content
+    </Column>
+  );
+}
+```
+
+### Vue
+
+```js
+<script>
+import { Column } from "@papanasi/vue";
+import "@papanasi/vue/dist/papanasi.css";
+export default {
+  name: "App",
+  components: {
+    Column,
+  },
+};
+</script>
+<template>
+  <Column m="2" l="fill">Your Content</Column>
+</template>
+```
+
+### Web Components
+
+```js
+import { Column } from '@papanasi/webcomponents';
+import '@papanasi/webcomponents/dist/papanasi.css';
+customElements.get('pa-column') || customElements.define('pa-column', Column);
+```
+
+```html
+<pa-row m="2" l="fill">Your content</pa-row>
+```
