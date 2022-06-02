@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { Container } from '../../packages/react';
 import { variants, Intent, intents } from '../../models';
+import { Customization } from '../../.storybook/components';
 
 <Meta
   title="Layout/Container"
@@ -25,7 +26,7 @@ export const Template = (args) => <Container {...args}>Container</Container>;
 
 Containers are the most simple element from layout category, are use to contain any other elements as wrapper and will adapt its width to `--pa-grid-container-max-width` or can be adapted to `100%` using `fluid` property.
 
-# Showcase
+## Showcase
 
 <Canvas>
   <Story
@@ -37,6 +38,12 @@ Containers are the most simple element from layout category, are use to contain 
     {Template.bind({})}
   </Story>
 </Canvas>
+
+### Customization
+
+<Customization />
+
+### Properties
 
 <ArgsTable story="Default" of={Container} />
 

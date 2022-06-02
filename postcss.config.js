@@ -9,6 +9,5 @@ module.exports = {
     require('autoprefixer'),
     require('postcss-discard-comments')
   ],
-  extract: 'papanasi.css',
   inject: false
 };

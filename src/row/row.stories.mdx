@@ -2,6 +2,7 @@ import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { Row, Container } from '../../packages/react';
 import { variants, Intent, intents } from '../../models';
 import { getBreakpointArgTypes } from '../../helpers';
+import { Customization } from '../../.storybook/components';
 
 <Meta
   title="Layout/Row"
@@ -23,13 +24,19 @@ Rows are layout elements that can contain a group of other elements using flex p
 
 The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`, `l`, `xl` and `xxl` and the supported directions are: `row`, `column`, `row-reverse` and `column-reverse`.
 
-# Showcase
+## Showcase
 
 <Canvas>
   <Story name="Default" args={{}}>
     {Template.bind({})}
   </Story>
 </Canvas>
+
+### Customization
+
+<Customization />
+
+### Properties
 
 <ArgsTable story="Default" of={Row} />
 

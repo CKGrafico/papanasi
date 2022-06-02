@@ -1,4 +1,4 @@
-import '../styles/storybook.css';
+import './storybook.css';
 import { Themes } from './theme';
 
 export const parameters = {

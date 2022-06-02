@@ -5,6 +5,7 @@ const typescript = require('rollup-plugin-ts');
 const postcss = require('rollup-plugin-postcss');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const dts = require('rollup-plugin-dts');
+const postcssConfig = require('./postcss.config.js');
 
 module.exports = (dir, packageJson, plugins = [], external = [], compileDts = true) => {
   const inputs = [
@@ -29,8 +30,18 @@ module.exports = (dir, packageJson, plugins = [], external = [], compileDts = tr
         resolve.nodeResolve(),
         commonjs(),
         typescript({ tsconfig: path.resolve(__dirname, './tsconfig.json') }),
-        postcss(require('./postcss.config.js'))
+        postcss(postcssConfig)
       ]
+    },
+    {
+      input: path.resolve(dir, '../../styles/themes/papanasi/index.css'),
+      output: [
+        {
+          file: packageJson.style,
+          sourcemap: true
+        }
+      ],
+      plugins: [postcss({ ...postcssConfig, inject: false, extract: 'papanasi.css' })]
     }
   ];
 

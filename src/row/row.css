@@ -1,8 +1,6 @@
 @import '../../styles/build.css';
 
 .pa-row {
-  @mixin shared-styles;
-
   display: flex;
   flex-wrap: wrap;
 

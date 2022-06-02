@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap');
+@import '../styles/build.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--pa-font-family);
+  font-size: var(--pa-font-size);
+  font-weight: var(--pa-font-weight-normal);
+}
+
+.sbdocs-h2 {
+  border: 0 !important;
+}
+
+.docs-story {
+  .pa-container {
+    @mixin background-opacity var(--pa-color-primary-brightest), 0.2;
+    color: var(--pa-color-primary-darkest);
+    font-weight: var(--pa-font-weight-medium);
+    padding: 0.15rem;
+  }
+
+  .pa-row {
+    @mixin background-opacity var(--pa-color-primary-brightest), 0.2;
+    color: var(--pa-color-primary-darkest);
+    padding: 0.25rem;
+  }
+
+  .pa-column {
+    @mixin background-opacity var(--pa-color-primary-brightest), 0.25;
+    color: var(--pa-color-primary-darkest);
+    padding: 0.25rem;
+    justify-content: center;
+
+    &.is-highlighted {
+      @mixin background-opacity var(--pa-color-primary-brightest), 0.8;
+    }
+  }
+
+  .pa-button,
+  .pa-pill {
+    margin-right: 0.5rem;
+  }
+}

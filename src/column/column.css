@@ -13,7 +13,6 @@
 }
 
 .pa-column {
-  @mixin shared-styles;
   @mixin column-fill;
 
   @each $breakpoint in var(--internal-breakpoints) {
