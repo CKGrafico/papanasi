@@ -1,13 +1,12 @@
 import React, { useMemo, useState } from 'react';
-import { Column, Container, Row } from '../../packages/react';
+import { Code, Column, Container, Row } from '../../packages/react';
 import './customization.css';
 
 type CustomizationProps = {
   css?: string;
 };
 
-const defaultCss = `
-.docs-story {
+const defaultCss = `.docs-story {
   /* Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css */
     --pa-breakpoint-xxs: 360px;
     --pa-breakpoint-xs: 640px;
@@ -53,8 +52,8 @@ export function Customization(props: CustomizationProps) {
     setSelected(event.target.value);
   }
 
-  function onChangeCss(event) {
-    setCustomCss(event.target.value);
+  function onChangeCss(text) {
+    setCustomCss(text);
   }
 
   return (
@@ -81,7 +80,15 @@ export function Customization(props: CustomizationProps) {
           </Row>
           <Row>
             <Column xs={'fill'}>
-              <textarea className="customization__code" onChange={onChangeCss} defaultValue={css}></textarea>
+              <Code
+                className="customization__code"
+                onChange={onChangeCss}
+                language="css"
+                editable
+                theme="tomorrow-night-bright"
+              >
+                {css}
+              </Code>
             </Column>
           </Row>
         </>

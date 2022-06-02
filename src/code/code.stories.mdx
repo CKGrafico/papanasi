@@ -10,14 +10,11 @@ import { Customization } from '../../.storybook/components';
       name: 'editable',
       description: 'Let the user edit the code',
       table: {
-        defaultValue: { summary: 'false' }
+        defaultValue: { summary: 'true' }
       },
       control: {
         type: 'boolean'
       }
-    },
-    children: {
-      disable: true
     },
     language: {
       name: 'language',
@@ -62,7 +59,7 @@ export const Template = (args) => (
 
 # Code
 
-...
+The Code component is created to highlight code blocks in your application, is a wrapper of [highlight.js](https://highlightjs.org/) and any of the themes or languages supported there are also supported in this library.
 
 ## Showcase
 
@@ -70,7 +67,7 @@ export const Template = (args) => (
   <Story
     name="Default"
     args={{
-      editable: false,
+      editable: true,
       language: 'typescript',
       theme: 'default',
       children:
@@ -94,10 +91,6 @@ export const Template = (args) => (
     {Template.bind({})}
   </Story>
 </Canvas>
-
-### Customization
-
-<Customization />
 
 ### Properties
 

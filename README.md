@@ -59,7 +59,7 @@ If you need to more information, there are readmes specialized for each library.
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/95) - Grid
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/30) - Pill
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0) - Tabs
-* ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/10) - Code
+* ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/70) - Code
 * ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0) - Select
 
 ### 📗 Documentation
