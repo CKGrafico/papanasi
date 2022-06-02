@@ -43,7 +43,7 @@ function compile(filepath) {
 
     if (target === 'react') {
       // Add react import
-      prependFile.sync(outFile, 'import React from "react"; \n');
+      prependFile.sync(outFile, '//@ts-nocheck \n import React from "react"; \n');
     }
 
     if (target === 'vue' && isFirstCompilation) {

@@ -11,6 +11,7 @@ export function getBreakpointClasses(props: { [key: string]: string | number }, 
 }
 
 /* We are using this because nowadays you cannot have a custom property in a media query */
+// TODO: Observe when changes
 export function initBreakpointChecker() {
   const styles = getComputedStyle(document.documentElement);
   const medias = breakpoints.map((breakpoint) => ({

@@ -7,7 +7,7 @@ type CustomizationProps = {
 };
 
 const defaultCss = `
-:root {
+.docs-story {
   /* Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css */
     --pa-breakpoint-xxs: 360px;
     --pa-breakpoint-xs: 640px;
@@ -81,9 +81,7 @@ export function Customization(props: CustomizationProps) {
           </Row>
           <Row>
             <Column xs={'fill'}>
-              <textarea className="customization__code" onChange={onChangeCss}>
-                {css}
-              </textarea>
+              <textarea className="customization__code" onChange={onChangeCss} defaultValue={css}></textarea>
             </Column>
           </Row>
         </>

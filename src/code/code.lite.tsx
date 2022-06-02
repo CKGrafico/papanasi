@@ -1,29 +1,37 @@
-import { onMount, useMetadata, useState } from '@builder.io/mitosis';
+import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
 import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/github.css';
 import { SharedProps } from '../../../models';
 import './code.css';
-hljs.registerLanguage('javascript', javascript);
 
 export type CodeProps = {
-  code: string;
+  editable: boolean;
+  language: string;
+  theme?: string;
 } & SharedProps;
 
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Code(props: CodeProps) {
+  const codeRef = useRef();
+
   const state = useState({
-    highlighted: ''
+    onMount() {
+      hljs.registerLanguage(props.language, require('highlight.js/lib/languages/' + props.language));
+      import('highlight.js/styles/' + (props.theme || 'default') + '.css');
+
+      const nodes = codeRef.querySelectorAll('pre code');
+
+      for (let i = 0; i < nodes.length; i++) {
+        hljs.highlightBlock(nodes[i]);
+      }
+    }
   });
 
-  onMount(() => {
-    state.highlighted = hljs.highlightAuto('const a = 1;').value;
-  });
+  onMount(() => state.onMount());
 
   return (
-    <pre>
-      <code>{highlighted}</code>
+    <pre ref={codeRef}>
+      <code class={'language-' + props.language + ' ' + (props.className || props.class || '')}>{props.children}</code>
     </pre>
   );
 }

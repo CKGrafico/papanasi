@@ -1,0 +1,154 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Code } from '../../packages/react';
+import { Customization } from '../../.storybook/components';
+
+<Meta
+  title="Components/Code"
+  component={Code}
+  argTypes={{
+    editable: {
+      name: 'editable',
+      description: 'Let the user edit the code',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    },
+    children: {
+      disable: true
+    },
+    language: {
+      name: 'language',
+      description:
+        'Language to highlight, complete list https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md',
+      table: {
+        defaultValue: { summary: 'typescript' }
+      },
+      options: ['javascript', 'typescript', 'css', 'scss', 'json'],
+      control: { type: 'select' }
+    },
+    theme: {
+      name: 'theme',
+      description:
+        'Theme to use in the editor, complete list https://github.com/highlightjs/highlight.js/tree/main/src/styles',
+      table: {
+        defaultValue: { summary: 'default' }
+      },
+      options: [
+        'default',
+        'atom-one-dark',
+        'atom-one-light',
+        'github',
+        'monokai',
+        'vs',
+        'dark',
+        'tokyo-night-dark',
+        'tokyo-night-light',
+        'vs2015',
+        'routeros'
+      ],
+      control: { type: 'select' }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    <Code {...args}></Code>
+  </div>
+);
+
+# Code
+
+...
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      editable: false,
+      language: 'typescript',
+      theme: 'default',
+      children:
+        "import React from 'react'; \n\n" +
+        'type CardProps = { \n' +
+        '  title: string, \n' +
+        '  paragraph: string \n' +
+        '} \n\n' +
+        'export const Card = (props: CardProps) => { \n' +
+        '  const { title, paragraph } = props; \n\n' +
+        '  return ( \n' +
+        '    <aside> \n' +
+        '      <h2>{title}</h2> \n' +
+        '      <p>{paragraph}</p> \n' +
+        '    </aside> \n' +
+        '  ); \n' +
+        '}; \n\n' +
+        "const el = <Card title='Hello and welcome!' paragraph='To this papanasi' />\n"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization />
+
+### Properties
+
+<ArgsTable story="Default" of={Code} />
+
+## How to use this component
+
+### Angular
+
+```js
+import { Code } from '@papanasi/angular';
+import '@papanasi/angular/dist/papanasi.css';
+/* TODO */
+```
+
+### React
+
+```js
+import { Code } from '@papanasi/react';
+import '@papanasi/react/dist/papanasi.css';
+export default function App() {
+  return <Code editable>const name = 'component';</Code>;
+}
+```
+
+### Vue
+
+```js
+<script lang="ts">
+import { Code } from "@papanasi/vue";
+import "@papanasi/vue/dist/papanasi.css";
+export default {
+  name: "App",
+  components: {
+    Code,
+  },
+};
+</script>
+<template>
+  <Code :editable="true">const name = 'component';</Code>
+</template>
+```
+
+### Web Components
+
+```js
+import { Code } from '@papanasi/webcomponents';
+import '@papanasi/webcomponents/dist/papanasi.css';
+customElements.get('pa-code') || customElements.define('pa-code', Code);
+```
+
+```html
+<pa-code editable>const name = 'component';</pa-code>
+```
