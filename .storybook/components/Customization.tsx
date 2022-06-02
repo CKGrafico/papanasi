@@ -33,7 +33,7 @@ const defaultCss = `/**
 
 // TODO: Use our select in the future?
 export function Customization(props: CustomizationProps) {
-  const { css = defaultCss, showCode = false } = props;
+  const { css = defaultCss, showCode = true } = props;
 
   const [selected, setSelected] = useState('papanasi');
   const [customCss, setCustomCss] = useState('');
