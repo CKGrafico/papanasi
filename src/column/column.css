@@ -14,6 +14,10 @@
 
 .pa-column {
   @mixin column-fill;
+  margin-bottom: var(--pa-grid-gutter-vertical);
+  margin-left: var(--pa-grid-gutter-horizontal);
+  margin-right: var(--pa-grid-gutter-horizontal);
+  margin-top: var(--pa-grid-gutter-vertical);
 
   @each $breakpoint in var(--internal-breakpoints) {
     @each $value in var(--internal-columns) {

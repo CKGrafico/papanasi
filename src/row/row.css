@@ -4,6 +4,11 @@
   display: flex;
   flex-wrap: wrap;
 
+  margin-bottom: calc(-1 * var(--pa-grid-gutter-vertical));
+  margin-left: calc(-1 * var(--pa-grid-gutter-horizontal));
+  margin-right: calc(-1 * var(--pa-grid-gutter-horizontal));
+  margin-top: calc(-1 * var(--pa-grid-gutter-vertical));
+
   @each $breakpoint in var(--internal-breakpoints) {
     @each $value in var(--internal-flex-directions) {
       @mixin breakpoint-modifier $breakpoint, $value {

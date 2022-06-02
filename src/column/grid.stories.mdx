@@ -84,7 +84,15 @@ Grids are not components itslef but the association between `Containers`, `Rows`
 
 ### Customization
 
-<Customization />
+<Customization
+  css={`
+    /* Grid */
+    --pa-grid-gutter: 0.5rem;
+    --pa-grid-gutter-horizontal: var(--pa-grid-gutter);
+    --pa-grid-gutter-vertical: var(--pa-grid-gutter);
+    --pa-grid-max-width: var(--pa-breakpoint-xl);
+  `}
+/>
 
 ### Properties
 

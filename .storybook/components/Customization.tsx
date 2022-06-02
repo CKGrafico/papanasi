@@ -7,28 +7,24 @@ type CustomizationProps = {
   showCode?: boolean;
 };
 
-const defaultCss = `/**
- * You can edit this code, just click inside and modify it.
- * Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css
+const templateCSS = (css) => `/**
+* You can edit this code, just click inside and modify it.
+* Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css
 **/
 
 .docs-story {
-    --pa-breakpoint-xxs: 360px;
-    --pa-breakpoint-xs: 640px;
-    --pa-breakpoint-s: 768px;
-    --pa-breakpoint-m: 1024px;
-    --pa-breakpoint-l: 1280px;
-    --pa-breakpoint-xl: 1440px;
-    --pa-breakpoint-xxl: 1920px;
+${css}
+}
+`;
 
-    --pa-color-basic-brightest: #ffffff;
-    --pa-color-basic-darkest: #101116;
-    --pa-color-primary-normal: #017aff;
-    --pa-color-secondary-normal: #6c47ff;
-    --pa-color-tertiary-normal: #f34971;
+const defaultCss = `
+  --pa-color-basic-brightest: #ffffff;
+  --pa-color-basic-darkest: #101116;
+  --pa-color-primary-normal: #017aff;
+  --pa-color-secondary-normal: #6c47ff;
+  --pa-color-tertiary-normal: #f34971;
 
   /* ... */
-}
 `;
 
 // TODO: Use our select in the future?
@@ -67,7 +63,9 @@ export function Customization(props: CustomizationProps) {
       <style>{customCss}</style>
 
       <Row>
-        <Column xs={'content'}>Choose a theme</Column>
+        <Column xs={'content'} className="customization__label">
+          Choose a theme
+        </Column>
         <Column xs={'content'}>
           <select onChange={onChangeSelect} defaultValue={selected}>
             {themes.map((theme) => (
@@ -81,12 +79,14 @@ export function Customization(props: CustomizationProps) {
       {css && selected !== 'none' && showCode && (
         <>
           <Row>
-            <Column xs={'content'}>Customize CSS properties</Column>
+            <Column xs={'content'} className="customization__label">
+              Customize CSS properties
+            </Column>
           </Row>
           <Row>
             <Column xs={'fill'}>
               <Code className="customization__code" onChange={onChangeCss} language="css" editable theme="github">
-                {css}
+                {templateCSS(css)}
               </Code>
             </Column>
           </Row>

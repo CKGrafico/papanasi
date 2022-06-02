@@ -31,7 +31,7 @@ import { Customization } from '../../.storybook/components';
       description:
         'Theme to use in the editor, complete list https://github.com/highlightjs/highlight.js/tree/main/src/styles',
       table: {
-        defaultValue: { summary: 'default' }
+        defaultValue: { summary: 'github' }
       },
       options: [
         'default',
@@ -69,7 +69,7 @@ The Code component is created to highlight code blocks in your application, is a
     args={{
       editable: true,
       language: 'typescript',
-      theme: 'default',
+      theme: 'github',
       children:
         "import React from 'react'; \n\n" +
         'type CardProps = { \n' +
