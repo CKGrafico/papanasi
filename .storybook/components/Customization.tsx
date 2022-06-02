@@ -4,10 +4,15 @@ import './customization.css';
 
 type CustomizationProps = {
   css?: string;
+  showCode?: boolean;
 };
 
-const defaultCss = `.docs-story {
-  /* Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css */
+const defaultCss = `/**
+ * You can edit this code, just click inside and modify it.
+ * Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css
+**/
+
+.docs-story {
     --pa-breakpoint-xxs: 360px;
     --pa-breakpoint-xs: 640px;
     --pa-breakpoint-s: 768px;
@@ -28,7 +33,7 @@ const defaultCss = `.docs-story {
 
 // TODO: Use our select in the future?
 export function Customization(props: CustomizationProps) {
-  const { css = defaultCss } = props;
+  const { css = defaultCss, showCode = false } = props;
 
   const [selected, setSelected] = useState('papanasi');
   const [customCss, setCustomCss] = useState('');
@@ -73,20 +78,14 @@ export function Customization(props: CustomizationProps) {
           </select>
         </Column>
       </Row>
-      {css && selected !== 'none' && (
+      {css && selected !== 'none' && showCode && (
         <>
           <Row>
             <Column xs={'content'}>Customize CSS properties</Column>
           </Row>
           <Row>
             <Column xs={'fill'}>
-              <Code
-                className="customization__code"
-                onChange={onChangeCss}
-                language="css"
-                editable
-                theme="tomorrow-night-bright"
-              >
+              <Code className="customization__code" onChange={onChangeCss} language="css" editable theme="github">
                 {css}
               </Code>
             </Column>

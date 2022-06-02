@@ -1,5 +1,9 @@
 .customization {
   &__code {
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 10%) 0 1px 3px 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
+    overflow: hidden;
   }
 }

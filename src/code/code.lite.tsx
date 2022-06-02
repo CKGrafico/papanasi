@@ -24,7 +24,8 @@ export default function Code(props: CodeProps) {
     previewCode: '',
     onMount() {
       state.code = props.children;
-      state.isDark = props.theme.toLowerCase().includes('dark');
+      state.isDark = props.theme.toLowerCase().match(/(dark|night|blue)/);
+
       import('highlight.js/styles/' + (props.theme || 'default') + '.css');
       hljs.registerLanguage(props.language, require('highlight.js/lib/languages/' + props.language));
 
