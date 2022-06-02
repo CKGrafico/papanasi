@@ -20,7 +20,7 @@
   }
 
   @each $intent in info, success, warning, error {
-    &--$(intent) {
+    &.is-$(intent) {
       background-color: var(--pa-color-$(intent)-bright);
       color: var(--pa-color-$(intent)-darkest);
     }
