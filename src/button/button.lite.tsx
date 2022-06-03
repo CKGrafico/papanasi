@@ -1,4 +1,4 @@
-import { useMetadata } from '@builder.io/mitosis';
+import { onMount, useMetadata, useState } from '@builder.io/mitosis';
 import { Dynamic, Intent, SharedProps, Variant } from '../../../models';
 import './button.css';
 
@@ -12,19 +12,18 @@ export type ButtonProps = {
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Button(props: ButtonProps) {
-  return (
-    <button
-      class={
-        'pa-button' +
-        (props.variant ? ' pa-button--' + props.variant : '') +
-        (props.outline ? ' pa-button--outline' : '') +
-        (props.intent ? ' is-' + props.intent : '') +
-        (props.disabled ? ' is-disabled' : '') +
-        ' ' +
-        (props.className || props.class || '')
-      }
-    >
-      {props.children}
-    </button>
-  );
+  const state = useState({
+    classes: '',
+    onMount() {
+      state.classes = `pa-button ${props.variant ? ' pa-button--' + props.variant : ''} ${
+        props.outline ? ' pa-button--outline' : ''
+      } ${props.intent ? ' is-' + props.intent : ''} ${props.disabled ? ' is-disabled' : ''} ${
+        props.className || props.class || ''
+      }`;
+    }
+  });
+
+  onMount(() => state.onMount());
+
+  return <button class={state.classes}>{props.children}</button>;
 }

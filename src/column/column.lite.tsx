@@ -1,4 +1,4 @@
-import { useMetadata } from '@builder.io/mitosis';
+import { onMount, useMetadata, useState } from '@builder.io/mitosis';
 import { getBreakpointClasses } from '../../../helpers';
 import { BreakpointProps, SharedProps } from '../../../models';
 import './column.css';
@@ -9,16 +9,21 @@ export type ColumnProps = {} & SharedProps &
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Column(props: ColumnProps) {
-  return (
-    <div
-      class={
-        'pa-column' +
-        getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-column--') +
-        ' ' +
-        (props.className || props.class || '')
-      }
-    >
-      {props.children}
-    </div>
-  );
+  const state = useState({
+    classes: '',
+    onMount() {
+      state.classes = `pa-column ${getBreakpointClasses(
+        props.xs,
+        props.s,
+        props.m,
+        props.l,
+        props.xl,
+        'pa-column--'
+      )} ${props.className || props.class || ''}`;
+    }
+  });
+
+  onMount(() => state.onMount());
+
+  return <div class={state.classes}>{props.children}</div>;
 }

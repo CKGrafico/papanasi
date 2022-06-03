@@ -18,11 +18,13 @@ export default function Code(props: CodeProps) {
   const codeRef = useRef();
 
   const state = useState({
+    classes: '',
     isEditing: false,
     isDark: false,
     code: '',
     previewCode: '',
     onMount() {
+      state.classes = `pa-code ${props.className || props.class || ''}`;
       state.code = props.children;
       state.isDark = props.theme.toLowerCase().match(/(dark|night|blue)/);
 
@@ -66,7 +68,7 @@ export default function Code(props: CodeProps) {
   onMount(() => state.onMount());
 
   return (
-    <div class={'pa-code ' + (props.className || props.class || '')}>
+    <div class={state.classes}>
       <pre
         class={'pa-code__preview ' + (state.isEditing ? 'is-editing' : '')}
         ref={previewRef}
