@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/react",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi React UI Library",
   "main": "./dist/papanasi-react.umd.js",
