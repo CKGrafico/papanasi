@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/vue",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Vue UI Library",
   "main": "./dist/papanasi-vue.umd.js",
