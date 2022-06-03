@@ -73,3 +73,7 @@ If you need to more information, there are readmes specialized for each library.
 ### 📃 License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+### 🚀 Contributing
+
+[Contributing Guidelines]([http://opensource.org/licenses/MIT](https://github.com/CKGrafico/papanasi/blob/main/CHANGELOG.md))
