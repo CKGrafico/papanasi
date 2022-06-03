@@ -9,7 +9,14 @@ useMetadata({ isAttachedToShadowDom: true });
 
 export default function Row(props: RowProps) {
   return (
-    <div class={'pa-row' + getBreakpointClasses(props, 'pa-row--') + ' ' + (props.className || props.class || '')}>
+    <div
+      class={
+        'pa-row' +
+        getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-row--') +
+        ' ' +
+        (props.className || props.class || '')
+      }
+    >
       {props.children}
     </div>
   );

@@ -11,7 +11,12 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Column(props: ColumnProps) {
   return (
     <div
-      class={'pa-column' + getBreakpointClasses(props, 'pa-column--') + ' ' + (props.className || props.class || '')}
+      class={
+        'pa-column' +
+        getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-column--') +
+        ' ' +
+        (props.className || props.class || '')
+      }
     >
       {props.children}
     </div>

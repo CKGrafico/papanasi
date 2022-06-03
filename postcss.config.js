@@ -9,5 +9,5 @@ module.exports = {
     require('autoprefixer'),
     require('postcss-discard-comments')
   ],
-  inject: false
+  inject: true
 };
