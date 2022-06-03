@@ -76,4 +76,4 @@ If you need to more information, there are readmes specialized for each library.
 
 ### 🚀 Contributing
 
-[Contributing Guidelines](https://github.com/CKGrafico/papanasi/blob/main/CHANGELOG.md)
+[Contributing Guidelines](https://github.com/CKGrafico/papanasi/blob/main/CONTRIBUTING.md)
