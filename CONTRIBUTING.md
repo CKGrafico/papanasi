@@ -5,7 +5,7 @@ Reading and following these guidelines will help us make the contribution proces
 
 ## Code of Conduct
 
-Open source community is important to us, thats why everybody involved in any intereaction should do the best posible and understand that others are doing too, as in the [____](_____).
+Open source community is important to us, thats why everybody involved in any intereaction should do the best posible and understand that others are doing too.
 By contributing to this project, you agree to uphold our [Code of Conduct](https://github.com/ckgrafico/papanasi/blob/master/CODE-OF-CONDUCT.md).
 
 ## Helping with the repo
