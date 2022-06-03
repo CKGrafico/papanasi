@@ -103,7 +103,16 @@ The Code component is created to highlight code blocks in your application, is a
 ```js
 import { Code } from '@papanasi/angular';
 import '@papanasi/angular/dist/papanasi.css';
-/* TODO */
+
+@NgModule({
+  declarations: [Code]
+})
+export class AppModule {}
+...
+
+<div className="app">
+  <div pa-code editable="true">const name = 'component';</div>
+</div>
 ```
 
 ### React

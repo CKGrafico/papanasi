@@ -62,7 +62,17 @@ Containers are the most simple element from layout category, are use to contain 
 ```js
 import { Container } from '@papanasi/angular';
 import '@papanasi/angular/dist/papanasi.css';
-/* TODO */
+
+
+@NgModule({
+  declarations: [Container]
+})
+export class AppModule {}
+...
+
+<div className="app">
+   <container fluid="true">Your content</container>
+</div>
 ```
 
 ### React

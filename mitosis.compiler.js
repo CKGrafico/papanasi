@@ -6,6 +6,7 @@ const filesystemTools = require('gluegun/filesystem');
 const stringTools = require('gluegun/strings');
 const printTools = require('gluegun/print');
 const config = require('./mitosis.config');
+const htmlTags = require('html-tags');
 const compileCommand = require('@builder.io/mitosis-cli/dist/commands/compile');
 
 function compile(filepath) {
@@ -40,6 +41,18 @@ function compile(filepath) {
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data.replace(/import \{\} from ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
     fs.writeFileSync(outFile, result, 'utf8');
+
+    if (target === 'angular') {
+      // Add selector to angular
+      const data = fs.readFileSync(outFile, 'utf8');
+      const result = data.replace(
+        /selector: ?["|'](.+)["|']/,
+        `selector: "${
+          !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
+        }[pa-$1]", exportAs: "pa-$1", encapsulation: 2`
+      );
+      fs.writeFileSync(outFile, result, 'utf8');
+    }
 
     if (target === 'react') {
       // Add react import

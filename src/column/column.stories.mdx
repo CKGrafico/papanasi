@@ -77,7 +77,16 @@ The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, 
 ```js
 import { Column } from '@papanasi/angular';
 import '@papanasi/angular/dist/papanasi.css';
-/* TODO */
+
+@NgModule({
+  declarations: [Column]
+})
+export class AppModule {}
+...
+
+<div className="app">
+   <column m="2" l="fill">Your content</column>
+</div>
 ```
 
 ### React

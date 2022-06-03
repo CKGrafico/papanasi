@@ -85,7 +85,16 @@ You can customize variants changing the variables, more info in the [variables p
 ```js
 import { Button } from '@papanasi/angular';
 import '@papanasi/angular/dist/papanasi.css';
-/* TODO */
+
+@NgModule({
+  declarations: [Button]
+})
+export class AppModule {}
+...
+
+<div className="app">
+  <span pa-button variant="primary" outline="true">Primary</span>
+</div>
 ```
 
 ### React

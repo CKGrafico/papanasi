@@ -57,7 +57,16 @@ There are 3 different variants `primary`, `secondary` and `tertiary` or the one 
 ```js
 import { Pill } from '@papanasi/angular';
 import '@papanasi/angular/dist/papanasi.css';
-/* TODO */
+
+@NgModule({
+  declarations: [Pill]
+})
+export class AppModule {}
+...
+
+<div className="app">
+   <pill variant="primary">Primary</pill>
+</div>
 ```
 
 ### React

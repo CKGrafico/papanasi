@@ -57,7 +57,18 @@ The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`,
 ```js
 import { Row } from '@papanasi/angular';
 import '@papanasi/angular/dist/papanasi.css';
-/* TODO */
+
+@NgModule({
+  declarations: [Row]
+})
+export class AppModule {}
+...
+
+<div className="app">
+    <row m="column" l="row">
+      Your content
+    </row>
+</div>
 ```
 
 ### React
