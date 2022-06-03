@@ -26,9 +26,9 @@ This library born as a pet project to create universal components, easy to exten
 **A Component**...
 * ...should be **cross-libraries** but the code should be written once.
 * ...should have a **minimun style** and should be easy to extend it via CSS by the user.
-* ...should provide an **optional style** library.ç
+* ...should provide some  **optional themes** to make it easy to use.
 * ...should be **accesible**.
-* ...should be **easy to wrap** to set basic properties for the project where is used.
+* ...should be **made for developers** not for non-coders, they will decide how to style most of the things.
 * ...should be three-shakable.
 * ...should be compatible with **StoryBook**.
 * ...should be inspired in other UI Libraries to **don't reinvent the wheel**.
