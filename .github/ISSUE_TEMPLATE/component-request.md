@@ -1,8 +1,8 @@
 ---
 name: Component request
 about: Suggest a component
-title: ''
-labels: ''
+title: 'Add the _________ component'
+labels: 'Component'
 assignees: ''
 
 ---
