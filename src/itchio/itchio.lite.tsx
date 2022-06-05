@@ -72,11 +72,13 @@ export default function Itchio(props: ItchioProps) {
       {!state.gameInfo ? (
         <span>Loading...</span>
       ) : (
-        <div>
-          <img src={state.gameInfo.cover_image}></img>
-          <span>{state.gameInfo.title}</span>
-          <span>{state.gameInfo.price}</span>
-          {props.children}
+        <div class="pa-itchio__container">
+          <img class="pa-itchio__image" src={state.gameInfo.cover_image}></img>
+          <div class="pa-itchio__info">
+            <span class="pa-itchio__title">{state.gameInfo.title}</span>
+            <span class="pa-itchio__price">{state.gameInfo.price}</span>
+            {props.children && <span class="pa-itchio__children">{props.children}</span>}
+          </div>
         </div>
       )}
     </div>

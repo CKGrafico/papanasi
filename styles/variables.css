@@ -87,6 +87,8 @@
   /* Font */
   --pa-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   --pa-font-size-small: 0.75rem;
+  --pa-font-size-normal: 1rem;
+  --pa-font-size-large: 1.25rem;
   --pa-font-size: 1rem;
   --pa-font-weight-normal: 400;
   --pa-font-weight-medium: 500;

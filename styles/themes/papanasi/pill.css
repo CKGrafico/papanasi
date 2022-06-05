@@ -3,11 +3,14 @@
 .pa-pill {
   @mixin shared-styles;
 
+  --pa-pill-radius: 10rem;
+  --pa-pill-font-weight: var(--pa-font-weight-medium);
+
   background-color: var(--pa-color-basic-brightest);
   border-color: var(--pa-color-basic-bright);
-  border-radius: 10rem;
+  border-radius: var(--pa-pill-radius);
   color: var(--pa-color-basic-darker);
-  font-weight: var(--pa-font-weight-medium);
+  font-weight: var(--pa-pill-font-weight);
   transition-duration: var(--pa-transition-duration-normal);
   transition-property: var(--pa-transition-colors);
 

@@ -3,14 +3,19 @@
 .pa-button {
   @mixin shared-styles;
 
+  --pa-button-radius: var(--pa-border-radius-small);
+  --pa-button-border-width: var(--pa-border-width-small);
+  --pa-button-font-weight: var(--pa-font-weight-medium);
+  --pa-button-outline: var(--pa-outline-width);
+
   background-color: var(--pa-color-basic-brightest);
   border-color: var(--pa-color-basic-bright);
-  border-radius: var(--pa-border-radius-small);
+  border-radius: var(--pa-button-radius);
   border-style: solid;
-  border-width: var(--pa-border-width-small);
+  border-width: var(--pa-button-border-width);
   color: var(--pa-color-basic-darker);
-  font-weight: var(--pa-font-weight-medium);
-  outline: var(--pa-outline-width) solid transparent;
+  font-weight: var(--pa-button-font-weight);
+  outline: var(--pa-button-outline) solid transparent;
   transition-duration: var(--pa-transition-duration-normal);
   transition-property: var(--pa-transition-colors);
 

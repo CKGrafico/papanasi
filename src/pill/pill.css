@@ -1,8 +1,10 @@
 @import '../../styles/build.css';
 
 .pa-pill {
+  --pa-pill-text-size: var(--pa-font-size-small);
+
   display: inline-block;
-  font-size: var(--pa-font-size-small);
+  font-size: var(--pa-pill-text-size);
   padding: 0.2rem 0.45rem;
   text-align: center;
 }
