@@ -6,5 +6,5 @@ module.exports = config({
   packageJson: require('./package.json'),
   plugins: [vue()],
   external: ['vue'],
-  compileDts: false
+  dts: false
 });
