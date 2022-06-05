@@ -44,7 +44,18 @@ There are 3 different variants `primary`, `secondary` and `tertiary` or the one 
 
 ### Customization
 
-<Customization />
+<Customization
+  selector=".pa-pill"
+  css={`
+    --pa-color-basic-brightest: #ffffff;
+    --pa-color-basic-darkest: #101116;
+    --pa-color-primary-normal: #017aff;
+    --pa-color-secondary-normal: #6c47ff;
+    --pa-color-tertiary-normal: #f34971;
+    --pa-pill-radius: 10rem;
+    --pa-pill-font-weight: var(--pa-font-weight-medium);
+  `}
+/>
 
 ### Properties
 
