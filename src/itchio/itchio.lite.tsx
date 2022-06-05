@@ -24,7 +24,7 @@ export default function Itchio(props: ItchioProps) {
     gameInfo: null,
     onMount() {
       function setInitialProps() {
-        state.classes = classesToString([[props.className || props.class]]);
+        state.classes = classesToString([[props.className]]);
       }
 
       async function loadScript() {
@@ -68,18 +68,18 @@ export default function Itchio(props: ItchioProps) {
   onUpdate(() => state.onLoadGameInfo(), [state.gameInfo]);
 
   return (
-    <div class={state.classes} ref={elementRef}>
+    <div className={state.classes} ref={elementRef}>
       {!state.gameInfo ? (
         <span>Loading...</span>
       ) : (
-        <div class="pa-itchio__container">
-          <img class="pa-itchio__image" src={state.gameInfo.cover_image}></img>
-          <div class="pa-itchio__info">
+        <div className="pa-itchio__container">
+          <img className="pa-itchio__image" src={state.gameInfo.cover_image}></img>
+          <div className="pa-itchio__info">
             <div className="pa-itchio__texts">
-              <span class="pa-itchio__title">{state.gameInfo.title}</span>
-              <span class="pa-itchio__price">{state.gameInfo.price}</span>
+              <span className="pa-itchio__title">{state.gameInfo.title}</span>
+              <span className="pa-itchio__price">{state.gameInfo.price}</span>
             </div>
-            {props.children && <span class="pa-itchio__children">{props.children}</span>}
+            {props.children && <span className="pa-itchio__children">{props.children}</span>}
           </div>
         </div>
       )}

@@ -26,7 +26,7 @@ export default function Code(props: CodeProps) {
     previewCode: '',
     onMount() {
       function setInitialProps() {
-        state.classes = classesToString(['pa-code', [props.className || props.class]]);
+        state.classes = classesToString(['pa-code', [props.className]]);
         state.code = props.children;
         state.isDark = props.theme.toLowerCase().match(/(dark|night|blue)/);
       }
@@ -76,23 +76,25 @@ export default function Code(props: CodeProps) {
   onMount(() => state.onMount());
 
   return (
-    <div class={state.classes}>
+    <div className={state.classes}>
       <pre
-        class={'pa-code__preview ' + (state.isEditing ? 'is-editing' : '')}
+        className={'pa-code__preview ' + (state.isEditing ? 'is-editing' : '')}
         ref={previewRef}
         onClick={() => state.onClick()}
       >
-        <code class={'pa-code__preview-block language-' + props.language}>{state.previewCode || props.children}</code>
+        <code className={'pa-code__preview-block language-' + props.language}>
+          {state.previewCode || props.children}
+        </code>
       </pre>
 
       <pre
-        class={
+        className={
           'pa-code__editor ' + (state.isEditing ? 'is-editing ' : '') + (state.isDark ? 'pa-code__editor--dark ' : '')
         }
       >
         <code
           ref={codeRef}
-          class={'pa-code__editor-block'}
+          className={'pa-code__editor-block'}
           contentEditable={true}
           suppressContentEditableWarning={true}
           onKeyUp={() => state.onKeyUp()}

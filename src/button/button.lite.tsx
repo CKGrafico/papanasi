@@ -33,5 +33,5 @@ export default function Button(props: ButtonProps) {
 
   onMount(() => state.onMount());
 
-  return <button class={state.classes}>{props.children}</button>;
+  return <button className={state.classes}>{props.children}</button>;
 }

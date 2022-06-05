@@ -16,7 +16,7 @@ export default function Column(props: ColumnProps) {
         state.classes = classesToString([
           'pa-column',
           [getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-column--')],
-          [props.className || props.class]
+          [props.className]
         ]);
       }
 
@@ -26,5 +26,5 @@ export default function Column(props: ColumnProps) {
 
   onMount(() => state.onMount());
 
-  return <div class={state.classes}>{props.children}</div>;
+  return <div className={state.classes}>{props.children}</div>;
 }

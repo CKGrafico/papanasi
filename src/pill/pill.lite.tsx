@@ -21,7 +21,7 @@ export default function Pill(props: PillProps) {
           [props.variant, `pa-pill--${props.variant}`],
           [props.intent, `is-${props.intent}`],
           [props.disabled, 'is-disabled'],
-          [props.className || props.class]
+          [props.className]
         ]);
       }
 
@@ -31,5 +31,5 @@ export default function Pill(props: PillProps) {
 
   onMount(() => state.onMount());
 
-  return <span class={state.classes}>{props.children}</span>;
+  return <span className={state.classes}>{props.children}</span>;
 }

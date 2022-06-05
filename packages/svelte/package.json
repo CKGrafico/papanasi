@@ -14,7 +14,7 @@
     }
   },
   "peerDependencies": {
-    "svelte": "^3.x",
+    "svelte": "^3.x"
   },
   "files": [
     "dist"
