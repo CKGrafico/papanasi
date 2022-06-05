@@ -59,6 +59,16 @@ function compile(filepath) {
       prependFile.sync(outFile, '//@ts-nocheck \n import React from "react"; \n');
     }
 
+    if (target === 'svelte' && isFirstCompilation) {
+      // Add .svelte to index
+      const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
+      const result = data
+        .replace(/\'\;/g, ".svelte';")
+        .replace(/\.css\.svelte/g, '.css')
+        .replace(/helpers\.svelte/g, 'helpers');
+      fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
+    }
+
     if (target === 'vue' && isFirstCompilation) {
       // Add .vue to index
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');

@@ -67,6 +67,7 @@
     "rollup-plugin-embed-css": "^1.0.24",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-ts": "^2.0.7",
     "rollup-plugin-vue": "^6.0.0",
     "solid-js": "^1.4.3",
