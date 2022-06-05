@@ -15,11 +15,15 @@ export default function Button(props: ButtonProps) {
   const state = useState({
     classes: '',
     onMount() {
-      state.classes = `pa-button ${props.variant ? ' pa-button--' + props.variant : ''} ${
-        props.outline ? ' pa-button--outline' : ''
-      } ${props.intent ? ' is-' + props.intent : ''} ${props.disabled ? ' is-disabled' : ''} ${
-        props.className || props.class || ''
-      }`;
+      function setInitialProps() {
+        state.classes = `pa-button ${props.variant ? ' pa-button--' + props.variant : ''} ${
+          props.outline ? ' pa-button--outline' : ''
+        } ${props.intent ? ' is-' + props.intent : ''} ${props.disabled ? ' is-disabled' : ''} ${
+          props.className || props.class || ''
+        }`;
+      }
+
+      setInitialProps();
     }
   });
 

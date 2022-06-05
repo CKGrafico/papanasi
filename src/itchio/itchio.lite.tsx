@@ -14,18 +14,20 @@ export default function Itchio(props: ItchioProps) {
   const state = useState({
     classes: '',
     onMount() {
-      state.classes = `pa-itchio ${props.className || props.class || ''}`;
-
-      try {
-        addScript('https://static.itch.io/api.js', 'itchio').then(() => {
-          global.Itch.attachBuyButton(elementRef, {
-            user: 'leafo',
-            game: 'x-moon'
-          });
-        });
-      } catch (e) {
-        console.error(e);
+      function setInitialProps() {
+        state.classes = `pa-itchio ${props.className || props.class || ''}`;
       }
+
+      async function loadScript() {
+        await addScript('https://static.itch.io/api.js', 'itchio');
+        global.Itch.attachBuyButton(elementRef, {
+          user: 'leafo',
+          game: 'x-moon'
+        });
+      }
+
+      setInitialProps();
+      loadScript();
     }
   });
 

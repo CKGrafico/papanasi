@@ -24,15 +24,22 @@ export default function Code(props: CodeProps) {
     code: '',
     previewCode: '',
     onMount() {
-      state.classes = `pa-code ${props.className || props.class || ''}`;
-      state.code = props.children;
-      state.isDark = props.theme.toLowerCase().match(/(dark|night|blue)/);
+      function setInitialProps() {
+        state.classes = `pa-code ${props.className || props.class || ''}`;
+        state.code = props.children;
+        state.isDark = props.theme.toLowerCase().match(/(dark|night|blue)/);
+      }
 
-      import('highlight.js/styles/' + (props.theme || 'default') + '.css');
-      hljs.registerLanguage(props.language, require('highlight.js/lib/languages/' + props.language));
+      function highlightCode() {
+        import('highlight.js/styles/' + (props.theme || 'default') + '.css');
+        hljs.registerLanguage(props.language, require('highlight.js/lib/languages/' + props.language));
 
-      const nodes = previewRef.querySelectorAll('pre code');
-      nodes.forEach((node) => hljs.highlightBlock(node));
+        const nodes = previewRef.querySelectorAll('pre code');
+        nodes.forEach((node) => hljs.highlightBlock(node));
+      }
+
+      setInitialProps();
+      highlightCode();
     },
     onClick() {
       if (!props.editable) {

@@ -12,9 +12,13 @@ export default function Container(props: ContainerProps) {
   const state = useState({
     classes: '',
     onMount() {
-      state.classes = `pa-container ${props.fluid ? ' pa-container--fluid' : ''}  ${
-        props.className || props.class || ''
-      }`;
+      function setInitialProps() {
+        state.classes = `pa-container ${props.fluid ? ' pa-container--fluid' : ''}  ${
+          props.className || props.class || ''
+        }`;
+      }
+
+      setInitialProps();
     }
   });
 

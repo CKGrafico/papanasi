@@ -14,10 +14,14 @@ export default function Pill(props: PillProps) {
   const state = useState({
     classes: '',
     onMount() {
-      state.classes = `pa-pill ${props.variant ? ' pa-pill--' + props.variant : ''} ${
-        props.intent ? ' is-' + props.intent : ''
-      } ${props.disabled ? ' is-disabled' : ''}
+      function setInitialProps() {
+        state.classes = `pa-pill ${props.variant ? ' pa-pill--' + props.variant : ''} ${
+          props.intent ? ' is-' + props.intent : ''
+        } ${props.disabled ? ' is-disabled' : ''}
      ${props.className || props.class || ''}`;
+      }
+
+      setInitialProps();
     }
   });
 
