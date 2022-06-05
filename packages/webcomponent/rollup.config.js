@@ -1,3 +1,6 @@
 const config = require('../../rollup.config');
 
-module.exports = config(__dirname, require('./package.json'));
+module.exports = config({
+  dir: __dirname,
+  packageJson: require('./package.json')
+});

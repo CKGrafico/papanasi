@@ -14,7 +14,7 @@
     }
   },
   "peerDependencies": {
-    "@angular/core": "^13.0.0"
+    "@angular/core": "^13.x || ^14.x"
   },
   "files": [
     "dist"

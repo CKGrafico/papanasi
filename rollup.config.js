@@ -7,7 +7,12 @@ const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const dts = require('rollup-plugin-dts');
 const postcssConfig = require('./postcss.config.js');
 
-module.exports = (dir, packageJson, plugins = [], external = [], compileDts = true) => {
+module.exports = (options) => {
+  const { dir, packageJson, plugins = [], external = [], compileDts = true, compilerOptions = {} } = options;
+
+  const tsconfig = require(path.resolve(__dirname, './tsconfig.json'));
+  tsconfig.compilerOptions = { ...tsconfig.compilerOptions, ...compilerOptions };
+
   const inputs = [
     {
       input: path.resolve(dir, 'src/index.ts'),
@@ -29,7 +34,7 @@ module.exports = (dir, packageJson, plugins = [], external = [], compileDts = tr
         peerDepsExternal(),
         resolve.nodeResolve(),
         commonjs(),
-        typescript({ tsconfig: path.resolve(__dirname, './tsconfig.json') }),
+        typescript({ tsconfig: tsconfig.compilerOptions }),
         postcss(postcssConfig)
       ]
     },

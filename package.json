@@ -69,6 +69,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-ts": "^2.0.7",
     "rollup-plugin-vue": "^6.0.0",
+    "solid-js": "^1.4.3",
     "stylelint": "^14.8.5",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",

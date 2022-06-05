@@ -4,6 +4,7 @@ module.exports = config({
   dir: __dirname,
   packageJson: require('./package.json'),
   compilerOptions: {
-    jsx: 'react'
+    jsxImportSource: 'solid-js',
+    jsx: 'preserve'
   }
 });
