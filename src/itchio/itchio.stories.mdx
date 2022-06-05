@@ -1,17 +1,10 @@
-import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
 import { Itchio } from '../../packages/react/src';
-import { variants, Intent, intents } from '../../models';
 import { Customization } from '../../.storybook/components';
 
-<Meta title="Enterprise/Itchio" component={Itchio} argTypes={{}} />
+<Meta title="Enterprise/Itchio" component={Itchio} />
 
-export const Template = (args) => (
-  <div>
-    {variants.map((variant) => (
-      <Itchio {...args}>{variant.key}</Itchio>
-    ))}
-  </div>
-);
+export const Template = (args) => <Itchio {...args}>Example</Itchio>;
 
 # Itchio
 

@@ -35,7 +35,7 @@ export default function Code(props: CodeProps) {
         hljs.registerLanguage(props.language, require('highlight.js/lib/languages/' + props.language));
 
         const nodes = previewRef.querySelectorAll('pre code');
-        nodes.forEach((node) => hljs.highlightBlock(node));
+        nodes.forEach((node) => hljs.highlightElement(node));
       }
 
       setInitialProps();
@@ -92,7 +92,8 @@ export default function Code(props: CodeProps) {
         <code
           ref={codeRef}
           class={'pa-code__editor-block'}
-          contentEditable="true"
+          contentEditable={true}
+          suppressContentEditableWarning={true}
           onKeyUp={() => state.onKeyUp()}
           onBlur={() => state.onBlur()}
         >

@@ -1,4 +1,4 @@
-import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
 import { Pill } from '../../packages/react/src';
 import { variants, Intent, intents } from '../../models';
 import { Customization } from '../../.storybook/components';
@@ -9,7 +9,7 @@ import { Customization } from '../../.storybook/components';
   argTypes={{
     intent: {
       name: 'intent',
-      description: 'Specify a temporary intent for the button',
+      description: 'Specify a temporary intent for the pill',
       table: {
         defaultValue: { summary: Intent.None }
       },
@@ -103,9 +103,9 @@ export default {
 ```js
 import { Pill } from '@papanasi/webcomponents';
 import '@papanasi/webcomponents/dist/papanasi.css';
-customElements.get('pa-button') || customElements.define('pa-button', Pill);
+customElements.get('pa-pill') || customElements.define('pa-pill', Pill);
 ```
 
 ```html
-<pa-button variant="primary">Primary</pa-button>
+<pa-pill variant="primary">Primary</pa-pill>
 ```
