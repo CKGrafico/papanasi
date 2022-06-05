@@ -1,0 +1,37 @@
+@import '../../build.css';
+
+.pa-itchio {
+  --pa-itchio-image-size: 10rem;
+  --pa-itchio-padding: 0.5rem;
+  --pa-itchio-background: var(--pa-color-basic-brightest);
+  --pa-itchio-radius: var(--pa-border-radius-small);
+  --pa-itchio-image-gutter: 1rem;
+  --pa-itchio-title-size: var(--pa-font-size-large);
+  --pa-itchio-title-weight: var(--pa-font-weight-medium);
+  --pa-itchio-price-size: var(--pa-font-size-small);
+  --pa-itchio-price-weight: var(--pa-font-weight-medium);
+
+  @mixin shared-styles;
+
+  &__container {
+    background-color: var(--pa-itchio-background);
+    border-radius: var(--pa-itchio-radius);
+    padding: var(--pa-itchio-padding);
+  }
+
+  &__image {
+    border-radius: var(--pa-itchio-radius);
+    margin-right: var(--pa-itchio-image-gutter);
+    max-width: var(--pa-itchio-image-size);
+  }
+
+  &__title {
+    font-size: var(--pa-itchio-title-size);
+    font-weight: var(--pa-itchio-title-weight);
+  }
+
+  &__price {
+    font-size: var(--pa-itchio-price-size);
+    font-weight: var(--pa-itchio-price-weight);
+  }
+}

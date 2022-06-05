@@ -4,15 +4,16 @@ import './customization.css';
 
 type CustomizationProps = {
   css?: string;
+  selector?: string;
   showCode?: boolean;
 };
 
-const templateCSS = (css) => `/**
+const templateCSS = (css, selector = '') => `/**
 * You can edit this code, just click inside and modify it.
 * Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css
 **/
 
-.docs-story {
+.docs-story ${selector} {
 ${css}
 }
 `;
@@ -29,7 +30,7 @@ const defaultCss = `
 
 // TODO: Use our select in the future?
 export function Customization(props: CustomizationProps) {
-  const { css = defaultCss, showCode = true } = props;
+  const { css = defaultCss, showCode = true, selector = '' } = props;
 
   const [selected, setSelected] = useState('papanasi');
   const [customCss, setCustomCss] = useState('');
@@ -86,7 +87,7 @@ export function Customization(props: CustomizationProps) {
           <Row>
             <Column xs={'fill'}>
               <Code className="customization__code" onChange={onChangeCss} language="css" editable theme="github">
-                {templateCSS(css)}
+                {templateCSS(css, selector)}
               </Code>
             </Column>
           </Row>

@@ -1,10 +1,14 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
-import { Itchio } from '../../packages/react/src';
+import { Itchio, Button } from '../../packages/react/src';
 import { Customization } from '../../.storybook/components';
 
 <Meta title="Enterprise/Itchio" component={Itchio} />
 
-export const Template = (args) => <Itchio {...args}>Example</Itchio>;
+export const Template = (args) => (
+  <Itchio {...args}>
+    <Button variant="tertiary">Buy it</Button>
+  </Itchio>
+);
 
 # Itchio
 
@@ -20,7 +24,19 @@ TODO
 
 ### Customization
 
-<Customization />
+<Customization
+  selector=".pa-itchio"
+  css={`
+    --pa-itchio-image-size: 10rem;
+    --pa-itchio-padding: 0.58rem;
+    --pa-itchio-background: var(--pa-color-basic-brightest);
+    --pa-itchio-radius: var(--pa-border-radius-small);
+    --pa-itchio-title-size: var(--pa-font-size-large);
+    --pa-itchio-title-weight: var(--pa-font-weight-medium);
+    --pa-itchio-price-size: var(--pa-font-size-small);
+    --pa-itchio-price-weight: var(--pa-font-weight-medium);
+  `}
+/>
 
 ### Properties
 
