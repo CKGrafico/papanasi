@@ -1,5 +1,5 @@
 import { onMount, onUpdate, useMetadata, useRef, useState } from '@builder.io/mitosis';
-import { addScript, waitUntilTrue } from '../../../helpers';
+import { addScript, classesToString, waitUntilTrue } from '../../../helpers';
 import { ExternalLibrary, SharedProps } from '../../../models';
 import './itchio.css';
 
@@ -24,7 +24,7 @@ export default function Itchio(props: ItchioProps) {
     gameInfo: null,
     onMount() {
       function setInitialProps() {
-        state.classes = `pa-itchio ${props.className || props.class || ''}`;
+        state.classes = classesToString([[props.className || props.class]]);
       }
 
       async function loadScript() {

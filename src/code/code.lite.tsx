@@ -1,5 +1,6 @@
 import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
 import hljs from 'highlight.js/lib/core';
+import { classesToString } from '../../../helpers';
 import { SharedProps } from '../../../models';
 import './code.css';
 
@@ -25,7 +26,7 @@ export default function Code(props: CodeProps) {
     previewCode: '',
     onMount() {
       function setInitialProps() {
-        state.classes = `pa-code ${props.className || props.class || ''}`;
+        state.classes = classesToString(['pa-code', [props.className || props.class]]);
         state.code = props.children;
         state.isDark = props.theme.toLowerCase().match(/(dark|night|blue)/);
       }

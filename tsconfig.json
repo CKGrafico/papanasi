@@ -5,6 +5,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": false,
     "skipLibCheck": true,
+    "jsx": "react",
     "module": "ESNext",
     "declaration": true,
     "sourceMap": true,

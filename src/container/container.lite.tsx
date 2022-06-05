@@ -1,4 +1,5 @@
 import { onMount, useMetadata, useState } from '@builder.io/mitosis';
+import { classesToString } from '../../../helpers';
 import { SharedProps } from '../../../models';
 import './container.css';
 
@@ -13,9 +14,11 @@ export default function Container(props: ContainerProps) {
     classes: '',
     onMount() {
       function setInitialProps() {
-        state.classes = `pa-container ${props.fluid ? ' pa-container--fluid' : ''}  ${
-          props.className || props.class || ''
-        }`;
+        state.classes = classesToString([
+          'pa-container',
+          [props.fluid, 'pa-container--fluid'],
+          [props.className || props.class]
+        ]);
       }
 
       setInitialProps();

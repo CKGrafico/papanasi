@@ -1,5 +1,5 @@
 import { onMount, useMetadata, useState } from '@builder.io/mitosis';
-import { getBreakpointClasses } from '../../../helpers';
+import { classesToString, getBreakpointClasses } from '../../../helpers';
 import { BreakpointProps, SharedProps } from '../../../models';
 import './column.css';
 
@@ -13,14 +13,11 @@ export default function Column(props: ColumnProps) {
     classes: '',
     onMount() {
       function setInitialProps() {
-        state.classes = `pa-column ${getBreakpointClasses(
-          props.xs,
-          props.s,
-          props.m,
-          props.l,
-          props.xl,
-          'pa-column--'
-        )} ${props.className || props.class || ''}`;
+        state.classes = classesToString([
+          'pa-column',
+          [getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-column--')],
+          [props.className || props.class]
+        ]);
       }
 
       setInitialProps();

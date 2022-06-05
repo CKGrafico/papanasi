@@ -1,4 +1,5 @@
 import { onMount, useMetadata, useState } from '@builder.io/mitosis';
+import { classesToString } from '../../../helpers';
 import { Dynamic, Intent, SharedProps, Variant } from '../../../models';
 import './pill.css';
 
@@ -15,10 +16,13 @@ export default function Pill(props: PillProps) {
     classes: '',
     onMount() {
       function setInitialProps() {
-        state.classes = `pa-pill ${props.variant ? ' pa-pill--' + props.variant : ''} ${
-          props.intent ? ' is-' + props.intent : ''
-        } ${props.disabled ? ' is-disabled' : ''}
-     ${props.className || props.class || ''}`;
+        state.classes = classesToString([
+          'pa-pill',
+          [props.variant, `pa-pill--${props.variant}`],
+          [props.intent, `is-${props.intent}`],
+          [props.disabled, 'is-disabled'],
+          [props.className || props.class]
+        ]);
       }
 
       setInitialProps();
