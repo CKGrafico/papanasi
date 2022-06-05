@@ -8,6 +8,7 @@ export function addScript(src, id) {
     const script = document.createElement('script');
 
     script.setAttribute('src', src);
+    script.setAttribute('id', id);
     script.addEventListener('load', resolve);
     script.addEventListener('error', reject);
 
