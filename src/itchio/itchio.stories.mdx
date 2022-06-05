@@ -1,0 +1,94 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Itchio } from '../../packages/react/src';
+import { variants, Intent, intents } from '../../models';
+import { Customization } from '../../.storybook/components';
+
+<Meta title="Enterprise/Itchio" component={Itchio} argTypes={{}} />
+
+export const Template = (args) => (
+  <div>
+    {variants.map((variant) => (
+      <Itchio {...args}>{variant.key}</Itchio>
+    ))}
+  </div>
+);
+
+# Itchio
+
+TODO
+
+## Showcase
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization />
+
+### Properties
+
+<ArgsTable story="Default" of={Itchio} />
+
+## How to use this component
+
+### Angular
+
+```js
+import { Itchio } from '@papanasi/angular';
+import '@papanasi/angular/dist/papanasi.css';
+
+@NgModule({
+  declarations: [Itchio]
+})
+export class AppModule {}
+```
+
+```html
+<div className="app">
+  <itchio></itchio>
+</div>
+```
+
+### React
+
+```js
+import { Itchio } from '@papanasi/react';
+import '@papanasi/react/dist/papanasi.css';
+export default function App() {
+  return <Itchio></Itchio>;
+}
+```
+
+### Vue
+
+```js
+<script lang="ts">
+import { Itchio } from "@papanasi/vue";
+import "@papanasi/vue/dist/papanasi.css";
+export default {
+  name: "App",
+  components: {
+    Itchio,
+  },
+};
+</script>
+<template>
+  <Itchio></Itchio>
+</template>
+```
+
+### Web Components
+
+```js
+import { Itchio } from '@papanasi/webcomponents';
+import '@papanasi/webcomponents/dist/papanasi.css';
+customElements.get('pa-itchio') || customElements.define('pa-itchio', Itchio);
+```
+
+```html
+<pa-itchio></pa-itchio>
+```
