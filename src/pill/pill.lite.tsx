@@ -14,7 +14,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Pill(props: PillProps) {
   const state = useState({
     classes: '',
-    onMount() {
+    onMounted() {
       function setInitialProps() {
         state.classes = classesToString([
           'pa-pill',
@@ -29,7 +29,7 @@ export default function Pill(props: PillProps) {
     }
   });
 
-  onMount(() => state.onMount());
+  onMount(() => state.onMounted());
 
   return <span className={state.classes}>{props.children}</span>;
 }

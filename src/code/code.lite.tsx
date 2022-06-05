@@ -24,7 +24,7 @@ export default function Code(props: CodeProps) {
     isDark: false,
     code: '',
     previewCode: '',
-    onMount() {
+    onMounted() {
       function setInitialProps() {
         state.classes = classesToString(['pa-code', [props.className]]);
         state.code = props.children;
@@ -73,7 +73,7 @@ export default function Code(props: CodeProps) {
     }
   });
 
-  onMount(() => state.onMount());
+  onMount(() => state.onMounted());
 
   return (
     <div className={state.classes}>

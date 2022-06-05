@@ -10,7 +10,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Row(props: RowProps) {
   const state = useState({
     classes: '',
-    onMount() {
+    onMounted() {
       function setInitialProps() {
         state.classes = `pa-row ${getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-row--')} ${
           props.className || ''
@@ -27,7 +27,7 @@ export default function Row(props: RowProps) {
     }
   });
 
-  onMount(() => state.onMount());
+  onMount(() => state.onMounted());
 
   return <div className={state.classes}>{props.children}</div>;
 }

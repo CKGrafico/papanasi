@@ -15,7 +15,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Button(props: ButtonProps) {
   const state = useState({
     classes: '',
-    onMount() {
+    onMounted() {
       function setInitialProps() {
         state.classes = classesToString([
           'pa-button',
@@ -31,7 +31,7 @@ export default function Button(props: ButtonProps) {
     }
   });
 
-  onMount(() => state.onMount());
+  onMount(() => state.onMounted());
 
   return <button className={state.classes}>{props.children}</button>;
 }

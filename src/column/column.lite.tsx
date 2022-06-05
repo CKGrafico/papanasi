@@ -11,7 +11,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Column(props: ColumnProps) {
   const state = useState({
     classes: '',
-    onMount() {
+    onMounted() {
       function setInitialProps() {
         state.classes = classesToString([
           'pa-column',
@@ -24,7 +24,7 @@ export default function Column(props: ColumnProps) {
     }
   });
 
-  onMount(() => state.onMount());
+  onMount(() => state.onMounted());
 
   return <div className={state.classes}>{props.children}</div>;
 }

@@ -22,7 +22,7 @@ export default function Itchio(props: ItchioProps) {
     classes: '',
     isScriptLoaded: false,
     gameInfo: null,
-    onMount() {
+    onMounted() {
       function setInitialProps() {
         state.classes = classesToString([[props.className]]);
       }
@@ -63,7 +63,7 @@ export default function Itchio(props: ItchioProps) {
     }
   });
 
-  onMount(() => state.onMount());
+  onMount(() => state.onMounted());
   onUpdate(() => state.onLoadScript(), [state.isScriptLoaded]);
   onUpdate(() => state.onLoadGameInfo(), [state.gameInfo]);
 
