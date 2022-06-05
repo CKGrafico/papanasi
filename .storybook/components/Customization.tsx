@@ -44,7 +44,7 @@ export function Customization(props: CustomizationProps) {
     {
       name: 'Papanasi',
       value: 'papanasi',
-      css: 'https://unpkg.com/@papanasi/react@0.1.6/dist/papanasi.css'
+      css: `https://unpkg.com/@papanasi/react@latest/dist/papanasi.css?${performance.now()}`
     }
   ];
 

@@ -72,7 +72,20 @@ You can customize variants changing the variables, more info in the [variables p
 
 ### Customization
 
-<Customization />
+<Customization
+  selector=".pa-button"
+  css={`
+    --pa-color-basic-brightest: #ffffff;
+    --pa-color-basic-darkest: #101116;
+    --pa-color-primary-normal: #017aff;
+    --pa-color-secondary-normal: #6c47ff;
+    --pa-color-tertiary-normal: #f34971;
+    --pa-button-radius: var(--pa-border-radius-small);
+    --pa-button-border-width: var(--pa-border-width-small);
+    --pa-button-font-weight: var(--pa-font-weight-medium);
+    --pa-button-outline: var(--pa-outline-width);
+  `}
+/>
 
 ### Properties
 
