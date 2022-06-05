@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/webcomponents",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
   "main": "./dist/papanasi-webcomponents.umd.js",
