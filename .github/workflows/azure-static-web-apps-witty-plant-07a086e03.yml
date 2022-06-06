@@ -17,8 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: true 
-      
+          submodules: true
+
       - name: install, build
         run: |
           yarn

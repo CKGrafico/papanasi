@@ -24,6 +24,7 @@
   "devDependencies": {
     "@angular/core": "^13.3.10",
     "@babel/core": "^7.18.2",
+    "@builder.io/eslint-plugin-mitosis": "^0.0.1-0",
     "@builder.io/mitosis-cli": "0.0.17-12",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",

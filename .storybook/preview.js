@@ -43,10 +43,10 @@ export const decorators = [
         }px ${grid.cellSize}px, ${grid.cellSize}px ${grid.cellSize}px !important;
         background-blend-mode: difference !important;
         background-image: linear-gradient(rgba(130, 130, 130, ${grid.opacity}) 1px, transparent 1px),
-         linear-gradient(90deg, rgba(130, 130, 130, ${grid.opacity}) 1px, transparent 1px),
-         linear-gradient(rgba(130, 130, 130, ${grid.opacity / 2}) 1px, transparent 1px),
-         linear-gradient(90deg, rgba(130, 130, 130, ${grid.opacity / 2}) 1px, transparent 1px) !important;
-         `
+        linear-gradient(90deg, rgba(130, 130, 130, ${grid.opacity}) 1px, transparent 1px),
+        linear-gradient(rgba(130, 130, 130, ${grid.opacity / 2}) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(130, 130, 130, ${grid.opacity / 2}) 1px, transparent 1px) !important;
+        `
       : '';
 
     const outlineStyles = context?.globals?.outline

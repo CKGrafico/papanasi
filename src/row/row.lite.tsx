@@ -3,7 +3,7 @@ import { classesToString, getBreakpointClasses } from '../../../helpers';
 import { BreakpointProps, SharedProps } from '../../../models';
 import './row.css';
 
-export type RowProps = {} & SharedProps & BreakpointProps<'row' | 'column' | 'row-reverse' | 'column-reverse'>;
+export type RowProps = SharedProps & BreakpointProps<'row' | 'column' | 'row-reverse' | 'column-reverse'>;
 
 useMetadata({ isAttachedToShadowDom: true });
 
