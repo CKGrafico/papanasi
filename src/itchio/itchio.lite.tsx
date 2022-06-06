@@ -68,7 +68,7 @@ export default function Itchio(props: ItchioProps) {
   onUpdate(() => state.onLoadGameInfo(), [state.gameInfo]);
 
   return (
-    <div className={state.classes} ref={elementRef}>
+    <div className={state.classes}>
       {!state.gameInfo ? (
         <span>Loading...</span>
       ) : (
@@ -79,7 +79,11 @@ export default function Itchio(props: ItchioProps) {
               <span className="pa-itchio__title">{state.gameInfo.title}</span>
               <span className="pa-itchio__price">{state.gameInfo.price}</span>
             </div>
-            {props.children && <span className="pa-itchio__children">{props.children}</span>}
+            {props.children && (
+              <span className="pa-itchio__children" ref={elementRef}>
+                {props.children}
+              </span>
+            )}
           </div>
         </div>
       )}
