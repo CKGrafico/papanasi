@@ -26,7 +26,7 @@ export default function Code(props: CodeProps) {
     previewCode: '',
     onMounted() {
       function setInitialProps() {
-        state.classes = classesToString(['pa-code', [props.className]]);
+        state.classes = classesToString(['pa-code', props.className]);
         state.code = props.children;
         state.isDark = props.theme.toLowerCase().match(/(dark|night|blue)/);
       }

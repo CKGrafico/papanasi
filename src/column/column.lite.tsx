@@ -16,7 +16,7 @@ export default function Column(props: ColumnProps) {
         state.classes = classesToString([
           'pa-column',
           [getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-column--')],
-          [props.className]
+          props.className
         ]);
       }
 

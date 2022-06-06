@@ -28,6 +28,7 @@ module.exports = (options) => {
           sourcemap: true
         }
       ],
+      treeshake: true,
       external,
       plugins: [
         ...plugins,

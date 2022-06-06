@@ -14,7 +14,7 @@ export default function Container(props: ContainerProps) {
     classes: '',
     onMounted() {
       function setInitialProps() {
-        state.classes = classesToString(['pa-container', [props.fluid, 'pa-container--fluid'], [props.className]]);
+        state.classes = classesToString(['pa-container', [props.fluid, 'pa-container--fluid'], props.className]);
       }
 
       setInitialProps();

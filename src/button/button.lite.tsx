@@ -23,7 +23,7 @@ export default function Button(props: ButtonProps) {
           [props.outline, 'pa-button--outline'],
           [props.intent, `is-${props.intent}`],
           [props.disabled, 'is-disabled'],
-          [props.className]
+          props.className
         ]);
       }
 

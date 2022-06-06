@@ -21,7 +21,7 @@ export default function Pill(props: PillProps) {
           [props.variant, `pa-pill--${props.variant}`],
           [props.intent, `is-${props.intent}`],
           [props.disabled, 'is-disabled'],
-          [props.className]
+          props.className
         ]);
       }
 

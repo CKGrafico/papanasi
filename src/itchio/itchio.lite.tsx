@@ -24,7 +24,7 @@ export default function Itchio(props: ItchioProps) {
     gameInfo: null,
     onMounted() {
       function setInitialProps() {
-        state.classes = classesToString([[props.className]]);
+        state.classes = classesToString(['pa-itchio', props.className]);
       }
 
       async function loadScript() {

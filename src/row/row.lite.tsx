@@ -12,14 +12,10 @@ export default function Row(props: RowProps) {
     classes: '',
     onMounted() {
       function setInitialProps() {
-        state.classes = `pa-row ${getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-row--')} ${
-          props.className || ''
-        }`;
-
         state.classes = classesToString([
           'pa-row',
           [getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-row--')],
-          [props.className]
+          props.className
         ]);
       }
 
