@@ -1,14 +1,15 @@
 const commonjs = require('@rollup/plugin-commonjs');
 const resolve = require('@rollup/plugin-node-resolve');
+const babel = require('@rollup/plugin-babel').default;
 const path = require('path');
 const typescript = require('rollup-plugin-ts');
 const postcss = require('rollup-plugin-postcss');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
-const dtsPlugin = require('rollup-plugin-dts');
+const dtsPlugin = require('rollup-plugin-dts').default;
 const postcssConfig = require('./postcss.config.js');
 
 module.exports = (options) => {
-  const { dir, packageJson, plugins = [], external = [], dts = true, compilerOptions = {} } = options;
+  const { dir, packageJson, plugins = [], external = [], dts = true, compilerOptions = {}, presets = [] } = options;
 
   const tsconfig = require(path.resolve(__dirname, './tsconfig.json'));
   tsconfig.compilerOptions = { ...tsconfig.compilerOptions, ...compilerOptions };
@@ -32,10 +33,17 @@ module.exports = (options) => {
       external,
       plugins: [
         ...plugins,
+        resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
+        typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
+        babel({
+          plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
+          extensions: ['.js', '.ts', '.tsx'],
+          presets: [...presets, '@babel/preset-env', ['@babel/preset-typescript', tsconfig.compilerOptions]],
+          babelHelpers: 'bundled',
+          ignore: [/node_modules/]
+        }),
         peerDepsExternal(),
-        resolve.nodeResolve(),
         commonjs(),
-        typescript({ tsconfig: tsconfig.compilerOptions }),
         postcss(postcssConfig)
       ]
     },
@@ -55,7 +63,7 @@ module.exports = (options) => {
     inputs.push({
       input: path.resolve(dir, packageJson.module.replace('.js', '.d.ts')),
       output: [{ file: path.resolve(dir, 'dist/index.d.ts'), format: 'esm' }],
-      plugins: [dtsPlugin.default()]
+      plugins: [dtsPlugin()]
     });
   }
 
