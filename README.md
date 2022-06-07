@@ -65,22 +65,22 @@ If you need to more information, there are readmes specialized for each library.
   <tr>
     <td align="center">
       Container <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-container--default-story">Preview</a>
     </td>
     <td align="center">
       Row <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-row--default-story">Preview</a>
     </td>
     <td align="center">
       Column <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-column--default-story">Preview</a>
     </td>
     <td align="center">
       Grid <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-grid--default-story">Preview</a>
     </td>
   </tr>
@@ -92,29 +92,29 @@ If you need to more information, there are readmes specialized for each library.
   <tr>
     <td align="center">
       Button <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-button--default-story">Preview</a>
     </td>
     <td align="center">
       Code <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-code--default-story">Preview</a>
     </td>
     <td align="center">
       Pill <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story">Preview</a>
     </td>
      <td align="center">
       Tabs <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-tabs--default-story">Preview</a>
     </td>
   </tr>
    <tr>
     <td align="center">
       Select <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-select--default-story">Preview</a>
     </td>
   </tr>
@@ -126,7 +126,7 @@ If you need to more information, there are readmes specialized for each library.
   <tr>
     <td align="center">
       Itchio <br/>
-      ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/80)<br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/80"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story">Preview</a>
     </td>
   </tr>
