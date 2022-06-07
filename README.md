@@ -64,6 +64,11 @@ If you need to more information, there are readmes specialized for each library.
 <table>
   <tr>
     <td align="center">
+     <h3>Layout Components</h3>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
       Container <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-container--default-story">Preview</a>
@@ -84,11 +89,11 @@ If you need to more information, there are readmes specialized for each library.
       <a href="https://papanasi.js.org/?path=/docs/layout-grid--default-story">Preview</a>
     </td>
   </tr>
-</table>
-
-### Components
-
-<table>
+  <tr>
+    <td align="center">
+     <h3>Regular Components</h3>
+    </td>
+  </tr>
   <tr>
     <td align="center">
       Button <br/>
@@ -118,11 +123,11 @@ If you need to more information, there are readmes specialized for each library.
       <a href="https://papanasi.js.org/?path=/docs/components-select--default-story">Preview</a>
     </td>
   </tr>
-</table>
-
-### Enterprise
-
-<table>
+  <tr>
+    <td align="center">
+     <h3>Enterprise Components</h3>
+    </td>
+  </tr>
   <tr>
     <td align="center">
       Itchio <br/>
