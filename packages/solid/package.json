@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/solid",
-  "version": "0.1.21",
+  "version": "0.1.24",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Solid JS UI Library",
   "main": "./dist/papanasi-solid.umd.js",
@@ -25,6 +25,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "2d0ca06271a799e38e834e483bd0f0ce4f3c4b73",
-  "devDependencies": {}
+  "gitHead": "2d0ca06271a799e38e834e483bd0f0ce4f3c4b73"
 }
