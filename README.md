@@ -48,32 +48,32 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
 <table>
   <tr>
     <td align="center">
-      <strong>Angular</strong>
+      <strong>Angular</strong> <br/>
       <img src="https://cdn.svgporn.com/logos/angular-icon.svg" width="50" title="Angular"> <br/>
       <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts">Readme</a> | <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h">CodeSandbox</a>
     </td>
     <td align="center">
-      <strong>React</strong>
+      <strong>React</strong> <br/>
       <img src="https://cdn.svgporn.com/logos/react.svg" width="50" title="React"> <br/>
       <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts">Readme</a> | <a href="https://codesandbox.io/s/papanasi-react-orfn30">CodeSandbox</a>
     </td>
     <td align="center">
-      <strong>Solid</strong>
+      <strong>Solid</strong> <br/>
       <img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
       <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts">Readme</a> 
     </td>
     <td align="center">
-      <strong>Svelte</strong>
+      <strong>Svelte</strong> <br/>
       <img src="https://cdn.svgporn.com/logos/svelte-icon.svg" width="50" title="Svelte"> <br/>
       <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts">Readme</a> 
     </td>
     <td align="center">
-      <strong>Vue</strong>
+      <strong>Vue</strong> <br/>
       <img src="https://cdn.svgporn.com/logos/vue.svg" width="50" title="Vue"> <br/>
       <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts">Readme</a> | <a href="https://codesandbox.io/s/papanasi-vue-vygq4m">CodeSandbox</a>
     </td>
     <td align="center">
-      <strong>Web Components</strong>
+      <strong>Web Components</strong> <br/>
       <img src="https://cdn.svgporn.com/logos/w3c.svg" width="50" title="W3C"> <br/>
       <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts">Readme</a> | <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr">CodeSandbox</a>
     </td>
