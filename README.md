@@ -49,6 +49,10 @@ If you need to more information, there are readmes specialized for each library.
 
 * **[React:](https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/react.svg" align="right" width="30" title="React">
 
+* **[Solid:](https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" align="right" width="30" title="Solid JS"></img>
+
+* **[Svelte:](https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/svelte-icon.svg" align="right" width="30" title="Svelte"></img>
+
 * **[Vue:](https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/vue.svg" align="right" width="30" title="Vue">
 
 * **[Web components:](https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/w3c.svg" align="right" width="30" title="W3C">
@@ -67,6 +71,8 @@ If you need to more information, there are readmes specialized for each library.
 * To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
 * You can also try the [**Angular CodeSandbox demo**](https://codesandbox.io/s/papanasi-angular-7bzn8h).
 * Or the [**React CodeSandbox demo**](https://codesandbox.io/s/papanasi-react-orfn30).
+* Or the [**Solid CodeSandbox demo** (SOON 🚀)](#).
+* Or the [**Svelte CodeSandbox demo**  (SOON 🚀)](#).
 * We have also a [**Vue CodeSandbox demo**](https://codesandbox.io/s/papanasi-vue-vygq4m).
 * And finally the [**Web Components CodeSandbox demo**](https://codesandbox.io/s/papanasi-webcomponents-27zsfr).
 

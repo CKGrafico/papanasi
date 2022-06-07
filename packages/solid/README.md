@@ -47,9 +47,11 @@ $ yarn add @papanasi/solid
 If you need to more information, there are readmes specialized for each library.
 * **[Angular:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/angular-icon.svg" align="right" width="30" title="Angular">
 
-* **[Solid:](https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" align="right" width="30" title="Solid JS">
-
 * **[React:](https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/react.svg" align="right" width="30" title="React">
+
+* **[Solid:](https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" align="right" width="30" title="Solid JS"></img>
+
+* **[Svelte:](https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/svelte-icon.svg" align="right" width="30" title="Svelte"></img>
 
 * **[Vue:](https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/vue.svg" align="right" width="30" title="Vue">
 
