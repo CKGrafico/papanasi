@@ -37,29 +37,44 @@ This library born as a pet project to create universal components, easy to exten
 ### 📚 Setup and scripts
 
 ```shell
-$ npm install @papanasi/{library}
+$ npm install @papanasi/{platform} # ex: @papanasi/react
 ```
 
 ```shell
-$ yarn add @papanasi/{library}
+$ yarn add @papanasi/{platform} # ex: @papanasi/vue
 ```
 
-If you need to more information, there are readmes specialized for each library.
-* **[Angular:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/angular-icon.svg" align="right" width="30" title="Angular">
-
-* **[React:](https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/react.svg" align="right" width="30" title="React">
-
-* **[Solid:](https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" align="right" width="30" title="Solid JS"></img>
-
-* **[Svelte:](https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/svelte-icon.svg" align="right" width="30" title="Svelte"></img>
-
-* **[Vue:](https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/vue.svg" align="right" width="30" title="Vue">
-
-* **[Web components:](https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/w3c.svg" align="right" width="30" title="W3C">
+## 🧩 Platforms 
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://cdn.svgporn.com/logos/angular-icon.svg" width="50" title="Angular"> <br/>
+      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts">Readme</a> | <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h">CodeSandbox</a>
+    </td>
+    <td align="center">
+      <img src="https://cdn.svgporn.com/logos/react.svg" width="50" title="React"> <br/>
+      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts">Readme</a> | <a href="https://codesandbox.io/s/papanasi-react-orfn30">CodeSandbox</a>
+    </td>
+    <td align="center">
+      <img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
+      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts">Readme</a> 
+    </td>
+       <td align="center">
+      <img src="https://cdn.svgporn.com/logos/svelte-icon.svg" width="50" title="Svelte"> <br/>
+      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts">Readme</a> 
+    </td>
+    <td align="center">
+      <img src="https://cdn.svgporn.com/logos/vue.svg" width="50" title="Vue"> <br/>
+      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts">Readme</a> | <a href="https://codesandbox.io/s/papanasi-vue-vygq4m">CodeSandbox</a>
+    </td>
+    <td align="center">
+      <img src="https://cdn.svgporn.com/logos/w3c.svg" width="50" title="W3C"> <br/>
+      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts">Readme</a> | <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr">CodeSandbox</a>
+    </td>
+  </tr>
+</table>
 
 ### 🔨 Components status
-
-### Layout
 
 <table>
   <tr>
@@ -140,12 +155,6 @@ If you need to more information, there are readmes specialized for each library.
 ### 📗 Documentation
 
 * To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
-* You can also try the [**Angular CodeSandbox demo**](https://codesandbox.io/s/papanasi-angular-7bzn8h).
-* Or the [**React CodeSandbox demo**](https://codesandbox.io/s/papanasi-react-orfn30).
-* Or the [**Solid CodeSandbox demo** (SOON 🚀)](#).
-* Or the [**Svelte CodeSandbox demo**  (SOON 🚀)](#).
-* We have also a [**Vue CodeSandbox demo**](https://codesandbox.io/s/papanasi-vue-vygq4m).
-* And finally the [**Web Components CodeSandbox demo**](https://codesandbox.io/s/papanasi-webcomponents-27zsfr).
 
 ### 📃 License
 
