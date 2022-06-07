@@ -63,7 +63,7 @@ If you need to more information, there are readmes specialized for each library.
 
 <table>
   <tr>
-    <td align="center">
+    <td  align="left" colspan="4">
      <h3>Layout Components</h3>
     </td>
   </tr>
@@ -90,7 +90,7 @@ If you need to more information, there are readmes specialized for each library.
     </td>
   </tr>
   <tr>
-    <td align="center">
+    <td  align="left" colspan="4">
      <h3>Regular Components</h3>
     </td>
   </tr>
@@ -124,7 +124,7 @@ If you need to more information, there are readmes specialized for each library.
     </td>
   </tr>
   <tr>
-    <td align="center">
+    <td align="left" colspan="4">
      <h3>Enterprise Components</h3>
     </td>
   </tr>
