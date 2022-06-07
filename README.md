@@ -63,7 +63,6 @@ If you need to more information, there are readmes specialized for each library.
 
 <table>
   <tr>
-
     <td align="center">
       Container <br/>
       ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
@@ -84,7 +83,6 @@ If you need to more information, there are readmes specialized for each library.
       ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-grid--default-story">Preview</a>
     </td>
-
   </tr>
 </table>
 
@@ -92,7 +90,6 @@ If you need to more information, there are readmes specialized for each library.
 
 <table>
   <tr>
-
     <td align="center">
       Button <br/>
       ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100)<br/>
@@ -113,17 +110,13 @@ If you need to more information, there are readmes specialized for each library.
       ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0)<br/>
       <a href="https://papanasi.js.org/?path=/docs/components-tabs--default-story">Preview</a>
     </td>
-
   </tr>
    <tr>
-
     <td align="center">
       Select <br/>
       ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/0)<br/>
       <a href="https://papanasi.js.org/?path=/docs/components-select--default-story">Preview</a>
     </td>
-
-   
   </tr>
 </table>
 
@@ -131,13 +124,11 @@ If you need to more information, there are readmes specialized for each library.
 
 <table>
   <tr>
-
     <td align="center">
       Itchio <br/>
       ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/80)<br/>
       <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story">Preview</a>
     </td>
-
   </tr>
 </table>
 
