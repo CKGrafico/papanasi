@@ -22,12 +22,12 @@ export function generateCodeSandboxLink(options) {
   --pa-grid-gutter: 0.15rem;
   --pa-color-primary-normal: #017af0;
 
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding-top: 1rem;
 }
 
 .footer {
   font-size: 0.8rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   justify-content: flex-end;
   margin-top: 1rem;
   text-align: right;

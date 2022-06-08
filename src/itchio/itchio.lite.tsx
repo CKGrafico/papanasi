@@ -76,7 +76,7 @@ export default function Itchio(props: ItchioProps) {
     onLoadScript();
   }, [state.isScriptLoaded]);
 
-  onUpdate(() => state.onLoadGame, [state.gameInfo]);
+  onUpdate(() => state.onLoadGame(), [state.gameInfo]);
 
   return (
     <div className={state.classes}>

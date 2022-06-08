@@ -6,14 +6,8 @@ export function generateAngularCodeSandboxLink(options) {
 
   const html = `<div class="app"><app-root></app-root></div>`;
 
-  const demoCode = `
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { Component } from "@angular/core";
+  const previewCode = `import { ${components.join(', ')} } from '@papanasi/angular';
 import '@papanasi/angular/dist/papanasi.css';
-
-import { ${components.join(', ')} } from '@papanasi/angular';
 
 @Component({
   selector: "app-root",
@@ -22,6 +16,15 @@ import { ${components.join(', ')} } from '@papanasi/angular';
 export class AppComponent {
   title = "App";
 }
+`;
+
+  const demoCode = `
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { Component } from "@angular/core";
+
+${previewCode}
 
 @NgModule({
   declarations: [AppComponent, ${components.join(', ')}],
@@ -108,7 +111,7 @@ platformBrowserDynamic()
     }
   };
 
-  const generated = generateCodeSandboxLink({
+  const { url } = generateCodeSandboxLink({
     isTypescript: true,
     html,
     demoCode,
@@ -118,5 +121,5 @@ platformBrowserDynamic()
     extraFiles
   });
 
-  return generated;
+  return { url, content: previewCode };
 }

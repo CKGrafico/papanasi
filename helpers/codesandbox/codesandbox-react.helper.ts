@@ -4,14 +4,21 @@ import { generateCodeSandboxLink } from './codesandbox.helper';
 export function generateReactCodeSandboxLink(options) {
   const { components, code, dependencies } = options;
 
-  const html = `<div id="root"></div>`;
+  const html = `<div class="app" id="root"></div>`;
+
+  const previewCode = `import { ${components.join(', ')} } from '@papanasi/react';
+import '@papanasi/react/dist/papanasi.css';
+
+const App = () => (
+${code}
+);
+`;
+
   const demoCode = `
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ${components.join(', ')} } from '@papanasi/react';
-import '@papanasi/react/dist/papanasi.css';
 
-const App = () => (${code});
+${previewCode}
 
 ReactDOM.render(
   <App />,
@@ -30,12 +37,12 @@ ReactDOM.render(
     'react-scripts': 'latest'
   };
 
-  const generated = generateCodeSandboxLink({
+  const { url } = generateCodeSandboxLink({
     html,
     demoCode,
     dependencies: projectDependencies,
     devDependencies
   });
 
-  return generated;
+  return { url, content: previewCode };
 }
