@@ -72,7 +72,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
     </td>
     <td align="center" width="100">
-      <img src="https://cdn.svgporn.com/logos/svelte-icon.svg" width="50" title="Svelte"> <br/>
+      <img src="https://cdn.svgporn.com/logos/svelte-icon.svg" width="45" title="Svelte"> <br/>
       <strong>Svelte</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
@@ -88,8 +88,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
     </td>
     <td align="center" width="100">
-      <img src="https://cdn.svgporn.com/logos/w3c.svg" width="50" title="Web Components"> <br/>
-      <strong>Web Components</strong> <br/>
+      <img src="https://cdn.svgporn.com/logos/w3c.svg" width="80" title="Web Components"> <br/>
+      <strong>Standard</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">📦Sandbox</a>
