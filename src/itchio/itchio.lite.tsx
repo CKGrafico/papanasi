@@ -40,15 +40,15 @@ export default function Itchio(props: ItchioProps) {
   });
 
   onMount(() => {
-    function setInitialProps(className) {
+    const setInitialProps = (className) => {
       state.classes = classesToString(['pa-itchio', className]);
-    }
+    };
 
-    async function loadScript() {
+    const loadScript = async () => {
       await addScript('https://static.itch.io/api.js', 'itchio');
       await waitUntilTrue(() => global.Itch);
       state.isScriptLoaded = true;
-    }
+    };
 
     setInitialProps(props.className);
     loadScript();

@@ -67,7 +67,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
     <td align="center">
       <img src="https://cdn.svgporn.com/logos/svelte-icon.svg" width="50" title="Svelte"> <br/>
       <strong>Svelte</strong> <br/>
-      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts">Readme</a> 
+      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts">Readme</a> <br/>
+      <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x">CodeSandbox</a> 
     </td>
     <td align="center">
       <img src="https://cdn.svgporn.com/logos/vue.svg" width="50" title="Vue"> <br/>

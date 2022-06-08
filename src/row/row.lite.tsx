@@ -13,9 +13,9 @@ export default function Row(props: RowProps) {
   });
 
   onMount(() => {
-    function setInitialProps(xs, s, m, l, xl, className) {
+    const setInitialProps = (xs, s, m, l, xl, className) => {
       state.classes = classesToString(['pa-row', [getBreakpointClasses(xs, s, m, l, xl, 'pa-row--')], className]);
-    }
+    };
 
     setInitialProps(props.xs, props.s, props.m, props.l, props.xl, props.className);
   });

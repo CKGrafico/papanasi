@@ -17,7 +17,7 @@ export default function Button(props: ButtonProps) {
   });
 
   onMount(() => {
-    function setInitialProps(variant, outline, intent, disabled, className) {
+    const setInitialProps = (variant, outline, intent, disabled, className) => {
       state.classes = classesToString([
         'pa-button',
         [variant, `pa-button--${variant}`],
@@ -26,7 +26,7 @@ export default function Button(props: ButtonProps) {
         [disabled, 'is-disabled'],
         className
       ]);
-    }
+    };
 
     setInitialProps(props.variant, props.outline, props.intent, props.disabled, props.className);
   });
