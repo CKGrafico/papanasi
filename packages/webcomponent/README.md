@@ -50,6 +50,7 @@ $ yarn add @papanasi/webcomponents
     <td align="center" width="100">
       <img src="https://cdn.svgporn.com/logos/angular-icon.svg" width="50" title="Angular"> <br/>
       <strong>Angular</strong> <br/>
+      <img src="https://via.placeholder.com/80x1/f1f1f1/000000?text=+" width="80"> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
         <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">📦Sandbox</a>
