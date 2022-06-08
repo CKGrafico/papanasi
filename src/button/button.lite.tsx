@@ -28,7 +28,7 @@ export default function Button(props: ButtonProps) {
       ]);
     }
 
-    setInitialProps(props.variant, props.intent, props.outline, props.disabled, props.className);
+    setInitialProps(props.variant, props.outline, props.intent, props.disabled, props.className);
   });
 
   return <button className={state.classes}>{props.children}</button>;
