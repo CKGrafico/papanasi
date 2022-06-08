@@ -68,7 +68,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>Solid</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="#" target="_blank">📦Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank">📦Sandbox</a>
       </sub>
     </td>
     <td align="center" width="100">
