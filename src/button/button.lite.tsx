@@ -10,31 +10,32 @@ export type ButtonProps = {
   disabled?: boolean;
 } & SharedProps;
 
-export function setInitialProps(variant, outline, intent, disabled, className) {
-  return classesToString([
-    'pa-button',
-    [variant, `pa-button--${variant}`],
-    [outline, 'pa-button--outline'],
-    [intent, `is-${intent}`],
-    [disabled, 'is-disabled'],
-    className
-  ]);
-}
-
 useMetadata({ isAttachedToShadowDom: true });
 export default function Button(props: ButtonProps) {
   const state = useState({
     classes: ''
   });
-  
+
   onMount(() => {
-    state.classes = setInitialProps(
-      props.variant,
-      props.intent,
-      props.outline,
-      props.disabled,
-      props.className
-    )
+    // TODO: Move outside after mitosis new version
+    function setInitialProps(props) {
+      const { variant, outline, intent, disabled, className } = props;
+
+      const classes = classesToString([
+        'pa-button',
+        [variant, `pa-button--${variant}`],
+        [outline, 'pa-button--outline'],
+        [intent, `is-${intent}`],
+        [disabled, 'is-disabled'],
+        className
+      ]);
+
+      return { classes };
+    }
+
+    const { classes } = setInitialProps(props);
+
+    state.classes = classes;
   });
 
   return <button className={state.classes}>{props.children}</button>;
