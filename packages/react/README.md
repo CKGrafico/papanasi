@@ -1,11 +1,11 @@
 <h1 align="center">
-  export default config<a href="#"><img src="https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-text.svg"  width="400" alt="Papanasi"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-text.svg"  width="400" alt="Papanasi"></a>
   <p align="center">The Universal UI Library</p>
 </h1>
 
 ### 🔍 Overview
 
-🥯Papanasi is a **UI library to use cross Frameworks**. A set of components to use in React, Vue, Angular, Web Components and more. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
+🥯Papanasi is a **UI library to use cross Frameworks**. A set of components to use in Angular, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
 
 > WARNING: THIS IS AN ALPHA DONT USE IT YET, IS UNDER DEVELOPMENT.
 
@@ -26,9 +26,9 @@ This library born as a pet project to create universal components, easy to exten
 **A Component**...
 * ...should be **cross-libraries** but the code should be written once.
 * ...should have a **minimun style** and should be easy to extend it via CSS by the user.
-* ...should provide an **optional style** library.ç
+* ...should provide some  **optional themes** to make it easy to use.
 * ...should be **accesible**.
-* ...should be **easy to wrap** to set basic properties for the project where is used.
+* ...should be **made for developers** not for non-coders, they will decide how to style most of the things.
 * ...should be three-shakable.
 * ...should be compatible with **StoryBook**.
 * ...should be inspired in other UI Libraries to **don't reinvent the wheel**.
@@ -44,24 +44,146 @@ $ npm install @papanasi/react
 $ yarn add @papanasi/react
 ```
 
-If you need to more information, there are readmes specialized for each library.
-* **[Angular:](https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/angular-icon.svg" align="right" width="30" title="Angular">
+### 🧩 Platforms 
+<table align="center">
+  <tr>
+    <td align="center" width="100">
+      <img src="https://cdn.svgporn.com/logos/angular-icon.svg" width="50" title="Angular"> <br/>
+      <strong>Angular</strong> <br/>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">📦Sandbox</a>
+      </sub>
+    </td>
+    <td align="center" width="100">
+      <img src="https://cdn.svgporn.com/logos/react.svg" width="50" title="React"> <br/>
+      <strong>React</strong> <br/>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank">📦Sandbox</a>
+      </sub>
+    </td>
+    <td align="center" width="100">
+      <img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
+      <strong>Solid</strong> <br/>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank">📦Sandbox</a>
+      </sub>
+    </td>
+    <td align="center" width="100">
+      <img src="https://cdn.svgporn.com/logos/svelte-icon.svg" width="45" title="Svelte"> <br/>
+      <strong>Svelte</strong> <br/>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank">📦Sandbox</a>
+      </sub>
+    </td>
+    <td align="center" width="100">
+      <img src="https://cdn.svgporn.com/logos/vue.svg" width="50" title="Vue"> <br/>
+      <strong>Vue</strong> <br/>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank">📦Sandbox</a>
+      </sub>
+    </td>
+    <td align="center" width="100">
+      <img src="https://cdn.svgporn.com/logos/w3c.svg" width="80" title="Web Components"> <br/>
+      <strong>Standard</strong> <br/>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">📦Sandbox</a>
+      </sub>
+    </td>
+  </tr>
+</table>
 
-* **[React:](https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/react.svg" align="right" width="30" title="React">
+### 🔨 Components status
 
-* **[Solid:](https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" align="right" width="30" title="Solid JS"></img>
-
-* **[Svelte:](https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/svelte-icon.svg" align="right" width="30" title="Svelte"></img>
-
-* **[Vue:](https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/vue.svg" align="right" width="30" title="Vue">
-
-* **[Web components:](https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts)** Readme file<img src="https://cdn.svgporn.com/logos/w3c.svg" align="right" width="30" title="W3C">
+<table align="center">
+  <tr>
+    <td align="left" colspan="4">
+     <h4>Layout Components</h4>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      Container <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/layout-container--default-story">Preview</a>
+    </td>
+    <td align="center">
+      Row <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/layout-row--default-story">Preview</a>
+    </td>
+    <td align="center">
+      Column <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/layout-column--default-story">Preview</a>
+    </td>
+    <td align="center">
+      Grid <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/layout-grid--default-story">Preview</a>
+    </td>
+  </tr>
+  <tr>
+    <td  align="left" colspan="4">
+     <h4>Regular Components</h4>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      Button <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-button--default-story">Preview</a>
+    </td>
+    <td align="center">
+      Code <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-code--default-story">Preview</a>
+    </td>
+    <td align="center">
+      Pill <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story">Preview</a>
+    </td>
+     <td align="center">
+      Tabs <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-tabs--default-story">Preview</a>
+    </td>
+  </tr>
+   <tr>
+    <td align="center">
+      Select <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-select--default-story">Preview</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" colspan="4">
+     <h4>Enterprise Components</h4>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      Itchio <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/80"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story">Preview</a>
+    </td>
+  </tr>
+</table>
 
 ### 📗 Documentation
 
-* To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
-* You can also try the [**CodeSandbox demo**](https://codesandbox.io/s/papanasi-react-orfn30).
+To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
 
 ### 📃 License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+### 🚀 Contributing
+
+[Contributing Guidelines](https://github.com/CKGrafico/papanasi/blob/main/CONTRIBUTING.md)

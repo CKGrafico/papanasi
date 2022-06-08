@@ -20,6 +20,7 @@ function compile(filepath) {
     if (isFirstCompilation) {
       fs.mkdirSync(`${outPath}/src`);
       fs.copyFileSync('./src/index.ts', `${outPath}/src/index.ts`);
+      fs.copyFileSync('./README.md', `${outPath}/README.md`);
     }
 
     await compileCommand.run({
@@ -41,6 +42,14 @@ function compile(filepath) {
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data.replace(/import \{\} from ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
     fs.writeFileSync(outFile, result, 'utf8');
+
+    if (isFirstCompilation) {
+      // Move Readme
+      const data = fs.readFileSync('./README.md', 'utf8');
+      const result = data.replace(/\/\{platform\}.+/g, `/${target + (target === 'webcomponent' ? 's' : '')}`);
+
+      fs.writeFileSync(`${outPath}/README.md`, result, 'utf8');
+    }
 
     if (target === 'angular') {
       // Add selector to angular
