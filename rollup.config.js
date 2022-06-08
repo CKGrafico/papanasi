@@ -7,6 +7,7 @@ const postcss = require('rollup-plugin-postcss');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const dtsPlugin = require('rollup-plugin-dts').default;
 const postcssConfig = require('./postcss.config.js');
+const json = require('@rollup/plugin-json');
 
 module.exports = (options) => {
   const { dir, packageJson, plugins = [], external = [], dts = true, compilerOptions = {}, presets = [] } = options;
@@ -34,6 +35,7 @@ module.exports = (options) => {
       plugins: [
         ...plugins,
         resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
+        json(),
         typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
         babel({
           plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],

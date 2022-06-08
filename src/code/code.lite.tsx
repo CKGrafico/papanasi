@@ -8,6 +8,7 @@ export type CodeProps = {
   editable: boolean;
   language: string;
   theme?: string;
+  links?: { label: string; url: string }[];
   onChange?: (text: string) => void;
   onExit?: (text: string) => void;
 } & SharedProps;
@@ -103,6 +104,12 @@ export default function Code(props: CodeProps) {
           {state.code}
         </code>
       </pre>
+
+      <div className="pa-code__actions">
+        {props.links?.map((link, index) => (
+          <a className="pa-code__action" data-key={index} href={link['url']} target="_blank">{link['label']}</a>
+        ))}
+      </div>
     </div>
   );
 }
