@@ -1,5 +1,5 @@
 import React from 'react';
-import { generateReactCodeSandboxLink } from '../../helpers';
+import { generateAngularCodeSandboxLink, generateReactCodeSandboxLink } from '../../helpers';
 import { Code } from '../../packages/react';
 
 enum CodesandboxPlatform {
@@ -18,7 +18,7 @@ type CodesandboxProps = {
 };
 
 const generators = {
-  [CodesandboxPlatform.Angular]: generateReactCodeSandboxLink,
+  [CodesandboxPlatform.Angular]: generateAngularCodeSandboxLink,
   [CodesandboxPlatform.React]: generateReactCodeSandboxLink,
   [CodesandboxPlatform.Solid]: generateReactCodeSandboxLink,
   [CodesandboxPlatform.Svelte]: generateReactCodeSandboxLink,
@@ -34,7 +34,7 @@ export function Codesandbox(props: CodesandboxProps) {
 
   return (
     <div className="codesandbox">
-      <Code language="typescript" theme="github" links={[{ label: 'Sandbox', url }]}>
+      <Code language="typescript" theme="github" links={[{ label: <span>Sandbox</span>, url }]}>
         {content}
       </Code>
     </div>

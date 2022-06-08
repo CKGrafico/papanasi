@@ -5,7 +5,17 @@ export function toBase64(string: string) {
 }
 
 export function generateCodeSandboxLink(options) {
-  const { html, demoCode, dependencies, devDependencies } = options;
+  const {
+    html,
+    demoCode,
+    dependencies,
+    devDependencies,
+    packageJson,
+    isTypescript = false,
+    extraFiles = null
+  } = options;
+
+  const indexName = `index.${isTypescript ? 'ts' : 'js'}`;
 
   const css = `
 .app {
@@ -34,6 +44,7 @@ ${demoCode}
     files: {
       'package.json': {
         content: {
+          ...packageJson,
           dependencies,
           devDependencies
         }
@@ -51,11 +62,15 @@ ${html}
       'index.css': {
         content: css
       },
-      'index.js': {
+      [indexName]: {
         content
       }
     }
   };
+
+  if (extraFiles) {
+    parameters.files = { ...parameters.files, ...extraFiles };
+  }
 
   const urlParams = toBase64(JSON.stringify(parameters));
 

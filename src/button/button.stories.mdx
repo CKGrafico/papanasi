@@ -95,21 +95,13 @@ You can customize variants changing the variables, more info in the [variables p
 
 ### Angular
 
-```js
-import { Button } from '@papanasi/angular';
-import '@papanasi/angular/dist/papanasi.css';
-
-@NgModule({
-  declarations: [Button]
-})
-export class AppModule {}
-```
-
-```html
-<div className="app">
-  <span pa-button variant="primary" outline="true">Primary</span>
-</div>
-```
+<Codesandbox
+  components={['Button']}
+  platform="angular"
+  code={`
+    <span pa-button variant="primary" outline="true">Primary</span>
+  `}
+/>
 
 ### React
 
