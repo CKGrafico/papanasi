@@ -10,21 +10,16 @@ useMetadata({ isAttachedToShadowDom: true });
 
 export default function Column(props: ColumnProps) {
   const state = useState({
-    classes: '',
-    onMounted() {
-      function setInitialProps() {
-        state.classes = classesToString([
-          'pa-column',
-          [getBreakpointClasses(props.xs, props.s, props.m, props.l, props.xl, 'pa-column--')],
-          props.className
-        ]);
-      }
-
-      setInitialProps();
-    }
+    classes: ''
   });
 
-  onMount(() => state.onMounted());
+  onMount(() => {
+    function setInitialProps(xs, s, m, l, xl, className) {
+      state.classes = classesToString(['pa-column', [getBreakpointClasses(xs, s, m, l, xl, 'pa-column--')], className]);
+    }
+
+    setInitialProps(props.xs, props.s, props.m, props.l, props.xl, props.className);
+  });
 
   return <div className={state.classes}>{props.children}</div>;
 }

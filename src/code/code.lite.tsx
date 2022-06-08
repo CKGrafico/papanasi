@@ -24,23 +24,24 @@ export default function Code(props: CodeProps) {
     isDark: false,
     code: '',
     previewCode: '',
-    onMounted() {
-      function setInitialProps() {
-        state.classes = classesToString(['pa-code', props.className]);
-        state.code = props.children;
-        state.isDark = props.theme.toLowerCase().match(/(dark|night|blue)/);
+    onLoad() {
+      // Cannot move outside because the Refs lost 'this'
+      function setInitialProps(className, children, theme) {
+        state.classes = classesToString(['pa-code', className]);
+        state.code = children;
+        state.isDark = theme.toLowerCase().match(/(dark|night|blue)/);
       }
 
-      function highlightCode() {
-        import('highlight.js/styles/' + (props.theme || 'default') + '.css');
-        hljs.registerLanguage(props.language, require('highlight.js/lib/languages/' + props.language));
+      function highlightCode(theme, language) {
+        import('highlight.js/styles/' + (theme || 'default') + '.css');
+        hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language));
 
         const nodes = previewRef.querySelectorAll('pre code');
-        nodes.forEach((node) => hljs.highlightElement(node));
+        nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
       }
 
-      setInitialProps();
-      highlightCode();
+      setInitialProps(props.className, props.children, props.theme);
+      highlightCode(props.theme, props.language);
     },
     onClick() {
       if (!props.editable) {
@@ -62,7 +63,7 @@ export default function Code(props: CodeProps) {
       }
 
       const nodes = previewRef.querySelectorAll('pre code');
-      nodes.forEach((node) => hljs.highlightBlock(node));
+      nodes.forEach((node) => hljs.highlightBlock(node as HTMLElement));
     },
     onKeyUp() {
       state.previewCode = codeRef.innerText;
@@ -73,7 +74,7 @@ export default function Code(props: CodeProps) {
     }
   });
 
-  onMount(() => state.onMounted());
+  onMount(() => state.onLoad());
 
   return (
     <div className={state.classes}>
@@ -96,7 +97,6 @@ export default function Code(props: CodeProps) {
           ref={codeRef}
           className={'pa-code__editor-block'}
           contentEditable={true}
-          suppressContentEditableWarning={true}
           onKeyUp={() => state.onKeyUp()}
           onBlur={() => state.onBlur()}
         >

@@ -11,17 +11,16 @@ useMetadata({ isAttachedToShadowDom: true });
 
 export default function Container(props: ContainerProps) {
   const state = useState({
-    classes: '',
-    onMounted() {
-      function setInitialProps() {
-        state.classes = classesToString(['pa-container', [props.fluid, 'pa-container--fluid'], props.className]);
-      }
-
-      setInitialProps();
-    }
+    classes: ''
   });
 
-  onMount(() => state.onMounted());
+  onMount(() => {
+    function setInitialProps(fluid, className) {
+      state.classes = classesToString(['pa-container', [fluid, 'pa-container--fluid'], className]);
+    }
+
+    setInitialProps(props.fluid, props.className);
+  });
 
   return <div className={state.classes}>{props.children}</div>;
 }

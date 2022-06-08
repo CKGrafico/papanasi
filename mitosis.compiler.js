@@ -59,6 +59,16 @@ function compile(filepath) {
       prependFile.sync(outFile, '//@ts-nocheck \n import React from "react"; \n');
     }
 
+    if (target === 'solid') {
+      // temporary fix to dont use useRef
+      const data = fs.readFileSync(outFile, 'utf8');
+      const result = data.replace(
+        /useRef\(\)/g,
+        '(document.body as any) /* This is broken waiting for mitosis update */'
+      );
+      fs.writeFileSync(outFile, result, 'utf8');
+    }
+
     if (target === 'svelte' && isFirstCompilation) {
       // Add .svelte to index
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');

@@ -17,11 +17,8 @@ export default function Button(props: ButtonProps) {
   });
 
   onMount(() => {
-    // TODO: Move outside after mitosis new version
-    function setInitialProps(props) {
-      const { variant, outline, intent, disabled, className } = props;
-
-      const classes = classesToString([
+    function setInitialProps(variant, outline, intent, disabled, className) {
+      state.classes = classesToString([
         'pa-button',
         [variant, `pa-button--${variant}`],
         [outline, 'pa-button--outline'],
@@ -29,13 +26,9 @@ export default function Button(props: ButtonProps) {
         [disabled, 'is-disabled'],
         className
       ]);
-
-      return { classes };
     }
 
-    const { classes } = setInitialProps(props);
-
-    state.classes = classes;
+    setInitialProps(props.variant, props.intent, props.outline, props.disabled, props.className);
   });
 
   return <button className={state.classes}>{props.children}</button>;

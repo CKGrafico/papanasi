@@ -16,27 +16,46 @@ useMetadata({ isAttachedToShadowDom: true });
 
 const global: Window & ExternalLibrary = window;
 export default function Itchio(props: ItchioProps) {
-  const elementRef = useRef();
+  const actionRef = useRef();
 
   const state = useState({
     classes: '',
     isScriptLoaded: false,
     gameInfo: null,
-    onMounted() {
-      function setInitialProps() {
-        state.classes = classesToString(['pa-itchio', props.className]);
+    onLoadGame() {
+      // Cannot move outside because the Refs lost 'this'
+      function onLoadGameInfo() {
+        if (!state.gameInfo) {
+          return;
+        }
+
+        global.Itch.attachBuyButton(actionRef, {
+          user: props.user,
+          game: props.game
+        });
       }
 
-      async function loadScript() {
-        await addScript('https://static.itch.io/api.js', 'itchio');
-        await waitUntilTrue(() => global.Itch);
-        state.isScriptLoaded = true;
-      }
+      onLoadGameInfo();
+    }
+  });
 
-      setInitialProps();
-      loadScript();
-    },
-    onLoadScript() {
+  onMount(() => {
+    function setInitialProps(className) {
+      state.classes = classesToString(['pa-itchio', className]);
+    }
+
+    async function loadScript() {
+      await addScript('https://static.itch.io/api.js', 'itchio');
+      await waitUntilTrue(() => global.Itch);
+      state.isScriptLoaded = true;
+    }
+
+    setInitialProps(props.className);
+    loadScript();
+  });
+
+  onUpdate(() => {
+    function onLoadScript() {
       if (!state.isScriptLoaded) {
         return;
       }
@@ -50,22 +69,12 @@ export default function Itchio(props: ItchioProps) {
           props.onLoad && props.onLoad();
         }
       });
-    },
-    onLoadGameInfo() {
-      if (!state.gameInfo) {
-        return;
-      }
-
-      global.Itch.attachBuyButton(elementRef, {
-        user: props.user,
-        game: props.game
-      });
     }
-  });
 
-  onMount(() => state.onMounted());
-  onUpdate(() => state.onLoadScript(), [state.isScriptLoaded]);
-  onUpdate(() => state.onLoadGameInfo(), [state.gameInfo]);
+    onLoadScript();
+  }, [state.isScriptLoaded]);
+
+  onUpdate(() => state.onLoadGame, [state.gameInfo]);
 
   return (
     <div className={state.classes}>
@@ -80,7 +89,7 @@ export default function Itchio(props: ItchioProps) {
               <span className="pa-itchio__price">{state.gameInfo.price}</span>
             </div>
             {props.children && (
-              <span className="pa-itchio__children" ref={elementRef}>
+              <span className="pa-itchio__children" ref={actionRef}>
                 {props.children}
               </span>
             )}

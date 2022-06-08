@@ -13,23 +13,22 @@ useMetadata({ isAttachedToShadowDom: true });
 
 export default function Pill(props: PillProps) {
   const state = useState({
-    classes: '',
-    onMounted() {
-      function setInitialProps() {
-        state.classes = classesToString([
-          'pa-pill',
-          [props.variant, `pa-pill--${props.variant}`],
-          [props.intent, `is-${props.intent}`],
-          [props.disabled, 'is-disabled'],
-          props.className
-        ]);
-      }
-
-      setInitialProps();
-    }
+    classes: ''
   });
 
-  onMount(() => state.onMounted());
+  onMount(() => {
+    function setInitialProps(variant, intent, disabled, className) {
+      state.classes = classesToString([
+        'pa-pill',
+        [variant, `pa-pill--${variant}`],
+        [intent, `is-${intent}`],
+        [disabled, 'is-disabled'],
+        className
+      ]);
+    }
+
+    setInitialProps(props.variant, props.intent, props.disabled, props.className);
+  });
 
   return <span className={state.classes}>{props.children}</span>;
 }
