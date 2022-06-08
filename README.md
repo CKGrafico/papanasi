@@ -51,8 +51,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://cdn.svgporn.com/logos/angular-icon.svg" width="50" title="Angular"> <br/>
       <strong>Angular</strong> <br/>
       <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts">Readme</a> <br/>
-        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h">CodeSandbox</a>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts">📗 Readme</a> |
+        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h">📦 CodeSandbox</a>
       </sub>
     </td>
     <td align="center">
