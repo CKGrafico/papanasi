@@ -51,38 +51,49 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://cdn.svgporn.com/logos/angular-icon.svg" width="50" title="Angular"> <br/>
       <strong>Angular</strong> <br/>
       <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h">📦Sandbox</a>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">📦Sandbox</a>
       </sub>
     </td>
-    <td align="center">
+    <td align="center" width="100">
       <img src="https://cdn.svgporn.com/logos/react.svg" width="50" title="React"> <br/>
       <strong>React</strong> <br/>
-      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts">Readme</a> <br/>
-      <a href="https://codesandbox.io/s/papanasi-react-orfn30">CodeSandbox</a>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank">📦Sandbox</a>
+      </sub>
     </td>
-    <td align="center">
+    <td align="center" width="100">
       <img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
       <strong>Solid</strong> <br/>
-      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts">Readme</a> 
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="#" target="_blank">📦Sandbox</a>
+      </sub>
     </td>
-    <td align="center">
+    <td align="center" width="100">
       <img src="https://cdn.svgporn.com/logos/svelte-icon.svg" width="50" title="Svelte"> <br/>
       <strong>Svelte</strong> <br/>
-      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts">Readme</a> <br/>
-      <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x">CodeSandbox</a> 
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank">📦Sandbox</a>
+      </sub>
     </td>
-    <td align="center">
+    <td align="center" width="100">
       <img src="https://cdn.svgporn.com/logos/vue.svg" width="50" title="Vue"> <br/>
       <strong>Vue</strong> <br/>
-      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts">Readme</a> <br/>
-      <a href="https://codesandbox.io/s/papanasi-vue-vygq4m">CodeSandbox</a>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank">📦Sandbox</a>
+      </sub>
     </td>
-    <td align="center">
-      <img src="https://cdn.svgporn.com/logos/w3c.svg" width="50" title="W3C"> <br/>
+    <td align="center" width="100">
+      <img src="https://cdn.svgporn.com/logos/w3c.svg" width="50" title="Web Components"> <br/>
       <strong>Web Components</strong> <br/>
-      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts">Readme</a> <br/>
-      <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr">CodeSandbox</a>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">📦Sandbox</a>
+      </sub>
     </td>
   </tr>
 </table>
@@ -167,7 +178,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
 
 ### 📗 Documentation
 
-* To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
+To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
 
 ### 📃 License
 
