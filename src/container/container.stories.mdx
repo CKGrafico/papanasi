@@ -1,7 +1,7 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
 import { Container } from '../../packages/react/src';
 import { variants, Intent, intents } from '../../models';
-import { Customization } from '../../.storybook/components';
+import { Customization, Codesandbox } from '../../.storybook/components';
 
 <Meta
   title="Layout/Container"
@@ -59,31 +59,23 @@ Containers are the most simple element from layout category, are use to contain 
 
 ### Angular
 
-```js
-import { Container } from '@papanasi/angular';
-import '@papanasi/angular/dist/papanasi.css';
-
-@NgModule({
-  declarations: [Container]
-})
-export class AppModule {}
-```
-
-```html
-<div className="app">
-  <container fluid="true">Your content</container>
-</div>
-```
+<Codesandbox
+  components={['Container']}
+  platform="angular"
+  code={`
+    <container fluid="true">Your content</container>
+  `}
+/>
 
 ### React
 
-```js
-import { Container } from '@papanasi/react';
-import '@papanasi/react/dist/papanasi.css';
-export default function App() {
-  return <Container fluid>Your content</Container>;
-}
-```
+<Codesandbox
+  components={['Container']}
+  platform="react"
+  code={`
+    <Container fluid>Your content</Container>
+  `}
+/>
 
 ### Vue
 

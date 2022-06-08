@@ -1,8 +1,6 @@
 @import '../../styles/build.css';
 
 .pa-code {
-  @mixin shared-styles;
-
   --pa-code-padding: 1rem;
 
   display: block;
@@ -41,14 +39,24 @@
     position: absolute;
     z-index: 1;
 
-    &--dark {
-      color: var(--pa-color-basic-brightest);
-    }
-
     &.is-editing {
       opacity: 1;
       display: block;
       z-index: 3;
     }
+  }
+
+  &__actions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    display: flex;
+    z-index: 10;
+  }
+
+  &__action {
+    padding: 0.35rem;
+    text-decoration: none;
   }
 }

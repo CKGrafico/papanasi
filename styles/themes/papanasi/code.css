@@ -2,4 +2,31 @@
 
 .pa-code {
   @mixin shared-styles;
+
+  border-radius: var(--pa-border-radius-small);
+  box-shadow: var(--pa-shadow-normal);
+  border: var(--pa-border-width-small) solid var(--pa-color-basic-brighter);
+  width: 100%;
+  overflow: hidden;
+
+  &__editor {
+    &--dark {
+      color: var(--pa-color-basic-brightest);
+    }
+  }
+
+  &__actions {
+    background: var(--pa-color-basic-brightest);
+    backdrop-filter: blur(2px);
+  }
+
+  &__action {
+    border: var(--pa-border-width-small) solid var(--pa-color-basic-brighter);
+    border-right: 0;
+    border-bottom: 0;
+    border-top-left-radius: var(--pa-border-radius-small);
+    color: var(--pa-color-basic-darkest);
+    font-size: var(--pa-font-size-small);
+    font-weight: var(--pa-font-weight-bold);
+  }
 }

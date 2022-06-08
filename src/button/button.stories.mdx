@@ -1,7 +1,7 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
 import { Button } from '../../packages/react/src';
 import { variants, Intent, intents } from '../../models';
-import { Customization } from '../../.storybook/components';
+import { Customization, Codesandbox } from '../../.storybook/components';
 
 <Meta
   title="Components/Button"
@@ -95,35 +95,25 @@ You can customize variants changing the variables, more info in the [variables p
 
 ### Angular
 
-```js
-import { Button } from '@papanasi/angular';
-import '@papanasi/angular/dist/papanasi.css';
-
-@NgModule({
-  declarations: [Button]
-})
-export class AppModule {}
-```
-
-```html
-<div className="app">
-  <span pa-button variant="primary" outline="true">Primary</span>
-</div>
-```
+<Codesandbox
+  components={['Button']}
+  platform="angular"
+  code={`
+    <span pa-button variant="primary" outline="true">Primary</span>
+  `}
+/>
 
 ### React
 
-```js
-import { Button } from '@papanasi/react';
-import '@papanasi/react/dist/papanasi.css';
-export default function App() {
-  return (
+<Codesandbox
+  components={['Button']}
+  platform="react"
+  code={`
     <Button variant="primary" outline>
       Primary
     </Button>
-  );
-}
-```
+  `}
+/>
 
 ### Vue
 

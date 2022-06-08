@@ -31,7 +31,9 @@ export default function Itchio(props: ItchioProps) {
 
         global.Itch.attachBuyButton(actionRef, {
           user: props.user,
-          game: props.game
+          game: props.game,
+          width: props.width || 800,
+          height: props.height || 600
         });
       }
 
@@ -55,7 +57,7 @@ export default function Itchio(props: ItchioProps) {
   });
 
   onUpdate(() => {
-    function onLoadScript() {
+    const onLoadScript = () => {
       if (!state.isScriptLoaded) {
         return;
       }
@@ -69,7 +71,7 @@ export default function Itchio(props: ItchioProps) {
           props.onLoad && props.onLoad();
         }
       });
-    }
+    };
 
     onLoadScript();
   }, [state.isScriptLoaded]);
@@ -88,11 +90,9 @@ export default function Itchio(props: ItchioProps) {
               <span className="pa-itchio__title">{state.gameInfo.title}</span>
               <span className="pa-itchio__price">{state.gameInfo.price}</span>
             </div>
-            {props.children && (
-              <span className="pa-itchio__children" ref={actionRef}>
-                {props.children}
-              </span>
-            )}
+            <span className="pa-itchio__children" ref={actionRef}>
+              {props.children}
+            </span>
           </div>
         </div>
       )}

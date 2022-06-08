@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
 import { Itchio, Button } from '../../packages/react/src';
-import { Customization } from '../../.storybook/components';
+import { Customization, Codesandbox } from '../../.storybook/components';
 
 <Meta title="Enterprise/Itchio" component={Itchio} />
 
@@ -46,31 +46,23 @@ TODO
 
 ### Angular
 
-```js
-import { Itchio } from '@papanasi/angular';
-import '@papanasi/angular/dist/papanasi.css';
-
-@NgModule({
-  declarations: [Itchio]
-})
-export class AppModule {}
-```
-
-```html
-<div className="app">
-  <itchio></itchio>
-</div>
-```
+<Codesandbox
+  components={['Itchio']}
+  platform="angular"
+  code={`
+    <itchio user="ckgrafico" game="alice-ring"><span>Click me</span></itchio>
+  `}
+/>
 
 ### React
 
-```js
-import { Itchio } from '@papanasi/react';
-import '@papanasi/react/dist/papanasi.css';
-export default function App() {
-  return <Itchio></Itchio>;
-}
-```
+<Codesandbox
+  components={['Itchio']}
+  platform="react"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"><span>Click me</span></Itchio>
+  `}
+/>
 
 ### Vue
 
