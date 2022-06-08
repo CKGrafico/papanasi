@@ -1,7 +1,7 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
 import { Pill } from '../../packages/react/src';
 import { variants, Intent, intents } from '../../models';
-import { Customization } from '../../.storybook/components';
+import { Customization, Codesandbox } from '../../.storybook/components';
 
 <Meta
   title="Components/Pill"
@@ -65,31 +65,23 @@ There are 3 different variants `primary`, `secondary` and `tertiary` or the one 
 
 ### Angular
 
-```js
-import { Pill } from '@papanasi/angular';
-import '@papanasi/angular/dist/papanasi.css';
-
-@NgModule({
-  declarations: [Pill]
-})
-export class AppModule {}
-```
-
-```html
-<div className="app">
-  <pill variant="primary">Primary</pill>
-</div>
-```
+<Codesandbox
+  components={['Pill']}
+  platform="angular"
+  code={`
+    <pill variant="primary">Primary</pill>
+  `}
+/>
 
 ### React
 
-```js
-import { Pill } from '@papanasi/react';
-import '@papanasi/react/dist/papanasi.css';
-export default function App() {
-  return <Pill variant="primary">Primary</Pill>;
-}
-```
+<Codesandbox
+  components={['Pill']}
+  platform="react"
+  code={`
+    <Pill variant="primary">Primary</Pill>
+  `}
+/>
 
 ### Vue
 

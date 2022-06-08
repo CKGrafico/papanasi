@@ -2,7 +2,7 @@ import lernaJson from '../../lerna.json';
 import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateReactCodeSandboxLink(options) {
-  const { components, code } = options;
+  const { components, code, dependencies } = options;
 
   const html = `<div id="root"></div>`;
   const demoCode = `
@@ -19,7 +19,8 @@ ReactDOM.render(
 )
 `.trim();
 
-  const dependencies = {
+  const projectDependencies = {
+    ...dependencies,
     react: '16.8.0',
     'react-dom': '16.8.0',
     '@papanasi/react': `${lernaJson.version}`
@@ -32,7 +33,7 @@ ReactDOM.render(
   const generated = generateCodeSandboxLink({
     html,
     demoCode,
-    dependencies,
+    dependencies: projectDependencies,
     devDependencies
   });
 

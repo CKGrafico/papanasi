@@ -15,6 +15,7 @@ type CodesandboxProps = {
   components: string[];
   code: string;
   platform: CodesandboxPlatform;
+  dependencies?: { [key: string]: string };
 };
 
 const generators = {
@@ -27,9 +28,9 @@ const generators = {
 };
 
 export function Codesandbox(props: CodesandboxProps) {
-  const { components, code, platform } = props;
+  const { components, code, platform, dependencies = {} } = props;
 
-  const { url, content } = generators[platform]({ components, code });
+  const { url, content } = generators[platform]({ components, code, dependencies });
   debugger;
 
   return (

@@ -2,7 +2,7 @@ import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
 import { Column, Container, Row } from '../../packages/react/src';
 import { variants, Intent, intents } from '../../models';
 import { getBreakpointArgTypes } from '../../helpers';
-import { Customization } from '../../.storybook/components';
+import { Customization, Codesandbox } from '../../.storybook/components';
 
 <Meta
   title="Layout/Column"
@@ -74,35 +74,25 @@ The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, 
 
 ### Angular
 
-```js
-import { Column } from '@papanasi/angular';
-import '@papanasi/angular/dist/papanasi.css';
-
-@NgModule({
-  declarations: [Column]
-})
-export class AppModule {}
-```
-
-```html
-<div className="app">
-  <column m="2" l="fill">Your content</column>
-</div>
-```
+<Codesandbox
+  components={['Column']}
+  platform="angular"
+  code={`
+    <column m="2" l="fill">Your content</column>
+  `}
+/>
 
 ### React
 
-```js
-import { Column } from '@papanasi/react';
-import '@papanasi/react/dist/papanasi.css';
-export default function App() {
-  return (
+<Codesandbox
+  components={['Column']}
+  platform="react"
+  code={`
     <Column m="2" l="fill">
       Your content
     </Column>
-  );
-}
-```
+  `}
+/>
 
 ### Vue
 

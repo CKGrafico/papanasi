@@ -2,9 +2,9 @@ import lernaJson from '../../lerna.json';
 import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateAngularCodeSandboxLink(options) {
-  const { components, code } = options;
+  const { components, code, dependencies } = options;
 
-  const html = `<app-root></app-root>`;
+  const html = `<div class="app"><app-root></app-root></div>`;
 
   const demoCode = `
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
@@ -44,7 +44,8 @@ platformBrowserDynamic()
     }
   };
 
-  const dependencies = {
+  const projectDependencies = {
+    ...dependencies,
     '@angular/common': '^12.2.0',
     '@angular/compiler': '^12.2.0',
     '@angular/core': '^12.2.0',
@@ -112,7 +113,7 @@ platformBrowserDynamic()
     html,
     demoCode,
     packageJson,
-    dependencies,
+    dependencies: projectDependencies,
     devDependencies,
     extraFiles
   });
