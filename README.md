@@ -48,10 +48,10 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
 <table align="center">
   <tr>
     <td align="center">
-      <img src="https://cdn.svgporn.com/logos/angular-icon.svg" width="50" title="Angular"> <br/><br/>
-      <strong>Angular</strong> <br/>
-      <small><a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts">Readme</a></small> <br/>
-      <small></small><a href="https://codesandbox.io/s/papanasi-angular-7bzn8h">CodeSandbox</a></small>
+      <img src="https://cdn.svgporn.com/logos/angular-icon.svg" width="50" title="Angular"> <br/>
+      <strong>Angular</strong> <br/><br/>
+      <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts"><small></small>Readme</small></a> <br/>
+      <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h"><small>CodeSandbox</small></a>
     </td>
     <td align="center">
       <img src="https://cdn.svgporn.com/logos/react.svg" width="50" title="React"> <br/>
