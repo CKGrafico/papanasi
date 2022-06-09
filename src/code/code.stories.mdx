@@ -23,8 +23,8 @@ import { Customization, Codesandbox } from '../../.storybook/components';
       table: {
         defaultValue: { summary: 'typescript' }
       },
-      options: ['javascript', 'typescript', 'css', 'scss', 'json'],
-      control: { type: 'select' }
+      options: ['javascript', 'typescript', 'css', 'scss', 'json', 'xml', 'markdown'],
+      control: { type: 'multi-select' }
     },
     theme: {
       name: 'theme',
@@ -68,7 +68,7 @@ The Code component is created to highlight code blocks in your application, is a
     name="Default"
     args={{
       editable: true,
-      language: 'typescript',
+      languages: ['typescript', 'xml'],
       theme: 'github',
       children:
         "import React from 'react'; \n\n" +
@@ -105,7 +105,7 @@ The Code component is created to highlight code blocks in your application, is a
   platform="angular"
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
-     <div pa-code editable="true" language="javascript" theme="a11y-dark">const name = 'component';</div>
+     <div pa-code editable="true" languages={['javascript']} theme="a11y-dark">const name = 'component';</div>
   `}
 />
 
@@ -116,7 +116,7 @@ The Code component is created to highlight code blocks in your application, is a
   platform="react"
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
-     <Code editable  language="javascript" theme="a11y-dark">const name = 'component';</Code>
+     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>
   `}
 />
 

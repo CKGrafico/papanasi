@@ -6,7 +6,7 @@ import './code.css';
 
 export type CodeProps = {
   editable: boolean;
-  language: string;
+  languages: string[];
   theme?: string;
   links?: { label: string; url: string }[];
   onChange?: (text: string) => void;
@@ -25,6 +25,14 @@ export default function Code(props: CodeProps) {
     isDark: false,
     code: '',
     previewCode: '',
+    highlightCode(languages = ['javascript', 'typescript', 'xml', 'css']) {
+      languages.forEach((language) =>
+        hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language))
+      );
+
+      const nodes = previewRef.querySelectorAll('pre code');
+      nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
+    },
     onLoad() {
       // Cannot move outside because the Refs lost 'this'
       function setInitialProps(className, children, theme) {
@@ -33,16 +41,10 @@ export default function Code(props: CodeProps) {
         state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
       }
 
-      function highlightCode(theme, language) {
-        import('highlight.js/styles/' + (theme || 'default') + '.css');
-        hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language));
-
-        const nodes = previewRef.querySelectorAll('pre code');
-        nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
-      }
-
       setInitialProps(props.className, props.children, props.theme);
-      highlightCode(props.theme, props.language);
+      import('highlight.js/styles/' + (props.theme || 'default') + '.css');
+
+      state.highlightCode(props.languages);
     },
     onClick() {
       if (!props.editable) {
@@ -63,8 +65,7 @@ export default function Code(props: CodeProps) {
         props.onExit(codeRef.innerText);
       }
 
-      const nodes = previewRef.querySelectorAll('pre code');
-      nodes.forEach((node) => hljs.highlightBlock(node as HTMLElement));
+      state.highlightCode(props.languages);
     },
     onKeyUp() {
       state.previewCode = codeRef.innerText;
@@ -84,9 +85,7 @@ export default function Code(props: CodeProps) {
         ref={previewRef}
         onClick={() => state.onClick()}
       >
-        <code className={'pa-code__preview-block language-' + props.language}>
-          {state.previewCode || props.children}
-        </code>
+        <code className={'pa-code__preview-block'}>{state.previewCode || props.children}</code>
       </pre>
 
       <pre

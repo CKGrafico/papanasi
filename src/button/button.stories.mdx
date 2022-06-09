@@ -117,21 +117,13 @@ You can customize variants changing the variables, more info in the [variables p
 
 ### Vue
 
-```js
-<script lang="ts">
-import { Button } from "@papanasi/vue";
-import "@papanasi/vue/dist/papanasi.css";
-export default {
-  name: "App",
-  components: {
-    Button,
-  },
-};
-</script>
-<template>
-  <Button variant="primary" :outline="true">Primary</Button>
-</template>
-```
+<Codesandbox
+  components={['Button']}
+  platform="vue"
+  code={`
+    <Button variant="primary" :outline="true">Primary</Button>
+  `}
+/>
 
 ### Web Components
 

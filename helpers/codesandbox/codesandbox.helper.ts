@@ -12,10 +12,12 @@ export function generateCodeSandboxLink(options) {
     devDependencies,
     packageJson,
     isTypescript = false,
-    extraFiles = null
+    extraFiles = null,
+    publicFolder = ''
   } = options;
 
   const indexName = `index.${isTypescript ? 'ts' : 'js'}`;
+  const indexHTMLFolder = `${publicFolder}index.html`;
 
   const css = `
 .app {
@@ -49,7 +51,7 @@ ${demoCode}
           devDependencies
         }
       },
-      'index.html': {
+      [indexHTMLFolder]: {
         content: `
 ${html}
 <div class="footer">

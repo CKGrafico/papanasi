@@ -3,6 +3,7 @@ const path = require('path');
 
 module.exports = {
   stories: ['../docs/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  staticDirs: ['../packages/react/dist'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

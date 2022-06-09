@@ -44,7 +44,7 @@ export function Customization(props: CustomizationProps) {
     {
       name: 'Papanasi',
       value: 'papanasi',
-      css: `https://unpkg.com/@papanasi/react@latest/dist/papanasi.css?${performance.now()}`
+      css: `/papanasi.css?${performance.now()}`
     }
   ];
 
@@ -86,7 +86,7 @@ export function Customization(props: CustomizationProps) {
           </Row>
           <Row>
             <Column xs={'fill'}>
-              <Code onChange={onChangeCss} language="css" editable theme="github">
+              <Code onChange={onChangeCss} editable theme="github">
                 {templateCSS(css, selector)}
               </Code>
             </Column>
