@@ -48,7 +48,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
 <table align="center">
   <tr>
     <td align="center" width="100">
-      <img src="https://cdn.svgporn.com/logos/angular-icon.svg" width="50" title="Angular"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/angular-icon.svg" width="50" title="Angular"> <br/>
       <strong>Angular</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
@@ -56,7 +56,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
     </td>
     <td align="center" width="100">
-      <img src="https://cdn.svgporn.com/logos/react.svg" width="50" title="React"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/react.svg" width="50" title="React"> <br/>
       <strong>React</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
@@ -64,7 +64,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
     </td>
     <td align="center" width="100">
-      <img src="https://cdn.svgporn.com/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
       <strong>Solid</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
@@ -72,7 +72,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
     </td>
     <td align="center" width="100">
-      <img src="https://cdn.svgporn.com/logos/svelte-icon.svg" width="45" title="Svelte"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="45" title="Svelte"> <br/>
       <strong>Svelte</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
@@ -80,7 +80,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
     </td>
     <td align="center" width="100">
-      <img src="https://cdn.svgporn.com/logos/vue.svg" width="50" title="Vue"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg" width="50" title="Vue"> <br/>
       <strong>Vue</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
@@ -88,7 +88,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
     </td>
     <td align="center" width="100">
-      <img src="https://cdn.svgporn.com/logos/w3c.svg" width="80" title="Web Components"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
       <strong>Standard</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts" target="_blank">📗Readme</a>

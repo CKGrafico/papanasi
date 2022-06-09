@@ -1,4 +1,5 @@
 import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
+import copy from 'copy-to-clipboard';
 import hljs from 'highlight.js/lib/core';
 import { classesToString } from '../../../helpers';
 import { SharedProps } from '../../../models';
@@ -8,7 +9,9 @@ export type CodeProps = {
   editable: boolean;
   languages: string[];
   theme?: string;
-  links?: { label: string; url: string }[];
+  links?: { label: string; url: string; icon: string }[];
+  canCopy?: boolean;
+  copyLabel?: string;
   onChange?: (text: string) => void;
   onExit?: (text: string) => void;
 } & SharedProps;
@@ -23,6 +26,8 @@ export default function Code(props: CodeProps) {
     classes: '',
     isEditing: false,
     isDark: false,
+    isCopy: true,
+    copyText: 'Copy',
     code: '',
     previewCode: '',
     highlightCode(languages = ['javascript', 'typescript', 'xml', 'css']) {
@@ -35,13 +40,15 @@ export default function Code(props: CodeProps) {
     },
     onLoad() {
       // Cannot move outside because the Refs lost 'this'
-      function setInitialProps(className, children, theme) {
+      function setInitialProps(className, children, theme, canCopy, copyLabel) {
         state.classes = classesToString(['pa-code', className]);
         state.code = children;
         state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
+        state.isCopy = canCopy !== undefined ? canCopy : state.isCopy;
+        state.copyText = copyLabel || state.copyText;
       }
 
-      setInitialProps(props.className, props.children, props.theme);
+      setInitialProps(props.className, props.children, props.theme, props.canCopy, props.copyLabel);
       import('highlight.js/styles/' + (props.theme || 'default') + '.css');
 
       state.highlightCode(props.languages);
@@ -106,10 +113,28 @@ export default function Code(props: CodeProps) {
 
       <div className="pa-code__actions">
         {props.links?.map((link, index) => (
-          <a className="pa-code__action" data-key={index} href={link['url']} target="_blank">
-            {link['label']}
-          </a>
+          <>
+            {link['url'] ? (
+              <a className="pa-code__action" data-key={index} href={link['url']} target="_blank">
+                {link['icon'] && <img className="pa-code__icon" src={link['icon']} alt={link['label']} />}
+                {link['label']}
+              </a>
+            ) : (
+              <span className="pa-code__action pa-code__action--text" data-key={index}>
+                {link['icon'] && <img className="pa-code__icon" src={link['icon']} alt={link['label']} />}
+                {link['label']}
+              </span>
+            )}
+          </>
         ))}
+
+        <>
+          {state.isCopy && (
+            <span className="pa-code__action pa-code__action--copy" onClick={() => copy(state.code)}>
+              {state.copyText}
+            </span>
+          )}
+        </>
       </div>
     </div>
   );

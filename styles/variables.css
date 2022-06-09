@@ -93,6 +93,7 @@
   --pa-font-weight-normal: 400;
   --pa-font-weight-medium: 500;
   --pa-font-weight-bold: 600;
+  --pa-font-weight-black: 700;
 
   /* Grid */
   --pa-grid-gutter: 0.15rem;

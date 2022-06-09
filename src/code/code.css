@@ -56,7 +56,21 @@
   }
 
   &__action {
+    display: flex;
     padding: 0.35rem;
     text-decoration: none;
+
+    &--copy {
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    width: 0.75rem;
+    margin-right: 0.25rem;
+  }
+
+  &__action--text &__icon {
+    margin-right: 0;
   }
 }

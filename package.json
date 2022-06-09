@@ -19,6 +19,7 @@
     "from-package": "lerna publish from-package --force-publish"
   },
   "dependencies": {
+    "copy-to-clipboard": "^3.3.1",
     "highlight.js": "^11.5.1"
   },
   "devDependencies": {
