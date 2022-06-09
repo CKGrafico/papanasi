@@ -37,11 +37,11 @@ This library born as a pet project to create universal components, easy to exten
 ### 📚 Setup and scripts
 
 ```shell
-$ npm install @papanasi/{platform} # ex: @papanasi/react
+$ npm install @papanasi/webcomponents
 ```
 
 ```shell
-$ yarn add @papanasi/{platform} # ex: @papanasi/vue
+$ yarn add @papanasi/webcomponents
 ```
 
 ### 🧩 Platforms 
