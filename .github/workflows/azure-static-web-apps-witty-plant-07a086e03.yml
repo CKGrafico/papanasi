@@ -5,13 +5,13 @@ on:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened]
     branches:
       - main
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
@@ -33,15 +33,20 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           app_location: "/storybook-static" # App source code path
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+  build_pr:
+    if: github.event_name != 'push' || (github.event_name == 'pull_request')
     runs-on: ubuntu-latest
-    name: Close Pull Request Job
+    name: Build PR
     steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
+      - uses: actions/checkout@v2
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_PLANT_07A086E03 }}
-          action: "close"
+          submodules: true
+
+      - name: install, build, test
+        run: |
+          yarn
+          yarn build
+          yarn build-storybook
+          yarn test
+
+     
