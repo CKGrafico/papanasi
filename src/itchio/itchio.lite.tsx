@@ -14,9 +14,9 @@ export type ItchioProps = {
 
 useMetadata({ isAttachedToShadowDom: true });
 
-const global: Window & ExternalLibrary = window;
 export default function Itchio(props: ItchioProps) {
   const actionRef = useRef();
+  const global: Window & ExternalLibrary = window;
 
   const state = useState({
     classes: '',
