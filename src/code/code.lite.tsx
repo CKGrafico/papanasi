@@ -41,7 +41,7 @@ export default function Code(props: CodeProps) {
     onLoad() {
       // Cannot move outside because the Refs lost 'this'
       function setInitialProps(className, children, theme, canCopy, copyLabel) {
-        state.classes = classesToString(['pa-code', className]);
+        state.classes = classesToString(['pa-code', className || '']);
         state.code = children;
         state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
         state.isCopy = canCopy !== undefined ? canCopy : state.isCopy;

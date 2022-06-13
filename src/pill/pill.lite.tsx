@@ -23,7 +23,7 @@ export default function Pill(props: PillProps) {
         [variant, `pa-pill--${variant}`],
         [intent, `is-${intent}`],
         [disabled, 'is-disabled'],
-        className
+        className || ''
       ]);
     };
 

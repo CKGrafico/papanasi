@@ -43,7 +43,7 @@ export default function Itchio(props: ItchioProps) {
 
   onMount(() => {
     const setInitialProps = (className) => {
-      state.classes = classesToString(['pa-itchio', className]);
+      state.classes = classesToString(['pa-itchio', className || '']);
     };
 
     const loadScript = async () => {
