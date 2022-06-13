@@ -113,7 +113,8 @@ function compile(filepath) {
           'customElements.get("pa-$1") || customElements.define("pa-$1", $2);'
         )
         .replace(/class=/g, 'part=')
-        .replace(/el\.setAttribute\("class"/g, 'el.setAttribute("part"');
+        .replace(/el\.setAttribute\("class"/g, 'el.setAttribute("part"')
+        .replace(/el\.className ?= ?\n?(.*);/g, 'el.setAttribute("part",$1);');
       fs.writeFileSync(outFile, result, 'utf8');
     }
   });
