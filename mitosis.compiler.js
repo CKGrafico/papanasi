@@ -54,14 +54,12 @@ function compile(filepath) {
     if (target === 'angular') {
       // Add selector to angular
       const data = fs.readFileSync(outFile, 'utf8');
-      const result = data
-        .replace(
-          /selector: ?["|'](.+)["|']/,
-          `selector: "${
-            !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
-          }[pa-$1]", exportAs: "pa-$1", encapsulation: 2`
-        )
-        .replace(/\@Input\(\) className\: any\;/, '@Input() className: any;\n@Input() children: any;');
+      const result = data.replace(
+        /selector: ?["|'](.+)["|']/,
+        `selector: "${
+          !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
+        }[pa-$1]", exportAs: "pa-$1", encapsulation: 2`
+      );
       fs.writeFileSync(outFile, result, 'utf8');
     }
 
@@ -112,7 +110,7 @@ function compile(filepath) {
           'customElements.get("pa-$1") || customElements.define("pa-$1", $2);'
         )
         .replace(/class=/g, 'part=')
-        .replace(/el\.className ?= ?\n?(.*);/g, 'el.setAttribute("part",$1);');
+        .replace(/el\.setAttribute\("class"/g, 'el.setAttribute("part"');
       fs.writeFileSync(outFile, result, 'utf8');
     }
   });
