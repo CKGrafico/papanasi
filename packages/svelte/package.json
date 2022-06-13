@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/svelte",
-  "version": "0.2.0-9",
+  "version": "0.2.0-10",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
   "main": "./dist/papanasi-svelte.umd.js",
