@@ -105,7 +105,14 @@ function compile(filepath) {
 
       // Make component exportable
       const data = fs.readFileSync(outFile, 'utf8');
-      const result = data.replace(/class /, 'export default class ').replace(/customElements\.define.*/g, '');
+      const result = data
+        .replace(/class /, 'export default class ')
+        .replace(
+          /customElements\.define\("(.*)",(.*)\);/g,
+          'customElements.get("pa-$1") || customElements.define("pa-$1", $2);'
+        )
+        .replace(/class=/g, 'part=')
+        .replace(/el\.className ?= ?\n?(.*);/g, 'el.setAttribute("part",$1);');
       fs.writeFileSync(outFile, result, 'utf8');
     }
   });
