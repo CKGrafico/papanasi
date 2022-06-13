@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/solid",
-  "version": "0.2.0-12",
+  "version": "0.2.0-13",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Solid JS UI Library",
   "main": "./dist/papanasi-solid.umd.js",

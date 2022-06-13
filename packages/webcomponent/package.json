@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/webcomponents",
-  "version": "0.2.0-12",
+  "version": "0.2.0-13",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
   "main": "./dist/papanasi-webcomponents.umd.js",
@@ -17,7 +17,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c && npm run buildStyles",
+    "buildStyles": "replace \"\\.pa-(.*?)((--|__).*?)?(\\.|,|:|{)\" \"pa-$1::part(pa-$1$2)$4\" ./dist -r\""
   },
   "publishConfig": {
     "access": "public"
