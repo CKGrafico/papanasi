@@ -54,12 +54,15 @@ function compile(filepath) {
     if (target === 'angular') {
       // Add selector to angular
       const data = fs.readFileSync(outFile, 'utf8');
-      const result = data.replace(
-        /selector: ?["|'](.+)["|']/,
-        `selector: "${
-          !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
-        }[pa-$1]", exportAs: "pa-$1", encapsulation: 2`
-      );
+      const result = data
+        .replace(
+          /selector: ?["|'](.+)["|']/,
+          `selector: "${
+            !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
+          }[pa-$1]", exportAs: "pa-$1", encapsulation: 2`
+        )
+        .replace(/\@Input\(\) className\: any\;/, '@Input() className: any;\n@Input() children: any;');
+
       fs.writeFileSync(outFile, result, 'utf8');
     }
 
