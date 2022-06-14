@@ -17,7 +17,7 @@ export default function Column(props: ColumnProps) {
     const setInitialProps = (xs, s, m, l, xl, className) => {
       state.classes = classesToString([
         'pa-column',
-        [getBreakpointClasses(xs, s, m, l, xl, 'pa-column--')],
+        getBreakpointClasses(xs, s, m, l, xl, 'pa-column--'),
         className || ''
       ]);
     };
