@@ -9,7 +9,8 @@ export function generateReactCodeSandboxLink(options) {
   const previewCode = `import { ${components.join(', ')} } from '@papanasi/react';
 import '@papanasi/react/dist/papanasi.css';
 
-const App = () => (${code});
+const App = () => (${code}
+);
 `;
 
   const demoCode = `

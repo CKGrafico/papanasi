@@ -6,7 +6,8 @@ export function generateVueCodeSandboxLink(options) {
 
   const html = `<div class="app" id="app"></div>`;
 
-  const previewCode = `<template>${code}</template>
+  const previewCode = `<template>${code}
+</template>
 
 <script>
 import { ${components.join(', ')} } from '@papanasi/vue';
@@ -14,7 +15,7 @@ import '@papanasi/vue/dist/papanasi.css';
 
 export default {
   name: "App",
-  components: { ${components.join(', ')}},
+  components: { ${components.join(', ')} }
 };
 </script>
 

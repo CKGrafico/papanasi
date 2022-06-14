@@ -1,8 +1,8 @@
-import React from 'react';
 import {
   generateAngularCodeSandboxLink,
   generateReactCodeSandboxLink,
-  generateVueCodeSandboxLink
+  generateVueCodeSandboxLink,
+  generateWebCodeSandboxLink
 } from '../../helpers';
 import { Code } from '../../packages/react';
 
@@ -28,7 +28,7 @@ const generators = {
   [CodesandboxPlatform.Solid]: generateReactCodeSandboxLink,
   [CodesandboxPlatform.Svelte]: generateReactCodeSandboxLink,
   [CodesandboxPlatform.Vue]: generateVueCodeSandboxLink,
-  [CodesandboxPlatform.WebComponents]: generateReactCodeSandboxLink
+  [CodesandboxPlatform.WebComponents]: generateWebCodeSandboxLink
 };
 
 const icons = {

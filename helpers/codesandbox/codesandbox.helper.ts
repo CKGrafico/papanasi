@@ -29,6 +29,7 @@ export function generateCodeSandboxLink(options) {
 }
 
 .footer {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.8rem;
   justify-content: flex-end;
   margin-top: 1rem;

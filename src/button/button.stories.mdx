@@ -99,8 +99,7 @@ You can customize variants changing the variables, more info in the [variables p
   components={['Button']}
   platform="angular"
   code={`
-    <span pa-button variant="primary" outline="true">Primary</span>
-  `}
+    <span pa-button variant="primary" outline="true">Primary</span>`}
 />
 
 ### React
@@ -111,8 +110,7 @@ You can customize variants changing the variables, more info in the [variables p
   code={`
     <Button variant="primary" outline>
       Primary
-    </Button>
-  `}
+    </Button>`}
 />
 
 ### Vue
@@ -121,18 +119,13 @@ You can customize variants changing the variables, more info in the [variables p
   components={['Button']}
   platform="vue"
   code={`
-    <Button variant="primary" :outline="true">Primary</Button>
-  `}
+    <Button variant="primary" :outline="true">Primary</Button>`}
 />
 
 ### Web Components
 
-```js
-import { Button } from '@papanasi/webcomponents';
-import '@papanasi/webcomponents/dist/papanasi.css';
-customElements.get('pa-button') || customElements.define('pa-button', Button);
-```
-
-```html
-<pa-button variant="primary" outline>Primary</pa-button>
-```
+<Codesandbox
+  components={['Button']}
+  platform="webcomponents"
+  code={`<pa-button variant="primary" outline="true">Primary</pa-button>`}
+/>
