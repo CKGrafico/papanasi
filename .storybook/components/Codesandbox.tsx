@@ -25,8 +25,26 @@ type CodesandboxProps = {
 const generators = {
   [CodesandboxPlatform.Angular]: generateAngularCodeSandboxLink,
   [CodesandboxPlatform.React]: generateReactCodeSandboxLink,
-  [CodesandboxPlatform.Solid]: generateReactCodeSandboxLink,
-  [CodesandboxPlatform.Svelte]: generateReactCodeSandboxLink,
+  [CodesandboxPlatform.Solid]: ({ code, components }) => ({
+    url: null,
+    content: `import { Component } from "solid-js";
+import { ${components.join(', ')} } from "@papanasi/solid";
+import "@papanasi/solid/dist/papanasi.css";
+
+const App: Component = () => {
+  return (${code});
+};
+  `.trim()
+  }),
+  [CodesandboxPlatform.Svelte]: ({ code, components }) => ({
+    url: null,
+    content: `<script>
+  import {${components.join(', ')} } from "@papanasi/svelte";
+  import "@papanasi/svelte/dist/papanasi.css";
+</script>
+${code}
+  `.trim()
+  }),
   [CodesandboxPlatform.Vue]: generateVueCodeSandboxLink,
   [CodesandboxPlatform.WebComponents]: generateWebCodeSandboxLink
 };
@@ -55,12 +73,12 @@ export function Codesandbox(props: CodesandboxProps) {
           {
             icon
           },
-          {
+          url && {
             label: 'Sandbox',
             icon: 'https://raw.githubusercontent.com/gilbarbara/logos/master/logos/codesandbox.svg',
             url
           }
-        ]}
+        ].filter((x) => x)}
       >
         {content}
       </Code>
