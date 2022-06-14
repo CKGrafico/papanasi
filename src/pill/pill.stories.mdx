@@ -69,8 +69,7 @@ There are 3 different variants `primary`, `secondary` and `tertiary` or the one 
   components={['Pill']}
   platform="angular"
   code={`
-    <pill variant="primary">Primary</pill>
-  `}
+    <pill variant="primary">Primary</pill>`}
 />
 
 ### React
@@ -79,36 +78,36 @@ There are 3 different variants `primary`, `secondary` and `tertiary` or the one 
   components={['Pill']}
   platform="react"
   code={`
-    <Pill variant="primary">Primary</Pill>
-  `}
+    <Pill variant="primary">Primary</Pill>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Pill']}
+  platform="solid"
+  code={`
+    <Pill variant="primary">Primary</Pill>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Pill']}
+  platform="svelte"
+  code={`
+    <Pill variant="primary">Primary</Pill>`}
 />
 
 ### Vue
 
-```js
-<script lang="ts">
-import { Pill } from "@papanasi/vue";
-import "@papanasi/vue/dist/papanasi.css";
-export default {
-  name: "App",
-  components: {
-    Pill,
-  },
-};
-</script>
-<template>
-  <Pill variant="primary">Primary</Pill>
-</template>
-```
+<Codesandbox
+  components={['Pill']}
+  platform="vue"
+  code={`
+    <Pill variant="primary">Primary</Pill>`}
+/>
 
 ### Web Components
 
-```js
-import { Pill } from '@papanasi/webcomponents';
-import '@papanasi/webcomponents/dist/papanasi.css';
-customElements.get('pa-pill') || customElements.define('pa-pill', Pill);
-```
-
-```html
-<pa-pill variant="primary">Primary</pa-pill>
-```
+<Codesandbox components={['Pill']} platform="webcomponents" code={`<pa-pill variant="primary">Primary</pa-pill>`} />

@@ -105,8 +105,7 @@ The Code component is created to highlight code blocks in your application, is a
   platform="angular"
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
-     <div pa-code editable="true" languages={['javascript']} theme="a11y-dark">const name = 'component';</div>
-  `}
+     <div pa-code editable="true" languages={['javascript']} theme="a11y-dark">const name = 'component';</div>`}
 />
 
 ### React
@@ -116,36 +115,44 @@ The Code component is created to highlight code blocks in your application, is a
   platform="react"
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
-     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>
-  `}
+     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Code']}
+  platform="solid"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Code']}
+  platform="svelte"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
 />
 
 ### Vue
 
-```js
-<script lang="ts">
-import { Code } from "@papanasi/vue";
-import "@papanasi/vue/dist/papanasi.css";
-export default {
-  name: "App",
-  components: {
-    Code,
-  },
-};
-</script>
-<template>
-  <Code :editable="true">const name = 'component';</Code>
-</template>
-```
+<Codesandbox
+  components={['Code']}
+  platform="vue"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+     <Code :editable="true" :languages="['javascript']" theme="a11y-dark">const name = 'component';</Code>`}
+/>
 
 ### Web Components
 
-```js
-import { Code } from '@papanasi/webcomponents';
-import '@papanasi/webcomponents/dist/papanasi.css';
-customElements.get('pa-code') || customElements.define('pa-code', Code);
-```
-
-```html
-<pa-code editable>const name = 'component';</pa-code>
-```
+<Codesandbox
+  components={['Code']}
+  platform="webcomponents"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`<pa-code editable="true" languages="['javascript']" theme="a11y-dark">const name = 'component';</pa-code>`}
+/>

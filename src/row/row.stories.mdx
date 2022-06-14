@@ -58,8 +58,7 @@ The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`,
   components={['Row']}
   platform="angular"
   code={`
-    <row m="column" l="row"> Your content </row>
-  `}
+    <row m="column" l="row"> Your content </row>`}
 />
 
 ### React
@@ -70,36 +69,40 @@ The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`,
   code={`
     <Row m="column" l="row">
       Your content
-    </Row>
-  `}
+    </Row>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Row']}
+  platform="solid"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Row']}
+  platform="svelte"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
 />
 
 ### Vue
 
-```js
-<script>
-import { Row } from "@papanasi/vue";
-import "@papanasi/vue/dist/papanasi.css";
-export default {
-  name: "App",
-  components: {
-    Row,
-  },
-};
-</script>
-<template>
-  <Row m="column" l="row">Your Content</Row>
-</template>
-```
+<Codesandbox
+  components={['Row']}
+  platform="vue"
+  code={`
+    <Row m="column" l="row">Your Content</Row>`}
+/>
 
 ### Web Components
 
-```js
-import { Row } from '@papanasi/webcomponents';
-import '@papanasi/webcomponents/dist/papanasi.css';
-customElements.get('pa-row') || customElements.define('pa-row', Row);
-```
-
-```html
-<pa-row m="column" l="row">Your content</pa-row>
-```
+<Codesandbox components={['Row']} platform="webcomponents" code={`<pa-row m="column" l="row">Your content</pa-row>`} />

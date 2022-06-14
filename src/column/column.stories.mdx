@@ -78,8 +78,7 @@ The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, 
   components={['Column']}
   platform="angular"
   code={`
-    <column m="2" l="fill">Your content</column>
-  `}
+    <column m="2" l="fill">Your content</column>`}
 />
 
 ### React
@@ -90,36 +89,40 @@ The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, 
   code={`
     <Column m="2" l="fill">
       Your content
-    </Column>
-  `}
+    </Column>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Column']}
+  platform="solid"
+  code={`
+    <Column m="2" l="fill">
+      Your content
+    </Column>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Column']}
+  platform="svelte"
+  code={`
+    <Column m="2" l="fill">
+      Your content
+    </Column>`}
 />
 
 ### Vue
 
-```js
-<script>
-import { Column } from "@papanasi/vue";
-import "@papanasi/vue/dist/papanasi.css";
-export default {
-  name: "App",
-  components: {
-    Column,
-  },
-};
-</script>
-<template>
-  <Column m="2" l="fill">Your Content</Column>
-</template>
-```
+<Codesandbox
+  components={['Column']}
+  platform="vue"
+  code={`
+    <Column m="2" l="fill">Your Content</Column>`}
+/>
 
 ### Web Components
 
-```js
-import { Column } from '@papanasi/webcomponents';
-import '@papanasi/webcomponents/dist/papanasi.css';
-customElements.get('pa-column') || customElements.define('pa-column', Column);
-```
-
-```html
-<pa-row m="2" l="fill">Your content</pa-row>
-```
+<Codesandbox components={['Column']} platform="webcomponents" code={`<pa-row m="2" l="fill">Your content</pa-row>`} />

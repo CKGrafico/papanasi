@@ -50,8 +50,7 @@ TODO
   components={['Itchio']}
   platform="angular"
   code={`
-    <itchio user="ckgrafico" game="alice-ring"><span>Click me</span></itchio>
-  `}
+    <itchio user="ckgrafico" game="alice-ring"><span>Click me</span></itchio>`}
 />
 
 ### React
@@ -60,36 +59,42 @@ TODO
   components={['Itchio']}
   platform="react"
   code={`
-    <Itchio user="ckgrafico" game="alice-ring"><span>Click me</span></Itchio>
-  `}
+    <Itchio user="ckgrafico" game="alice-ring"><span>Click me</span></Itchio>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Itchio']}
+  platform="solid"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"><span>Click me</span></Itchio>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Itchio']}
+  platform="svelte"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"><span>Click me</span></Itchio>`}
 />
 
 ### Vue
 
-```js
-<script lang="ts">
-import { Itchio } from "@papanasi/vue";
-import "@papanasi/vue/dist/papanasi.css";
-export default {
-  name: "App",
-  components: {
-    Itchio,
-  },
-};
-</script>
-<template>
-  <Itchio></Itchio>
-</template>
-```
+<Codesandbox
+  components={['Itchio']}
+  platform="vue"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"><span>Click me</span></Itchio>`}
+/>
 
 ### Web Components
 
-```js
-import { Itchio } from '@papanasi/webcomponents';
-import '@papanasi/webcomponents/dist/papanasi.css';
-customElements.get('pa-itchio') || customElements.define('pa-itchio', Itchio);
-```
-
-```html
-<pa-itchio></pa-itchio>
-```
+<Codesandbox
+  components={['Itchio']}
+  platform="webcomponents"
+  code={`<pa-itchio user="ckgrafico" game="alice-ring">
+  <span>Click me</span>
+</pa-itchio>`}
+/>

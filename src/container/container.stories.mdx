@@ -63,8 +63,7 @@ Containers are the most simple element from layout category, are use to contain 
   components={['Container']}
   platform="angular"
   code={`
-    <container fluid="true">Your content</container>
-  `}
+    <container fluid="true">Your content</container>`}
 />
 
 ### React
@@ -73,36 +72,40 @@ Containers are the most simple element from layout category, are use to contain 
   components={['Container']}
   platform="react"
   code={`
-    <Container fluid>Your content</Container>
-  `}
+    <Container fluid>Your content</Container>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Container']}
+  platform="solid"
+  code={`
+    <Container fluid>Your content</Container>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Container']}
+  platform="svelte"
+  code={`
+    <Container fluid>Your content</Container>`}
 />
 
 ### Vue
 
-```js
-<script>
-import { Container } from "@papanasi/vue";
-import "@papanasi/vue/dist/papanasi.css";
-export default {
-  name: "App",
-  components: {
-    Container,
-  },
-};
-</script>
-<template>
-  <Container :fluid="true">Your Content</Container>
-</template>
-```
+<Codesandbox
+  components={['Container']}
+  platform="vue"
+  code={`
+    <Container :fluid="true">Your Content</Container>`}
+/>
 
 ### Web Components
 
-```js
-import { Container } from '@papanasi/webcomponents';
-import '@papanasi/webcomponents/dist/papanasi.css';
-customElements.get('pa-container') || customElements.define('pa-container', Container);
-```
-
-```html
-<pa-container fluid>Your content</pa-container>
-```
+<Codesandbox
+  components={['Container']}
+  platform="webcomponents"
+  code={`<pa-container fluid="true">Your content</pa-container>`}
+/>
