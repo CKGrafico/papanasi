@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/webcomponents",
-  "version": "0.2.0-18",
+  "version": "0.2.0-19",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
   "main": "./dist/papanasi-webcomponents.umd.js",
@@ -19,9 +19,10 @@
   "scripts": {
     "build": "run-s build:**",
     "build:code": "rollup -c",
-    "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2)$4\" ./dist -r",
-    "build:styles-two-classes": "replace \"pa-(.*?)\\.(.*?)::part\\((.*?)\\.(.*)\\)\" \"pa-$1::part($3 $4)\" ./dist -r",
-    "build:styles-extra-classes": "replace \"::part\\((.*?)\\.(.*?)\\)\" \"::part($1 $2)\" ./dist -r"
+    "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\"",
+    "build:styles-classes-css": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.css\"",
+    "build:styles-classes-states": "replace \"(::part\\(.*?)\\.(pa-|is-|has-)(.*?)(\\))\" \"$1 $2$3$4\" ./dist -r --include=\"*.css\"",
+    "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\""
   },
   "publishConfig": {
     "access": "public"
