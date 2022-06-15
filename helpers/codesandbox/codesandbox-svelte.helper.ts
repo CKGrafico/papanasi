@@ -11,7 +11,6 @@ import { ${components.join(', ')} } from '@papanasi/svelte';
 import "@papanasi/svelte/dist/papanasi.css";
 import "./index.css";
 </script>
-
 ${code}
 `;
 

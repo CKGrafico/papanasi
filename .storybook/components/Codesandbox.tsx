@@ -1,6 +1,7 @@
 import {
   generateAngularCodeSandboxLink,
   generateReactCodeSandboxLink,
+  generateSolidCodeSandboxLink,
   generateSvelteCodeSandboxLink,
   generateVueCodeSandboxLink,
   generateWebCodeSandboxLink
@@ -26,17 +27,7 @@ type CodesandboxProps = {
 const generators = {
   [CodesandboxPlatform.Angular]: generateAngularCodeSandboxLink,
   [CodesandboxPlatform.React]: generateReactCodeSandboxLink,
-  [CodesandboxPlatform.Solid]: ({ code, components }) => ({
-    url: null,
-    content: `import { Component } from "solid-js";
-import { ${components.join(', ')} } from "@papanasi/solid";
-import "@papanasi/solid/dist/papanasi.css";
-
-const App: Component = () => {
-  return (${code});
-};
-  `.trim()
-  }),
+  [CodesandboxPlatform.Solid]: generateSolidCodeSandboxLink,
   [CodesandboxPlatform.Svelte]: generateSvelteCodeSandboxLink,
   [CodesandboxPlatform.Vue]: generateVueCodeSandboxLink,
   [CodesandboxPlatform.WebComponents]: generateWebCodeSandboxLink

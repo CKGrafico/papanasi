@@ -12,11 +12,12 @@ export function generateCodeSandboxLink(options) {
     devDependencies,
     packageJson,
     isTypescript = false,
+    isJSX = false,
     extraFiles = null,
     publicFolder = ''
   } = options;
 
-  const indexName = `index.${isTypescript ? 'ts' : 'js'}`;
+  const indexName = `index.${isTypescript ? 'ts' : 'js'}` + (isJSX ? `x` : ``);
   const indexHTMLFolder = `${publicFolder}index.html`;
 
   const css = `
