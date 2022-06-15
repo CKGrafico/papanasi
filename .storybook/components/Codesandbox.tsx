@@ -1,6 +1,7 @@
 import {
   generateAngularCodeSandboxLink,
   generateReactCodeSandboxLink,
+  generateSvelteCodeSandboxLink,
   generateVueCodeSandboxLink,
   generateWebCodeSandboxLink
 } from '../../helpers';
@@ -36,15 +37,7 @@ const App: Component = () => {
 };
   `.trim()
   }),
-  [CodesandboxPlatform.Svelte]: ({ code, components }) => ({
-    url: null,
-    content: `<script>
-  import { ${components.join(', ')} } from "@papanasi/svelte";
-  import "@papanasi/svelte/dist/papanasi.css";
-</script>
-${code}
-  `.trim()
-  }),
+  [CodesandboxPlatform.Svelte]: generateSvelteCodeSandboxLink,
   [CodesandboxPlatform.Vue]: generateVueCodeSandboxLink,
   [CodesandboxPlatform.WebComponents]: generateWebCodeSandboxLink
 };
