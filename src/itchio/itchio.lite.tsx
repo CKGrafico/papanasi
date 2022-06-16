@@ -80,9 +80,9 @@ export default function Itchio(props: ItchioProps) {
 
   return (
     <div className={state.classes}>
-      {!state.gameInfo ? (
-        <span>Loading...</span>
-      ) : (
+      {!state.gameInfo && <span>Loading...</span>}
+
+      {state.gameInfo && (
         <div className="pa-itchio__container">
           <img className="pa-itchio__image" src={state.gameInfo.cover_image}></img>
           <div className="pa-itchio__info">
