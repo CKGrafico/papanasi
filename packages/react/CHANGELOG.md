@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-22](https://github.com/CKGrafico/papanasi/compare/v0.2.0-21...v0.2.0-22) (2022-06-19)
+
+**Note:** Version bump only for package @papanasi/react
+
+
+
+
+
+
 # [0.2.0-21](https://github.com/CKGrafico/papanasi/compare/v0.2.0-20...v0.2.0-21) (2022-06-16)
 
 **Note:** Version bump only for package @papanasi/react
