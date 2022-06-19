@@ -1,4 +1,4 @@
-import { onMount, onUpdate, useMetadata, useRef, useState } from '@builder.io/mitosis';
+import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
 import { addScript, classesToString, waitUntilTrue } from '../../../helpers';
 import { ExternalLibrary, SharedProps } from '../../../models';
 import './itchio.css';
@@ -20,7 +20,6 @@ export default function Itchio(props: ItchioProps) {
 
   const state = useState({
     classes: '',
-    isScriptLoaded: false,
     isLoadingGameInfo: false,
     gameInfo: null,
     attachButton() {
@@ -41,16 +40,10 @@ export default function Itchio(props: ItchioProps) {
     const loadScript = async () => {
       await addScript('https://static.itch.io/api.js', 'itchio');
       await waitUntilTrue(() => global.Itch);
-      state.isScriptLoaded = true;
     };
 
-    setInitialProps(props.className);
-    loadScript();
-  });
-
-  onUpdate(() => {
     const onLoadScript = () => {
-      if (!state.isScriptLoaded || state.isLoadingGameInfo) {
+      if (state.isLoadingGameInfo) {
         return;
       }
 
@@ -68,8 +61,14 @@ export default function Itchio(props: ItchioProps) {
       });
     };
 
-    onLoadScript();
-  }, [state.isScriptLoaded]);
+    const load = async () => {
+      await loadScript();
+      await onLoadScript();
+    };
+
+    setInitialProps(props.className);
+    load();
+  });
 
   return (
     <div className={state.classes}>
