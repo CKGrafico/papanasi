@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-24](https://github.com/CKGrafico/papanasi/compare/v0.2.0-23...v0.2.0-24) (2022-06-19)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
 # [0.2.0-23](https://github.com/CKGrafico/papanasi/compare/v0.2.0-22...v0.2.0-23) (2022-06-19)
 
 **Note:** Version bump only for package @papanasi/angular
