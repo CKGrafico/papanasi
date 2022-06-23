@@ -1,6 +1,5 @@
 const commonjs = require('@rollup/plugin-commonjs');
 const resolve = require('@rollup/plugin-node-resolve');
-const dynamicImportVars = require('@rollup/plugin-dynamic-import-vars').default;
 const babel = require('@rollup/plugin-babel').default;
 const path = require('path');
 const typescript = require('rollup-plugin-ts');
@@ -36,7 +35,6 @@ module.exports = (options) => {
       plugins: [
         ...plugins,
         resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
-        dynamicImportVars(),
         json(),
         typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
         babel({

@@ -1,5 +1,6 @@
 import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
 import copy from 'copy-to-clipboard';
+import hljs from 'highlight.js/lib/core';
 import { classesToString, getObjectValue } from '../../../helpers';
 import { SharedProps } from '../../../models';
 import './code.css';
@@ -7,7 +8,7 @@ import './code.css';
 export type CodeProps = {
   editable: boolean;
   languages: string[];
-  theme?: string;
+  theme?: string; // TODO: dynamic themes
   links?: { label: string; url: string; icon: string }[];
   canCopy?: boolean;
   copyLabel?: string;
@@ -30,10 +31,10 @@ export default function Code(props: CodeProps) {
     code: '',
     previewCode: '',
     highlightCode(languages = ['javascript', 'typescript', 'xml', 'css']) {
-      const loadAndHighlight = async () => {
-        for (const language of languages) {
-          hljs.registerLanguage(language, await import('highlight.js/lib/languages/' + language));
-        }
+      const loadAndHighlight = () => {
+        languages.forEach((language) =>
+          hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language))
+        );
 
         const nodes = previewRef.querySelectorAll('pre code');
         nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
@@ -78,14 +79,13 @@ export default function Code(props: CodeProps) {
     const setInitialProps = (className, children, theme, canCopy, copyLabel) => {
       state.classes = classesToString(['pa-code', className || '']);
       state.code = children;
+      state.previewCode = children;
       state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
       state.isCopy = canCopy !== undefined ? canCopy : state.isCopy;
       state.copyText = copyLabel || state.copyText;
     };
 
     setInitialProps(props.className, props.children, props.theme, props.canCopy, props.copyLabel);
-    import('highlight.js/styles/' + (props.theme || 'default') + '.css');
-
     state.highlightCode(props.languages);
   });
 
@@ -96,7 +96,7 @@ export default function Code(props: CodeProps) {
         ref={previewRef}
         onClick={() => state.onClick()}
       >
-        <code className={'pa-code__preview-block'}>{state.previewCode || props.children}</code>
+        <code className={'pa-code__preview-block'}>{state.previewCode}</code>
       </pre>
 
       <pre

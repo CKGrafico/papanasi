@@ -73,7 +73,9 @@ export default function Itchio(props: ItchioProps) {
   return (
     <div className={state.classes}>
       <div className="pa-itchio__container">
-        {state.gameInfo && <img className="pa-itchio__image" src={state.gameInfo.cover_image}></img>}
+        {state.gameInfo && (
+          <img className="pa-itchio__image" alt={state.gameInfo.title} src={state.gameInfo.cover_image}></img>
+        )}
         <div className="pa-itchio__info">
           {state.gameInfo && (
             <div className="pa-itchio__texts">
