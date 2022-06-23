@@ -1,6 +1,5 @@
 import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
 import copy from 'copy-to-clipboard';
-import hljs from 'highlight.js/lib/core';
 import { classesToString, getObjectValue } from '../../../helpers';
 import { SharedProps } from '../../../models';
 import './code.css';
@@ -31,12 +30,16 @@ export default function Code(props: CodeProps) {
     code: '',
     previewCode: '',
     highlightCode(languages = ['javascript', 'typescript', 'xml', 'css']) {
-      languages.forEach((language) =>
-        hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language))
-      );
+      const loadAndHighlight = async () => {
+        for (const language of languages) {
+          hljs.registerLanguage(language, await import('highlight.js/lib/languages/' + language));
+        }
 
-      const nodes = previewRef.querySelectorAll('pre code');
-      nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
+        const nodes = previewRef.querySelectorAll('pre code');
+        nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
+      };
+
+      loadAndHighlight();
     },
     onClick() {
       if (!props.editable) {
