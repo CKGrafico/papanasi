@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-39](https://github.com/CKGrafico/papanasi/compare/v0.2.0-38...v0.2.0-39) (2022-06-23)
+
+**Note:** Version bump only for package @papanasi/vue
+
+
+
+
+
 # [0.2.0-38](https://github.com/CKGrafico/papanasi/compare/v0.2.0-37...v0.2.0-38) (2022-06-23)
 
 **Note:** Version bump only for package @papanasi/vue
