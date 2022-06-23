@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-34](https://github.com/CKGrafico/papanasi/compare/v0.2.0-33...v0.2.0-34) (2022-06-23)
+
+**Note:** Version bump only for package @papanasi/solid
+
+
+
+
+
 # [0.2.0-33](https://github.com/CKGrafico/papanasi/compare/v0.2.0-32...v0.2.0-33) (2022-06-23)
 
 **Note:** Version bump only for package @papanasi/solid
