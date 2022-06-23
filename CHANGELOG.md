@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-44](https://github.com/CKGrafico/papanasi/compare/v0.2.0-43...v0.2.0-44) (2022-06-23)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
 # [0.2.0-43](https://github.com/CKGrafico/papanasi/compare/v0.2.0-42...v0.2.0-43) (2022-06-23)
 
 **Note:** Version bump only for package papanasi
