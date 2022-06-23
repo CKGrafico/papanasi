@@ -37,6 +37,7 @@ export default function Code(props: CodeProps) {
         );
 
         const nodes = previewRef.querySelectorAll('pre code');
+        debugger;
         nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
       };
 
@@ -96,7 +97,7 @@ export default function Code(props: CodeProps) {
         ref={previewRef}
         onClick={() => state.onClick()}
       >
-        <code className={'pa-code__preview-block'}>{state.previewCode}</code>
+        <code className={'pa-code__preview-block'}>{state.previewCode || props.children}</code>
       </pre>
 
       <pre
