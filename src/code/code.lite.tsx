@@ -1,7 +1,7 @@
 import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
 import copy from 'copy-to-clipboard';
 import hljs from 'highlight.js/lib/core';
-import { classesToString } from '../../../helpers';
+import { classesToString, getObjectValue } from '../../../helpers';
 import { SharedProps } from '../../../models';
 import './code.css';
 
@@ -38,21 +38,6 @@ export default function Code(props: CodeProps) {
       const nodes = previewRef.querySelectorAll('pre code');
       nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
     },
-    onLoad() {
-      // Cannot move outside because the Refs lost 'this'
-      function setInitialProps(className, children, theme, canCopy, copyLabel) {
-        state.classes = classesToString(['pa-code', className || '']);
-        state.code = children;
-        state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
-        state.isCopy = canCopy !== undefined ? canCopy : state.isCopy;
-        state.copyText = copyLabel || state.copyText;
-      }
-
-      setInitialProps(props.className, props.children, props.theme, props.canCopy, props.copyLabel);
-      import('highlight.js/styles/' + (props.theme || 'default') + '.css');
-
-      state.highlightCode(props.languages);
-    },
     onClick() {
       if (!props.editable) {
         return;
@@ -80,10 +65,26 @@ export default function Code(props: CodeProps) {
       if (props.onChange) {
         props.onChange(codeRef.innerText);
       }
+    },
+    value(x, y) {
+      return getObjectValue(x, y);
     }
   });
 
-  onMount(() => state.onLoad());
+  onMount(() => {
+    const setInitialProps = (className, children, theme, canCopy, copyLabel) => {
+      state.classes = classesToString(['pa-code', className || '']);
+      state.code = children;
+      state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
+      state.isCopy = canCopy !== undefined ? canCopy : state.isCopy;
+      state.copyText = copyLabel || state.copyText;
+    };
+
+    setInitialProps(props.className, props.children, props.theme, props.canCopy, props.copyLabel);
+    import('highlight.js/styles/' + (props.theme || 'default') + '.css');
+
+    state.highlightCode(props.languages);
+  });
 
   return (
     <div className={state.classes}>
@@ -114,15 +115,19 @@ export default function Code(props: CodeProps) {
       <div className="pa-code__actions">
         {props.links?.map((link, index) => (
           <>
-            {link['url'] ? (
-              <a className="pa-code__action" data-key={index} href={link['url']} target="_blank">
-                {link['icon'] && <img className="pa-code__icon" src={link['icon']} alt={link['label']} />}
-                {link['label']}
+            {state.value(link, 'url') ? (
+              <a className="pa-code__action" data-key={index} href={state.value(link, 'url')} target="_blank">
+                {state.value(link, 'icon') && (
+                  <img className="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
+                )}
+                {state.value(link, 'label')}
               </a>
             ) : (
               <span className="pa-code__action pa-code__action--text" data-key={index}>
-                {link['icon'] && <img className="pa-code__icon" src={link['icon']} alt={link['label']} />}
-                {link['label']}
+                {state.value(link, 'icon') && (
+                  <img className="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
+                )}
+                {state.value(link, 'label')}
               </span>
             )}
           </>
