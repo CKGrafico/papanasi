@@ -61,7 +61,6 @@ function compile(filepath) {
             !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
           }[pa-$1]", exportAs: "pa-$1", encapsulation: 2`
         )
-
         .replace(/(,\n)?(\} from \"\@angular\/core\"\;)/, ', ContentChildren, QueryList $2')
         .replace(
           /\@Input\(\) className\: any\;/,
@@ -96,6 +95,13 @@ function compile(filepath) {
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
 
+    if (target === 'svelte') {
+      const data = fs.readFileSync(outFile, 'utf8');
+      const result = data.replace(/children/g, '$$$slots');
+
+      fs.writeFileSync(outFile, result, 'utf8');
+    }
+
     if (target === 'vue' && isFirstCompilation) {
       // Add .vue to index
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
@@ -104,6 +110,13 @@ function compile(filepath) {
         .replace(/\.css\.vue/g, '.css')
         .replace(/helpers\.vue/g, 'helpers');
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
+    }
+
+    if (target === 'vue') {
+      const data = fs.readFileSync(outFile, 'utf8');
+      const result = data.replace(/this\.children/, 'this.$slots.default()');
+
+      fs.writeFileSync(outFile, result, 'utf8');
     }
 
     if (target === 'webcomponent') {
