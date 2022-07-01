@@ -31,7 +31,7 @@ import { Customization, Codesandbox } from '../../.storybook/components';
 export const Template = (args) => (
   <div>
     <Tabs>
-      <Tab {...args} slotTitle={<div>Tab 1</div>}>
+      <Tab {...args} isActive slotTitle={<div>Tab 1</div>}>
         I'm the content of the first tab
       </Tab>
       <Tab {...args} slotTitle={<div>Tab 2</div>}>
@@ -89,8 +89,8 @@ TODO
   platform="angular"
   code={`
 <tabs>
-  <tab>1</tab>
-  <tab>2</tab>
+  <tab #child>1</tab>
+  <tab #child>2</tab>
 </tabs>`}
 />
 

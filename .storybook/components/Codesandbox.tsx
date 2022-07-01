@@ -59,13 +59,12 @@ export function Codesandbox(props: CodesandboxProps) {
           },
           url && {
             label: 'Sandbox',
-            icon: 'https://raw.githubusercontent.com/gilbarbara/logos/master/logos/codesandbox.svg',
+            icon: 'https://raw.githubusercontent.com/gilbarbara/logos/master/logos/codesandbox-icon.svg',
             url
           }
         ].filter((x) => x)}
-      >
-        {content}
-      </Code>
+        code={content}
+      />
     </div>
   );
 }

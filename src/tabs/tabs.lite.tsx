@@ -18,6 +18,13 @@ export default function Tabs(props: TabsProps) {
       state.classes = classesToString(['pa-tabs', className || '']);
     };
 
+    const setTabsConfiguration = (children) => {
+      console.log(children.map((x) => x));
+      debugger;
+    };
+
+    // Virtual AfterContentInit
+    setTimeout(() => setTabsConfiguration(props.children), 10);
     setInitialProps(props.className);
   });
 
