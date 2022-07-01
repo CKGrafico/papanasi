@@ -1,4 +1,4 @@
-import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
+import { onMount, useMetadata, useRef, useState, Show, For } from '@builder.io/mitosis';
 import copy from 'copy-to-clipboard';
 import hljs from 'highlight.js/lib/core';
 import { classesToString, getObjectValue } from '../../../helpers';
@@ -38,7 +38,6 @@ export default function Code(props: CodeProps) {
         );
 
         const nodes = previewRef.querySelectorAll('pre code');
-        debugger;
         nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
       };
 
@@ -118,33 +117,35 @@ export default function Code(props: CodeProps) {
       </pre>
 
       <div className="pa-code__actions">
-        {props.links?.map((link, index) => (
-          <>
-            {state.value(link, 'url') ? (
-              <a className="pa-code__action" data-key={index} href={state.value(link, 'url')} target="_blank">
-                {state.value(link, 'icon') && (
-                  <img className="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
-                )}
-                {state.value(link, 'label')}
-              </a>
-            ) : (
-              <span className="pa-code__action pa-code__action--text" data-key={index}>
-                {state.value(link, 'icon') && (
-                  <img className="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
-                )}
-                {state.value(link, 'label')}
-              </span>
-            )}
-          </>
-        ))}
+        <For each={props.links}>
+          {(link, index) => (
+            <>
+              <Show when={state.value(link, 'url')}>
+                <a className="pa-code__action" data-key={index} href={state.value(link, 'url')} target="_blank">
+                  {state.value(link, 'icon') && (
+                    <img className="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
+                  )}
+                  {state.value(link, 'label')}
+                </a>
+              </Show>
 
-        <>
-          {state.isCopy && (
-            <span className="pa-code__action pa-code__action--copy" onClick={() => copy(state.rawCode)}>
-              {state.copyText}
-            </span>
+              <Show when={!state.value(link, 'url')}>
+                <span className="pa-code__action pa-code__action--text" data-key={index}>
+                  {state.value(link, 'icon') && (
+                    <img className="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
+                  )}
+                  {state.value(link, 'label')}
+                </span>
+              </Show>
+            </>
           )}
-        </>
+        </For>
+
+        <Show when={state.isCopy}>
+          <span className="pa-code__action pa-code__action--copy" onClick={() => copy(state.rawCode)}>
+            {state.copyText}
+          </span>
+        </Show>
       </div>
     </div>
   );

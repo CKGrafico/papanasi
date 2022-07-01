@@ -1,4 +1,4 @@
-import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
+import { onMount, useMetadata, useRef, useState, Show } from '@builder.io/mitosis';
 import { addScript, classesToString, waitUntilTrue } from '../../../helpers';
 import { ExternalLibrary, SharedProps } from '../../../models';
 import './itchio.css';
@@ -73,19 +73,27 @@ export default function Itchio(props: ItchioProps) {
   return (
     <div className={state.classes}>
       <div className="pa-itchio__container">
-        {state.gameInfo && (
+        <Show when={state.gameInfo}>
           <img className="pa-itchio__image" alt={state.gameInfo.title} src={state.gameInfo.cover_image}></img>
-        )}
+        </Show>
         <div className="pa-itchio__info">
-          {state.gameInfo && (
+          <Show when={state.gameInfo}>
             <div className="pa-itchio__texts">
               <span className="pa-itchio__title">{state.gameInfo.title}</span>
               <span className="pa-itchio__price">{state.gameInfo.price}</span>
             </div>
-          )}
+          </Show>
+
           <span className="pa-itchio__children" ref={actionRef}>
-            {!state.gameInfo && <span>Loading...</span>}
-            {state.gameInfo && <span>{props.children}</span>}
+            <Show when={state.gameInfo}>
+              <span>{props.children}</span>
+            </Show>
+
+            <Show when={!state.gameInfo}>
+              <span>
+                <span>Loading...</span>
+              </span>
+            </Show>
           </span>
         </div>
       </div>

@@ -30,9 +30,13 @@ import { Customization, Codesandbox } from '../../.storybook/components';
 
 export const Template = (args) => (
   <div>
-    <Tabs {...args}>
-      <Tab slotTitle={<div>Tab 1</div>}>I'm the content of the first tab</Tab>
-      <Tab slotTitle={<div>Tab 2</div>}>This is the other tab</Tab>
+    <Tabs>
+      <Tab {...args} slotTitle={<div>Tab 1</div>}>
+        I'm the content of the first tab
+      </Tab>
+      <Tab {...args} slotTitle={<div>Tab 2</div>}>
+        This is the other tab
+      </Tab>
     </Tabs>
   </div>
 );
