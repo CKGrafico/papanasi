@@ -1,0 +1,151 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Tabs, Tab } from '../../packages/react/src';
+import { variants, Intent, intents, Variant } from '../../models';
+import { Customization, Codesandbox } from '../../.storybook/components';
+
+<Meta
+  title="Components/Tab"
+  component={Tab}
+  argTypes={{
+    variant: {
+      name: 'variant',
+      description: 'Specify variant for the tab',
+      table: {
+        defaultValue: { summary: Variant.Basic }
+      },
+      options: variants.map((x) => x.value),
+      control: { type: 'select' }
+    },
+    intent: {
+      name: 'intent',
+      description: 'Specify a temporary intent for the tab',
+      table: {
+        defaultValue: { summary: Intent.None }
+      },
+      options: intents.map((x) => x.value),
+      control: { type: 'select' }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    <Tabs {...args}>
+      <Tab>Hola 1</Tab>
+      <Tab>Hola 2</Tab>
+    </Tabs>
+  </div>
+);
+
+# Tab
+
+TODO
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      variant: null,
+      intent: null
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  selector=".pa-button"
+  css={`
+    --pa-color-basic-brightest: #ffffff;
+    --pa-color-basic-darkest: #101116;
+    --pa-color-primary-normal: #017aff;
+    --pa-color-secondary-normal: #6c47ff;
+    --pa-color-tertiary-normal: #f34971;
+    --pa-button-radius: var(--pa-border-radius-small);
+    --pa-button-border-width: var(--pa-border-width-small);
+    --pa-button-font-weight: var(--pa-font-weight-medium);
+    --pa-button-outline: var(--pa-outline-width);
+  `}
+/>
+
+### Properties
+
+<ArgsTable story="Default" of={Tab} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Tabs', 'Tab']}
+  platform="angular"
+  code={`
+<tabs>
+  <tab>1</tab>
+  <tab>2</tab>
+</tabs>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Tabs', 'Tab']}
+  platform="react"
+  code={`
+  <Tabs>
+    <Tab>1</Tab>
+    <Tab>2</Tab>
+  </Tabs>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Tabs', 'Tab']}
+  platform="solid"
+  code={`
+  <Tabs>
+    <Tab>1</Tab>
+    <Tab>2</Tab>
+  </Tabs>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Tabs', 'Tab']}
+  platform="svelte"
+  code={`
+  <Tabs>
+    <Tab>1</Tab>
+    <Tab>2</Tab>
+  </Tabs>`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Tabs', 'Tab']}
+  platform="vue"
+  code={`
+  <Tabs>
+    <Tab>1</Tab>
+    <Tab>2</Tab>
+  </Tabs>`}
+/>
+
+### Web Components
+
+<Codesandbox
+  components={['Tabs', 'Tab']}
+  platform="webcomponents"
+  code={`
+  <pa-tabs>
+    <pa-tab>1</pa-tab>
+    <pa-tab>2</pa-tab>
+  </pa-tabs>`}
+/>

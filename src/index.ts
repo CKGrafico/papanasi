@@ -8,5 +8,7 @@ export { default as Container } from './container';
 export { default as Itchio } from './itchio';
 export { default as Pill } from './pill';
 export { default as Row } from './row';
+export { default as Tab } from './tab';
+export { default as Tabs } from './tabs';
 
 initBreakpointChecker();
