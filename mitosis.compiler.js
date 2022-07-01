@@ -61,7 +61,6 @@ function compile(filepath) {
             !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
           }[pa-$1]", exportAs: "pa-$1", encapsulation: 2`
         )
-        .replace(/\@Input\(\) className\: any\;/, '@Input() className: any;\n@Input() children: any;')
         .replace(/='value\((.*, ?)'(.*)'\)'/g, '="value($1\'$2\')"');
 
       fs.writeFileSync(outFile, result, 'utf8');

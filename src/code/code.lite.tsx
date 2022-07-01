@@ -8,6 +8,7 @@ import './code.css';
 export type CodeProps = {
   editable: boolean;
   languages: string[];
+  code: string;
   theme?: string; // TODO: dynamic themes
   links?: { label: string; url: string; icon: string }[];
   canCopy?: boolean;
@@ -28,7 +29,7 @@ export default function Code(props: CodeProps) {
     isDark: false,
     isCopy: true,
     copyText: 'Copy',
-    code: '',
+    rawCode: '',
     previewCode: '',
     highlightCode(languages = ['javascript', 'typescript', 'xml', 'css']) {
       const loadAndHighlight = () => {
@@ -77,16 +78,16 @@ export default function Code(props: CodeProps) {
   });
 
   onMount(() => {
-    const setInitialProps = (className, children, theme, canCopy, copyLabel) => {
+    const setInitialProps = (className, code, theme, canCopy, copyLabel) => {
       state.classes = classesToString(['pa-code', className || '']);
-      state.code = children;
-      state.previewCode = children;
+      state.rawCode = code;
+      state.previewCode = code;
       state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
       state.isCopy = canCopy !== undefined ? canCopy : state.isCopy;
       state.copyText = copyLabel || state.copyText;
     };
 
-    setInitialProps(props.className, props.children, props.theme, props.canCopy, props.copyLabel);
+    setInitialProps(props.className, props.code, props.theme, props.canCopy, props.copyLabel);
     state.highlightCode(props.languages);
   });
 
@@ -97,7 +98,7 @@ export default function Code(props: CodeProps) {
         ref={previewRef}
         onClick={() => state.onClick()}
       >
-        <code className={'pa-code__preview-block'}>{state.previewCode || props.children}</code>
+        <code className={'pa-code__preview-block'}>{state.previewCode || props.code}</code>
       </pre>
 
       <pre
@@ -112,7 +113,7 @@ export default function Code(props: CodeProps) {
           onKeyUp={() => state.onKeyUp()}
           onBlur={() => state.onBlur()}
         >
-          {state.code}
+          {state.rawCode}
         </code>
       </pre>
 
@@ -139,7 +140,7 @@ export default function Code(props: CodeProps) {
 
         <>
           {state.isCopy && (
-            <span className="pa-code__action pa-code__action--copy" onClick={() => copy(state.code)}>
+            <span className="pa-code__action pa-code__action--copy" onClick={() => copy(state.rawCode)}>
               {state.copyText}
             </span>
           )}

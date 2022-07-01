@@ -72,7 +72,7 @@ The Code component is created to highlight code blocks in your application, is a
       editable: true,
       languages: ['typescript', 'xml'],
       theme: 'github',
-      children:
+      code:
         "import React from 'react'; \n\n" +
         'type CardProps = { \n' +
         '  title: string, \n' +
@@ -111,7 +111,7 @@ The Code component is created to highlight code blocks in your application, is a
   platform="angular"
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
-     <div pa-code editable="true" languages={['javascript']} theme="a11y-dark">const name = 'component';</div>`}
+     <div pa-code editable="true" [languages]={['javascript']} [theme]="'a11y-dark'" [code]="'const age = 1;'"></div>`}
 />
 
 ### React
@@ -121,7 +121,7 @@ The Code component is created to highlight code blocks in your application, is a
   platform="react"
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
-     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
+     <Code editable languages={['javascript']} theme="a11y-dark" code="const age = 1;"></Code>`}
 />
 
 ### Solid
@@ -131,7 +131,7 @@ The Code component is created to highlight code blocks in your application, is a
   platform="solid"
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
-     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
+     <Code editable languages={['javascript']} theme="a11y-dark" code="const age = 1;"></Code>`}
 />
 
 ### Svelte
@@ -141,7 +141,7 @@ The Code component is created to highlight code blocks in your application, is a
   platform="svelte"
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
-     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
+     <Code editable languages={['javascript']} theme="a11y-dark" code="const age = 1;"></Code>`}
 />
 
 ### Vue
@@ -151,7 +151,7 @@ The Code component is created to highlight code blocks in your application, is a
   platform="vue"
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
-     <Code :editable="true" :languages="['javascript']" theme="a11y-dark">const name = 'component';</Code>`}
+     <Code :editable="true" :languages="['javascript']" theme="a11y-dark" code="const age = 1;"></Code>`}
 />
 
 ### Web Components
@@ -160,5 +160,5 @@ The Code component is created to highlight code blocks in your application, is a
   components={['Code']}
   platform="webcomponents"
   dependencies={{ 'highlight.js': '11.5.1' }}
-  code={`<pa-code editable="true" languages="['javascript']" theme="a11y-dark">const name = 'component';</pa-code>`}
+  code={`<pa-code editable="true" languages="['javascript']" theme="a11y-dark" code="const age = 1;"></pa-code>`}
 />
