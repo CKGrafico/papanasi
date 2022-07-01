@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Code, Column, Container, Row } from '../../packages/react';
 import './customization.css';
 
@@ -86,9 +86,7 @@ export function Customization(props: CustomizationProps) {
           </Row>
           <Row>
             <Column xs={'fill'}>
-              <Code onChange={onChangeCss} editable theme="github">
-                {templateCSS(css, selector)}
-              </Code>
+              <Code onChange={onChangeCss} editable theme="github" code={templateCSS(css, selector)} />
             </Column>
           </Row>
         </>
