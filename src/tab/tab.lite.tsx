@@ -14,7 +14,11 @@ useMetadata({ isAttachedToShadowDom: true });
 
 export default function Tab(props: TabProps) {
   const state = useState({
-    classes: ''
+    classes: '',
+    id: '',
+    onClickTab() {
+      // check #45 to understand why we do parent communication like this.
+    }
   });
 
   onMount(() => {
@@ -26,6 +30,8 @@ export default function Tab(props: TabProps) {
         [isActive, `is-active`],
         className || ''
       ]);
+
+      state.id = crypto.randomUUID();
     };
 
     setInitialProps(props.variant, props.intent, props.isActive, props.className);
@@ -33,7 +39,9 @@ export default function Tab(props: TabProps) {
 
   return (
     <div className={state.classes}>
-      <div className="pa-tab__title">{props.slotTitle}</div>
+      <div className="pa-tab__title" onClick={() => state.onClickTab()}>
+        {props.slotTitle}
+      </div>
       <Show when={props.isActive}>
         <div className="pa-tab__content">{props.children}</div>
       </Show>
