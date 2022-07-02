@@ -52,20 +52,22 @@ function compile(filepath) {
     }
 
     if (target === 'angular') {
-      // Add selector to angular
       const data = fs.readFileSync(outFile, 'utf8');
       const result = data
+        // Add selector to be a directive because in angular you cannot use existing tags
         .replace(
           /selector: ?["|'](.+)["|']/,
           `selector: "${
             !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
           }[pa-$1]", exportAs: "pa-$1", encapsulation: 2`
         )
+        // Enable children
         .replace(/(,\n)?(\} from \"\@angular\/core\"\;)/, ', ContentChildren, QueryList $2')
         .replace(
           /\@Input\(\) className\: any\;/,
           "@Input() className: any;\n@ContentChildren('child') children: QueryList<any>;"
         )
+        // Fix value names on selectors
         .replace(/='value\((.*, ?)'(.*)'\)'/g, '="value($1\'$2\')"');
 
       fs.writeFileSync(outFile, result, 'utf8');
@@ -77,18 +79,18 @@ function compile(filepath) {
     }
 
     if (target === 'solid') {
-      // temporary fix to dont use useRef
       const data = fs.readFileSync(outFile, 'utf8');
       const result = data
+        // temporary fix to dont use useRef
         .replace(/useRef\(\)/g, '(document.body as any) /* This is broken waiting for mitosis update */')
         .replace(/\, ?useRef/, '');
       fs.writeFileSync(outFile, result, 'utf8');
     }
 
     if (target === 'svelte' && isFirstCompilation) {
-      // Add .svelte to index
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
       const result = data
+        // Add .svelte to index
         .replace(/\'\;/g, ".svelte';")
         .replace(/\.css\.svelte/g, '.css')
         .replace(/helpers\.svelte/g, 'helpers');
@@ -97,15 +99,17 @@ function compile(filepath) {
 
     if (target === 'svelte') {
       const data = fs.readFileSync(outFile, 'utf8');
-      const result = data.replace(/children/g, '$$$slots');
+      const result = data
+        // Work with children (currently not working as expected)
+        .replace(/children/g, '$$$slots');
 
       fs.writeFileSync(outFile, result, 'utf8');
     }
 
     if (target === 'vue' && isFirstCompilation) {
-      // Add .vue to index
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
       const result = data
+        // Add .vue to index
         .replace(/\'\;/g, ".vue';")
         .replace(/\.css\.vue/g, '.css')
         .replace(/helpers\.vue/g, 'helpers');
@@ -114,7 +118,9 @@ function compile(filepath) {
 
     if (target === 'vue') {
       const data = fs.readFileSync(outFile, 'utf8');
-      const result = data.replace(/this\.children/, 'this.$slots.default()');
+      const result = data
+        // Enable children
+        .replace(/this\.children/, 'this.$slots.default()');
 
       fs.writeFileSync(outFile, result, 'utf8');
     }
@@ -126,14 +132,21 @@ function compile(filepath) {
       // Make component exportable
       const data = fs.readFileSync(outFile, 'utf8');
       const result = data
+        // Fix class name
         .replace(/class /, 'export default class ')
         .replace(
           /customElements\.define\("(.*)",(.*)\);/g,
           'customElements.get("pa-$1") || customElements.define("pa-$1", $2);'
         )
+        // Fix part selectors
         .replace(/class=/g, 'part=')
         .replace(/el\.setAttribute\("class"/g, 'el.setAttribute("part"')
-        .replace(/el\.className ?= ?\n?(.*);/g, 'el.setAttribute("part",$1);');
+        .replace(/el\.className ?= ?\n?(.*);/g, 'el.setAttribute("part",$1);')
+        // Enable children
+        .replace(
+          /this\.props\.children/,
+          'this.shadowRoot.querySelector("slot").assignedNodes().filter((x,i) => i % 2 !== 0 )'
+        );
       fs.writeFileSync(outFile, result, 'utf8');
     }
   });
