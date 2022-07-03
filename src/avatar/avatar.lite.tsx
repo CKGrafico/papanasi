@@ -35,6 +35,7 @@ export default function Avatar(props: AvatarProps) {
 
     const setNameInitials = (name) => {
       // From: https://stackoverflow.com/a/63763497/3274609
+      debugger;
       state.initials = name
         .match(/(^\S\S?|\s\S)?/g)
         .map((v) => v.trim())
@@ -56,7 +57,6 @@ export default function Avatar(props: AvatarProps) {
     setInitialProps(props.variant, props.disabled, props.className);
     setNameInitials(props.name || '');
     setSource(props.url, props.unavatar);
-    setStyle();
   });
 
   return (

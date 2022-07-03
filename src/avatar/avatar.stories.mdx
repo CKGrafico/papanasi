@@ -10,23 +10,21 @@ import { Customization, Codesandbox } from '../../.storybook/components';
     name: {
       name: 'name',
       description: 'The name to show the initials',
+      defaultValue: 'Alicia Morris',
       table: {
         defaultValue: { summary: 'Alicia Morris' }
-      }
+      },
+      control: 'text'
     },
     unavatar: {
       name: 'unavatar',
       description: 'If you want to use an image from https://unavatar.io/',
-      table: {
-        defaultValue: { summary: '' }
-      }
+      control: 'text'
     },
     url: {
       name: 'url',
       description: 'If you want to use an image as source',
-      table: {
-        defaultValue: { summary: '' }
-      }
+      control: 'text'
     },
     disabled: {
       name: 'disabled',
