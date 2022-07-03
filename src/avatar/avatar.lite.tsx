@@ -15,6 +15,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Avatar(props: AvatarProps) {
   const state = useState({
     classes: '',
+    style: {},
     src: null,
     initials: '',
     autoColor: true
@@ -55,6 +56,7 @@ export default function Avatar(props: AvatarProps) {
     setInitialProps(props.variant, props.disabled, props.className);
     setNameInitials(props.name || '');
     setSource(props.url, props.unavatar);
+    setStyle();
   });
 
   return (

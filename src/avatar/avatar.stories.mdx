@@ -43,12 +43,12 @@ import { Customization, Codesandbox } from '../../.storybook/components';
 
 export const Template = (args) => (
   <div>
-    <Avatar {...args} />
-
-    {variants.map((variant) => (
-      <Avatar key={variant.key} {...args} variant={variant.value}/>
-    ))}
-
+    <>
+      <Avatar {...args} />
+      {variants.map((variant) => (
+        <Avatar key={variant.key} {...args} variant={variant.value} />
+      ))}
+    </>
   </div>
 );
 
