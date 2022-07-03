@@ -1,0 +1,138 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Avatar } from '../../packages/react/src';
+import { variants, Intent, intents } from '../../models';
+import { Customization, Codesandbox } from '../../.storybook/components';
+
+<Meta
+  title="Components/Avatar"
+  component={Avatar}
+  argTypes={{
+    name: {
+      name: 'name',
+      description: 'The name to show the initials',
+      table: {
+        defaultValue: { summary: 'Alicia Morris' }
+      }
+    },
+    unavatar: {
+      name: 'unavatar',
+      description: 'If you want to use an image from https://unavatar.io/',
+      table: {
+        defaultValue: { summary: '' }
+      }
+    },
+    url: {
+      name: 'url',
+      description: 'If you want to use an image as source',
+      table: {
+        defaultValue: { summary: '' }
+      }
+    },
+    disabled: {
+      name: 'disabled',
+      description: 'Disable actions in the avatar',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    <Avatar {...args} />
+
+    {variants.map((variant) => (
+      <Avatar key={variant.key} {...args} variant={variant.value}/>
+    ))}
+
+  </div>
+);
+
+# Avatar
+
+TODO
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      outline: false,
+      disabled: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  selector=".pa-avatar"
+  css={`
+    --pa-avatar-size: 10rem;
+    --pa-avatar-padding: 0.5rem;
+    --pa-avatar-radius: 100%;
+    --pa-avatar-initials-weight: var(--pa-font-weight-medium);
+  `}
+/>
+
+### Properties
+
+<ArgsTable story="Default" of={Avatar} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Avatar']}
+  platform="angular"
+  code={`
+    <span pa-avatar name="Alice Morris"></span>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Avatar']}
+  platform="react"
+  code={`
+  <Avatar name="Alice Morris" />`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Avatar']}
+  platform="solid"
+  code={`
+  <Avatar name="Alice Morris" />`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Avatar']}
+  platform="svelte"
+  code={`
+  <Avatar name="Alice Morris" />`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Avatar']}
+  platform="vue"
+  code={`
+  <Avatar name="Alice Morris" />`}
+/>
+
+### Web Components
+
+<Codesandbox components={['Avatar']} platform="webcomponents" code={`<pa-avatar name="Alice Morris"></pa-avatar>`} />

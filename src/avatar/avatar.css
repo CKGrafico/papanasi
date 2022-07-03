@@ -1,0 +1,11 @@
+@import '../../styles/build.css';
+
+.pa-avatar {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &.is-disabled {
+    pointer-events: none;
+  }
+}

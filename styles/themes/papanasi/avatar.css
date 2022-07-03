@@ -1,0 +1,16 @@
+@import '../../build.css';
+
+.pa-avatar {
+  --pa-avatar-size: 10rem;
+  --pa-avatar-padding: 0.5rem;
+  --pa-avatar-radius: 100%;
+  --pa-avatar-initials-weight: var(--pa-font-weight-medium);
+
+  @mixin shared-styles;
+
+  border-radius: var(--pa-avatar-radius);
+  font-weight: var(--pa-avatar-initials-weight);
+  height: var(--pa-avatar-size);
+  padding: var(--pa-avatar-padding);
+  width: var(--pa-avatar-size);
+}
