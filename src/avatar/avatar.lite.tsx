@@ -1,7 +1,7 @@
 import { onMount, useMetadata, useState } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
 import { Dynamic, SharedProps, Variant } from '../../../models';
-import './button.css';
+import './avatar.css';
 
 export type AvatarProps = {
   variant?: Dynamic<Variant>;

@@ -13,4 +13,11 @@
   height: var(--pa-avatar-size);
   padding: var(--pa-avatar-padding);
   width: var(--pa-avatar-size);
+
+  @each $variant in primary, secondary, tertiary {
+    &--$(variant) {
+      background-color: var(--pa-color-$(variant)-normal);
+      color: var(--pa-color-basic-brightest);
+    }
+  }
 }
