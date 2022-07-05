@@ -1,4 +1,4 @@
-import { onMount, useMetadata, useState } from '@builder.io/mitosis';
+import { onMount, Show, useMetadata, useState } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
 import { Dynamic, SharedProps, Variant } from '../../../models';
 import './avatar.css';
@@ -35,7 +35,6 @@ export default function Avatar(props: AvatarProps) {
 
     const setNameInitials = (name) => {
       // From: https://stackoverflow.com/a/63763497/3274609
-      debugger;
       state.initials = name
         .match(/(^\S\S?|\s\S)?/g)
         .map((v) => v.trim())
@@ -61,7 +60,12 @@ export default function Avatar(props: AvatarProps) {
 
   return (
     <div className={state.classes} style={{ backgroundImage: state.src }}>
-      {state.initials}
+      <Show when={state.src}>
+        <img className="pa-avatar__image" src={state.src} alt={props.name} />
+      </Show>
+      <Show when={!state.src}>
+        <>{state.initials}</>
+      </Show>
     </div>
   );
 }

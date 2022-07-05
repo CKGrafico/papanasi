@@ -29,6 +29,8 @@ function compile(filepath) {
           from: 'mitosis',
           to: target,
           out: outFile,
+          force: true,
+
           state: 'useState'
         },
         array: [filepath]

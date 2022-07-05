@@ -8,4 +8,8 @@
   &.is-disabled {
     pointer-events: none;
   }
+
+  &__image {
+    object-fit: cover;
+  }
 }

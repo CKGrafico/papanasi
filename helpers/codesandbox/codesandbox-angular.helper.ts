@@ -49,11 +49,11 @@ platformBrowserDynamic()
 
   const projectDependencies = {
     ...dependencies,
-    '@angular/common': '^12.2.0',
-    '@angular/compiler': '^12.2.0',
-    '@angular/core': '^12.2.0',
-    '@angular/platform-browser': '^12.2.0',
-    '@angular/platform-browser-dynamic': '^12.2.0',
+    '@angular/common': '^12.2.15',
+    '@angular/compiler': '^12.2.15',
+    '@angular/core': '^12.2.15',
+    '@angular/platform-browser': '^12.2.15',
+    '@angular/platform-browser-dynamic': '^12.2.15',
     'core-js': '3.8.3',
     rxjs: '6.6.3',
     'zone.js': '0.11.3',
@@ -62,9 +62,9 @@ platformBrowserDynamic()
 
   const devDependencies = {
     '@angular-devkit/build-angular': '^0.1102.0',
-    '@angular/cli': '^12.2.0',
-    '@angular/compiler-cli': '^12.2.0',
-    '@angular/language-service': '^12.2.0',
+    '@angular/cli': '^12.2.15',
+    '@angular/compiler-cli': '^12.2.15',
+    '@angular/language-service': '^12.2.15',
     '@types/node': '14.14.28',
     'ts-node': '9.1.1',
     typescript: '4.1.5'

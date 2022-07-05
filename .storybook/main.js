@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const path = require('path');
 
 module.exports = {
@@ -8,7 +9,6 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-docs',
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -26,6 +26,12 @@ module.exports = {
     const use = cssRule.use.filter((x) => !x.includes || !x.includes('style-loader'));
     use.unshift(MiniCssExtractPlugin.loader);
     cssRule.use = use;
+
+    config.watchOptions = {
+      aggregateTimeout: 1000,
+      poll: 1000,
+      ignored: ['**/packages/**/*.tsx', '**/node_modules']
+    };
 
     return config;
   }
