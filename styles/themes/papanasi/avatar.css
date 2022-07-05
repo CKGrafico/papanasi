@@ -20,4 +20,10 @@
       color: var(--pa-color-basic-brightest);
     }
   }
+
+  &__image {
+    border-radius: var(--pa-avatar-radius);
+    max-width: calc(100% + var(--pa-avatar-padding) * 2);
+    max-height: calc(100% + var(--pa-avatar-padding) * 2);
+  }
 }
