@@ -21,6 +21,10 @@ export function generateCodeSandboxLink(options) {
   const indexHTMLFolder = `${publicFolder}index.html`;
 
   const css = `
+* {
+  box-sizing: border-box;
+}
+
 .app {
   --pa-grid-gutter: 0.15rem;
   --pa-color-primary-normal: #017af0;
