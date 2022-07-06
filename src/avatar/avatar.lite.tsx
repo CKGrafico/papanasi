@@ -41,39 +41,33 @@ export default function Avatar(props: AvatarProps) {
         .toLocaleUpperCase();
     };
 
-    const setStyleProps = (variant, name, url, unavatar) => {
-      let src = url;
-      let customStyles = {};
-
+    const setSource = (url, unavatar) => {
       if (unavatar) {
-        src = `https://unavatar.io/${unavatar}`;
+        state.src = `https://unavatar.io/${unavatar}`;
+        return;
       }
 
-      if (src) {
-        customStyles = {
-          backgroundImage: state.src
-        };
+      state.src = url;
+    };
+
+    const setRandomColorStyles = (variant, name) => {
+      if (variant) {
+        return;
       }
 
-      if (!variant) {
-        const color = randomColor(name);
+      const color = randomColor(name);
 
-        customStyles = {
-          color: color.foreground,
-          backgroundColor: color.background
-        };
-      }
-
-      state.src = src;
       state.customStyles = {
         ...state.customStyles,
-        ...customStyles
+        color: color.foreground,
+        backgroundColor: color.background
       };
     };
 
     setInitialProps(props.variant, props.disabled, props.className);
     setNameInitials(props.name || '');
-    setStyleProps(props.variant, props.name, props.url, props.unavatar);
+    setSource(props.url, props.unavatar);
+    setRandomColorStyles(props.variant, props.name);
   });
 
   return (

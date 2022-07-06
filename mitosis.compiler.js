@@ -70,7 +70,9 @@ function compile(filepath) {
           "@Input() className: any;\n@ContentChildren('child') children: QueryList<any>;"
         )
         // Fix value names on selectors
-        .replace(/='value\((.*, ?)'(.*)'\)'/g, '="value($1\'$2\')"');
+        .replace(/='value\((.*, ?)'(.*)'\)'/g, '="value($1\'$2\')"')
+        // Fix angular styles property
+        .replace(/\[style\]/g, '[styles]');
 
       fs.writeFileSync(outFile, result, 'utf8');
     }
