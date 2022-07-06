@@ -72,7 +72,7 @@ function compile(filepath) {
         // Fix value names on selectors
         .replace(/='value\((.*, ?)'(.*)'\)'/g, '="value($1\'$2\')"')
         // Fix angular styles property
-        .replace(/\[style\]/g, '[styles]');
+        .replace(/\[style\]/g, '[ngStyle]');
 
       fs.writeFileSync(outFile, result, 'utf8');
     }
