@@ -18,7 +18,7 @@
     "storybook:dev": "chokidar \"src/**/*\" \"styles/**/*\" -c \"yarn run-s build:mitosis build:lerna\"",
     "storybook:start": "start-storybook",
     "build-storybook": "build-storybook",
-    "release-version": "lerna version 0.2.0-XX.PRX --force-publish",
+    "release-version": "lerna version 0.2.0-XX.PR-yyyyyyy --force-publish",
     "from-package": "lerna publish from-package --force-publish "
   },
   "dependencies": {
