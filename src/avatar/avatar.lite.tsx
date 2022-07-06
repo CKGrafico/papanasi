@@ -30,8 +30,26 @@ export default function Avatar(props: AvatarProps) {
       ]);
     };
 
-    const setStyleProps = (variant, name) => {
-      if (state.src) {
+    const setNameInitials = (name) => {
+      // From: https://stackoverflow.com/a/63763497/3274609
+      state.initials = name
+        .match(/(^\S\S?|\s\S)?/g)
+        .map((v) => v.trim())
+        .join('')
+        .match(/(^\S|\S$)?/g)
+        .join('')
+        .toLocaleUpperCase();
+    };
+
+    const setStyleProps = (variant, name, url, unavatar) => {
+      let src = url;
+
+      if (unavatar) {
+        src = `https://unavatar.io/${unavatar}`;
+        return;
+      }
+
+      if (src) {
         state.customStyles = {
           ...state.customStyles,
           backgroundImage: state.src
@@ -47,32 +65,13 @@ export default function Avatar(props: AvatarProps) {
           backgroundColor: color.background
         };
       }
-    };
 
-    const setNameInitials = (name) => {
-      // From: https://stackoverflow.com/a/63763497/3274609
-      state.initials = name
-        .match(/(^\S\S?|\s\S)?/g)
-        .map((v) => v.trim())
-        .join('')
-        .match(/(^\S|\S$)?/g)
-        .join('')
-        .toLocaleUpperCase();
-    };
-
-    const setSource = (url, unavatar) => {
-      if (unavatar) {
-        state.src = `https://unavatar.io/${unavatar}`;
-        return;
-      }
-
-      state.src = url;
+      state.src = src;
     };
 
     setInitialProps(props.variant, props.disabled, props.className);
-    setStyleProps(props.variant, props.name);
     setNameInitials(props.name || '');
-    setSource(props.url, props.unavatar);
+    setStyleProps(props.variant, props.name, props.url, props.unavatar);
   });
 
   return (
