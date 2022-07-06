@@ -11,6 +11,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+
+**Note:** Version bump only for package @papanasi/svelte
+
+
+
+
+
 # [0.2.0-59.PR-avatar](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR1...v0.2.0-59.PR-avatar) (2022-07-06)
 
 **Note:** Version bump only for package @papanasi/svelte
