@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/vue",
-  "version": "0.2.0-59.PR-avatar2",
+  "version": "0.2.0-59.PR-avatar",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Vue UI Library",
   "main": "./dist/papanasi-vue.umd.js",
