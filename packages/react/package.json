@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/react",
-  "version": "0.2.0-59.PR-avatar4",
+  "version": "0.2.0-59.PR-avatar5",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi React UI Library",
   "main": "./dist/papanasi-react.umd.js",
