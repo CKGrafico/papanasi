@@ -24,6 +24,7 @@
 
   &__image {
     border-radius: var(--pa-avatar-radius);
+    box-sizing: border-box;
     max-width: calc(100% + var(--pa-avatar-padding) * 2);
     max-height: calc(100% + var(--pa-avatar-padding) * 2);
   }
