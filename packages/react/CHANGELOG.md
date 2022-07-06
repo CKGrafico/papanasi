@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-59.PR-avatar2](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar...v0.2.0-59.PR-avatar2) (2022-07-06)
+
+**Note:** Version bump only for package @papanasi/react
+
+
+
+
+
 # [0.2.0-59.PR-avatar](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar2...v0.2.0-59.PR-avatar) (2022-07-06)
 
 **Note:** Version bump only for package @papanasi/react
