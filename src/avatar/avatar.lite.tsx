@@ -1,5 +1,5 @@
 import { onMount, Show, useMetadata, useState } from '@builder.io/mitosis';
-import { classesToString } from '../../../helpers';
+import { classesToString, randomColor } from '../../../helpers';
 import { Dynamic, SharedProps, Variant } from '../../../models';
 import './avatar.css';
 
@@ -17,8 +17,7 @@ export default function Avatar(props: AvatarProps) {
     classes: '',
     style: {},
     src: null,
-    initials: '',
-    autoColor: true
+    initials: ''
   });
 
   onMount(() => {
@@ -29,8 +28,25 @@ export default function Avatar(props: AvatarProps) {
         [disabled, 'is-disabled'],
         className || ''
       ]);
+    };
 
-      state.autoColor = variant ? false : state.autoColor;
+    const setStyleProps = (variant, name) => {
+      if (state.src) {
+        state.style = {
+          ...state.style,
+          backgroundImage: state.src
+        };
+      }
+
+      if (!variant) {
+        const color = randomColor(name);
+
+        state.style = {
+          ...state.style,
+          color: color.foreground,
+          backgroundColor: color.background
+        };
+      }
     };
 
     const setNameInitials = (name) => {
@@ -54,12 +70,13 @@ export default function Avatar(props: AvatarProps) {
     };
 
     setInitialProps(props.variant, props.disabled, props.className);
+    setStyleProps(props.variant, props.name);
     setNameInitials(props.name || '');
     setSource(props.url, props.unavatar);
   });
 
   return (
-    <div className={state.classes} style={{ backgroundImage: state.src }}>
+    <div className={state.classes} style={state.style} title={props.name}>
       <Show when={state.src}>
         <img className="pa-avatar__image" src={state.src} alt={props.name} />
       </Show>

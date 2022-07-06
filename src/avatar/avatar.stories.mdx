@@ -42,7 +42,6 @@ import { Customization, Codesandbox } from '../../.storybook/components';
 export const Template = (args) => (
   <div>
     <>
-      <Avatar {...args} />
       {variants.map((variant) => (
         <Avatar key={variant.key} {...args} variant={variant.value} />
       ))}
@@ -52,7 +51,10 @@ export const Template = (args) => (
 
 # Avatar
 
-TODO
+Pills are used to indicate a temporary state or show higlighted values.
+Avatar are useful to show the initials of a name or the picture of a user.
+By default the color will be randomly generated from the name, but there are also 3 different variants `primary`, `secondary` and `tertiary`.
+If you add a `url` will be used as image and it is also compatible with [unavatar](https://unavatar.io/)
 
 ## Showcase
 

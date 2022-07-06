@@ -39,7 +39,8 @@ body {
   }
 
   .pa-button,
-  .pa-pill {
+  .pa-pill,
+  .pa-avatar {
     margin-right: 0.5rem;
   }
 }
