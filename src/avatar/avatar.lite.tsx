@@ -43,15 +43,14 @@ export default function Avatar(props: AvatarProps) {
 
     const setStyleProps = (variant, name, url, unavatar) => {
       let src = url;
+      let customStyles = {};
 
       if (unavatar) {
         src = `https://unavatar.io/${unavatar}`;
-        return;
       }
 
       if (src) {
-        state.customStyles = {
-          ...state.customStyles,
+        customStyles = {
           backgroundImage: state.src
         };
       }
@@ -59,14 +58,17 @@ export default function Avatar(props: AvatarProps) {
       if (!variant) {
         const color = randomColor(name);
 
-        state.customStyles = {
-          ...state.customStyles,
+        customStyles = {
           color: color.foreground,
           backgroundColor: color.background
         };
       }
 
       state.src = src;
+      state.customStyles = {
+        ...state.customStyles,
+        ...customStyles
+      };
     };
 
     setInitialProps(props.variant, props.disabled, props.className);
