@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar9...v0.2.1) (2022-07-07)
+
+**Note:** Version bump only for package @papanasi/svelte
+
+
+
+
+
 # [0.2.0-59.PR-avatar9](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar8...v0.2.0-59.PR-avatar9) (2022-07-07)
 
 **Note:** Version bump only for package @papanasi/svelte
