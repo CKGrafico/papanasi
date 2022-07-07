@@ -135,6 +135,11 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
   </tr>
   <tr>
     <td align="center">
+      Avatar <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-avatar--default-story">Preview</a>
+    </td>
+    <td align="center">
       Button <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-button--default-story">Preview</a>
@@ -149,11 +154,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story">Preview</a>
     </td>
-     <td align="center">
-      Tabs <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-tabs--default-story">Preview</a>
-    </td>
+    
   </tr>
    <tr>
     <td align="center">
