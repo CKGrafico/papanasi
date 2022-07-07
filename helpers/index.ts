@@ -5,4 +5,5 @@ export * from './codesandbox';
 export * from './color.helper';
 export * from './inject-script.helper';
 export * from './object.helper';
+export * from './svelte-styling';
 export * from './wait.helper';
