@@ -2,12 +2,22 @@
 
 .pa-avatar {
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &.is-disabled {
     pointer-events: none;
     opacity: 0.5;
+  }
+
+  &__container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__image {
