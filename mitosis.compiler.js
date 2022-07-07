@@ -29,6 +29,8 @@ function compile(filepath) {
           from: 'mitosis',
           to: target,
           out: outFile,
+          force: true,
+
           state: 'useState'
         },
         array: [filepath]
@@ -68,7 +70,9 @@ function compile(filepath) {
           "@Input() className: any;\n@ContentChildren('child') children: QueryList<any>;"
         )
         // Fix value names on selectors
-        .replace(/='value\((.*, ?)'(.*)'\)'/g, '="value($1\'$2\')"');
+        .replace(/='value\((.*, ?)'(.*)'\)'/g, '="value($1\'$2\')"')
+        // Fix angular styles property
+        .replace(/\[style\]/g, '[ngStyle]');
 
       fs.writeFileSync(outFile, result, 'utf8');
     }
@@ -101,7 +105,11 @@ function compile(filepath) {
       const data = fs.readFileSync(outFile, 'utf8');
       const result = data
         // Work with children (currently not working as expected)
-        .replace(/children/g, '$$$slots');
+        .replace(/children/g, '$$$slots')
+        // Add styling
+        .replace(/\} from \"\.\.\/\.\.\/\.\.\/helpers\"/g, ', svelteStyling } from "../../../helpers"')
+        // Fix svelte styles property, pending https://github.com/BuilderIO/mitosis/issues/544#issuecomment-1176804781
+        .replace(/style=\{/g, 'use:svelteStyling={');
 
       fs.writeFileSync(outFile, result, 'utf8');
     }

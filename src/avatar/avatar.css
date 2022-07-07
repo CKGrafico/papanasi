@@ -1,0 +1,18 @@
+@import '../../styles/build.css';
+
+.pa-avatar {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &.is-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &__image {
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

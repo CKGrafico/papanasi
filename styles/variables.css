@@ -104,6 +104,9 @@
   /* Outline */
   --pa-outline-width: 4px;
 
+  /* Shadow */
+  --pa-shadow-normal: var(--pa-color-basic-bright) 0 1px 3px 0;
+
   /* Transition */
   --pa-transition-all: all;
   --pa-transition-colors: background-color, border-color, color, fill, stroke, outline-color;
@@ -114,7 +117,4 @@
   --pa-transition-duration-fast: 150ms;
   --pa-transition-duration-normal: 300ms;
   --pa-transition-duration-slow: 600s;
-
-  /* Shadow */
-  --pa-shadow-normal: var(--pa-color-basic-bright) 0 1px 3px 0;
 }

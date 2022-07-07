@@ -3,6 +3,191 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-59.PR-avatar9](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar8...v0.2.0-59.PR-avatar9) (2022-07-07)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar8](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar7...v0.2.0-59.PR-avatar8) (2022-07-07)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar7](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar6...v0.2.0-59.PR-avatar7) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar6](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar5...v0.2.0-59.PR-avatar6) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar5](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar4...v0.2.0-59.PR-avatar5) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar4](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar3...v0.2.0-59.PR-avatar4) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar3](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar...v0.2.0-59.PR-avatar3) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar3](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar...v0.2.0-59.PR-avatar3) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar2](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar...v0.2.0-59.PR-avatar2) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar2...v0.2.0-59.PR-avatar) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar2...v0.2.0-59.PR-avatar) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar2...v0.2.0-59.PR-avatar) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar2](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR-avatar...v0.2.0-59.PR-avatar2) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR-avatar](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59.PR1...v0.2.0-59.PR-avatar) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [0.2.0-59.PR1](https://github.com/CKGrafico/papanasi/compare/v0.2.0-59...v0.2.0-59.PR1) (2022-07-06)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
 # [0.2.0-59](https://github.com/CKGrafico/papanasi/compare/v0.2.0-58...v0.2.0-59) (2022-07-02)
 
 **Note:** Version bump only for package papanasi

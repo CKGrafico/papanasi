@@ -1,17 +1,16 @@
 const DISABLED = 0;
 const WARNING = 1;
 const ERROR = 2;
-
 module.exports = {
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  parser: '@typescript-eslint/parser',
+  // Specifies the ESLint parser
   plugins: ['@builder.io/mitosis'],
-  extends: [
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from @typescript-eslint/eslint-plugin
-    'plugin:prettier/recommended' // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-  ],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
   parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
+    ecmaVersion: 2018,
+    // Allows for the parsing of modern ECMAScript features
+    sourceType: 'module',
+    // Allows for the use of imports
     ecmaFeatures: {
       jsx: true
     }
