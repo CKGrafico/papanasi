@@ -15,7 +15,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Avatar(props: AvatarProps) {
   const state = useState({
     classes: '',
-    customStyles: {},
+    customStyles: null,
     src: null,
     initials: ''
   });
@@ -52,6 +52,7 @@ export default function Avatar(props: AvatarProps) {
 
     const setRandomColorStyles = (variant, name) => {
       if (variant) {
+        state.customStyles = {};
         return;
       }
 
@@ -71,12 +72,16 @@ export default function Avatar(props: AvatarProps) {
   });
 
   return (
-    <div className={state.classes} style={state.customStyles} title={props.name}>
-      <Show when={state.src}>
-        <img className="pa-avatar__image" src={state.src} alt={props.name} />
-      </Show>
-      <Show when={!state.src}>
-        <span>{state.initials}</span>
+    <div className={state.classes} title={props.name}>
+      <Show when={state.customStyles}>
+        <div className="pa-avatar__container" style={state.customStyles}>
+          <Show when={state.src}>
+            <img className="pa-avatar__image" src={state.src} alt={props.name} />
+          </Show>
+          <Show when={!state.src}>
+            <span>{state.initials}</span>
+          </Show>
+        </div>
       </Show>
     </div>
   );
