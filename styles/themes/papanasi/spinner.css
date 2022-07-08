@@ -2,6 +2,7 @@
 
 .pa-spinner {
   --pa-spinner-linecap: round;
+  --pa-spinner-stroke: 6;
   --pa-spinner-offset: 200;
   --pa-spinner-duration: 4s;
 
@@ -23,6 +24,7 @@
       colors calc(var(--pa-spinner-duration) * 4) ease-in-out infinite;
     stroke-dasharray: var(--pa-spinner-offset);
     stroke-linecap: var(--pa-spinner-linecap);
+    stroke-width: var(--pa-spinner-stroke);
   }
 
   @keyframes colors {
