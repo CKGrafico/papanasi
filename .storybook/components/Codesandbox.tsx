@@ -44,7 +44,7 @@ const icons = {
 };
 
 export function Codesandbox(props: CodesandboxProps) {
-  const { components, extensions, code, platform, dependencies = {} } = props;
+  const { components = [], extensions = [], code, platform, dependencies = {} } = props;
 
   const { url, content } = generators[platform]({ components, extensions, code, dependencies });
   const iconPlatform = icons[platform];

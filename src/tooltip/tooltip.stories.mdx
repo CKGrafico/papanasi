@@ -23,11 +23,11 @@ export const Template = (args) => (
       useTooltipExtension(document.body.querySelector('.docs-story'));
       return '';
     })()}
-    <div style={{ 'max-height': '200px', overflow: 'scroll' }}>
-      <span {...args} style={{ 'font-size': '3rem' }}>
+    <div style={{ maxHeight: '200px', overflow: 'scroll' }}>
+      <span {...args} style={{ fontSize: '3rem' }}>
         Hover me
       </span>
-      <span style={{ 'min-height': '400px', display: 'block' }}></span>
+      <span style={{ minHeight: '400px', display: 'block' }}></span>
     </div>
   </div>
 );
@@ -49,6 +49,10 @@ Todo
   </Story>
 </Canvas>
 
+### Customization
+
+<Customization showCode={false} />
+
 ### Properties
 
 <ArgsTable story="Default" />
@@ -58,7 +62,6 @@ Todo
 ### Angular
 
 <Codesandbox
-  components={[]}
   extensions={['useTooltipExtension']}
   platform="angular"
   code={`
@@ -68,7 +71,6 @@ Todo
 ### React
 
 <Codesandbox
-  components={[]}
   extensions={['useTooltipExtension']}
   platform="react"
   code={`
@@ -78,7 +80,6 @@ Todo
 ### Solid
 
 <Codesandbox
-  components={[]}
   extensions={['useTooltipExtension']}
   platform="solid"
   code={`
@@ -88,7 +89,6 @@ Todo
 ### Svelte
 
 <Codesandbox
-  components={[]}
   extensions={['useTooltipExtension']}
   platform="svelte"
   code={`
@@ -98,7 +98,6 @@ Todo
 ### Vue
 
 <Codesandbox
-  components={[]}
   extensions={['useTooltipExtension']}
   platform="vue"
   code={`
@@ -108,7 +107,6 @@ Todo
 ### Web Components
 
 <Codesandbox
-  components={[]}
   extensions={['useTooltipExtension']}
   platform="webcomponents"
   code={`<span title="Example of a tooltip">Hover me</span>`}
