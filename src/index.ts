@@ -1,6 +1,7 @@
 import { initBreakpointChecker } from '../../../helpers';
 import '../../../styles/variables.css';
 
+export { useTooltipExtension } from '../../../src/tooltip';
 export { default as Avatar } from './avatar';
 export { default as Button } from './button';
 export { default as Code } from './code';

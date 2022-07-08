@@ -97,7 +97,9 @@ function compile(filepath) {
         // Add .svelte to index
         .replace(/\'\;/g, ".svelte';")
         .replace(/\.css\.svelte/g, '.css')
-        .replace(/helpers\.svelte/g, 'helpers');
+        .replace(/helpers\.svelte/g, 'helpers')
+        .replace(/src\/(.*)\.svelte/g, 'src/$1');
+
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
 
@@ -122,7 +124,9 @@ function compile(filepath) {
         // Add .vue to index
         .replace(/\'\;/g, ".vue';")
         .replace(/\.css\.vue/g, '.css')
-        .replace(/helpers\.vue/g, 'helpers');
+        .replace(/helpers\.vue/g, 'helpers')
+        .replace(/src\/(.*)\.vue/g, 'src/$1');
+
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
 
