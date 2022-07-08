@@ -2,6 +2,7 @@ import { querySelectorAllObservable } from '../../helpers';
 import './tooltip.css';
 
 const state = {
+  initialized: false,
   tooltipElement: document.createElement('div'),
   x: 0,
   y: 0,
@@ -69,6 +70,13 @@ export function useTooltipExtension(rootElement: HTMLElement) {
   if (!rootElement) {
     return;
   }
+
+  if (state.initialized) {
+    hideTooltip();
+    state.tooltipElement.remove();
+  }
+
+  state.initialized = true;
 
   setTimeout(() => {
     createTooltipElement();
