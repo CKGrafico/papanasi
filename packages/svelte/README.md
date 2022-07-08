@@ -162,6 +162,11 @@ $ yarn add @papanasi/svelte
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-select--default-story">Preview</a>
     </td>
+     <td align="center">
+      Spinner <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-spinner--default-story">Preview</a>
+    </td>
   </tr>
   <tr>
     <td align="left" colspan="4">

@@ -109,7 +109,9 @@ function compile(filepath) {
         // Add styling
         .replace(/\} from \"\.\.\/\.\.\/\.\.\/helpers\"/g, ', svelteStyling } from "../../../helpers"')
         // Fix svelte styles property, pending https://github.com/BuilderIO/mitosis/issues/544#issuecomment-1176804781
-        .replace(/style=\{/g, 'use:svelteStyling={');
+        .replace(/style=\{/g, 'use:svelteStyling={')
+        // Fix circle svg as component
+        .replace(/svelte:component\n.*this=\{circle\}/g, 'circle');
 
       fs.writeFileSync(outFile, result, 'utf8');
     }
