@@ -11,8 +11,9 @@ const state = {
 };
 
 function showTooltip() {
-  state.tooltipElement.style.top = `${state.y - state.height}px`;
-  state.tooltipElement.style.left = `${state.x - state.width / 2}px`;
+  state.tooltipElement.style.top = `${state.y}px`;
+  state.tooltipElement.style.left = `${state.x}px`;
+  state.tooltipElement.style.width = `${state.width}px`;
   state.tooltipElement.innerText = state.title;
 }
 
@@ -34,10 +35,11 @@ function manageElementTitle(element: HTMLElement) {
 
 function onAddElement(element: HTMLElement) {
   const title = manageElementTitle(element);
-  const rect = element.getBoundingClientRect();
 
   element.addEventListener('mouseenter', () => {
-    state.x = rect.left;
+    const rect = element.getBoundingClientRect();
+
+    state.x = rect.x;
     state.y = rect.y;
     state.height = rect.height;
     state.width = rect.width;

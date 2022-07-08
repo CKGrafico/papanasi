@@ -2,7 +2,20 @@ import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
 import { useTooltipExtension } from '../../packages/react/src';
 import { Customization, Codesandbox } from '../../.storybook/components';
 
-<Meta title="Extensions/Tooltip" />
+<Meta
+  title="Extensions/Tooltip"
+  argTypes={{
+    title: {
+      name: 'title',
+      description: 'A sample of attribute title',
+      defaultValue: 'Title of my tooltip',
+      table: {
+        defaultValue: { summary: 'Title of my tooltip' }
+      },
+      control: 'text'
+    }
+  }}
+/>
 
 export const Template = (args) => (
   <div>
@@ -10,9 +23,12 @@ export const Template = (args) => (
       useTooltipExtension(document.body.querySelector('.docs-story'));
       return '';
     })()}
-    <span id="test123" title="Title of my tooltip">
-      Hover me
-    </span>
+    <div style={{ 'max-height': '200px', overflow: 'scroll' }}>
+      <span {...args} style={{ 'font-size': '3rem' }}>
+        Hover me
+      </span>
+      <span style={{ 'min-height': '400px', display: 'block' }}></span>
+    </div>
   </div>
 );
 
@@ -23,7 +39,14 @@ Todo
 ## Showcase
 
 <Canvas>
-  <Story name="Default">{Template.bind({})}</Story>
+  <Story
+    name="Default"
+    args={{
+      title: 'Title of my tooltip'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ### Properties

@@ -2,4 +2,6 @@
 
 .pa-tooltip {
   position: absolute;
+  display: flex;
+  justify-content: center;
 }
