@@ -1,0 +1,130 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Spinner } from '../../packages/react/src';
+import { variants, Variant, Intent, intents } from '../../models';
+import { Customization, Codesandbox } from '../../.storybook/components';
+
+<Meta
+  title="Components/Spinner"
+  component={Spinner}
+  argTypes={{
+    full: {
+      name: 'full',
+      description: 'Show a full spinner',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    },
+    fullscreen: {
+      name: 'fullscreen',
+      description: 'Show a full screen spinner',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    <>
+      {variants.map((variant) => {
+        if (variant.value === Variant.Basic) {
+          return <Spinner key={variant.key} {...args} variant={variant.value} />;
+        } else {
+          return <Spinner key={variant.key} variant={variant.value} />;
+        }
+      })}
+    </>
+  </div>
+);
+
+# Spinner
+
+TODO
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      full: false,
+      fullscreen: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  selector=".pa-spinner"
+  css={`
+    --pa-spinner-size: 3rem;
+    --pa-spinner-stroke: 4;
+    --pa-spinner-offset: 200;
+    --pa-spinner-duration: 4s;
+  `}
+/>
+
+### Properties
+
+<ArgsTable story="Default" of={Spinner} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Spinner']}
+  platform="angular"
+  code={`
+    <span pa-spinner></span>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Spinner']}
+  platform="react"
+  code={`
+  <Spinner />`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Spinner']}
+  platform="solid"
+  code={`
+  <Spinner />`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Spinner']}
+  platform="svelte"
+  code={`
+  <Spinner />`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Spinner']}
+  platform="vue"
+  code={`
+  <Spinner />`}
+/>
+
+### Web Components
+
+<Codesandbox components={['Spinner']} platform="webcomponents" code={`<pa-spinner></pa-spinner>`} />

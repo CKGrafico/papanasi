@@ -1,0 +1,52 @@
+@import '../../styles/build.css';
+
+.pa-spinner {
+  display: inline-flex;
+
+  --pa-spinner-size: 3rem;
+  --pa-spinner-stroke: 4;
+  --pa-spinner-offset: 160;
+  --pa-spinner-duration: 2s;
+
+  &--full,
+  &--fullscreen {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &--fullscreen {
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+  }
+
+  &__icon {
+    animation: rotator var(--pa-spinner-duration) linear infinite;
+    height: var(--pa-spinner-size);
+    width: var(--pa-spinner-size);
+  }
+
+  &__path {
+    stroke: var(--pa-color-basic-normal);
+    stroke-dasharray: var(--pa-spinner-offset);
+    stroke-dashoffset: 0;
+    stroke-width: var(--pa-spinner-stroke);
+    transform-origin: center;
+  }
+
+  @keyframes rotator {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

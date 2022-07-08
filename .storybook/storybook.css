@@ -16,6 +16,8 @@ body {
 }
 
 .docs-story {
+  position: relative;
+
   .pa-container {
     @mixin background-opacity var(--pa-color-primary-brightest), 0.2;
     color: var(--pa-color-primary-darkest);
@@ -40,7 +42,8 @@ body {
 
   .pa-button,
   .pa-pill,
-  .pa-avatar {
+  .pa-avatar,
+  .pa-spinner {
     margin-right: 0.5rem;
   }
 }

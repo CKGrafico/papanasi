@@ -117,4 +117,7 @@
   --pa-transition-duration-fast: 150ms;
   --pa-transition-duration-normal: 300ms;
   --pa-transition-duration-slow: 600s;
+
+  /* ZIndex */
+  --pa-zindex-max: 10000;
 }

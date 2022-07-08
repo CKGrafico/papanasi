@@ -9,5 +9,6 @@ export { default as Container } from './container';
 export { default as Itchio } from './itchio';
 export { default as Pill } from './pill';
 export { default as Row } from './row';
+export { default as Spinner } from './spinner';
 
 initBreakpointChecker();
