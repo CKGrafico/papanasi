@@ -2,12 +2,16 @@ import lernaJson from '../../lerna.json';
 import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateAngularCodeSandboxLink(options) {
-  const { components, code, dependencies } = options;
+  const { components, extensions, code, dependencies } = options;
 
   const html = `<div class="app"><app-root></app-root></div>`;
 
-  const previewCode = `import { ${components.join(', ')} } from '@papanasi/angular';
+  const previewCode = `import { ${components.join(', ')} ${
+    components.length > 0 && extensions.length > 0 ? ', ' : ''
+  }${extensions.join(', ')} } from '@papanasi/angular';
 import '@papanasi/angular/dist/papanasi.css';
+
+${[...extensions, ''].join('(); \n')}
 
 @Component({
   selector: "app-root",
@@ -27,7 +31,7 @@ import { Component } from "@angular/core";
 ${previewCode}
 
 @NgModule({
-  declarations: [AppComponent, ${components.join(', ')}],
+  declarations: [AppComponent${components.length > 0 ? ', ' : ''} ${components.join(', ')}],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@ import lernaJson from '../../lerna.json';
 import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateWebCodeSandboxLink(options) {
-  const { components, code, dependencies } = options;
+  const { components, extensions, code, dependencies } = options;
 
   const html = `<div class="app">${code}</div>
 <script src="index.js"></script>
@@ -18,12 +18,22 @@ import './index.css';
 *   Instead of .pa-row.is-error you should use pa-row::part(pa-row is-error)
 */
 
-import { ${components.join(', ')} } from '@papanasi/webcomponents';
+import { ${components.join(', ')} ${components.length > 0 && extensions.length > 0 ? ', ' : ''}${extensions.join(
+    ', '
+  )} } from '@papanasi/webcomponents';
+
+
+${[...extensions, ''].join('(); \n')}
 `.trim();
 
   const previewCode = `// index.js
-import { ${components.join(', ')} } from '@papanasi/webcomponents';
+import { ${components.join(', ')} ${components.length > 0 && extensions.length > 0 ? ', ' : ''}${extensions.join(
+    ', '
+  )} } from '@papanasi/webcomponents';
 import "@papanasi/webcomponents/dist/papanasi.css";
+
+
+${[...extensions, ''].join('(); \n')}
 
 // index.html
 ${code}

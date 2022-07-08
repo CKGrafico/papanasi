@@ -2,14 +2,18 @@ import lernaJson from '../../lerna.json';
 import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateSvelteCodeSandboxLink(options) {
-  const { components, code, dependencies } = options;
+  const { components, extensions, code, dependencies } = options;
 
   const html = `<div class="app" id="app"></div>`;
 
   const previewCode = `<script>
-import { ${components.join(', ')} } from '@papanasi/svelte';
+import { ${components.join(', ')} ${components.length > 0 && extensions.length > 0 ? ', ' : ''}${extensions.join(
+    ', '
+  )} } from '@papanasi/svelte';
 import "@papanasi/svelte/dist/papanasi.css";
 import "./index.css";
+
+${[...extensions, ''].join('(); \n')}
 </script>
 ${code}
 `;

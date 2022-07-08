@@ -180,6 +180,18 @@ $ yarn add @papanasi/vue
       <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story">Preview</a>
     </td>
   </tr>
+  <tr>
+    <td align="left" colspan="4">
+     <h4>Extensions</h4>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      Tooltip <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/50"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/extensions-tooltip--default-story">Preview</a>
+    </td>
+  </tr>
 </table>
 
 ### 📗 Documentation

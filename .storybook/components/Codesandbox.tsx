@@ -19,6 +19,7 @@ enum CodesandboxPlatform {
 
 type CodesandboxProps = {
   components: string[];
+  extensions: string[];
   code: string;
   platform: CodesandboxPlatform;
   dependencies?: { [key: string]: string };
@@ -43,9 +44,9 @@ const icons = {
 };
 
 export function Codesandbox(props: CodesandboxProps) {
-  const { components, code, platform, dependencies = {} } = props;
+  const { components, extensions, code, platform, dependencies = {} } = props;
 
-  const { url, content } = generators[platform]({ components, code, dependencies });
+  const { url, content } = generators[platform]({ components, extensions, code, dependencies });
   const iconPlatform = icons[platform];
   const icon = `https://raw.githubusercontent.com/gilbarbara/logos/master/logos/${iconPlatform}.svg`;
 

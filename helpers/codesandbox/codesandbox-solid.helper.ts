@@ -2,13 +2,17 @@ import lernaJson from '../../lerna.json';
 import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateSolidCodeSandboxLink(options) {
-  const { components, code, dependencies } = options;
+  const { components, extensions, code, dependencies } = options;
 
   const html = `<div class="app" id="app"></div>
 <script src="index.tsx"></script>`;
 
-  const previewCode = `import { ${components.join(', ')} } from '@papanasi/solid';
+  const previewCode = `import { ${components.join(', ')} ${
+    components.length > 0 && extensions.length > 0 ? ', ' : ''
+  }${extensions.join(', ')} } from '@papanasi/solid';
 import '@papanasi/solid/dist/papanasi.css';
+
+${[...extensions, ''].join('(); \n')}
 
 const App: Component = () => (${code}
 );

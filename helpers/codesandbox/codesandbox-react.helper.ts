@@ -2,12 +2,16 @@ import lernaJson from '../../lerna.json';
 import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateReactCodeSandboxLink(options) {
-  const { components, code, dependencies } = options;
+  const { components, extensions, code, dependencies } = options;
 
   const html = `<div class="app" id="root"></div>`;
 
-  const previewCode = `import { ${components.join(', ')} } from '@papanasi/react';
+  const previewCode = `import { ${components.join(', ')} ${
+    components.length > 0 && extensions.length > 0 ? ', ' : ''
+  }${extensions.join(', ')} } from '@papanasi/react';
 import '@papanasi/react/dist/papanasi.css';
+
+${[...extensions, ''].join('(); \n')}
 
 const App = () => (${code}
 );

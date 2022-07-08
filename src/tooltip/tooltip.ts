@@ -66,10 +66,8 @@ function createTooltipElement() {
   document.body.append(element);
 }
 
-export function useTooltipExtension(rootElement: HTMLElement) {
-  if (!rootElement) {
-    return;
-  }
+export function useTooltipExtension(rootElement?: HTMLElement) {
+  const element = rootElement || document.body;
 
   if (state.initialized) {
     hideTooltip();
@@ -80,6 +78,6 @@ export function useTooltipExtension(rootElement: HTMLElement) {
 
   setTimeout(() => {
     createTooltipElement();
-    querySelectorAllObservable(rootElement, '[title]', onAddElement);
+    querySelectorAllObservable(element, '[title]', onAddElement);
   }, 10);
 }

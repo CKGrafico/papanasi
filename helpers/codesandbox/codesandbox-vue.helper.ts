@@ -2,7 +2,7 @@ import lernaJson from '../../lerna.json';
 import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateVueCodeSandboxLink(options) {
-  const { components, code, dependencies } = options;
+  const { components, extensions, code, dependencies } = options;
 
   const html = `<div class="app" id="app"></div>`;
 
@@ -10,8 +10,12 @@ export function generateVueCodeSandboxLink(options) {
 </template>
 
 <script>
-import { ${components.join(', ')} } from '@papanasi/vue';
+import { ${components.join(', ')} ${components.length > 0 && extensions.length > 0 ? ', ' : ''}${extensions.join(
+    ', '
+  )} } from '@papanasi/vue';
 import '@papanasi/vue/dist/papanasi.css';
+
+${[...extensions, ''].join('(); \n')}
 
 export default {
   name: "App",
