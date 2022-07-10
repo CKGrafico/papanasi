@@ -1,6 +1,8 @@
 import { querySelectorAllObservable } from '../../helpers';
 import './tooltip.css';
 
+const HIDDEN_CLASS = 'is-hidden';
+
 const state = {
   initialized: false,
   tooltipElement: document.createElement('div'),
@@ -8,20 +10,29 @@ const state = {
   y: 0,
   height: 0,
   width: 0,
-  title: ''
+  title: '',
+  time: 0
 };
 
 function showTooltip() {
-  state.tooltipElement.style.top = `${state.y}px`;
-  state.tooltipElement.style.left = `${state.x}px`;
-  state.tooltipElement.style.width = `${state.width}px`;
-  state.tooltipElement.innerText = state.title;
+  state.tooltipElement.classList.remove(HIDDEN_CLASS);
+
+  setTimeout(() => {
+    state.tooltipElement.style.top = `${state.y}px`;
+    state.tooltipElement.style.left = `${state.x}px`;
+    state.tooltipElement.style.width = `${state.width}px`;
+    state.tooltipElement.innerText = state.title;
+  }, state.time);
 }
 
 function hideTooltip() {
-  state.tooltipElement.style.top = '0';
-  state.tooltipElement.style.left = '0';
-  state.tooltipElement.innerText = '';
+  state.tooltipElement.classList.add(HIDDEN_CLASS);
+
+  setTimeout(() => {
+    state.tooltipElement.style.top = '0';
+    state.tooltipElement.style.left = '0';
+    state.tooltipElement.innerText = '';
+  }, state.time);
 }
 
 function manageElementTitle(element: HTMLElement) {
@@ -54,16 +65,21 @@ function onAddElement(element: HTMLElement) {
     state.height = 0;
     state.width = 0;
     state.title = '';
+
     hideTooltip();
   });
 }
 
 function createTooltipElement() {
   const element = document.createElement('div');
-  element.classList.add('pa-tooltip');
+  element.classList.add('pa-tooltip', HIDDEN_CLASS);
 
   state.tooltipElement = element;
   document.body.append(element);
+
+  const styles = getComputedStyle(element);
+  const transitionTime = styles.getPropertyValue(`--pa-tooltip-transition-time`).trim();
+  state.time = Number(transitionTime);
 }
 
 export function useTooltipExtension(rootElement?: HTMLElement) {

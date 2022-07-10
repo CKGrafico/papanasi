@@ -1,0 +1,25 @@
+@import '../../build.css';
+
+.pa-tooltip {
+  --pa-tooltip-background: var(--pa-color-basic-darkest);
+  --pa-tooltip-color: var(--pa-color-basic-brightest);
+  --pa-tooltip-distance: 0.5rem;
+  --pa-tooltip-font-size: var(--pa-font-size-small);
+  --pa-tooltip-padding: 0.25rem;
+  --pa-tooltip-radius: 0.25rem;
+  --pa-tooltip-transition-time: var(--pa-transition-duration-fast);
+
+  @mixin shared-styles;
+
+  background-color: var(--pa-tooltip-background);
+  border-radius: var(--pa-tooltip-radius);
+  color: var(--pa-tooltip-color);
+  font-size: var(--pa-tooltip-font-size);
+  padding: var(--pa-tooltip-padding);
+  transition: var(--pa-transition-opacity) var(--pa-tooltip-transition-time);
+  transform: translateY(var(--pa-tooltip-distance));
+
+  &.is-hidden {
+    opacity: 0;
+  }
+}
