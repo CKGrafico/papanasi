@@ -1,0 +1,6 @@
+@import '../../styles/build.css';
+@import 'choices.js/public/assets/styles/base.css';
+@import 'choices.js/public/assets/styles/choices.css';
+
+.pa-choice {
+}

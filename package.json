@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@rollup/plugin-dynamic-import-vars": "^1.4.3",
+    "choices.js": "^10.1.0",
     "color-hash": "^2.0.1",
     "copy-to-clipboard": "^3.3.1",
     "highlight.js": "^11.5.1"

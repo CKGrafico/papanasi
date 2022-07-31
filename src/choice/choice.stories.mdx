@@ -1,0 +1,104 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Choice } from '../../packages/react/src';
+import { Customization, Codesandbox } from '../../.storybook/components';
+
+<Meta
+  title="Components/Choice"
+  component={Choice}
+  argTypes={{
+    disabled: {
+      name: 'disabled',
+      description: 'Disable actions in the choice',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    <Choice {...args} />
+  </div>
+);
+
+# Choice
+
+...
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      disabled: false,
+      unchoice: '',
+      url: ''
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization selector=".pa-choice" css={``} />
+
+### Properties
+
+<ArgsTable story="Default" of={Choice} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Choice']}
+  platform="angular"
+  code={`
+    <span pa-choice name="Alice Morris"></span>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Choice']}
+  platform="react"
+  code={`
+  <Choice name="Alice Morris" />`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Choice']}
+  platform="solid"
+  code={`
+  <Choice name="Alice Morris" />`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Choice']}
+  platform="svelte"
+  code={`
+  <Choice name="Alice Morris" />`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Choice']}
+  platform="vue"
+  code={`
+  <Choice name="Alice Morris" />`}
+/>
+
+### Web Components
+
+<Codesandbox components={['Choice']} platform="webcomponents" code={`<pa-choice name="Alice Morris"></pa-choice>`} />

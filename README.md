@@ -145,18 +145,22 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <a href="https://papanasi.js.org/?path=/docs/components-button--default-story">Preview</a>
     </td>
     <td align="center">
+      Choice <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/10"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-choice--default-story">Preview</a>
+    </td>
+    <td align="center">
       Code <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-code--default-story">Preview</a>
     </td>
-    <td align="center">
+  </tr>
+   <tr>
+     <td align="center">
       Pill <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story">Preview</a>
     </td>
-    
-  </tr>
-   <tr>
     <td align="center">
       Select <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
