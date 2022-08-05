@@ -1,4 +1,4 @@
-import { For, onMount, Show, useMetadata, useRef, useState } from '@builder.io/mitosis';
+import { For, onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import copy from 'copy-to-clipboard';
 import hljs from 'highlight.js/lib/core';
 import { classesToString, getObjectValue } from '../../../helpers';
@@ -13,7 +13,7 @@ export type CodeProps = {
   links?: { label: string; url: string; icon: string }[];
   canCopy?: boolean;
   copyLabel?: string;
-  onChange?: (text: string) => void;
+  onUpdate?: (text: string) => void;
   onExit?: (text: string) => void;
 } & SharedProps;
 
@@ -23,7 +23,7 @@ export default function Code(props: CodeProps) {
   const previewRef = useRef();
   const codeRef = useRef();
 
-  const state = useState({
+  const state = useStore({
     classes: '',
     isEditing: false,
     isDark: false,
@@ -67,8 +67,8 @@ export default function Code(props: CodeProps) {
     onKeyUp() {
       state.previewCode = codeRef.innerText;
 
-      if (props.onChange) {
-        props.onChange(codeRef.innerText);
+      if (props.onUpdate) {
+        props.onUpdate(codeRef.innerText);
       }
     },
     value(x, y) {

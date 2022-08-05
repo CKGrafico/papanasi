@@ -40,9 +40,18 @@ function compile(filepath) {
       print: printTools.print
     });
 
+    // Meanwhile mitosis don't support import external types...
+    prependFile.sync(
+      outFile,
+      "import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\n"
+    );
+
     // Fix css imports
     const data = fs.readFileSync(outFile, 'utf8');
-    const result = data.replace(/import \{\} from ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
+    const result = data
+      // Fix css import
+      .replace(/import ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
+
     fs.writeFileSync(outFile, result, 'utf8');
 
     if (isFirstCompilation) {
@@ -88,15 +97,6 @@ function compile(filepath) {
       fs.writeFileSync(outFile, result, 'utf8');
     }
 
-    if (target === 'solid') {
-      const data = fs.readFileSync(outFile, 'utf8');
-      const result = data
-        // temporary fix to dont use useRef
-        .replace(/useRef\(\)/g, '(document.body as any) /* This is broken waiting for mitosis update */')
-        .replace(/\, ?useRef/, '');
-      fs.writeFileSync(outFile, result, 'utf8');
-    }
-
     if (target === 'svelte' && isFirstCompilation) {
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
       const result = data
@@ -119,6 +119,8 @@ function compile(filepath) {
         // Fix svelte styles property, pending https://github.com/BuilderIO/mitosis/issues/544#issuecomment-1176804781
         .replace(/style=\{/g, 'use:svelteStyling={')
         // Fix circle svg as component
+        .replace(/state\./g, '')
+        // Fix state in svelte
         .replace(/svelte:component\n.*this=\{circle\}/g, 'circle');
 
       fs.writeFileSync(outFile, result, 'utf8');

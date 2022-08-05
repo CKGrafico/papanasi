@@ -1,4 +1,4 @@
-import { onMount, useMetadata, useState } from '@builder.io/mitosis';
+import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString, getBreakpointClasses } from '../../../helpers';
 import { BreakpointProps, SharedProps } from '../../../models';
 import './row.css';
@@ -8,7 +8,7 @@ export type RowProps = SharedProps & BreakpointProps<'row' | 'column' | 'row-rev
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Row(props: RowProps) {
-  const state = useState({
+  const state = useStore({
     classes: ''
   });
 

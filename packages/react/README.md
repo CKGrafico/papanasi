@@ -5,7 +5,7 @@
 
 ### 🔍 Overview
 
-🥯Papanasi is a **UI library to use cross Frameworks**. A set of components to use in Angular, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
+🥯Papanasi _(pronunced pɑpənæʃ or papanash)_ is a **UI library to use cross Frameworks**. A set of components to use in Angular, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
 
 > WARNING: THIS IS AN ALPHA DONT USE IT YET, IS UNDER DEVELOPMENT.
 
@@ -145,18 +145,22 @@ $ yarn add @papanasi/react
       <a href="https://papanasi.js.org/?path=/docs/components-button--default-story">Preview</a>
     </td>
     <td align="center">
+      Choice <br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/10"/><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-choice--default-story">Preview</a>
+    </td>
+    <td align="center">
       Code <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-code--default-story">Preview</a>
     </td>
-    <td align="center">
+  </tr>
+   <tr>
+     <td align="center">
       Pill <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story">Preview</a>
     </td>
-    
-  </tr>
-   <tr>
     <td align="center">
       Select <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>

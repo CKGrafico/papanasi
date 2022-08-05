@@ -1,4 +1,4 @@
-import { onMount, useMetadata, useState } from '@builder.io/mitosis';
+import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
 import { Dynamic, SharedProps, Variant } from '../../../models';
 import './spinner.css';
@@ -11,7 +11,7 @@ export type SpinnerProps = {
 
 useMetadata({ isAttachedToShadowDom: true });
 export default function Spinner(props: SpinnerProps) {
-  const state = useState({
+  const state = useStore({
     classes: ''
   });
 

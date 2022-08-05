@@ -1,4 +1,4 @@
-import { onMount, useMetadata, useRef, useState, Show } from '@builder.io/mitosis';
+import { onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import { addScript, classesToString, waitUntilTrue } from '../../../helpers';
 import { ExternalLibrary, SharedProps } from '../../../models';
 import './itchio.css';
@@ -18,7 +18,7 @@ export default function Itchio(props: ItchioProps) {
   const actionRef = useRef();
   const global: Window & ExternalLibrary = window;
 
-  const state = useState({
+  const state = useStore({
     classes: '',
     isLoadingGameInfo: false,
     gameInfo: null,

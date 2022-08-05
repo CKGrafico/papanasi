@@ -1,4 +1,4 @@
-import { onMount, useMetadata, useState } from '@builder.io/mitosis';
+import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
 import { Dynamic, Intent, SharedProps, Variant } from '../../../models';
 import './pill.css';
@@ -12,7 +12,7 @@ export type PillProps = {
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Pill(props: PillProps) {
-  const state = useState({
+  const state = useStore({
     classes: ''
   });
 

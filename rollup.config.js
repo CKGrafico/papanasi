@@ -34,6 +34,7 @@ module.exports = (options) => {
       external,
       plugins: [
         ...plugins,
+        postcss(postcssConfig),
         resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
         json(),
         typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
@@ -45,8 +46,7 @@ module.exports = (options) => {
           ignore: [/node_modules/]
         }),
         peerDepsExternal(),
-        commonjs(),
-        postcss(postcssConfig)
+        commonjs()
       ]
     },
     {

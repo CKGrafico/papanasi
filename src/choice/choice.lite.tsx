@@ -1,5 +1,4 @@
-import { onMount, useMetadata, useRef, useState } from '@builder.io/mitosis';
-import Choices from 'choices.js';
+import { onMount, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
 import { SharedProps } from '../../../models';
 import './choice.css';
@@ -13,14 +12,14 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Choice(props: ChoiceProps) {
   const choicesRef = useRef();
 
-  const state = useState({
+  const state = useStore({
     classes: ''
   });
 
   onMount(() => {
     const setInitialProps = (disabled, className) => {
       debugger;
-      const cities = new Choices(choicesRef, { allowHTML: true });
+      // const cities = new Choices(choicesRef, { allowHTML: true });
 
       state.classes = classesToString(['pa-choice', [disabled, 'is-disabled'], className || '']);
     };
@@ -30,7 +29,7 @@ export default function Choice(props: ChoiceProps) {
 
   return (
     <div className={state.classes}>
-      <label ref="choicesRef">Cities</label>
+      <label>Cities</label>
       <select class="form-control" name="cities" id="cities">
         <option value="">Choose a city</option>
         <option value="Leeds">Leeds</option>

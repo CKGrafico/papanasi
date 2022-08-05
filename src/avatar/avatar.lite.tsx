@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useState } from '@builder.io/mitosis';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString, randomColor } from '../../../helpers';
 import { Dynamic, SharedProps, Variant } from '../../../models';
 import './avatar.css';
@@ -13,7 +13,7 @@ export type AvatarProps = {
 
 useMetadata({ isAttachedToShadowDom: true });
 export default function Avatar(props: AvatarProps) {
-  const state = useState({
+  const state = useStore({
     classes: '',
     customStyles: null,
     src: null,

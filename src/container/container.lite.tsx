@@ -1,4 +1,4 @@
-import { onMount, useMetadata, useState } from '@builder.io/mitosis';
+import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
 import { SharedProps } from '../../../models';
 import './container.css';
@@ -10,7 +10,7 @@ export type ContainerProps = {
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Container(props: ContainerProps) {
-  const state = useState({
+  const state = useStore({
     classes: ''
   });
 

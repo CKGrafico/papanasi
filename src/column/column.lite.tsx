@@ -1,4 +1,4 @@
-import { onMount, useMetadata, useState } from '@builder.io/mitosis';
+import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString, getBreakpointClasses } from '../../../helpers';
 import { BreakpointProps, SharedProps } from '../../../models';
 import './column.css';
@@ -9,7 +9,7 @@ export type ColumnProps = SharedProps &
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Column(props: ColumnProps) {
-  const state = useState({
+  const state = useStore({
     classes: ''
   });
 
