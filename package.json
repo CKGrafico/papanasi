@@ -14,9 +14,10 @@
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./styles/**/*.(css)\" --fix",
     "lint:editor": "eclint fix",
-    "storybook:clean": "rimraf node_modules/.cache/storybook",
-    "storybook:dev": "chokidar \"src/**/*\" \"styles/**/*\" -c \"yarn run-s build:mitosis build:lerna\"",
-    "storybook:start": "start-storybook --no-open -p 6006 --no-manager-cache",
+    "storybook:clean": "yarn build:clean",
+    "storybook:build": "node mitosis.compiler --dev",
+    "storybook:dev": "chokidar \"src/**/*\" \"styles/**/*\" -c \"yarn run-s storybook:build build:lerna\"",
+    "storybook:start": "start-storybook -p 6006 --no-manager-cache",
     "build-storybook": "build-storybook",
     "release-version": "lerna version 0.2.0-XX.PR-yyyyyyy --force-publish",
     "from-package": "lerna publish from-package --force-publish "

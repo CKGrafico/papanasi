@@ -1,5 +1,7 @@
-import { onMount } from '@builder.io/mitosis';
+import { onMount, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import Choices from 'choices.js';
+import { classesToString } from '../../../helpers';
+import { SharedProps } from '../../../models';
 import './choice.css';
 
 export type ChoiceProps = {

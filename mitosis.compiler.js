@@ -12,7 +12,9 @@ const compileCommand = require('@builder.io/mitosis-cli/dist/commands/compile');
 function compile(filepath) {
   const file = path.parse(filepath);
 
-  config.targets.forEach(async (target, i) => {
+  const targets = process.argv.includes('--dev') ? ['react'] : config.targets;
+
+  targets.forEach(async (target, i) => {
     const outPath = `${config.dest}/${target}`;
     const outFile = `${outPath}/${filepath.replace(`/${file.base}`, '')}.${config.extensions[i]}`;
     const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
