@@ -15,6 +15,8 @@ module.exports = (options) => {
   const tsconfig = require(path.resolve(__dirname, './tsconfig.json'));
   tsconfig.compilerOptions = { ...tsconfig.compilerOptions, ...compilerOptions };
 
+  const defaultPresets = ['@babel/preset-env', ['@babel/preset-typescript', tsconfig.compilerOptions]];
+
   const inputs = [
     {
       input: path.resolve(dir, 'src/index.ts'),
@@ -41,7 +43,7 @@ module.exports = (options) => {
         babel({
           plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
           extensions: ['.js', '.ts', '.tsx'],
-          presets: [...presets, '@babel/preset-env', ['@babel/preset-typescript', tsconfig.compilerOptions]],
+          presets: presets.length > 0 ? [...presets, ...defaultPresets] : defaultPresets,
           babelHelpers: 'bundled',
           ignore: [/node_modules/]
         }),

@@ -87,9 +87,6 @@ function compile(filepath) {
     }
 
     if (target === 'react') {
-      // Add react import
-      prependFile.sync(outFile, '//@ts-nocheck \n import React from "react"; \n');
-
       const data = fs.readFileSync(outFile, 'utf8');
       const result = data
         // fix contenteditable

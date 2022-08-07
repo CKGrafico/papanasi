@@ -9,29 +9,25 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    {
-      name: '@storybook/addon-postcss',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss')
-        }
-      }
-    }
+    '@storybook/addon-postcss'
   ],
   framework: '@storybook/react',
-  webpackFinal: async (config) => {
+  webpackFinal: async (config, options) => {
     // Extract css files
     const cssRule = config.module.rules.find((x) => x.test.toString().includes('css'));
     config.plugins.unshift(new MiniCssExtractPlugin());
+
     const use = cssRule.use.filter((x) => !x.includes || !x.includes('style-loader'));
     use.unshift(MiniCssExtractPlugin.loader);
-    cssRule.use = use;
+    cssRule.use = use.filter((x) => !x?.loader?.includes('style-loader'));
 
     config.watchOptions = {
       aggregateTimeout: 1000,
       poll: 1000,
       ignored: ['**/packages/**/*.tsx', '**/node_modules']
     };
+
+    options.cache.set = () => Promise.resolve();
 
     return config;
   }
