@@ -21,12 +21,6 @@ module.exports = {
     use.unshift(MiniCssExtractPlugin.loader);
     cssRule.use = use.filter((x) => !x?.loader?.includes('style-loader'));
 
-    config.watchOptions = {
-      aggregateTimeout: 1000,
-      poll: 1000,
-      ignored: ['**/packages/**/*.tsx', '**/node_modules']
-    };
-
     options.cache.set = () => Promise.resolve();
 
     return config;
