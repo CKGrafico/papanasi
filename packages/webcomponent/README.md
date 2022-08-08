@@ -45,8 +45,10 @@ $ yarn add @papanasi/webcomponents
 ```
 
 ### 🧩 Platforms 
+
 <table align="center">
   <tr>
+
     <td align="center" width="100">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/angular-icon.svg" width="50" title="Angular"> <br/>
       <strong>Angular</strong> <br/>
@@ -95,6 +97,7 @@ $ yarn add @papanasi/webcomponents
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">📦Sandbox</a>
       </sub>
     </td>
+
   </tr>
 </table>
 
@@ -102,11 +105,14 @@ $ yarn add @papanasi/webcomponents
 
 <table align="center">
   <tr>
+
     <td align="left" colspan="4">
      <h4>Layout Components</h4>
     </td>
+
   </tr>
   <tr>
+
     <td align="center">
       Container <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
@@ -127,13 +133,17 @@ $ yarn add @papanasi/webcomponents
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-grid--default-story">Preview</a>
     </td>
+
   </tr>
   <tr>
+
     <td  align="left" colspan="4">
      <h4>Regular Components</h4>
     </td>
+
   </tr>
   <tr>
+
     <td align="center">
       Avatar <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
@@ -154,8 +164,10 @@ $ yarn add @papanasi/webcomponents
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-code--default-story">Preview</a>
     </td>
+
   </tr>
    <tr>
+
      <td align="center">
       Pill <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
@@ -171,30 +183,39 @@ $ yarn add @papanasi/webcomponents
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-spinner--default-story">Preview</a>
     </td>
+
   </tr>
   <tr>
+
     <td align="left" colspan="4">
      <h4>Enterprise Components</h4>
     </td>
+
   </tr>
   <tr>
+
     <td align="center">
       Itchio <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/80"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story">Preview</a>
     </td>
+
   </tr>
   <tr>
+
     <td align="left" colspan="4">
      <h4>Extensions</h4>
     </td>
+
   </tr>
   <tr>
+
     <td align="center">
       Tooltip <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/50"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/extensions-tooltip--default-story">Preview</a>
     </td>
+
   </tr>
 </table>
 
@@ -209,3 +230,15 @@ To learn more about Papanasi, check [the documentation](http://papanasi.js.org/)
 ### 🚀 Contributing
 
 [Contributing Guidelines](https://github.com/CKGrafico/papanasi/blob/main/CONTRIBUTING.md)
+
+To run the project locally, you can use:
+
+```
+> yarn dev
+```
+
+To build the project locally, just execute:
+
+```
+> yarn build
+```

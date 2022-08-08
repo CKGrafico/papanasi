@@ -40,6 +40,10 @@ body {
     }
   }
 
+  .min-20 {
+    padding-bottom: 20rem;
+  }
+
   .pa-button,
   .pa-pill,
   .pa-avatar,

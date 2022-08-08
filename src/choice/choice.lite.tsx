@@ -3,6 +3,7 @@ import Choices from 'choices.js';
 import { classesToString } from '../../../helpers';
 import { SharedProps } from '../../../models';
 import './choice.css';
+import { choiceService } from './choice.service';
 
 export type ChoiceProps = {
   disabled?: boolean;
@@ -17,7 +18,8 @@ export default function Choice(props: ChoiceProps) {
     classes: '',
     onMounted() {
       const setInitialProps = (disabled, className) => {
-        const cities = new Choices(choicesRef, { allowHTML: true });
+        console.log(choiceService.options);
+        const cities = new Choices(choicesRef, choiceService.options);
 
         state.classes = classesToString(['pa-choice', [disabled, 'is-disabled'], className || '']);
       };

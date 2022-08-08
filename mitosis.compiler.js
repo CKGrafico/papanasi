@@ -20,9 +20,18 @@ function compile(filepath) {
     const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
 
     if (isFirstCompilation) {
+      // Copy basic files
       fs.mkdirSync(`${outPath}/src`);
       fs.copyFileSync('./src/index.ts', `${outPath}/src/index.ts`);
       fs.copyFileSync('./README.md', `${outPath}/README.md`);
+
+      // Copy services
+      function getServices() {
+        return new Promise((resolve) => glob('./src/**/*.service.ts', (er, files) => resolve(files)));
+      }
+
+      const services = await getServices();
+      services.forEach((element) => fs.copyFileSync(element, `${outPath}/src/${path.parse(element).base}`));
     }
 
     await compileCommand.run({
