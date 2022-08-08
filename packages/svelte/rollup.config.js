@@ -10,6 +10,7 @@ module.exports = config({
     importsNotUsedAsValues: 'error',
     preserveValueImports: true,
     isolatedModules: true,
-    types: ['node', 'svelte']
+    types: ['node', 'svelte'],
+    jsxImportSource: null
   }
 });

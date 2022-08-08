@@ -36,7 +36,6 @@ module.exports = (options) => {
       external,
       plugins: [
         ...plugins,
-        postcss(postcssConfig),
         resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
         json(),
         typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
@@ -47,6 +46,7 @@ module.exports = (options) => {
           babelHelpers: 'bundled',
           ignore: [/node_modules/]
         }),
+        postcss(postcssConfig),
         peerDepsExternal(),
         commonjs()
       ]

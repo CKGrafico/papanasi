@@ -5,6 +5,7 @@ module.exports = config({
   packageJson: require('./package.json'),
   presets: ['@babel/preset-react'],
   compilerOptions: {
-    jsx: 'react'
+    jsx: 'react',
+    jsxImportSource: null
   }
 });

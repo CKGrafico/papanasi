@@ -31,7 +31,7 @@ export default function Choice(props: ChoiceProps) {
   return (
     <div className={state.classes}>
       <label>Cities</label>
-      <select ref={choicesRef} class="form-control" name="cities" id="cities">
+      <select ref={choicesRef} name="cities" id="cities">
         <option value="" key="1">
           Choose a city
         </option>
