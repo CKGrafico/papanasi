@@ -21,7 +21,7 @@ export default function Choice(props: ChoiceProps) {
         console.log(choiceService.options);
         const cities = new Choices(choicesRef, choiceService.options);
 
-        state.classes = classesToString(['pa-choice', [disabled, 'is-disabled'], className || '']);
+        state.classes = classesToString(['pa-choice1', [disabled, 'is-disabled'], className || '']);
       };
 
       setInitialProps(props.disabled, props.className);

@@ -2,7 +2,7 @@
 /* ===============================
 =            Choices            =
 =============================== */
-.pa-choice {
+.pa-choice__container {
   position: relative;
   overflow: hidden;
   margin-bottom: 24px;

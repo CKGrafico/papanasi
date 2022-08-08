@@ -8,7 +8,7 @@ export const sortByAlpha = ({ value, label = value }, { value: value2, label: la
   });
 
 export const DEFAULT_CLASSNAMES: ClassNames = {
-  containerOuter: 'pa-choice',
+  containerOuter: 'pa-choice__container',
   containerInner: 'pa-choice__inner',
   input: 'pa-choice__input',
   inputCloned: 'pa-choice__input--cloned',
