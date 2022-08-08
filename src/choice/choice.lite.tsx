@@ -17,7 +17,6 @@ export default function Choice(props: ChoiceProps) {
     classes: '',
     onMounted() {
       const setInitialProps = (disabled, className) => {
-        debugger;
         const cities = new Choices(choicesRef, { allowHTML: true });
 
         state.classes = classesToString(['pa-choice', [disabled, 'is-disabled'], className || '']);
@@ -31,14 +30,20 @@ export default function Choice(props: ChoiceProps) {
 
   return (
     <div className={state.classes}>
-      <label ref={choicesRef}>Cities</label>
-      <select class="form-control" name="cities" id="cities">
-        <option value="">Choose a city</option>
-        <option value="Leeds">Leeds</option>
-        <option value="Manchester">Manchester</option>
-        <option value="London">London</option>
-        <option value="Sheffield">Sheffield</option>
-        <option value="Newcastle">Newcastle</option>
+      <label>Cities</label>
+      <select ref={choicesRef} class="form-control" name="cities" id="cities">
+        <option value="" key="1">
+          Choose a city
+        </option>
+        <option value="Leeds" key="2">
+          Leeds
+        </option>
+        <option value="Manchester" key="3">
+          Manchester
+        </option>
+        <option value="London" key="4">
+          London
+        </option>
       </select>
     </div>
   );
