@@ -51,15 +51,14 @@ function compile(filepath) {
       print: printTools.print
     });
 
-    // Meanwhile mitosis don't support import external types...
-    prependFile.sync(
-      outFile,
-      "import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\n"
-    );
-
     // Fix css imports
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
+      // Meanwhile mitosis don't support import external types...
+      .replace(
+        'import',
+        "import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\nimport"
+      )
       // Fix css import
       .replace(/import ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
 

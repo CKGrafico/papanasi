@@ -1,5 +1,3 @@
-import { ClassNames, Options } from 'choices.js';
-
 export const sortByAlpha = ({ value, label = value }, { value: value2, label: label2 = value2 }): number =>
   label.localeCompare(label2, [], {
     sensitivity: 'base',
@@ -7,7 +5,7 @@ export const sortByAlpha = ({ value, label = value }, { value: value2, label: la
     numeric: true
   });
 
-export const DEFAULT_CLASSNAMES: ClassNames = {
+export const DEFAULT_CLASSNAMES = {
   containerOuter: 'pa-choice__container',
   containerInner: 'pa-choice__inner',
   input: 'pa-choice__input',
@@ -36,7 +34,7 @@ export const DEFAULT_CLASSNAMES: ClassNames = {
   noChoices: 'has-no-choices'
 };
 
-export const DEFAULT_CONFIG: Options = {
+export const DEFAULT_CONFIG: any = {
   items: [],
   choices: [],
   silent: false,
@@ -86,7 +84,7 @@ export const DEFAULT_CONFIG: Options = {
 };
 
 class ChoiceService {
-  public options: Options = {
+  public options = {
     ...DEFAULT_CONFIG,
     classNames: {
       ...DEFAULT_CLASSNAMES,

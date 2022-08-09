@@ -13,6 +13,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "importsNotUsedAsValues": "preserve"
   }
 }

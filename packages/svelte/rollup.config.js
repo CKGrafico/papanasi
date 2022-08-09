@@ -7,7 +7,6 @@ module.exports = config({
   plugins: [svelte()],
   dts: false,
   compilerOptions: {
-    importsNotUsedAsValues: 'error',
     preserveValueImports: true,
     isolatedModules: true,
     types: ['node', 'svelte'],

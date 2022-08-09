@@ -34,16 +34,16 @@ export default function Choice(props: ChoiceProps) {
     <div className={state.classes}>
       <label>Cities</label>
       <select ref={choicesRef} name="cities" id="cities">
-        <option value="" key="1">
+        <option value="" data-key={1}>
           Choose a city
         </option>
-        <option value="Leeds" key="2">
+        <option value="Leeds" data-key={2}>
           Leeds
         </option>
-        <option value="Manchester" key="3">
+        <option value="Manchester" data-key={3}>
           Manchester
         </option>
-        <option value="London" key="4">
+        <option value="London" data-key={4}>
           London
         </option>
       </select>
