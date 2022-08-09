@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/angular",
-  "version": "0.2.3-2",
+  "version": "0.2.3-3",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Angular UI Library",
   "main": "./dist/papanasi-angular.umd.js",
