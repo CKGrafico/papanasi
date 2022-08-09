@@ -121,12 +121,10 @@ function compile(filepath) {
       const result = data
         // Work with children (currently not working as expected)
         .replace(/children/g, '$$$slots')
-        // Add styling
-        .replace(/\} from \"\.\.\/\.\.\/\.\.\/helpers\"/g, ', svelteStyling } from "../../../helpers"')
-        // Fix svelte styles property, pending https://github.com/BuilderIO/mitosis/issues/544#issuecomment-1176804781
-        .replace(/style=\{/g, 'use:svelteStyling={')
         // Fix circle svg as component
         .replace(/state\./g, '')
+        // Svelte compiler is not adding let to the state values
+        .replace(/^  (\w*) = (.*)/gm, '  let $1 = $2')
         // Fix state in svelte
         .replace(/svelte:component\n.*this=\{circle\}/g, 'circle');
 
