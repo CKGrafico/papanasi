@@ -17,6 +17,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Avatar(props: AvatarProps) {
   const state = useStore({
     classes: '',
+    containerClasses: '',
     customStyles: null,
     src: null,
     initials: ''
@@ -30,6 +31,8 @@ export default function Avatar(props: AvatarProps) {
         [disabled, 'is-disabled'],
         className || ''
       ]);
+
+      state.containerClasses = classesToString(['pa-avatar__container', [variant, `pa-avatar--${variant}`]]);
     };
 
     const setNameInitials = (name) => {
@@ -69,7 +72,7 @@ export default function Avatar(props: AvatarProps) {
   return (
     <div className={state.classes} title={props.name}>
       <Show when={state.customStyles}>
-        <div className="pa-avatar__container" style={state.customStyles}>
+        <div className={state.containerClasses} style={state.customStyles}>
           <Show when={state.src}>
             <img className="pa-avatar__image" src={state.src} alt={props.name} />
           </Show>
