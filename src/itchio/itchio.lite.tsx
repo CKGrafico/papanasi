@@ -1,7 +1,8 @@
 import { onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
-import { addScript, classesToString, waitUntilTrue } from '../../../helpers';
-import { ExternalLibrary, SharedProps } from '../../../models';
+import { classesToString } from '../../../helpers';
+import { SharedProps } from '../../../models';
 import './itchio.css';
+import { itchioService } from './itchio.service';
 
 export type ItchioProps = {
   user: string;
@@ -16,20 +17,11 @@ useMetadata({ isAttachedToShadowDom: true });
 
 export default function Itchio(props: ItchioProps) {
   const actionRef = useRef();
-  const global: Window & ExternalLibrary = window;
 
   const state = useStore({
     classes: '',
     isLoadingGameInfo: false,
-    gameInfo: null,
-    attachButton() {
-      global.Itch.attachBuyButton(actionRef, {
-        user: props.user,
-        game: props.game,
-        width: props.width || 800,
-        height: props.height || 600
-      });
-    }
+    gameInfo: null
   });
 
   onMount(() => {
@@ -37,32 +29,21 @@ export default function Itchio(props: ItchioProps) {
       state.classes = classesToString(['pa-itchio', className || '']);
     };
 
-    const loadScript = async () => {
-      await addScript('https://static.itch.io/api.js', 'itchio');
-      await waitUntilTrue(() => global.Itch);
-    };
-
-    const onLoadScript = () => {
+    const onLoadScript = async () => {
       if (state.isLoadingGameInfo) {
         return;
       }
 
       state.isLoadingGameInfo = true;
 
-      global.Itch.getGameData({
-        user: props.user,
-        game: props.game,
-        secret: props.secret,
-        onComplete: (data) => {
-          state.attachButton();
-          state.gameInfo = data;
-          props.onLoad && props.onLoad();
-        }
-      });
+      const data = await itchioService.getGameData(actionRef, props);
+
+      state.gameInfo = data;
+      props.onLoad && props.onLoad();
     };
 
     const load = async () => {
-      await loadScript();
+      await itchioService.loadScript();
       await onLoadScript();
     };
 

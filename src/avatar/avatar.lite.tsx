@@ -1,5 +1,7 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString, randomColor } from '../../../helpers';
+import { avatarService } from './avatar.service';
+
 import { Dynamic, SharedProps, Variant } from '../../../models';
 import './avatar.css';
 
@@ -31,14 +33,7 @@ export default function Avatar(props: AvatarProps) {
     };
 
     const setNameInitials = (name) => {
-      // From: https://stackoverflow.com/a/63763497/3274609
-      state.initials = name
-        .match(/(^\S\S?|\s\S)?/g)
-        .map((v) => v.trim())
-        .join('')
-        .match(/(^\S|\S$)?/g)
-        .join('')
-        .toLocaleUpperCase();
+      state.initials = avatarService.getInitials(name);
     };
 
     const setSource = (url, unavatar) => {
