@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/svelte",
-  "version": "0.2.3-3",
+  "version": "0.2.3-4",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
   "main": "./dist/papanasi-svelte.umd.js",
@@ -25,5 +25,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "6661f8e9973f0e7df61d5bf48d7b91bed8f96fed"
+  "gitHead": "6661f8e9973f0e7df61d5bf48d7b91bed8f96fed",
+  "dependencies": {
+    "on-change": "^4.0.1"
+  }
 }
