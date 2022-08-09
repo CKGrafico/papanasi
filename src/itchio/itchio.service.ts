@@ -4,23 +4,23 @@ import { ExternalLibrary } from '../../../models';
 const global: Window & ExternalLibrary = window;
 
 class ItchioService {
-  public attachButton(actionRef, props) {
+  public attachButton(actionRef, user, game, width, height) {
     global.Itch.attachBuyButton(actionRef, {
-      user: props.user,
-      game: props.game,
-      width: props.width || 800,
-      height: props.height || 600
+      user: user,
+      game: game,
+      width: width || 800,
+      height: height || 600
     });
   }
 
-  public async getGameData(actionRef, props) {
+  public async getGameData(actionRef, user, game, width, height, secret) {
     return new Promise((resolve) => {
       global.Itch.getGameData({
-        user: props.user,
-        game: props.game,
-        secret: props.secret,
+        user: user,
+        game: game,
+        secret: secret,
         onComplete: (data) => {
-          this.attachButton(actionRef, props);
+          this.attachButton(actionRef, user, game, width, height);
           resolve(data);
         }
       });

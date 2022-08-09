@@ -21,35 +21,43 @@ export default function Itchio(props: ItchioProps) {
   const state = useStore({
     classes: '',
     isLoadingGameInfo: false,
-    gameInfo: null
+    gameInfo: null,
+    onMounted() {
+      const setInitialProps = (className) => {
+        state.classes = classesToString(['pa-itchio', className || '']);
+      };
+
+      const onLoadScript = async () => {
+        if (state.isLoadingGameInfo) {
+          return;
+        }
+
+        state.isLoadingGameInfo = true;
+
+        const data = await itchioService.getGameData(
+          actionRef,
+          props.user,
+          props.game,
+          props.width,
+          props.height,
+          props.secret
+        );
+
+        state.gameInfo = data;
+        props.onLoad && props.onLoad();
+      };
+
+      const load = async () => {
+        await itchioService.loadScript();
+        await onLoadScript();
+      };
+
+      setInitialProps(props.className);
+      load();
+    }
   });
 
-  onMount(() => {
-    const setInitialProps = (className) => {
-      state.classes = classesToString(['pa-itchio', className || '']);
-    };
-
-    const onLoadScript = async () => {
-      if (state.isLoadingGameInfo) {
-        return;
-      }
-
-      state.isLoadingGameInfo = true;
-
-      const data = await itchioService.getGameData(actionRef, props);
-
-      state.gameInfo = data;
-      props.onLoad && props.onLoad();
-    };
-
-    const load = async () => {
-      await itchioService.loadScript();
-      await onLoadScript();
-    };
-
-    setInitialProps(props.className);
-    load();
-  });
+  onMount(() => state.onMounted());
 
   return (
     <div className={state.classes}>

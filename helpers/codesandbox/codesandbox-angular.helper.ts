@@ -10,9 +10,7 @@ export function generateAngularCodeSandboxLink(options) {
     components.length > 0 && extensions.length > 0 ? ', ' : ''
   }${extensions.join(', ')} } from '@papanasi/angular';
 import '@papanasi/angular/dist/papanasi.css';
-
 ${[...extensions, ''].join('(); \n')}
-
 @Component({
   selector: "app-root",
   template: \`${code}\`

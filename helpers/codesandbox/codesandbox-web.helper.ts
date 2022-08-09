@@ -31,10 +31,7 @@ import { ${components.join(', ')} ${components.length > 0 && extensions.length >
     ', '
   )} } from '@papanasi/webcomponents';
 import "@papanasi/webcomponents/dist/papanasi.css";
-
-
 ${[...extensions, ''].join('(); \n')}
-
 // index.html
 ${code}
 `;

@@ -10,9 +10,7 @@ export function generateSolidCodeSandboxLink(options) {
   const previewCode = `import { ${components.join(', ')} ${
     components.length > 0 && extensions.length > 0 ? ', ' : ''
   }${extensions.join(', ')} } from '@papanasi/solid';
-import '@papanasi/solid/dist/papanasi.css';
-
-${[...extensions, ''].join('(); \n')}
+import '@papanasi/solid/dist/papanasi.css';${[...extensions, ''].join('(); \n')}
 
 const App: Component = () => (${code}
 );

@@ -14,9 +14,7 @@ import { ${components.join(', ')} ${components.length > 0 && extensions.length >
     ', '
   )} } from '@papanasi/vue';
 import '@papanasi/vue/dist/papanasi.css';
-
 ${[...extensions, ''].join('(); \n')}
-
 export default {
   name: "App",
   components: { ${components.join(', ')} }

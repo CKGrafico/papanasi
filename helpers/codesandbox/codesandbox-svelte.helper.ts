@@ -11,9 +11,7 @@ import { ${components.join(', ')} ${components.length > 0 && extensions.length >
     ', '
   )} } from '@papanasi/svelte';
 import "@papanasi/svelte/dist/papanasi.css";
-import "./index.css";
-
-${[...extensions, ''].join('(); \n')}
+import "./index.css";${[...extensions, ''].join('(); \n')}
 </script>
 ${code}
 `;
