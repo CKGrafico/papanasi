@@ -3,7 +3,7 @@
   <p align="center">The Universal UI Library</p>
 </h1>
 
-### 🔍 Overview1
+### 🔍 Overview
 
 🥯Papanasi _(pronunced pɑpənæʃ or papanash)_ is a **UI library to use cross Frameworks**. A set of components to use in Angular, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
 
