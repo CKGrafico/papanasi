@@ -173,11 +173,6 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story">Preview</a>
     </td>
-    <td align="center">
-      Select <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-select--default-story">Preview</a>
-    </td>
      <td align="center">
       Spinner <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
@@ -196,7 +191,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
 
     <td align="center">
       Itchio <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/80"/><br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story">Preview</a>
     </td>
 
@@ -212,7 +207,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
 
     <td align="center">
       Tooltip <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/50"/><br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/75"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/extensions-tooltip--default-story">Preview</a>
     </td>
 
