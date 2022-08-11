@@ -225,7 +225,6 @@ To learn more about Papanasi, check [the documentation](http://papanasi.js.org/)
 ### 🚀 Contributing
 
 [Contributing Guidelines](https://github.com/CKGrafico/papanasi/blob/main/CONTRIBUTING.md)
-
 To run the project locally, you can use:
 
 ```
@@ -237,3 +236,7 @@ To build the project locally, just execute:
 ```
 > yarn build
 ```
+
+### Thanks to everyone who contributed:
+<img width="50px" src="https://contrib.rocks/image?repo=ckgrafico/papanasi" />
+
