@@ -238,5 +238,5 @@ To build the project locally, just execute:
 ```
 
 ### Thanks to everyone who contributed:
-<img width="50px" src="https://contrib.rocks/image?repo=ckgrafico/papanasi" />
+[![Contributors](https://contrib.rocks/image?repo=ckgrafico/papanasi)](https://github.com/CKGrafico/papanasi/graphs/contributors)
 
