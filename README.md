@@ -240,3 +240,5 @@ To build the project locally, just execute:
 ### Thanks to everyone who contributed:
 [![Contributors](https://contrib.rocks/image?repo=ckgrafico/papanasi)](https://github.com/CKGrafico/papanasi/graphs/contributors)
 
+---
+Made with 🍕 by [Quique Fdez Guerra](https://twitter.com/ckgrafico)
