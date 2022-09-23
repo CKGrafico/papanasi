@@ -55,8 +55,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
         <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">📦Sandbox</a>
       </sub>
     </td>
-     <td align="center" width="100">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="React"> <br/>
+    <td align="center" width="100">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
       <strong>Qwik</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/qwik/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
