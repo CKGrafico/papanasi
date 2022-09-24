@@ -1,13 +1,14 @@
 const compiler = require('./shared/shared.compiler');
+const fs = require('fs');
 
 const DEFAULT_OPTIONS = {
   target: 'vue',
   extension: 'vue'
 };
 
-function compile(options) {
+(async () => {
   function customReplace(outFile, isFirstCompilation) {
-    if (options.target === 'vue' && isFirstCompilation) {
+    if (isFirstCompilation) {
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
       const result = data
         // Add .vue to index
@@ -19,17 +20,13 @@ function compile(options) {
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
 
-    if (options.target === 'vue') {
-      const data = fs.readFileSync(outFile, 'utf8');
-      const result = data
-        // Enable children
-        .replace(/this\.children/, 'this.$slots.default()');
+    const data = fs.readFileSync(outFile, 'utf8');
+    const result = data
+      // Enable children
+      .replace(/this\.children/, 'this.$slots.default()');
 
-      fs.writeFileSync(outFile, result, 'utf8');
-    }
+    fs.writeFileSync(outFile, result, 'utf8');
   }
 
-  compiler.compile({ ...options, customReplace });
-}
-
-compile(DEFAULT_OPTIONS);
+  await compiler.compile({ ...DEFAULT_OPTIONS, customReplace });
+})();

@@ -5,10 +5,11 @@
   "version": "0.1.5",
   "scripts": {
     "dev": "run-s dev:* && run-p storybook:**",
+    "clean": "rimraf packages/**/{src,dist,node_modules}",
     "compile": "node ./compiler/compile",
     "compile:vue": "node ./compiler/vue",
+    "compile:react": "node ./compiler/react",
     "build": "run-s build:**",
-    "build:clean": "rimraf packages/**/{src,dist,node_modules}",
     "build:mitosis": "node mitosis.compiler",
     "build:lerna": "lerna run build",
     "release": "lerna publish",

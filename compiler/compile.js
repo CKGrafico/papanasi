@@ -5,16 +5,21 @@ const Listr = require('listr');
 
   const tasks = new Listr([
     {
-      title: 'Compile all packages',
+      title: 'Clean output',
+      task: (ctx, task) => execa('yarn clean').catch(() => task.skip('Cannot remove output directory'))
+    },
+    {
+      title: 'Compile Mitosis components',
       task: () => {
         return new Listr(
           [
             {
-              title: 'Compile Vue from Mitosis',
-              task: (ctx, task) =>
-                execa('yarn compile:vue').catch(() => {
-                  task.skip('Error compiling Vue');
-                })
+              title: 'Compile React',
+              task: (ctx, task) => execa('yarn compile:react').catch(() => task.skip('Error compiling React'))
+            },
+            {
+              title: 'Compile Vue',
+              task: (ctx, task) => execa('yarn compile:vue').catch(() => task.skip('Error compiling Vue'))
             }
           ],
           { concurrent: true }

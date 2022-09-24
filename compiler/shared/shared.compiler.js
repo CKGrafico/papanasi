@@ -1,6 +1,5 @@
 const glob = require('glob');
 const fs = require('fs');
-const prependFile = require('prepend-file');
 const path = require('path');
 const filesystemTools = require('gluegun/filesystem');
 const stringTools = require('gluegun/strings');
@@ -34,19 +33,28 @@ async function compile(defaultOptions) {
   const outPath = `${options.dest}/${options.target}`;
   const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
 
-  function copyBasicFilesOnFirstCompilation() {
+  function copyBasicFilesOnFirstCompilation(filepath) {
     if (!isFirstCompilation) {
       return;
     }
 
-    fs.mkdirSync(`${outPath}/src`);
-    fs.copyFileSync('./src/index.ts', `${outPath}/src/index.ts`);
-    fs.copyFileSync('./README.md', `${outPath}/README.md`);
+    if (!fs.existsSync(`${outPath}/src`)) {
+      fs.mkdirSync(`${outPath}/src`);
+    }
 
-    const services = glob.sync('./src/**/*.service.ts', (er, files) => resolve(files));
-    services.forEach((element) => fs.copyFileSync(element, `${outPath}/src/${path.parse(element).base}`));
+    if (!fs.existsSync(`${outPath}/${path.parse(filepath).dir}`)) {
+      fs.mkdirSync(`${outPath}/${path.parse(filepath).dir}`);
+    }
 
-    const data = fs.readFileSync('./README.md', 'utf8');
+    fs.copyFileSync('src/index.ts', `${outPath}/src/index.ts`);
+
+    const services = glob.sync(`${path.parse(filepath).dir}/*.service.ts`);
+
+    services.forEach((element) =>
+      fs.copyFileSync(element, `${outPath}/${path.parse(element).dir}/${path.parse(element).base}`)
+    );
+
+    const data = fs.readFileSync('README.md', 'utf8');
     const result = data.replace(
       /\/\{platform\}.+/g,
       `/${options.target + (options.target === 'webcomponent' ? 's' : '')}`
@@ -57,6 +65,8 @@ async function compile(defaultOptions) {
 
   async function compileMitosisComponent(filepath) {
     const file = path.parse(filepath);
+
+    //////// TODO
     const outFile = `${outPath}/${filepath.replace(`/${file.base}`, '')}.${options.extension}`;
 
     await compileCommand.run({
@@ -98,7 +108,7 @@ async function compile(defaultOptions) {
   for (const file of files) {
     spinner.text = file;
 
-    copyBasicFilesOnFirstCompilation();
+    copyBasicFilesOnFirstCompilation(file);
     const { outFile } = await compileMitosisComponent(file);
     replacePropertiesFromCompiledFiles(outFile);
     options.customReplace(outFile, isFirstCompilation);
