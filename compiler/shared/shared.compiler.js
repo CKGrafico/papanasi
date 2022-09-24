@@ -14,7 +14,8 @@ const DEFAULT_OPTIONS = {
   dest: 'packages',
   options: {},
   target: '',
-  extension: ''
+  extension: '',
+  customReplace: (outFile, isFirstCompilation) => null
 };
 
 const optionDefinitions = [{ name: 'file', alias: 'f', type: String }];
@@ -33,23 +34,31 @@ async function compile(defaultOptions) {
   const outPath = `${options.dest}/${options.target}`;
   const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
 
-  async function aaaaa(filepath) {
+  function copyBasicFilesOnFirstCompilation() {
+    if (!isFirstCompilation) {
+      return;
+    }
+
+    fs.mkdirSync(`${outPath}/src`);
+    fs.copyFileSync('./src/index.ts', `${outPath}/src/index.ts`);
+    fs.copyFileSync('./README.md', `${outPath}/README.md`);
+
+    const services = glob.sync('./src/**/*.service.ts', (er, files) => resolve(files));
+    services.forEach((element) => fs.copyFileSync(element, `${outPath}/src/${path.parse(element).base}`));
+
+    const data = fs.readFileSync('./README.md', 'utf8');
+    const result = data.replace(
+      /\/\{platform\}.+/g,
+      `/${options.target + (options.target === 'webcomponent' ? 's' : '')}`
+    );
+
+    fs.writeFileSync(`${outPath}/README.md`, result, 'utf8');
+  }
+
+  async function compileMitosisComponent(filepath) {
     const file = path.parse(filepath);
     const outFile = `${outPath}/${filepath.replace(`/${file.base}`, '')}.${options.extension}`;
 
-    ///////////////
-
-    if (isFirstCompilation) {
-      // Copy basic files
-      fs.mkdirSync(`${outPath}/src`);
-      fs.copyFileSync('./src/index.ts', `${outPath}/src/index.ts`);
-      fs.copyFileSync('./README.md', `${outPath}/README.md`);
-
-      const services = glob.sync('./src/**/*.service.ts', (er, files) => resolve(files));
-      services.forEach((element) => fs.copyFileSync(element, `${outPath}/src/${path.parse(element).base}`));
-    }
-
-    ///////////////
     await compileCommand.run({
       parameters: {
         options: {
@@ -72,8 +81,7 @@ async function compile(defaultOptions) {
     };
   }
 
-  function bbbbb(outFile) {
-    // Fix css imports
+  function replacePropertiesFromCompiledFiles(outFile) {
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
       // Meanwhile mitosis don't support import external types...
@@ -85,46 +93,15 @@ async function compile(defaultOptions) {
       .replace(/import ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
 
     fs.writeFileSync(outFile, result, 'utf8');
-
-    ////////////
-    if (isFirstCompilation) {
-      // Move Readme
-      const data = fs.readFileSync('./README.md', 'utf8');
-      const result = data.replace(/\/\{platform\}.+/g, `/${target + (target === 'webcomponent' ? 's' : '')}`);
-
-      fs.writeFileSync(`${outPath}/README.md`, result, 'utf8');
-    }
-    ////////////
-  }
-
-  function cccccc(outFile) {
-    if (options.target === 'vue' && isFirstCompilation) {
-      const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
-      const result = data
-        // Add .vue to index
-        .replace(/\'\;/g, ".vue';")
-        .replace(/\.css\.vue/g, '.css')
-        .replace(/helpers\.vue/g, 'helpers')
-        .replace(/src\/(.*)\.vue/g, 'src/$1');
-
-      fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
-    }
-
-    if (options.target === 'vue') {
-      const data = fs.readFileSync(outFile, 'utf8');
-      const result = data
-        // Enable children
-        .replace(/this\.children/, 'this.$slots.default()');
-
-      fs.writeFileSync(outFile, result, 'utf8');
-    }
   }
 
   for (const file of files) {
     spinner.text = file;
-    const { outFile } = await aaaaa(file);
-    bbbbb(outFile);
-    cccccc(outFile);
+
+    copyBasicFilesOnFirstCompilation();
+    const { outFile } = await compileMitosisComponent(file);
+    replacePropertiesFromCompiledFiles(outFile);
+    options.customReplace(outFile, isFirstCompilation);
 
     spinner.stop();
   }
