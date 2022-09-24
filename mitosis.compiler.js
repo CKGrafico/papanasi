@@ -41,8 +41,8 @@ function compile(filepath) {
           to: target,
           out: outFile,
           force: true,
-
-          state: 'useState'
+          state: 'useState',
+          styles: 'styled-components' // Todo adaptar por lenguaje
         },
         array: [filepath]
       },
