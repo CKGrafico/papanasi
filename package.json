@@ -2,7 +2,7 @@
   "name": "papanasi",
   "private": true,
   "license": "MIT",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "scripts": {
     "dev": "run-s dev:* && run-p storybook:**",
     "clean": "rimraf packages/**/{src,dist,node_modules}",
