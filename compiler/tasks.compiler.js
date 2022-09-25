@@ -11,7 +11,10 @@ const Listr = require('listr');
           [
             {
               title: 'Clean output',
-              task: (ctx, task) => execa('yarn clean').catch(() => task.skip('Cannot remove output directory'))
+              task: () =>
+                execa('yarn clean').catch(() => {
+                  throw new Error('Cannot remove output directory');
+                })
             },
             {
               title: 'Linting Components',
@@ -20,15 +23,24 @@ const Listr = require('listr');
                   [
                     {
                       title: 'Lint Scripts',
-                      task: (ctx, task) => execa('yarn lint:scripts').catch(() => task.skip('Error Linting Scripts'))
+                      task: () =>
+                        execa('yarn lint:scripts').catch(() => {
+                          throw new Error('Error Linting Scripts');
+                        })
                     },
                     {
                       title: 'Lint Styles',
-                      task: (ctx, task) => execa('yarn lint:styles').catch(() => task.skip('Error Linting Styles'))
+                      task: () =>
+                        execa('yarn lint:styles').catch(() => {
+                          throw new Error('Error Linting Styles');
+                        })
                     },
                     {
                       title: 'Lint Other Files',
-                      task: (ctx, task) => execa('yarn lint:editor').catch(() => task.skip('Error with Other Lintings'))
+                      task: () =>
+                        execa('yarn lint:editor').catch(() => {
+                          throw new Error('Error with Other Lintings');
+                        })
                     }
                   ],
                   { concurrent: true }
@@ -47,28 +59,97 @@ const Listr = require('listr');
           [
             {
               title: 'Compile Angular',
-              task: (ctx, task) => execa('yarn compile:angular').catch(() => task.skip('Error compiling Angular'))
+              task: () =>
+                execa('yarn compile:angular').catch(() => {
+                  throw new Error('Error compiling Angular');
+                })
             },
             {
               title: 'Compile React',
-              task: (ctx, task) => execa('yarn compile:react').catch(() => task.skip('Error compiling React'))
+              task: () =>
+                execa('yarn compile:react').catch(() => {
+                  throw new Error('Error compiling React');
+                })
             },
             {
               title: 'Compile Solid',
-              task: (ctx, task) => execa('yarn compile:solid').catch(() => task.skip('Error compiling Solid'))
+              task: () =>
+                execa('yarn compile:solid').catch(() => {
+                  throw new Error('Error compiling Solid');
+                })
             },
             {
               title: 'Compile Svelte',
-              task: (ctx, task) => execa('yarn compile:svelte').catch(() => task.skip('Error compiling Svelte'))
+              task: () =>
+                execa('yarn compile:svelte').catch(() => {
+                  throw new Error('Error compiling Svelte');
+                })
             },
             {
               title: 'Compile Vue',
-              task: (ctx, task) => execa('yarn compile:vue').catch(() => task.skip('Error compiling Vue'))
+              task: () =>
+                execa('yarn compile:vue').catch(() => {
+                  throw new Error('Error compiling Vue');
+                })
             },
             {
-              title: 'Compile Webcomponents',
-              task: (ctx, task) =>
-                execa('yarn compile:webcomponents').catch(() => task.skip('Error compiling Webcomponents'))
+              title: 'Compile Web Components',
+              task: () =>
+                execa('yarn compile:webcomponents').catch(() => {
+                  throw new Error('Error compiling Web Components');
+                })
+            }
+          ],
+          { concurrent: true }
+        );
+      }
+    },
+    {
+      title: 'Bundle Packages',
+      task: () => {
+        return new Listr(
+          [
+            {
+              title: 'Bundle Angular',
+              task: () =>
+                execa('yarn compile:lerna --scope=@papanasi/angular build').catch(() => {
+                  throw new Error('Error bundling Angular');
+                })
+            },
+            {
+              title: 'Bundle React',
+              task: () =>
+                execa('yarn compile:lerna --scope=@papanasi/react build').catch(() => {
+                  throw new Error('Error bundling React');
+                })
+            },
+            {
+              title: 'Bundle Solid',
+              task: () =>
+                execa('yarn compile:lerna --scope=@papanasi/solid build').catch(() => {
+                  throw new Error('Error bundling Solid');
+                })
+            },
+            {
+              title: 'Bundle Svelte',
+              task: () =>
+                execa('yarn compile:lerna --scope=@papanasi/svelte build').catch(() => {
+                  throw new Error('Error bundling Svelte');
+                })
+            },
+            {
+              title: 'Bundle Vue',
+              task: () =>
+                execa('yarn compile:lerna --scope=@papanasi/vue build').catch(() => {
+                  throw new Error('Error bundling Vue');
+                })
+            },
+            {
+              title: 'Bundle Web Components',
+              task: () =>
+                execa('yarn compile:lerna --scope=@papanasi/webcomponents build').catch(() => {
+                  throw new Error('Error bundling Web Components');
+                })
             }
           ],
           { concurrent: true }
