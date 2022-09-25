@@ -110,7 +110,7 @@ $ yarn add @papanasi/solid
 <table align="center">
   <tr>
     <td align="left" colspan="4">
-     <h4>Layout Components</h4>
+    <h4>Layout Components</h4>
     </td>
   </tr>
   <tr>
@@ -138,7 +138,7 @@ $ yarn add @papanasi/solid
   </tr>
   <tr>
     <td  align="left" colspan="4">
-     <h4>Regular Components</h4>
+    <h4>Regular Components</h4>
     </td>
   </tr>
   <tr>
@@ -158,13 +158,13 @@ $ yarn add @papanasi/solid
       <a href="https://papanasi.js.org/?path=/docs/components-code--default-story">Preview</a>
     </td>
   </tr>
-   <tr>
-     <td align="center">
+  <tr>
+    <td align="center">
       Pill <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story">Preview</a>
     </td>
-     <td align="center">
+    <td align="center">
       Spinner <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-spinner--default-story">Preview</a>
@@ -172,7 +172,7 @@ $ yarn add @papanasi/solid
   </tr>
   <tr>
     <td align="left" colspan="4">
-     <h4>Enterprise Components</h4>
+    <h4>Enterprise Components</h4>
     </td>
   </tr>
   <tr>
@@ -184,7 +184,7 @@ $ yarn add @papanasi/solid
   </tr>
   <tr>
     <td align="left" colspan="4">
-     <h4>Extensions</h4>
+    <h4>Extensions</h4>
     </td>
   </tr>
   <tr>

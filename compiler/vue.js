@@ -3,11 +3,15 @@ const fs = require('fs');
 
 const DEFAULT_OPTIONS = {
   target: 'vue',
-  extension: 'vue'
+  extension: 'vue',
+  state: 'useState',
+  styles: 'styled-components'
 };
 
 (async () => {
-  function customReplace(outFile, isFirstCompilation) {
+  function customReplace(props) {
+    const { file, outFile, outPath, isFirstCompilation } = props;
+
     if (isFirstCompilation) {
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
       const result = data

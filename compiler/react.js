@@ -3,11 +3,15 @@ const fs = require('fs');
 
 const DEFAULT_OPTIONS = {
   target: 'react',
-  extension: 'tsx'
+  extension: 'tsx',
+  state: 'useState',
+  styles: 'styled-components'
 };
 
 (async () => {
-  function customReplace(outFile, isFirstCompilation) {
+  function customReplace(props) {
+    const { outFile } = props;
+
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
       // fix contenteditable

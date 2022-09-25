@@ -14,6 +14,8 @@ const DEFAULT_OPTIONS = {
   options: {},
   target: '',
   extension: '',
+  state: 'signal',
+  styles: '',
   customReplace: (outFile, isFirstCompilation) => null
 };
 
@@ -28,7 +30,7 @@ async function compile(defaultOptions) {
   const cliConfig = commandLineArgs(optionDefinitions);
   options.files = cliConfig.file ? [`src/${cliConfig.file}/${cliConfig.file}.lite.tsx`] : options.files;
 
-  const spinner = ora('Loading unicorns').start();
+  const spinner = ora('Compiling').start();
   const files = cliConfig.file ? options.files : glob.sync(options.files);
   const outPath = `${options.dest}/${options.target}`;
   const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
@@ -65,9 +67,7 @@ async function compile(defaultOptions) {
 
   async function compileMitosisComponent(filepath) {
     const file = path.parse(filepath);
-
-    //////// TODO
-    const outFile = `${outPath}/${filepath.replace(`/${file.base}`, '')}.${options.extension}`;
+    const outFile = `${outPath}/${file.dir}/${file.name.replace('.lite', '')}.${options.extension}`;
 
     await compileCommand.run({
       parameters: {
@@ -76,8 +76,8 @@ async function compile(defaultOptions) {
           to: options.target,
           out: outFile,
           force: true,
-          state: 'useState',
-          styles: 'styled-components' // Todo adaptar por lenguaje
+          state: options.state,
+          styles: options.styles
         },
         array: [filepath]
       },
@@ -105,13 +105,14 @@ async function compile(defaultOptions) {
     fs.writeFileSync(outFile, result, 'utf8');
   }
 
-  for (const file of files) {
-    spinner.text = file;
+  for (const fileName of files) {
+    const file = path.parse(fileName);
+    spinner.text = fileName;
 
-    copyBasicFilesOnFirstCompilation(file);
-    const { outFile } = await compileMitosisComponent(file);
+    copyBasicFilesOnFirstCompilation(fileName);
+    const { outFile } = await compileMitosisComponent(fileName);
     replacePropertiesFromCompiledFiles(outFile);
-    options.customReplace(outFile, isFirstCompilation);
+    options.customReplace({ file, outFile, outPath, isFirstCompilation });
 
     spinner.stop();
   }

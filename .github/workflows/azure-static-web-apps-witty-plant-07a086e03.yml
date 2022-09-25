@@ -43,5 +43,3 @@ jobs:
           yarn build
           yarn build-storybook
           yarn test
-
-     

@@ -7,8 +7,10 @@
     "dev": "run-s dev:* && run-p storybook:**",
     "clean": "rimraf packages/**/{src,dist,node_modules}",
     "compile": "node ./compiler/compile",
-    "compile:vue": "node ./compiler/vue",
+    "compile:angular": "node ./compiler/angular",
     "compile:react": "node ./compiler/react",
+    "compile:vue": "node ./compiler/vue",
+    "compile:webcomponents": "node ./compiler/webcomponents",
     "build": "run-s build:**",
     "build:mitosis": "node mitosis.compiler",
     "build:lerna": "lerna run build",
@@ -107,7 +109,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run lint"
+      "pre-commit": "yarn lint"
     }
   },
   "resolutions": {
