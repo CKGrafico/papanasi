@@ -33,9 +33,8 @@ async function compile(defaultOptions) {
   const spinner = ora('Compiling').start();
   const files = cliConfig.files ? options.files : glob.sync(options.files);
   const outPath = `${options.dest}/${options.target}`;
-  const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
 
-  function copyBasicFilesOnFirstCompilation(filepath) {
+  function copyBasicFilesOnFirstCompilation(isFirstCompilation, filepath) {
     if (!isFirstCompilation) {
       return;
     }
@@ -44,17 +43,11 @@ async function compile(defaultOptions) {
       fs.mkdirSync(`${outPath}/src`);
     }
 
-    if (!fs.existsSync(`${outPath}/${path.parse(filepath).dir}`)) {
-      fs.mkdirSync(`${outPath}/${path.parse(filepath).dir}`);
-    }
-
     fs.copyFileSync('src/index.ts', `${outPath}/src/index.ts`);
 
     const services = glob.sync(`${path.parse(filepath).dir}/*.service.ts`);
 
-    services.forEach((element) =>
-      fs.copyFileSync(element, `${outPath}/${path.parse(element).dir}/${path.parse(element).base}`)
-    );
+    services.forEach((element) => fs.copyFileSync(element, `${outPath}/src/${path.parse(element).base}`));
 
     const data = fs.readFileSync('README.md', 'utf8');
     const result = data.replace(
@@ -63,11 +56,28 @@ async function compile(defaultOptions) {
     );
 
     fs.writeFileSync(`${outPath}/README.md`, result, 'utf8');
+
+    if (!cliConfig.files) {
+      return;
+    }
+
+    const fileExports = cliConfig.files
+      .map((name) => {
+        return `export { default as ${name.charAt(0).toUpperCase() + name.slice(1)} } from './${name}';`;
+      })
+      .join('\n');
+
+    const indexData = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
+    const indexResult = indexData.replace(
+      /(\/\/ Init Components)(.+?)(\/\/ End Components)/s,
+      `$1\n${fileExports}\n$3`
+    );
+    fs.writeFileSync(`${outPath}/src/index.ts`, indexResult, 'utf8');
   }
 
   async function compileMitosisComponent(filepath) {
     const file = path.parse(filepath);
-    const outFile = `${outPath}/${file.dir}/${file.name.replace('.lite', '')}.${options.extension}`;
+    const outFile = `${outPath}/src/${file.name.replace('.lite', '')}.${options.extension}`;
 
     await compileCommand.run({
       parameters: {
@@ -107,9 +117,11 @@ async function compile(defaultOptions) {
 
   for (const fileName of files) {
     const file = path.parse(fileName);
+    const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
+
     spinner.text = fileName;
 
-    copyBasicFilesOnFirstCompilation(fileName);
+    copyBasicFilesOnFirstCompilation(isFirstCompilation, fileName);
     const { outFile } = await compileMitosisComponent(fileName);
     replacePropertiesFromCompiledFiles(outFile);
     options.customReplace({ file, outFile, outPath, isFirstCompilation });
