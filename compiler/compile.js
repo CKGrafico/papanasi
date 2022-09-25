@@ -54,6 +54,14 @@ const Listr = require('listr');
               task: (ctx, task) => execa('yarn compile:react').catch(() => task.skip('Error compiling React'))
             },
             {
+              title: 'Compile Solid',
+              task: (ctx, task) => execa('yarn compile:solid').catch(() => task.skip('Error compiling Solid'))
+            },
+            {
+              title: 'Compile Svelte',
+              task: (ctx, task) => execa('yarn compile:svelte').catch(() => task.skip('Error compiling Svelte'))
+            },
+            {
               title: 'Compile Vue',
               task: (ctx, task) => execa('yarn compile:vue').catch(() => task.skip('Error compiling Vue'))
             },

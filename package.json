@@ -9,6 +9,8 @@
     "compile": "node ./compiler/compile",
     "compile:angular": "node ./compiler/angular",
     "compile:react": "node ./compiler/react",
+    "compile:solid": "node ./compiler/solid",
+    "compile:svelte": "node ./compiler/svelte",
     "compile:vue": "node ./compiler/vue",
     "compile:webcomponents": "node ./compiler/webcomponents",
     "build": "run-s build:**",

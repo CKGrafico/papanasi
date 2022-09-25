@@ -2,8 +2,8 @@ const compiler = require('./shared/shared.compiler');
 const fs = require('fs');
 
 const DEFAULT_OPTIONS = {
-  target: 'vue',
-  extension: 'vue',
+  target: 'svelte',
+  extension: 'svelte',
   state: 'useState',
   styles: 'styled-components'
 };
@@ -15,19 +15,25 @@ const DEFAULT_OPTIONS = {
     if (isFirstCompilation) {
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
       const result = data
-        // Add .vue to index
-        .replace(/\'\;/g, ".vue';")
-        .replace(/\.css\.vue/g, '.css')
-        .replace(/helpers\.vue/g, 'helpers')
-        .replace(/src\/(.*)\.vue/g, 'src/$1');
+        // Add .svelte to index
+        .replace(/\'\;/g, ".svelte';")
+        .replace(/\.css\.svelte/g, '.css')
+        .replace(/helpers\.svelte/g, 'helpers')
+        .replace(/src\/(.*)\.svelte/g, 'src/$1');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
 
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
-      // Enable children
-      .replace(/this\.children/, 'this.$slots.default()');
+      // Work with children (currently not working as expected)
+      .replace(/children/g, '$$$slots')
+      // Fix circle svg as component
+      .replace(/state\./g, '')
+      // Svelte compiler is not adding let to the state values
+      .replace(/^  (\w*) = (.*)/gm, '  let $1 = $2')
+      // Fix state in svelte
+      .replace(/svelte:component\n.*this=\{circle\}/g, 'circle');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }
