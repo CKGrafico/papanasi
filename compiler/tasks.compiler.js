@@ -1,7 +1,22 @@
 const Listr = require('listr');
+const commandLineArgs = require('command-line-args');
+
+const optionDefinitions = [
+  { name: 'files', alias: 'f', type: String, multiple: true },
+  { name: 'targets', alias: 't', type: String, multiple: true },
+  { name: 'lint', type: Boolean, defaultValue: true },
+  { name: 'no-lint', type: Boolean }
+];
 
 (async () => {
   const execa = (await import('execa')).command;
+
+  const cliConfig = commandLineArgs(optionDefinitions);
+  cliConfig.lint = cliConfig.lint && !cliConfig['no-lint'];
+
+  function getCompilerCommand(target) {
+    return `node ./compiler/targets/${target} ${cliConfig.files ? `--files ${cliConfig.files.join(' ')}` : ''}`;
+  }
 
   const tasks = new Listr([
     {
@@ -18,6 +33,7 @@ const Listr = require('listr');
             },
             {
               title: 'Linting Components',
+              enabled: () => cliConfig.lint,
               task: () => {
                 return new Listr(
                   [
@@ -53,49 +69,57 @@ const Listr = require('listr');
       }
     },
     {
-      title: 'Compile Mitosis components',
+      title: `Compile Mitosis components ${cliConfig.files?.join(', ') || ''}${
+        cliConfig.files && cliConfig.targets ? ' -> ' : ''
+      }${cliConfig.targets?.join(', ') || ''}`,
       task: () => {
         return new Listr(
           [
             {
               title: 'Compile Angular',
+              enabled: () => cliConfig.targets.includes('angular') || !cliConfig.targets,
               task: () =>
-                execa('yarn compile:angular').catch(() => {
+                execa(getCompilerCommand('angular')).catch(() => {
                   throw new Error('Error compiling Angular');
                 })
             },
             {
               title: 'Compile React',
+              enabled: () => cliConfig.targets.includes('react') || !cliConfig.targets,
               task: () =>
-                execa('yarn compile:react').catch(() => {
+                execa(getCompilerCommand('react')).catch(() => {
                   throw new Error('Error compiling React');
                 })
             },
             {
               title: 'Compile Solid',
+              enabled: () => cliConfig.targets.includes('solid') || !cliConfig.targets,
               task: () =>
-                execa('yarn compile:solid').catch(() => {
+                execa(getCompilerCommand('solid')).catch(() => {
                   throw new Error('Error compiling Solid');
                 })
             },
             {
               title: 'Compile Svelte',
+              enabled: () => cliConfig.targets.includes('svelte') || !cliConfig.targets,
               task: () =>
-                execa('yarn compile:svelte').catch(() => {
+                execa(getCompilerCommand('svelte')).catch(() => {
                   throw new Error('Error compiling Svelte');
                 })
             },
             {
               title: 'Compile Vue',
+              enabled: () => cliConfig.targets.includes('vue') || !cliConfig.targets,
               task: () =>
-                execa('yarn compile:vue').catch(() => {
+                execa(getCompilerCommand('vue')).catch(() => {
                   throw new Error('Error compiling Vue');
                 })
             },
             {
               title: 'Compile Web Components',
+              enabled: () => cliConfig.targets.includes('webcomponents') || !cliConfig.targets,
               task: () =>
-                execa('yarn compile:webcomponents').catch(() => {
+                execa(getCompilerCommand('webcomponents')).catch(() => {
                   throw new Error('Error compiling Web Components');
                 })
             }
@@ -111,6 +135,7 @@ const Listr = require('listr');
           [
             {
               title: 'Bundle Angular',
+              enabled: () => cliConfig.targets.includes('angular') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/angular build').catch(() => {
                   throw new Error('Error bundling Angular');
@@ -118,6 +143,7 @@ const Listr = require('listr');
             },
             {
               title: 'Bundle React',
+              enabled: () => cliConfig.targets.includes('react') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/react build').catch(() => {
                   throw new Error('Error bundling React');
@@ -125,6 +151,7 @@ const Listr = require('listr');
             },
             {
               title: 'Bundle Solid',
+              enabled: () => cliConfig.targets.includes('solid') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/solid build').catch(() => {
                   throw new Error('Error bundling Solid');
@@ -132,6 +159,7 @@ const Listr = require('listr');
             },
             {
               title: 'Bundle Svelte',
+              enabled: () => cliConfig.targets.includes('svelte') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/svelte build').catch(() => {
                   throw new Error('Error bundling Svelte');
@@ -139,6 +167,7 @@ const Listr = require('listr');
             },
             {
               title: 'Bundle Vue',
+              enabled: () => cliConfig.targets.includes('vue') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/vue build').catch(() => {
                   throw new Error('Error bundling Vue');
@@ -146,6 +175,7 @@ const Listr = require('listr');
             },
             {
               title: 'Bundle Web Components',
+              enabled: () => cliConfig.targets.includes('webcomponents') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/webcomponents build').catch(() => {
                   throw new Error('Error bundling Web Components');

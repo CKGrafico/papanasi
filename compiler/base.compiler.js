@@ -19,7 +19,7 @@ const DEFAULT_OPTIONS = {
   customReplace: (outFile, isFirstCompilation) => null
 };
 
-const optionDefinitions = [{ name: 'file', alias: 'f', type: String }];
+const optionDefinitions = [{ name: 'files', alias: 'f', type: String, multiple: true }];
 
 async function compile(defaultOptions) {
   const options = {
@@ -28,10 +28,10 @@ async function compile(defaultOptions) {
   };
 
   const cliConfig = commandLineArgs(optionDefinitions);
-  options.files = cliConfig.file ? [`src/${cliConfig.file}/${cliConfig.file}.lite.tsx`] : options.files;
+  options.files = cliConfig.files ? cliConfig.files.map((file) => `src/${file}/${file}.lite.tsx`) : options.files;
 
   const spinner = ora('Compiling').start();
-  const files = cliConfig.file ? options.files : glob.sync(options.files);
+  const files = cliConfig.files ? options.files : glob.sync(options.files);
   const outPath = `${options.dest}/${options.target}`;
   const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
 
