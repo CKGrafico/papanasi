@@ -1,1 +1,1 @@
-require('./tasks.compiler');
+require('./compiler.tasks');
