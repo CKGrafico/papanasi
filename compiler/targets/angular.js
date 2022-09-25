@@ -5,8 +5,8 @@ const fs = require('fs');
 const DEFAULT_OPTIONS = {
   target: 'angular',
   extension: 'ts',
-  state: 'useState',
-  styles: 'styled-components'
+  state: '',
+  styles: ''
 };
 
 (async () => {

@@ -5,8 +5,8 @@ const prependFile = require('prepend-file');
 const DEFAULT_OPTIONS = {
   target: 'webcomponent',
   extension: 'ts',
-  state: 'useState',
-  styles: 'styled-components'
+  state: '',
+  styles: ''
 };
 
 (async () => {

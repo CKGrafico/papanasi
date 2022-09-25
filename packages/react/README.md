@@ -227,6 +227,12 @@ It is also possible to specify which components to build `--files`:
 > yarn compile --files avatar pill
 ```
 
+If you want to disable the linting use `--no-lint`:
+
+```
+> yarn compile --files avatar pill
+```
+
 To contribute and watch the changes in local environment just use:
 
 ```

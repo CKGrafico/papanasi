@@ -207,16 +207,42 @@ To learn more about Papanasi, check [the documentation](http://papanasi.js.org/)
 ### 🚀 Contributing
 
 [Contributing Guidelines](https://github.com/CKGrafico/papanasi/blob/main/CONTRIBUTING.md)
-To run the project locally, you can use:
+
+To build the project run:
+
+```
+> yarn install
+> yarn compile
+```
+
+You can choose which frameworks to build by passing the `--targets`:
+
+```
+> yarn compile --targets react vue
+```
+
+It is also possible to specify which components to build `--files`:
+
+```
+> yarn compile --files avatar pill
+```
+
+If you want to disable the linting use `--no-lint`:
+
+```
+> yarn compile --files avatar pill
+```
+
+To contribute and watch the changes in local environment just use:
 
 ```
 > yarn dev
 ```
 
-To build the project locally, just execute:
+Finally, to launch storybook use:
 
 ```
-> yarn build
+> yarn start
 ```
 
 ### Thanks to everyone who contributed:

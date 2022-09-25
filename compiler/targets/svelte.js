@@ -4,8 +4,8 @@ const fs = require('fs');
 const DEFAULT_OPTIONS = {
   target: 'svelte',
   extension: 'svelte',
-  state: 'useState',
-  styles: 'styled-components'
+  state: '',
+  styles: 'variables'
 };
 
 (async () => {

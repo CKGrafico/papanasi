@@ -5,7 +5,7 @@ const DEFAULT_OPTIONS = {
   target: 'react',
   extension: 'tsx',
   state: 'useState',
-  styles: 'styled-components'
+  styles: 'style-tag'
 };
 
 (async () => {
