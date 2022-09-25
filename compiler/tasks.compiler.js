@@ -77,7 +77,7 @@ const optionDefinitions = [
           [
             {
               title: 'Compile Angular',
-              enabled: () => cliConfig.targets.includes('angular') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('angular') || !cliConfig.targets,
               task: () =>
                 execa(getCompilerCommand('angular')).catch(() => {
                   throw new Error('Error compiling Angular');
@@ -85,7 +85,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile React',
-              enabled: () => cliConfig.targets.includes('react') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('react') || !cliConfig.targets,
               task: () =>
                 execa(getCompilerCommand('react')).catch(() => {
                   throw new Error('Error compiling React');
@@ -93,7 +93,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Solid',
-              enabled: () => cliConfig.targets.includes('solid') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('solid') || !cliConfig.targets,
               task: () =>
                 execa(getCompilerCommand('solid')).catch(() => {
                   throw new Error('Error compiling Solid');
@@ -101,7 +101,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Svelte',
-              enabled: () => cliConfig.targets.includes('svelte') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('svelte') || !cliConfig.targets,
               task: () =>
                 execa(getCompilerCommand('svelte')).catch(() => {
                   throw new Error('Error compiling Svelte');
@@ -109,7 +109,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Vue',
-              enabled: () => cliConfig.targets.includes('vue') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('vue') || !cliConfig.targets,
               task: () =>
                 execa(getCompilerCommand('vue')).catch(() => {
                   throw new Error('Error compiling Vue');
@@ -117,7 +117,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Web Components',
-              enabled: () => cliConfig.targets.includes('webcomponents') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('webcomponents') || !cliConfig.targets,
               task: () =>
                 execa(getCompilerCommand('webcomponents')).catch(() => {
                   throw new Error('Error compiling Web Components');
@@ -135,7 +135,7 @@ const optionDefinitions = [
           [
             {
               title: 'Bundle Angular',
-              enabled: () => cliConfig.targets.includes('angular') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('angular') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/angular build').catch(() => {
                   throw new Error('Error bundling Angular');
@@ -143,7 +143,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle React',
-              enabled: () => cliConfig.targets.includes('react') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('react') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/react build').catch(() => {
                   throw new Error('Error bundling React');
@@ -151,7 +151,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Solid',
-              enabled: () => cliConfig.targets.includes('solid') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('solid') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/solid build').catch(() => {
                   throw new Error('Error bundling Solid');
@@ -159,7 +159,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Svelte',
-              enabled: () => cliConfig.targets.includes('svelte') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('svelte') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/svelte build').catch(() => {
                   throw new Error('Error bundling Svelte');
@@ -167,7 +167,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Vue',
-              enabled: () => cliConfig.targets.includes('vue') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('vue') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/vue build').catch(() => {
                   throw new Error('Error bundling Vue');
@@ -175,7 +175,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Web Components',
-              enabled: () => cliConfig.targets.includes('webcomponents') || !cliConfig.targets,
+              enabled: () => cliConfig.targets?.includes('webcomponents') || !cliConfig.targets,
               task: () =>
                 execa('yarn compile:lerna --scope=@papanasi/webcomponents build').catch(() => {
                   throw new Error('Error bundling Web Components');
