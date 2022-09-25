@@ -1,5 +1,4 @@
-const compiler = require('./shared/shared.compiler');
-const fs = require('fs');
+const compiler = require('../base.compiler');
 
 const DEFAULT_OPTIONS = {
   target: 'solid',

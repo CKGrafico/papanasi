@@ -1,4 +1,4 @@
-const compiler = require('./shared/shared.compiler');
+const compiler = require('../base.compiler');
 const fs = require('fs');
 
 const DEFAULT_OPTIONS = {

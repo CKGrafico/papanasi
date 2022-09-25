@@ -1,4 +1,4 @@
-const compiler = require('./shared/shared.compiler');
+const compiler = require('../base.compiler');
 const htmlTags = require('html-tags');
 const fs = require('fs');
 
