@@ -1,9 +1,8 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onMount, Show, useMetadata, useState, useStore } from '@builder.io/mitosis';
 import { classesToString, randomColor } from '../../../helpers';
-import { avatarService } from './avatar.service';
-
 import { Dynamic, SharedProps, Variant } from '../../../models';
 import './avatar.css';
+import { avatarService } from './avatar.service';
 
 export type AvatarProps = {
   variant?: Dynamic<Variant>;
@@ -15,6 +14,10 @@ export type AvatarProps = {
 
 useMetadata({ isAttachedToShadowDom: true });
 export default function Avatar(props: AvatarProps) {
+  const [count, setCount] = useState(0);
+
+  // Move to usestate
+
   const state = useStore({
     classes: '',
     containerClasses: '',
@@ -69,6 +72,10 @@ export default function Avatar(props: AvatarProps) {
     setRandomColorStyles(props.variant, props.name);
   });
 
+  function onClickAtom() {
+    setCount(1 + count);
+  }
+
   return (
     <div className={state.classes} title={props.name}>
       <Show when={state.customStyles}>
@@ -79,6 +86,8 @@ export default function Avatar(props: AvatarProps) {
           <Show when={!state.src}>
             <span>{state.initials}</span>
           </Show>
+          {count}
+          <button onClick={(event) => onClickAtom()}>one up</button>
         </div>
       </Show>
     </div>
