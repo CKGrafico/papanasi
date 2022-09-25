@@ -34,18 +34,19 @@ async function compile(defaultOptions) {
   const files = cliConfig.files ? options.files : glob.sync(options.files);
   const outPath = `${options.dest}/${options.target}`;
 
-  function copyBasicFilesOnFirstCompilation(isFirstCompilation, filepath) {
+  function copyBasicFilesOnFirstCompilation(isFirstCompilation) {
     if (!isFirstCompilation) {
       return;
     }
 
-    if (!fs.existsSync(`${outPath}/src`)) {
-      fs.mkdirSync(`${outPath}/src`);
-    }
+    // if (!fs.existsSync(`${outPath}/src`)) {
+    // }
 
+    fs.mkdirSync(`${outPath}/src`);
     fs.copyFileSync('src/index.ts', `${outPath}/src/index.ts`);
 
-    const services = glob.sync(`${path.parse(filepath).dir}/*.service.ts`);
+    const fileServices = cliConfig.files ? `src/{${cliConfig.files.join(',')},}` : 'src/**';
+    const services = glob.sync(`${fileServices}/*.service.ts`);
 
     services.forEach((element) => fs.copyFileSync(element, `${outPath}/src/${path.parse(element).base}`));
 
