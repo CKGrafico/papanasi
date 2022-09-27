@@ -39,9 +39,6 @@ async function compile(defaultOptions) {
       return;
     }
 
-    // if (!fs.existsSync(`${outPath}/src`)) {
-    // }
-
     fs.mkdirSync(`${outPath}/src`);
     fs.copyFileSync('src/index.ts', `${outPath}/src/index.ts`);
 
@@ -108,7 +105,7 @@ async function compile(defaultOptions) {
       // Meanwhile mitosis don't support import external types...
       .replace(
         'import',
-        "import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\nimport"
+        "import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\nimport { signal } from '@preact/signals-core';\nimport"
       )
       // Fix css import
       .replace(/import ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");

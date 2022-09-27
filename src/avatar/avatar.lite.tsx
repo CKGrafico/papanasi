@@ -1,4 +1,5 @@
-import { onMount, Show, useMetadata, useState, useStore } from '@builder.io/mitosis';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { signal } from '@preact/signals-core';
 import { classesToString, randomColor } from '../../../helpers';
 import { Dynamic, SharedProps, Variant } from '../../../models';
 import './avatar.css';
@@ -12,23 +13,35 @@ export type AvatarProps = {
   disabled?: boolean;
 } & SharedProps;
 
+const classes = signal('');
+const initials = signal('');
+
 useMetadata({ isAttachedToShadowDom: true });
 export default function Avatar(props: AvatarProps) {
-  const [count, setCount] = useState(0);
-
-  // Move to usestate
-
   const state = useStore({
-    classes: '',
     containerClasses: '',
     customStyles: null,
-    src: null,
-    initials: ''
+    src: null
   });
+
+  function setNameInitials(name) {
+    // initials.value = avatarService.getInitials(name);
+    initials.value = avatarService.getInitials(
+      Array(5)
+        .fill(1)
+        .map((n) => ((Math.random() * 36) | 0).toString(36))
+        .join('') +
+        ' ' +
+        Array(5)
+          .fill(1)
+          .map((n) => ((Math.random() * 36) | 0).toString(36))
+          .join('')
+    );
+  }
 
   onMount(() => {
     const setInitialProps = (variant, disabled, className) => {
-      state.classes = classesToString([
+      classes.value = classesToString([
         'pa-avatar',
         [variant, `pa-avatar--${variant}`],
         [disabled, 'is-disabled'],
@@ -36,10 +49,6 @@ export default function Avatar(props: AvatarProps) {
       ]);
 
       state.containerClasses = classesToString(['pa-avatar__container', [variant, `pa-avatar--${variant}`]]);
-    };
-
-    const setNameInitials = (name) => {
-      state.initials = avatarService.getInitials(name);
     };
 
     const setSource = (url, unavatar) => {
@@ -72,22 +81,16 @@ export default function Avatar(props: AvatarProps) {
     setRandomColorStyles(props.variant, props.name);
   });
 
-  function onClickAtom() {
-    setCount(1 + count);
-  }
-
   return (
-    <div className={state.classes} title={props.name}>
+    <div className={classes.value} title={props.name} onClick={() => setNameInitials(props.name)}>
       <Show when={state.customStyles}>
         <div className={state.containerClasses} style={state.customStyles}>
           <Show when={state.src}>
             <img className="pa-avatar__image" src={state.src} alt={props.name} />
           </Show>
           <Show when={!state.src}>
-            <span>{state.initials}</span>
+            <span>{initials.value}</span>
           </Show>
-          {count}
-          <button onClick={(event) => onClickAtom()}>one up</button>
         </div>
       </Show>
     </div>

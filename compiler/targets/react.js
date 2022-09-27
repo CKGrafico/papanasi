@@ -14,6 +14,8 @@ const DEFAULT_OPTIONS = {
 
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
+      // import the correct signals
+      .replace('@preact/signals-core', '@preact/signals-react')
       // fix contenteditable
       .replace(/contentEditable\=(.*)/g, 'contentEditable=$1\nsuppressContentEditableWarning={true}');
     fs.writeFileSync(outFile, result, 'utf8');

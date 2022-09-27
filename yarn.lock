@@ -3752,6 +3752,11 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@preact/signals-core@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@preact/signals-core/-/signals-core-1.2.0.tgz#14721e8fea7dc687f40eced1bb62bbefdeadb30d"
+  integrity sha512-GBjq/8WJkh/aenrEMvWIOr1lRfu6nb25er0m6r+4qVqKC85mXAYIbGHnoHTooNXCKxn2KEMUrATvN54MdMHE1A==
+
 "@rollup/plugin-babel@^5.3.1":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"

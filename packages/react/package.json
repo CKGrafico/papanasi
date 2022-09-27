@@ -17,10 +17,14 @@
     "react": "^16.8.0 || 17.x",
     "react-dom": "^16.8.0 || 17.x"
   },
+  "dependencies": {
+    "@preact/signals-react": "^1.1.0"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
+    "prebuild": "yarn install",
     "build": "rollup -c"
   },
   "publishConfig": {
