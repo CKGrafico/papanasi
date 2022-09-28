@@ -10,19 +10,19 @@ export default function Button(props: ButtonProps) {
   });
 
   onMount(() => {
-    const setInitialProps = (variant, outline, intent, disabled, className) => {
+    const setInitialProps = (variant, outline, intent, disabled, class) => {
       state.classes = classesToString([
         'pa-button',
         [variant, `pa-button--${variant}`],
         [outline, 'pa-button--outline'],
         [intent, `is-${intent}`],
         [disabled, 'is-disabled'],
-        className || ''
+        class || ''
       ]);
     };
 
-    setInitialProps(props.variant, props.outline, props.intent, props.disabled, props.className);
+    setInitialProps(props.variant, props.outline, props.intent, props.disabled, props.class);
   });
 
-  return <button className={state.classes}>{props.children}</button>;
+  return <button class={state.classes}>{props.children}</button>;
 }

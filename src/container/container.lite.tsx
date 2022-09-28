@@ -11,12 +11,12 @@ export default function Container(props: ContainerProps) {
   });
 
   onMount(() => {
-    const setInitialProps = (fluid, className) => {
-      state.classes = classesToString(['pa-container', [fluid, 'pa-container--fluid'], className || '']);
+    const setInitialProps = (fluid, class) => {
+      state.classes = classesToString(['pa-container', [fluid, 'pa-container--fluid'], class || '']);
     };
 
-    setInitialProps(props.fluid, props.className);
+    setInitialProps(props.fluid, props.class);
   });
 
-  return <div className={state.classes}>{props.children}</div>;
+  return <div class={state.classes}>{props.children}</div>;
 }

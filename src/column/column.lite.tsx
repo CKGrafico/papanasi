@@ -11,16 +11,16 @@ export default function Column(props: ColumnProps) {
   });
 
   onMount(() => {
-    const setInitialProps = (xs, s, m, l, xl, className) => {
+    const setInitialProps = (xs, s, m, l, xl, class) => {
       state.classes = classesToString([
         'pa-column',
         getBreakpointClasses(xs, s, m, l, xl, 'pa-column--'),
-        className || ''
+        class || ''
       ]);
     };
 
-    setInitialProps(props.xs, props.s, props.m, props.l, props.xl, props.className);
+    setInitialProps(props.xs, props.s, props.m, props.l, props.xl, props.class);
   });
 
-  return <div className={state.classes}>{props.children}</div>;
+  return <div class={state.classes}>{props.children}</div>;
 }

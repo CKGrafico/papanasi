@@ -1,40 +1,41 @@
-import { onMount, Show, useMetadata } from '@builder.io/mitosis';
-import { signal } from '@preact/signals-core';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './avatar.css';
 import { AvatarProps } from './avatar.model';
 import { avatarService } from './avatar.service';
 
 useMetadata({ isAttachedToShadowDom: true });
 
-const classes = signal('');
-const containerClasses = signal('');
-const initials = signal('');
-const customStyles = signal(null);
-const src = signal(null);
-
 export default function Avatar(props: AvatarProps) {
-  onMount(() => {
-    const customClasses = avatarService.getClasses(props);
+  const state = useStore({
+    loaded: false,
+    classes: { base: '', container: '' },
+    styles: { container: null },
+    initials: null,
+    src: null
+  });
 
-    containerClasses.value = customClasses.containerClasses;
-    classes.value = customClasses.classes;
-    initials.value = avatarService.getInitials(props);
-    customStyles.value = avatarService.getColor(props);
-    src.value = avatarService.getSource(props);
+  onMount(() => {
+    state.loaded = true;
+    state.classes = avatarService.getClasses(props.variant, props.disabled, props.className);
+    state.styles = avatarService.getStyles(props.name, props.variant);
+    state.initials = avatarService.getInitials(props.name);
+    state.src = avatarService.getSource(props.name, props.variant);
   });
 
   return (
-    <div className={classes.value} title={props.name}>
-      <Show when={customStyles.value}>
-        <div className={containerClasses.value} style={customStyles.value}>
-          <Show when={src.value}>
-            <img className="pa-avatar__image" src={src.value} alt={props.name} />
-          </Show>
-          <Show when={!src.value}>
-            <span>{initials.value}</span>
-          </Show>
-        </div>
-      </Show>
-    </div>
+    <Show when={state.loaded}>
+      <div class={state.classes.base} title={props.name}>
+        <Show when={state.styles.container}>
+          <div class={state.classes.container} style={state.styles.container}>
+            <Show when={state.src}>
+              <img class="pa-avatar__image" src={state.src} alt={props.name} />
+            </Show>
+            <Show when={!state.src}>
+              <span>{state.initials}</span>
+            </Show>
+          </div>
+        </Show>
+      </div>
+    </Show>
   );
 }

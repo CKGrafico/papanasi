@@ -11,18 +11,18 @@ export default function Pill(props: PillProps) {
   });
 
   onMount(() => {
-    const setInitialProps = (variant, intent, disabled, className) => {
+    const setInitialProps = (variant, intent, disabled, class) => {
       state.classes = classesToString([
         'pa-pill',
         [variant, `pa-pill--${variant}`],
         [intent, `is-${intent}`],
         [disabled, 'is-disabled'],
-        className || ''
+        class || ''
       ]);
     };
 
-    setInitialProps(props.variant, props.intent, props.disabled, props.className);
+    setInitialProps(props.variant, props.intent, props.disabled, props.class);
   });
 
-  return <span className={state.classes}>{props.children}</span>;
+  return <span class={state.classes}>{props.children}</span>;
 }

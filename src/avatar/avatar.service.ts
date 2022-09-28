@@ -1,22 +1,26 @@
 import { classesToString, randomColor } from '../../../helpers';
-import { AvatarProps } from './avatar.model';
 
 class AvatarService {
-  public getClasses({ variant, disabled, className }: AvatarProps) {
-    console.log(variant);
-    const classes = classesToString([
+  public getClasses(variant: string, disabled: boolean, className: string) {
+    const base = classesToString([
       'pa-avatar',
       [variant, `pa-avatar--${variant}`],
       [disabled, 'is-disabled'],
       className || ''
     ]);
 
-    const containerClasses = classesToString(['pa-avatar__container', [variant, `pa-avatar--${variant}`]]);
+    const container = classesToString(['pa-avatar__container', [variant, `pa-avatar--${variant}`]]);
 
-    return { classes, containerClasses };
+    return { base, container };
   }
 
-  public getInitials({ name }: AvatarProps) {
+  public getStyles(name: string, variant: string) {
+    const container = this.getColor(name, variant);
+
+    return { container };
+  }
+
+  public getInitials(name: string) {
     // From: https://stackoverflow.com/a/63763497/3274609
     return name
       .match(/(^\S\S?|\s\S)?/g)
@@ -27,7 +31,7 @@ class AvatarService {
       .toLocaleUpperCase();
   }
 
-  public getColor({ name, variant }: AvatarProps) {
+  public getColor(name: string, variant: string) {
     if (variant) {
       return {};
     }
@@ -40,7 +44,7 @@ class AvatarService {
     };
   }
 
-  public getSource({ url, unavatar }: AvatarProps) {
+  public getSource(url: string, unavatar: string) {
     return unavatar ? `https://unavatar.io/${unavatar}` : url;
   }
 }

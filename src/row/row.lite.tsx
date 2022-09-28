@@ -11,12 +11,12 @@ export default function Row(props: RowProps) {
   });
 
   onMount(() => {
-    const setInitialProps = (xs, s, m, l, xl, className) => {
-      state.classes = classesToString(['pa-row', getBreakpointClasses(xs, s, m, l, xl, 'pa-row--'), className || '']);
+    const setInitialProps = (xs, s, m, l, xl, class) => {
+      state.classes = classesToString(['pa-row', getBreakpointClasses(xs, s, m, l, xl, 'pa-row--'), class || '']);
     };
 
-    setInitialProps(props.xs, props.s, props.m, props.l, props.xl, props.className);
+    setInitialProps(props.xs, props.s, props.m, props.l, props.xl, props.class);
   });
 
-  return <div className={state.classes}>{props.children}</div>;
+  return <div class={state.classes}>{props.children}</div>;
 }
