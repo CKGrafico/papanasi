@@ -1,17 +1,10 @@
 import { onMount, Show, useMetadata } from '@builder.io/mitosis';
 import { signal } from '@preact/signals-core';
-import { classesToString } from '../../../helpers';
-import { Dynamic, SharedProps, Variant } from '../../../models';
 import './avatar.css';
+import { AvatarProps } from './avatar.model';
 import { avatarService } from './avatar.service';
 
-export type AvatarProps = {
-  variant?: Dynamic<Variant>;
-  name?: string;
-  unavatar?: string;
-  url?: string;
-  disabled?: boolean;
-} & SharedProps;
+useMetadata({ isAttachedToShadowDom: true });
 
 const classes = signal('');
 const containerClasses = signal('');
@@ -19,25 +12,15 @@ const initials = signal('');
 const customStyles = signal(null);
 const src = signal(null);
 
-useMetadata({ isAttachedToShadowDom: true });
 export default function Avatar(props: AvatarProps) {
   onMount(() => {
-    const setClasses = (variant, disabled, className) => {
-      classes.value = classesToString([
-        'pa-avatar',
-        [variant, `pa-avatar--${variant}`],
-        [disabled, 'is-disabled'],
-        className || ''
-      ]);
+    const customClasses = avatarService.getClasses(props);
 
-      containerClasses.value = classesToString(['pa-avatar__container', [variant, `pa-avatar--${variant}`]]);
-    };
-
-    setClasses(props.variant, props.disabled, props.className);
-
-    initials.value = avatarService.getInitials(props.name || '');
-    customStyles.value = avatarService.getColor(props.variant, props.name);
-    src.value = props.unavatar ? `https://unavatar.io/${props.unavatar}` : props.url;
+    containerClasses.value = customClasses.containerClasses;
+    classes.value = customClasses.classes;
+    initials.value = avatarService.getInitials(props);
+    customStyles.value = avatarService.getColor(props);
+    src.value = avatarService.getSource(props);
   });
 
   return (
