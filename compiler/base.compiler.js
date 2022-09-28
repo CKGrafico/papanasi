@@ -8,6 +8,9 @@ const commandLineArgs = require('command-line-args');
 const ora = require('ora');
 const compileCommand = require('@builder.io/mitosis-cli/dist/commands/compile');
 
+const toPascalCase = (str) =>
+  (str.match(/[a-zA-Z0-9]+/g) || []).map((w) => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join('');
+
 const DEFAULT_OPTIONS = {
   files: 'src/**/*.lite.tsx',
   dest: 'packages',
@@ -43,7 +46,7 @@ async function compile(defaultOptions) {
     fs.copyFileSync('src/index.ts', `${outPath}/src/index.ts`);
 
     const fileServices = cliConfig.files ? `src/{${cliConfig.files.join(',')},}` : 'src/**';
-    const services = glob.sync(`${fileServices}/*.service.ts`);
+    const services = glob.sync(`${fileServices}/*.{service,model}.ts`);
 
     services.forEach((element) => fs.copyFileSync(element, `${outPath}/src/${path.parse(element).base}`));
 
@@ -99,13 +102,16 @@ async function compile(defaultOptions) {
     };
   }
 
-  function replacePropertiesFromCompiledFiles(outFile) {
+  function replacePropertiesFromCompiledFiles(outFile, file) {
+    const name = file.name.replace('.lite', '');
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
       // Meanwhile mitosis don't support import external types...
       .replace(
         'import',
-        "import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\nimport { signal } from '@preact/signals-core';\nimport"
+        `import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\nimport { signal } from '@preact/signals-core';\nimport { ${toPascalCase(
+          name
+        )}Props } from './${name}.model';\nimport`
       )
       // Fix css import
       .replace(/import ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
@@ -121,7 +127,7 @@ async function compile(defaultOptions) {
 
     copyBasicFilesOnFirstCompilation(isFirstCompilation, fileName);
     const { outFile } = await compileMitosisComponent(fileName);
-    replacePropertiesFromCompiledFiles(outFile);
+    replacePropertiesFromCompiledFiles(outFile, file);
     options.customReplace({ file, outFile, outPath, isFirstCompilation });
 
     spinner.stop();
