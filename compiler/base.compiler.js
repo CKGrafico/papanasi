@@ -111,7 +111,7 @@ async function compile(defaultOptions) {
         'import',
         `import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\nimport { ${toPascalCase(
           name
-        )}Props } from './${name}.model';\nimport`
+        )}Props, ${toPascalCase(name)}State } from './${name}.model';\nimport`
       )
       // Fix css import
       .replace(/import ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
