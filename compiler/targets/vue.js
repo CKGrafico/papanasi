@@ -31,10 +31,7 @@ const DEFAULT_OPTIONS = {
       // Add vue dependencies
       .replace('import', "import { ref } from 'vue';\nimport")
       // Replace vue html .values for refs
-      .replace(/\.value \}\}/g, '}}')
-      // Finally change signals for vue ref
-      .replace("import { signal } from '@preact/signals-core';", '')
-      .replace(/\= signal\(/g, '= ref(');
+      .replace(/\.value \}\}/g, '}}');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }

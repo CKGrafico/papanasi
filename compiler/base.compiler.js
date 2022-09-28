@@ -17,7 +17,7 @@ const DEFAULT_OPTIONS = {
   options: {},
   target: '',
   extension: '',
-  state: 'signal',
+  state: '',
   styles: '',
   customReplace: (outFile, isFirstCompilation) => null
 };
@@ -109,7 +109,7 @@ async function compile(defaultOptions) {
       // Meanwhile mitosis don't support import external types...
       .replace(
         'import',
-        `import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\nimport { signal } from '@preact/signals-core';\nimport { ${toPascalCase(
+        `import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\nimport { ${toPascalCase(
           name
         )}Props } from './${name}.model';\nimport`
       )

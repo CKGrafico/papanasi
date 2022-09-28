@@ -3,7 +3,7 @@ const compiler = require('../base.compiler');
 const DEFAULT_OPTIONS = {
   target: 'solid',
   extension: 'tsx',
-  state: 'signals',
+  state: 'useState',
   styles: 'styled-components'
 };
 

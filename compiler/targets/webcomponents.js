@@ -33,9 +33,8 @@ const DEFAULT_OPTIONS = {
       .replace(
         /this\.props\.children/,
         'this.shadowRoot.querySelector("slot").assignedNodes().filter((x,i) => i % 2 !== 0 )'
-      )
-      // call to update on signal
-      .replace(/\.value \=(.*)},/gs, '.value =$1\n_this.update();},');
+      );
+
     fs.writeFileSync(outFile, result, 'utf8');
   }
 
