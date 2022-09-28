@@ -1,12 +1,12 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './avatar.css';
-import { AvatarProps } from './avatar.model';
+import { AvatarProps, AvatarState } from './avatar.model';
 import { avatarService } from './avatar.service';
 
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Avatar(props: AvatarProps) {
-  const state = useStore({
+  const state = useStore<AvatarState>({
     loaded: false,
     classes: { base: '', container: '' },
     styles: { container: null },

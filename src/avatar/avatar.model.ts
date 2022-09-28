@@ -7,3 +7,15 @@ export type AvatarProps = {
   url?: string;
   disabled?: boolean;
 } & SharedProps;
+
+export type AvatarState = {
+  loaded: boolean;
+  classes: { base: string; container: string };
+  styles: {
+    container: Partial<CSSStyleDeclaration> & {
+      [key: string]: Partial<CSSStyleDeclaration> | string;
+    };
+  };
+  initials: string;
+  src: string;
+};
