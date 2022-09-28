@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const ReplacePlugin = require('webpack-plugin-replace');
 const path = require('path');
 
 module.exports = {
