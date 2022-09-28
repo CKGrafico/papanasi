@@ -1,13 +1,7 @@
 import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
-import { Dynamic, Intent, SharedProps, Variant } from '../../../models';
 import './pill.css';
-
-export type PillProps = {
-  variant?: Dynamic<Variant>;
-  intent?: Dynamic<Intent>;
-  disabled?: boolean;
-} & SharedProps;
+import { PillProps } from './pill.model';
 
 useMetadata({ isAttachedToShadowDom: true });
 

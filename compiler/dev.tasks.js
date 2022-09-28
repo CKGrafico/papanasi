@@ -24,8 +24,8 @@ const ora = require('ora');
     {
       title: 'Bundle React',
       task: () =>
-        execa('yarn lerna --scope=@papanasi/react build').catch(() => {
-          throw new Error('Error bundling React');
+        execa('yarn lerna --scope=@papanasi/react build').catch((error) => {
+          throw new Error('Error bundling React ' + error);
         })
     },
     {

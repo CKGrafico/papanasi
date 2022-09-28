@@ -2,20 +2,8 @@ import { For, onMount, Show, useMetadata, useRef, useStore } from '@builder.io/m
 import copy from 'copy-to-clipboard';
 import hljs from 'highlight.js/lib/core';
 import { classesToString, getObjectValue } from '../../../helpers';
-import { SharedProps } from '../../../models';
 import './code.css';
-
-export type CodeProps = {
-  editable: boolean;
-  languages: string[];
-  code: string;
-  theme?: string; // TODO: dynamic themes
-  links?: { label: string; url: string; icon: string }[];
-  canCopy?: boolean;
-  copyLabel?: string;
-  onUpdate?: (text: string) => void;
-  onExit?: (text: string) => void;
-} & SharedProps;
+import { CodeProps } from './code.model';
 
 useMetadata({ isAttachedToShadowDom: true });
 

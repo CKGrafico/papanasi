@@ -1,14 +1,7 @@
 import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
-import { Dynamic, Intent, SharedProps, Variant } from '../../../models';
 import './button.css';
-
-export type ButtonProps = {
-  variant?: Dynamic<Variant>;
-  intent?: Dynamic<Intent>;
-  outline?: boolean;
-  disabled?: boolean;
-} & SharedProps;
+import { ButtonProps } from './button.model';
 
 useMetadata({ isAttachedToShadowDom: true });
 export default function Button(props: ButtonProps) {

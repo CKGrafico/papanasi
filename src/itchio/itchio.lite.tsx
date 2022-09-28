@@ -1,17 +1,8 @@
 import { onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
-import { SharedProps } from '../../../models';
 import './itchio.css';
+import { ItchioProps } from './itchio.model';
 import { itchioService } from './itchio.service';
-
-export type ItchioProps = {
-  user: string;
-  game: string;
-  width?: number;
-  height?: number;
-  onLoad?: () => void;
-  secret?: string;
-} & SharedProps;
 
 useMetadata({ isAttachedToShadowDom: true });
 

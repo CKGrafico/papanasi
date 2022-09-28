@@ -1,9 +1,7 @@
 import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString, getBreakpointClasses } from '../../../helpers';
-import { BreakpointProps, SharedProps } from '../../../models';
 import './row.css';
-
-export type RowProps = SharedProps & BreakpointProps<'row' | 'column' | 'row-reverse' | 'column-reverse'>;
+import { RowProps } from './row.model';
 
 useMetadata({ isAttachedToShadowDom: true });
 

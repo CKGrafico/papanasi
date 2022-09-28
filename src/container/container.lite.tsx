@@ -1,11 +1,7 @@
 import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
 import { classesToString } from '../../../helpers';
-import { SharedProps } from '../../../models';
 import './container.css';
-
-export type ContainerProps = {
-  fluid?: boolean;
-} & SharedProps;
+import { ContainerProps } from './container.model';
 
 useMetadata({ isAttachedToShadowDom: true });
 
