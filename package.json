@@ -16,7 +16,8 @@
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "release-version": "lerna version 1.0.0-XX.PR-yyyyyyy --force-publish",
-    "from-package": "lerna publish from-package --force-publish "
+    "from-package": "lerna publish from-package --force-publish",
+    "build": "yarn compile"
   },
   "dependencies": {
     "@preact/signals-core": "^1.2.0",

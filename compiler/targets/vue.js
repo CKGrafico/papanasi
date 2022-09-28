@@ -27,7 +27,14 @@ const DEFAULT_OPTIONS = {
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
       // Enable children
-      .replace(/this\.children/, 'this.$slots.default()');
+      .replace(/this\.children/, 'this.$slots.default()')
+      // Add vue dependencies
+      .replace('import', "import { ref } from 'vue';\nimport")
+      // Replace vue html .values for refs
+      .replace(/\.value \}\}/g, '}}')
+      // Finally change signals for vue ref
+      .replace("import { signal } from '@preact/signals-core';", '')
+      .replace(/\= signal\(/g, '= ref(');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }

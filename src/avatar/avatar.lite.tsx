@@ -1,6 +1,6 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onMount, Show, useMetadata } from '@builder.io/mitosis';
 import { signal } from '@preact/signals-core';
-import { classesToString, randomColor } from '../../../helpers';
+import { classesToString } from '../../../helpers';
 import { Dynamic, SharedProps, Variant } from '../../../models';
 import './avatar.css';
 import { avatarService } from './avatar.service';
@@ -14,33 +14,15 @@ export type AvatarProps = {
 } & SharedProps;
 
 const classes = signal('');
+const containerClasses = signal('');
 const initials = signal('');
+const customStyles = signal(null);
+const src = signal(null);
 
 useMetadata({ isAttachedToShadowDom: true });
 export default function Avatar(props: AvatarProps) {
-  const state = useStore({
-    containerClasses: '',
-    customStyles: null,
-    src: null
-  });
-
-  function setNameInitials(name) {
-    // initials.value = avatarService.getInitials(name);
-    initials.value = avatarService.getInitials(
-      Array(5)
-        .fill(1)
-        .map((n) => ((Math.random() * 36) | 0).toString(36))
-        .join('') +
-        ' ' +
-        Array(5)
-          .fill(1)
-          .map((n) => ((Math.random() * 36) | 0).toString(36))
-          .join('')
-    );
-  }
-
   onMount(() => {
-    const setInitialProps = (variant, disabled, className) => {
+    const setClasses = (variant, disabled, className) => {
       classes.value = classesToString([
         'pa-avatar',
         [variant, `pa-avatar--${variant}`],
@@ -48,47 +30,24 @@ export default function Avatar(props: AvatarProps) {
         className || ''
       ]);
 
-      state.containerClasses = classesToString(['pa-avatar__container', [variant, `pa-avatar--${variant}`]]);
+      containerClasses.value = classesToString(['pa-avatar__container', [variant, `pa-avatar--${variant}`]]);
     };
 
-    const setSource = (url, unavatar) => {
-      if (unavatar) {
-        state.src = `https://unavatar.io/${unavatar}`;
-        return;
-      }
+    setClasses(props.variant, props.disabled, props.className);
 
-      state.src = url;
-    };
-
-    const setRandomColorStyles = (variant, name) => {
-      if (variant) {
-        state.customStyles = {};
-        return;
-      }
-
-      const color = randomColor(name);
-
-      state.customStyles = {
-        ...state.customStyles,
-        color: color.foreground,
-        backgroundColor: color.background
-      };
-    };
-
-    setInitialProps(props.variant, props.disabled, props.className);
-    setNameInitials(props.name || '');
-    setSource(props.url, props.unavatar);
-    setRandomColorStyles(props.variant, props.name);
+    initials.value = avatarService.getInitials(props.name || '');
+    customStyles.value = avatarService.getColor(props.variant, props.name);
+    src.value = props.unavatar ? `https://unavatar.io/${props.unavatar}` : props.url;
   });
 
   return (
-    <div className={classes.value} title={props.name} onClick={() => setNameInitials(props.name)}>
-      <Show when={state.customStyles}>
-        <div className={state.containerClasses} style={state.customStyles}>
-          <Show when={state.src}>
-            <img className="pa-avatar__image" src={state.src} alt={props.name} />
+    <div className={classes.value} title={props.name}>
+      <Show when={customStyles.value}>
+        <div className={containerClasses.value} style={customStyles.value}>
+          <Show when={src.value}>
+            <img className="pa-avatar__image" src={src.value} alt={props.name} />
           </Show>
-          <Show when={!state.src}>
+          <Show when={!src.value}>
             <span>{initials.value}</span>
           </Show>
         </div>
