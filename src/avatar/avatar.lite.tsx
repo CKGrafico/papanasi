@@ -6,13 +6,13 @@ import { avatarService } from './avatar.service';
 
 useMetadata({ isAttachedToShadowDom: true });
 
-export default function Avatar(props: AvatarProps) {
-  const classes = signal('');
-  const containerClasses = signal('');
-  const initials = signal('');
-  const customStyles = signal(null);
-  const src = signal(null);
+const classes = signal('');
+const containerClasses = signal('');
+const initials = signal('');
+const customStyles = signal(null);
+const src = signal(null);
 
+export default function Avatar(props: AvatarProps) {
   onMount(() => {
     const customClasses = avatarService.getClasses(props);
 
