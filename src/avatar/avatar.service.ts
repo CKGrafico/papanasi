@@ -3,6 +3,7 @@ import { AvatarProps } from './avatar.model';
 
 class AvatarService {
   public getClasses({ variant, disabled, className }: AvatarProps) {
+    console.log(variant);
     const classes = classesToString([
       'pa-avatar',
       [variant, `pa-avatar--${variant}`],
