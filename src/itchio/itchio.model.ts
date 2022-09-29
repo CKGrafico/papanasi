@@ -1,4 +1,4 @@
-import { SharedProps } from '../../../models';
+import { BaseProps } from '../../../models';
 
 export type ItchioProps = {
   user: string;
@@ -7,4 +7,4 @@ export type ItchioProps = {
   height?: number;
   onLoad?: () => void;
   secret?: string;
-} & SharedProps;
+} & BaseProps;

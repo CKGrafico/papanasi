@@ -1,3 +1,3 @@
-import { BreakpointProps, SharedProps } from '../../../models';
+import { BaseProps, BreakpointProps } from '../../../models';
 
-export type RowProps = SharedProps & BreakpointProps<'row' | 'column' | 'row-reverse' | 'column-reverse'> & SharedProps;
+export type RowProps = BaseProps & BreakpointProps<'row' | 'column' | 'row-reverse' | 'column-reverse'> & BaseProps;

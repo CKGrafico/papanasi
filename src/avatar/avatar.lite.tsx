@@ -11,7 +11,7 @@ export default function Avatar(props: AvatarProps) {
     classes: { base: '', container: '' },
     styles: { container: null },
     initials: null,
-    src: null
+    source: null
   });
 
   onMount(() => {
@@ -19,7 +19,7 @@ export default function Avatar(props: AvatarProps) {
     state.classes = avatarService.getClasses(props.variant, props.disabled, props.className);
     state.styles = avatarService.getStyles(props.name, props.variant);
     state.initials = avatarService.getInitials(props.name);
-    state.src = avatarService.getSource(props.name, props.variant);
+    state.source = avatarService.getSource(props.name, props.variant);
   });
 
   return (
@@ -27,10 +27,10 @@ export default function Avatar(props: AvatarProps) {
       <div class={state.classes.base} title={props.name}>
         <Show when={state.styles.container}>
           <div class={state.classes.container} style={state.styles.container}>
-            <Show when={state.src}>
-              <img class="pa-avatar__image" src={state.src} alt={props.name} />
+            <Show when={state.source}>
+              <img class="pa-avatar__image" src={state.source} alt={props.name} />
             </Show>
-            <Show when={!state.src}>
+            <Show when={!state.source}>
               <span>{state.initials}</span>
             </Show>
           </div>

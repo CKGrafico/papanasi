@@ -1,4 +1,4 @@
-import { SharedProps } from '../../../models';
+import { BaseProps } from '../../../models';
 
 export type CodeProps = {
   editable: boolean;
@@ -10,4 +10,4 @@ export type CodeProps = {
   copyLabel?: string;
   onUpdate?: (text: string) => void;
   onExit?: (text: string) => void;
-} & SharedProps;
+} & BaseProps;

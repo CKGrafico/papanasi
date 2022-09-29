@@ -109,7 +109,7 @@ async function compile(defaultOptions) {
       // Meanwhile mitosis don't support import external types...
       .replace(
         'import',
-        `import { Dynamic, SharedProps, Variant, Intent, BreakpointProps } from '../../../models';\nimport { ${toPascalCase(
+        `import { Dynamic, BaseProps, BaseState, CSS, Dynamic, Variant, Intent, BreakpointProps } from '../../../models';\nimport { ${toPascalCase(
           name
         )}Props, ${toPascalCase(name)}State } from './${name}.model';\nimport`
       )

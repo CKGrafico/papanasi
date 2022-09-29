@@ -1,5 +1,5 @@
-import { SharedProps } from '../../../models';
+import { BaseProps } from '../../../models';
 
 export type ContainerProps = {
   fluid?: boolean;
-} & SharedProps;
+} & BaseProps;

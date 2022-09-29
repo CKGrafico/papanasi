@@ -1,4 +1,4 @@
-import { Dynamic, SharedProps, Variant } from '../../../models';
+import { BaseProps, BaseState, CSS, Dynamic, Variant } from '../../../models';
 
 export type AvatarProps = {
   variant?: Dynamic<Variant>;
@@ -6,16 +6,11 @@ export type AvatarProps = {
   unavatar?: string;
   url?: string;
   disabled?: boolean;
-} & SharedProps;
+} & BaseProps;
 
 export type AvatarState = {
-  loaded: boolean;
   classes: { base: string; container: string };
-  styles: {
-    container: Partial<CSSStyleDeclaration> & {
-      [key: string]: Partial<CSSStyleDeclaration> | string;
-    };
-  };
+  styles: { container: CSS };
   initials: string;
-  src: string;
-};
+  source: string;
+} & BaseState;
