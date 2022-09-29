@@ -1,22 +1,24 @@
-import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
-import { classesToString } from '../../../helpers';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './container.css';
-import { ContainerProps } from './container.model';
+import { ContainerProps, ContainerState } from './container.model';
+import { containerService } from './container.service';
 
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Container(props: ContainerProps) {
-  const state = useStore({
+  const state = useStore<ContainerState>({
+    loaded: false,
     classes: ''
   });
 
   onMount(() => {
-    const setInitialProps = (fluid, class) => {
-      state.classes = classesToString(['pa-container', [fluid, 'pa-container--fluid'], class || '']);
-    };
-
-    setInitialProps(props.fluid, props.class);
+    state.loaded = true;
+    state.classes = containerService.getClasses(props.fluid, props.className);
   });
 
-  return <div class={state.classes}>{props.children}</div>;
+  return (
+    <Show when={state.loaded}>
+      <div class={state.classes.base}>{props.children}</div>;
+    </Show>
+  );
 }

@@ -1,28 +1,24 @@
-import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
-import { classesToString } from '../../../helpers';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './pill.css';
-import { PillProps } from './pill.model';
+import { PillProps, PillState } from './pill.model';
+import { pillService } from './pill.service';
 
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Pill(props: PillProps) {
-  const state = useStore({
+  const state = useStore<PillState>({
+    loaded: false,
     classes: ''
   });
 
   onMount(() => {
-    const setInitialProps = (variant, intent, disabled, class) => {
-      state.classes = classesToString([
-        'pa-pill',
-        [variant, `pa-pill--${variant}`],
-        [intent, `is-${intent}`],
-        [disabled, 'is-disabled'],
-        class || ''
-      ]);
-    };
-
-    setInitialProps(props.variant, props.intent, props.disabled, props.class);
+    state.loaded = true;
+    state.classes = pillService.getClasses(props.variant, props.intent, props.disabled, props.className);
   });
 
-  return <span class={state.classes}>{props.children}</span>;
+  return (
+    <Show when={state.loaded}>
+      <span class={state.classes.base}>{props.children}</span>
+    </Show>
+  );
 }
