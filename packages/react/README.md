@@ -96,12 +96,14 @@ This library born as a pet project to create universal components, easy to exten
 * ...should be easy to create new **variants**.
 
 ### 📚 Setup and scripts
+With **npm**:
 
-```shell
+```
 $ npm install @papanasi/react
 ```
+With **yarn**:
 
-```shell
+```
 $ yarn add @papanasi/react
 ```
 

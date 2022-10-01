@@ -59,7 +59,7 @@ async function compile(defaultOptions) {
 
     const data = fs.readFileSync('README.md', 'utf8');
     const result = data.replace(
-      /\/\{platform\}.+/g,
+      /\/\[target\].+/g,
       `/${options.target + (options.target === 'webcomponent' ? 's' : '')}`
     );
 
