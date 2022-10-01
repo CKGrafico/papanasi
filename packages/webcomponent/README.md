@@ -58,8 +58,8 @@ $ yarn add @papanasi/webcomponents
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
       <strong>Qwik</strong> <br/>
       <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/qwik/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="" target="_blank">📦Sandbox</a>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/qwik/README.md#-setup-and-scripts" target="_blank">📗(Soon...)</a>
+        <a href="" target="_blank">📦(Soon...)</a>
       </sub>
     </td>
     <td align="center" width="100">
