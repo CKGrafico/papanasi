@@ -45,7 +45,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/angular-icon.svg" width="50" title="Angular"> <br/>
       <strong>Angular</strong> <br/>
       <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
         <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">🕹️Sandbox</a>
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/angular"><img src="https://img.shields.io/npm/dw/@papanasi/angular" alt="Package downloads" /></a>
@@ -63,7 +63,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/react.svg" width="50" title="React"> <br/>
       <strong>React</strong> <br/>
       <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
         <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank">🕹️Sandbox</a>
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/react"><img src="https://img.shields.io/npm/dw/@papanasi/react" alt="Package downloads" /></a>
@@ -72,7 +72,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
       <strong>Solid</strong> <br/>
       <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
         <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank">🕹️Sandbox</a>
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/solid"><img src="https://img.shields.io/npm/dw/@papanasi/solid" alt="Package downloads" /></a>
@@ -83,7 +83,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="45" title="Svelte"> <br/>
       <strong>Svelte</strong> <br/>
       <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
         <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank">🕹️Sandbox</a>
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/svelte"><img src="https://img.shields.io/npm/dw/@papanasi/svelte" alt="Package downloads" /></a>
@@ -92,7 +92,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg" width="50" title="Vue"> <br/>
       <strong>Vue</strong> <br/>
       <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
         <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank">🕹️Sandbox</a>
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/vue"><img src="https://img.shields.io/npm/dw/@papanasi/vue" alt="Package downloads" /></a>
@@ -101,7 +101,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
       <strong>Standard</strong> <br/>
       <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">🕹️Sandbox</a>
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/webcomponents"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents" alt="Package downloads" /></a>
