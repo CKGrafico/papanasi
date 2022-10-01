@@ -70,8 +70,8 @@
     </td>
       </sub>
     <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/lit-icon.svg" width="40" title="Web Components"> <br/>
-      <strong>Lit (Standard)</strong> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
+      <strong>Standard</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Lit-005a9c?logo=codesandbox" alt="Webcomponents Sandbox" /></a>
         <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents?label=Installs" alt="Lit Web Components downloads" /></a>
