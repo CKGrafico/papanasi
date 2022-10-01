@@ -48,7 +48,14 @@ async function compile(defaultOptions) {
     const fileServices = cliConfig.files ? `src/{${cliConfig.files.join(',')},}` : 'src/**';
     const services = glob.sync(`${fileServices}/*.{service,model}.ts`);
 
-    services.forEach((element) => fs.copyFileSync(element, `${outPath}/src/${path.parse(element).base}`));
+    services.forEach((element) => {
+      const data = fs.readFileSync(element, 'utf8');
+      const result = data
+        // Fix alias
+        .replace(/\~\//g, '../../../');
+
+      fs.writeFileSync(`${outPath}/src/${path.parse(element).base}`, result, 'utf8');
+    });
 
     const data = fs.readFileSync('README.md', 'utf8');
     const result = data.replace(
@@ -106,6 +113,8 @@ async function compile(defaultOptions) {
     const name = file.name.replace('.lite', '');
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
+      // Fix alias
+      .replace(/\~\//g, '../../../')
       // Meanwhile mitosis don't support import external types...
       .replace(
         'import',

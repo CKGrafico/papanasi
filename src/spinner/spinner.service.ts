@@ -1,4 +1,4 @@
-import { classesToString } from '../../../helpers';
+import { classesToString } from '~/helpers';
 
 class SpinnerService {
   public getClasses(variant: string, full: boolean, fullscreen: boolean, className: string) {

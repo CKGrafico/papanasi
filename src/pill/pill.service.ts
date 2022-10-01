@@ -1,4 +1,4 @@
-import { classesToString } from '../../../helpers';
+import { classesToString } from '~/helpers';
 
 class PillService {
   public getClasses(variant: string, intent: string, disabled: boolean, className: string) {

@@ -1,4 +1,4 @@
-import { classesToString, randomColor } from '../../../helpers';
+import { classesToString, randomColor } from '~/helpers';
 
 class AvatarService {
   public getClasses(variant: string, disabled: boolean, className: string) {

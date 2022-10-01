@@ -1,4 +1,4 @@
-import { BaseProps, BaseState } from '../../../models';
+import { BaseProps, BaseState } from '~/models';
 
 export type CodeProps = {
   editable: boolean;

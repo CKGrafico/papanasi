@@ -1,4 +1,4 @@
-import { classesToString } from '../../../helpers';
+import { classesToString } from '~/helpers';
 
 class ContainerService {
   public getClasses(fluid: boolean, className: string) {

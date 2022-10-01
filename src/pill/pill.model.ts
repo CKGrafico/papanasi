@@ -1,4 +1,4 @@
-import { BaseProps, BaseState, Dynamic, Intent, Variant } from '../../../models';
+import { BaseProps, BaseState, Dynamic, Intent, Variant } from '~/models';
 
 export type PillProps = {
   variant?: Dynamic<Variant>;

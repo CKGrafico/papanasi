@@ -1,4 +1,4 @@
-import { BaseProps, BaseState, CSS, Dynamic, Variant } from '../../../models';
+import { BaseProps, BaseState, CSS, Dynamic, Variant } from '~/models';
 
 export type AvatarProps = {
   variant?: Dynamic<Variant>;

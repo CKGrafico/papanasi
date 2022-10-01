@@ -1,4 +1,4 @@
-import { BaseProps, BaseState, Dynamic, Variant } from '../../../models';
+import { BaseProps, BaseState, Dynamic, Variant } from '~/models';
 
 export type SpinnerProps = {
   variant?: Dynamic<Variant>;

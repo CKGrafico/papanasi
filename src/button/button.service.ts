@@ -1,4 +1,4 @@
-import { classesToString } from '../../../helpers';
+import { classesToString } from '~/helpers';
 
 class ButtonService {
   public getClasses(variant: string, outline: boolean, intent: string, disabled: boolean, className: string) {

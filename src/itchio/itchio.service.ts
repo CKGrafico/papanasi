@@ -1,5 +1,5 @@
-import { addScript, classesToString, waitUntilTrue } from '../../../helpers';
-import { ExternalLibrary } from '../../../models';
+import { addScript, classesToString, waitUntilTrue } from '~/helpers';
+import { ExternalLibrary } from '~/models';
 
 const global: Window & ExternalLibrary = window;
 

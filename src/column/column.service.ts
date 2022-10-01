@@ -1,4 +1,4 @@
-import { classesToString, getBreakpointClasses } from '../../../helpers';
+import { classesToString, getBreakpointClasses } from '~/helpers';
 
 class ColumnService {
   public getClasses(

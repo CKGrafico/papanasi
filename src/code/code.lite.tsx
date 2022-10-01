@@ -1,7 +1,7 @@
 import { For, onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import copy from 'copy-to-clipboard';
 import hljs from 'highlight.js/lib/core';
-import { classesToString, getObjectValue } from '../../../helpers';
+import { classesToString, getObjectValue } from '~/helpers';
 import './code.css';
 import { CodeProps } from './code.model';
 
