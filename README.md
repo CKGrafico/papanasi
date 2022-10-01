@@ -67,8 +67,8 @@
       <sub>
         <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Vue-41b883?logo=codesandbox" alt="Vue Sandbox" /></a>
         <a href="https://www.npmjs.com/package/@papanasi/vue" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/vue?label=Installs" alt="Vue downloads" /></a>
-    </td>
       </sub>
+    </td>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
       <strong>Standard (In progress)</strong> <br/>
