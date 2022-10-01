@@ -71,10 +71,10 @@
       </sub>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/lit-icon.svg" width="50" title="Web Components"> <br/>
-      <strong>Web Components</strong> <br/>
+      <strong>Lit (Standard)</strong> <br/>
       <sub>
-        <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Web%20Components-005a9c?logo=codesandbox" alt="Webcomponents Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents?label=Installs" alt="Webcomponents downloads" /></a>
+        <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Lit-005a9c?logo=codesandbox" alt="Webcomponents Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents?label=Installs" alt="Lit Web Components downloads" /></a>
       </sub>
     </td>
   </tr>
