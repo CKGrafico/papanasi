@@ -70,7 +70,7 @@
     </td>
       </sub>
     <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/lit-icon.svg" width="80" title="Web Components"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/lit-icon.svg" width="50" title="Web Components"> <br/>
       <strong>Standard</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Standard-005a9c?logo=codesandbox" alt="Webcomponents Sandbox" /></a>
