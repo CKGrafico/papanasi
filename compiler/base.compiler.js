@@ -32,10 +32,11 @@ async function compile(defaultOptions) {
 
   const cliConfig = commandLineArgs(optionDefinitions);
   options.files = cliConfig.files ? cliConfig.files.map((file) => `src/${file}/${file}.lite.tsx`) : options.files;
+  options.folder = options.folder || options.target;
 
   const spinner = ora('Compiling').start();
   const files = cliConfig.files ? options.files : glob.sync(options.files);
-  const outPath = `${options.dest}/${options.target}`;
+  const outPath = `${options.dest}/${options.folder}`;
 
   function copyBasicFilesOnFirstCompilation(isFirstCompilation) {
     if (!isFirstCompilation) {
@@ -60,7 +61,7 @@ async function compile(defaultOptions) {
     const data = fs.readFileSync('README.md', 'utf8');
     const result = data.replace(
       /\/\{platform\}.+/g,
-      `/${options.target + (options.target === 'webcomponent' ? 's' : '')}`
+      `/${options.folder + (options.folder === 'webcomponent' ? 's' : '')}`
     );
 
     fs.writeFileSync(`${outPath}/README.md`, result, 'utf8');

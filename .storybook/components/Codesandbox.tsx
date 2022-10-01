@@ -41,7 +41,7 @@ const icons = {
   [CodesandboxPlatform.Solid]: 'solidjs-icon',
   [CodesandboxPlatform.Svelte]: 'svelte-icon',
   [CodesandboxPlatform.Vue]: 'vue',
-  [CodesandboxPlatform.WebComponents]: 'w3c'
+  [CodesandboxPlatform.WebComponents]: 'lit-icon'
 };
 
 export function Codesandbox(props: CodesandboxProps) {

@@ -1,5 +1,6 @@
 import { addScript, classesToString, waitUntilTrue } from '~/helpers';
 import { ExternalLibrary } from '~/models';
+import { ItchioGameInfo } from './itchio.model';
 
 const global: Window & ExternalLibrary = window;
 
@@ -10,7 +11,7 @@ class ItchioService {
     return { base };
   }
 
-  public attachButton(actionRef, user, game, width, height) {
+  public attachButton(actionRef, user: string, game: string, width: number, height: number) {
     global.Itch.attachBuyButton(actionRef, {
       user: user,
       game: game,
@@ -19,7 +20,14 @@ class ItchioService {
     });
   }
 
-  public async getGameData(actionRef, user, game, width, height, secret) {
+  public async getGameData(
+    actionRef,
+    user: string,
+    game: string,
+    width: number,
+    height: number,
+    secret: string
+  ): Promise<ItchioGameInfo> {
     return new Promise((resolve) => {
       global.Itch.getGameData({
         user: user,
@@ -32,9 +40,25 @@ class ItchioService {
       });
     });
   }
+
   public async loadScript() {
     await addScript('https://static.itch.io/api.js', 'itchio');
     await waitUntilTrue(() => global.Itch);
+  }
+
+  public async processInfo(
+    actionRef,
+    user: string,
+    game: string,
+    width: number,
+    height: number,
+    secret: string,
+    callback: (data: ItchioGameInfo) => void
+  ) {
+    await this.loadScript();
+    const data = await this.getGameData(actionRef, user, game, width, height, secret);
+
+    callback && callback(data);
   }
 }
 

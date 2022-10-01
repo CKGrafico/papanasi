@@ -8,16 +8,79 @@
 🥯Papanasi _(pronunced pɑpənæʃ or papanash)_ is a **UI library to use cross Frameworks**. A set of components to use in Angular, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
 
 <p align="center">
-  <a href="https://github.com/CKGrafico/Papanasi/blob/main/LICENSE"><img src="https://img.shields.io/github/license/CKGrafico/Papanasi.svg?logo=creative%20commons&color=8FBFA9&logoColor=FFFFFF" alt="GitHub license" /></a>
-  <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/stars/CKGrafico/Papanasi.svg?logo=verizon&color=4D8C6F" alt="GitHub stars" /></a>
-  <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/forks/CKGrafico/Papanasi.svg?logo=github&color=38A3A5" alt="GitHub forks" /></a>
-  <a href="https://twitter.com/CKGrafico"><img src="https://img.shields.io/badge/Tweet-project?logo=twitter&color=00acee&logoColor=FFFFFF" alt="Tweet" /></a>
+  <a href="https://www.npmjs.com/search?q=%40papanasi"><img src="https://img.shields.io/npm/v/@papanasi/react?color=cb0303" alt="Package version" /></a>
   <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=FFFFFF" alt="Sponsor" /></a>
-  <a href="https://travis-ci.org/CKGrafico/Papanasi"><img src="https://travis-ci.org/CKGrafico/Papanasi.svg?logo=travis&branch=basic" alt="Build Status" /></a>
-  <a href="https://github.com/CKGrafico/Papanasi/issues"><img src="https://img.shields.io/github/issues/CKGrafico/Papanasi.svg?logo=codeigniter&logoColor=FFFFFF" alt="GitHub issues" /></a>
-  <a href="https://github.com/CKGrafico/Papanasi/releases"><img src="https://img.shields.io/badge/Update%20status-Frequently-009C7C?logo=git&logoColor=FFFFFF" alt="Update Status" /></a>
-
+  <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/stars/CKGrafico/Papanasi.svg?logo=verizon&color=4D8C6F" alt="GitHub stars" /></a>
+  <a href="https://twitter.com/CKGrafico"><img src="https://img.shields.io/badge/Tweet-project?logo=twitter&color=00acee&logoColor=FFFFFF" alt="Tweet" /></a>
 </p>
+
+### 🧩 Platforms 
+
+<table align="center">
+  <tr>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/angular-icon.svg" width="50" title="Angular"> <br/>
+      <strong>Angular</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Angular-b52e31?logo=codesandbox" alt="Angular Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/angular" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/angular?label=Installs" alt="Angular downloads" /></a>
+      </sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
+      <strong>Qwik</strong> <br/>
+      <sub>
+        <span>Coming soon</span>
+        <a href="" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Qwik-5048d7?logo=codesandbox" alt="Qwik Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/qwik?label=Installs" alt="Qwik downloads" /></a>
+      </sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/react.svg" width="50" title="React"> <br/>
+      <strong>React</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank"><img src="https://img.shields.io/badge/Sandbox-React-20ddff?logo=codesandbox" alt="React Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/react" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/react?label=Installs" alt="React downloads" /></a>
+      </sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
+      <strong>Solid</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Solid-2e5593?logo=codesandbox" alt="Solid Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/solid" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/solid?label=Installs" alt="Solid downloads" /></a>
+      </sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="45" title="Svelte"> <br/>
+      <strong>Svelte</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Svelte-ff3e00?logo=codesandbox" alt="Svelte Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/svelte" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/svelte?label=Installs" alt="Svelte downloads" /></a>
+      </sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg" width="50" title="Vue"> <br/>
+      <strong>Vue</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Vue-41b883?logo=codesandbox" alt="Vue Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/vue" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/vue?label=Installs" alt="Vue downloads" /></a>
+    </td>
+      </sub>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
+      <strong>Standard</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Standard-005a9c?logo=codesandbox" alt="Webcomponents Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents?label=Installs" alt="Webcomponents downloads" /></a>
+      </sub>
+    </td>
+  </tr>
+</table>
+
+### 📣 Manifest 
 
 This library born as a pet project to create universal components, easy to extend in any project and easy to use with any framework, is based in the next **manifesto**:
 
@@ -42,76 +105,6 @@ $ npm install @papanasi/vue
 $ yarn add @papanasi/vue
 ```
 
-### 🧩 Platforms 
-
-<table align="center">
-  <tr>
-    <td align="center" width="100">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/angular-icon.svg" width="50" title="Angular"> <br/>
-      <strong>Angular</strong> <br/>
-      <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/angular" target="_blank">📦Package</a>
-      </sub>
-    </td>
-    <td align="center" width="100">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
-      <strong>Qwik</strong> <br/>
-      <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/qwik/README.md#-setup-and-scripts" target="_blank">📗(Soon...)</a>
-        <a href="" target="_blank">🕹️(Soon...)</a>
-        <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank">📦(Soon...)</a>
-      </sub>
-    </td>
-    <td align="center" width="100">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/react.svg" width="50" title="React"> <br/>
-      <strong>React</strong> <br/>
-      <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/react" target="_blank">📦Package</a>
-      </sub>
-    </td>
-    <td align="center" width="100">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
-      <strong>Solid</strong> <br/>
-      <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/solid" target="_blank">📦Package</a>
-      </sub>
-    </td>
-    <td align="center" width="100">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="45" title="Svelte"> <br/>
-      <strong>Svelte</strong> <br/>
-      <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/svelte" target="_blank">📦Package</a>
-      </sub>
-    </td>
-    <td align="center" width="100">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg" width="50" title="Vue"> <br/>
-      <strong>Vue</strong> <br/>
-      <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/vue" target="_blank">📦Package</a>
-      </sub>
-    </td>
-    <td align="center" width="100">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
-      <strong>Standard</strong> <br/>
-      <sub>
-        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank">📦Package</a>
-      </sub>
-    </td>
-  </tr>
-</table>
-
 ### 🔨 Components status
 
 <table align="center">
@@ -124,22 +117,22 @@ $ yarn add @papanasi/vue
     <td align="center">
       Container <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/layout-container--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/layout-container--default-story" target="_blank">Preview</a>
     </td>
     <td align="center">
       Row <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/layout-row--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/layout-row--default-story" target="_blank">Preview</a>
     </td>
     <td align="center">
       Column <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/layout-column--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/layout-column--default-story" target="_blank">Preview</a>
     </td>
     <td align="center">
       Grid <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/layout-grid--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/layout-grid--default-story" target="_blank">Preview</a>
     </td>
 
   </tr>
@@ -152,29 +145,29 @@ $ yarn add @papanasi/vue
     <td align="center">
       Avatar <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-avatar--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/components-avatar--default-story" target="_blank">Preview</a>
     </td>
     <td align="center">
       Button <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-button--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/components-button--default-story" target="_blank">Preview</a>
     </td>
     <td align="center">
       Code <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-code--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/components-code--default-story" target="_blank">Preview</a>
     </td>
   </tr>
   <tr>
     <td align="center">
       Pill <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story" target="_blank">Preview</a>
     </td>
     <td align="center">
       Spinner <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-spinner--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/components-spinner--default-story" target="_blank">Preview</a>
     </td>
   </tr>
   <tr>
@@ -186,7 +179,7 @@ $ yarn add @papanasi/vue
     <td align="center">
       Itchio <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story" target="_blank">Preview</a>
     </td>
   </tr>
   <tr>
@@ -198,7 +191,7 @@ $ yarn add @papanasi/vue
     <td align="center">
       Tooltip <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/75"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/extensions-tooltip--default-story">Preview</a>
+      <a href="https://papanasi.js.org/?path=/docs/extensions-tooltip--default-story" target="_blank">Preview</a>
     </td>
   </tr>
 </table>

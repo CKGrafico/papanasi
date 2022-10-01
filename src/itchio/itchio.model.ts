@@ -9,12 +9,13 @@ export type ItchioProps = {
   secret?: string;
 } & BaseProps;
 
+export type ItchioGameInfo = {
+  title: string;
+  cover_image: string;
+  price: string;
+};
+
 export type ItchioState = {
   classes: { base: string };
-  isLoadingGameInfo: boolean;
-  gameInfo: {
-    title: string;
-    cover_image: string;
-    price: string;
-  };
+  gameInfo: ItchioGameInfo;
 } & BaseState;
