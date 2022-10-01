@@ -46,36 +46,36 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>Angular</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
-        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">🕹️Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h"><img src="https://img.shields.io/badge/Sandbox-Angular-b52e31?logo=codesandbox" alt="Angular Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/angular"><img src="https://img.shields.io/npm/dw/@papanasi/angular" alt="Angular downloads" /></a>
       </sub>
-      <a href="https://www.npmjs.com/package/@papanasi/angular"><img src="https://img.shields.io/npm/dw/@papanasi/angular" alt="Package downloads" /></a>
     </td>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
       <strong>Qwik</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/qwik/README.md#-setup-and-scripts" target="_blank">📗(Soon...)</a>
-        <a href="" target="_blank">🕹️(Soon...)</a>
+        <a href=""><img src="https://img.shields.io/badge/Sandbox-Qwik-5048d7?logo=codesandbox" alt="Qwik Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/qwik"><img src="https://img.shields.io/npm/dw/@papanasi/qwik" alt="Qwik downloads" /></a>
       </sub>
-      <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank">📦(Soon...)</a>
     </td>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/react.svg" width="50" title="React"> <br/>
       <strong>React</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
-        <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank">🕹️Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-react-20ddff"><img src="https://img.shields.io/badge/Sandbox-React-b52e31?logo=codesandbox" alt="React Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/react"><img src="https://img.shields.io/npm/dw/@papanasi/react" alt="React downloads" /></a>
       </sub>
-      <a href="https://www.npmjs.com/package/@papanasi/react"><img src="https://img.shields.io/npm/dw/@papanasi/react" alt="Package downloads" /></a>
     </td>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
       <strong>Solid</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
-        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank">🕹️Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8"><img src="https://img.shields.io/badge/Sandbox-Solid-2e5593?logo=codesandbox" alt="Solid Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/solid"><img src="https://img.shields.io/npm/dw/@papanasi/solid" alt="Solid downloads" /></a>
       </sub>
-      <a href="https://www.npmjs.com/package/@papanasi/solid"><img src="https://img.shields.io/npm/dw/@papanasi/solid" alt="Package downloads" /></a>
     </td>
   </tr>
   <tr>
@@ -84,27 +84,27 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>Svelte</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
-        <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank">🕹️Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x"><img src="https://img.shields.io/badge/Sandbox-Svelte-ff3e00?logo=codesandbox" alt="Svelte Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/svelte"><img src="https://img.shields.io/npm/dw/@papanasi/svelte" alt="Svelte downloads" /></a>
       </sub>
-      <a href="https://www.npmjs.com/package/@papanasi/svelte"><img src="https://img.shields.io/npm/dw/@papanasi/svelte" alt="Package downloads" /></a>
     </td>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg" width="50" title="Vue"> <br/>
       <strong>Vue</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
-        <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank">🕹️Sandbox</a>
-      </sub>
-      <a href="https://www.npmjs.com/package/@papanasi/vue"><img src="https://img.shields.io/npm/dw/@papanasi/vue" alt="Package downloads" /></a>
+        <a href="https://codesandbox.io/s/papanasi-vue-vygq4m"><img src="https://img.shields.io/badge/Sandbox-Vue-41b883?logo=codesandbox" alt="Vue Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/vue"><img src="https://img.shields.io/npm/dw/@papanasi/vue" alt="Vue downloads" /></a>
     </td>
+      </sub>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
       <strong>Standard</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts" target="_blank">📗Readme</a><br/>
-        <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">🕹️Sandbox</a>
+         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr"><img src="https://img.shields.io/badge/Sandbox-Standard-005a9c?logo=codesandbox" alt="Webcomponents Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/webcomponents"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents" alt="Webcomponents downloads" /></a>
       </sub>
-      <a href="https://www.npmjs.com/package/@papanasi/webcomponents"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents" alt="Package downloads" /></a>
     </td>
   </tr>
 </table>
