@@ -1,39 +1,27 @@
-import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
-import { classesToString } from '../../../helpers';
-import { Dynamic, SharedProps, Variant } from '../../../models';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './spinner.css';
-
-export type SpinnerProps = {
-  variant?: Dynamic<Variant>;
-  full?: boolean;
-  fullscreen?: boolean;
-} & SharedProps;
+import { SpinnerProps, SpinnerState } from './spinner.model';
+import { spinnerService } from './spinner.service';
 
 useMetadata({ isAttachedToShadowDom: true });
 export default function Spinner(props: SpinnerProps) {
-  const state = useStore({
-    classes: ''
+  const state = useStore<SpinnerState>({
+    loaded: false,
+    classes: { base: '' }
   });
 
   onMount(() => {
-    const setInitialProps = (variant, full, fullscreen, className) => {
-      state.classes = classesToString([
-        'pa-spinner',
-        [variant, `pa-spinner--${variant}`],
-        [full && !fullscreen, 'pa-spinner--full'],
-        [fullscreen, 'pa-spinner--fullscreen'],
-        className || ''
-      ]);
-    };
-
-    setInitialProps(props.variant, props.full, props.fullscreen, props.className);
+    state.loaded = true;
+    state.classes = spinnerService.getClasses(props.variant, props.full, props.fullscreen, props.className);
   });
 
   return (
-    <div className={state.classes}>
-      <svg className="pa-spinner__icon" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-        <circle className="pa-spinner__path" fill="none" cx="33" cy="33" r="30"></circle>
-      </svg>
-    </div>
+    <Show when={state.loaded}>
+      <div class={state.classes.base}>
+        <svg class="pa-spinner__icon" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+          <circle class="pa-spinner__path" fill="none" cx="33" cy="33" r="30"></circle>
+        </svg>
+      </div>
+    </Show>
   );
 }

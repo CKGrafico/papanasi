@@ -7,8 +7,6 @@
 
 🥯Papanasi _(pronunced pɑpənæʃ or papanash)_ is a **UI library to use cross Frameworks**. A set of components to use in Angular, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
 
-> WARNING: THIS IS AN ALPHA DONT USE IT YET, IS UNDER DEVELOPMENT.
-
 <p align="center">
   <a href="https://github.com/CKGrafico/Papanasi/blob/main/LICENSE"><img src="https://img.shields.io/github/license/CKGrafico/Papanasi.svg?logo=creative%20commons&color=8FBFA9&logoColor=FFFFFF" alt="GitHub license" /></a>
   <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/stars/CKGrafico/Papanasi.svg?logo=verizon&color=4D8C6F" alt="GitHub stars" /></a>
@@ -25,13 +23,13 @@ This library born as a pet project to create universal components, easy to exten
 
 **A Component**...
 * ...should be **cross-libraries** but the code should be written once.
-* ...should have a **minimun style** and should be easy to extend it via CSS by the user.
+* ...should have a **minimum style** and should be easy to extend it via CSS by the user.
 * ...should provide some  **optional themes** to make it easy to use.
-* ...should be **accesible**.
+* ...should be **accessible**.
 * ...should be **made for developers** not for non-coders, they will decide how to style most of the things.
-* ...should be three-shakable.
+* ...should be tree-shakable.
 * ...should be compatible with **StoryBook**.
-* ...should be inspired in other UI Libraries to **don't reinvent the wheel**.
+* ...should be inspired by other UI Libraries and **don't reinvent the wheel**.
 * ...should be easy to create new **variants**.
 
 ### 📚 Setup and scripts
@@ -48,13 +46,20 @@ $ yarn add @papanasi/svelte
 
 <table align="center">
   <tr>
-
     <td align="center" width="100">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/angular-icon.svg" width="50" title="Angular"> <br/>
       <strong>Angular</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
         <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">📦Sandbox</a>
+      </sub>
+    </td>
+    <td align="center" width="100">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
+      <strong>Qwik</strong> <br/>
+      <sub>
+        <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/qwik/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
+        <a href="" target="_blank">📦Sandbox</a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -97,7 +102,6 @@ $ yarn add @papanasi/svelte
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">📦Sandbox</a>
       </sub>
     </td>
-
   </tr>
 </table>
 
@@ -105,14 +109,11 @@ $ yarn add @papanasi/svelte
 
 <table align="center">
   <tr>
-
     <td align="left" colspan="4">
-     <h4>Layout Components</h4>
+    <h4>Layout Components</h4>
     </td>
-
   </tr>
   <tr>
-
     <td align="center">
       Container <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
@@ -136,14 +137,11 @@ $ yarn add @papanasi/svelte
 
   </tr>
   <tr>
-
     <td  align="left" colspan="4">
-     <h4>Regular Components</h4>
+    <h4>Regular Components</h4>
     </td>
-
   </tr>
   <tr>
-
     <td align="center">
       Avatar <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
@@ -155,67 +153,46 @@ $ yarn add @papanasi/svelte
       <a href="https://papanasi.js.org/?path=/docs/components-button--default-story">Preview</a>
     </td>
     <td align="center">
-      Choice <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/10"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-choice--default-story">Preview</a>
-    </td>
-    <td align="center">
       Code <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-code--default-story">Preview</a>
     </td>
-
   </tr>
-   <tr>
-
-     <td align="center">
+  <tr>
+    <td align="center">
       Pill <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story">Preview</a>
     </td>
     <td align="center">
-      Select <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-select--default-story">Preview</a>
-    </td>
-     <td align="center">
       Spinner <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-spinner--default-story">Preview</a>
     </td>
-
   </tr>
   <tr>
-
     <td align="left" colspan="4">
-     <h4>Enterprise Components</h4>
+    <h4>Enterprise Components</h4>
     </td>
-
   </tr>
   <tr>
-
     <td align="center">
       Itchio <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/80"/><br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story">Preview</a>
     </td>
-
   </tr>
   <tr>
-
     <td align="left" colspan="4">
-     <h4>Extensions</h4>
+    <h4>Extensions</h4>
     </td>
-
   </tr>
   <tr>
-
     <td align="center">
       Tooltip <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/50"/><br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/75"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/extensions-tooltip--default-story">Preview</a>
     </td>
-
   </tr>
 </table>
 
@@ -231,14 +208,45 @@ To learn more about Papanasi, check [the documentation](http://papanasi.js.org/)
 
 [Contributing Guidelines](https://github.com/CKGrafico/papanasi/blob/main/CONTRIBUTING.md)
 
-To run the project locally, you can use:
+To build the project run:
+
+```
+> yarn install
+> yarn compile
+```
+
+You can choose which frameworks to build by passing the `--targets`:
+
+```
+> yarn compile --targets react vue
+```
+
+It is also possible to specify which components to build `--files`:
+
+```
+> yarn compile --files avatar pill
+```
+
+If you want to disable the linting use `--no-lint`:
+
+```
+> yarn compile --no-lint
+```
+
+To contribute and watch the changes in local environment just use:
 
 ```
 > yarn dev
 ```
 
-To build the project locally, just execute:
+Finally, to launch storybook use:
 
 ```
-> yarn build
+> yarn start
 ```
+
+### Thanks to everyone who contributed:
+[![Contributors](https://contrib.rocks/image?repo=ckgrafico/papanasi)](https://github.com/CKGrafico/papanasi/graphs/contributors)
+
+---
+Made with 🍕 by [Quique Fdez Guerra](https://twitter.com/ckgrafico)

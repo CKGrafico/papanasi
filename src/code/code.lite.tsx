@@ -1,21 +1,9 @@
 import { For, onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import copy from 'copy-to-clipboard';
 import hljs from 'highlight.js/lib/core';
-import { classesToString, getObjectValue } from '../../../helpers';
-import { SharedProps } from '../../../models';
+import { classesToString, getObjectValue } from '~/helpers';
 import './code.css';
-
-export type CodeProps = {
-  editable: boolean;
-  languages: string[];
-  code: string;
-  theme?: string; // TODO: dynamic themes
-  links?: { label: string; url: string; icon: string }[];
-  canCopy?: boolean;
-  copyLabel?: string;
-  onUpdate?: (text: string) => void;
-  onExit?: (text: string) => void;
-} & SharedProps;
+import { CodeProps } from './code.model';
 
 useMetadata({ isAttachedToShadowDom: true });
 
@@ -24,7 +12,7 @@ export default function Code(props: CodeProps) {
   const codeRef = useRef();
 
   const state = useStore({
-    classes: '',
+    classes: { base: '' },
     isEditing: false,
     isDark: false,
     isCopy: true,
@@ -78,7 +66,7 @@ export default function Code(props: CodeProps) {
 
   onMount(() => {
     const setInitialProps = (className, code, theme, canCopy, copyLabel) => {
-      state.classes = classesToString(['pa-code', className || '']);
+      state.classes = { base: classesToString(['pa-code', className || '']) };
       state.rawCode = code;
       state.previewCode = code;
       state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
@@ -91,23 +79,23 @@ export default function Code(props: CodeProps) {
   });
 
   return (
-    <div className={state.classes}>
+    <div class={state.classes.base}>
       <pre
-        className={'pa-code__preview ' + (state.isEditing ? 'is-editing' : '')}
+        class={'pa-code__preview ' + (state.isEditing ? 'is-editing' : '')}
         ref={previewRef}
         onClick={() => state.onClick()}
       >
-        <code className={'pa-code__preview-block'}>{state.previewCode || props.code}</code>
+        <code class={'pa-code__preview-block'}>{state.previewCode || props.code}</code>
       </pre>
 
       <pre
-        className={
+        class={
           'pa-code__editor ' + (state.isEditing ? 'is-editing ' : '') + (state.isDark ? 'pa-code__editor--dark ' : '')
         }
       >
         <code
           ref={codeRef}
-          className={'pa-code__editor-block'}
+          class={'pa-code__editor-block'}
           contentEditable={true}
           onKeyUp={() => state.onKeyUp()}
           onBlur={() => state.onBlur()}
@@ -116,23 +104,23 @@ export default function Code(props: CodeProps) {
         </code>
       </pre>
 
-      <div className="pa-code__actions">
+      <div class="pa-code__actions">
         <For each={props.links}>
           {(link, index) => (
             <>
               <Show when={state.value(link, 'url')}>
-                <a className="pa-code__action" data-key={index} href={state.value(link, 'url')} target="_blank">
+                <a class="pa-code__action" data-key={index} href={state.value(link, 'url')} target="_blank">
                   {state.value(link, 'icon') && (
-                    <img className="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
+                    <img class="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
                   )}
                   {state.value(link, 'label')}
                 </a>
               </Show>
 
               <Show when={!state.value(link, 'url')}>
-                <span className="pa-code__action pa-code__action--text" data-key={index}>
+                <span class="pa-code__action pa-code__action--text" data-key={index}>
                   {state.value(link, 'icon') && (
-                    <img className="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
+                    <img class="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
                   )}
                   {state.value(link, 'label')}
                 </span>
@@ -142,7 +130,7 @@ export default function Code(props: CodeProps) {
         </For>
 
         <Show when={state.isCopy}>
-          <span className="pa-code__action pa-code__action--copy" onClick={() => copy(state.rawCode)}>
+          <span class="pa-code__action pa-code__action--copy" onClick={() => copy(state.rawCode)}>
             {state.copyText}
           </span>
         </Show>

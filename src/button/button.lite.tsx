@@ -1,35 +1,30 @@
-import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
-import { classesToString } from '../../../helpers';
-import { Dynamic, Intent, SharedProps, Variant } from '../../../models';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './button.css';
-
-export type ButtonProps = {
-  variant?: Dynamic<Variant>;
-  intent?: Dynamic<Intent>;
-  outline?: boolean;
-  disabled?: boolean;
-} & SharedProps;
+import { ButtonProps, ButtonState } from './button.model';
+import { buttonService } from './button.service';
 
 useMetadata({ isAttachedToShadowDom: true });
+
 export default function Button(props: ButtonProps) {
-  const state = useStore({
-    classes: ''
+  const state = useStore<ButtonState>({
+    loaded: false,
+    classes: { base: '' }
   });
 
   onMount(() => {
-    const setInitialProps = (variant, outline, intent, disabled, className) => {
-      state.classes = classesToString([
-        'pa-button',
-        [variant, `pa-button--${variant}`],
-        [outline, 'pa-button--outline'],
-        [intent, `is-${intent}`],
-        [disabled, 'is-disabled'],
-        className || ''
-      ]);
-    };
-
-    setInitialProps(props.variant, props.outline, props.intent, props.disabled, props.className);
+    state.loaded = true;
+    state.classes = buttonService.getClasses(
+      props.variant,
+      props.outline,
+      props.intent,
+      props.disabled,
+      props.className
+    );
   });
 
-  return <button className={state.classes}>{props.children}</button>;
+  return (
+    <Show when={state.loaded}>
+      <button class={state.classes.base}>{props.children}</button>
+    </Show>
+  );
 }

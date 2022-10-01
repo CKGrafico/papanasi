@@ -1,24 +1,24 @@
-import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
-import { classesToString, getBreakpointClasses } from '../../../helpers';
-import { BreakpointProps, SharedProps } from '../../../models';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './row.css';
-
-export type RowProps = SharedProps & BreakpointProps<'row' | 'column' | 'row-reverse' | 'column-reverse'>;
+import { RowProps, RowState } from './row.model';
+import { rowService } from './row.service';
 
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Row(props: RowProps) {
-  const state = useStore({
-    classes: ''
+  const state = useStore<RowState>({
+    loaded: false,
+    classes: { base: '' }
   });
 
   onMount(() => {
-    const setInitialProps = (xs, s, m, l, xl, className) => {
-      state.classes = classesToString(['pa-row', getBreakpointClasses(xs, s, m, l, xl, 'pa-row--'), className || '']);
-    };
-
-    setInitialProps(props.xs, props.s, props.m, props.l, props.xl, props.className);
+    state.loaded = true;
+    state.classes = rowService.getClasses(props.xs, props.s, props.m, props.l, props.xl, props.className);
   });
 
-  return <div className={state.classes}>{props.children}</div>;
+  return (
+    <Show when={state.loaded}>
+      <div class={state.classes.base}>{props.children}</div>
+    </Show>
+  );
 }

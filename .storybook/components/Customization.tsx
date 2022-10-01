@@ -1,5 +1,6 @@
+import * as React from 'react';
 import { useMemo, useState } from 'react';
-import { Code, Column, Container, Row } from '../../packages/react';
+import { Code, Column, Container, Row } from '../../packages/react/src';
 import './customization.css';
 
 type CustomizationProps = {

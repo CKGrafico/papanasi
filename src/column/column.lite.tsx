@@ -1,29 +1,24 @@
-import { onMount, useMetadata, useStore } from '@builder.io/mitosis';
-import { classesToString, getBreakpointClasses } from '../../../helpers';
-import { BreakpointProps, SharedProps } from '../../../models';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './column.css';
-
-export type ColumnProps = SharedProps &
-  BreakpointProps<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'content' | 'fill' | 'hide'>;
+import { ColumnProps, ColumnState } from './column.model';
+import { columnService } from './column.service';
 
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Column(props: ColumnProps) {
-  const state = useStore({
-    classes: ''
+  const state = useStore<ColumnState>({
+    loaded: false,
+    classes: { base: '' }
   });
 
   onMount(() => {
-    const setInitialProps = (xs, s, m, l, xl, className) => {
-      state.classes = classesToString([
-        'pa-column',
-        getBreakpointClasses(xs, s, m, l, xl, 'pa-column--'),
-        className || ''
-      ]);
-    };
-
-    setInitialProps(props.xs, props.s, props.m, props.l, props.xl, props.className);
+    state.loaded = true;
+    state.classes = columnService.getClasses(props.xs, props.s, props.m, props.l, props.xl, props.className);
   });
 
-  return <div className={state.classes}>{props.children}</div>;
+  return (
+    <Show when={state.loaded}>
+      <div className={state.classes.base}>{props.children}</div>
+    </Show>
+  );
 }

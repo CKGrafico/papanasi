@@ -1,9 +1,15 @@
-import { addScript, waitUntilTrue } from '../../../helpers';
-import { ExternalLibrary } from '../../../models';
+import { addScript, classesToString, waitUntilTrue } from '~/helpers';
+import { ExternalLibrary } from '~/models';
 
 const global: Window & ExternalLibrary = window;
 
 class ItchioService {
+  public getClasses(className: string) {
+    const base = classesToString(['pa-itchio', className || '']);
+
+    return { base };
+  }
+
   public attachButton(actionRef, user, game, width, height) {
     global.Itch.attachBuyButton(actionRef, {
       user: user,
