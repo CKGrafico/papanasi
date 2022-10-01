@@ -96,13 +96,15 @@ This library born as a pet project to create universal components, easy to exten
 * ...should be easy to create new **variants**.
 
 ### 📚 Setup and scripts
+With **npm**:
 
-```shell
-$ npm install @papanasi/{platform} # ex: @papanasi/react
 ```
+$ npm install @papanasi/[target] # ex: @papanasi/react
+```
+With **yarn**:
 
-```shell
-$ yarn add @papanasi/{platform} # ex: @papanasi/vue
+```
+$ yarn add @papanasi/[target] # ex: @papanasi/vue
 ```
 
 ### 🔨 Components status
