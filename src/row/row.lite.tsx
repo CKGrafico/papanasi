@@ -18,7 +18,7 @@ export default function Row(props: RowProps) {
 
   return (
     <Show when={state.loaded}>
-      <div class={state.classes.base}>{props.children}</div>;
+      <div class={state.classes.base}>{props.children}</div>
     </Show>
   );
 }

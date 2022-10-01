@@ -18,7 +18,7 @@ export default function Container(props: ContainerProps) {
 
   return (
     <Show when={state.loaded}>
-      <div class={state.classes.base}>{props.children}</div>;
+      <div class={state.classes.base}>{props.children}</div>
     </Show>
   );
 }
