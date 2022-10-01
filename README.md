@@ -14,29 +14,6 @@
   <a href="https://twitter.com/CKGrafico"><img src="https://img.shields.io/badge/Tweet-project?logo=twitter&color=00acee&logoColor=FFFFFF" alt="Tweet" /></a>
 </p>
 
-This library born as a pet project to create universal components, easy to extend in any project and easy to use with any framework, is based in the next **manifesto**:
-
-**A Component**...
-* ...should be **cross-libraries** but the code should be written once.
-* ...should have a **minimum style** and should be easy to extend it via CSS by the user.
-* ...should provide some  **optional themes** to make it easy to use.
-* ...should be **accessible**.
-* ...should be **made for developers** not for non-coders, they will decide how to style most of the things.
-* ...should be tree-shakable.
-* ...should be compatible with **StoryBook**.
-* ...should be inspired by other UI Libraries and **don't reinvent the wheel**.
-* ...should be easy to create new **variants**.
-
-### 📚 Setup and scripts
-
-```shell
-$ npm install @papanasi/{platform} # ex: @papanasi/react
-```
-
-```shell
-$ yarn add @papanasi/{platform} # ex: @papanasi/vue
-```
-
 ### 🧩 Platforms 
 
 <table align="center">
@@ -108,6 +85,31 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
     </td>
   </tr>
 </table>
+
+### 📣 Manifest 
+
+This library born as a pet project to create universal components, easy to extend in any project and easy to use with any framework, is based in the next **manifesto**:
+
+**A Component**...
+* ...should be **cross-libraries** but the code should be written once.
+* ...should have a **minimum style** and should be easy to extend it via CSS by the user.
+* ...should provide some  **optional themes** to make it easy to use.
+* ...should be **accessible**.
+* ...should be **made for developers** not for non-coders, they will decide how to style most of the things.
+* ...should be tree-shakable.
+* ...should be compatible with **StoryBook**.
+* ...should be inspired by other UI Libraries and **don't reinvent the wheel**.
+* ...should be easy to create new **variants**.
+
+### 📚 Setup and scripts
+
+```shell
+$ npm install @papanasi/{platform} # ex: @papanasi/react
+```
+
+```shell
+$ yarn add @papanasi/{platform} # ex: @papanasi/vue
+```
 
 ### 🔨 Components status
 
