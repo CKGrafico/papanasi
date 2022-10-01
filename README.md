@@ -68,6 +68,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/react"><img src="https://img.shields.io/npm/dw/@papanasi/react" alt="Package downloads" /></a>
     </td>
+  </tr>
+  <tr>
     <td align="center" width="100">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
       <strong>Solid</strong> <br/>
