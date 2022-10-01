@@ -8,15 +8,10 @@
 🥯Papanasi _(pronunced pɑpənæʃ or papanash)_ is a **UI library to use cross Frameworks**. A set of components to use in Angular, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
 
 <p align="center">
-  <a href="https://github.com/CKGrafico/Papanasi/blob/main/LICENSE"><img src="https://img.shields.io/github/license/CKGrafico/Papanasi.svg?logo=creative%20commons&color=8FBFA9&logoColor=FFFFFF" alt="GitHub license" /></a>
-  <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/stars/CKGrafico/Papanasi.svg?logo=verizon&color=4D8C6F" alt="GitHub stars" /></a>
-  <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/forks/CKGrafico/Papanasi.svg?logo=github&color=38A3A5" alt="GitHub forks" /></a>
-  <a href="https://twitter.com/CKGrafico"><img src="https://img.shields.io/badge/Tweet-project?logo=twitter&color=00acee&logoColor=FFFFFF" alt="Tweet" /></a>
+  <a href="https://www.npmjs.com/search?q=%40papanasi"><img src="https://img.shields.io/npm/v/@papanasi/react?color=cb0303" alt="Package version" /></a>
   <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=FFFFFF" alt="Sponsor" /></a>
-  <a href="https://travis-ci.org/CKGrafico/Papanasi"><img src="https://travis-ci.org/CKGrafico/Papanasi.svg?logo=travis&branch=basic" alt="Build Status" /></a>
-  <a href="https://github.com/CKGrafico/Papanasi/issues"><img src="https://img.shields.io/github/issues/CKGrafico/Papanasi.svg?logo=codeigniter&logoColor=FFFFFF" alt="GitHub issues" /></a>
-  <a href="https://github.com/CKGrafico/Papanasi/releases"><img src="https://img.shields.io/badge/Update%20status-Frequently-009C7C?logo=git&logoColor=FFFFFF" alt="Update Status" /></a>
-
+  <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/stars/CKGrafico/Papanasi.svg?logo=verizon&color=4D8C6F" alt="GitHub stars" /></a>
+  <a href="https://twitter.com/CKGrafico"><img src="https://img.shields.io/badge/Tweet-project?logo=twitter&color=00acee&logoColor=FFFFFF" alt="Tweet" /></a>
 </p>
 
 This library born as a pet project to create universal components, easy to extend in any project and easy to use with any framework, is based in the next **manifesto**:
@@ -52,7 +47,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
         <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/angular" target="_blank">📦Package</a>
+        <a href="https://www.npmjs.com/package/@papanasi/angular"><img src="https://img.shields.io/npm/dw/@papanasi/angular" alt="Package downloads" /></a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -70,7 +65,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
         <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/react" target="_blank">📦Package</a>
+        <a href="https://www.npmjs.com/package/@papanasi/react"><img src="https://img.shields.io/npm/dw/@papanasi/react" alt="Package downloads" /></a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -79,7 +74,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
         <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/solid" target="_blank">📦Package</a>
+        <a href="https://www.npmjs.com/package/@papanasi/solid"><img src="https://img.shields.io/npm/dw/@papanasi/solid" alt="Package downloads" /></a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -88,7 +83,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
         <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/svelte" target="_blank">📦Package</a>
+        <a href="https://www.npmjs.com/package/@papanasi/svelte"><img src="https://img.shields.io/npm/dw/@papanasi/svelte" alt="Package downloads" /></a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -97,7 +92,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
         <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank">🕹️Sandbox</a>
-        <a href="https://www.npmjs.com/package/@papanasi/vue" target="_blank">📦Package</a>
+        <a href="https://www.npmjs.com/package/@papanasi/vue"><img src="https://img.shields.io/npm/dw/@papanasi/vue" alt="Package downloads" /></a>
       </sub>
     </td>
     <td align="center" width="100">
