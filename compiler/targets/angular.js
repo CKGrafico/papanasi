@@ -17,10 +17,10 @@ const DEFAULT_OPTIONS = {
     const result = data
       // Add selector to be a directive because in angular you cannot use existing tags
       .replace(
-        /selector: ?["|'](.+)["|']/,
+        /selector: ?["|'](.+), (.*)["|']/,
         `selector: "${
           !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
-        }[pa-$1]", exportAs: "pa-$1", encapsulation: 2`
+        }[pa-$1], $2", exportAs: "pa-$1", encapsulation: 2`
       )
       // Enable children
       .replace(/(,\n)?(\} from \"\@angular\/core\"\;)/, ', ContentChildren, QueryList $2')

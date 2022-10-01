@@ -15,9 +15,9 @@
     "lint:styles": "stylelint \"./styles/**/*.(css)\" --fix",
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
-    "release-version": "lerna version 1.0.0-rc.0 --force-publish",
-    "from-package": "lerna publish from-package --force-publish",
-    "build": "yarn compile"
+    "build": "yarn compile",
+    "release-version": "lerna version 1.0.0-rc.1 --force-publish",
+    "from-package": "lerna publish from-package --force-publish"
   },
   "dependencies": {
     "color-hash": "^2.0.1",

@@ -51,7 +51,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>Angular</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/angular/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">📦Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank">🕹️Sandbox</a>
+        <a href="https://www.npmjs.com/package/@papanasi/angular" target="_blank">📦Package</a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -59,7 +60,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>Qwik</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/qwik/README.md#-setup-and-scripts" target="_blank">📗(Soon...)</a>
-        <a href="" target="_blank">📦(Soon...)</a>
+        <a href="" target="_blank">🕹️(Soon...)</a>
+        <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank">📦(Soon...)</a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -67,7 +69,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>React</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/react/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank">📦Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank">🕹️Sandbox</a>
+        <a href="https://www.npmjs.com/package/@papanasi/react" target="_blank">📦Package</a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -75,7 +78,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>Solid</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/solid/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank">📦Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank">🕹️Sandbox</a>
+        <a href="https://www.npmjs.com/package/@papanasi/solid" target="_blank">📦Package</a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -83,7 +87,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>Svelte</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/svelte/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank">📦Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank">🕹️Sandbox</a>
+        <a href="https://www.npmjs.com/package/@papanasi/svelte" target="_blank">📦Package</a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -91,7 +96,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>Vue</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/vue/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank">📦Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank">🕹️Sandbox</a>
+        <a href="https://www.npmjs.com/package/@papanasi/vue" target="_blank">📦Package</a>
       </sub>
     </td>
     <td align="center" width="100">
@@ -99,7 +105,8 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       <strong>Standard</strong> <br/>
       <sub>
         <a href="https://github.com/CKGrafico/papanasi/blob/main/packages/webcomponent/README.md#-setup-and-scripts" target="_blank">📗Readme</a>
-        <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">📦Sandbox</a>
+        <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank">🕹️Sandbox</a>
+        <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank">📦Package</a>
       </sub>
     </td>
   </tr>
