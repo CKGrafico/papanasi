@@ -19,7 +19,7 @@ export default function Avatar(props: AvatarProps) {
     state.classes = avatarService.getClasses(props.variant, props.disabled, props.className);
     state.styles = avatarService.getStyles(props.name, props.variant);
     state.initials = avatarService.getInitials(props.name);
-    state.source = avatarService.getSource(props.name, props.variant);
+    state.source = avatarService.getSource(props.url, props.unavatar);
   });
 
   return (
