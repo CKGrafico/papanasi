@@ -8,7 +8,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Row(props: RowProps) {
   const state = useStore<RowState>({
     loaded: false,
-    classes: ''
+    classes: { base: '' }
   });
 
   onMount(() => {

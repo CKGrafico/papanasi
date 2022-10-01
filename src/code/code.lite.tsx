@@ -12,7 +12,7 @@ export default function Code(props: CodeProps) {
   const codeRef = useRef();
 
   const state = useStore({
-    classes: '',
+    classes: { base: '' },
     isEditing: false,
     isDark: false,
     isCopy: true,
@@ -65,8 +65,8 @@ export default function Code(props: CodeProps) {
   });
 
   onMount(() => {
-    const setInitialProps = (class, code, theme, canCopy, copyLabel) => {
-      state.classes = classesToString(['pa-code', class || '']);
+    const setInitialProps = (className, code, theme, canCopy, copyLabel) => {
+      state.classes = { base: classesToString(['pa-code', className || '']) };
       state.rawCode = code;
       state.previewCode = code;
       state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
@@ -74,12 +74,12 @@ export default function Code(props: CodeProps) {
       state.copyText = copyLabel || state.copyText;
     };
 
-    setInitialProps(props.class, props.code, props.theme, props.canCopy, props.copyLabel);
+    setInitialProps(props.className, props.code, props.theme, props.canCopy, props.copyLabel);
     state.highlightCode(props.languages);
   });
 
   return (
-    <div class={state.classes}>
+    <div class={state.classes.base}>
       <pre
         class={'pa-code__preview ' + (state.isEditing ? 'is-editing' : '')}
         ref={previewRef}

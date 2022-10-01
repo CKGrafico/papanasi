@@ -7,7 +7,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Spinner(props: SpinnerProps) {
   const state = useStore<SpinnerState>({
     loaded: false,
-    classes: ''
+    classes: { base: '' }
   });
 
   onMount(() => {

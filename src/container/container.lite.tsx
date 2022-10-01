@@ -8,7 +8,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Container(props: ContainerProps) {
   const state = useStore<ContainerState>({
     loaded: false,
-    classes: ''
+    classes: { base: '' }
   });
 
   onMount(() => {

@@ -17,8 +17,8 @@ const ora = require('ora');
     {
       title: 'Compile React Components',
       task: () =>
-        execa('node ./compiler/targets/react').catch(() => {
-          throw new Error('Error compiling React');
+        execa('node ./compiler/targets/react').catch((error) => {
+          throw new Error('Error compiling React' + error);
         })
     },
     {

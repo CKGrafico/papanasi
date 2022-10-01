@@ -1,7 +1,7 @@
 import { classesToString } from '../../../helpers';
 
 class ButtonService {
-  public getClasses(variant: string, outline: string, intent: string, disabled: boolean, className: string) {
+  public getClasses(variant: string, outline: boolean, intent: string, disabled: boolean, className: string) {
     const base = classesToString([
       'pa-button',
       [variant, `pa-button--${variant}`],

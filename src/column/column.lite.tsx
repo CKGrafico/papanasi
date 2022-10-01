@@ -8,7 +8,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Column(props: ColumnProps) {
   const state = useStore<ColumnState>({
     loaded: false,
-    classes: ''
+    classes: { base: '' }
   });
 
   onMount(() => {

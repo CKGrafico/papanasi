@@ -8,7 +8,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Pill(props: PillProps) {
   const state = useStore<PillState>({
     loaded: false,
-    classes: ''
+    classes: { base: '' }
   });
 
   onMount(() => {

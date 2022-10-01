@@ -1,7 +1,6 @@
 import { onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
-import { classesToString } from '../../../helpers';
 import './itchio.css';
-import { ItchioProps } from './itchio.model';
+import { ItchioProps, ItchioState } from './itchio.model';
 import { itchioService } from './itchio.service';
 
 useMetadata({ isAttachedToShadowDom: true });
@@ -9,49 +8,47 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Itchio(props: ItchioProps) {
   const actionRef = useRef();
 
-  const state = useStore({
-    classes: '',
+  const state = useStore<ItchioState>({
+    loaded: false,
+    classes: { base: '' },
     isLoadingGameInfo: false,
-    gameInfo: null,
-    onMounted() {
-      const setInitialProps = (class) => {
-        state.classes = classesToString(['pa-itchio', class || '']);
-      };
-
-      const onLoadScript = async () => {
-        if (state.isLoadingGameInfo) {
-          return;
-        }
-
-        state.isLoadingGameInfo = true;
-
-        const data = await itchioService.getGameData(
-          actionRef,
-          props.user,
-          props.game,
-          props.width,
-          props.height,
-          props.secret
-        );
-
-        state.gameInfo = data;
-        props.onLoad && props.onLoad();
-      };
-
-      const load = async () => {
-        await itchioService.loadScript();
-        await onLoadScript();
-      };
-
-      setInitialProps(props.class);
-      load();
-    }
+    gameInfo: null
   });
 
-  onMount(() => state.onMounted());
+  onMount(() => {
+    state.classes = itchioService.getClasses(props.className);
+
+    const onLoadScript = async () => {
+      if (state.isLoadingGameInfo) {
+        return;
+      }
+
+      state.isLoadingGameInfo = true;
+
+      const data = await itchioService.getGameData(
+        actionRef,
+        props.user,
+        props.game,
+        props.width,
+        props.height,
+        props.secret
+      );
+
+      state.gameInfo = data;
+      props.onLoad && props.onLoad();
+    };
+
+    const load = async () => {
+      await itchioService.loadScript();
+      await onLoadScript();
+      state.loaded = true;
+    };
+
+    load();
+  });
 
   return (
-    <div class={state.classes}>
+    <div class={state.classes.base}>
       <div class="pa-itchio__container">
         <Show when={state.gameInfo}>
           <img class="pa-itchio__image" alt={state.gameInfo.title} src={state.gameInfo.cover_image}></img>

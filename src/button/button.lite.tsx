@@ -8,7 +8,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Button(props: ButtonProps) {
   const state = useStore<ButtonState>({
     loaded: false,
-    classes: ''
+    classes: { base: '' }
   });
 
   onMount(() => {
