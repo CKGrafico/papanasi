@@ -41,7 +41,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
 
 <table align="center">
   <tr>
-    <td align="center" width="100">
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/angular-icon.svg" width="50" title="Angular"> <br/>
       <strong>Angular</strong> <br/>
       <sub>
@@ -50,7 +50,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/angular"><img src="https://img.shields.io/npm/dw/@papanasi/angular" alt="Package downloads" /></a>
     </td>
-    <td align="center" width="100">
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
       <strong>Qwik</strong> <br/>
       <sub>
@@ -59,7 +59,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank">📦(Soon...)</a>
     </td>
-    <td align="center" width="100">
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/react.svg" width="50" title="React"> <br/>
       <strong>React</strong> <br/>
       <sub>
@@ -68,7 +68,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/react"><img src="https://img.shields.io/npm/dw/@papanasi/react" alt="Package downloads" /></a>
     </td>
-    <td align="center" width="100">
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
       <strong>Solid</strong> <br/>
       <sub>
@@ -79,7 +79,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
     </td>
   </tr>
   <tr>
-    <td align="center" width="100">
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="45" title="Svelte"> <br/>
       <strong>Svelte</strong> <br/>
       <sub>
@@ -88,7 +88,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/svelte"><img src="https://img.shields.io/npm/dw/@papanasi/svelte" alt="Package downloads" /></a>
     </td>
-    <td align="center" width="100">
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg" width="50" title="Vue"> <br/>
       <strong>Vue</strong> <br/>
       <sub>
@@ -97,7 +97,7 @@ $ yarn add @papanasi/{platform} # ex: @papanasi/vue
       </sub>
       <a href="https://www.npmjs.com/package/@papanasi/vue"><img src="https://img.shields.io/npm/dw/@papanasi/vue" alt="Package downloads" /></a>
     </td>
-    <td align="center" width="100">
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
       <strong>Standard</strong> <br/>
       <sub>
