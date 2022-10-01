@@ -54,7 +54,7 @@
   </tr>
   <tr>
     <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="45" title="Svelte"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="40" title="Svelte"> <br/>
       <strong>Svelte</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Svelte-ff3e00?logo=codesandbox" alt="Svelte Sandbox" /></a>
@@ -62,7 +62,7 @@
       </sub>
     </td>
     <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg" width="50" title="Vue"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg" width="55" title="Vue"> <br/>
       <strong>Vue</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Vue-41b883?logo=codesandbox" alt="Vue Sandbox" /></a>
@@ -70,7 +70,7 @@
     </td>
       </sub>
     <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/lit-icon.svg" width="50" title="Web Components"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/lit-icon.svg" width="40" title="Web Components"> <br/>
       <strong>Lit (Standard)</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Lit-005a9c?logo=codesandbox" alt="Webcomponents Sandbox" /></a>
