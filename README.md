@@ -28,6 +28,15 @@
       </sub>
     </td>
     <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/preact.svg" width="50" title="Preact"> <br/>
+      <strong>Preact</strong> <br/>
+      <sub>
+        <a href="" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Preact-673ab8?logo=codesandbox" alt="Preact Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/preact" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/preact?label=Installs&color=blue" alt="Preact downloads" /></a>
+        <img src="https://img.shields.io/badge/Status-not%20started-critical" alt="Preact status" />
+      </sub>
+    </td>
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
       <strong>Qwik</strong> <br/>
       <sub>
@@ -45,6 +54,8 @@
         <img src="https://img.shields.io/badge/Status-working-success" alt="React status" />
       </sub>
     </td>
+  </tr>
+  <tr>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
       <strong>Solid</strong> <br/>
@@ -54,8 +65,6 @@
         <img src="https://img.shields.io/badge/Status-working-success" alt="Solid status" />
       </sub>
     </td>
-  </tr>
-  <tr>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="40" title="Svelte"> <br/>
       <strong>Svelte</strong> <br/>
