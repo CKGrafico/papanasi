@@ -20,7 +20,7 @@ module.exports = (options) => {
   const inputs = [
     {
       input: path.resolve(dir, 'src/index.ts'),
-      output: [
+      output: options.output || [
         {
           file: packageJson.main,
           format: 'cjs',

@@ -62,37 +62,6 @@ const ora = require('ora');
         persistentOutput: true
       }
     }
-    // {
-    //   title: 'Launch Storybook',
-    //   task: () => {
-    //     // const spinner = ora(`Launching Storybook`).start();
-    //     // const storybook = execa('yarn start-storybook -p 6006 --no-manager-cache');
-
-    //     // storybook.stdout.on('data', (data) => {
-    //     //   spinner.text = data.toString().replace(/\\n/g, '');
-    //     // });
-
-    //     // storybook.on('close', (code) => {
-    //     //   spinner.text = `child process exited with code ${code}`;
-    //     //   spinner.fail();
-    //     // });
-
-    //     // storybook.on('exit', (code) => {
-    //     //   spinner.text = `child process exited with code ${code}`;
-    //     //   spinner.fail();
-    //     // });
-
-    //     // storybook.on('error', (code) => {
-    //     //   spinner.text = `child process exited with code ${code}`;
-    //     //   spinner.fail();
-    //     // });
-
-    //     return true;
-    //   },
-    //   options: {
-    //     persistentOutput: true
-    //   }
-    // }
   ]);
 
   tasks.run().catch((err) => {
