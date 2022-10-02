@@ -23,7 +23,7 @@
       <strong>Angular</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Angular-b52e31?logo=codesandbox" alt="Angular Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/angular" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/angular?label=Installs" alt="Angular downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/angular" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/angular?label=Installs&color=blue" alt="Angular downloads" /></a>
         <img src="https://img.shields.io/badge/Status-working-success" alt="Angular status" />
       </sub>
     </td>
@@ -32,7 +32,7 @@
       <strong>Qwik</strong> <br/>
       <sub>
         <a href="" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Qwik-5048d7?logo=codesandbox" alt="Qwik Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/qwik?label=Installs" alt="Qwik downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/qwik?label=Installs&color=blue" alt="Qwik downloads" /></a>
         <img src="https://img.shields.io/badge/Status-not%20started-critical" alt="Qwik status" />
       </sub>
     </td>
@@ -41,7 +41,7 @@
       <strong>React</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank"><img src="https://img.shields.io/badge/Sandbox-React-20ddff?logo=codesandbox" alt="React Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/react" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/react?label=Installs" alt="React downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/react" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/react?label=Installs&color=blue" alt="React downloads" /></a>
         <img src="https://img.shields.io/badge/Status-working-success" alt="React status" />
       </sub>
     </td>
@@ -50,7 +50,7 @@
       <strong>Solid</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Solid-2e5593?logo=codesandbox" alt="Solid Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/solid" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/solid?label=Installs" alt="Solid downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/solid" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/solid?label=Installs&color=blue" alt="Solid downloads" /></a>
         <img src="https://img.shields.io/badge/Status-working-success" alt="Solid status" />
       </sub>
     </td>
@@ -61,7 +61,7 @@
       <strong>Svelte</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Svelte-ff3e00?logo=codesandbox" alt="Svelte Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/svelte" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/svelte?label=Installs" alt="Svelte downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/svelte" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/svelte?label=Installs&color=blue" alt="Svelte downloads" /></a>
         <img src="https://img.shields.io/badge/Status-working-success" alt="Svelte status" />
       </sub>
     </td>
@@ -70,7 +70,7 @@
       <strong>Vue</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Vue-41b883?logo=codesandbox" alt="Vue Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/vue" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/vue?label=Installs" alt="Vue downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/vue" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/vue?label=Installs&color=blue" alt="Vue downloads" /></a>
         <img src="https://img.shields.io/badge/Status-working-success" alt="Vue status" />
       </sub>
     </td>
@@ -79,7 +79,7 @@
       <strong>Standard</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Web-005a9c?logo=codesandbox" alt="Webcomponents Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents?label=Installs" alt="Web Components downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents?label=Installs&color=blue" alt="Web Components downloads" /></a>
         <img src="https://img.shields.io/badge/Status-unestable-important" alt="Web Components status" />
       </sub>
     </td>
