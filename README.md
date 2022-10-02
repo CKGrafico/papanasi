@@ -42,7 +42,7 @@
       <sub>
         <a href="" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Qwik-5048d7?logo=codesandbox" alt="Qwik Sandbox" /></a>
         <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/qwik?label=Installs&color=blue" alt="Qwik downloads" /></a>
-        <img src="https://img.shields.io/badge/Status-in%progress-critical" alt="Qwik status" />
+        <img src="https://img.shields.io/badge/Status-in%20progress-critical" alt="Qwik status" />
       </sub>
     </td>
     <td align="center" width="140">
