@@ -21,7 +21,8 @@
   ],
   "scripts": {
     "prebuild": "yarn install",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "postbuild": "node qwik.postbuild.js && rimraf dist/build"
   },
   "publishConfig": {
     "access": "public"

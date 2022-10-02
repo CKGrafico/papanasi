@@ -5,6 +5,7 @@ const path = require('path');
 module.exports = config({
   dir: __dirname,
   packageJson: require('./package.json'),
+  dts: false,
   plugins: [
     qwikRollup({
       production: 'production',
@@ -17,9 +18,7 @@ module.exports = config({
     jsx: 'react',
     jsxImportSource: null
   },
-  output: [
-    {
-      dir: path.resolve(__dirname, 'dist')
-    }
-  ]
+  output: {
+    dir: path.resolve(__dirname, 'dist')
+  }
 });

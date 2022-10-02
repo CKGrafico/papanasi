@@ -1,5 +1,4 @@
 const compiler = require('../base.compiler');
-const fs = require('fs');
 
 const DEFAULT_OPTIONS = {
   target: 'qwik',
