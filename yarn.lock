@@ -2266,6 +2266,11 @@
     typescript "^4.7.3"
     vue "~2.6"
 
+"@builder.io/qwik@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@builder.io/qwik/-/qwik-0.9.0.tgz#c12b8b49e6959a381dcd9bf3475a7750ffcb230e"
+  integrity sha512-xAyQNABvPe/V0xGKuAaUJcP9r+qNegWegkstRQza/CgJ3vgR20yyaYzkcAD+G9wvPeG1mRSiUZAYDgevV2BLaQ==
+
 "@builder.io/react@^1.1.50":
   version "1.1.52"
   resolved "https://registry.yarnpkg.com/@builder.io/react/-/react-1.1.52.tgz#4b2e80a60a58b0722c1e44c6a019d6a167effd51"

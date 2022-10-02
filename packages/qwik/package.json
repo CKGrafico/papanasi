@@ -1,28 +1,28 @@
 {
-  "name": "@papanasi/react",
+  "name": "@papanasi/qwik",
   "version": "1.0.0-rc.5",
   "author": "ckgrafico/papanasi",
-  "description": "Papanasi React UI Library",
-  "main": "./dist/papanasi-react.umd.js",
-  "module": "./dist/papanasi-react.es.js",
+  "description": "Papanasi Qwik UI Library",
+  "main": "./dist/papanasi-qwik.umd.js",
+  "module": "./dist/papanasi-qwik.es.js",
   "style": "./dist/papanasi.css",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/papanasi-react.es.js",
-      "require": "./dist/papanasi-react.umd.js"
+      "import": "./dist/papanasi-qwik.es.js",
+      "require": "./dist/papanasi-qwik.umd.js"
     }
   },
   "peerDependencies": {
-    "react": "^16.8.0 || 17.x",
-    "react-dom": "^16.8.0 || 17.x"
+    "@builder.io/qwik": "^0.9.0"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "prebuild": "yarn install",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "postbuild": "node qwik.postbuild.js && rimraf dist/build"
   },
   "publishConfig": {
     "access": "public"

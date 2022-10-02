@@ -5,7 +5,7 @@
 
 ### 🔍 Overview
 
-🥯Papanasi _(pronunced pɑpənæʃ or papanash)_ is a **UI library to use cross Frameworks**. A set of components to use in Angular, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
+🥯Papanasi _(pronunced pɑpənæʃ or papanash)_ is a **UI library to use cross Frameworks**. A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
 
 <p align="center">
   <a href="https://www.npmjs.com/search?q=%40papanasi"><img src="https://img.shields.io/npm/v/@papanasi/react?color=cb0303" alt="Package version" /></a>
@@ -23,16 +23,26 @@
       <strong>Angular</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-angular-7bzn8h" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Angular-b52e31?logo=codesandbox" alt="Angular Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/angular" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/angular?label=Installs" alt="Angular downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/angular" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/angular?label=Installs&color=blue" alt="Angular downloads" /></a>
+        <img src="https://img.shields.io/badge/Status-working-success" alt="Angular status" />
+      </sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/preact.svg" width="50" title="Preact"> <br/>
+      <strong>Preact</strong> <br/>
+      <sub>
+        <a href="" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Preact-673ab8?logo=codesandbox" alt="Preact Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/preact" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/preact?label=Installs&color=blue" alt="Preact downloads" /></a>
+        <img src="https://img.shields.io/badge/Status-not%20started-critical" alt="Preact status" />
       </sub>
     </td>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
       <strong>Qwik</strong> <br/>
       <sub>
-        <span>Coming soon</span>
         <a href="" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Qwik-5048d7?logo=codesandbox" alt="Qwik Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/qwik?label=Installs" alt="Qwik downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/qwik?label=Installs&color=blue" alt="Qwik downloads" /></a>
+        <img src="https://img.shields.io/badge/Status-not%20started-critical" alt="Qwik status" />
       </sub>
     </td>
     <td align="center" width="140">
@@ -40,25 +50,28 @@
       <strong>React</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-react-orfn30" target="_blank"><img src="https://img.shields.io/badge/Sandbox-React-20ddff?logo=codesandbox" alt="React Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/react" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/react?label=Installs" alt="React downloads" /></a>
-      </sub>
-    </td>
-    <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
-      <strong>Solid</strong> <br/>
-      <sub>
-        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Solid-2e5593?logo=codesandbox" alt="Solid Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/solid" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/solid?label=Installs" alt="Solid downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/react" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/react?label=Installs&color=blue" alt="React downloads" /></a>
+        <img src="https://img.shields.io/badge/Status-working-success" alt="React status" />
       </sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="50" title="Solid"> <br/>
+      <strong>Solid</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/s/papanasi-solid-5y3xb8" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Solid-2e5593?logo=codesandbox" alt="Solid Sandbox" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/solid" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/solid?label=Installs&color=blue" alt="Solid downloads" /></a>
+        <img src="https://img.shields.io/badge/Status-working-success" alt="Solid status" />
+      </sub>
+    </td>
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="40" title="Svelte"> <br/>
       <strong>Svelte</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-svelte-00ul5x" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Svelte-ff3e00?logo=codesandbox" alt="Svelte Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/svelte" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/svelte?label=Installs" alt="Svelte downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/svelte" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/svelte?label=Installs&color=blue" alt="Svelte downloads" /></a>
+        <img src="https://img.shields.io/badge/Status-working-success" alt="Svelte status" />
       </sub>
     </td>
     <td align="center" width="140">
@@ -66,29 +79,31 @@
       <strong>Vue</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-vue-vygq4m" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Vue-41b883?logo=codesandbox" alt="Vue Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/vue" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/vue?label=Installs" alt="Vue downloads" /></a>
-    </td>
+        <a href="https://www.npmjs.com/package/@papanasi/vue" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/vue?label=Installs&color=blue" alt="Vue downloads" /></a>
+        <img src="https://img.shields.io/badge/Status-working-success" alt="Vue status" />
       </sub>
+    </td>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
-      <strong>Standard (In progress)</strong> <br/>
+      <strong>Standard</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Web-005a9c?logo=codesandbox" alt="Webcomponents Sandbox" /></a>
-        <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents?label=Installs" alt="Web Components downloads" /></a>
+        <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents?label=Installs&color=blue" alt="Web Components downloads" /></a>
+        <img src="https://img.shields.io/badge/Status-unestable-important" alt="Web Components status" />
       </sub>
     </td>
   </tr>
 </table>
 
-### 📣 Manifest 
+### 📣 Manifesto
 
-This library born as a pet project to create universal components, easy to extend in any project and easy to use with any framework, is based in the next **manifesto**:
+This library born as a pet project to create universal components, easy to extend in any project and easy to use with any framework, is based on the next principles:
 
 **A Component**...
 * ...should be **cross-libraries** but the code should be written once.
-* ...should have a **minimum style** and should be easy to extend it via CSS by the user.
+* ...should have a **minimum style** but easy to extend it via CSS by any dev.
 * ...should provide some  **optional themes** to make it easy to use.
-* ...should be **accessible**.
+* ...should be **accessible** (FUTURE RELEASES).
 * ...should be **made for developers** not for non-coders, they will decide how to style most of the things.
 * ...should be tree-shakable.
 * ...should be compatible with **StoryBook**.

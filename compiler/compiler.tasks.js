@@ -84,6 +84,14 @@ const optionDefinitions = [
                 })
             },
             {
+              title: 'Compile Qwik',
+              enabled: () => cliConfig.targets?.includes('qwik') || !cliConfig.targets,
+              task: () =>
+                execa(getCompilerCommand('qwik')).catch((error) => {
+                  throw new Error('Error compiling Qwik ' + error.message);
+                })
+            },
+            {
               title: 'Compile React',
               enabled: () => cliConfig.targets?.includes('react') || !cliConfig.targets,
               task: () =>
@@ -139,6 +147,14 @@ const optionDefinitions = [
               task: () =>
                 execa('yarn lerna --scope=@papanasi/angular build').catch((error) => {
                   throw new Error('Error bundling Angular ' + error);
+                })
+            },
+            {
+              title: 'Bundle Qwik',
+              enabled: () => cliConfig.targets?.includes('qwik') || !cliConfig.targets,
+              task: () =>
+                execa('yarn lerna --scope=@papanasi/qwik build').catch((error) => {
+                  throw new Error('Error bundling Qwik ' + error);
                 })
             },
             {

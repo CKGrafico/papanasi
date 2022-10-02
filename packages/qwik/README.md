@@ -114,12 +114,12 @@ This library born as a pet project to create universal components, easy to exten
 With **npm**:
 
 ```
-$ npm install @papanasi/react
+$ npm install @papanasi/qwik
 ```
 With **yarn**:
 
 ```
-$ yarn add @papanasi/react
+$ yarn add @papanasi/qwik
 ```
 
 ### 🔨 Components status

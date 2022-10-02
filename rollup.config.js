@@ -19,8 +19,8 @@ module.exports = (options) => {
 
   const inputs = [
     {
-      input: path.resolve(dir, 'src/index.ts'),
-      output: [
+      input: options.input || path.resolve(dir, 'src/index.ts'),
+      output: options.output || [
         {
           file: packageJson.main,
           format: 'cjs',
