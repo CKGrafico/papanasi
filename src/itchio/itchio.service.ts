@@ -12,7 +12,7 @@ class ItchioService {
   }
 
   public attachButton(actionRef, user: string, game: string, width: number, height: number) {
-    global.Itch.attachBuyButton(actionRef, {
+    global['Itch'].attachBuyButton(actionRef, {
       user: user,
       game: game,
       width: width || 800,
@@ -29,7 +29,7 @@ class ItchioService {
     secret: string
   ): Promise<ItchioGameInfo> {
     return new Promise((resolve) => {
-      global.Itch.getGameData({
+      global['Itch'].getGameData({
         user: user,
         game: game,
         secret: secret,
@@ -43,7 +43,7 @@ class ItchioService {
 
   public async loadScript() {
     await addScript('https://static.itch.io/api.js', 'itchio');
-    await waitUntilTrue(() => global.Itch);
+    await waitUntilTrue(() => global['Itch']);
   }
 
   public async processInfo(
