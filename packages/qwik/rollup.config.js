@@ -8,12 +8,9 @@ module.exports = config({
   dts: false,
   plugins: [
     qwikRollup({
-      production: 'production',
-      target: 'client',
-      entryStrategy: SingleEntryStrategy
+      target: 'client'
     })
   ],
-  // presets: ['@babel/preset-react'],
   compilerOptions: {
     jsx: 'react',
     jsxImportSource: null
