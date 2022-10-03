@@ -33,7 +33,7 @@
       <sub>
         <a href="" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Preact-673ab8?logo=codesandbox" alt="Preact Sandbox" /></a>
         <a href="https://www.npmjs.com/package/@papanasi/preact" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/preact?label=Installs&color=blue" alt="Preact downloads" /></a>
-        <img src="https://img.shields.io/badge/Status-not%20started-critical" alt="Preact status" />
+        <img src="https://img.shields.io/badge/Status-documenting-critical" alt="Preact status" />
       </sub>
     </td>
     <td align="center" width="140">
