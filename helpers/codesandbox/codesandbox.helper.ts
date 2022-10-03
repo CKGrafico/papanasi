@@ -57,16 +57,6 @@ ${demoCode}
           devDependencies
         }
       },
-      [indexHTMLFolder]: {
-        content: `
-${html}
-<div class="footer">
-  <a href="https://papanasi.js.org" target="_blank" rel="noreferrer">
-    Visit the docs at papanasi.js.org
-  </a>
-</div>
-        `
-      },
       'index.css': {
         content: css
       },
@@ -78,6 +68,18 @@ ${html}
 
   if (extraFiles) {
     parameters.files = { ...parameters.files, ...extraFiles };
+  }
+
+  if (html) {
+    parameters[indexHTMLFolder] = {
+      content: `${html}
+<div class="footer">
+<a href="https://papanasi.js.org" target="_blank" rel="noreferrer">
+  Visit the docs at papanasi.js.org
+</a>
+</div>
+      `
+    };
   }
 
   const urlParams = toBase64(JSON.stringify(parameters));

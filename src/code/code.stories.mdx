@@ -114,6 +114,16 @@ The Code component is created to highlight code blocks in your application, is a
     <div pa-code editable="true" [languages]={['javascript']} [theme]="'a11y-dark'" [code]="'const age = 1;'"></div>`}
 />
 
+### Preact
+
+<Codesandbox
+  components={['Code']}
+  platform="preact"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+    <Code editable languages={['javascript']} theme="a11y-dark" code="const age = 1;"></Code>`}
+/>
+
 ### React
 
 <Codesandbox
