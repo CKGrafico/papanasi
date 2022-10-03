@@ -31,7 +31,7 @@
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/preact.svg" width="50" title="Preact"> <br/>
       <strong>Preact</strong> <br/>
       <sub>
-        <a href="" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Preact-673ab8?logo=codesandbox" alt="Preact Sandbox" /></a>
+        <a href="https://codesandbox.io/s/papanasi-preact-14rw2g" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Preact-673ab8?logo=codesandbox" alt="Preact Sandbox" /></a>
         <a href="https://www.npmjs.com/package/@papanasi/preact" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/preact?label=Installs&color=blue" alt="Preact downloads" /></a>
         <img src="https://img.shields.io/badge/Status-documenting-critical" alt="Preact status" />
       </sub>
