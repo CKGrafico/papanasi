@@ -25,7 +25,7 @@ export function generateCodeSandboxLink(options) {
   box-sizing: border-box;
 }
 
-.app {
+body {
   --pa-grid-gutter: 0.15rem;
   --pa-color-primary-normal: #017af0;
 
