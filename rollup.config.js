@@ -10,7 +10,16 @@ const postcssConfig = require('./postcss.config.js');
 const json = require('@rollup/plugin-json');
 
 module.exports = (options) => {
-  const { dir, packageJson, plugins = [], external = [], dts = true, compilerOptions = {}, presets = [] } = options;
+  const {
+    dir,
+    packageJson,
+    plugins = [],
+    external = [],
+    dts = true,
+    compilerOptions = {},
+    babelPresets = [],
+    babelPlugins = []
+  } = options;
 
   const tsconfig = require(path.resolve(__dirname, './tsconfig.json'));
   tsconfig.compilerOptions = { ...tsconfig.compilerOptions, ...compilerOptions };
@@ -40,9 +49,9 @@ module.exports = (options) => {
         json(),
         typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
         babel({
-          plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
+          plugins: [['@babel/plugin-proposal-decorators', { legacy: true }, ...babelPlugins]],
           extensions: ['.js', '.ts', '.tsx'],
-          presets: presets.length > 0 ? [...presets, ...defaultPresets] : defaultPresets,
+          presets: babelPresets.length > 0 ? [...babelPresets, ...defaultPresets] : defaultPresets,
           babelHelpers: 'bundled',
           ignore: [/node_modules/]
         }),

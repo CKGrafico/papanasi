@@ -3,9 +3,10 @@ const config = require('../../rollup.config');
 module.exports = config({
   dir: __dirname,
   packageJson: require('./package.json'),
-  babelPresets: ['solid'],
+  babelPresets: ['@babel/preset-react'],
+  babelPlugins: ['@babel/plugin-transform-react-jsx'],
   compilerOptions: {
-    jsx: 'preserve',
-    jsxImportSource: 'solid-js'
+    jsx: 'react',
+    jsxImportSource: null
   }
 });

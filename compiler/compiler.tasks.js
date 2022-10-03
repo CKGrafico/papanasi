@@ -84,6 +84,14 @@ const optionDefinitions = [
                 })
             },
             {
+              title: 'Compile Preact',
+              enabled: () => cliConfig.targets?.includes('preact') || !cliConfig.targets,
+              task: () =>
+                execa(getCompilerCommand('preact')).catch((error) => {
+                  throw new Error('Error compiling Preact ' + error.message);
+                })
+            },
+            {
               title: 'Compile Qwik',
               enabled: () => cliConfig.targets?.includes('qwik') || !cliConfig.targets,
               task: () =>
@@ -147,6 +155,14 @@ const optionDefinitions = [
               task: () =>
                 execa('yarn lerna --scope=@papanasi/angular build').catch((error) => {
                   throw new Error('Error bundling Angular ' + error);
+                })
+            },
+            {
+              title: 'Bundle Preact',
+              enabled: () => cliConfig.targets?.includes('preact') || !cliConfig.targets,
+              task: () =>
+                execa('yarn lerna --scope=@papanasi/preact build').catch((error) => {
+                  throw new Error('Error bundling Qwik ' + error);
                 })
             },
             {

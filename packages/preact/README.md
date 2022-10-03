@@ -114,12 +114,12 @@ This library born as a pet project to create universal components, easy to exten
 With **npm**:
 
 ```
-$ npm install @papanasi/solid
+$ npm install @papanasi/preact
 ```
 With **yarn**:
 
 ```
-$ yarn add @papanasi/solid
+$ yarn add @papanasi/preact
 ```
 
 ### 🔨 Components status
