@@ -5,12 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.0.0-rc.6](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.5...v1.0.0-rc.6) (2022-10-03)
 
-**Note:** Version bump only for package @papanasi/qwik
-
-
-
-
-
-# [1.0.0-rc.5](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.4...v1.0.0-rc.5) (2022-10-02)
-
-**Note:** Version bump only for package @papanasi/qwik
+**Note:** Version bump only for package @papanasi/preact
