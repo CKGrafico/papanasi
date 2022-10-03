@@ -25,6 +25,7 @@ Explain the reasons behind the component.
 
 We need to be sure that this component works, we have prepared some Code Sandbox that you can use as template and paste your dist files inside `papanasi` folder:
  - Angular: https://codesandbox.io/s/papanasi-angular-pr-kb3j3b
+ - Preact: https://codesandbox.io/s/papanasi-preact-pr-3tzvtk
  - React: https://codesandbox.io/s/papanasi-react-pr-3ymi5n
  - Solid: https://codesandbox.io/s/papanasi-solid-pr-bnvs7l
  - Svelte: https://codesandbox.io/s/papanasi-svelte-pr-5fdimr
