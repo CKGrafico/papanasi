@@ -1,0 +1,79 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import { Container, Row, Column, Button, Avatar, Itchio, useTooltipExtension } from '../packages/react/src';
+import '../packages/react/dist/papanasi.css';
+
+<Meta title="Documentation/Elements" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+
+# Typology of Elements
+
+**Papanasi** has four different types of elements, that ones are: `layout`, `components`, `enterprise` and `extensions`. Each type has a **different purpose** and a different way of being used, explained in the next lines.
+
+## Layout
+
+Those elements are made to **help the developer to create a basic layout** for any page, that kind of elements exist in all the UI Libraries that you can imagine, and they are the ones that you will use the most.
+
+What makes the ones from Papanasi different is that they are **fully customizable**. You can use them as they are, or you can customize them to fit your needs.
+
+Some examples are `Container`, `Row` and `Column`.
+
+<Canvas>
+  <Container>
+    <Row>
+      <Column>Row 1 of 3 - Column 1 of 3</Column>
+      <Column>Row 1 of 3 - Column 2 of 3</Column>
+      <Column>Row 1 of 3 - Column 3 of 3</Column>
+    </Row>
+    <Row>
+      <Column>Row 2 of 3 - Column 1 of 3</Column>
+      <Column>Row 2 of 3 - Column 2 of 3</Column>
+      <Column>Row 2 of 3 - Column 3 of 3</Column>
+    </Row>
+    <Row>
+      <Column>Row 3 of 3 - Column 1 of 3</Column>
+      <Column>Row 3 of 3 - Column 2 of 3</Column>
+      <Column>Row 3 of 3 - Column 3 of 3</Column>
+    </Row>
+  </Container>
+</Canvas>
+
+## Components
+
+Are the core of **Papanasi**, all the components should follow the [manifesto](https://github.com/CKGrafico/papanasi#-manifesto), should be also **customizable from global or scoped variables**.
+
+Most popular components are `Button` or `Avatar`:
+
+<Canvas>
+  <Button variant="primary">Primary</Button>
+  <Button variant="tertiary" outline>
+    Tertiary
+  </Button>
+  <Avatar name="Alis Mug" />
+</Canvas>
+
+## Enterprise
+
+Those elements are the ones that are **specific for a company or library**, and they are not part of the core of **Papanasi**. The main idea is to bring the opportunity to create components from **SDKs** or **APIs** writing the code just once.
+
+The first enterprise component was `Itchio`:
+
+<Canvas>
+  <Itchio user="ckgrafico" game="alice-ring" width={800} height={600}>
+    <span>Click me</span>
+  </Itchio>
+</Canvas>
+
+## Extensions
+
+Papanasi extensions are **plugins** that can be used to extend our functionality. Those are not components are can be used as any other library.
+
+<Canvas>
+  {(() => {
+    useTooltipExtension(document.body.querySelector('.tooltip-example'));
+    return '';
+  })()}
+  <div className="tooltip-example">
+    <span title="Example tooltip" style={{ fontSize: '3rem' }}>
+      Hover me
+    </span>
+  </div>
+</Canvas>

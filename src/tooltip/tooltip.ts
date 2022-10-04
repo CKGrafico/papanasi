@@ -3,34 +3,24 @@ import './tooltip.css';
 
 const HIDDEN_CLASS = 'is-hidden';
 
-const state = {
-  initialized: false,
-  tooltipElement: document.createElement('div'),
-  x: 0,
-  y: 0,
-  height: 0,
-  width: 0,
-  title: '',
-  time: 0
-};
+let initialized = false;
+let tooltips = [];
 
-function showTooltip() {
-  state.tooltipElement.classList.remove(HIDDEN_CLASS);
+function showTooltip(state) {
+  state.tooltipElement.style.transform = `translate(${state.x}px, ${state.y}px)`;
+  state.tooltipElement.style.width = `${state.width}px`;
+  state.tooltipElement.innerText = state.title;
 
   setTimeout(() => {
-    state.tooltipElement.style.top = `${state.y}px`;
-    state.tooltipElement.style.left = `${state.x}px`;
-    state.tooltipElement.style.width = `${state.width}px`;
-    state.tooltipElement.innerText = state.title;
+    state.tooltipElement.classList.remove(HIDDEN_CLASS);
   }, state.time);
 }
 
-function hideTooltip() {
+function hideTooltip(state) {
   state.tooltipElement.classList.add(HIDDEN_CLASS);
 
   setTimeout(() => {
-    state.tooltipElement.style.top = '0';
-    state.tooltipElement.style.left = '0';
+    state.tooltipElement.style.transform = `translate(-100px, -100px)`;
     state.tooltipElement.innerText = '';
   }, state.time);
 }
@@ -45,18 +35,37 @@ function manageElementTitle(element: HTMLElement) {
   return title;
 }
 
-function onAddElement(element: HTMLElement) {
+function onAddElement(rootElement: HTMLElement, element: HTMLElement) {
   const title = manageElementTitle(element);
+  const styles = getComputedStyle(rootElement);
+  const transitionTime = styles.getPropertyValue(`--pa-tooltip-transition-time`).trim();
+
+  const state = {
+    tooltipElement: null,
+    x: 0,
+    y: 0,
+    height: 0,
+    width: 0,
+    title: '',
+    time: Number(transitionTime)
+  };
+
+  const tooltipElement = createTooltipElement(rootElement);
+  state.tooltipElement = tooltipElement;
+  tooltips.push(state);
 
   element.addEventListener('mouseenter', () => {
     const rect = element.getBoundingClientRect();
+    const rootRect = rootElement.getBoundingClientRect();
+    console.log(rootRect, rootElement);
 
-    state.x = rect.x;
-    state.y = rect.y;
+    state.x = Math.abs(rootRect.x) + rootElement.scrollLeft + rect.x;
+    state.y = Math.abs(rootRect.y) + rootElement.scrollTop + rect.y;
     state.height = rect.height;
     state.width = rect.width;
     state.title = title;
-    showTooltip();
+
+    showTooltip(state);
   });
 
   element.addEventListener('mouseleave', () => {
@@ -66,34 +75,39 @@ function onAddElement(element: HTMLElement) {
     state.width = 0;
     state.title = '';
 
-    hideTooltip();
+    hideTooltip(state);
   });
 }
 
-function createTooltipElement() {
+function createTooltipElement(rootElement: HTMLElement) {
   const element = document.createElement('div');
   element.classList.add('pa-tooltip', HIDDEN_CLASS);
+  element.setAttribute('aria-hidden', 'true');
 
-  state.tooltipElement = element;
-  document.body.append(element);
+  rootElement.prepend(element);
 
-  const styles = getComputedStyle(element);
-  const transitionTime = styles.getPropertyValue(`--pa-tooltip-transition-time`).trim();
-  state.time = Number(transitionTime);
+  return element;
 }
 
 export function useTooltipExtension(rootElement?: HTMLElement) {
   const element = rootElement || document.body;
 
-  if (state.initialized) {
-    hideTooltip();
-    state.tooltipElement.remove();
+  if (initialized) {
+    tooltips.forEach((state) => {
+      hideTooltip(state);
+      state.tooltipElement.remove();
+    });
+
+    tooltips = [];
   }
 
-  state.initialized = true;
+  initialized = true;
 
-  setTimeout(() => {
-    createTooltipElement();
-    querySelectorAllObservable(element, '[title]', onAddElement);
-  }, 10);
+  setTimeout(
+    () =>
+      querySelectorAllObservable(element, '[title]', (titleElement: HTMLElement) =>
+        onAddElement(element, titleElement)
+      ),
+    10
+  );
 }
