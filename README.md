@@ -102,12 +102,12 @@ This library born as a pet project to create universal components, easy to exten
 * ...should be inspired by other UI Libraries and **don't reinvent the wheel**.
 * ...should be easy to create new **variants**.
 
-### 🔨 Components status
+### 🔨 Elements Showcase
 
 <table align="center">
   <tr>
     <td align="left" colspan="4">
-    <h4>Layout Components</h4>
+    <h4>Layout</h4>
     </td>
   </tr>
   <tr>
@@ -167,7 +167,7 @@ This library born as a pet project to create universal components, easy to exten
   </tr>
   <tr>
     <td  align="left" colspan="4">
-    <h4>Regular Components</h4>
+    <h4>Components</h4>
     </td>
   </tr>
   <tr>
@@ -201,7 +201,7 @@ This library born as a pet project to create universal components, easy to exten
   </tr>
   <tr>
     <td align="left" colspan="4">
-    <h4>Enterprise Components</h4>
+    <h4>Enterprise</h4>
     </td>
   </tr>
   <tr>
