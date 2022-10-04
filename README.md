@@ -120,9 +120,17 @@ This library born as a pet project to create universal components, easy to exten
   </tr>
   <tr>
     <td align="center">
-      Container <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/layout-container--default-story" target="_blank">Preview</a>
+      <img src="https://www.svgrepo.com/show/372317/container.svg" width="55" title="Itchio"> <br/>
+      <strong>Container</strong> <br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <a href="https://papanasi.js.org/?path=/docs/layout-container--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview Layout-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
       Row <br/>
@@ -192,7 +200,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview Component-FF4785?logoColor=white&logo=storybook" alt="Svelte status" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview Component-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
   <tr>
