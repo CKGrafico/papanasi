@@ -78,7 +78,7 @@
     </td>
     <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/w3c.svg" width="80" title="Web Components"> <br/>
-      <strong>Web Components</strong> <br/>
+      <strong>Web Comps.</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/s/papanasi-webcomponents-27zsfr" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Web-005a9c?logoColor=white&logo=codesandbox" alt="Webcomponents Sandbox" /></a>
         <a href="https://www.npmjs.com/package/@papanasi/webcomponents" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/webcomponents?label=Installs&color=blue&logoColor=white&logo=w3c" alt="Web Components downloads" /></a>
