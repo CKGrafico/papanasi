@@ -207,7 +207,7 @@ $ yarn add @papanasi/webcomponents
   <tr>
     <td align="center">
       Tooltip <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/75"/><br/>
+      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
       <a href="https://papanasi.js.org/?path=/docs/extensions-tooltip--default-story" target="_blank">Preview</a>
     </td>
   </tr>
