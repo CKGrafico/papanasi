@@ -20,7 +20,7 @@ export default function Itchio(props: ItchioProps) {
     itchioService.processInfo(actionRef, props.user, props.game, props.width, props.height, props.secret, (data) => {
       state.gameInfo = data;
       state.loaded = true;
-      props.onLoad && props.onLoad();
+      props.onLoad && props.onLoad(data);
     });
   });
 
@@ -44,9 +44,7 @@ export default function Itchio(props: ItchioProps) {
             </Show>
 
             <Show when={!state.loaded}>
-              <span>
-                <span>Loading...</span>
-              </span>
+              <span>{props.slotLoading}</span>
             </Show>
           </span>
         </div>

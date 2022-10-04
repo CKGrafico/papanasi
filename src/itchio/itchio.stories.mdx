@@ -17,7 +17,10 @@ A component to show a widget with your game from https://itch.io, also accepts a
 ## Showcase
 
 <Canvas>
-  <Story name="Default" args={{ user: 'ckgrafico', game: 'alice-ring', width: 800, height: 600, secret: '' }}>
+  <Story
+    name="Default"
+    args={{ user: 'ckgrafico', game: 'alice-ring', width: 800, height: 600, secret: '', slotLoading: 'Loading...' }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
