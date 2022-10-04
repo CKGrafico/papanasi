@@ -22,7 +22,10 @@ const DEFAULT_OPTIONS = {
   customReplace: (outFile, isFirstCompilation) => null
 };
 
-const optionDefinitions = [{ name: 'files', alias: 'f', type: String, multiple: true }];
+const optionDefinitions = [
+  { name: 'files', alias: 'f', type: String, multiple: true },
+  { name: 'dev', type: Boolean }
+];
 
 async function compile(defaultOptions) {
   const options = {
@@ -32,6 +35,7 @@ async function compile(defaultOptions) {
 
   const cliConfig = commandLineArgs(optionDefinitions);
   options.files = cliConfig.files ? cliConfig.files.map((file) => `src/${file}/${file}.lite.tsx`) : options.files;
+  options.isDev = !!cliConfig.dev;
 
   const spinner = ora('Compiling').start();
   const files = cliConfig.files ? options.files : glob.sync(options.files);
@@ -42,7 +46,10 @@ async function compile(defaultOptions) {
       return;
     }
 
-    fs.mkdirSync(`${outPath}/src`);
+    if (!fs.existsSync(`${outPath}/src`)) {
+      fs.mkdirSync(`${outPath}/src`);
+    }
+
     fs.copyFileSync('src/index.ts', `${outPath}/src/index.ts`);
 
     const fileServices = cliConfig.files ? `src/{${cliConfig.files.join(',')},}` : 'src/**';
@@ -130,7 +137,7 @@ async function compile(defaultOptions) {
 
   for (const fileName of files) {
     const file = path.parse(fileName);
-    const isFirstCompilation = !fs.existsSync(`${outPath}/src`);
+    const isFirstCompilation = !fs.existsSync(`${outPath}/src`) || options.isDev;
 
     spinner.text = fileName;
 

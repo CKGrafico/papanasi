@@ -45,7 +45,7 @@ const ora = require('ora');
             const spinner = ora(`Changed ${name}, compiling... `).start();
 
             try {
-              await execa('node ./compiler/targets/react');
+              await execa('node ./compiler/targets/react --dev');
               await execa('yarn lerna --scope=@papanasi/react build');
             } catch (e) {
               spinner.text = `Error compiling ${e.message}.`;
