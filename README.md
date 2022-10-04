@@ -110,18 +110,6 @@ This library born as a pet project to create universal components, easy to exten
 * ...should be inspired by other UI Libraries and **don't reinvent the wheel**.
 * ...should be easy to create new **variants**.
 
-### 📚 Setup and scripts
-With **npm**:
-
-```
-$ npm install @papanasi/[target] # ex: @papanasi/react
-```
-With **yarn**:
-
-```
-$ yarn add @papanasi/[target] # ex: @papanasi/vue
-```
-
 ### 🔨 Components status
 
 <table align="center">
@@ -194,8 +182,8 @@ $ yarn add @papanasi/[target] # ex: @papanasi/vue
   </tr>
   <tr>
     <td align="center">
-      Itchio <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
+      <img src="https://static.itch.io/images/itchio-textless-black.svg" width="55" title="Itchio"> <br/>
+      <strong>Itchio</strong> <br/>
       <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story" target="_blank">Preview</a>
     </td>
   </tr>
@@ -212,6 +200,18 @@ $ yarn add @papanasi/[target] # ex: @papanasi/vue
     </td>
   </tr>
 </table>
+
+### 📚 Setup and scripts
+With **npm**:
+
+```
+$ npm install @papanasi/[target] # ex: @papanasi/react
+```
+With **yarn**:
+
+```
+$ yarn add @papanasi/[target] # ex: @papanasi/vue
+```
 
 ### 📗 Documentation
 
