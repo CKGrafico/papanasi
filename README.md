@@ -112,7 +112,7 @@ This library born as a pet project to create universal components, easy to exten
   </tr>
   <tr>
     <td align="center">
-      <img src="https://www.svgrepo.com/show/372317/container.svg" width="55" title="Container"> <br/>
+      <img src="https://tabler-icons.io/static/tabler-icons/icons/marquee-2.svg" width="55" title="Container"> <br/>
       <strong>Container</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
@@ -125,7 +125,7 @@ This library born as a pet project to create universal components, easy to exten
       <a href="https://papanasi.js.org/?path=/docs/layout-container--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
-      <img src="https://www.svgrepo.com/show/287492/row.svg" width="55" title="Row"> <br/>
+      <img src="https://tabler-icons.io/static/tabler-icons/icons/layout-rows.svg" width="55" title="Row"> <br/>
       <strong>Row</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
@@ -138,7 +138,7 @@ This library born as a pet project to create universal components, easy to exten
       <a href="https://papanasi.js.org/?path=/docs/layout-row--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
-      <img src="https://www.svgrepo.com/show/387207/column.svg" width="55" title="Column"> <br/>
+      <img src="https://tabler-icons.io/static/tabler-icons/icons/layout-columns.svg" width="55" title="Column"> <br/>
       <strong>Column</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
@@ -151,7 +151,7 @@ This library born as a pet project to create universal components, easy to exten
       <a href="https://papanasi.js.org/?path=/docs/layout-column--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
-      <img src="https://www.svgrepo.com/show/357839/grid.svg" width="55" title="Grid"> <br/>
+      <img src="https://tabler-icons.io/static/tabler-icons/icons/layout-board-split.svg" width="55" title="Grid"> <br/>
       <strong>Grid</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
@@ -163,7 +163,6 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-grid--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
-
   </tr>
   <tr>
     <td  align="left" colspan="4">
@@ -172,31 +171,71 @@ This library born as a pet project to create universal components, easy to exten
   </tr>
   <tr>
     <td align="center">
-      Avatar <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-avatar--default-story" target="_blank">Preview</a>
+      <img src="https://tabler-icons.io/static/tabler-icons/icons/circle-letter-a.svg" width="55" title="Avatar"> <br/>
+      <strong>Avatar</strong> <br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-avatar--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
-      Button <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-button--default-story" target="_blank">Preview</a>
+      <img src="https://tabler-icons.io/static/tabler-icons/icons/rectangle.svg" width="55" title="Button"> <br/>
+      <strong>Button</strong> <br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-button--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
-      Code <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-code--default-story" target="_blank">Preview</a>
+      <img src="https://tabler-icons.io/static/tabler-icons/icons/code-circle.svg" width="55" title="Code"> <br/>
+      <strong>Code</strong> <br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=angular" alt="Angular status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=preact" alt="Preact status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=react" alt="React status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=solid" alt="Solid status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=svelte" alt="Svelte status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=vuedotjs" alt="Vue status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-code--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+    </td>
+    <td align="center">
+      <img src="https://tabler-icons.io/static/tabler-icons/icons/pill.svg" width="55" title="Pill"> <br/>
+      <strong>Pill</strong> <br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
   <tr>
     <td align="center">
-      Pill <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story" target="_blank">Preview</a>
-    </td>
-    <td align="center">
-      Spinner <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://papanasi.js.org/?path=/docs/components-spinner--default-story" target="_blank">Preview</a>
+      <img src="https://tabler-icons.io/static/tabler-icons/icons/loader-2.svg" width="55" title="Spinner"> <br/>
+      <strong>Spinner</strong> <br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <a href="https://papanasi.js.org/?path=/docs/components-spinner--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
   <tr>
