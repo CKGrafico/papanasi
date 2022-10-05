@@ -1,7 +1,6 @@
 import { classesToString } from '~/helpers';
 // import copy from 'copy-to-clipboard';
 import { CodeJar } from 'codejar';
-import { withLineNumbers } from 'codejar/linenumbers';
 import hljs from 'highlight.js/lib/core';
 import { CodeTheme } from './code.model';
 
@@ -19,7 +18,7 @@ class CodeService {
   }
 
   public initialize(codeRef, code: string, language: string, theme: CodeTheme) {
-    this.jar = CodeJar(codeRef, withLineNumbers(this.highlightCode));
+    this.jar = CodeJar(codeRef, this.highlightCode);
 
     this.registerLanguage(language);
     this.registerThemes();
