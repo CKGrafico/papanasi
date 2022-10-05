@@ -1,0 +1,31 @@
+{
+  "name": "@papanasi/qwik",
+  "version": "1.0.0-rc.12",
+  "author": "ckgrafico/papanasi",
+  "description": "Papanasi Qwik UI Library",
+  "main": "./dist/papanasi-qwik.umd.js",
+  "module": "./dist/papanasi-qwik.es.js",
+  "style": "./dist/papanasi.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/papanasi-qwik.es.js",
+      "require": "./dist/papanasi-qwik.umd.js"
+    }
+  },
+  "peerDependencies": {
+    "@builder.io/qwik": "^0.9.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "yarn install",
+    "build": "rollup -c",
+    "postbuild": "node qwik.postbuild.js && rimraf dist/build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "ec1a1021a0f8a2e890809258fa491014970311ca"
+}
