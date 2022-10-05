@@ -11,12 +11,50 @@ body {
   font-weight: var(--pa-font-weight-normal);
 }
 
+.sbdocs-h1 {
+  align-self: center;
+  text-align: center;
+
+  p {
+    font-size: 2rem;
+  }
+}
+
 .sbdocs-h2 {
+  align-self: center;
   border: 0 !important;
+}
+
+.sbdocs-h3 {
+  font-size: 1.5rem !important;
+}
+
+.sbdocs-h4 {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+.sbdocs-ul {
+  margin-top: 0.5rem;
+}
+
+.sbdocs-img {
+  align-self: center;
+  margin: 0 0.25rem;
+}
+
+.sbdocs-wrapper > .sbdocs-content > div ~ div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .docs-story {
   position: relative;
+
+  > div:first-child {
+    width: 100%;
+  }
 
   .pa-container {
     @mixin background-opacity var(--pa-color-primary-brightest), 0.2;
