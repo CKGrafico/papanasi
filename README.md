@@ -311,16 +311,16 @@ To build the project run:
 > yarn compile
 ```
 
-You can choose which frameworks to build by passing the `--targets`:
+You can choose which frameworks to build by passing the `--platforms`:
 
 ```
-> yarn compile --targets react vue
+> yarn compile --platforms react vue
 ```
 
-It is also possible to specify which components to build `--files`:
+It is also possible to specify which components to build `--elements`:
 
 ```
-> yarn compile --files avatar pill
+> yarn compile --elements avatar pill
 ```
 
 If you want to disable the linting use `--no-lint`:

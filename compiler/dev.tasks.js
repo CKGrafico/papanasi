@@ -17,7 +17,7 @@ const ora = require('ora');
     {
       title: 'Compile React Components',
       task: () =>
-        execa('node ./compiler/targets/react').catch((error) => {
+        execa('node ./compiler/platforms/react').catch((error) => {
           throw new Error('Error compiling React' + error);
         })
     },
@@ -45,7 +45,7 @@ const ora = require('ora');
             const spinner = ora(`Changed ${name}, compiling... `).start();
 
             try {
-              await execa('node ./compiler/targets/react --dev');
+              await execa('node ./compiler/platforms/react --dev');
               await execa('yarn lerna --scope=@papanasi/react build');
             } catch (e) {
               spinner.text = `Error compiling ${e.message}.`;

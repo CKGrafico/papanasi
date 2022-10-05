@@ -2,8 +2,8 @@ const { Listr } = require('listr2');
 const commandLineArgs = require('command-line-args');
 
 const optionDefinitions = [
-  { name: 'files', alias: 'f', type: String, multiple: true },
-  { name: 'targets', alias: 't', type: String, multiple: true },
+  { name: 'elements', alias: 'e', type: String, multiple: true },
+  { name: 'platforms', alias: 'p', type: String, multiple: true },
   { name: 'lint', type: Boolean, defaultValue: true },
   { name: 'no-lint', type: Boolean }
 ];
@@ -15,7 +15,9 @@ const optionDefinitions = [
   cliConfig.lint = cliConfig.lint && !cliConfig['no-lint'];
 
   function getCompilerCommand(target) {
-    return `node ./compiler/targets/${target} ${cliConfig.files ? `--files ${cliConfig.files.join(' ')}` : ''}`;
+    return `node ./compiler/platforms/${target} ${
+      cliConfig.elements ? `--elements ${cliConfig.elements.join(' ')}` : ''
+    }`;
   }
 
   const tasks = new Listr([
@@ -69,15 +71,15 @@ const optionDefinitions = [
       }
     },
     {
-      title: `Compile Mitosis components ${cliConfig.files?.join(', ') || ''}${
-        cliConfig.files && cliConfig.targets ? ' -> ' : ''
-      }${cliConfig.targets?.join(', ') || ''}`,
+      title: `Compile Mitosis components ${cliConfig.elements?.join(', ') || ''}${
+        cliConfig.elements && cliConfig.platforms ? ' -> ' : ''
+      }${cliConfig.platforms?.join(', ') || ''}`,
       task: () => {
         return new Listr(
           [
             {
               title: 'Compile Angular',
-              enabled: () => cliConfig.targets?.includes('angular') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('angular') || !cliConfig.platforms,
               task: () =>
                 execa(getCompilerCommand('angular')).catch((error) => {
                   throw new Error('Error compiling Angular ' + error.message);
@@ -85,7 +87,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Preact',
-              enabled: () => cliConfig.targets?.includes('preact') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('preact') || !cliConfig.platforms,
               task: () =>
                 execa(getCompilerCommand('preact')).catch((error) => {
                   throw new Error('Error compiling Preact ' + error.message);
@@ -93,7 +95,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Qwik',
-              enabled: () => cliConfig.targets?.includes('qwik') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('qwik') || !cliConfig.platforms,
               task: () =>
                 execa(getCompilerCommand('qwik')).catch((error) => {
                   throw new Error('Error compiling Qwik ' + error.message);
@@ -101,7 +103,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile React',
-              enabled: () => cliConfig.targets?.includes('react') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('react') || !cliConfig.platforms,
               task: () =>
                 execa(getCompilerCommand('react')).catch((error) => {
                   throw new Error('Error compiling React ' + error.message);
@@ -109,7 +111,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Solid',
-              enabled: () => cliConfig.targets?.includes('solid') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('solid') || !cliConfig.platforms,
               task: () =>
                 execa(getCompilerCommand('solid')).catch((error) => {
                   throw new Error('Error compiling Solid ' + error.message);
@@ -117,7 +119,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Svelte',
-              enabled: () => cliConfig.targets?.includes('svelte') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('svelte') || !cliConfig.platforms,
               task: () =>
                 execa(getCompilerCommand('svelte')).catch((error) => {
                   throw new Error('Error compiling Svelte ' + error.message);
@@ -125,7 +127,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Vue',
-              enabled: () => cliConfig.targets?.includes('vue') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('vue') || !cliConfig.platforms,
               task: () =>
                 execa(getCompilerCommand('vue')).catch((error) => {
                   throw new Error('Error compiling Vue ' + error.message);
@@ -133,7 +135,7 @@ const optionDefinitions = [
             },
             {
               title: 'Compile Web Components',
-              enabled: () => cliConfig.targets?.includes('webcomponents') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('webcomponents') || !cliConfig.platforms,
               task: () =>
                 execa(getCompilerCommand('webcomponents')).catch((error) => {
                   throw new Error('Error compiling Web Components ' + error.message);
@@ -151,7 +153,7 @@ const optionDefinitions = [
           [
             {
               title: 'Bundle Angular',
-              enabled: () => cliConfig.targets?.includes('angular') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('angular') || !cliConfig.platforms,
               task: () =>
                 execa('yarn lerna --scope=@papanasi/angular build').catch((error) => {
                   throw new Error('Error bundling Angular ' + error);
@@ -159,7 +161,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Preact',
-              enabled: () => cliConfig.targets?.includes('preact') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('preact') || !cliConfig.platforms,
               task: () =>
                 execa('yarn lerna --scope=@papanasi/preact build').catch((error) => {
                   throw new Error('Error bundling Qwik ' + error);
@@ -167,7 +169,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Qwik',
-              enabled: () => cliConfig.targets?.includes('qwik') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('qwik') || !cliConfig.platforms,
               task: () =>
                 execa('yarn lerna --scope=@papanasi/qwik build').catch((error) => {
                   throw new Error('Error bundling Qwik ' + error);
@@ -175,7 +177,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle React',
-              enabled: () => cliConfig.targets?.includes('react') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('react') || !cliConfig.platforms,
               task: () =>
                 execa('yarn lerna --scope=@papanasi/react build').catch((error) => {
                   throw new Error('Error bundling React ' + error);
@@ -183,7 +185,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Solid',
-              enabled: () => cliConfig.targets?.includes('solid') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('solid') || !cliConfig.platforms,
               task: () =>
                 execa('yarn lerna --scope=@papanasi/solid build').catch((error) => {
                   throw new Error('Error bundling Solid ' + error);
@@ -191,7 +193,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Svelte',
-              enabled: () => cliConfig.targets?.includes('svelte') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('svelte') || !cliConfig.platforms,
               task: () =>
                 execa('yarn lerna --scope=@papanasi/svelte build').catch((error) => {
                   throw new Error('Error bundling Svelte ' + error);
@@ -199,7 +201,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Vue',
-              enabled: () => cliConfig.targets?.includes('vue') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('vue') || !cliConfig.platforms,
               task: () =>
                 execa('yarn lerna --scope=@papanasi/vue build').catch((error) => {
                   throw new Error('Error bundling Vue ' + error);
@@ -207,7 +209,7 @@ const optionDefinitions = [
             },
             {
               title: 'Bundle Web Components',
-              enabled: () => cliConfig.targets?.includes('webcomponents') || !cliConfig.targets,
+              enabled: () => cliConfig.platforms?.includes('webcomponents') || !cliConfig.platforms,
               task: () =>
                 execa('yarn lerna --scope=@papanasi/webcomponents build').catch((error) => {
                   throw new Error('Error bundling Web Components ' + error);

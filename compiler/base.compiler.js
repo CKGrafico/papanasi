@@ -12,7 +12,7 @@ const toPascalCase = (str) =>
   (str.match(/[a-zA-Z0-9]+/g) || []).map((w) => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join('');
 
 const DEFAULT_OPTIONS = {
-  files: 'src/**/*.lite.tsx',
+  elements: 'src/**/*.lite.tsx',
   dest: 'packages',
   options: {},
   target: '',
@@ -23,7 +23,7 @@ const DEFAULT_OPTIONS = {
 };
 
 const optionDefinitions = [
-  { name: 'files', alias: 'f', type: String, multiple: true },
+  { name: 'elements', alias: 'e', type: String, multiple: true },
   { name: 'dev', type: Boolean }
 ];
 
@@ -34,11 +34,13 @@ async function compile(defaultOptions) {
   };
 
   const cliConfig = commandLineArgs(optionDefinitions);
-  options.files = cliConfig.files ? cliConfig.files.map((file) => `src/${file}/${file}.lite.tsx`) : options.files;
+  options.elements = cliConfig.elements
+    ? cliConfig.elements.map((file) => `src/${file}/${file}.lite.tsx`)
+    : options.elements;
   options.isDev = !!cliConfig.dev;
 
   const spinner = ora('Compiling').start();
-  const files = cliConfig.files ? options.files : glob.sync(options.files);
+  const files = cliConfig.elements ? options.elements : glob.sync(options.elements);
   const outPath = `${options.dest}/${options.target}`;
 
   function copyBasicFilesOnFirstCompilation(isFirstCompilation) {
@@ -52,7 +54,7 @@ async function compile(defaultOptions) {
 
     fs.copyFileSync('src/index.ts', `${outPath}/src/index.ts`);
 
-    const fileServices = cliConfig.files ? `src/{${cliConfig.files.join(',')},}` : 'src/**';
+    const fileServices = cliConfig.elements ? `src/{${cliConfig.elements.join(',')},}` : 'src/**';
     const services = glob.sync(`${fileServices}/*.{service,model}.ts`);
 
     services.forEach((element) => {
@@ -72,11 +74,11 @@ async function compile(defaultOptions) {
 
     fs.writeFileSync(`${outPath}/README.md`, result, 'utf8');
 
-    if (!cliConfig.files) {
+    if (!cliConfig.elements) {
       return;
     }
 
-    const fileExports = cliConfig.files
+    const fileExports = cliConfig.elements
       .map((name) => {
         return `export { default as ${name.charAt(0).toUpperCase() + name.slice(1)} } from './${name}';`;
       })

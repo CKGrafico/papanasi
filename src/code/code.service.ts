@@ -6,8 +6,8 @@ import { CodeTheme, codeThemes } from './code.model';
 let styles = [];
 
 class CodeService {
-  private jar: CodeJar;
-  private currentThemeIndex = 0;
+  public jar: CodeJar;
+  public currentThemeIndex = 0;
 
   public getClasses(language: string, className: string) {
     const base = classesToString(['pa-code', className || '']);
