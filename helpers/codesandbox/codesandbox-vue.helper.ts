@@ -3,7 +3,6 @@ import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateVueCodeSandboxLink(options) {
   const { components, extensions, code, dependencies } = options;
-
   const html = `<div class="app" id="app"></div>`;
 
   const previewCode = `<template>${code}

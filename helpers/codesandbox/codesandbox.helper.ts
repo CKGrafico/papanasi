@@ -71,7 +71,7 @@ ${demoCode}
   }
 
   if (html) {
-    parameters[indexHTMLFolder] = {
+    parameters.files[indexHTMLFolder] = {
       content: `${html}
 <div class="footer">
 <a href="https://papanasi.js.org" target="_blank" rel="noreferrer">

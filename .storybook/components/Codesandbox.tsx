@@ -60,6 +60,7 @@ export function Codesandbox(props: CodesandboxProps) {
       <Code
         editable={true}
         language="javascript"
+        slotCopy={'Copy'}
         theme="github"
         code={content}
         links={[
