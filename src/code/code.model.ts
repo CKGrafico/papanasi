@@ -1,12 +1,12 @@
-import { BaseProps, BaseState } from '~/models';
+import { BaseProps, BaseState, Children } from '~/models';
 
 export type CodeProps = {
   editable: boolean;
   language: string;
   theme: CodeTheme;
   code: string;
-  canCopy?: boolean;
-  copyLabel?: string;
+  disableCopy?: boolean;
+  slotCopy?: Children;
   links?: { label: string; url: string; icon: string }[];
   onUpdate?: (code: string) => void;
 } & BaseProps;

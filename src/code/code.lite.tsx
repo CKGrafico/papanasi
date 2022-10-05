@@ -70,9 +70,9 @@ export default function Code(props: CodeProps) {
           )}
         </For>
 
-        <Show when={props.canCopy}>
+        <Show when={!props.disableCopy}>
           <span class="pa-code__action pa-code__action--copy" onClick={() => copy(props.code)}>
-            {props.copyLabel}
+            <span>{props.slotCopy}</span>
           </span>
         </Show>
       </div>

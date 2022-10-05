@@ -9,12 +9,6 @@
   width: 100%;
   overflow: hidden;
 
-  &__editor {
-    &--dark {
-      color: var(--pa-color-basic-brightest);
-    }
-  }
-
   &__actions {
     background: var(--pa-color-basic-brightest);
     backdrop-filter: blur(2px);
@@ -39,7 +33,7 @@
       background-color: var(--pa-color-basic-brighter);
     }
 
-    &--text &:hover {
+    &--text:hover {
       background-color: var(--pa-color-basic-brightest);
     }
   }

@@ -60,6 +60,7 @@ export function Codesandbox(props: CodesandboxProps) {
       <Code
         theme="github"
         language="javascript"
+        slotCopy={<span>Copy</span>}
         links={[
           {
             icon

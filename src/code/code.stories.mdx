@@ -16,6 +16,16 @@ import { Customization, Codesandbox } from '../../.storybook/components';
         type: 'boolean'
       }
     },
+    disableCopy: {
+      name: 'disableCopy',
+      description: 'Disable the copy button',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    },
     language: {
       name: 'language',
       description:
@@ -30,7 +40,7 @@ import { Customization, Codesandbox } from '../../.storybook/components';
       description:
         'Theme to use in the editor, are from https://github.com/highlightjs/highlight.js/tree/main/src/styles but not all are included',
       table: {
-        defaultValue: { summary: 'atom-one-light' }
+        defaultValue: { summary: 'github' }
       },
       options: ['default', 'dark', 'atom-one-light', 'atom-one-dark', 'github', 'monokai'],
       control: { type: 'select' }
@@ -40,7 +50,7 @@ import { Customization, Codesandbox } from '../../.storybook/components';
 
 export const Template = (args) => (
   <div>
-    <Code {...args}></Code>
+    <Code {...args} slotCopy={<span>Copy</span>}></Code>
   </div>
 );
 
@@ -58,9 +68,8 @@ The Code component is created to highlight code blocks in your application, is a
     args={{
       editable: true,
       language: 'javascript',
-      theme: 'atom-one-light',
-      canCopy: true,
-      copyLabel: 'Copy',
+      theme: 'github',
+      disableCopy: false,
       code:
         "import React from 'react'; \n\n" +
         'type CardProps = { \n' +
