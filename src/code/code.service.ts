@@ -12,7 +12,7 @@ class CodeService {
 
   public getClasses(language: string, className: string) {
     const base = classesToString(['pa-code', className || '']);
-    const editor = classesToString([[language, `language-${language}`]]);
+    const editor = classesToString(['pa-code__editor', [language, `language-${language}`]]);
 
     return { base, editor };
   }
