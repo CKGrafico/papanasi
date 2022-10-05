@@ -59,6 +59,7 @@ export function Codesandbox(props: CodesandboxProps) {
     <div className="codesandbox">
       <Code
         theme="github"
+        language="javascript"
         links={[
           {
             icon

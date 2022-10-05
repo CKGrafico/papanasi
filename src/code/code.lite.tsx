@@ -1,107 +1,48 @@
-import { For, onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
+import { For, onMount, onUnMount, onUpdate, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import copy from 'copy-to-clipboard';
-import hljs from 'highlight.js/lib/core';
-import { classesToString, getObjectValue } from '~/helpers';
+import { getObjectValue } from '~/helpers';
 import './code.css';
-import { CodeProps } from './code.model';
-
+import { CodeProps, CodeState, CodeTheme } from './code.model';
+import { codeService } from './code.service';
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Code(props: CodeProps) {
-  const previewRef = useRef();
-  const codeRef = useRef();
+  const codeRef = useRef<HTMLElement>();
 
-  const state = useStore({
-    classes: { base: '' },
-    isEditing: false,
-    isDark: false,
-    isCopy: true,
-    copyText: 'Copy',
-    rawCode: '',
-    previewCode: '',
-    highlightCode(languages = ['javascript', 'typescript', 'xml', 'css']) {
-      const loadAndHighlight = () => {
-        languages.forEach((language) =>
-          hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language))
-        );
-
-        const nodes = previewRef.querySelectorAll('pre code');
-        nodes.forEach((node) => hljs.highlightElement(node as HTMLElement));
-      };
-
-      loadAndHighlight();
-    },
-    onClick() {
-      if (!props.editable) {
-        return;
-      }
-
-      state.isEditing = true;
-      codeRef.focus();
-    },
-    onBlur() {
-      if (!props.editable) {
-        return;
-      }
-
-      state.isEditing = false;
-
-      if (props.onExit) {
-        props.onExit(codeRef.innerText);
-      }
-
-      state.highlightCode(props.languages);
-    },
-    onKeyUp() {
-      state.previewCode = codeRef.innerText;
-
-      if (props.onUpdate) {
-        props.onUpdate(codeRef.innerText);
-      }
-    },
+  const state = useStore<CodeState>({
+    loaded: false,
+    classes: { base: '', editor: '' },
     value(x, y) {
       return getObjectValue(x, y);
     }
   });
 
   onMount(() => {
-    const setInitialProps = (className, code, theme, canCopy, copyLabel) => {
-      state.classes = { base: classesToString(['pa-code', className || '']) };
-      state.rawCode = code;
-      state.previewCode = code;
-      state.isDark = theme?.toLowerCase().match(/(dark|night|blue)/);
-      state.isCopy = canCopy !== undefined ? canCopy : state.isCopy;
-      state.copyText = copyLabel || state.copyText;
-    };
-
-    setInitialProps(props.className, props.code, props.theme, props.canCopy, props.copyLabel);
-    state.highlightCode(props.languages);
+    state.classes = codeService.getClasses(props.language, props.className);
   });
 
-  return (
-    <div class={state.classes.base}>
-      <pre
-        class={'pa-code__preview ' + (state.isEditing ? 'is-editing' : '')}
-        ref={previewRef}
-        onClick={() => state.onClick()}
-      >
-        <code class={'pa-code__preview-block'}>{state.previewCode || props.code}</code>
-      </pre>
+  onUnMount(() => {
+    codeService.destroy();
+  });
 
-      <pre
-        class={
-          'pa-code__editor ' + (state.isEditing ? 'is-editing ' : '') + (state.isDark ? 'pa-code__editor--dark ' : '')
-        }
-      >
-        <code
-          ref={codeRef}
-          class={'pa-code__editor-block'}
-          contentEditable={true}
-          onKeyUp={() => state.onKeyUp()}
-          onBlur={() => state.onBlur()}
-        >
-          {state.rawCode}
-        </code>
+  onUpdate(() => {
+    if (!state.classes?.editor) {
+      return;
+    }
+
+    codeService.initialize(codeRef, props.code, props.language, props.theme || CodeTheme.default);
+
+    codeService.onUpdate((code: string) => {
+      state.loaded = true;
+      props.onUpdate && props.onUpdate(code);
+    });
+  }, [state.classes]);
+
+  return (
+    // <Show when={state.loaded}>
+    <div class={state.classes.base}>
+      <pre>
+        <code ref={codeRef} class={state.classes.editor}></code>
       </pre>
 
       <div class="pa-code__actions">
@@ -129,12 +70,13 @@ export default function Code(props: CodeProps) {
           )}
         </For>
 
-        <Show when={state.isCopy}>
-          <span class="pa-code__action pa-code__action--copy" onClick={() => copy(state.rawCode)}>
-            {state.copyText}
+        <Show when={props.canCopy}>
+          <span class="pa-code__action pa-code__action--copy" onClick={() => copy(props.code)}>
+            {props.copyLabel}
           </span>
         </Show>
       </div>
     </div>
+    // </Show>
   );
 }

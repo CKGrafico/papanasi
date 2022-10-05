@@ -1,6 +1,4 @@
 @import '../../styles/build.css';
-/* TODO: dynamic themes*/
-@import 'highlight.js/styles/github.css';
 
 .pa-code {
   --pa-code-padding: 1rem;

@@ -21,31 +21,18 @@ import { Customization, Codesandbox } from '../../.storybook/components';
       description:
         'Language to highlight, complete list https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md',
       table: {
-        defaultValue: { summary: 'typescript' }
+        defaultValue: { summary: 'javascript' }
       },
-      options: ['javascript', 'typescript', 'css', 'scss', 'json', 'xml', 'markdown'],
-      control: { type: 'multi-select' }
+      options: ['javascript', 'typescript', 'css', 'scss', 'json', 'jsx', 'xml', 'markdown']
     },
     theme: {
       name: 'theme',
       description:
-        'Theme to use in the editor, complete list https://github.com/highlightjs/highlight.js/tree/main/src/styles',
+        'Theme to use in the editor, are from https://github.com/highlightjs/highlight.js/tree/main/src/styles but not all are included',
       table: {
-        defaultValue: { summary: 'github' }
+        defaultValue: { summary: 'atom-one-light' }
       },
-      options: [
-        'default',
-        'atom-one-dark',
-        'atom-one-light',
-        'github',
-        'monokai',
-        'vs',
-        'dark',
-        'tokyo-night-dark',
-        'tokyo-night-light',
-        'vs2015',
-        'routeros'
-      ],
+      options: ['default', 'dark', 'atom-one-light', 'atom-one-dark', 'github', 'monokai'],
       control: { type: 'select' }
     }
   }}
@@ -70,8 +57,10 @@ The Code component is created to highlight code blocks in your application, is a
     name="Default"
     args={{
       editable: true,
-      languages: ['typescript', 'xml'],
-      theme: 'github',
+      language: 'javascript',
+      theme: 'atom-one-light',
+      canCopy: true,
+      copyLabel: 'Copy',
       code:
         "import React from 'react'; \n\n" +
         'type CardProps = { \n' +
