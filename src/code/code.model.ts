@@ -16,11 +16,6 @@ export type CodeState = {
   value: <T>(x: T, y: string) => string;
 } & BaseState;
 
-export enum CodeTheme {
-  'default' = 'default',
-  'dark' = 'dark',
-  'atom-one-light' = 'atom-one-light',
-  'atom-one-dark' = 'atom-one-dark',
-  'github' = 'github',
-  'monokai' = 'monokai'
-}
+export const codeThemes = ['default', 'dark', 'atom-one-light', 'atom-one-dark', 'github', 'monokai'] as const;
+
+export type CodeTheme = typeof codeThemes[number];

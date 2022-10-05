@@ -9,7 +9,7 @@ export enum Breakpoint {
 }
 
 export type BreakpointProps<T> = {
-  [key in Breakpoint]: T;
+  [key in Breakpoint]?: T;
 };
 
 export const breakpoints = Object.entries(Breakpoint).map(([key, value]: [string, string]) => ({ key, value }));

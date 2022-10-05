@@ -87,7 +87,7 @@ export function Customization(props: CustomizationProps) {
           </Row>
           <Row>
             <Column xs={'fill'}>
-              <Code onUpdate={onChangeCss} editable theme="github" code={templateCSS(css, selector)} />
+              <Code onUpdate={onChangeCss} editable theme="github" code={templateCSS(css, selector)} language={'css'} />
             </Column>
           </Row>
         </>

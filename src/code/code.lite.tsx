@@ -2,7 +2,7 @@ import { For, onMount, onUnMount, onUpdate, Show, useMetadata, useRef, useStore 
 import copy from 'copy-to-clipboard';
 import { getObjectValue } from '~/helpers';
 import './code.css';
-import { CodeProps, CodeState, CodeTheme } from './code.model';
+import { CodeProps, CodeState } from './code.model';
 import { codeService } from './code.service';
 useMetadata({ isAttachedToShadowDom: true });
 
@@ -30,7 +30,7 @@ export default function Code(props: CodeProps) {
       return;
     }
 
-    codeService.initialize(codeRef, props.code, props.language, props.theme || CodeTheme.default);
+    codeService.initialize(codeRef, props.code, props.language, props.theme || 'default');
 
     codeService.onUpdate((code: string) => {
       state.loaded = true;

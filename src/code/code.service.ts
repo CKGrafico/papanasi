@@ -1,8 +1,7 @@
-import { classesToString } from '~/helpers';
-// import copy from 'copy-to-clipboard';
 import { CodeJar } from 'codejar';
 import hljs from 'highlight.js/lib/core';
-import { CodeTheme } from './code.model';
+import { classesToString } from '~/helpers';
+import { CodeTheme, codeThemes } from './code.model';
 
 let styles = [];
 
@@ -47,7 +46,7 @@ class CodeService {
       return;
     }
 
-    styles = Object.values(CodeTheme).map((name) => {
+    styles = codeThemes.map((name) => {
       const link = document.createElement('link');
       link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/${name}.min.css`;
       link.rel = 'stylesheet';

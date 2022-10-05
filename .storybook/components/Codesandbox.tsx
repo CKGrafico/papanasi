@@ -58,9 +58,10 @@ export function Codesandbox(props: CodesandboxProps) {
   return (
     <div className="codesandbox">
       <Code
-        theme="github"
+        editable={true}
         language="javascript"
-        slotCopy={<span>Copy</span>}
+        theme="github"
+        code={content}
         links={[
           {
             icon
@@ -71,7 +72,6 @@ export function Codesandbox(props: CodesandboxProps) {
             url
           }
         ].filter((x) => x)}
-        code={content}
       />
     </div>
   );
