@@ -7,9 +7,7 @@ export function getBreakpointArgTypes(description, options) {
     argTypes[breakpoint.value] = {
       name: breakpoint.value,
       description: description.replace('{breakpoint}', breakpoint.key),
-      table: {
-        defaultValue: { summary: '' }
-      },
+      table: {},
       options,
       control: { type: 'select' }
     };

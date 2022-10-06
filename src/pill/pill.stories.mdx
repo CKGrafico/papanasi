@@ -10,9 +10,7 @@ import { Customization, Codesandbox } from '../../.storybook/components';
     intent: {
       name: 'intent',
       description: 'Specify a temporary intent for the pill',
-      table: {
-        defaultValue: { summary: Intent.None }
-      },
+      table: {},
       options: intents.map((x) => x.value),
       control: { type: 'select' }
     }

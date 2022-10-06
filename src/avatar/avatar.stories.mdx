@@ -10,10 +10,7 @@ import { Customization, Codesandbox } from '../../.storybook/components';
     name: {
       name: 'name',
       description: 'The name to show the initials',
-      defaultValue: 'Alicia Morris',
-      table: {
-        defaultValue: { summary: 'Alicia Morris' }
-      },
+      table: {},
       control: 'text'
     },
     unavatar: {
@@ -29,9 +26,7 @@ import { Customization, Codesandbox } from '../../.storybook/components';
     disabled: {
       name: 'disabled',
       description: 'Disable actions in the avatar',
-      table: {
-        defaultValue: { summary: 'false' }
-      },
+      table: {},
       control: {
         type: 'boolean'
       }
@@ -63,6 +58,7 @@ If you add a `url` will be used as image and it is also compatible with [unavata
     args={{
       disabled: false,
       unavatar: '',
+      name: 'Alicia Mug',
       url: ''
     }}
   >

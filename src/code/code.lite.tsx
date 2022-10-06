@@ -31,52 +31,56 @@ export default function Code(props: CodeProps) {
     }
 
     codeService.initialize(codeRef, props.code, props.language, props.theme || 'default');
+    state.loaded = true;
 
     codeService.onUpdate((code: string) => {
-      state.loaded = true;
       props.onUpdate && props.onUpdate(code);
     });
   }, [state.classes]);
 
+  onUpdate(() => {
+    codeService.setEditable(codeRef, props.editable);
+  }, [props.editable]);
+
   return (
-    // <Show when={state.loaded}>
     <div class={state.classes.base}>
       <pre>
         <code ref={codeRef} class={state.classes.editor}></code>
       </pre>
 
-      <div class="pa-code__actions">
-        <For each={props.links}>
-          {(link, index) => (
-            <>
-              <Show when={state.value(link, 'url')}>
-                <a class="pa-code__action" data-key={index} href={state.value(link, 'url')} target="_blank">
-                  {state.value(link, 'icon') && (
-                    <img class="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
-                  )}
-                  {state.value(link, 'label')}
-                </a>
-              </Show>
+      <Show when={state.loaded}>
+        <div class="pa-code__actions">
+          <For each={props.links}>
+            {(link, index) => (
+              <div key={index}>
+                <Show when={state.value(link, 'url')}>
+                  <a class="pa-code__action" href={state.value(link, 'url')} target="_blank">
+                    {state.value(link, 'icon') && (
+                      <img class="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
+                    )}
+                    {state.value(link, 'label')}
+                  </a>
+                </Show>
 
-              <Show when={!state.value(link, 'url')}>
-                <span class="pa-code__action pa-code__action--text" data-key={index}>
-                  {state.value(link, 'icon') && (
-                    <img class="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
-                  )}
-                  {state.value(link, 'label')}
-                </span>
-              </Show>
-            </>
-          )}
-        </For>
+                <Show when={!state.value(link, 'url')}>
+                  <span class="pa-code__action pa-code__action--text">
+                    {state.value(link, 'icon') && (
+                      <img class="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
+                    )}
+                    {state.value(link, 'label')}
+                  </span>
+                </Show>
+              </div>
+            )}
+          </For>
 
-        <Show when={!props.disableCopy}>
-          <span class="pa-code__action pa-code__action--copy" onClick={() => copy(props.code)}>
-            <span>{props.slotCopy}</span>
-          </span>
-        </Show>
-      </div>
+          <Show when={!props.disableCopy}>
+            <span class="pa-code__action pa-code__action--copy" onClick={() => copy(props.code)}>
+              <span>{props.slotCopy}</span>
+            </span>
+          </Show>
+        </div>
+      </Show>
     </div>
-    // </Show>
   );
 }

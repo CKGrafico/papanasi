@@ -1,6 +1,6 @@
 import { CodeJar } from 'codejar';
 import hljs from 'highlight.js/lib/core';
-import { classesToString } from '~/helpers';
+import { classesToString, wait } from '~/helpers';
 import { CodeTheme, codeThemes } from './code.model';
 
 let styles = [];
@@ -18,6 +18,10 @@ class CodeService {
 
   public initialize(codeRef, code: string, language: string, theme: CodeTheme) {
     this.jar = CodeJar(codeRef, this.highlightCode);
+
+    hljs.configure({
+      ignoreUnescapedHTML: true
+    });
 
     this.registerLanguage(language);
     this.registerThemes();
@@ -37,7 +41,27 @@ class CodeService {
     this.jar.onUpdate(callback);
   }
 
+  public async setEditable(codeRef, editable: boolean) {
+    await wait();
+    codeRef.setAttribute('contenteditable', editable ? 'plaintext-only' : 'false');
+  }
+
   private registerLanguage(language: string) {
+    // Highlight does not support those types
+    if (language === 'jsx') {
+      hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
+      hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+
+      return;
+    }
+
+    if (language === 'tsx') {
+      hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
+      hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
+
+      return;
+    }
+
     hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language));
   }
 
@@ -64,7 +88,6 @@ class CodeService {
   }
 
   private highlightCode(editor: HTMLElement) {
-    editor.textContent = editor.textContent;
     hljs.highlightElement(editor);
   }
 }

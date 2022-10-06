@@ -9,9 +9,7 @@ import { Customization, Codesandbox } from '../../.storybook/components';
     editable: {
       name: 'editable',
       description: 'Let the user edit the code',
-      table: {
-        defaultValue: { summary: 'true' }
-      },
+      table: {},
       control: {
         type: 'boolean'
       }
@@ -19,9 +17,7 @@ import { Customization, Codesandbox } from '../../.storybook/components';
     disableCopy: {
       name: 'disableCopy',
       description: 'Disable the copy button',
-      table: {
-        defaultValue: { summary: 'false' }
-      },
+      table: {},
       control: {
         type: 'boolean'
       }
@@ -30,18 +26,15 @@ import { Customization, Codesandbox } from '../../.storybook/components';
       name: 'language',
       description:
         'Language to highlight, complete list https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md',
-      table: {
-        defaultValue: { summary: 'javascript' }
-      },
-      options: ['javascript', 'typescript', 'css', 'scss', 'json', 'jsx', 'xml', 'markdown']
+      table: {},
+      options: ['jsx', 'typescript', 'css', 'scss', 'json', 'jsx', 'tsx', 'xml', 'markdown'],
+      control: { type: 'select' }
     },
     theme: {
       name: 'theme',
       description:
         'Theme to use in the editor, are from https://github.com/highlightjs/highlight.js/tree/main/src/styles but not all are included',
-      table: {
-        defaultValue: { summary: 'github' }
-      },
+      table: {},
       options: ['default', 'dark', 'atom-one-light', 'atom-one-dark', 'github', 'monokai'],
       control: { type: 'select' }
     }
@@ -67,7 +60,7 @@ The Code component is created to highlight code blocks in your application, is a
     name="Default"
     args={{
       editable: true,
-      language: 'javascript',
+      language: 'jsx',
       theme: 'github',
       disableCopy: false,
       code:
