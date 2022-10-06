@@ -16,7 +16,7 @@ class CodeService {
     return { base, editor };
   }
 
-  public initialize(codeRef, code: string, language: string, theme: CodeTheme) {
+  initialize(codeRef, language: string, theme: CodeTheme) {
     this.jar = CodeJar(codeRef, this.highlightCode);
 
     hljs.configure({
@@ -26,7 +26,6 @@ class CodeService {
     this.registerLanguage(language);
     this.registerThemes();
     this.updateCurrentTheme(theme);
-    this.update(code);
   }
 
   public destroy() {

@@ -18,6 +18,8 @@ export default function Code(props: CodeProps) {
   });
 
   onMount(() => {
+    codeService.initialize(codeRef, props.language, props.theme || 'default');
+
     state.classes = codeService.getClasses(props.language, props.className);
   });
 
@@ -30,8 +32,8 @@ export default function Code(props: CodeProps) {
       return;
     }
 
-    codeService.initialize(codeRef, props.code, props.language, props.theme || 'default');
     state.loaded = true;
+    codeService.update(props.code);
 
     codeService.onUpdate((code: string) => {
       props.onUpdate && props.onUpdate(code);

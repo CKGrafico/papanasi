@@ -9,15 +9,14 @@
     "start": "start-storybook -p 6006 --no-manager-cache",
     "clean": "rimraf packages/**/{src,dist,node_modules}",
     "lerna": "lerna run",
-    "release": "lerna publish",
     "lint": "run-p lint:**",
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./styles/**/*.(css)\" --fix",
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "release-version": "lerna version 1.0.0-rc.14 --force-publish",
-    "from-package": "lerna publish from-package --force-publish"
+    "release": "lerna version 1.0.0-rc.15 --force-publish",
+    "package": "lerna publish from-package --force-publish"
   },
   "dependencies": {
     "codejar": "^3.6.0",

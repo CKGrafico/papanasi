@@ -1,4 +1,5 @@
 const compiler = require('../base.compiler');
+const fs = require('fs');
 
 const DEFAULT_OPTIONS = {
   target: 'solid',
@@ -8,5 +9,15 @@ const DEFAULT_OPTIONS = {
 };
 
 (async () => {
-  await compiler.compile({ ...DEFAULT_OPTIONS });
+  function customReplace(props) {
+    const { outFile } = props;
+
+    const data = fs.readFileSync(outFile, 'utf8');
+    const result = data
+      // fix keys
+      .replace(/ key\=/g, ' data-key=');
+    fs.writeFileSync(outFile, result, 'utf8');
+  }
+
+  await compiler.compile({ ...DEFAULT_OPTIONS, customReplace });
 })();
