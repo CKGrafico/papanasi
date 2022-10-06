@@ -5,7 +5,7 @@ import { CodeTheme, codeThemes } from './code.model';
 
 let styles = [];
 
-class CodeService {
+export class CodeService {
   public jar: CodeJar;
   public currentThemeIndex = 0;
 
@@ -90,5 +90,3 @@ class CodeService {
     hljs.highlightElement(editor);
   }
 }
-
-export const codeService = new CodeService();

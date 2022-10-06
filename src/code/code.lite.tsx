@@ -3,7 +3,7 @@ import copy from 'copy-to-clipboard';
 import { getObjectValue } from '~/helpers';
 import './code.css';
 import { CodeProps, CodeState } from './code.model';
-import { codeService } from './code.service';
+import { CodeService } from './code.service';
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Code(props: CodeProps) {
@@ -11,6 +11,7 @@ export default function Code(props: CodeProps) {
 
   const state = useStore<CodeState>({
     loaded: false,
+    codeService: null,
     classes: { base: '', editor: '' },
     value(x, y) {
       return getObjectValue(x, y);
@@ -18,14 +19,25 @@ export default function Code(props: CodeProps) {
   });
 
   onMount(() => {
-    codeService.initialize(codeRef, props.language, props.theme || 'default');
-
-    state.classes = codeService.getClasses(props.language, props.className);
+    state.codeService = new CodeService();
   });
 
   onUnMount(() => {
-    codeService.destroy();
+    if (!state.codeService) {
+      return;
+    }
+
+    state.codeService.destroy();
   });
+
+  onUpdate(() => {
+    if (!state.codeService) {
+      return;
+    }
+
+    state.codeService.initialize(codeRef, props.language, props.theme || 'default');
+    state.classes = state.codeService.getClasses(props.language, props.className);
+  }, [state.codeService]);
 
   onUpdate(() => {
     if (!state.classes?.editor) {
@@ -33,15 +45,19 @@ export default function Code(props: CodeProps) {
     }
 
     state.loaded = true;
-    codeService.update(props.code);
+    state.codeService.update(props.code);
 
-    codeService.onUpdate((code: string) => {
+    state.codeService.onUpdate((code: string) => {
       props.onUpdate && props.onUpdate(code);
     });
   }, [state.classes]);
 
   onUpdate(() => {
-    codeService.setEditable(codeRef, props.editable);
+    if (!state.codeService) {
+      return;
+    }
+
+    state.codeService.setEditable(codeRef, props.editable);
   }, [props.editable]);
 
   return (

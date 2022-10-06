@@ -1,7 +1,8 @@
 import { BaseProps, BaseState, Children } from '~/models';
+import { CodeService } from './code.service';
 
 export type CodeProps = {
-  editable: boolean;
+  editable?: boolean;
   language: string;
   theme: CodeTheme;
   code: string;
@@ -13,6 +14,7 @@ export type CodeProps = {
 
 export type CodeState = {
   classes: { base: string; editor: string };
+  codeService: CodeService;
   value: <T>(x: T, y: string) => string;
 } & BaseState;
 

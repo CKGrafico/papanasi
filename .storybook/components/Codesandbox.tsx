@@ -58,7 +58,6 @@ export function Codesandbox(props: CodesandboxProps) {
   return (
     <div className="codesandbox">
       <Code
-        editable={true}
         language="javascript"
         slotCopy={'Copy'}
         theme="github"
