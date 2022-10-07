@@ -22,10 +22,6 @@ export function getBreakpointClasses(
 /* We are using this because nowadays you cannot have a custom property in a media query */
 // TODO: Observe when changes
 export function initBreakpointChecker() {
-  if (typeof window !== "undefined") {
-    return;
-  }
-
   const styles = getComputedStyle(document.documentElement);
   const medias = breakpoints.map((breakpoint) => ({
     key: breakpoint.value,
@@ -45,7 +41,7 @@ export function initBreakpointChecker() {
   }
 
   medias.forEach(({ key, value }) => {
-    onChangeMedia(key, window.innerWidth > Number(value.replace('px', '')));
-    window.matchMedia(`(min-width: ${value})`).addEventListener('change', (e) => onChangeMedia(key, e.matches));
+    onChangeMedia(key, global.innerWidth > Number(value.replace('px', '')));
+    global.matchMedia(`(min-width: ${value})`).addEventListener('change', (e) => onChangeMedia(key, e.matches));
   });
 }

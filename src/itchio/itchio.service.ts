@@ -1,8 +1,5 @@
 import { addScript, classesToString, waitUntilTrue } from '~/helpers';
-import { ExternalLibrary } from '~/models';
 import { ItchioGameInfo } from './itchio.model';
-
-const global: Window & ExternalLibrary = window;
 
 class ItchioService {
   public getClasses(className: string) {
