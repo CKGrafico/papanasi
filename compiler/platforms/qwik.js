@@ -12,7 +12,7 @@ const DEFAULT_OPTIONS = {
   function customReplace(props) {
     const { outFile } = props;
 
-    prependFile.sync(outFile, '//@ts-nocheck \n');
+    // prependFile.sync(outFile, '//@ts-nocheck \n');
   }
 
   await compiler.compile({ ...DEFAULT_OPTIONS, customReplace });

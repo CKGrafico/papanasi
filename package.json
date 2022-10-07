@@ -15,7 +15,7 @@
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.19 --force-publish",
+    "package": "lerna version 1.0.0-rc.20 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
@@ -32,7 +32,7 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@builder.io/eslint-plugin-mitosis": "^0.0.9",
-    "@builder.io/mitosis-cli": "0.0.25",
+    "@builder.io/mitosis-cli": "0.0.31",
     "@builder.io/qwik": "^0.9.0",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
@@ -97,7 +97,8 @@
     "stylelint-config-standard": "^28.0.0",
     "stylelint-prettier": "^2.0.0",
     "ts-node": "10.9.1",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "vite": "^3.1.6"
   },
   "husky": {
     "hooks": {

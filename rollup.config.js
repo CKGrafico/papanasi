@@ -18,7 +18,8 @@ module.exports = (options) => {
     dts = true,
     compilerOptions = {},
     babelPresets = [],
-    babelPlugins = []
+    babelPlugins = [],
+    disableCoreCompilation = false
   } = options;
 
   const tsconfig = require(path.resolve(__dirname, './tsconfig.json'));
@@ -27,39 +28,41 @@ module.exports = (options) => {
   const defaultPresets = ['@babel/preset-env', ['@babel/preset-typescript', tsconfig.compilerOptions]];
 
   const inputs = [
-    {
-      input: options.input || path.resolve(dir, 'src/index.ts'),
-      output: options.output || [
-        {
-          file: packageJson.main,
-          format: 'cjs',
-          sourcemap: true
+    disableCoreCompilation
+      ? null
+      : {
+          input: options.input || path.resolve(dir, 'src/index.ts'),
+          output: [
+            {
+              file: packageJson.main,
+              format: 'cjs',
+              sourcemap: true
+            },
+            {
+              file: packageJson.module,
+              format: 'esm',
+              sourcemap: true
+            }
+          ],
+          treeshake: true,
+          external,
+          plugins: [
+            ...plugins,
+            resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
+            json(),
+            typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
+            babel({
+              plugins: [['@babel/plugin-proposal-decorators', { legacy: true }, ...babelPlugins]],
+              extensions: ['.js', '.ts', '.tsx'],
+              presets: babelPresets.length > 0 ? [...babelPresets, ...defaultPresets] : defaultPresets,
+              babelHelpers: 'bundled',
+              ignore: [/node_modules/]
+            }),
+            postcss(postcssConfig),
+            peerDepsExternal(),
+            commonjs()
+          ]
         },
-        {
-          file: packageJson.module,
-          format: 'esm',
-          sourcemap: true
-        }
-      ],
-      treeshake: true,
-      external,
-      plugins: [
-        ...plugins,
-        resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
-        json(),
-        typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
-        babel({
-          plugins: [['@babel/plugin-proposal-decorators', { legacy: true }, ...babelPlugins]],
-          extensions: ['.js', '.ts', '.tsx'],
-          presets: babelPresets.length > 0 ? [...babelPresets, ...defaultPresets] : defaultPresets,
-          babelHelpers: 'bundled',
-          ignore: [/node_modules/]
-        }),
-        postcss(postcssConfig),
-        peerDepsExternal(),
-        commonjs()
-      ]
-    },
     {
       input: path.resolve(dir, '../../styles/themes/papanasi/index.css'),
       output: [
@@ -69,16 +72,16 @@ module.exports = (options) => {
         }
       ],
       plugins: [postcss({ ...postcssConfig, inject: false, extract: 'papanasi.css' })]
-    }
+    },
+
+    dts && !disableCoreCompilation
+      ? {
+          input: path.resolve(dir, packageJson.module.replace('.js', '.d.ts')),
+          output: [{ file: path.resolve(dir, 'dist/index.d.ts'), format: 'esm' }],
+          plugins: [dtsPlugin()]
+        }
+      : null
   ];
 
-  if (dts) {
-    inputs.push({
-      input: path.resolve(dir, packageJson.module.replace('.js', '.d.ts')),
-      output: [{ file: path.resolve(dir, 'dist/index.d.ts'), format: 'esm' }],
-      plugins: [dtsPlugin()]
-    });
-  }
-
-  return inputs;
+  return inputs.filter((x) => x);
 };
