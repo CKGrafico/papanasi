@@ -31,7 +31,9 @@ const DEFAULT_OPTIONS = {
       // Fix value names on selectors
       .replace(/='value\((.*, ?)'(.*)'\)'/g, '="value($1\'$2\')"')
       // Fix angular styles property
-      .replace(/\[style\]/g, '[ngStyle]');
+      .replace(/\[style\]/g, '[ngStyle]')
+      // Remove keys in loops
+      .replace(/\[key\]=".*"/g, '');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }
