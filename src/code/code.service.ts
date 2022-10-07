@@ -1,11 +1,12 @@
+//@ts-nocheck
+
 import { CodeJar } from 'codejar';
 import hljs from 'highlight.js/lib/core';
 import { classesToString, wait } from '~/helpers';
 import { CodeTheme, codeThemes } from './code.model';
 
-let styles = [];
-
 export class CodeService {
+  public styles = [];
   public jar: CodeJar;
   public currentThemeIndex = 0;
 
@@ -65,13 +66,13 @@ export class CodeService {
   }
 
   private registerThemes() {
-    if (styles?.length > 0) {
+    if (this.styles?.length > 0) {
       return;
     }
 
-    styles = codeThemes.map((name) => {
+    this.styles = codeThemes.map((name) => {
       const link = document.createElement('link');
-      link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/${name}.min.css`;
+      link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/this.styles/${name}.min.css`;
       link.rel = 'stylesheet';
       link.disabled = true;
       document.head.appendChild(link);
@@ -80,10 +81,10 @@ export class CodeService {
   }
 
   private updateCurrentTheme(theme: CodeTheme) {
-    styles[this.currentThemeIndex].setAttribute('disabled', 'true');
+    this.styles[this.currentThemeIndex].setAttribute('disabled', 'true');
 
-    this.currentThemeIndex = styles.findIndex((style) => style.href.includes(theme));
-    styles[this.currentThemeIndex].removeAttribute('disabled');
+    this.currentThemeIndex = this.styles.findIndex((style) => style.href.includes(theme));
+    this.styles[this.currentThemeIndex].removeAttribute('disabled');
   }
 
   private highlightCode(editor: HTMLElement) {

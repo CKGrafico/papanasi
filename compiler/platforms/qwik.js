@@ -1,4 +1,5 @@
 const compiler = require('../base.compiler');
+const prependFile = require('prepend-file');
 
 const DEFAULT_OPTIONS = {
   target: 'qwik',
@@ -8,5 +9,11 @@ const DEFAULT_OPTIONS = {
 };
 
 (async () => {
-  await compiler.compile({ ...DEFAULT_OPTIONS });
+  function customReplace(props) {
+    const { outFile } = props;
+
+    prependFile.sync(outFile, '//@ts-nocheck \n');
+  }
+
+  await compiler.compile({ ...DEFAULT_OPTIONS, customReplace });
 })();

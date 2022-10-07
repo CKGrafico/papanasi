@@ -19,25 +19,12 @@ export default function Code(props: CodeProps) {
   });
 
   onMount(() => {
-    state.codeService = new CodeService();
-  });
-
-  onUnMount(() => {
-    if (!state.codeService) {
-      return;
-    }
-
-    state.codeService.destroy();
-  });
-
-  onUpdate(() => {
-    if (!state.codeService) {
-      return;
-    }
+    const _codeService = new CodeService();
 
     state.codeService.initialize(codeRef, props.language, props.theme || 'default');
     state.classes = state.codeService.getClasses(props.language, props.className);
-  }, [state.codeService]);
+    state.codeService = _codeService;
+  });
 
   onUpdate(() => {
     if (!state.classes?.editor) {
@@ -46,19 +33,16 @@ export default function Code(props: CodeProps) {
 
     state.loaded = true;
     state.codeService.update(props.code);
+    state.codeService.setEditable(codeRef, props.editable);
 
     state.codeService.onUpdate((code: string) => {
       props.onUpdate && props.onUpdate(code);
     });
-  }, [state.classes]);
+  }, [state.classes, props.editable]);
 
-  onUpdate(() => {
-    if (!state.codeService) {
-      return;
-    }
-
-    state.codeService.setEditable(codeRef, props.editable);
-  }, [props.editable]);
+  onUnMount(() => {
+    state.loaded && state.codeService.destroy();
+  });
 
   return (
     <div class={state.classes.base}>
