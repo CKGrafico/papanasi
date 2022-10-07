@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/preact",
-  "version": "1.0.0-rc.18",
+  "version": "1.0.0-rc.19",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Preact UI Library",
   "main": "./dist/papanasi-preact.umd.js",
