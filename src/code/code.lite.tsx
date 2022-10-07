@@ -19,11 +19,11 @@ export default function Code(props: CodeProps) {
   });
 
   onMount(() => {
-    const _codeService = new CodeService();
+    const service = new CodeService();
 
-    state.codeService.initialize(codeRef, props.language, props.theme || 'default');
-    state.classes = state.codeService.getClasses(props.language, props.className);
-    state.codeService = _codeService;
+    service.initialize(codeRef, props.language, props.theme || 'default');
+    state.classes = service.getClasses(props.language, props.className);
+    state.codeService = service;
   });
 
   onUpdate(() => {

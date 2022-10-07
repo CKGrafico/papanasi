@@ -15,8 +15,8 @@
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "release": "lerna version 1.0.0-rc.16 --force-publish",
-    "package": "lerna publish from-package --force-publish"
+    "package": "lerna version 1.0.0-rc.18 --force-publish",
+    "publish": "lerna publish from-package --force-publish"
   },
   "dependencies": {
     "codejar": "^3.6.0",
