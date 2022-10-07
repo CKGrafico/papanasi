@@ -72,7 +72,7 @@ export class CodeService {
 
     this.styles = codeThemes.map((name) => {
       const link = document.createElement('link');
-      link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/this.styles/${name}.min.css`;
+      link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/${name}.min.css`;
       link.rel = 'stylesheet';
       link.disabled = true;
       document.head.appendChild(link);
