@@ -5,7 +5,8 @@ const DEFAULT_OPTIONS = {
   target: 'qwik',
   extension: 'tsx',
   state: 'useState',
-  styles: 'style-tag'
+  styles: 'style-tag',
+  typescript: true // TODO
 };
 
 (async () => {
