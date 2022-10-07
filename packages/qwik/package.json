@@ -21,8 +21,8 @@
   ],
   "scripts": {
     "prebuild": "yarn install",
-    "build": "rollup -c",
-    "postbuild": "node qwik.postbuild.js && rimraf dist/build"
+    "build": "qwik build && rollup -c",
+    "build.client": "vite build --mode lib"
   },
   "publishConfig": {
     "access": "public"
