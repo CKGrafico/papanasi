@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   generateAngularCodeSandboxLink,
   generatePreactCodeSandboxLink,
+  generateQwikCodeSandboxLink,
   generateReactCodeSandboxLink,
   generateSolidCodeSandboxLink,
   generateSvelteCodeSandboxLink,
@@ -13,6 +14,7 @@ import { Code } from '../../packages/react/src';
 enum CodesandboxPlatform {
   Angular = 'angular',
   Preact = 'preact',
+  Qwik = 'qwik',
   React = 'react',
   Solid = 'solid',
   Svelte = 'svelte',
@@ -31,6 +33,7 @@ type CodesandboxProps = {
 const generators = {
   [CodesandboxPlatform.Angular]: generateAngularCodeSandboxLink,
   [CodesandboxPlatform.Preact]: generatePreactCodeSandboxLink,
+  [CodesandboxPlatform.Qwik]: generateQwikCodeSandboxLink,
   [CodesandboxPlatform.React]: generateReactCodeSandboxLink,
   [CodesandboxPlatform.Solid]: generateSolidCodeSandboxLink,
   [CodesandboxPlatform.Svelte]: generateSvelteCodeSandboxLink,
@@ -41,6 +44,7 @@ const generators = {
 const icons = {
   [CodesandboxPlatform.Angular]: 'angular-icon',
   [CodesandboxPlatform.Preact]: 'preact',
+  [CodesandboxPlatform.Qwik]: 'qwik',
   [CodesandboxPlatform.React]: 'react',
   [CodesandboxPlatform.Solid]: 'solidjs-icon',
   [CodesandboxPlatform.Svelte]: 'svelte-icon',
