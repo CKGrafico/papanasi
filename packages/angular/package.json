@@ -1,6 +1,7 @@
 {
   "name": "@papanasi/angular",
   "version": "1.0.0-rc.25",
+  "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Angular UI Library",
   "main": "./dist/papanasi-angular.umd.js",

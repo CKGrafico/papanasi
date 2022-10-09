@@ -1,6 +1,7 @@
 {
   "name": "@papanasi/react",
   "version": "1.0.0-rc.25",
+  "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi React UI Library",
   "main": "./dist/papanasi-react.umd.js",

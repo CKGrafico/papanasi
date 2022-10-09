@@ -1,6 +1,7 @@
 {
   "name": "@papanasi/qwik",
   "version": "1.0.0-rc.25",
+  "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Qwik UI Library",
   "main": "./dist/papanasi-qwik.umd.js",
