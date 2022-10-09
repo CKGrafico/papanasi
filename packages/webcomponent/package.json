@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/webcomponents",
-  "version": "1.0.0-rc.25",
+  "version": "1.0.0-rc.26",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
@@ -12,6 +12,10 @@
     ".": {
       "import": "./dist/papanasi-webcomponents.es.js",
       "require": "./dist/papanasi-webcomponents.umd.js"
+    },
+    "./dist/papanasi.css": {
+      "import": "./dist/papanasi.css",
+      "require": "./dist/papanasi.css"
     }
   },
   "files": [
