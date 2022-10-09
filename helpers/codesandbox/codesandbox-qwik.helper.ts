@@ -10,7 +10,7 @@ import '@papanasi/qwik/dist/style.css';
 import '@papanasi/qwik/dist/papanasi.css';${[...extensions, ''].join('(); \n')}
 
 export default component$(() => {
-   return (${code}
+  return (${code}
   <!-- Temporal url meanwhil codesandbox works -->
   );
 });
