@@ -1,4 +1,5 @@
 import { Breakpoint, breakpoints } from '../models';
+import { safeGlobal } from './window.helper';
 
 export function getBreakpointClasses(
   xs: string | number,
@@ -41,7 +42,7 @@ export function initBreakpointChecker() {
   }
 
   medias.forEach(({ key, value }) => {
-    onChangeMedia(key, window?.innerWidth > Number(value.replace('px', '')));
-    window?.matchMedia(`(min-width: ${value})`).addEventListener('change', (e) => onChangeMedia(key, e.matches));
+    onChangeMedia(key, safeGlobal.innerWidth > Number(value.replace('px', '')));
+    safeGlobal.matchMedia(`(min-width: ${value})`).addEventListener('change', (e) => onChangeMedia(key, e.matches));
   });
 }
