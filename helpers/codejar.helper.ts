@@ -1,3 +1,4 @@
+// Pending of https://github.com/antonmedv/codejar/pull/87
 import { getDocument, getWindow } from 'ssr-window';
 
 const window = getWindow();
