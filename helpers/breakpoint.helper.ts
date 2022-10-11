@@ -1,4 +1,4 @@
-import { getWindow } from 'ssr-window';
+import { getDocument, getWindow } from 'ssr-window';
 import { Breakpoint, breakpoints } from '../models';
 
 export function getBreakpointClasses(
@@ -23,25 +23,28 @@ export function getBreakpointClasses(
 /* We are using this because nowadays you cannot have a custom property in a media query */
 // TODO: Observe when changes
 export function initBreakpointChecker() {
-  const styles = getComputedStyle(document.documentElement);
+  const window = getWindow();
+  const document = getDocument();
+
+  const styles = window.getComputedStyle(document.documentElement);
   const medias = breakpoints.map((breakpoint) => ({
     key: breakpoint.value,
     value: styles.getPropertyValue(`--pa-breakpoint-${breakpoint.value}`).trim()
   }));
 
-  const $body = document.body;
+  if (!window.matchMedia || !document.body || !document.body.classList) {
+    return;
+  }
 
   function onChangeMedia(media, matches) {
     const className = `breakpoint-${media.trim()}`;
 
     if (matches) {
-      $body.classList.add(className);
+      document.body.classList.add(className);
     } else {
-      $body.classList.remove(className);
+      document.body.classList.remove(className);
     }
   }
-
-  const window = getWindow();
 
   medias.forEach(({ key, value }) => {
     onChangeMedia(key, window.innerWidth > Number(value.replace('px', '')));

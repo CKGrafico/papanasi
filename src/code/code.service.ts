@@ -1,8 +1,8 @@
 //@ts-nocheck
 
-import { CodeJar } from 'codejar';
+// import { CodeJar } from 'codejar';
 import hljs from 'highlight.js/lib/core';
-import { classesToString, wait } from '~/helpers';
+import { classesToString, CodeJar, wait } from '~/helpers';
 import { CodeTheme, codeThemes } from './code.model';
 
 export class CodeService {
