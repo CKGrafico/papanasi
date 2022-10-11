@@ -11,6 +11,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
 # [1.0.0-rc.27](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.26...v1.0.0-rc.27) (2022-10-09)
 
 **Note:** Version bump only for package @papanasi/angular
