@@ -15,14 +15,15 @@
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.28 --force-publish",
+    "package": "lerna version 1.0.0-rc.29 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
     "codejar": "^3.6.0",
     "color-hash": "^2.0.1",
     "copy-to-clipboard": "^3.3.2",
-    "highlight.js": "^11.6.0"
+    "highlight.js": "^11.6.0",
+    "ssr-window": "^4.0.2"
   },
   "devDependencies": {
     "@angular/core": "^14.2.3",

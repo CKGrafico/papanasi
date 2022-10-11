@@ -1,5 +1,5 @@
+import { getWindow } from 'ssr-window';
 import { Breakpoint, breakpoints } from '../models';
-import { safeGlobal } from './window.helper';
 
 export function getBreakpointClasses(
   xs: string | number,
@@ -41,8 +41,10 @@ export function initBreakpointChecker() {
     }
   }
 
+  const window = getWindow();
+
   medias.forEach(({ key, value }) => {
-    onChangeMedia(key, safeGlobal.innerWidth > Number(value.replace('px', '')));
-    safeGlobal.matchMedia(`(min-width: ${value})`).addEventListener('change', (e) => onChangeMedia(key, e.matches));
+    onChangeMedia(key, window.innerWidth > Number(value.replace('px', '')));
+    window.matchMedia(`(min-width: ${value})`).addEventListener('change', (e) => onChangeMedia(key, e.matches));
   });
 }

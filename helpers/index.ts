@@ -7,4 +7,3 @@ export * from './element.helper';
 export * from './inject-script.helper';
 export * from './object.helper';
 export * from './wait.helper';
-export * from './window.helper';
