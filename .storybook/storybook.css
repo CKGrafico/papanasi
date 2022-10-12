@@ -20,14 +20,8 @@
   opacity: 0;
 }
 
-.sidebar-item.sidebar-item:hover {
-  color: var(--pa-color-secondary-darker);
-  background-color: var(--pa-color-secondary-brighter);
-}
-
 .sidebar-item.sidebar-item:focus {
   color: var(--pa-color-secondary-darker);
-  background-color: var(--pa-color-secondary-bright) !important;
 }
 
 /* Titles */

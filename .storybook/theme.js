@@ -8,7 +8,7 @@ export const Themes = {
     brandImage: 'https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-github.svg',
     fontBase: 'Source Sans Pro, sans-serif',
     colorPrimary: '#0675C1',
-    colorSecondary: '#19426c',
+    colorSecondary: '#ad99ff',
 
     // UI
     appBg: '#f3f3f3',
