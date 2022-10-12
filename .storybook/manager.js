@@ -1,5 +1,6 @@
 import { addons } from '@storybook/addons';
 import favicon from '../docs/resources/favicon.ico';
+import './storybook.css';
 import { Themes } from './theme';
 
 const link = document.createElement('link');

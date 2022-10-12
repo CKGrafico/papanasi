@@ -1,15 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap');
 @import '../styles/build.css';
+@import '../styles/variables.css';
 
-* {
-  box-sizing: border-box;
+/* Manager */
+#documentation {
+  display: none;
 }
 
-body {
-  font-family: var(--pa-font-family);
-  font-size: var(--pa-font-size);
-  font-weight: var(--pa-font-weight-normal);
+.sidebar-item.sidebar-item {
+  height: 2rem;
+  display: flex;
+  align-items: center;
 }
+
+.sidebar-item svg {
+  display: none;
+}
+
+.sidebar-item span {
+  opacity: 0;
+}
+
+.sidebar-item.sidebar-item:hover {
+  color: var(--pa-color-secondary-darker);
+  background-color: var(--pa-color-secondary-brighter);
+}
+
+.sidebar-item.sidebar-item:focus {
+  color: var(--pa-color-secondary-darker);
+  background-color: var(--pa-color-secondary-bright) !important;
+}
+
+/* Titles */
 
 .sbdocs-h1 {
   align-self: center;
@@ -49,6 +70,7 @@ body {
   align-items: flex-start;
 }
 
+/* Docs */
 .docs-story {
   position: relative;
 

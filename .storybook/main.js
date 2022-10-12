@@ -1,5 +1,4 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
 
 module.exports = {
   stories: ['../docs/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
@@ -11,6 +10,12 @@ module.exports = {
     '@storybook/addon-postcss'
   ],
   framework: '@storybook/react',
+  previewHead: (head) => `
+    ${head}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  `,
   webpackFinal: async (config, options) => {
     // Extract css files
     const cssRule = config.module.rules.find((x) => x.test.toString().includes('css'));
