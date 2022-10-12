@@ -1,6 +1,7 @@
 {
   "name": "@papanasi/qwik",
-  "version": "1.0.0-rc.25",
+  "version": "1.0.0-rc.30",
+  "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Qwik UI Library",
   "main": "./dist/papanasi-qwik.umd.js",
@@ -11,6 +12,14 @@
     ".": {
       "import": "./dist/papanasi-qwik.es.js",
       "require": "./dist/papanasi-qwik.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    },
+    "./dist/papanasi.css": {
+      "import": "./dist/papanasi.css",
+      "require": "./dist/papanasi.css"
     }
   },
   "peerDependencies": {

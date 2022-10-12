@@ -38,7 +38,7 @@
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
       <strong>Qwik</strong> <br/>
       <sub>
-        <a href="" target="_blank"><img src="https://img.shields.io/badge/Sandbox-Qwik-5048d7?logoColor=white&logo=codesandbox" alt="Qwik Sandbox" /></a>
+        <a href="https://stackblitz.com/edit/qwik-starter-i6prxe?file=src%2Fglobal.css,src%2Froot.tsx,src%2Fentry.dev.tsx,package-lock.json" target="_blank"><img src="https://img.shields.io/badge/Stackblitz-Qwik-5048d7?logoColor=white&logo=stackblitz" alt="Qwik Sandbox" /></a>
         <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/qwik?label=Installs&color=blue&logoColor=white&logo=qwiklabs" alt="Qwik downloads" /></a>
       </sub>
     </td>
@@ -116,12 +116,12 @@ This library born as a pet project to create universal components, easy to exten
       <strong>Container</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-container--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
@@ -129,12 +129,12 @@ This library born as a pet project to create universal components, easy to exten
       <strong>Row</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-row--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
@@ -142,12 +142,12 @@ This library born as a pet project to create universal components, easy to exten
       <strong>Column</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-column--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
@@ -155,12 +155,12 @@ This library born as a pet project to create universal components, easy to exten
       <strong>Grid</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/layout-grid--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
@@ -175,12 +175,12 @@ This library born as a pet project to create universal components, easy to exten
       <strong>Avatar</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-avatar--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
@@ -188,25 +188,25 @@ This library born as a pet project to create universal components, easy to exten
       <strong>Button</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-button--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
       <img src="https://tabler-icons.io/static/tabler-icons/icons/code-circle.svg" width="55" title="Code"> <br/>
       <strong>Code</strong> <br/>
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=svelte" alt="Svelte status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=vuedotjs" alt="Vue status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-code--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
@@ -214,12 +214,12 @@ This library born as a pet project to create universal components, easy to exten
       <strong>Pill</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-pill--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
@@ -229,7 +229,7 @@ This library born as a pet project to create universal components, easy to exten
       <strong>Spinner</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
@@ -247,14 +247,14 @@ This library born as a pet project to create universal components, easy to exten
     <td align="center">
       <img src="https://static.itch.io/images/itchio-textless-black.svg" width="55" title="Itchio"> <br/>
       <strong>Itchio</strong> <br/>
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/enterprise-itchio--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>

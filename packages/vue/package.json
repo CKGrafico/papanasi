@@ -1,6 +1,7 @@
 {
   "name": "@papanasi/vue",
-  "version": "1.0.0-rc.25",
+  "version": "1.0.0-rc.30",
+  "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Vue UI Library",
   "main": "./dist/papanasi-vue.umd.js",
@@ -11,6 +12,10 @@
     ".": {
       "import": "./dist/papanasi-vue.es.js",
       "require": "./dist/papanasi-vue.umd.js"
+    },
+    "./dist/papanasi.css": {
+      "import": "./dist/papanasi.css",
+      "require": "./dist/papanasi.css"
     }
   },
   "peerDependencies": {

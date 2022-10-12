@@ -1,5 +1,5 @@
 const compiler = require('../base.compiler');
-const prependFile = require('prepend-file');
+const fs = require('fs');
 
 const DEFAULT_OPTIONS = {
   target: 'qwik',
@@ -11,9 +11,14 @@ const DEFAULT_OPTIONS = {
 
 (async () => {
   function customReplace(props) {
-    const { outFile } = props;
+    const { outFile, file } = props;
 
-    // prependFile.sync(outFile, '//@ts-nocheck \n');
+    const name = file.name.replace('.lite', '');
+    const data = fs.readFileSync(outFile, 'utf8');
+    const result = data
+      // fix import css
+      .replace(/\.service"\;/g, `.service";\nimport '../../../src/${name}/${name}.css';`);
+    fs.writeFileSync(outFile, result, 'utf8');
   }
 
   await compiler.compile({ ...DEFAULT_OPTIONS, customReplace });

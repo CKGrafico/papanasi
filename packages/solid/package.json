@@ -1,6 +1,7 @@
 {
   "name": "@papanasi/solid",
-  "version": "1.0.0-rc.25",
+  "version": "1.0.0-rc.30",
+  "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Solid JS UI Library",
   "main": "./dist/papanasi-solid.umd.js",
@@ -11,6 +12,10 @@
     ".": {
       "import": "./dist/papanasi-solid.es.js",
       "require": "./dist/papanasi-solid.umd.js"
+    },
+    "./dist/papanasi.css": {
+      "import": "./dist/papanasi.css",
+      "require": "./dist/papanasi.css"
     }
   },
   "peerDependencies": {

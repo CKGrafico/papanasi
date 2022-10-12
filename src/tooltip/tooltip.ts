@@ -1,3 +1,4 @@
+import { getDocument, getWindow } from 'ssr-window';
 import { querySelectorAllObservable } from '../../helpers';
 import './tooltip.css';
 
@@ -36,8 +37,10 @@ function manageElementTitle(element: HTMLElement) {
 }
 
 function onAddElement(rootElement: HTMLElement, element: HTMLElement) {
+  const window = getWindow();
+
   const title = manageElementTitle(element);
-  const styles = getComputedStyle(rootElement);
+  const styles = window.getComputedStyle(rootElement);
   const transitionTime = styles.getPropertyValue(`--pa-tooltip-transition-time`).trim();
 
   const state = {
@@ -80,6 +83,7 @@ function onAddElement(rootElement: HTMLElement, element: HTMLElement) {
 }
 
 function createTooltipElement(rootElement: HTMLElement) {
+  const document = getDocument();
   const element = document.createElement('div');
   element.classList.add('pa-tooltip', HIDDEN_CLASS);
   element.setAttribute('aria-hidden', 'true');
@@ -90,6 +94,7 @@ function createTooltipElement(rootElement: HTMLElement) {
 }
 
 export function useTooltipExtension(rootElement?: HTMLElement) {
+  const document = getDocument();
   const element = rootElement || document.body;
 
   if (initialized) {

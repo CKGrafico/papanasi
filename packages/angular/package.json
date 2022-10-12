@@ -1,6 +1,7 @@
 {
   "name": "@papanasi/angular",
-  "version": "1.0.0-rc.25",
+  "version": "1.0.0-rc.30",
+  "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Angular UI Library",
   "main": "./dist/papanasi-angular.umd.js",
@@ -11,6 +12,10 @@
     ".": {
       "import": "./dist/papanasi-angular.es.js",
       "require": "./dist/papanasi-angular.umd.js"
+    },
+    "./dist/papanasi.css": {
+      "import": "./dist/papanasi.css",
+      "require": "./dist/papanasi.css"
     }
   },
   "peerDependencies": {

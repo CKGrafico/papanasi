@@ -3,6 +3,71 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.30](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.29...v1.0.0-rc.30) (2022-10-11)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [1.0.0-rc.29](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.28...v1.0.0-rc.29) (2022-10-11)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [1.0.0-rc.28](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.27...v1.0.0-rc.28) (2022-10-11)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [1.0.0-rc.27](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.26...v1.0.0-rc.27) (2022-10-09)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+# [1.0.0-rc.26](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.25...v1.0.0-rc.26) (2022-10-09)
+
+**Note:** Version bump only for package papanasi
+
+
+
+
+
+
 # [1.0.0-rc.25](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.24...v1.0.0-rc.25) (2022-10-07)
 
 **Note:** Version bump only for package papanasi
