@@ -11,12 +11,6 @@ module.exports = {
     '@a110/storybook-expand-all'
   ],
   framework: '@storybook/react',
-  previewHead: (head) => `
-    ${head}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-  `,
   webpackFinal: async (config, options) => {
     // Extract css files
     const cssRule = config.module.rules.find((x) => x.test.toString().includes('css'));

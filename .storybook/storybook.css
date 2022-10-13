@@ -1,13 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@100;300;400;600&display=swap');
+
 @import '../styles/build.css';
 @import '../styles/variables.css';
 
 /* Manager */
-.sidebar-item.sidebar-item {
-  height: 2rem;
-  display: flex;
-  align-items: center;
-}
-
 .sidebar-item svg,
 .sidebar-subheading-action.sidebar-subheading-action,
 .sidebar-subheading span {
@@ -25,6 +21,33 @@
 button.sidebar-item,
 .sidebar-subheading button {
   pointer-events: none;
+}
+
+.sidebar-subheading.sidebar-subheading {
+  padding-left: 2.15rem;
+  letter-spacing: normal;
+  color: inherit;
+  text-transform: none;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.sidebar-item.sidebar-item {
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+button.sidebar-item.sidebar-item {
+  margin-left: 0.6rem;
+  padding-left: 0rem;
+  font-weight: bold;
+}
+
+button.sidebar-item.sidebar-item ~ div > a {
+  padding-left: 2rem;
 }
 
 /* Titles */
