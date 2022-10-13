@@ -14,7 +14,18 @@
   opacity: 0;
 }
 
-.sidebar-item.sidebar-item:focus {
+.sidebar-item.sidebar-item {
+  transition-property: var(--pa-transition-colors);
+  transition-duration: var(--pa-transition-duration-normal);
+}
+
+.sidebar-item.sidebar-item:hover {
+  color: var(--pa-color-secondary-darker);
+  background-color: var(--pa-color-secondary-brightest);
+}
+
+.sidebar-item.sidebar-item:focus,
+.sidebar-item.sidebar-item[data-selected='true'] {
   color: var(--pa-color-secondary-darker);
 }
 
