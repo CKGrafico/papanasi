@@ -14,9 +14,9 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'Documentation',
+        '📗Documentation',
         ['Introduction', 'Elements', 'Customization'],
-        'Elements',
+        '🧩Elements',
         ['Layout', ['Container', 'Row', 'Column', 'Grid'], 'Components']
       ]
     }

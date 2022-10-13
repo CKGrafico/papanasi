@@ -14,7 +14,7 @@
    <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=white" alt="Sponsor" /></a>
 </p>
 
-### 🧩 Platforms 
+### 🚀 Platforms 
 
 <table align="center">
   <tr>
@@ -102,7 +102,7 @@ This library born as a pet project to create universal components, easy to exten
 * ...should be inspired by other UI Libraries and **don't reinvent the wheel**.
 * ...should be easy to create new **variants**.
 
-### 🔨 Elements Showcase
+### 🧩 Elements Showcase
 
 <table align="center">
   <tr>

@@ -50,6 +50,17 @@ button.sidebar-item.sidebar-item ~ div > a {
   padding-left: 2rem;
 }
 
+/* Main */
+#root div[role='main'] {
+  top: 0 !important;
+  height: 100vh !important;
+}
+
+#root div[role='main'] > div {
+  box-shadow: none;
+  border-radius: 0;
+}
+
 /* Titles */
 
 .sbdocs-h1 {
