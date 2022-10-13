@@ -26,6 +26,7 @@
     "ssr-window": "^4.0.2"
   },
   "devDependencies": {
+    "@a110/storybook-expand-all": "^1.1.1",
     "@angular/core": "^14.2.3",
     "@babel/core": "^7.19.1",
     "@babel/plugin-proposal-decorators": "^7.19.1",

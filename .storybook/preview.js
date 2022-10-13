@@ -16,9 +16,8 @@ export const parameters = {
       order: [
         'Documentation',
         ['Introduction', 'Elements', 'Customization'],
-        'Layout',
-        ['Container', 'Row', 'Column', 'Grid'],
-        'Components'
+        'Elements',
+        ['Layout', ['Container', 'Row', 'Column', 'Grid'], 'Components']
       ]
     }
   },

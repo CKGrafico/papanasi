@@ -9,9 +9,9 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/search?q=%40papanasi"><img src="https://img.shields.io/npm/v/@papanasi/react?color=cb0303&logo=npm&label=version" alt="Package version" /></a>
-  <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=white" alt="Sponsor" /></a>
   <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/stars/CKGrafico/Papanasi.svg?logoColor=white&logo=apachespark&color=4D8C6F" alt="GitHub stars" /></a>
   <a href="https://twitter.com/CKGrafico"><img src="https://img.shields.io/badge/Tweet-project?logo=twitter&color=00acee&logoColor=FFFFFF" alt="Tweet" /></a>
+   <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=white" alt="Sponsor" /></a>
 </p>
 
 ### 🧩 Platforms 

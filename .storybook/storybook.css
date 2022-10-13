@@ -2,17 +2,15 @@
 @import '../styles/variables.css';
 
 /* Manager */
-#documentation {
-  display: none;
-}
-
 .sidebar-item.sidebar-item {
   height: 2rem;
   display: flex;
   align-items: center;
 }
 
-.sidebar-item svg {
+.sidebar-item svg,
+.sidebar-subheading-action.sidebar-subheading-action,
+.sidebar-subheading span {
   display: none;
 }
 
@@ -22,6 +20,11 @@
 
 .sidebar-item.sidebar-item:focus {
   color: var(--pa-color-secondary-darker);
+}
+
+button.sidebar-item,
+.sidebar-subheading button {
+  pointer-events: none;
 }
 
 /* Titles */

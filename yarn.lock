@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@a110/storybook-expand-all@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@a110/storybook-expand-all/-/storybook-expand-all-1.1.1.tgz#959eb3cd68d2a48909286867b8177de96078f49c"
+  integrity sha512-aVTWDn3TZSubJsLGqDYZqqNyYZL+Ds8vQJ0BMIcwfM8oU/OL7We9P9AED9vxPIJEXN6ikr9Rg4A5kHHf3Log6Q==
+
 "@ampproject/remapping@^2.1.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.2.0.tgz#56c133824780de3174aed5ab6834f3026790154d"

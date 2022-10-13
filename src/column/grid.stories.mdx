@@ -5,7 +5,7 @@ import { getBreakpointArgTypes } from '../../helpers';
 import { Customization } from '../../.storybook/components';
 
 <Meta
-  title="Layout/Grid"
+  title="Elements/Layout/Grid"
   component={Column}
   argTypes={{
     fluid: {
@@ -73,7 +73,7 @@ Grids are not components itslef but the association between `Containers`, `Rows`
 ## Showcase
 
 <Canvas>
-  <Story name="Default" args={{ fluid: true }}>
+  <Story name="Grid" args={{ fluid: true }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -92,4 +92,4 @@ Grids are not components itslef but the association between `Containers`, `Rows`
 
 ### Properties
 
-<ArgsTable story="Default" of={Column} />
+<ArgsTable story="Grid" of={Column} />
