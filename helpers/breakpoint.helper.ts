@@ -1,5 +1,6 @@
 import { getDocument, getWindow } from 'ssr-window';
 import { Breakpoint, breakpoints } from '../models';
+import { wait } from './wait.helper';
 
 export function getBreakpointClasses(
   xs: string | number,
@@ -21,8 +22,8 @@ export function getBreakpointClasses(
 }
 
 /* We are using this because nowadays you cannot have a custom property in a media query */
-// TODO: Observe when changes
-export function initBreakpointChecker() {
+
+function checkBreakpoints() {
   const window = getWindow();
   const document = getDocument();
 
@@ -50,4 +51,9 @@ export function initBreakpointChecker() {
     onChangeMedia(key, window.innerWidth > Number(value.replace('px', '')));
     window.matchMedia(`(min-width: ${value})`).addEventListener('change', (e) => onChangeMedia(key, e.matches));
   });
+}
+
+export async function initBreakpointChecker() {
+  await wait();
+  checkBreakpoints();
 }
