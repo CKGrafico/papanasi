@@ -10,6 +10,7 @@
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
+  width: 100%;
 }
 
 .pa-column {

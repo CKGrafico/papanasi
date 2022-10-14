@@ -9,12 +9,12 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/search?q=%40papanasi"><img src="https://img.shields.io/npm/v/@papanasi/react?color=cb0303&logo=npm&label=version" alt="Package version" /></a>
-  <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=white" alt="Sponsor" /></a>
   <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/stars/CKGrafico/Papanasi.svg?logoColor=white&logo=apachespark&color=4D8C6F" alt="GitHub stars" /></a>
   <a href="https://twitter.com/CKGrafico"><img src="https://img.shields.io/badge/Tweet-project?logo=twitter&color=00acee&logoColor=FFFFFF" alt="Tweet" /></a>
+   <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=white" alt="Sponsor" /></a>
 </p>
 
-### 🧩 Platforms 
+### 🚀 Platforms 
 
 <table align="center">
   <tr>
@@ -102,7 +102,7 @@ This library born as a pet project to create universal components, easy to exten
 * ...should be inspired by other UI Libraries and **don't reinvent the wheel**.
 * ...should be easy to create new **variants**.
 
-### 🔨 Elements Showcase
+### 🧩 Elements Showcase
 
 <table align="center">
   <tr>
@@ -307,7 +307,6 @@ To learn more about Papanasi, check [the documentation](http://papanasi.js.org/)
 To build the project run:
 
 ```
-> yarn install
 > yarn compile
 ```
 
@@ -345,4 +344,5 @@ Finally, to launch storybook use:
 [![Contributors](https://contrib.rocks/image?repo=ckgrafico/papanasi)](https://github.com/CKGrafico/papanasi/graphs/contributors)
 
 ---
+
 Made with 🍕 by [Quique Fdez Guerra](https://twitter.com/ckgrafico)

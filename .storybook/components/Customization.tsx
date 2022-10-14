@@ -7,6 +7,7 @@ type CustomizationProps = {
   css?: string;
   selector?: string;
   showCode?: boolean;
+  showSelect?: boolean;
   hidden?: boolean;
 };
 
@@ -15,9 +16,7 @@ const templateCSS = (css, selector = '') => `/**
 * Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css
 **/
 
-.docs-story ${selector} {
-${css}
-}
+.docs-story ${selector} {${css.replace(/    /g, '  ')}}
 `;
 
 const defaultCss = `
@@ -32,7 +31,7 @@ const defaultCss = `
 
 // TODO: Use our select in the future?
 export function Customization(props: CustomizationProps) {
-  const { css = defaultCss, showCode = true, selector = '', hidden = false } = props;
+  const { css = defaultCss, showCode = true, showSelect = true, selector = '', hidden = false } = props;
 
   const [selected, setSelected] = useState('papanasi');
   const [customCss, setCustomCss] = useState('');
@@ -67,20 +66,18 @@ export function Customization(props: CustomizationProps) {
 
       {!hidden && (
         <Container className="customization">
-          <Row>
-            <Column xs={'content'} className="customization__label">
-              Choose a theme
-            </Column>
-            <Column xs={'content'}>
-              <select onChange={onChangeSelect} defaultValue={selected}>
+          {showSelect && (
+            <div className="customization__theme">
+              <span className="customization__sublabel">Choose a theme</span>
+              <select onChange={onChangeSelect} defaultValue={selected} className="customization__select">
                 {themes.map((theme) => (
                   <option key={theme.value} value={theme.value}>
                     {theme.name}
                   </option>
                 ))}
               </select>
-            </Column>
-          </Row>
+            </div>
+          )}
           {css && selected !== 'none' && showCode && (
             <>
               <Row>
