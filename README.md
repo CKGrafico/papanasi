@@ -307,7 +307,6 @@ To learn more about Papanasi, check [the documentation](http://papanasi.js.org/)
 To build the project run:
 
 ```
-> yarn install
 > yarn compile
 ```
 
@@ -345,4 +344,5 @@ Finally, to launch storybook use:
 [![Contributors](https://contrib.rocks/image?repo=ckgrafico/papanasi)](https://github.com/CKGrafico/papanasi/graphs/contributors)
 
 ---
+
 Made with 🍕 by [Quique Fdez Guerra](https://twitter.com/ckgrafico)

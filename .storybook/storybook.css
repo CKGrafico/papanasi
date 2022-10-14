@@ -115,6 +115,7 @@ button.sidebar-item.sidebar-item ~ div > a {
 /* Docs */
 .docs-story {
   position: relative;
+  font-family: 'Source Sans Pro', sans-serif;
 
   > div:first-child {
     width: 100%;
@@ -152,4 +153,10 @@ button.sidebar-item.sidebar-item ~ div > a {
   .pa-spinner {
     margin-right: 0.5rem;
   }
+}
+
+.codesandbox,
+.pa-container,
+.pa-tooltip {
+  font-family: 'Source Sans Pro', sans-serif;
 }

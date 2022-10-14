@@ -7,6 +7,7 @@ type CustomizationProps = {
   css?: string;
   selector?: string;
   showCode?: boolean;
+  hidden?: boolean;
 };
 
 const templateCSS = (css, selector = '') => `/**
@@ -31,7 +32,7 @@ const defaultCss = `
 
 // TODO: Use our select in the future?
 export function Customization(props: CustomizationProps) {
-  const { css = defaultCss, showCode = true, selector = '' } = props;
+  const { css = defaultCss, showCode = true, selector = '', hidden = false } = props;
 
   const [selected, setSelected] = useState('papanasi');
   const [customCss, setCustomCss] = useState('');
@@ -60,38 +61,48 @@ export function Customization(props: CustomizationProps) {
   }
 
   return (
-    <Container className="customization">
+    <>
       {stylePath && <link rel="stylesheet" type="text/css" href={stylePath} />}
       <style>{customCss}</style>
 
-      <Row>
-        <Column xs={'content'} className="customization__label">
-          Choose a theme
-        </Column>
-        <Column xs={'content'}>
-          <select onChange={onChangeSelect} defaultValue={selected}>
-            {themes.map((theme) => (
-              <option key={theme.value} value={theme.value}>
-                {theme.name}
-              </option>
-            ))}
-          </select>
-        </Column>
-      </Row>
-      {css && selected !== 'none' && showCode && (
-        <>
+      {!hidden && (
+        <Container className="customization">
           <Row>
             <Column xs={'content'} className="customization__label">
-              Customize CSS properties
+              Choose a theme
+            </Column>
+            <Column xs={'content'}>
+              <select onChange={onChangeSelect} defaultValue={selected}>
+                {themes.map((theme) => (
+                  <option key={theme.value} value={theme.value}>
+                    {theme.name}
+                  </option>
+                ))}
+              </select>
             </Column>
           </Row>
-          <Row>
-            <Column xs={'fill'}>
-              <Code onUpdate={onChangeCss} editable theme="github" code={templateCSS(css, selector)} language={'css'} />
-            </Column>
-          </Row>
-        </>
+          {css && selected !== 'none' && showCode && (
+            <>
+              <Row>
+                <Column xs={'content'} className="customization__label">
+                  Customize CSS properties
+                </Column>
+              </Row>
+              <Row>
+                <Column xs={'fill'}>
+                  <Code
+                    onUpdate={onChangeCss}
+                    editable
+                    theme="github"
+                    code={templateCSS(css, selector)}
+                    language={'css'}
+                  />
+                </Column>
+              </Row>
+            </>
+          )}
+        </Container>
       )}
-    </Container>
+    </>
   );
 }
