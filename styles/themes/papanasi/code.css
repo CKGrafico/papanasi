@@ -41,29 +41,10 @@
   .language-css,
   .language-scss {
     .hljs-number {
-      position: relative;
-      color: transparent;
+      @mixin background-opacity var(--number-color), 0.05;
 
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--number-color);
-      }
-
-      &:after {
-        content: attr(data-number);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        color: var(--pa-color-basic-brightest);
-        mix-blend-mode: difference;
-      }
+      color: var(--number-color);
+      filter: brightness(0.9);
     }
   }
 }

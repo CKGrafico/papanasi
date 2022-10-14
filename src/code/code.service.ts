@@ -97,7 +97,6 @@ export class CodeService {
 
     editor.querySelectorAll('.hljs-number').forEach((element) => {
       element.setAttribute('style', `--number-color: ${element.textContent}`);
-      element.setAttribute('data-number', element.textContent);
     });
   }
 }
