@@ -21,7 +21,7 @@ export default function Code(props: CodeProps) {
   onMount(() => {
     const service = new CodeService();
 
-    service.initialize(codeRef, props.language, props.theme || 'default');
+    service.initialize(codeRef, props.language, props.theme || 'github');
     state.classes = service.getClasses(props.language, props.className);
     state.codeService = service;
   });
