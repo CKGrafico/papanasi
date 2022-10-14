@@ -4,3 +4,4 @@ packages/**/dist/
 packages/**/src/
 *.log
 storybook-static/
+packages/webcomponent/custom-elements.json

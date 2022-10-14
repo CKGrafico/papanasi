@@ -16,6 +16,10 @@
     "./dist/papanasi.css": {
       "import": "./dist/papanasi.css",
       "require": "./dist/papanasi.css"
+    },
+    "./custom-elements.json": {
+      "import": "./custom-elements.json",
+      "require": "./custom-elements.json"
     }
   },
   "files": [
@@ -27,7 +31,8 @@
     "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\"",
     "build:styles-classes-css": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.css\"",
     "build:styles-classes-states": "replace \"(::part\\(.*?)\\.(pa-|is-|has-)(.*?)(\\))\" \"$1 $2$3$4\" ./dist -r --include=\"*.css\"",
-    "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\""
+    "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\"",
+    "build:schema": "custom-elements-manifest analyze"
   },
   "publishConfig": {
     "access": "public"
