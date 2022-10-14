@@ -33,7 +33,9 @@ const DEFAULT_OPTIONS = {
       // Fix angular styles property
       .replace(/\[style\]/g, '[ngStyle]')
       // Remove keys in loops
-      .replace(/\[key\]=".*"/g, '');
+      .replace(/\[key\]=".*"/g, '')
+      // Add  Optional chaining to nativeElement
+      .replace(/\.nativeElement/g, '?.nativeElement');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }
