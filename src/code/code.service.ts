@@ -89,5 +89,15 @@ export class CodeService {
 
   private highlightCode(editor: HTMLElement) {
     hljs.highlightElement(editor);
+
+    // Show colors in css
+    if (!editor.classList.contains('language-css')) {
+      return;
+    }
+
+    editor.querySelectorAll('.hljs-number').forEach((element) => {
+      element.setAttribute('style', `--number-color: ${element.textContent}`);
+      element.setAttribute('data-number', element.textContent);
+    });
   }
 }
