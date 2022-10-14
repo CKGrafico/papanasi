@@ -1,4 +1,4 @@
-import { For, onUnMount, onUpdate, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
+import { For, onMount, onUnMount, onUpdate, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import copy from 'copy-to-clipboard';
 import { getObjectValue } from '~/helpers';
 import './code.css';
@@ -18,17 +18,15 @@ export default function Code(props: CodeProps) {
     }
   });
 
-  onUpdate(() => {
-    if (!codeRef) {
-      return;
-    }
+  onMount(() => {
+    setTimeout(() => {
+      const service = new CodeService();
 
-    const service = new CodeService();
-
-    service.initialize(codeRef, props.language, props.theme || 'github');
-    state.classes = service.getClasses(props.language, props.className);
-    state.codeService = service;
-  }, [codeRef]);
+      service.initialize(codeRef, props.language, props.theme || 'github');
+      state.classes = service.getClasses(props.language, props.className);
+      state.codeService = service;
+    }, 10);
+  });
 
   onUpdate(() => {
     if (!state.classes?.editor) {

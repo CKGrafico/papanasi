@@ -17,7 +17,7 @@ jobs:
       - name: install, build
         run: |
           yarn
-          yarn build
+          yarn build --no-lint
           yarn build-storybook
 
       - name: Build And Deploy
