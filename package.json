@@ -15,7 +15,7 @@
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.30 --force-publish",
+    "package": "lerna version 1.0.0-rc.31 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "ssr-window": "^4.0.2"
   },
   "devDependencies": {
+    "@a110/storybook-expand-all": "^1.1.1",
     "@angular/core": "^14.2.3",
     "@babel/core": "^7.19.1",
     "@babel/plugin-proposal-decorators": "^7.19.1",

@@ -1,15 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@100;300;400;600&display=swap');
+
 @import '../styles/build.css';
+@import '../styles/variables.css';
 
-* {
-  box-sizing: border-box;
+/* Manager */
+.sidebar-item svg,
+.sidebar-subheading-action.sidebar-subheading-action,
+.sidebar-subheading span {
+  display: none;
 }
 
-body {
-  font-family: var(--pa-font-family);
-  font-size: var(--pa-font-size);
-  font-weight: var(--pa-font-weight-normal);
+.sidebar-item span {
+  opacity: 0;
 }
+
+.sidebar-item.sidebar-item {
+  transition-property: var(--pa-transition-colors);
+  transition-duration: var(--pa-transition-duration-normal);
+}
+
+.sidebar-item.sidebar-item:hover {
+  color: var(--pa-color-secondary-darker);
+  background-color: var(--pa-color-secondary-brightest);
+}
+
+.sidebar-item.sidebar-item:focus,
+.sidebar-item.sidebar-item[data-selected='true'] {
+  color: var(--pa-color-secondary-darker);
+}
+
+button.sidebar-item,
+.sidebar-subheading button {
+  pointer-events: none;
+}
+
+.sidebar-subheading.sidebar-subheading {
+  padding-left: 2.15rem;
+  letter-spacing: normal;
+  color: inherit;
+  text-transform: none;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.sidebar-item.sidebar-item {
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+button.sidebar-item.sidebar-item {
+  margin-left: 0.6rem;
+  padding-left: 0rem;
+  font-weight: bold;
+}
+
+button.sidebar-item.sidebar-item ~ div > a {
+  padding-left: 2rem;
+}
+
+/* Main */
+#root div[role='main'] {
+  top: 0 !important;
+  height: 100vh !important;
+}
+
+#root div[role='main'] > div {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Titles */
 
 .sbdocs-h1 {
   align-self: center;
@@ -49,8 +112,10 @@ body {
   align-items: flex-start;
 }
 
+/* Docs */
 .docs-story {
   position: relative;
+  font-family: 'Source Sans Pro', sans-serif;
 
   > div:first-child {
     width: 100%;
@@ -88,4 +153,10 @@ body {
   .pa-spinner {
     margin-right: 0.5rem;
   }
+}
+
+.codesandbox,
+.pa-container,
+.pa-tooltip {
+  font-family: 'Source Sans Pro', sans-serif;
 }

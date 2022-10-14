@@ -14,11 +14,10 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'Documentation',
+        '📗Documentation',
         ['Introduction', 'Elements', 'Customization'],
-        'Layout',
-        ['Container', 'Row', 'Column', 'Grid'],
-        'Components'
+        '🧩Elements',
+        ['Layout', ['Container', 'Row', 'Column', 'Grid'], 'Components']
       ]
     }
   },

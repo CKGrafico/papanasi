@@ -5,7 +5,7 @@ import { getBreakpointArgTypes } from '../../helpers';
 import { Customization, Codesandbox } from '../../.storybook/components';
 
 <Meta
-  title="Layout/Column"
+  title="🧩Elements/Layout/Column"
   component={Column}
   argTypes={{
     ...getBreakpointArgTypes('Column size in {breakpoint}', [
@@ -49,7 +49,7 @@ The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, 
 ## Showcase
 
 <Canvas>
-  <Story name="Default" args={{}}>
+  <Story name="Column" args={{}}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -58,17 +58,17 @@ The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, 
 
 <Customization
   css={`
-    /* Grid */
     --pa-grid-gutter: 0.15rem;
     --pa-grid-gutter-horizontal: var(--pa-grid-gutter);
     --pa-grid-gutter-vertical: var(--pa-grid-gutter);
     --pa-grid-max-width: var(--pa-breakpoint-xl);
   `}
+  showSelect={false}
 />
 
 ### Properties
 
-<ArgsTable story="Default" of={Column} />
+<ArgsTable story="Column" of={Column} />
 
 ## How to use this component
 

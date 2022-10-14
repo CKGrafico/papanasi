@@ -21,7 +21,7 @@ export default function Code(props: CodeProps) {
   onMount(() => {
     const service = new CodeService();
 
-    service.initialize(codeRef, props.language, props.theme || 'default');
+    service.initialize(codeRef, props.language, props.theme || 'github');
     state.classes = service.getClasses(props.language, props.className);
     state.codeService = service;
   });
@@ -76,7 +76,7 @@ export default function Code(props: CodeProps) {
             )}
           </For>
 
-          <Show when={!props.disableCopy}>
+          <Show when={!props.disableCopy && props.slotCopy}>
             <span class="pa-code__action pa-code__action--copy" onClick={() => copy(props.code)}>
               <span>{props.slotCopy}</span>
             </span>

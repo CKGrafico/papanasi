@@ -1,6 +1,8 @@
 import { Meta } from '@storybook/addon-docs';
+import { Code } from '../packages/react/src';
+import { Customization } from '../.storybook/components';
 
-<Meta title="Documentation/Customization" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+<Meta title="📗Documentation/Customization" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
 
 # Customization
 
@@ -13,38 +15,36 @@ We are always exporting CSS classes in our components and we use [BEM to decide 
 
 Example of BEM classes:
 
-```html
-<div className="pa-author pa-author--primary pa-author--rounded">
+<Code
+  language="xml"
+  code={`<div className="pa-author pa-author--primary pa-author--rounded">
   <span className="pa-author__name">Alicia</span>
   <span className="pa-author__subtitle">Spain</span>
-</div>
-```
+</div>`}
+></Code>
 
 We are also using other CSS conventions like [States from SMACSS](http://smacss.com/book/type-state), to make the component more readable.
 
 Example of SMACSS States:
 
-```html
-<div className="pa-author is-disabled">...</div>
-```
+<Code language="xml" code={`<div className="pa-author is-disabled">...</div>`}></Code>
 
 The previous convention plus **Reponsive Suffixes** are part of **BEMIT** and we use them to make the component more responsive, those where introduced in [CSS Wizardy blog post](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/) and an example of this used could be:
 
-```html
-<div className="pa-author is-hidden@xs">...</div>
-```
+<Code language="xml" code={`<div className="pa-author is-hidden@xs">...</div>`}></Code>
 
 Our configured **Responsive Suffixes** are the same as our default breakpoints:
 
-```css
---pa-breakpoint-xxs: 360px; // @xxs
+<Code
+  language="css"
+  code={`--pa-breakpoint-xxs: 360px; // @xxs
 --pa-breakpoint-xs: 640px; // @xs
 --pa-breakpoint-s: 768px; // @s
 --pa-breakpoint-m: 1024px; // @m
 --pa-breakpoint-l: 1280px; // @l
 --pa-breakpoint-xl: 1440px; // @xl
---pa-breakpoint-xxl: 1920px; // @xxs
-```
+--pa-breakpoint-xxl: 1920px; // @xxs`}
+></Code>
 
 ## CSS Custom Properties
 
@@ -52,8 +52,9 @@ We have defined a list of custom properties that we use to customize the compone
 
 For example if we want to modify the **variants**, there are 3 different groups of properties:
 
-```css
-/* Color Primary */
+<Code
+  language="css"
+  code={`/* Color Primary */
 --pa-color-primary-brightest: #b9daff;
 --pa-color-primary-brighter: #a4cfff;
 --pa-color-primary-bright: #53a5ff;
@@ -61,7 +62,6 @@ For example if we want to modify the **variants**, there are 3 different groups 
 --pa-color-primary-dark: #005fc8;
 --pa-color-primary-darker: #004590;
 --pa-color-primary-darkest: #002a58;
-
 /* Color Secondary */
 --pa-color-secondary-brightest: #eeeaff;
 --pa-color-secondary-brighter: #cec1ff;
@@ -70,7 +70,6 @@ For example if we want to modify the **variants**, there are 3 different groups 
 --pa-color-secondary-dark: #3f0fff;
 --pa-color-secondary-darker: #2b00d6;
 --pa-color-secondary-darkest: #20009e;
-
 /* Color Tertiary */
 --pa-color-tertiary-brightest: #fde2e8;
 --pa-color-tertiary-brighter: #fbbccb;
@@ -78,13 +77,14 @@ For example if we want to modify the **variants**, there are 3 different groups 
 --pa-color-tertiary-normal: #f34971;
 --pa-color-tertiary-dark: #f01448;
 --pa-color-tertiary-darker: #bf0d37;
---pa-color-tertiary-darkest: #8b0928;
-```
+--pa-color-tertiary-darkest: #8b0928;`}
+></Code>
 
 We have also defined some **intents** to be used in some components:
 
-```css
-/* Color Info */
+<Code
+  language="css"
+  code={`/* Color Info */
 --pa-color-info-brightest: #a3f5fe;
 --pa-color-info-brighter: #8ff2fe;
 --pa-color-info-bright: #67eefe;
@@ -92,7 +92,6 @@ We have also defined some **intents** to be used in some components:
 --pa-color-info-dark: #029eb0;
 --pa-color-info-darker: #016c79;
 --pa-color-info-darkest: #013a41;
-
 /* Color Success */
 --pa-color-success-brightest: #cbf4e6;
 --pa-color-success-brighter: #baf0de;
@@ -101,7 +100,6 @@ We have also defined some **intents** to be used in some components:
 --pa-color-success-dark: #25aa7d;
 --pa-color-success-darker: #1b7c5b;
 --pa-color-success-darkest: #114e39;
-
 /* Color Warning */
 --pa-color-warning-brightest: #fff7e3;
 --pa-color-warning-brighter: #ffe5a5;
@@ -110,7 +108,6 @@ We have also defined some **intents** to be used in some components:
 --pa-color-warning-dark: #f2ab00;
 --pa-color-warning-darker: #ba8300;
 --pa-color-warning-darkest: #825c00;
-
 /* Color Error */
 --pa-color-error-brightest: #fcdada;
 --pa-color-error-brighter: #f9b5b5;
@@ -118,7 +115,9 @@ We have also defined some **intents** to be used in some components:
 --pa-color-error-normal: #f15050;
 --pa-color-error-dark: #e71414;
 --pa-color-error-darker: #b30f0f;
---pa-color-error-darkest: #5c0404;
-```
+--pa-color-error-darkest: #5c0404;`}
+></Code>
 
 There are some other custom properties that you can easily modify, please check the [complete list in the repository](https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css).
+
+<Customization hidden={true} />

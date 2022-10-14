@@ -5,10 +5,12 @@ export const Themes = {
     base: 'light',
     brandTitle: 'Papanasi - Universal UI Library',
     brandUrl: 'https://github.com/ckgrafico/papanasi',
-    brandImage: 'https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-github.svg'
+    brandImage: 'https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-github.svg',
+    colorSecondary: '#ad99ff',
+    fontBase: '"Source Sans Pro", sans-serif'
   }),
   docs: create({
     base: 'light',
-    fontBase: 'Work Sans, sans-serif'
+    fontBase: '"Source Sans Pro", sans-serif'
   })
 };

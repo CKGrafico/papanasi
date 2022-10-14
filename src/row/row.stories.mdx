@@ -5,7 +5,7 @@ import { getBreakpointArgTypes } from '../../helpers';
 import { Customization, Codesandbox } from '../../.storybook/components';
 
 <Meta
-  title="Layout/Row"
+  title="🧩Elements/Layout/Row"
   component={Row}
   argTypes={{
     ...getBreakpointArgTypes('Direction in {breakpoint}', ['', 'row', 'column', 'row-reverse', 'column-reverse'])
@@ -29,7 +29,7 @@ The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`,
 ## Showcase
 
 <Canvas>
-  <Story name="Default" args={{}}>
+  <Story name="Row" args={{}}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -38,17 +38,17 @@ The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`,
 
 <Customization
   css={`
-    /* Grid */
     --pa-grid-gutter: 0.15rem;
     --pa-grid-gutter-horizontal: var(--pa-grid-gutter);
     --pa-grid-gutter-vertical: var(--pa-grid-gutter);
     --pa-grid-max-width: var(--pa-breakpoint-xl);
   `}
+  showSelect={false}
 />
 
 ### Properties
 
-<ArgsTable story="Default" of={Row} />
+<ArgsTable story="Row" of={Row} />
 
 ## How to use this component
 
