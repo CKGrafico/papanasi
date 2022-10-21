@@ -2,6 +2,7 @@
 node_modules/
 packages/**/dist/
 packages/**/src/
+packages/**/highlight/
 *.log
 storybook-static/
 packages/webcomponent/custom-elements.json

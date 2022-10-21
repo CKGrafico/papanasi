@@ -54,6 +54,24 @@ async function compile(defaultOptions) {
 
     fs.copyFileSync('src/index.ts', `${outPath}/src/index.ts`);
 
+    // TODO: improve dynamic imports in the future
+    const languages = glob.sync(`node_modules/highlight.js/lib/languages/*.js`);
+
+    if (!fs.existsSync(`${outPath}/highlight`)) {
+      fs.mkdirSync(`${outPath}/highlight`);
+      fs.mkdirSync(`${outPath}/highlight/lib`);
+      fs.mkdirSync(`${outPath}/highlight/lib/languages`);
+    }
+
+    languages.forEach((language) => {
+      if (language.includes('.js.js')) {
+        return;
+      }
+
+      const fileName = language.replace('node_modules/highlight.js/', '');
+      fs.copyFileSync(language, `${outPath}/highlight/${fileName}`);
+    });
+
     const fileServices = cliConfig.elements ? `src/{${cliConfig.elements.join(',')},}` : 'src/**';
     const services = glob.sync(`${fileServices}/*.{service,model}.ts`);
 

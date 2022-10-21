@@ -1,13 +1,14 @@
+const path = require('path');
 const commonjs = require('@rollup/plugin-commonjs');
 const resolve = require('@rollup/plugin-node-resolve');
 const babel = require('@rollup/plugin-babel').default;
-const path = require('path');
+const dynamicImportVars = require('@rollup/plugin-dynamic-import-vars').default;
+const dtsPlugin = require('rollup-plugin-dts').default;
 const typescript = require('rollup-plugin-ts');
 const postcss = require('rollup-plugin-postcss');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
-const dtsPlugin = require('rollup-plugin-dts').default;
-const postcssConfig = require('./postcss.config.js');
 const json = require('@rollup/plugin-json');
+const postcssConfig = require('./postcss.config.js');
 
 module.exports = (options) => {
   const {
@@ -49,6 +50,7 @@ module.exports = (options) => {
           external,
           plugins: [
             ...plugins,
+          
             resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
             json(),
             typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
@@ -61,6 +63,9 @@ module.exports = (options) => {
             }),
             postcss(postcssConfig),
             peerDepsExternal(),
+            dynamicImportVars({
+              include: '**/*.ts'
+            }),
             commonjs()
           ]
         },
