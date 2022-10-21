@@ -99,7 +99,7 @@
       </sub>
     </td>
     <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nuxt-icon.svg" width="50" title="Nuxt"> <br/>
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nuxt-icon.svg" width="72" title="Nuxt"> <br/>
       <strong>Nuxt 3</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/p/sandbox/papanasi-nuxt-demo-papanasi-vue-xvguj1" target="_blank"><img src="https://img.shields.io/badge/Demo-00DC82?logoColor=white&logo=nuxtdotjs" alt="Nuxt Demo" /></a>
