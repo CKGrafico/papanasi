@@ -22,25 +22,24 @@ export default function Code(props: CodeProps) {
     setTimeout(() => {
       const service = new CodeService();
 
-      service.initialize(codeRef, props.language, props.theme || 'github');
+      service.initialize(codeRef, props.language, props.theme || 'github', () => (state.loaded = true));
       state.classes = service.getClasses(props.language, props.className);
       state.codeService = service;
     }, 10);
   });
 
   onUpdate(() => {
-    if (!state.classes?.editor || !state.codeService) {
+    if (!state.loaded) {
       return;
     }
 
-    state.loaded = true;
     state.codeService.update(props.code);
     state.codeService.setEditable(codeRef, props.editable);
 
     state.codeService.onUpdate((code: string) => {
       props.onUpdate && props.onUpdate(code);
     });
-  }, [state.classes, state.codeService, props.editable]);
+  }, [state.loaded, props.editable]);
 
   onUnMount(() => {
     state.loaded && state.codeService.destroy();

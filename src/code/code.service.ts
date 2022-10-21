@@ -16,17 +16,19 @@ export class CodeService {
     return { base, editor };
   }
 
-  public initialize(codeRef, language: string, theme: CodeTheme) {
-    this.hljs = require('highlight.js/lib/core').default;
+  public async initialize(codeRef, language: string, theme: CodeTheme, callback: () => void) {
+    this.hljs = (await import('highlight.js/lib/core')).default;
     this.jar = CodeJar(codeRef, (editor: HTMLElement) => this.highlightCode(editor));
 
     this.hljs.configure({
       ignoreUnescapedHTML: true
     });
 
-    this.registerLanguage(language);
+    await this.registerLanguage(language);
     this.registerThemes();
     this.updateCurrentTheme(theme);
+
+    callback();
   }
 
   public destroy() {
@@ -46,23 +48,29 @@ export class CodeService {
     codeRef.setAttribute('contenteditable', editable ? 'plaintext-only' : 'false');
   }
 
-  private registerLanguage(language: string) {
+  private async loadLanguage(language: string) {
+    const loadedLanguage = (await import(`highlight.js/lib/languages/${language}`)).default;
+
+    this.hljs.registerLanguage(language, loadedLanguage);
+  }
+
+  private async registerLanguage(language: string) {
     // Highlight does not support those types
     if (language === 'jsx') {
-      this.hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
-      this.hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+      await this.loadLanguage('xml');
+      await this.loadLanguage('javascript');
 
       return;
     }
 
     if (language === 'tsx') {
-      this.hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
-      this.hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
+      await this.loadLanguage('xml');
+      await this.loadLanguage('typescript');
 
       return;
     }
 
-    this.hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language));
+    await this.loadLanguage(language);
   }
 
   private registerThemes() {

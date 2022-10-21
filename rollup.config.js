@@ -45,6 +45,7 @@ module.exports = (options) => {
             }
           ],
           treeshake: true,
+          inlineDynamicImports: true,
           external,
           plugins: [
             ...plugins,
