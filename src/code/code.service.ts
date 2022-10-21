@@ -1,13 +1,11 @@
-//@ts-nocheck
-
-// import { CodeJar } from 'codejar';
-import hljs from 'highlight.js/lib/core';
-import { classesToString, CodeJar, wait } from '~/helpers';
+import { CodeJar } from 'codejar';
+import { classesToString, wait } from '~/helpers';
 import { CodeTheme, codeThemes } from './code.model';
 
 export class CodeService {
   public styles = [];
   public jar: CodeJar;
+  public hljs: any;
   public currentThemeIndex = 0;
 
   public getClasses(language: string, className: string) {
@@ -17,10 +15,11 @@ export class CodeService {
     return { base, editor };
   }
 
-  initialize(codeRef, language: string, theme: CodeTheme) {
-    this.jar = CodeJar(codeRef, this.highlightCode);
+  public initialize(codeRef, language: string, theme: CodeTheme) {
+    this.hljs = require('highlight.js/lib/core').default;
+    this.jar = CodeJar(codeRef, (editor: HTMLElement) => this.highlightCode(editor));
 
-    hljs.configure({
+    this.hljs.configure({
       ignoreUnescapedHTML: true
     });
 
@@ -49,20 +48,20 @@ export class CodeService {
   private registerLanguage(language: string) {
     // Highlight does not support those types
     if (language === 'jsx') {
-      hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
-      hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+      this.hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
+      this.hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
 
       return;
     }
 
     if (language === 'tsx') {
-      hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
-      hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
+      this.hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
+      this.hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
 
       return;
     }
 
-    hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language));
+    this.hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language));
   }
 
   private registerThemes() {
@@ -88,7 +87,7 @@ export class CodeService {
   }
 
   private highlightCode(editor: HTMLElement) {
-    hljs.highlightElement(editor);
+    this.hljs.highlightElement(editor);
 
     // Show colors in css
     if (!editor.classList.contains('language-css')) {

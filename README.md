@@ -92,6 +92,13 @@
 <table align="center">
   <tr>
     <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nextjs-icon.svg" width="50" title="Nextjs"> <br/>
+      <strong>Nextjs</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/p/sandbox/papanasi-next-demo-papanasi-react-ewy6no" target="_blank"><img src="https://img.shields.io/badge/Demo-000000?logoColor=white&logo=nextdotjs" alt="Nextjs Demo" /></a>
+      </sub>
+    </td>
+    <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nuxt-icon.svg" width="50" title="Nuxt"> <br/>
       <strong>Nuxt 3</strong> <br/>
       <sub>
