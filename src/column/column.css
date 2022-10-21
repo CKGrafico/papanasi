@@ -1,8 +1,8 @@
 @import '../../styles/build.css';
 
 @define-mixin column $size, $columns {
-  flex: 0 0 calc($size / $columns * 100%);
-  max-width: calc($size / $columns * 100%);
+  flex: 0 0 calc($size / $columns * 100% - var(--pa-grid-gutter-horizontal) * 2);
+  max-width: calc($size / $columns * 100% - var(--pa-grid-gutter-horizontal) * 2);
 }
 
 @define-mixin column-content {
