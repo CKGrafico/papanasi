@@ -47,17 +47,17 @@ export const Template = (args) => {
   const { fluid, direction, ...column } = args;
   return (
     <Container fluid={fluid}>
-      <Row xs={direction}>
+      <Row default={direction}>
         <Column {...column}>Row 1 of 3 - Column 1 of 3</Column>
         <Column {...column}>Row 1 of 3 - Column 2 of 3</Column>
         <Column {...column}>Row 1 of 3 - Column 3 of 3</Column>
       </Row>
-      <Row xs={direction}>
+      <Row default={direction}>
         <Column {...column}>Row 2 of 3 - Column 1 of 3</Column>
         <Column {...column}>Row 2 of 3 - Column 2 of 3</Column>
         <Column {...column}>Row 2 of 3 - Column 3 of 3</Column>
       </Row>
-      <Row xs={direction}>
+      <Row default={direction}>
         <Column {...column}>Row 3 of 3 - Column 1 of 3</Column>
         <Column {...column}>Row 3 of 3 - Column 2 of 3</Column>
         <Column {...column}>Row 3 of 3 - Column 3 of 3</Column>

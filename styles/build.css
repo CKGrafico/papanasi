@@ -1,5 +1,5 @@
-@import './variables-internal.css';
-
 @import './mixins/shared.css';
 @import './mixins/breakpoint-modifier.css';
 @import './mixins/background-opacity.css';
+
+@import './base/reset.css';

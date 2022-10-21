@@ -5,6 +5,13 @@
   max-width: calc($size / $columns * 100%);
 }
 
+@define-mixin column-content {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  display: flex;
+}
+
 @define-mixin column-fill {
   display: flex;
   flex-basis: 0;
@@ -13,8 +20,13 @@
   width: 100%;
 }
 
+@define-mixin column-hide {
+  display: none;
+}
+
 .pa-column {
   @mixin column-fill;
+
   margin-bottom: var(--pa-grid-gutter-vertical);
   margin-left: var(--pa-grid-gutter-horizontal);
   margin-right: var(--pa-grid-gutter-horizontal);
@@ -29,10 +41,7 @@
     }
 
     @mixin breakpoint-modifier $breakpoint, content {
-      flex: 0 0 auto;
-      width: auto;
-      max-width: none;
-      display: flex;
+      @mixin column-content;
     }
 
     @mixin breakpoint-modifier $breakpoint, fill {
@@ -40,7 +49,7 @@
     }
 
     @mixin breakpoint-modifier $breakpoint, hide {
-      display: none;
+      @mixin column-hide;
     }
   }
 }

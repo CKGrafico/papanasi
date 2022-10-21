@@ -3,14 +3,17 @@ import { Breakpoint, breakpoints } from '../models';
 import { wait } from './wait.helper';
 
 export function getBreakpointClasses(
+  basic: string | number,
+  xxs: string | number,
   xs: string | number,
   s: string | number,
   m: string | number,
   l: string | number,
   xl: string | number,
+  xxl: string | number,
   prefix = ''
 ) {
-  const props: { [key: string]: string | number } = { xs, s, m, l, xl };
+  const props: { [key: string]: string | number } = { basic, xxs, xs, s, m, l, xl, xxl };
 
   const usedBreakpoints = Object.entries(props)
     .filter(([key]: [Breakpoint, string]) => breakpoints.find((x) => x.value === key))
@@ -30,7 +33,10 @@ function checkBreakpoints() {
   const styles = window.getComputedStyle(document.documentElement);
   const medias = breakpoints.map((breakpoint) => ({
     key: breakpoint.value,
-    value: styles.getPropertyValue(`--pa-breakpoint-${breakpoint.value}`).trim()
+    value:
+      breakpoint.value === Breakpoint.Basic
+        ? '0'
+        : styles.getPropertyValue(`--pa-breakpoint-${breakpoint.value}`).trim()
   }));
 
   if (!window.matchMedia || !document.body || !document.body.classList) {

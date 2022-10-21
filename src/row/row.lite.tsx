@@ -13,7 +13,17 @@ export default function Row(props: RowProps) {
 
   onMount(() => {
     state.loaded = true;
-    state.classes = rowService.getClasses(props.xs, props.s, props.m, props.l, props.xl, props.className);
+    state.classes = rowService.getClasses(
+      props.basic,
+      props.xxs,
+      props.xs,
+      props.s,
+      props.m,
+      props.l,
+      props.xl,
+      props.xxl,
+      props.className
+    );
   });
 
   return (

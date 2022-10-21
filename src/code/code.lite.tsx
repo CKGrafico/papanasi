@@ -29,7 +29,7 @@ export default function Code(props: CodeProps) {
   });
 
   onUpdate(() => {
-    if (!state.classes?.editor) {
+    if (!state.classes?.editor || !state.codeService) {
       return;
     }
 
