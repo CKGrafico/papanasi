@@ -27,11 +27,15 @@
   &__action {
     display: flex;
     padding: 0.35rem;
-    text-decoration: none;
 
     &--copy {
       cursor: pointer;
     }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
   }
 
   &__icon {
@@ -39,7 +43,7 @@
     margin-right: 0.25rem;
   }
 
-  &__action--text &__icon {
+  &__link--text &__icon {
     margin-right: 0;
   }
 }

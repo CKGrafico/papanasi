@@ -56,9 +56,9 @@ export default function Code(props: CodeProps) {
         <div class="pa-code__actions">
           <For each={props.links}>
             {(link, index) => (
-              <div key={index}>
+              <div key={index} class="pa-code__action">
                 <Show when={state.value(link, 'url')}>
-                  <a class="pa-code__action" href={state.value(link, 'url')} target="_blank">
+                  <a class="pa-code__link" href={state.value(link, 'url')} target="_blank">
                     {state.value(link, 'icon') && (
                       <img class="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
                     )}
@@ -67,7 +67,7 @@ export default function Code(props: CodeProps) {
                 </Show>
 
                 <Show when={!state.value(link, 'url')}>
-                  <span class="pa-code__action pa-code__action--text">
+                  <span class="pa-code__link pa-code__link--text">
                     {state.value(link, 'icon') && (
                       <img class="pa-code__icon" src={state.value(link, 'icon')} alt={state.value(link, 'label')} />
                     )}
@@ -80,7 +80,7 @@ export default function Code(props: CodeProps) {
 
           <Show when={!props.disableCopy && props.slotCopy}>
             <span class="pa-code__action pa-code__action--copy" onClick={() => copy(props.code)}>
-              <span>{props.slotCopy}</span>
+              <span class="pa-code__link">{props.slotCopy}</span>
             </span>
           </Show>
         </div>
