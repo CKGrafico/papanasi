@@ -60,7 +60,6 @@ function onAddElement(rootElement: HTMLElement, element: HTMLElement) {
   element.addEventListener('mouseenter', () => {
     const rect = element.getBoundingClientRect();
     const rootRect = rootElement.getBoundingClientRect();
-    console.log(rootRect, rootElement);
 
     state.x = Math.abs(rootRect.x) + rootElement.scrollLeft + rect.x;
     state.y = Math.abs(rootRect.y) + rootElement.scrollTop + rect.y;

@@ -1,11 +1,12 @@
-import { CodeJar } from 'codejar';
-import { classesToString, wait } from '~/helpers';
+// import { CodeJar } from 'codejar';
+import { HLJSApi } from 'highlight.js';
+import { classesToString, CodeJar, wait } from '~/helpers';
 import { CodeTheme, codeThemes } from './code.model';
 
 export class CodeService {
   public styles = [];
   public jar: CodeJar;
-  public hljs: any;
+  public hljs: HLJSApi;
   public currentThemeIndex = 0;
 
   public getClasses(language: string, className: string) {
