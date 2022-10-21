@@ -7,7 +7,7 @@
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
     "start": "start-storybook -p 6006 --no-manager-cache",
-    "clean": "rimraf packages/**/{src,dist,highlight,node_modules}",
+    "clean": "rimraf packages/**/{src,dist,node_modules}",
     "lerna": "lerna run",
     "lint": "run-p lint:**",
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
@@ -15,7 +15,7 @@
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.48 --force-publish",
+    "package": "lerna version 1.0.0-rc.50 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
