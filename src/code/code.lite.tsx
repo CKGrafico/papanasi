@@ -40,7 +40,7 @@ export default function Code(props: CodeProps) {
     state.codeService.onUpdate((code: string) => {
       props.onUpdate && props.onUpdate(code);
     });
-  }, [state.classes, props.editable]);
+  }, [state.classes, state.codeService, props.editable]);
 
   onUnMount(() => {
     state.loaded && state.codeService.destroy();
