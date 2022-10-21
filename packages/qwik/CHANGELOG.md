@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+
+
+**Note:** Version bump only for package @papanasi/qwik
+
+
+
+
+
 # [1.0.0-rc.46](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.45...v1.0.0-rc.46) (2022-10-21)
 
 **Note:** Version bump only for package @papanasi/qwik
