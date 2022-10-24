@@ -15,7 +15,7 @@
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.31 --force-publish",
+    "package": "lerna version 1.0.0-rc.50 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "ssr-window": "^4.0.2"
   },
   "devDependencies": {
+    "@a110/storybook-expand-all": "^1.1.1",
     "@angular/core": "^14.2.3",
     "@babel/core": "^7.19.1",
     "@babel/plugin-proposal-decorators": "^7.19.1",
@@ -35,6 +36,7 @@
     "@builder.io/eslint-plugin-mitosis": "^0.0.9",
     "@builder.io/mitosis-cli": "0.0.31",
     "@builder.io/qwik": "^0.9.0",
+    "@custom-elements-manifest/analyzer": "^0.6.4",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-dynamic-import-vars": "^1.4.4",

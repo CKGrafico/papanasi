@@ -5,6 +5,4 @@ export enum Variant {
   Tertiary = 'tertiary'
 }
 
-export type DynamicVariant = Variant & { [key: string]: string };
-
 export const variants = Object.entries(Variant).map(([key, value]: [string, string]) => ({ key, value }));

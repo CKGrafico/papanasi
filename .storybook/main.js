@@ -1,5 +1,4 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
 
 module.exports = {
   stories: ['../docs/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
@@ -8,7 +7,8 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-postcss'
+    '@storybook/addon-postcss',
+    '@a110/storybook-expand-all'
   ],
   framework: '@storybook/react',
   webpackFinal: async (config, options) => {

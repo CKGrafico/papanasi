@@ -1,13 +1,12 @@
-//@ts-nocheck
-
 // import { CodeJar } from 'codejar';
-import hljs from 'highlight.js/lib/core';
+import { HLJSApi } from 'highlight.js';
 import { classesToString, CodeJar, wait } from '~/helpers';
 import { CodeTheme, codeThemes } from './code.model';
 
 export class CodeService {
   public styles = [];
   public jar: CodeJar;
+  public hljs: HLJSApi;
   public currentThemeIndex = 0;
 
   public getClasses(language: string, className: string) {
@@ -17,16 +16,19 @@ export class CodeService {
     return { base, editor };
   }
 
-  initialize(codeRef, language: string, theme: CodeTheme) {
-    this.jar = CodeJar(codeRef, this.highlightCode);
+  public async initialize(codeRef, language: string, theme: CodeTheme, callback: () => void) {
+    this.hljs = (await import('highlight.js/lib/core')).default;
+    this.jar = CodeJar(codeRef, (editor: HTMLElement) => this.highlightCode(editor));
 
-    hljs.configure({
+    this.hljs.configure({
       ignoreUnescapedHTML: true
     });
 
-    this.registerLanguage(language);
+    await this.registerLanguage(language);
     this.registerThemes();
     this.updateCurrentTheme(theme);
+
+    callback();
   }
 
   public destroy() {
@@ -46,23 +48,29 @@ export class CodeService {
     codeRef.setAttribute('contenteditable', editable ? 'plaintext-only' : 'false');
   }
 
-  private registerLanguage(language: string) {
+  private async loadLanguage(language: string) {
+    const loadedLanguage = (await import(`../highlight/lib/languages/${language}.js`)).default;
+
+    this.hljs.registerLanguage(language, loadedLanguage);
+  }
+
+  private async registerLanguage(language: string) {
     // Highlight does not support those types
     if (language === 'jsx') {
-      hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
-      hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+      await this.loadLanguage('xml');
+      await this.loadLanguage('javascript');
 
       return;
     }
 
     if (language === 'tsx') {
-      hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
-      hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
+      await this.loadLanguage('xml');
+      await this.loadLanguage('typescript');
 
       return;
     }
 
-    hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language));
+    await this.loadLanguage(language);
   }
 
   private registerThemes() {
@@ -88,6 +96,15 @@ export class CodeService {
   }
 
   private highlightCode(editor: HTMLElement) {
-    hljs.highlightElement(editor);
+    this.hljs.highlightElement(editor);
+
+    // Show colors in css
+    if (!editor.classList.contains('language-css')) {
+      return;
+    }
+
+    editor.querySelectorAll('.hljs-number').forEach((element) => {
+      element.setAttribute('style', `--number-color: ${element.textContent}`);
+    });
   }
 }

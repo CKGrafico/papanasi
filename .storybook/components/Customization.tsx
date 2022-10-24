@@ -7,6 +7,8 @@ type CustomizationProps = {
   css?: string;
   selector?: string;
   showCode?: boolean;
+  showSelect?: boolean;
+  hidden?: boolean;
 };
 
 const templateCSS = (css, selector = '') => `/**
@@ -14,9 +16,7 @@ const templateCSS = (css, selector = '') => `/**
 * Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css
 **/
 
-.docs-story ${selector} {
-${css}
-}
+.docs-story ${selector} {${css.replace(/    /g, '  ')}}
 `;
 
 const defaultCss = `
@@ -31,7 +31,7 @@ const defaultCss = `
 
 // TODO: Use our select in the future?
 export function Customization(props: CustomizationProps) {
-  const { css = defaultCss, showCode = true, selector = '' } = props;
+  const { css = defaultCss, showCode = true, showSelect = true, selector = '', hidden = false } = props;
 
   const [selected, setSelected] = useState('papanasi');
   const [customCss, setCustomCss] = useState('');
@@ -60,38 +60,46 @@ export function Customization(props: CustomizationProps) {
   }
 
   return (
-    <Container className="customization">
+    <>
       {stylePath && <link rel="stylesheet" type="text/css" href={stylePath} />}
       <style>{customCss}</style>
 
-      <Row>
-        <Column xs={'content'} className="customization__label">
-          Choose a theme
-        </Column>
-        <Column xs={'content'}>
-          <select onChange={onChangeSelect} defaultValue={selected}>
-            {themes.map((theme) => (
-              <option key={theme.value} value={theme.value}>
-                {theme.name}
-              </option>
-            ))}
-          </select>
-        </Column>
-      </Row>
-      {css && selected !== 'none' && showCode && (
-        <>
-          <Row>
-            <Column xs={'content'} className="customization__label">
-              Customize CSS properties
-            </Column>
-          </Row>
-          <Row>
-            <Column xs={'fill'}>
-              <Code onUpdate={onChangeCss} editable theme="github" code={templateCSS(css, selector)} language={'css'} />
-            </Column>
-          </Row>
-        </>
+      {!hidden && (
+        <Container className="customization">
+          {showSelect && (
+            <div className="customization__theme">
+              <span className="customization__sublabel">Choose a theme</span>
+              <select onChange={onChangeSelect} defaultValue={selected} className="customization__select">
+                {themes.map((theme) => (
+                  <option key={theme.value} value={theme.value}>
+                    {theme.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+          {css && selected !== 'none' && showCode && (
+            <>
+              <Row>
+                <Column xs={'content'} className="customization__label">
+                  Customize CSS properties
+                </Column>
+              </Row>
+              <Row>
+                <Column xs={'fill'}>
+                  <Code
+                    onUpdate={onChangeCss}
+                    editable
+                    theme="github"
+                    code={templateCSS(css, selector)}
+                    language={'css'}
+                  />
+                </Column>
+              </Row>
+            </>
+          )}
+        </Container>
       )}
-    </Container>
+    </>
   );
 }

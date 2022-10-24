@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/webcomponents",
-  "version": "1.0.0-rc.31",
+  "version": "1.0.0-rc.50",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
@@ -16,6 +16,10 @@
     "./dist/papanasi.css": {
       "import": "./dist/papanasi.css",
       "require": "./dist/papanasi.css"
+    },
+    "./custom-elements.json": {
+      "import": "./custom-elements.json",
+      "require": "./custom-elements.json"
     }
   },
   "files": [
@@ -27,10 +31,11 @@
     "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\"",
     "build:styles-classes-css": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.css\"",
     "build:styles-classes-states": "replace \"(::part\\(.*?)\\.(pa-|is-|has-)(.*?)(\\))\" \"$1 $2$3$4\" ./dist -r --include=\"*.css\"",
-    "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\""
+    "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\"",
+    "build:schema": "custom-elements-manifest analyze"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "ec1a1021a0f8a2e890809258fa491014970311ca"
+  "gitHead": "0d87b9134c66d9a9e37d0c5e0e8f72a0f29c8463"
 }

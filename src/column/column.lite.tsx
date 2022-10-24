@@ -13,7 +13,17 @@ export default function Column(props: ColumnProps) {
 
   onMount(() => {
     state.loaded = true;
-    state.classes = columnService.getClasses(props.xs, props.s, props.m, props.l, props.xl, props.className);
+    state.classes = columnService.getClasses(
+      props.basic,
+      props.xxs,
+      props.xs,
+      props.s,
+      props.m,
+      props.l,
+      props.xl,
+      props.xxl,
+      props.className
+    );
   });
 
   return (

@@ -1,4 +1,5 @@
 export enum Breakpoint {
+  Basic = 'basic',
   XXS = 'xxs',
   XS = 'xs',
   S = 's',

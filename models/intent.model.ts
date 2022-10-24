@@ -6,6 +6,4 @@ export enum Intent {
   Error = 'error'
 }
 
-export type DynamicIntent = Intent & { [key: string]: string };
-
 export const intents = Object.entries(Intent).map(([key, value]: [string, string]) => ({ key, value }));

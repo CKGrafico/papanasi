@@ -2,6 +2,30 @@
   --pa-grid-gutter-horizontal: 0.35rem;
   --pa-grid-gutter-vertical: 0.25rem;
 
+  position: relative;
+
+  &__theme {
+    position: absolute;
+    right: -0.75rem;
+    display: flex;
+    top: 0.75rem;
+    width: 12rem;
+    flex-direction: row !important;
+    justify-content: flex-end;
+  }
+
+  &__sublabel {
+    font-size: 0.85rem;
+    padding-right: 0.35rem;
+    display: flex;
+    align-content: center;
+  }
+
+  &__select {
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+  }
+
   &__label {
     font-weight: var(--pa-font-weight-medium);
     padding-top: 0.5rem;

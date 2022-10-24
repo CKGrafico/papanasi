@@ -9,12 +9,12 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/search?q=%40papanasi"><img src="https://img.shields.io/npm/v/@papanasi/react?color=cb0303&logo=npm&label=version" alt="Package version" /></a>
-  <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=white" alt="Sponsor" /></a>
   <a href="https://github.com/CKGrafico/Papanasi/network"><img src="https://img.shields.io/github/stars/CKGrafico/Papanasi.svg?logoColor=white&logo=apachespark&color=4D8C6F" alt="GitHub stars" /></a>
   <a href="https://twitter.com/CKGrafico"><img src="https://img.shields.io/badge/Tweet-project?logo=twitter&color=00acee&logoColor=FFFFFF" alt="Tweet" /></a>
+  <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=white" alt="Sponsor" /></a>
 </p>
 
-### 🧩 Platforms 
+### 🚀 Platforms 
 
 <table align="center">
   <tr>
@@ -87,6 +87,28 @@
   </tr>
 </table>
 
+### 🔮 Demos 
+
+<table align="center">
+  <tr>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nextjs-icon.svg" width="50" title="Nextjs"> <br/>
+      <strong>Nextjs</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/p/sandbox/papanasi-next-demo-papanasi-react-ewy6no" target="_blank"><img src="https://img.shields.io/badge/Demo-000000?logoColor=white&logo=nextdotjs" alt="Nextjs Demo" /></a>
+      </sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nuxt-icon.svg" width="72" title="Nuxt"> <br/>
+      <strong>Nuxt 3</strong> <br/>
+      <sub>
+        <a href="https://codesandbox.io/p/sandbox/papanasi-nuxt-demo-papanasi-vue-xvguj1" target="_blank"><img src="https://img.shields.io/badge/Demo-00DC82?logoColor=white&logo=nuxtdotjs" alt="Nuxt Demo" /></a>
+      </sub>
+    </td>
+  </tr>
+</table>
+
+
 ### 📣 Manifesto
 
 This library born as a pet project to create universal components, easy to extend in any project and easy to use with any framework, is based on the next principles:
@@ -102,7 +124,7 @@ This library born as a pet project to create universal components, easy to exten
 * ...should be inspired by other UI Libraries and **don't reinvent the wheel**.
 * ...should be easy to create new **variants**.
 
-### 🔨 Elements Showcase
+### 🧩 Elements Showcase
 
 <table align="center">
   <tr>
@@ -199,14 +221,14 @@ This library born as a pet project to create universal components, easy to exten
     <td align="center">
       <img src="https://tabler-icons.io/static/tabler-icons/icons/code-circle.svg" width="55" title="Code"> <br/>
       <strong>Code</strong> <br/>
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=angular" alt="Angular status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=svelte" alt="Svelte status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=vuedotjs" alt="Vue status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=w3c" alt="W3c status" /><br/>
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=green&logo=vuedotjs" alt="Vue status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
       <a href="https://papanasi.js.org/?path=/docs/components-code--default-story" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
@@ -307,7 +329,6 @@ To learn more about Papanasi, check [the documentation](http://papanasi.js.org/)
 To build the project run:
 
 ```
-> yarn install
 > yarn compile
 ```
 
@@ -345,4 +366,5 @@ Finally, to launch storybook use:
 [![Contributors](https://contrib.rocks/image?repo=ckgrafico/papanasi)](https://github.com/CKGrafico/papanasi/graphs/contributors)
 
 ---
+
 Made with 🍕 by [Quique Fdez Guerra](https://twitter.com/ckgrafico)

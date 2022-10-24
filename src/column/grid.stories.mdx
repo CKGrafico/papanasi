@@ -5,7 +5,7 @@ import { getBreakpointArgTypes } from '../../helpers';
 import { Customization } from '../../.storybook/components';
 
 <Meta
-  title="Layout/Grid"
+  title="🧩Elements/Layout/Grid"
   component={Column}
   argTypes={{
     fluid: {
@@ -47,17 +47,17 @@ export const Template = (args) => {
   const { fluid, direction, ...column } = args;
   return (
     <Container fluid={fluid}>
-      <Row xs={direction}>
+      <Row basic={direction}>
         <Column {...column}>Row 1 of 3 - Column 1 of 3</Column>
         <Column {...column}>Row 1 of 3 - Column 2 of 3</Column>
         <Column {...column}>Row 1 of 3 - Column 3 of 3</Column>
       </Row>
-      <Row xs={direction}>
+      <Row basic={direction}>
         <Column {...column}>Row 2 of 3 - Column 1 of 3</Column>
         <Column {...column}>Row 2 of 3 - Column 2 of 3</Column>
         <Column {...column}>Row 2 of 3 - Column 3 of 3</Column>
       </Row>
-      <Row xs={direction}>
+      <Row basic={direction}>
         <Column {...column}>Row 3 of 3 - Column 1 of 3</Column>
         <Column {...column}>Row 3 of 3 - Column 2 of 3</Column>
         <Column {...column}>Row 3 of 3 - Column 3 of 3</Column>
@@ -73,7 +73,7 @@ Grids are not components itslef but the association between `Containers`, `Rows`
 ## Showcase
 
 <Canvas>
-  <Story name="Default" args={{ fluid: true }}>
+  <Story name="Grid" args={{ fluid: true }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -82,14 +82,14 @@ Grids are not components itslef but the association between `Containers`, `Rows`
 
 <Customization
   css={`
-    /* Grid */
     --pa-grid-gutter: 0.15rem;
     --pa-grid-gutter-horizontal: var(--pa-grid-gutter);
     --pa-grid-gutter-vertical: var(--pa-grid-gutter);
     --pa-grid-max-width: var(--pa-breakpoint-xl);
   `}
+  showSelect={false}
 />
 
 ### Properties
 
-<ArgsTable story="Default" of={Column} />
+<ArgsTable story="Grid" of={Column} />

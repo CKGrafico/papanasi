@@ -2,7 +2,7 @@ import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
 import { Itchio, Button } from '../../packages/react/src';
 import { Customization, Codesandbox } from '../../.storybook/components';
 
-<Meta title="Enterprise/Itchio" component={Itchio} />
+<Meta title="🧩Elements/Enterprise/Itchio" component={Itchio} />
 
 export const Template = (args) => (
   <Itchio {...args}>
@@ -18,7 +18,7 @@ A component to show a widget with your game from https://itch.io, also accepts a
 
 <Canvas>
   <Story
-    name="Default"
+    name="Itchio"
     args={{ user: 'ckgrafico', game: 'alice-ring', width: 800, height: 600, secret: '', slotLoading: 'Loading...' }}
   >
     {Template.bind({})}
@@ -43,7 +43,7 @@ A component to show a widget with your game from https://itch.io, also accepts a
 
 ### Properties
 
-<ArgsTable story="Default" of={Itchio} />
+<ArgsTable story="Itchio" of={Itchio} />
 
 ## How to use this component
 

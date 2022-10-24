@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/preact",
-  "version": "1.0.0-rc.31",
+  "version": "1.0.0-rc.50",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Preact UI Library",
@@ -31,5 +31,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "ec1a1021a0f8a2e890809258fa491014970311ca"
+  "gitHead": "0d87b9134c66d9a9e37d0c5e0e8f72a0f29c8463"
 }

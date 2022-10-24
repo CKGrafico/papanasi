@@ -3,6 +3,142 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.50](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.48...v1.0.0-rc.50) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.48](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.47...v1.0.0-rc.48) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.47](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.46...v1.0.0-rc.47) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.46](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.45...v1.0.0-rc.46) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.45](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.44...v1.0.0-rc.45) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.44](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.42...v1.0.0-rc.44) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.42](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.41...v1.0.0-rc.42) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.41](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.40...v1.0.0-rc.41) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.40](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.39...v1.0.0-rc.40) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.39](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.38...v1.0.0-rc.39) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.38](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.37...v1.0.0-rc.38) (2022-10-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.37](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.35...v1.0.0-rc.37) (2022-10-14)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.35](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.34...v1.0.0-rc.35) (2022-10-14)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.34](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.33...v1.0.0-rc.34) (2022-10-14)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.33](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.32...v1.0.0-rc.33) (2022-10-14)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
+# [1.0.0-rc.32](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.31...v1.0.0-rc.32) (2022-10-14)
+
+**Note:** Version bump only for package @papanasi/angular
+
+
+
+
+
 # [1.0.0-rc.31](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.30...v1.0.0-rc.31) (2022-10-12)
 
 **Note:** Version bump only for package @papanasi/angular
