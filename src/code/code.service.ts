@@ -49,9 +49,9 @@ export class CodeService {
   }
 
   private async loadLanguage(language: string) {
-    const languageSrc = `highlight.js/lib/languages/${language}.js`;
+    const languageSrc = `highlight.js/languages/${language}.js`;
     const loadedLanguage = await import(languageSrc);
-    debugger;
+    
     this.hljs.registerLanguage(language, loadedLanguage.default);
   }
 
