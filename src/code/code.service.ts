@@ -18,6 +18,7 @@ export class CodeService {
 
   public async initialize(codeRef, language: string, theme: CodeTheme, callback: () => void) {
     this.hljs = (await import('highlight.js/lib/core')).default;
+    (await import('highlight.js/lib/common')).default;
     this.jar = CodeJar(codeRef, (editor: HTMLElement) => this.highlightCode(editor));
 
     this.hljs.configure({
@@ -49,10 +50,10 @@ export class CodeService {
   }
 
   private async loadLanguage(language: string) {
-    const languageSrc = `highlight.js/languages/${language}.js`;
-    const loadedLanguage = await import(languageSrc);
-    
-    this.hljs.registerLanguage(language, loadedLanguage.default);
+    const languageSrc = `highlight.js/languages/${language}`;
+    // TODO: Load async
+    // const loadedLanguage = (await import(languageSrc)).default;
+    // this.hljs.registerLanguage(language, loadedLanguage);
   }
 
   private async registerLanguage(language: string) {
