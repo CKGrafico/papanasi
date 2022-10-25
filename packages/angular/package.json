@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/angular",
-  "version": "1.0.0-rc.53",
+  "version": "1.0.0-rc.54",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Angular UI Library",
@@ -16,10 +16,6 @@
     "./dist/papanasi.css": {
       "import": "./dist/papanasi.css",
       "require": "./dist/papanasi.css"
-    },
-    "./highlight/lib/languages/*": {
-      "require": "./highlight/lib/languages/*.js",
-      "import": "./highlight/lib/languages/*.js"
     }
   },
   "peerDependencies": {
