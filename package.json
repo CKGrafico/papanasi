@@ -7,7 +7,7 @@
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
     "start": "start-storybook -p 6006 --no-manager-cache",
-    "clean": "rimraf packages/**/{src,dist,node_modules}",
+    "clean": "rimraf packages/**/{src,dist,node_modules,stats.html}",
     "lerna": "lerna run",
     "lint": "run-p lint:**",
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
@@ -15,14 +15,13 @@
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.53 --force-publish",
+    "package": "lerna version 1.0.0-rc.54 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
     "codejar": "^3.6.0",
     "color-hash": "^2.0.1",
     "copy-to-clipboard": "^3.3.2",
-    "highlight.js": "^11.6.0",
     "ssr-window": "^4.0.2"
   },
   "devDependencies": {
@@ -65,6 +64,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-storybook": "^0.6.4",
     "glob": "^8.0.3",
+    "highlight.js": "^11.6.0",
     "husky": "^8.0.1",
     "lerna": "^5.5.2",
     "listr2": "^5.0.5",
@@ -93,6 +93,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-ts": "^3.0.2",
+    "rollup-plugin-visualizer": "^5.8.3",
     "rollup-plugin-vue": "^6.0.0",
     "solid-js": "^1.5.6",
     "stylelint": "^14.12.1",
