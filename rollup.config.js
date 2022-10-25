@@ -50,7 +50,7 @@ module.exports = (options) => {
           external,
           plugins: [
             ...plugins,
-          
+
             resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
             json(),
             typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
@@ -63,9 +63,9 @@ module.exports = (options) => {
             }),
             postcss(postcssConfig),
             peerDepsExternal(),
-            dynamicImportVars({
-              include: '**/*.ts'
-            }),
+            // dynamicImportVars({
+            //   include: '**/*.ts'
+            // }),
             commonjs()
           ]
         },
