@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/svelte",
-  "version": "1.0.0-rc.59",
+  "version": "1.0.0-rc.60",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
@@ -8,13 +8,21 @@
   "module": "./dist/papanasi-svelte.es.js",
   "style": "./dist/papanasi.css",
   "types": "./dist/index.d.ts",
-  "svelte": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/papanasi-svelte.es.js",
+      "require": "./dist/papanasi-svelte.umd.js"
+    },
+    "./dist/papanasi.css": {
+      "import": "./dist/papanasi.css",
+      "require": "./dist/papanasi.css"
+    }
+  },
   "peerDependencies": {
     "svelte": "^3.x"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "build": "rollup -c"
