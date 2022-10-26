@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.59](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.58...v1.0.0-rc.59) (2022-10-26)
+
+**Note:** Version bump only for package @papanasi/svelte
+
+
+
+
+
 # [1.0.0-rc.58](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.57...v1.0.0-rc.58) (2022-10-26)
 
 **Note:** Version bump only for package @papanasi/svelte
