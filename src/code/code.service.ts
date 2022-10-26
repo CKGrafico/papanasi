@@ -25,6 +25,8 @@ export class CodeService {
     });
 
     await this.registerLanguage(language);
+    this.registerThemes();
+    this.updateCurrentTheme(theme);
 
     callback();
   }
