@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/svelte",
-  "version": "1.0.0-rc.54",
+  "version": "1.0.0-rc.56",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
@@ -30,8 +30,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "0d87b9134c66d9a9e37d0c5e0e8f72a0f29c8463",
-  "dependencies": {
-    "on-change": "^4.0.1"
-  }
+  "gitHead": "0d87b9134c66d9a9e37d0c5e0e8f72a0f29c8463"
 }
