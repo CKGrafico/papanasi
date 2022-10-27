@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/svelte",
-  "version": "1.0.0-rc.63",
+  "version": "1.0.0-rc.65",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
@@ -23,6 +23,12 @@
       "import": "./dist/papanasi.css",
       "require": "./dist/papanasi.css"
     }
+  },
+  "dependencies": {
+    "codejar": "^3.6.0",
+    "color-hash": "^2.0.1",
+    "copy-to-clipboard": "^3.3.2",
+    "ssr-window": "^4.0.2"
   },
   "peerDependencies": {
     "svelte": "^3.x"
