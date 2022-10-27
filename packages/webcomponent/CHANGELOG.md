@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.63](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.61...v1.0.0-rc.63) (2022-10-27)
+
+**Note:** Version bump only for package @papanasi/webcomponents
+
+
+
+
+
 # [1.0.0-rc.61](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.60...v1.0.0-rc.61) (2022-10-27)
 
 **Note:** Version bump only for package @papanasi/webcomponents
