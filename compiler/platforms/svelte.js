@@ -21,8 +21,7 @@ const DEFAULT_OPTIONS = {
         .replace(/helpers\.svelte/g, 'helpers')
         .replace(/src\/(.*)\.svelte/g, 'src/$1')
         // Remove broken imports
-        .replace(/\.\.\/\.\.\/\.\.\/(src\/)?/g, './')
-        .replace(/import.*css\';/g, '');
+        .replace(/\.\.\/\.\.\/\.\.\/(src\/)?/g, './');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
@@ -40,9 +39,7 @@ const DEFAULT_OPTIONS = {
       // Remove Onchange
       .replace('import onChange from "on-change";', '')
       // Remove ../../ imports
-      .replace(/\.\.\/\.\.\/\.\.\//g, './')
-      // Remove css imports
-      .replace(/import.*\.css';/g, '');
+      .replace(/\.\.\/\.\.\/\.\.\//g, './');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }

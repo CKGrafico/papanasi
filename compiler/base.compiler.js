@@ -55,7 +55,13 @@ async function compile(defaultOptions) {
     fs.copySync('src/index.ts', `${outPath}/src/index.ts`);
 
     const fileServices = cliConfig.elements ? `src/{${cliConfig.elements.join(',')},}` : 'src/**';
-    const srcFiles = [...glob.sync(`${fileServices}/*.{service,model}.ts`), 'helpers', 'models'];
+    const srcFiles = [
+      ...glob.sync(`${fileServices}/*.{service,model}.ts`),
+      ...glob.sync(`src/tooltip/tooltip.ts`), // TODO improve
+      ...glob.sync(`styles/variables.css`),
+      'helpers',
+      'models'
+    ];
     srcFiles.forEach((element) => {
       const to = element.includes('src/') ? path.parse(element).base : element;
       fs.copySync(element, `${outPath}/src/${to}`);
