@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
-    "start": "start-storybook -p 6006 --no-manager-cache",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006 --no-manager-cache",
     "clean": "rimraf packages/**/{src,dist,node_modules,stats.html}",
     "lerna": "lerna run",
     "lint": "run-p lint:**",
