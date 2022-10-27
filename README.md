@@ -107,7 +107,7 @@
     </td>
      <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="41" title="Svelte Kit"> <br/>
-      <strong>Solid Start</strong> <br/>
+      <strong>Svelte Kit</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/p/sandbox/cranky-lamport-2t12j5" target="_blank"><img src="https://img.shields.io/badge/Demo-FF3E00?logoColor=white&logo=svelte" alt="Svelte Kit Demo" /></a>
         Help needed to fix SSR
@@ -115,7 +115,7 @@
     </td>
      <td align="center" width="140">
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/solidjs-icon.svg" width="41" title="Solid Create"> <br/>
-      <strong>Solid Create</strong> <br/>
+      <strong>Solid Start</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/p/github/CKGrafico/solid-start-simple/draft/loving-drake?file=%2Fsrc%2Froutes%2Findex.tsx" target="_blank"><img src="https://img.shields.io/badge/Demo-2e5593?logoColor=white&logo=solid" alt="Solid Start Demo" /></a>
         Help needed to fix SSR
