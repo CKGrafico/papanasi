@@ -1,31 +1,34 @@
 {
   "name": "@papanasi/svelte",
-  "version": "1.0.0-rc.60",
+  "version": "1.0.0-rc.61",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
-  "main": "./dist/papanasi-svelte.umd.js",
-  "module": "./dist/papanasi-svelte.es.js",
+  "main": "./package/index.js",
+  "module": "./package/index.js",
+  "type": "module",
+  "svelte": "./src/index.ts",
   "style": "./dist/papanasi.css",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./dist/papanasi-svelte.es.js",
-      "require": "./dist/papanasi-svelte.umd.js"
+    "./src": {
+      "import": "./src/index.js",
+      "require": "./src/index.js"
     },
-    "./dist/papanasi.css": {
-      "import": "./dist/papanasi.css",
-      "require": "./dist/papanasi.css"
+    ".": {
+      "import": "./package/index.js",
+      "require": "./package/index.js"
     }
   },
   "peerDependencies": {
     "svelte": "^3.x"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "build": "rollup -c"
+    "build": "svelte-kit sync && svelte-package && rollup -c"
   },
   "publishConfig": {
     "access": "public"
