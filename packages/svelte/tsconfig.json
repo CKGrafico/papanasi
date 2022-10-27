@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {},
+    "rootDirs": [
+      ".",
+    ],
+    "isolatedModules": true,
+    "lib": [
+      "esnext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext"
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.svelte",
+  ],
+  "exclude": [
+    "../../node_modules/**"
+  ]
+}

@@ -17,7 +17,7 @@
     "importsNotUsedAsValues": "preserve",
     "paths": {
       "~/*": [
-        "./*"
+        "./src/*"
       ]
     }
   }

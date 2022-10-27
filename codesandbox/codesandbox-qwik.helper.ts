@@ -1,4 +1,4 @@
-import lernaJson from '../../lerna.json';
+import lernaJson from '../lerna.json';
 
 export function generateQwikCodeSandboxLink(options) {
   const { components, extensions, code, dependencies } = options;

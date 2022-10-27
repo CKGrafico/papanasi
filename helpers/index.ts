@@ -2,7 +2,6 @@ export * from './arg-type.helper';
 export * from './breakpoint.helper';
 export * from './classes.helper';
 export * from './codejar.helper';
-export * from './codesandbox';
 export * from './color.helper';
 export * from './element.helper';
 export * from './inject-script.helper';

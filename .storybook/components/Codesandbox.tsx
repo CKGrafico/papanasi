@@ -8,7 +8,7 @@ import {
   generateSvelteCodeSandboxLink,
   generateVueCodeSandboxLink,
   generateWebCodeSandboxLink
-} from '../../helpers';
+} from '../../codesandbox';
 import { Code } from '../../packages/react/src';
 
 enum CodesandboxPlatform {

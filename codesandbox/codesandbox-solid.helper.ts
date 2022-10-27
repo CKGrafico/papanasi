@@ -1,4 +1,4 @@
-import lernaJson from '../../lerna.json';
+import lernaJson from '../lerna.json';
 import { generateCodeSandboxLink } from './codesandbox.helper';
 
 export function generateSolidCodeSandboxLink(options) {

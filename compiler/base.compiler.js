@@ -1,5 +1,5 @@
 const glob = require('glob');
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const filesystemTools = require('gluegun/filesystem');
 const stringTools = require('gluegun/strings');
@@ -52,18 +52,24 @@ async function compile(defaultOptions) {
       fs.mkdirSync(`${outPath}/src`);
     }
 
-    fs.copyFileSync('src/index.ts', `${outPath}/src/index.ts`);
+    fs.copySync('src/index.ts', `${outPath}/src/index.ts`);
 
     const fileServices = cliConfig.elements ? `src/{${cliConfig.elements.join(',')},}` : 'src/**';
-    const services = glob.sync(`${fileServices}/*.{service,model}.ts`);
+    const srcFiles = [...glob.sync(`${fileServices}/*.{service,model}.ts`), 'helpers', 'models'];
+    srcFiles.forEach((element) => {
+      const to = element.includes('src/') ? path.parse(element).base : element;
+      fs.copySync(element, `${outPath}/src/${to}`);
+    });
 
-    services.forEach((element) => {
+    const distFiles = glob.sync(`${outPath}/src/*.ts`);
+
+    distFiles.forEach((element) => {
       const data = fs.readFileSync(element, 'utf8');
       const result = data
         // Fix alias
-        .replace(/\~\//g, '../../../');
+        .replace(/\~\//g, './');
 
-      fs.writeFileSync(`${outPath}/src/${path.parse(element).base}`, result, 'utf8');
+      fs.writeFileSync(element, result, 'utf8');
     });
 
     const data = fs.readFileSync('README.md', 'utf8');

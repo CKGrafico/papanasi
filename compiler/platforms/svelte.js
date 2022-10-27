@@ -19,7 +19,8 @@ const DEFAULT_OPTIONS = {
         .replace(/\'\;/g, ".svelte';")
         .replace(/\.css\.svelte/g, '.css')
         .replace(/helpers\.svelte/g, 'helpers')
-        .replace(/src\/(.*)\.svelte/g, 'src/$1');
+        .replace(/src\/(.*)\.svelte/g, 'src/$1')
+        .replace(/\.\.\/\.\.\/\.\.\/(src\/)?/g, './');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
@@ -35,7 +36,11 @@ const DEFAULT_OPTIONS = {
       // Fix state in svelte
       .replace(/svelte:component\n.*this=\{circle\}/g, 'circle')
       // Remove Onchange
-      .replace('import onChange from "on-change";', '');
+      .replace('import onChange from "on-change";', '')
+      // Remove ../../ imports
+      .replace(/\.\.\/\.\.\/\.\.\//g, './')
+      // Remove css imports
+      .replace(/import.*\.css';/g, '');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }
