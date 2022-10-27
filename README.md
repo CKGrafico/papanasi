@@ -389,6 +389,8 @@ Finally, to launch storybook use:
 ### Thanks to everyone who contributed:
 [![Contributors](https://contrib.rocks/image?repo=ckgrafico/papanasi)](https://github.com/CKGrafico/papanasi/graphs/contributors)
 
+And special thanks to @samijaber @mhevery and [Builder project](https://github.com/BuilderIO/builder/tree/main/packages/sdks)
+
 ---
 
 Made with 🍕 by [Quique Fdez Guerra](https://twitter.com/ckgrafico)
