@@ -20,7 +20,9 @@ const DEFAULT_OPTIONS = {
         .replace(/\.css\.svelte/g, '.css')
         .replace(/helpers\.svelte/g, 'helpers')
         .replace(/src\/(.*)\.svelte/g, 'src/$1')
-        .replace(/\.\.\/\.\.\/\.\.\/(src\/)?/g, './');
+        // Remove broken imports
+        .replace(/\.\.\/\.\.\/\.\.\/(src\/)?/g, './')
+        .replace(/import.*css\';/g, '');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
