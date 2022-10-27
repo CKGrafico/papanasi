@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Code } from '../../packages/react/src';
 import {
   generateAngularCodeSandboxLink,
   generatePreactCodeSandboxLink,
@@ -8,8 +9,7 @@ import {
   generateSvelteCodeSandboxLink,
   generateVueCodeSandboxLink,
   generateWebCodeSandboxLink
-} from '../../codesandbox';
-import { Code } from '../../packages/react/src';
+} from '../helpers';
 
 enum CodesandboxPlatform {
   Angular = 'angular',

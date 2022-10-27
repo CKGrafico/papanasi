@@ -1,1 +1,0 @@
-export { useTooltipExtension } from './tooltip';

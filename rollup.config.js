@@ -68,7 +68,7 @@ module.exports = (options) => {
           ]
         },
     {
-      input: path.resolve(dir, '../../styles/themes/papanasi/index.css'),
+      input: path.resolve(dir, '../../src/styles/themes/papanasi/index.css'),
       output: [
         {
           file: packageJson.style,

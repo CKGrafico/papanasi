@@ -13,7 +13,7 @@ type CustomizationProps = {
 
 const templateCSS = (css, selector = '') => `/**
 * You can edit this code, just click inside and modify it.
-* Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css
+* Check all the variables at https://github.com/CKGrafico/papanasi/blob/main/src/styles/variables.css
 **/
 
 .docs-story ${selector} {${css.replace(/    /g, '  ')}}

@@ -1,0 +1,55 @@
+@import '~/styles/build.css';
+
+@define-mixin column $size, $columns {
+  flex: 0 0 calc($size / $columns * 100% - var(--pa-grid-gutter-horizontal) * 2);
+  max-width: calc($size / $columns * 100% - var(--pa-grid-gutter-horizontal) * 2);
+}
+
+@define-mixin column-content {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  display: flex;
+}
+
+@define-mixin column-fill {
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  width: 100%;
+}
+
+@define-mixin column-hide {
+  display: none;
+}
+
+.pa-column {
+  @mixin column-fill;
+
+  margin-bottom: var(--pa-grid-gutter-vertical);
+  margin-left: var(--pa-grid-gutter-horizontal);
+  margin-right: var(--pa-grid-gutter-horizontal);
+  margin-top: var(--pa-grid-gutter-vertical);
+
+  @each $breakpoint in var(--internal-breakpoints) {
+    @each $value in var(--internal-columns) {
+      @mixin breakpoint-modifier $breakpoint, $value {
+        @mixin column $value, var(--internal-columns-total);
+        display: flex;
+      }
+    }
+
+    @mixin breakpoint-modifier $breakpoint, content {
+      @mixin column-content;
+    }
+
+    @mixin breakpoint-modifier $breakpoint, fill {
+      @mixin column-fill;
+    }
+
+    @mixin breakpoint-modifier $breakpoint, hide {
+      @mixin column-hide;
+    }
+  }
+}

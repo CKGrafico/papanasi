@@ -1,18 +1,18 @@
-import './styles/variables.css';
 import { initBreakpointChecker } from './helpers';
-
-export { useTooltipExtension } from './tooltip';
+import './styles/variables.css';
 
 // Init Components
-export { default as Avatar } from './avatar';
-export { default as Button } from './button';
-export { default as Code } from './code';
-export { default as Column } from './column';
-export { default as Container } from './container';
-export { default as Itchio } from './itchio';
-export { default as Pill } from './pill';
-export { default as Row } from './row';
-export { default as Spinner } from './spinner';
+export { default as Avatar } from './elements/components/avatar';
+export { default as Button } from './elements/components/button';
+export { default as Code } from './elements/components/code';
+export { default as Pill } from './elements/components/pill';
+export { default as Spinner } from './elements/components/spinner';
+export { default as Itchio } from './elements/enterprise/itchio';
+export { useTooltipExtension } from './elements/extensions/tooltip';
+export { default as Column } from './elements/layout/column';
+export { default as Container } from './elements/layout/container';
+export { default as Row } from './elements/layout/row';
+
 // End Components
 
 initBreakpointChecker();

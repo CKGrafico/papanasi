@@ -16,6 +16,12 @@
     "resolveJsonModule": true,
     "importsNotUsedAsValues": "preserve",
     "paths": {
+      "~/helpers/*": [
+        "./src/helpers/*"
+      ],
+      "~/models/*": [
+        "./src/models/*"
+      ],
       "~/*": [
         "./src/*"
       ]

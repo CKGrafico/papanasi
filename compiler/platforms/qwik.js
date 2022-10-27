@@ -15,9 +15,9 @@ const DEFAULT_OPTIONS = {
 
     const name = file.name.replace('.lite', '');
     const data = fs.readFileSync(outFile, 'utf8');
-    const result = data
-      // fix import css
-      .replace(/\.service"\;/g, `.service";\nimport '../../../src/${name}/${name}.css';`);
+    const result = data;
+    // fix import css
+    // .replace(/\.service"\;/g, `.service";\nimport '../../../src/${name}/${name}.css';`);
     fs.writeFileSync(outFile, result, 'utf8');
   }
 

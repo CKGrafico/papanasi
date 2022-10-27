@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   stories: ['../docs/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
@@ -21,6 +22,8 @@ module.exports = {
     cssRule.use = use.filter((x) => !x?.loader?.includes('style-loader'));
 
     options.cache.set = () => Promise.resolve();
+
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
 
     return config;
   }

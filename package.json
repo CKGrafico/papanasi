@@ -11,7 +11,7 @@
     "lerna": "lerna run",
     "lint": "run-p lint:**",
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
-    "lint:styles": "stylelint \"./styles/**/*.(css)\" --fix",
+    "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "lint:editor": "eclint fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
@@ -105,6 +105,7 @@
     "stylelint-prettier": "^2.0.0",
     "svelte": "^3.52.0",
     "ts-node": "10.9.1",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^4.8.3",
     "vite": "^3.1.6"
   },

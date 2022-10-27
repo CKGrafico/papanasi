@@ -1,0 +1,18 @@
+@import '~/styles/build.css';
+
+.pa-button {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  background-image: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+
+  &.is-disabled {
+    pointer-events: none;
+  }
+}

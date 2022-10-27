@@ -1,0 +1,8 @@
+@import '~/styles/build.css';
+
+.pa-tooltip {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}

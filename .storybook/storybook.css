@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@100;300;400;600&display=swap');
 
-@import '../styles/build.css';
-@import '../styles/variables.css';
+@import '../src/styles/build.css';
+@import '../src/styles/variables.css';
 
 /* Manager */
 .sidebar-item svg,

@@ -1,0 +1,10 @@
+@import '~/styles/build.css';
+
+.pa-container {
+  width: 100%;
+  max-width: var(--pa-grid-container-max-width);
+
+  &--fluid {
+    max-width: 100%;
+  }
+}

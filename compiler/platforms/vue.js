@@ -19,7 +19,7 @@ const DEFAULT_OPTIONS = {
         .replace(/\'\;/g, ".vue';")
         .replace(/\.css\.vue/g, '.css')
         .replace(/helpers\.vue/g, 'helpers')
-        .replace(/src\/(.*)\.vue/g, 'src/$1');
+        .replace(/(extensions)\/(.*)\.vue/g, '$1/$2');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }

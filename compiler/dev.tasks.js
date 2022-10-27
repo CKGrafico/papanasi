@@ -33,30 +33,28 @@ const ora = require('ora');
       task: async (ctx, task) => {
         task.title = 'Watching for changes';
 
-        return chokidar
-          .watch(['src/**/*', 'helpers/**/*', 'models/**/*', 'styles/**/*'])
-          .on('all', async (event, pathName) => {
-            if (event !== 'change') {
-              return;
-            }
+        return chokidar.watch(['src/**/*']).on('all', async (event, pathName) => {
+          if (event !== 'change') {
+            return;
+          }
 
-            const file = path.parse(pathName);
-            const name = file.dir.replace('src\\', '');
-            const spinner = ora(`Changed ${name}, compiling... `).start();
+          const file = path.parse(pathName);
+          const name = file.dir.replace('src\\', '');
+          const spinner = ora(`Changed ${name}, compiling... `).start();
 
-            try {
-              await execa('node ./compiler/platforms/react --dev');
-              await execa('yarn lerna --scope=@papanasi/react build');
-            } catch (e) {
-              spinner.text = `Error compiling ${e.message}.`;
-              spinner.fail();
+          try {
+            await execa('node ./compiler/platforms/react --dev');
+            await execa('yarn lerna --scope=@papanasi/react build');
+          } catch (e) {
+            spinner.text = `Error compiling ${e.message}.`;
+            spinner.fail();
 
-              return;
-            }
+            return;
+          }
 
-            spinner.text = 'Compiled successfully.';
-            spinner.succeed();
-          });
+          spinner.text = 'Compiled successfully.';
+          spinner.succeed();
+        });
       },
       options: {
         persistentOutput: true

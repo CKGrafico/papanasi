@@ -1,0 +1,24 @@
+@import '~/styles/build.css';
+
+.pa-itchio {
+  &__container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}

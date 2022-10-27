@@ -35,7 +35,7 @@ async function compile(defaultOptions) {
 
   const cliConfig = commandLineArgs(optionDefinitions);
   options.elements = cliConfig.elements
-    ? cliConfig.elements.map((file) => `src/${file}/${file}.lite.tsx`)
+    ? cliConfig.elements.map((file) => glob.sync(`src/**/${file}/${file}.lite.tsx`)).flat()
     : options.elements;
   options.isDev = !!cliConfig.dev;
 
@@ -48,36 +48,27 @@ async function compile(defaultOptions) {
       return;
     }
 
-    if (!fs.existsSync(`${outPath}/src`)) {
-      fs.mkdirSync(`${outPath}/src`);
-    }
+    // Move src to all the package folder
+    fs.copySync('src', `${outPath}/src`);
 
-    fs.copySync('src/index.ts', `${outPath}/src/index.ts`);
+    // Remove unnecessary files moved
+    const unnecessaryFiles = glob.sync(`${outPath}/src/**/*.{mdx,tsx}`);
+    unnecessaryFiles.forEach((element) => fs.removeSync(element));
 
-    const fileServices = cliConfig.elements ? `src/{${cliConfig.elements.join(',')},}` : 'src/**';
-    const srcFiles = [
-      ...glob.sync(`${fileServices}/*.{service,model}.ts`),
-      ...glob.sync(`src/tooltip/tooltip.ts`), // TODO improve
-      ...glob.sync(`styles/variables.css`),
-      'helpers',
-      'models'
-    ];
-    srcFiles.forEach((element) => {
-      const to = element.includes('src/') ? path.parse(element).base : element;
-      fs.copySync(element, `${outPath}/src/${to}`);
-    });
-
-    const distFiles = glob.sync(`${outPath}/src/*.ts`);
-
+    // Fix aliases
+    const distFiles = glob.sync(`${outPath}/src/**/*.{ts,css}`);
     distFiles.forEach((element) => {
       const data = fs.readFileSync(element, 'utf8');
       const result = data
         // Fix alias
-        .replace(/\~\//g, './');
+        .replace(/\~\//g, '../../../')
+        // Remove .lite
+        .replace(/\.lite/g, '');
 
       fs.writeFileSync(element, result, 'utf8');
     });
 
+    // Create specific README
     const data = fs.readFileSync('README.md', 'utf8');
     const result = data.replace(
       /\/\[target\].+/g,
@@ -90,12 +81,17 @@ async function compile(defaultOptions) {
       return;
     }
 
-    const fileExports = cliConfig.elements
-      .map((name) => {
-        return `export { default as ${name.charAt(0).toUpperCase() + name.slice(1)} } from './${name}';`;
+    // Export only the elements we want
+    const fileExports = options.elements
+      .map((fileName) => {
+        const file = path.parse(fileName);
+        const name = file.name.replace('.lite', '');
+        return `export { default as ${name.charAt(0).toUpperCase() + name.slice(1)} } from './${file.dir.replace(
+          'src/',
+          ''
+        )}';`;
       })
       .join('\n');
-
     const indexData = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
     const indexResult = indexData.replace(
       /(\/\/ Init Components)(.+?)(\/\/ End Components)/s,
@@ -106,7 +102,7 @@ async function compile(defaultOptions) {
 
   async function compileMitosisComponent(filepath) {
     const file = path.parse(filepath);
-    const outFile = `${outPath}/src/${file.name.replace('.lite', '')}.${options.extension}`;
+    const outFile = `${outPath}/${file.dir}/${file.name.replace('.lite', '')}.${options.extension}`;
 
     await compileCommand.run({
       parameters: {
@@ -139,12 +135,8 @@ async function compile(defaultOptions) {
       // Meanwhile mitosis don't support import external types...
       .replace(
         'import',
-        `import { Dynamic, BaseProps, BaseState, CSS, Variant, Intent, BreakpointProps } from '../../../models';\nimport { ${toPascalCase(
-          name
-        )}Props, ${toPascalCase(name)}State } from './${name}.model';\nimport`
-      )
-      // Fix css import
-      .replace(/import ("|')\.\/(.+)\.css("|')\;/g, "import '../../../src/$2/$2.css';");
+        `import { ${toPascalCase(name)}Props, ${toPascalCase(name)}State } from './${name}.model';\nimport`
+      );
 
     fs.writeFileSync(outFile, result, 'utf8');
   }
