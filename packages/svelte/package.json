@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/svelte",
-  "version": "1.0.0-rc.83",
+  "version": "1.0.0-rc.84",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
@@ -8,7 +8,7 @@
   "module": "./dist/index.js",
   "type": "module",
   "svelte": "../src/index.ts",
-  "style": "./papanasi.css",
+  "style": "./dist/papanasi.css",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -40,5 +40,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "0d87b9134c66d9a9e37d0c5e0e8f72a0f29c8463"
+  "gitHead": "bd16edb42f347018a0f7d79d421cff9f5a488c6a"
 }
