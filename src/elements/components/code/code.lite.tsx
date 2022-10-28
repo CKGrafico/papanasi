@@ -1,5 +1,4 @@
 import { For, onMount, onUnMount, onUpdate, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
-import copy from 'copy-to-clipboard';
 import { getObjectValue } from '~/helpers';
 import './code.css';
 import { CodeProps, CodeState } from './code.model';
@@ -78,7 +77,7 @@ export default function Code(props: CodeProps) {
           </For>
 
           <Show when={!props.disableCopy && props.slotCopy}>
-            <span class="pa-code__action pa-code__action--copy" onClick={() => copy(props.code)}>
+            <span class="pa-code__action pa-code__action--copy" onClick={() => state.codeService.copy(props.code)}>
               <span class="pa-code__link">{props.slotCopy}</span>
             </span>
           </Show>

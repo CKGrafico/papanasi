@@ -48,6 +48,12 @@ export class CodeService {
     codeRef.setAttribute('contenteditable', editable ? 'plaintext-only' : 'false');
   }
 
+  public async copy(code: string) {
+    const copy = (await import('copy-to-clipboard')).default;
+
+    copy(code);
+  }
+
   private async loadLanguage(language: string) {
     const languageSrc = `highlight.js/languages/${language}`;
     // TODO: Load async

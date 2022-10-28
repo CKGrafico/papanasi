@@ -1,5 +1,3 @@
-import ColorHash from 'color-hash';
-
 // Note: Some helpers are from https://gist.github.com/mjackson/5311256
 
 const ranges = (min, max) => Array.from({ length: max - min + 1 }, (_, i) => min + i);
@@ -33,7 +31,9 @@ function hsl2rgba(rawH: number, rawS: number, rawL: number, alpha = 1): string {
   return `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${alpha})`;
 }
 
-export function randomColor(text: string, alpha = 0.5) {
+export async function randomColor(text: string, alpha = 0.5) {
+  const ColorHash = (await import('color-hash')).default;
+
   const options = {
     hue: { min: 0, max: 360 },
     saturation: ranges(55, 90),

@@ -14,8 +14,8 @@ class AvatarService {
     return { base, container };
   }
 
-  public getStyles(name: string, variant: string) {
-    const container = this.getColor(name, variant);
+  public async getStyles(name: string, variant: string) {
+    const container = await this.getColor(name, variant);
 
     return { container };
   }
@@ -31,12 +31,12 @@ class AvatarService {
       .toLocaleUpperCase();
   }
 
-  public getColor(name: string, variant: string) {
+  public async getColor(name: string, variant: string) {
     if (variant) {
       return {};
     }
 
-    const color = randomColor(name);
+    const color = await randomColor(name);
 
     return {
       color: color.foreground,
