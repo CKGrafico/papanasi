@@ -8,7 +8,7 @@ const config = {
     source: 'src',
     dir: 'dist'
   },
-  optimizeDeps: { include: ['color-hash', 'copy-to-clipboard', 'highlight.js'] }
+  optimizeDeps: { include: ['copy-to-clipboard', 'highlight.js'] }
 };
 
 export default config;
