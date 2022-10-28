@@ -52,13 +52,6 @@ const optionDefinitions = [
                         execa('yarn lint:styles').catch(() => {
                           throw new Error('Error Linting Styles');
                         })
-                    },
-                    {
-                      title: 'Lint Other Files',
-                      task: () =>
-                        execa('yarn lint:editor').catch(() => {
-                          throw new Error('Error with Other Lintings');
-                        })
                     }
                   ],
                   { concurrent: true }

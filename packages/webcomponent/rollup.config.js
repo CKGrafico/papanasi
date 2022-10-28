@@ -2,5 +2,6 @@ const config = require('../../rollup.config');
 
 module.exports = config({
   dir: __dirname,
-  packageJson: require('./package.json')
+  packageJson: require('./package.json'),
+  dts: false
 });

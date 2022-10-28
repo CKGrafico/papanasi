@@ -16,9 +16,7 @@ const DEFAULT_OPTIONS = {
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
       const result = data
         // Add .vue to index
-        .replace(/\'\;/g, ".vue';")
-        .replace(/\.css\.vue/g, '.css')
-        .replace(/helpers\.vue/g, 'helpers')
+        .replace(/(export)(.*)\/(.+)';/g, "$1$2/$3/$3.vue';")
         .replace(/(extensions)\/(.*)\.vue/g, '$1/$2');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
