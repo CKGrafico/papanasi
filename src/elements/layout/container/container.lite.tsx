@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './container.css';
-import { ContainerProps, ContainerState } from './container.model';
+import type { ContainerProps, ContainerState } from './container.model';
 import { containerService } from './container.service';
 
 useMetadata({ isAttachedToShadowDom: true });

@@ -1,6 +1,7 @@
 // import { CodeJar } from 'codejar';
 import { classesToString, CodeJar, wait } from '~/helpers';
-import { CodeTheme, codeThemes } from './code.model';
+import type { CodeTheme } from './code.model';
+import { codeThemes } from './code.model';
 
 export class CodeService {
   public styles = [];

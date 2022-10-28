@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './spinner.css';
-import { SpinnerProps, SpinnerState } from './spinner.model';
+import type { SpinnerProps, SpinnerState } from './spinner.model';
 import { spinnerService } from './spinner.service';
 
 useMetadata({ isAttachedToShadowDom: true });

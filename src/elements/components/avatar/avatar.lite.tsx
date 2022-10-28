@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './avatar.css';
-import { AvatarProps, AvatarState } from './avatar.model';
+import type { AvatarProps, AvatarState } from './avatar.model';
 import { avatarService } from './avatar.service';
 
 useMetadata({ isAttachedToShadowDom: true });

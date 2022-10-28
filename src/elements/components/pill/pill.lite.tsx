@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './pill.css';
-import { PillProps, PillState } from './pill.model';
+import type { PillProps, PillState } from './pill.model';
 import { pillService } from './pill.service';
 
 useMetadata({ isAttachedToShadowDom: true });

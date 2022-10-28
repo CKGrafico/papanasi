@@ -131,12 +131,7 @@ async function compile(defaultOptions) {
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
       // Fix alias
-      .replace(/\~\//g, '../../../')
-      // Meanwhile mitosis don't support import external types...
-      .replace(
-        'import',
-        `import { ${toPascalCase(name)}Props, ${toPascalCase(name)}State } from './${name}.model';\nimport`
-      );
+      .replace(/\~\//g, '../../../');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }

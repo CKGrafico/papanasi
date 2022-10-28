@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './row.css';
-import { RowProps, RowState } from './row.model';
+import type { RowProps, RowState } from './row.model';
 import { rowService } from './row.service';
 
 useMetadata({ isAttachedToShadowDom: true });

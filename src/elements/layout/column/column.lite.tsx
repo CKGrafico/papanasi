@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './column.css';
-import { ColumnProps, ColumnState } from './column.model';
+import type { ColumnProps, ColumnState } from './column.model';
 import { columnService } from './column.service';
 
 useMetadata({ isAttachedToShadowDom: true });

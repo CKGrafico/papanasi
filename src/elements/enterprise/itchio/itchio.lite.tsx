@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import './itchio.css';
-import { ItchioProps, ItchioState } from './itchio.model';
+import type { ItchioProps, ItchioState } from './itchio.model';
 import { itchioService } from './itchio.service';
 
 useMetadata({ isAttachedToShadowDom: true });

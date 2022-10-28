@@ -1,7 +1,7 @@
 import { For, onMount, onUnMount, onUpdate, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import { getObjectValue } from '~/helpers';
 import './code.css';
-import { CodeProps, CodeState } from './code.model';
+import type { CodeProps, CodeState } from './code.model';
 import { CodeService } from './code.service';
 useMetadata({ isAttachedToShadowDom: true });
 

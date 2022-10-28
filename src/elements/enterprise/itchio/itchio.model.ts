@@ -1,4 +1,4 @@
-import { BaseProps, BaseState, Children } from '~/models';
+import type { BaseProps, BaseState, Children } from '~/models';
 
 export type ItchioGameInfo = {
   title: string;
