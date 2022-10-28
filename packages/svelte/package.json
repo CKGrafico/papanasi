@@ -38,7 +38,7 @@
     "src"
   ],
   "scripts": {
-    "build": "svelte-kit sync && svelte-package && rollup -c"
+    "build": "svelte-kit sync && svelte-package && rollup -c --bundleConfigAsCjs"
   },
   "publishConfig": {
     "access": "public"

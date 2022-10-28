@@ -1,19 +1,12 @@
 {
+  "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {},
     "rootDirs": [
       ".",
     ],
-    "isolatedModules": true,
-    "lib": [
-      "esnext",
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "moduleResolution": "node",
-    "module": "esnext",
-    "target": "esnext"
+    "importsNotUsedAsValues": "preserve",
+    "preserveValueImports": false
   },
   "include": [
     "./src/**/*.ts",
