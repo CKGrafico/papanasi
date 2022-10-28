@@ -14,7 +14,7 @@
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "build-storybook": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.75 --force-publish",
+    "package": "lerna version 1.0.0-rc.76 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
@@ -35,6 +35,7 @@
     "@builder.io/mitosis-cli": "0.0.34",
     "@builder.io/qwik": "^0.12.0",
     "@custom-elements-manifest/analyzer": "^0.6.4",
+    "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@rollup/plugin-babel": "^6.0.2",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-dynamic-import-vars": "^2.0.1",
