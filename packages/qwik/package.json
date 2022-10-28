@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/qwik",
-  "version": "1.0.0-rc.87",
+  "version": "1.0.0-rc.88",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Qwik UI Library",
@@ -28,7 +28,8 @@
   },
   "files": [
     "dist",
-    "lib"
+    "lib",
+    "types"
   ],
   "scripts": {
     "prebuild": "yarn install",
