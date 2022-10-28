@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.86](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.85...v1.0.0-rc.86) (2022-10-28)
+
+**Note:** Version bump only for package @papanasi/preact
+
 # [1.0.0-rc.85](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.84...v1.0.0-rc.85) (2022-10-28)
 
 **Note:** Version bump only for package @papanasi/preact
