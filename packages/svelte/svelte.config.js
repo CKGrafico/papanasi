@@ -1,4 +1,3 @@
-import { esbuildCommonjs } from '@originjs/vite-plugin-commonjs';
 import adapter from '@sveltejs/adapter-auto';
 
 const config = {
@@ -8,19 +7,6 @@ const config = {
   package: {
     source: 'src',
     dir: 'dist'
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      plugins: [esbuildCommonjs(['color-hash', 'copy-to-clipboard'])]
-    }
-  },
-  build: {
-    commonjsOptions: {
-      transformMixedEsModules: true
-    }
-  },
-  commonjsOptions: {
-    transformMixedEsModules: true
   }
 };
 
