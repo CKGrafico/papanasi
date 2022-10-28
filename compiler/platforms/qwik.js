@@ -23,7 +23,9 @@ const DEFAULT_OPTIONS = {
       .replace(
         /export const (.*) = component\$\(\((props)\) => \{/g,
         `export const ${pascalName} = component$((props: ${pascalName}Props) => {`
-      );
+      )
+      // Fix https://github.com/BuilderIO/mitosis/pull/855
+      .replace(/useClientEffect/g, 'useMount');
     fs.writeFileSync(outFile, result, 'utf8');
   }
 
