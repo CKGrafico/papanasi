@@ -1,18 +1,19 @@
 {
   "name": "@papanasi/qwik",
-  "version": "1.0.0-rc.90",
+  "version": "1.0.0-rc.91",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Qwik UI Library",
   "type": "module",
-  "main": "./lib/papanasi.qwik.cjs",
-  "module": "./lib/papanasi.qwik.mjs",
-  "qwik": "./lib/papanasi.qwik.mjs",
-  "types": "./types/index.d.ts",
+  "main": "./lib/index.qwik.mjs",
+  "qwik": "./lib/index.qwik.mjs",
+  "module": "./lib/index.qwik.mjs",
+  "types": "./lib-types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./lib/papanasi.qwik.mjs",
-      "require": "./lib/papanasi.qwik.cjs"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib-types/index.d.ts"
     }
   },
   "peerDependencies": {
@@ -20,11 +21,13 @@
   },
   "files": [
     "lib",
-    "types"
+    "lib-types"
   ],
   "scripts": {
     "prebuild": "yarn install",
-    "build": "tsc && vite build --mode lib"
+    "build": "qwik build",
+    "build.lib": "vite build --mode lib",
+    "build.types": "tsc --emitDeclarationOnly"
   },
   "publishConfig": {
     "access": "public"
