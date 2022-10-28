@@ -10,7 +10,7 @@ export default defineConfig(() => {
         entry: './src/index.ts',
         formats: ['es', 'cjs'],
 
-        fileName: (format) => `${format === 'es' ? 'papanasi-qwik.es.js' : 'papanasi-qwik.umd.js'}`
+        fileName: (format) => `${format === 'es' ? 'papanasi.mjs' : 'papanasi.cjs'}`
       },
       minify: false,
       rollupOptions: {

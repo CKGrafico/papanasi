@@ -4,14 +4,16 @@
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Qwik UI Library",
-  "main": "./dist/papanasi-qwik.umd.js",
-  "module": "./dist/papanasi-qwik.es.js",
+  "type": "module",
+  "main": "./lib/papanasi.cjs",
+  "module": "./lib/papanasi.mjs",
+  "qwik": "./lib/papanasi.mjs",
   "style": "./dist/papanasi.css",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/papanasi-qwik.es.js",
-      "require": "./dist/papanasi-qwik.umd.js"
+      "import": "./lib/papanasi.mjs",
+      "require": "./lib/papanasi.cjs"
     },
     "./dist/style.css": {
       "import": "./dist/style.css",
@@ -30,8 +32,7 @@
   ],
   "scripts": {
     "prebuild": "yarn install",
-    "build": "qwik build && rollup -c",
-    "build.client": "vite build --mode lib"
+    "build": "vite build --mode lib"
   },
   "publishConfig": {
     "access": "public"
