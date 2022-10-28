@@ -1,22 +1,26 @@
-// https://github.com/BuilderIO/builder/blob/main/packages/sdks/output/qwik/tsconfig.json
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "allowJs": true,
+    "target": "ES2017",
+    "module": "ES2020",
+    "lib": [
+      "es2020",
+      "DOM"
+    ],
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
-    "module": "ES2020",
-    "moduleResolution": "node",
-    "paths": {},
-    "allowJs": true,
-    "checkJs": false,
-    "declaration": true,
-    "outDir": "./dist",
-    "declarationDir": "./types",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "strict": false,
-    "noImplicitAny": false,
-    "skipLibCheck": true
+    "declaration": true,
+    "declarationDir": "lib-types",
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "types": [
+      "vite/client"
+    ]
   },
   "include": [
     "src"

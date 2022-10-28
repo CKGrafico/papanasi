@@ -8,13 +8,9 @@ export default defineConfig(() => {
       lib: {
         entry: './src/index.ts',
         formats: ['es', 'cjs'],
-        fileName: (format) => `papanasi.qwik.${format === 'es' ? 'mjs' : 'cjs'}`
+        fileName: (format) => `index.qwik.${format === 'es' ? 'mjs' : 'cjs'}`,
       },
-      minify: false,
-      rollupOptions: {
-        external: ['node-fetch']
-      }
     },
-    plugins: [qwikVite()]
+    plugins: [qwikVite()],
   };
 });

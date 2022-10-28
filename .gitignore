@@ -3,6 +3,7 @@ packages/**/dist/
 packages/**/lib/
 packages/**/src/
 packages/**/types/
+packages/**/lib-types/
 *.log
 storybook-static/
 packages/webcomponent/custom-elements.json
