@@ -33,9 +33,9 @@ const DEFAULT_OPTIONS = {
       // Fix state in svelte
       .replace(/svelte:component\n.*this=\{circle\}/g, 'circle')
       // Remove Onchange
-      .replace('import onChange from "on-change";', '')
-      // Remove ../../ imports
-      .replace(/\.\.\/\.\.\/\.\.\//g, './');
+      .replace('import onChange from "on-change";', '');
+    // Remove ../../ imports
+    // .replace(/\.\.\/\.\.\/\.\.\//g, './');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }
