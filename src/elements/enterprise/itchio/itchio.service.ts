@@ -1,6 +1,6 @@
 import { getWindow } from 'ssr-window';
 import { addScript, classesToString, waitUntilTrue } from '~/helpers';
-import { ItchioGameInfo } from './itchio.model';
+import type { ItchioGameInfo } from './itchio.model';
 
 class ItchioService {
   public getClasses(className: string) {
