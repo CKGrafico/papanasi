@@ -1,26 +1,18 @@
 {
   "name": "@papanasi/qwik",
-  "version": "1.0.0-rc.88",
+  "version": "1.0.0-rc.89",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Qwik UI Library",
   "type": "module",
-  "main": "./lib/index.qwik.cjs",
-  "module": "./lib/index.qwik.mjs",
-  "qwik": "./lib/index.qwik.mjs",
-  "types": "./types/index.d.ts",
+  "main": "./lib/papanasi.qwik.cjs",
+  "module": "./lib/papanasi.qwik.mjs",
+  "qwik": "./lib/papanasi.qwik.mjs",
+  "types": "./types/papanasi.d.ts",
   "exports": {
     ".": {
-      "import": "./lib/index.qwik.mjs",
-      "require": "./lib/index.qwik.cjs"
-    },
-    "./lib/style.css": {
-      "import": "./lib/style.css",
-      "require": "./lib/style.css"
-    },
-    "./lib/papanasi.css": {
-      "import": "./lib/papanasi.css",
-      "require": "./lib/papanasi.css"
+      "import": "./lib/papanasi.qwik.mjs",
+      "require": "./lib/papanasi.qwik.cjs"
     }
   },
   "peerDependencies": {
