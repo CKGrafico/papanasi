@@ -5,12 +5,10 @@ export default defineConfig(() => {
   return {
     build: {
       target: 'es2020',
-      outDir: './dist',
       lib: {
         entry: './src/index.ts',
         formats: ['es', 'cjs'],
-
-        fileName: (format) => `${format === 'es' ? 'papanasi.mjs' : 'papanasi.cjs'}`
+        fileName: (format) => `index.qwik.${format === 'es' ? 'mjs' : 'cjs'}`
       },
       minify: false,
       rollupOptions: {

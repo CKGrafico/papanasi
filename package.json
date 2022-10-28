@@ -14,7 +14,7 @@
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "build-storybook": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.86 --force-publish",
+    "package": "lerna version 1.0.0-rc.87 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {

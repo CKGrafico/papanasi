@@ -86,10 +86,8 @@ async function compile(defaultOptions) {
       .map((fileName) => {
         const file = path.parse(fileName);
         const name = file.name.replace('.lite', '');
-        return `export { default as ${name.charAt(0).toUpperCase() + name.slice(1)} } from './${file.dir.replace(
-          'src/',
-          ''
-        )}';`;
+        const pascalName = name.charAt(0).toUpperCase() + name.slice(1);
+        return `export { default as ${pascalName} } from './${file.dir.replace('src/', '')}';`;
       })
       .join('\n');
     const indexData = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');

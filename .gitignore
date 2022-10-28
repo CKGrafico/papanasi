@@ -1,6 +1,8 @@
 node_modules/
 packages/**/dist/
+packages/**/lib/
 packages/**/src/
+packages/**/types/
 *.log
 storybook-static/
 packages/webcomponent/custom-elements.json

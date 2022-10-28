@@ -5,34 +5,34 @@
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Qwik UI Library",
   "type": "module",
-  "main": "./dist/papanasi.cjs",
-  "module": "./dist/papanasi.mjs",
-  "qwik": "./dist/papanasi.mjs",
-  "style": "./dist/papanasi.css",
-  "types": "./dist/index.d.ts",
+  "main": "./lib/index.qwik.cjs",
+  "module": "./lib/index.qwik.mjs",
+  "qwik": "./lib/index.qwik.mjs",
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/papanasi.mjs",
-      "require": "./dist/papanasi.cjs"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs"
     },
-    "./dist/style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+    "./lib/style.css": {
+      "import": "./lib/style.css",
+      "require": "./lib/style.css"
     },
-    "./dist/papanasi.css": {
-      "import": "./dist/papanasi.css",
-      "require": "./dist/papanasi.css"
+    "./lib/papanasi.css": {
+      "import": "./lib/papanasi.css",
+      "require": "./lib/papanasi.css"
     }
   },
   "peerDependencies": {
     "@builder.io/qwik": "^0.x"
   },
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "scripts": {
     "prebuild": "yarn install",
-    "build": "vite build --mode lib"
+    "build": "tsc && vite build --mode lib"
   },
   "publishConfig": {
     "access": "public"
