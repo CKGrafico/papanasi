@@ -7,14 +7,14 @@
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006 --no-manager-cache",
-    "clean": "rimraf packages/**/{src,dist,node_modules,stats.html}",
+    "clean": "rimraf packages/**/{src,dist,lib,types,node_modules,stats.html}",
     "lerna": "lerna run",
     "lint": "run-p lint:**",
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "build-storybook": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.87 --force-publish",
+    "package": "lerna version 1.0.0-rc.89 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
