@@ -1,20 +1,16 @@
 {
   "name": "@papanasi/svelte",
-  "version": "1.0.0-rc.71",
+  "version": "1.0.0-rc.72",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "type": "module",
-  "svelte": "./src/index.ts",
+  "svelte": "../src/index.ts",
   "style": "./dist/papanasi.css",
   "types": "./dist/index.d.ts",
   "exports": {
-    "./src": {
-      "import": "./src/index.js",
-      "require": "./src/index.js"
-    },
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.js"
