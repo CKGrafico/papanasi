@@ -16,10 +16,8 @@ const DEFAULT_OPTIONS = {
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
       const result = data
         // Add .svelte to index
-        .replace(/\'\;/g, ".svelte';")
-        .replace(/\.css\.svelte/g, '.css')
-        .replace(/helpers\.svelte/g, 'helpers')
-        .replace(/src\/(.*)\.svelte/g, 'src/$1');
+        .replace(/(export)(.*)\/(.+)';/g, "$1$2/$3/$3.svelte';")
+        .replace(/(extensions)\/(.*)\.svelte/g, '$1/$2');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
