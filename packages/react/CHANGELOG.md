@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.81](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.80...v1.0.0-rc.81) (2022-10-28)
+
+**Note:** Version bump only for package @papanasi/react
+
 # [1.0.0-rc.80](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.79...v1.0.0-rc.80) (2022-10-28)
 
 **Note:** Version bump only for package @papanasi/react

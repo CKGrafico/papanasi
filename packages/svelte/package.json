@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/svelte",
-  "version": "1.0.0-rc.80",
+  "version": "1.0.0-rc.81",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
@@ -8,7 +8,7 @@
   "module": "./dist/index.js",
   "type": "module",
   "svelte": "../src/index.ts",
-  "style": "./dist/papanasi.css",
+  "style": "./papanasi.css",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
