@@ -18,11 +18,12 @@ export function addScript(src, id) {
     script.setAttribute('id', identifier);
     script.setAttribute('type', 'text/javascript');
 
-    if (script.addEventListener) {
-      script.addEventListener('load', resolve);
-      script.addEventListener('error', reject);
+    if (!script.addEventListener) {
+      return;
     }
 
+    script.addEventListener('load', resolve);
+    script.addEventListener('error', reject);
     document.body.appendChild(script);
   });
 }
