@@ -13,7 +13,7 @@
       "import": "./dist/papanasi-vue.es.js",
       "require": "./dist/papanasi-vue.umd.js"
     },
-    "./dist/papanasi.css": {
+    "./papanasi.css": {
       "import": "./dist/papanasi.css",
       "require": "./dist/papanasi.css"
     }

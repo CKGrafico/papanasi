@@ -15,7 +15,7 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./dist/papanasi.css": {
+    "./papanasi.css": {
       "import": "./papanasi.css",
       "require": "./papanasi.css"
     }

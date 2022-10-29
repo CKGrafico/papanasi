@@ -13,7 +13,7 @@
       "import": "./dist/papanasi-react.es.js",
       "require": "./dist/papanasi-react.umd.js"
     },
-    "./dist/papanasi.css": {
+    "./papanasi.css": {
       "import": "./dist/papanasi.css",
       "require": "./dist/papanasi.css"
     }
