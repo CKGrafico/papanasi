@@ -77,7 +77,6 @@ module.exports = (options) => {
       ],
       plugins: [postcss({ ...postcssConfig, inject: false, extract: 'papanasi.css' })]
     },
-
     dts && !disableCoreCompilation
       ? {
           input: path.resolve(dir, packageJson.module.replace('.js', '.d.ts')),

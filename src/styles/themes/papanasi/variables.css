@@ -1,0 +1,34 @@
+:root {
+  /* Color Primary */
+  --pa-color-primary-brightest: #b9daff;
+  --pa-color-primary-brighter: #a4cfff;
+  --pa-color-primary-bright: #53a5ff;
+  --pa-color-primary-normal: #017aff;
+  --pa-color-primary-dark: #005fc8;
+  --pa-color-primary-darker: #004590;
+  --pa-color-primary-darkest: #002a58;
+
+  /* Color Secondary */
+  --pa-color-secondary-brightest: #eeeaff;
+  --pa-color-secondary-brighter: #cec1ff;
+  --pa-color-secondary-bright: #ad99ff;
+  --pa-color-secondary-normal: #6c47ff;
+  --pa-color-secondary-dark: #3f0fff;
+  --pa-color-secondary-darker: #2b00d6;
+  --pa-color-secondary-darkest: #20009e;
+
+  /* Color Tertiary */
+  --pa-color-tertiary-brightest: #fde2e8;
+  --pa-color-tertiary-brighter: #fbbccb;
+  --pa-color-tertiary-bright: #f896ad;
+  --pa-color-tertiary-normal: #f34971;
+  --pa-color-tertiary-dark: #f01448;
+  --pa-color-tertiary-darker: #bf0d37;
+  --pa-color-tertiary-darkest: #8b0928;
+
+  /* Font */
+  --pa-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+
+  /* Shadow */
+  --pa-shadow-normal: var(--pa-color-basic-bright) 0 1px 3px 0;
+}
