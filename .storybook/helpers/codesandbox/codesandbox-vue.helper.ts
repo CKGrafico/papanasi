@@ -12,7 +12,7 @@ export function generateVueCodeSandboxLink(options) {
 import { ${components.join(', ')} ${components.length > 0 && extensions.length > 0 ? ', ' : ''}${extensions.join(
     ', '
   )} } from '@papanasi/vue';
-import '@papanasi/vue/dist/papanasi.css';
+import '@papanasi/vue/papanasi.css';
 ${[...extensions, ''].join('(); \n')}
 export default {
   name: "App",

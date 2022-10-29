@@ -7,7 +7,7 @@ export function generatePreactCodeSandboxLink(options) {
   const previewCode = `import { ${components.join(', ')} ${
     components.length > 0 && extensions.length > 0 ? ', ' : ''
   }${extensions.join(', ')} } from '@papanasi/preact';
-import '@papanasi/preact/dist/papanasi.css';${[...extensions, ''].join('(); \n')}
+import '@papanasi/preact/papanasi.css';${[...extensions, ''].join('(); \n')}
 
 export default class App extends Component { render() { return (${code}
 ); }}

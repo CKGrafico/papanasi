@@ -18,7 +18,7 @@ const DEFAULT_OPTIONS = {
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
       // Import types
-      .replace(/import/, `import type { ${pascalName}Props } from './${name}.model';\nimport`)
+      .replace(/import/, `import type { ${pascalName}Props } from './${name}.model';\nimport './${name}.css';\nimport`)
       // fix props on qwik
       .replace(
         /export const (.*) = component\$\(\((props)\) => \{/g,

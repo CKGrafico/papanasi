@@ -9,7 +9,7 @@ export function generateAngularCodeSandboxLink(options) {
   const previewCode = `import { ${components.join(', ')} ${
     components.length > 0 && extensions.length > 0 ? ', ' : ''
   }${extensions.join(', ')} } from '@papanasi/angular';
-import '@papanasi/angular/dist/papanasi.css';
+import '@papanasi/angular/papanasi.css';
 ${[...extensions, ''].join('(); \n')}
 @Component({
   selector: "app-root",

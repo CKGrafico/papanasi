@@ -10,7 +10,7 @@ export function generateSvelteCodeSandboxLink(options) {
 import { ${components.join(', ')} ${components.length > 0 && extensions.length > 0 ? ', ' : ''}${extensions.join(
     ', '
   )} } from '@papanasi/svelte';
-import "@papanasi/svelte/dist/papanasi.css";
+import "@papanasi/svelte/papanasi.css";
 import "./index.css";${[...extensions, ''].join('(); \n')}
 </script>
 ${code}

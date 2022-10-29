@@ -38,7 +38,7 @@
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="50" title="Qwik"> <br/>
       <strong>Qwik</strong> <br/>
       <sub>
-        <a href="https://stackblitz.com/edit/qwik-starter-i6prxe?file=src%2Fglobal.css,src%2Froot.tsx,src%2Fentry.dev.tsx,package-lock.json" target="_blank"><img src="https://img.shields.io/badge/Stackblitz-Qwik-5048d7?logoColor=white&logo=stackblitz" alt="Qwik Sandbox" /></a>
+        <a href="https://stackblitz.com/edit/qwik-starter-i6prxe" target="_blank"><img src="https://img.shields.io/badge/Stackblitz-Qwik-5048d7?logoColor=white&logo=stackblitz" alt="Qwik Sandbox" /></a>
         <a href="https://www.npmjs.com/package/@papanasi/qwik" target="_blank"><img src="https://img.shields.io/npm/dw/@papanasi/qwik?label=Installs&color=blue&logoColor=white&logo=qwiklabs" alt="Qwik downloads" /></a>
       </sub>
     </td>

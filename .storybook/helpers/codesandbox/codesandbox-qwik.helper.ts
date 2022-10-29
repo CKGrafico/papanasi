@@ -6,8 +6,8 @@ export function generateQwikCodeSandboxLink(options) {
   const previewCode = `import { ${components.join(', ')} ${
     components.length > 0 && extensions.length > 0 ? ', ' : ''
   }${extensions.join(', ')} } from '@papanasi/qwik';
-import '@papanasi/qwik/dist/style.css';
-import '@papanasi/qwik/dist/papanasi.css';${[...extensions, ''].join('(); \n')}
+import '@papanasi/qwik/style.css';
+import '@papanasi/qwik/papanasi.css';${[...extensions, ''].join('(); \n')}
 
 export default component$(() => {
   return (${code}

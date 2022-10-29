@@ -11,7 +11,7 @@ export function generateWebCodeSandboxLink(options) {
   const demoCode = `
 import "@webcomponents/custom-elements/src/native-shim.js";
 import "@webcomponents/custom-elements/custom-elements.min";
-import "@papanasi/webcomponents/dist/papanasi.css";
+import "@papanasi/webcomponents/papanasi.css";
 import './index.css';
 
 /** Note: In web components the CSS selectors are different because the shadow DOM is used.
@@ -30,7 +30,7 @@ ${[...extensions, ''].join('(); \n')}
 import { ${components.join(', ')} ${components.length > 0 && extensions.length > 0 ? ', ' : ''}${extensions.join(
     ', '
   )} } from '@papanasi/webcomponents';
-import "@papanasi/webcomponents/dist/papanasi.css";
+import "@papanasi/webcomponents/papanasi.css";
 ${[...extensions, ''].join('(); \n')}
 // index.html
 ${code}
