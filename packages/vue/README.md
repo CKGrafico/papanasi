@@ -110,6 +110,7 @@
       <strong>Svelte Kit</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/p/sandbox/cranky-lamport-2t12j5" target="_blank"><img src="https://img.shields.io/badge/Demo-FF3E00?logoColor=white&logo=svelte" alt="Svelte Kit Demo" /></a>
+        <br>Fixing SSR
       </sub>
     </td>
     <td align="center" width="140">
@@ -117,7 +118,7 @@
       <strong>Solid Start</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/p/github/CKGrafico/solid-start-simple/draft/loving-drake?file=%2Fsrc%2Froutes%2Findex.tsx" target="_blank"><img src="https://img.shields.io/badge/Demo-2e5593?logoColor=white&logo=solid" alt="Solid Start Demo" /></a>
-        Help needed to fix SSR
+        <br>Help needed to fix SSR
       </sub>
     </td>
     <td align="center" width="140">
@@ -125,7 +126,7 @@
       <strong>Qwik City</strong> <br/>
       <sub>
         <a href="https://stackblitz.com/edit/qwik-starter-tudfze" target="_blank"><img src="https://img.shields.io/badge/Demo-5048d7?logoColor=white&logo=qwiklabs" alt="Svelte Kit Demo" /></a>
-        Help needed to fix SSR
+        <br>Fixing SSR
       </sub>
     </td>
   </tr>
