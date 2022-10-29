@@ -17,8 +17,11 @@ export function addScript(src, id) {
     script.setAttribute('src', src);
     script.setAttribute('id', identifier);
     script.setAttribute('type', 'text/javascript');
-    script.addEventListener('load', resolve);
-    script.addEventListener('error', reject);
+
+    if (script.addEventListener) {
+      script.addEventListener('load', resolve);
+      script.addEventListener('error', reject);
+    }
 
     document.body.appendChild(script);
   });
