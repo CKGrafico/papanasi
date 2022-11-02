@@ -9,3 +9,4 @@ storybook-static/
 packages/webcomponent/custom-elements.json
 **/stats.html
 packages/svelte/.svelte-kit
+packages/qwik/tsconfig.tsbuildinfo
