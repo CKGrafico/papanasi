@@ -3,6 +3,10 @@ export function querySelectorAllObservable(
   selector: string,
   callback: (element: HTMLElement) => void
 ) {
+  if (!element.querySelectorAll) {
+    return;
+  }
+
   const elements = Array.from(element.querySelectorAll(selector));
 
   if (callback) {
