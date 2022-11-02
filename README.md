@@ -126,7 +126,6 @@
       <strong>Qwik City</strong> <br/>
       <sub>
         <a href="https://stackblitz.com/edit/qwik-starter-tudfze" target="_blank"><img src="https://img.shields.io/badge/Demo-5048d7?logoColor=white&logo=qwiklabs" alt="Svelte Kit Demo" /></a>
-        <br>Fixing SSR
       </sub>
     </td>
   </tr>

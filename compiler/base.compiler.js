@@ -1,15 +1,14 @@
 const glob = require('glob');
 const fs = require('fs-extra');
 const path = require('path');
+const postcss = require('postcss');
+const postcssConfig = require('../postcss.config');
 const filesystemTools = require('gluegun/filesystem');
 const stringTools = require('gluegun/strings');
 const printTools = require('gluegun/print');
 const commandLineArgs = require('command-line-args');
 const ora = require('ora');
 const compileCommand = require('@builder.io/mitosis-cli/dist/commands/compile');
-
-const toPascalCase = (str) =>
-  (str.match(/[a-zA-Z0-9]+/g) || []).map((w) => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join('');
 
 const DEFAULT_OPTIONS = {
   elements: 'src/**/*.lite.tsx',
@@ -124,14 +123,20 @@ async function compile(defaultOptions) {
     };
   }
 
-  function replacePropertiesFromCompiledFiles(outFile, file) {
-    const name = file.name.replace('.lite', '');
+  function replacePropertiesFromCompiledFiles(outFile) {
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
       // Fix alias
       .replace(/\~\//g, '../../../');
 
     fs.writeFileSync(outFile, result, 'utf8');
+  }
+
+  async function compileCssFileForOutputSrc(outFile) {
+    const name = outFile.replace(/\..*/, '.css');
+    const data = fs.readFileSync(name, 'utf8');
+    const result = await postcss(postcssConfig.plugins).process(data, { from: name, to: name });
+    fs.writeFileSync(name, result.css, () => true);
   }
 
   for (const fileName of files) {
@@ -142,8 +147,9 @@ async function compile(defaultOptions) {
 
     copyBasicFilesOnFirstCompilation(isFirstCompilation, fileName);
     const { outFile } = await compileMitosisComponent(fileName);
-    replacePropertiesFromCompiledFiles(outFile, file);
+    replacePropertiesFromCompiledFiles(outFile);
     options.customReplace({ file, outFile, outPath, isFirstCompilation });
+    await compileCssFileForOutputSrc(outFile);
 
     spinner.stop();
   }
