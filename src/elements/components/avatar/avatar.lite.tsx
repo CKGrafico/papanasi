@@ -16,7 +16,7 @@ export default function Avatar(props: AvatarProps) {
 
   onMount(() => {
     state.loaded = true;
-    state.classes = avatarService.getClasses(props.variant, props.disabled, props.className || props.class);
+    state.classes = avatarService.getClasses(props.variant, props.disabled, props.className || props.classList);
     avatarService.getStyles(props.name, props.variant).then((newStyles) => (state.styles = newStyles));
     state.initials = avatarService.getInitials(props.name);
     state.source = avatarService.getSource(props.url, props.unavatar);

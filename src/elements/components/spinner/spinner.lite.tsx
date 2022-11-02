@@ -16,7 +16,7 @@ export default function Spinner(props: SpinnerProps) {
       props.variant,
       props.full,
       props.fullscreen,
-      props.className || props.class
+      props.className || props.classList
     );
   });
 
