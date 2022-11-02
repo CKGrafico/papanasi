@@ -13,7 +13,7 @@ export default function Pill(props: PillProps) {
 
   onMount(() => {
     state.loaded = true;
-    state.classes = pillService.getClasses(props.variant, props.intent, props.disabled, props.className);
+    state.classes = pillService.getClasses(props.variant, props.intent, props.disabled, props.className || props.class);
   });
 
   return (

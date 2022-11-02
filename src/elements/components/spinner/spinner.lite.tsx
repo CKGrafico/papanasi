@@ -12,7 +12,12 @@ export default function Spinner(props: SpinnerProps) {
 
   onMount(() => {
     state.loaded = true;
-    state.classes = spinnerService.getClasses(props.variant, props.full, props.fullscreen, props.className);
+    state.classes = spinnerService.getClasses(
+      props.variant,
+      props.full,
+      props.fullscreen,
+      props.className || props.class
+    );
   });
 
   return (

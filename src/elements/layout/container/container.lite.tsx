@@ -13,7 +13,7 @@ export default function Container(props: ContainerProps) {
 
   onMount(() => {
     state.loaded = true;
-    state.classes = containerService.getClasses(props.fluid, props.className);
+    state.classes = containerService.getClasses(props.fluid, props.className || props.class);
   });
 
   return (

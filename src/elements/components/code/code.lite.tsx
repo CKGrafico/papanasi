@@ -22,7 +22,7 @@ export default function Code(props: CodeProps) {
       const service = new CodeService();
 
       service.initialize(codeRef, props.language, props.theme || 'github', () => (state.loaded = true));
-      state.classes = service.getClasses(props.language, props.className);
+      state.classes = service.getClasses(props.language, props.className || props.class);
       state.codeService = service;
     }, 10);
   });
