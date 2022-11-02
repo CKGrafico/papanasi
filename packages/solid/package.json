@@ -4,28 +4,29 @@
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Solid JS UI Library",
-  "main": "./dist/papanasi-solid.umd.js",
-  "module": "./dist/papanasi-solid.es.js",
+  "source": "./solid-index.tsx",
+  "main": "dist/cjs/papanasi.js",
+  "module": "dist/esm/papanasi.js",
+  "types": "dist/types/papanasi.d.ts",
   "style": "./dist/papanasi.css",
-  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
-      "import": "./dist/papanasi-solid.es.js",
-      "require": "./dist/papanasi-solid.umd.js"
+      "solid": "./dist/index/index.js",
+      "import": "./dist/esm/papanasi.js",
+      "browser": "./dist/esm/papanasi.js",
+      "require": "./dist/cjs/papanasi.js",
+      "node": "./dist/cjs/papanasi.js"
     },
     "./papanasi.css": {
       "import": "./dist/papanasi.css",
       "require": "./dist/papanasi.css"
     }
   },
-  "peerDependencies": {
-    "solid-js": "^1.x"
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c && rollup --config rollup-themes.config.js"
   },
   "publishConfig": {
     "access": "public"

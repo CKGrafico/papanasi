@@ -14,7 +14,7 @@
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.97 --force-publish",
+    "package": "lerna version 1.0.0-rc.98 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
@@ -57,7 +57,6 @@
     "@typescript-eslint/parser": "^5.41.0",
     "@vue/babel-preset-app": "^5.0.8",
     "autoprefixer": "^10.4.13",
-    "babel-preset-solid": "^1.6.0",
     "chokidar-cli": "^3.0.0",
     "command-line-args": "^5.2.1",
     "eslint": "^8.26.0",
@@ -88,7 +87,7 @@
     "replace": "^1.2.2",
     "replace-in-file": "^6.3.5",
     "rimraf": "^3.0.2",
-    "rollup": "^3.2.3",
+    "rollup": "^3.2.5",
     "rollup-plugin-dts": "^5.0.0",
     "rollup-plugin-embed-css": "^1.0.25",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -96,6 +95,7 @@
     "rollup-plugin-ts": "^3.0.2",
     "rollup-plugin-visualizer": "^5.8.3",
     "rollup-plugin-vue": "^6.0.0",
+    "rollup-preset-solid": "^1.4.0",
     "solid-js": "^1.6.0",
     "stylelint": "^14.14.0",
     "stylelint-config-prettier": "^9.0.3",

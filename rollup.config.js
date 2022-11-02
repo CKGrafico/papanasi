@@ -72,7 +72,7 @@ module.exports = (options) => {
       output: [
         {
           file: packageJson.style,
-          sourcemap: true
+          sourcemap: 'inline'
         }
       ],
       plugins: [postcss({ ...postcssConfig, inject: false, extract: 'papanasi.css' })]

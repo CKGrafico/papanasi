@@ -118,7 +118,6 @@
       <strong>Solid Start</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/p/github/CKGrafico/solid-start-simple/draft/loving-drake?file=%2Fsrc%2Froutes%2Findex.tsx" target="_blank"><img src="https://img.shields.io/badge/Demo-2e5593?logoColor=white&logo=solid" alt="Solid Start Demo" /></a>
-        <br>Help needed to fix SSR
       </sub>
     </td>
     <td align="center" width="140">
