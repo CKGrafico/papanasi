@@ -1,5 +1,6 @@
 import { initBreakpointChecker } from './helpers';
 import './styles/variables.css';
+export { setDebugLevel } from './helpers';
 
 // Init Components
 export { default as Avatar } from './elements/components/avatar';
@@ -12,7 +13,6 @@ export { useTooltipExtension } from './elements/extensions/tooltip';
 export { default as Column } from './elements/layout/column';
 export { default as Container } from './elements/layout/container';
 export { default as Row } from './elements/layout/row';
-
 // End Components
 
 initBreakpointChecker();

@@ -1,4 +1,4 @@
-import { classesToString, randomColor } from '~/helpers';
+import { classesToString, debug, randomColor } from '~/helpers';
 
 class AvatarService {
   public getClasses(variant: string, disabled: boolean, className: string) {
@@ -11,32 +11,40 @@ class AvatarService {
 
     const container = classesToString(['pa-avatar__container', [variant, `pa-avatar--${variant}`]]);
 
+    debug(`AvatarService getClasses: base: ${base}, container: ${container}`);
     return { base, container };
   }
 
   public async getStyles(name: string, variant: string) {
     const container = await this.getColor(name, variant);
 
+    debug(`AvatarService getStyles: container: ${JSON.stringify(container)}`);
     return { container };
   }
 
   public getInitials(name: string) {
     // From: https://stackoverflow.com/a/63763497/3274609
-    return name
+    const initials = name
       .match(/(^\S\S?|\s\S)?/g)
       .map((v) => v.trim())
       .join('')
       .match(/(^\S|\S$)?/g)
       .join('')
       .toLocaleUpperCase();
+
+    debug(`AvatarService getInitials: initials: ${initials}`);
+    return name;
   }
 
   public async getColor(name: string, variant: string) {
     if (variant) {
+      debug(`AvatarService getColor: variant exist: ${variant}`);
       return {};
     }
 
     const color = await randomColor(name);
+
+    debug(`AvatarService getColor: color: ${color}`);
 
     return {
       color: color.foreground,
@@ -45,7 +53,10 @@ class AvatarService {
   }
 
   public getSource(url: string, unavatar: string) {
-    return unavatar ? `https://unavatar.io/${unavatar}` : url;
+    const source = unavatar ? `https://unavatar.io/${unavatar}` : url;
+
+    debug(`AvatarService getSource: source: ${source}`);
+    return source;
   }
 }
 

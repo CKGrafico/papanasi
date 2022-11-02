@@ -11,7 +11,7 @@ import '@papanasi/qwik/papanasi.css';${[...extensions, ''].join('(); \n')}
 
 export default component$(() => {
   return (${code}
-  <!-- Temporal url meanwhil codesandbox works -->
+  <!-- Temporal url meanwhile codesandbox works -->
   );
 });
 `;

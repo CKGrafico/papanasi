@@ -4,10 +4,15 @@ import type { CodeTheme } from './code.model';
 import { codeThemes } from './code.model';
 
 export class CodeService {
-  public styles = [];
+  public styles: HTMLLinkElement[];
   public jar: CodeJar;
   public hljs;
-  public currentThemeIndex = 0;
+  public currentThemeIndex: number;
+
+  constructor() {
+    this.styles = [];
+    this.currentThemeIndex = 0;
+  }
 
   public getClasses(language: string, className: string) {
     const base = classesToString(['pa-code', className || '']);
@@ -92,6 +97,7 @@ export class CodeService {
       link.rel = 'stylesheet';
       link.disabled = true;
       document.head.appendChild(link);
+
       return link;
     });
   }

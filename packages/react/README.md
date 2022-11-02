@@ -110,7 +110,6 @@
       <strong>Svelte Kit</strong> <br/>
       <sub>
         <a href="https://codesandbox.io/p/sandbox/cranky-lamport-2t12j5" target="_blank"><img src="https://img.shields.io/badge/Demo-FF3E00?logoColor=white&logo=svelte" alt="Svelte Kit Demo" /></a>
-        <br>Fixing SSR
       </sub>
     </td>
     <td align="center" width="140">

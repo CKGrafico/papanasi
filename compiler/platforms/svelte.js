@@ -17,7 +17,8 @@ const DEFAULT_OPTIONS = {
       const result = data
         // Add .svelte to index
         .replace(/(export)(.*)\/(.+)';/g, "$1$2/$3/$3.svelte';")
-        .replace(/(extensions)\/(.*)\.svelte/g, '$1/$2');
+        .replace(/(extensions)\/(.*)\.svelte/g, '$1/$2')
+        .replace(/\/helpers\.svelte/g, '');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
     }
