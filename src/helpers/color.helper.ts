@@ -46,7 +46,6 @@ export async function randomColor(text: string, alpha = 0.5) {
   const s = random(55, 90);
   const l = random(40, 60);
 
-  debugger;
   return {
     foreground: hsl2rgba(h, s, l * 0.75, 1),
     background: hsl2rgba(h, s, l * 1.1, alpha)

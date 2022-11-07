@@ -33,7 +33,7 @@ class AvatarService {
       .toLocaleUpperCase();
 
     debug(`AvatarService getInitials: initials: ${initials}`);
-    return name;
+    return initials;
   }
 
   public async getColor(name: string, variant: string) {
