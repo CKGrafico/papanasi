@@ -1,6 +1,8 @@
 // Note: Some helpers are from https://gist.github.com/mjackson/5311256
 
-const ranges = (min, max) => Array.from({ length: max - min + 1 }, (_, i) => min + i);
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 function hue2rgb(p: number, q: number, t: number) {
   if (t < 0) t += 1;
@@ -31,18 +33,20 @@ function hsl2rgba(rawH: number, rawS: number, rawL: number, alpha = 1): string {
   return `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${alpha})`;
 }
 
+function hashCode(text: string) {
+  let hash = 0;
+  for (let i = 0; i < text.length; i++) {
+    hash = text.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return hash;
+}
+
 export async function randomColor(text: string, alpha = 0.5) {
-  const ColorHash = (await import('color-hash')).default;
+  const h = hashCode(text) % 360;
+  const s = random(55, 90);
+  const l = random(40, 60);
 
-  const options = {
-    hue: { min: 0, max: 360 },
-    saturation: ranges(55, 90),
-    lightness: ranges(40, 60)
-  };
-
-  const colorHash = new ColorHash(options);
-  const [h, s, l] = colorHash.hsl(text);
-
+  debugger;
   return {
     foreground: hsl2rgba(h, s, l * 0.75, 1),
     background: hsl2rgba(h, s, l * 1.1, alpha)

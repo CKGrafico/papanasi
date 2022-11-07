@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "codejar": "^3.6.0",
-    "color-hash": "^2.0.1",
     "copy-to-clipboard": "^3.3.2",
     "highlight.js": "^11.6.0",
     "ssr-window": "^4.0.2"
