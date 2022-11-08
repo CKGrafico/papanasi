@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
-    "start": " start-storybook -p 6006 --no-manager-cache",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-manager-cache",
     "clean": "rimraf packages/**/{src,dist,lib,types,node_modules,stats.html}",
     "lerna": "lerna run",
     "lint": "run-p lint:**",
@@ -14,7 +14,7 @@
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.102 --force-publish",
+    "package": "lerna version 1.0.0-rc.103 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
@@ -58,6 +58,7 @@
     "autoprefixer": "^10.4.13",
     "chokidar-cli": "^3.0.0",
     "command-line-args": "^5.2.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",

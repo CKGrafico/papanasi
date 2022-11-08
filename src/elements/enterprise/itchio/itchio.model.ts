@@ -19,4 +19,5 @@ export type ItchioProps = {
 export type ItchioState = {
   classes: { base: string };
   gameInfo: ItchioGameInfo;
+  onClickAction: (user: string, game: string, width: number, height: number) => void;
 } & BaseState;

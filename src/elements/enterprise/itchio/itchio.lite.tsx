@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
+import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './itchio.css';
 import type { ItchioProps, ItchioState } from './itchio.model';
 import { itchioService } from './itchio.service';
@@ -6,18 +6,19 @@ import { itchioService } from './itchio.service';
 useMetadata({ isAttachedToShadowDom: true });
 
 export default function Itchio(props: ItchioProps) {
-  const actionRef = useRef<HTMLSpanElement>();
-
   const state = useStore<ItchioState>({
     loaded: false,
     classes: { base: '' },
-    gameInfo: null
+    gameInfo: null,
+    onClickAction(user: string, game: string, width: number, height: number) {
+      itchioService.onClickAction(user, game, width, height);
+    }
   });
 
   onMount(() => {
     state.classes = itchioService.getClasses(props.className);
 
-    itchioService.processInfo(actionRef, props.user, props.game, props.width, props.height, props.secret, (data) => {
+    itchioService.processInfo(props.user, props.game, props.secret, (data) => {
       state.gameInfo = data;
       state.loaded = true;
       props.onLoad && props.onLoad(data);
@@ -38,7 +39,10 @@ export default function Itchio(props: ItchioProps) {
             </div>
           </Show>
 
-          <span class="pa-itchio__children" ref={actionRef}>
+          <span
+            class="pa-itchio__children"
+            onClick={() => state.onClickAction(props.user, props.game, props.width, props.height)}
+          >
             <Show when={state.loaded}>
               <span>{props.children}</span>
             </Show>

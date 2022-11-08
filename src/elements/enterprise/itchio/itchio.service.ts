@@ -9,25 +9,7 @@ class ItchioService {
     return { base };
   }
 
-  public attachButton(actionRef, user: string, game: string, width: number, height: number) {
-    const window = getWindow();
-
-    window['Itch'].attachBuyButton(actionRef, {
-      user: user,
-      game: game,
-      width: width || 800,
-      height: height || 600
-    });
-  }
-
-  public async getGameData(
-    actionRef,
-    user: string,
-    game: string,
-    width: number,
-    height: number,
-    secret: string
-  ): Promise<ItchioGameInfo> {
+  public async getGameData(user: string, game: string, secret: string): Promise<ItchioGameInfo> {
     const window = getWindow();
 
     return new Promise((resolve) => {
@@ -36,7 +18,6 @@ class ItchioService {
         game: game,
         secret: secret,
         onComplete: (data) => {
-          this.attachButton(actionRef, user, game, width, height);
           resolve(data);
         }
       });
@@ -50,19 +31,29 @@ class ItchioService {
     await waitUntilTrue(() => window['Itch']);
   }
 
-  public async processInfo(
-    actionRef,
-    user: string,
-    game: string,
-    width: number,
-    height: number,
-    secret: string,
-    callback: (data: ItchioGameInfo) => void
-  ) {
+  public async processInfo(user: string, game: string, secret: string, callback: (data: ItchioGameInfo) => void) {
     await this.loadScript();
-    const data = await this.getGameData(actionRef, user, game, width, height, secret);
+    const data = await this.getGameData(user, game, secret);
 
     callback && callback(data);
+  }
+
+  public onClickAction(user: string, game: string, width = 800, height = 600) {
+    const window = getWindow();
+
+    const domain = 'itch.io';
+    const top = (screen.height - height) / 2;
+    const left = (screen.width - width) / 2;
+
+    const openedWindow = window.open(
+      'https://' + user + '.' + domain + '/' + game + '/purchase?popup=1',
+      'purchase',
+      'scrollbars=1, resizable=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left
+    );
+
+    if (typeof openedWindow.focus === 'function') {
+      openedWindow.focus();
+    }
   }
 }
 
