@@ -14,7 +14,7 @@
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.101 --force-publish",
+    "package": "lerna version 1.0.0-rc.102 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
