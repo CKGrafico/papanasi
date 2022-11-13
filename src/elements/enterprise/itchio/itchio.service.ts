@@ -1,5 +1,5 @@
 import { getWindow } from 'ssr-window';
-import { addScript, classesToString, waitUntilTrue } from '~/helpers';
+import { addScript, classesToString, debug, waitUntilTrue } from '~/helpers';
 import type { ItchioGameInfo } from './itchio.model';
 
 class ItchioService {
@@ -12,12 +12,15 @@ class ItchioService {
   public async getGameData(user: string, game: string, secret: string): Promise<ItchioGameInfo> {
     const window = getWindow();
 
+    debug(`ItchioService getGameData: user: ${user}, game: ${game}`);
+
     return new Promise((resolve) => {
       window['Itch'].getGameData({
         user: user,
         game: game,
         secret: secret,
         onComplete: (data) => {
+          debug(`ItchioService getGameData onComplete: data:`, data);
           resolve(data);
         }
       });
@@ -27,6 +30,7 @@ class ItchioService {
   public async loadScript() {
     const window = getWindow();
 
+    debug('ItchioService loadScript');
     await addScript('https://static.itch.io/api.js', 'itchio');
     await waitUntilTrue(() => window['Itch']);
   }
@@ -45,6 +49,7 @@ class ItchioService {
     const top = (screen.height - height) / 2;
     const left = (screen.width - width) / 2;
 
+    debug(`ItchioService onClickAction: user: ${user}, game: ${game}, top: ${top}, left: ${left}`);
     const openedWindow = window.open(
       'https://' + user + '.' + domain + '/' + game + '/purchase?popup=1',
       'purchase',
