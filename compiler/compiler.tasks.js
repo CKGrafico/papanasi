@@ -70,9 +70,7 @@ const optionDefinitions = [
       }
     },
     {
-      title: `Compile Mitosis components ${cliConfig.elements?.join(', ') || ''}${
-        cliConfig.elements && cliConfig.platforms ? ' -> ' : ''
-      }${(cliConfig.elements && cliConfig.platforms?.join(', ')) || ''}`,
+      title: `Compile Mitosis components: ${cliConfig.elements?.join(', ') || 'all'}`,
       task: () => {
         return new Listr(
           [
@@ -148,7 +146,11 @@ const optionDefinitions = [
     {
       title: `Bundle Packages: ${cliConfig.platforms?.join(', ') || ''}`,
       task: () =>
-        execa(`yarn lerna --scope=@papanasi/{${cliConfig.platforms?.join(',')}} build`).catch((error) => {
+        execa(
+          `yarn lerna --scope=@papanasi/${
+            cliConfig.platforms.length > 1 ? `{${cliConfig.platforms?.join(',')}}` : cliConfig.platforms
+          } build`
+        ).catch((error) => {
           throw new Error('Error bundling Packages ' + error);
         })
     }
