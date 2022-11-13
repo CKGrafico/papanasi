@@ -1,4 +1,5 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { debug } from '~/helpers';
 import './itchio.css';
 import type { ItchioProps, ItchioState } from './itchio.model';
 import { itchioService } from './itchio.service';
@@ -21,6 +22,8 @@ export default function Itchio(props: ItchioProps) {
     itchioService.processInfo(props.user, props.game, props.secret, (data) => {
       state.gameInfo = data;
       state.loaded = true;
+
+      debug('ItchioService callback processed info');
       props.onLoad && props.onLoad(data);
     });
   });

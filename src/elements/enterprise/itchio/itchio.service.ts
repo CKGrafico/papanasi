@@ -39,7 +39,7 @@ class ItchioService {
     await this.loadScript();
     const data = await this.getGameData(user, game, secret);
 
-    callback && callback(data);
+    callback(data);
   }
 
   public onClickAction(user: string, game: string, width = 800, height = 600) {
