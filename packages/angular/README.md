@@ -335,6 +335,15 @@ With **yarn**:
 $ yarn add @papanasi/angular
 ```
 
+### 🪲 Debugger
+To debug elements you can use `setDebugLevel` function from `@papanasi/angular
+
+```js	
+window.addEventListener('load', () => {
+  setDebugLevel(DebugLevel.Log);
+});
+```
+
 ### 📗 Documentation
 
 To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).

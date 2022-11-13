@@ -20,7 +20,7 @@ class ItchioService {
         game: game,
         secret: secret,
         onComplete: (data) => {
-          debug(`ItchioService getGameData onComplete: data:`, data);
+          debug(`ItchioService getGameData onComplete: data: ${JSON.stringify(data)}`);
           resolve(data);
         }
       });

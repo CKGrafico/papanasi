@@ -335,6 +335,15 @@ With **yarn**:
 $ yarn add @papanasi/react
 ```
 
+### 🪲 Debugger
+To debug elements you can use `setDebugLevel` function from `@papanasi/react
+
+```js	
+window.addEventListener('load', () => {
+  setDebugLevel(DebugLevel.Log);
+});
+```
+
 ### 📗 Documentation
 
 To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).

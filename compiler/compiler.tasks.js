@@ -3,7 +3,13 @@ const commandLineArgs = require('command-line-args');
 
 const optionDefinitions = [
   { name: 'elements', alias: 'e', type: String, multiple: true },
-  { name: 'platforms', alias: 'p', type: String, multiple: true },
+  {
+    name: 'platforms',
+    alias: 'p',
+    type: String,
+    multiple: true,
+    defaultValue: ['angular', 'preact', 'qwik', 'react', 'solid', 'svelte', 'vue', 'webcomponent']
+  },
   { name: 'lint', type: Boolean, defaultValue: true },
   { name: 'no-lint', type: Boolean }
 ];
@@ -66,7 +72,7 @@ const optionDefinitions = [
     {
       title: `Compile Mitosis components ${cliConfig.elements?.join(', ') || ''}${
         cliConfig.elements && cliConfig.platforms ? ' -> ' : ''
-      }${cliConfig.platforms?.join(', ') || ''}`,
+      }${(cliConfig.elements && cliConfig.platforms?.join(', ')) || ''}`,
       task: () => {
         return new Listr(
           [
@@ -140,78 +146,11 @@ const optionDefinitions = [
       }
     },
     {
-      title: 'Bundle Packages',
-      task: () => {
-        return new Listr(
-          [
-            {
-              title: 'Bundle Angular',
-              enabled: () => cliConfig.platforms?.includes('angular') || !cliConfig.platforms,
-              task: () =>
-                execa('yarn lerna --scope=@papanasi/angular build').catch((error) => {
-                  throw new Error('Error bundling Angular ' + error);
-                })
-            },
-            {
-              title: 'Bundle Preact',
-              enabled: () => cliConfig.platforms?.includes('preact') || !cliConfig.platforms,
-              task: () =>
-                execa('yarn lerna --scope=@papanasi/preact build').catch((error) => {
-                  throw new Error('Error bundling Qwik ' + error);
-                })
-            },
-            {
-              title: 'Bundle Qwik',
-              enabled: () => cliConfig.platforms?.includes('qwik') || !cliConfig.platforms,
-              task: () =>
-                execa('yarn lerna --scope=@papanasi/qwik build').catch((error) => {
-                  throw new Error('Error bundling Qwik ' + error);
-                })
-            },
-            {
-              title: 'Bundle React',
-              enabled: () => cliConfig.platforms?.includes('react') || !cliConfig.platforms,
-              task: () =>
-                execa('yarn lerna --scope=@papanasi/react build').catch((error) => {
-                  throw new Error('Error bundling React ' + error);
-                })
-            },
-            {
-              title: 'Bundle Solid',
-              enabled: () => cliConfig.platforms?.includes('solid') || !cliConfig.platforms,
-              task: () =>
-                execa('yarn lerna --scope=@papanasi/solid build').catch((error) => {
-                  throw new Error('Error bundling Solid ' + error);
-                })
-            },
-            {
-              title: 'Bundle Svelte',
-              enabled: () => cliConfig.platforms?.includes('svelte') || !cliConfig.platforms,
-              task: () =>
-                execa('yarn lerna --scope=@papanasi/svelte build').catch((error) => {
-                  throw new Error('Error bundling Svelte ' + error);
-                })
-            },
-            {
-              title: 'Bundle Vue',
-              enabled: () => cliConfig.platforms?.includes('vue') || !cliConfig.platforms,
-              task: () =>
-                execa('yarn lerna --scope=@papanasi/vue build').catch((error) => {
-                  throw new Error('Error bundling Vue ' + error);
-                })
-            },
-            {
-              title: 'Bundle Web Components',
-              enabled: () => cliConfig.platforms?.includes('webcomponents') || !cliConfig.platforms,
-              task: () =>
-                execa('yarn lerna --scope=@papanasi/webcomponents build').catch((error) => {
-                  throw new Error('Error bundling Web Components ' + error);
-                })
-            }
-          ],
-          { concurrent: true }
-        );
-      }
+      title: `Bundle Packages: ${cliConfig.platforms?.join(', ') || ''}`,
+      task: () =>
+        execa(`yarn lerna --scope=@papanasi/{${cliConfig.platforms?.join(',')}} build`).catch((error) => {
+          throw new Error('Error bundling Packages ' + error);
+        })
     }
   ]);
 
