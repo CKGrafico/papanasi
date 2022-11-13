@@ -335,6 +335,15 @@ With **yarn**:
 $ yarn add @papanasi/[target] # ex: @papanasi/vue
 ```
 
+### 🪲 Debugger
+To debug elements you can use `setDebugLevel` function from `@papanasi/[target]` package. This function is totally optional and the default value is `DebugLevel.None` the recommended is to use `DebugLevel.Log` to have a log of the different events happening.
+
+```js	
+window.addEventListener('load', () => {
+  setDebugLevel(DebugLevel.Log);
+});
+```
+
 ### 📗 Documentation
 
 To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
