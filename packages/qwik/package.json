@@ -25,6 +25,7 @@
       "require": "./lib/papanasi.css"
     }
   },
+  "dependencies": {},
   "peerDependencies": {
     "@builder.io/qwik": "^0.x"
   },

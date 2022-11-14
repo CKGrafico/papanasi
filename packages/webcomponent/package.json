@@ -22,6 +22,7 @@
       "require": "./custom-elements.json"
     }
   },
+  "dependencies": {},
   "files": [
     "dist"
   ],

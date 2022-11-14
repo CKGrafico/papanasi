@@ -18,6 +18,7 @@
       "require": "./dist/papanasi.css"
     }
   },
+  "dependencies": {},
   "peerDependencies": {
     "@angular/core": "^12.x || ^13.x"
   },

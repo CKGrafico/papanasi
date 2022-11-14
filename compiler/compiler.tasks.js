@@ -8,7 +8,7 @@ const optionDefinitions = [
     alias: 'p',
     type: String,
     multiple: true,
-    defaultValue: ['angular', 'preact', 'qwik', 'react', 'solid', 'svelte', 'vue', 'webcomponent']
+    defaultValue: ['angular', 'preact', 'qwik', 'react', 'solid', 'svelte', 'vue', 'webcomponents']
   },
   { name: 'lint', type: Boolean, defaultValue: true },
   { name: 'no-lint', type: Boolean }

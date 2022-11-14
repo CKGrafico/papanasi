@@ -18,6 +18,7 @@
       "require": "./dist/papanasi.css"
     }
   },
+  "dependencies": {},
   "peerDependencies": {
     "preact": "^10.2.x"
   },

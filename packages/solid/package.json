@@ -9,9 +9,6 @@
   "module": "dist/esm/papanasi.js",
   "types": "dist/types/papanasi.d.ts",
   "style": "./dist/papanasi.css",
-  "files": [
-    "dist"
-  ],
   "exports": {
     ".": {
       "solid": "./dist/index/index.js",
@@ -25,6 +22,11 @@
       "require": "./dist/papanasi.css"
     }
   },
+  "dependencies": {},
+  "peerDependencies": {},
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c && rollup --config rollup-themes.config.js && node ./copy-css.js"
   },

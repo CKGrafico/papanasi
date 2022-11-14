@@ -18,6 +18,7 @@
       "require": "./dist/papanasi.css"
     }
   },
+  "dependencies": {},
   "peerDependencies": {
     "vue": "^3.x"
   },
