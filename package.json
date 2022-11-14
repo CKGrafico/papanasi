@@ -12,6 +12,7 @@
     "lint": "run-p lint:**",
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
+    "postinstall": "node ./hooks/post-install.hook.js",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
     "package": "lerna version 1.0.0-rc.104 --force-publish",

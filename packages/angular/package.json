@@ -18,7 +18,10 @@
       "require": "./dist/papanasi.css"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "copy-to-clipboard": "^3.3.2",
+    "ssr-window": "^4.0.2"
+  },
   "peerDependencies": {
     "@angular/core": "^12.x || ^13.x"
   },

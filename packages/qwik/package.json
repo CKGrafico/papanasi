@@ -25,7 +25,11 @@
       "require": "./lib/papanasi.css"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "codejar": "^3.6.0",
+    "copy-to-clipboard": "^3.3.2",
+    "ssr-window": "^4.0.2"
+  },
   "peerDependencies": {
     "@builder.io/qwik": "^0.x"
   },
