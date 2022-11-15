@@ -9,10 +9,9 @@ function copyMainPackageJsonDependencies(packageJson) {
   const rawDependencies = Object.entries(dependencies)
     .map(([key, value]) => `\n    "${key}": "${value}"`)
     .join(',');
-  // const result = data.replace(/"dependencies": {.*/gms, `aaaaaaaaaaa`);
-  //const multilineCommentsRE = /  /\*[^*]*\*+(?:[^/*] [^*]*\*+)*\//gm;;
+  const result = data.replace(/("dependencies": {)(.*)(  },\r?\n?  "peerDependencies)/gs, `$1${rawDependencies}\n$3`);
 
-  // fs.writeFileSync(packageJson, result, 'utf8');
+  fs.writeFileSync(packageJson, result, 'utf8');
 }
 
 packagesJson.forEach(copyMainPackageJsonDependencies);
