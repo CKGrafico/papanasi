@@ -21,7 +21,7 @@ Don't hesitate to contact me if you have any question about sponsors, you can do
 
 <table>
 <tr>
-<td align="center"><a href="SPONSORS.md#sponsors"><img src="https://tabler-icons.io/static/tabler-icons/icons/circle-plus.svg" width="80"><br>Sponsor the project</a></td>
-<td align="center"><a href="https://helpdev.org"><img src="https://raw.githubusercontent.com/CKGrafico/papanasi/main/sponsors/logos/helpdev.png" width="80"><br>HelpDev</a>
+<td align="center"><a href="SPONSORS.md#sponsors"><img src="https://tabler-icons.io/static/tabler-icons/icons/circle-plus.svg" width="40"><br>Sponsor the project</a></td>
+<td align="center"><a href="https://helpdev.org"><img src="https://raw.githubusercontent.com/CKGrafico/papanasi/main/sponsors/logos/helpdev.png" width="140"><br>HelpDev</a>
 </tr>
 </table>
