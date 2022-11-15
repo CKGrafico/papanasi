@@ -35,11 +35,11 @@ class ItchioService {
     await waitUntilTrue(() => window['Itch']);
   }
 
-  public async processInfo(user: string, game: string, secret: string, callback: (data: ItchioGameInfo) => void) {
+  public async processInfo(user: string, game: string, secret: string) {
     await this.loadScript();
     const data = await this.getGameData(user, game, secret);
 
-    callback(data);
+    return data;
   }
 
   public onClickAction(user: string, game: string, width = 800, height = 600) {

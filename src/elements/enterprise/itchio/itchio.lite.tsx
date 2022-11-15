@@ -23,7 +23,7 @@ export default function Itchio(props: ItchioProps) {
   onMount(() => {
     state.classes = itchioService.getClasses(props.className);
 
-    itchioService.processInfo(props.user, props.game, props.secret, (data) => {
+    itchioService.processInfo(props.user, props.game, props.secret).then((data) => {
       state.gameInfo = data;
       state.loaded = true;
 
