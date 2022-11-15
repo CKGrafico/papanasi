@@ -392,11 +392,16 @@ Finally, to launch storybook use:
 > yarn start
 ```
 
+### Our Sponsors
+
+<table>
+<tr>
+<td align="center"><a href="SPONSORS.md#sponsors"><img src="https://tabler-icons.io/static/tabler-icons/icons/circle-plus.svg" width="40"><br>Sponsor the project</a></td>
+<td align="center"><a href="https://helpdev.org"><img src="https://raw.githubusercontent.com/CKGrafico/papanasi/main/sponsors/logos/helpdev.png" width="140"><br>HelpDev</a>
+</tr>
+</table>
+
 ### Thanks to everyone who contributed:
 [![Contributors](https://contrib.rocks/image?repo=ckgrafico/papanasi)](https://github.com/CKGrafico/papanasi/graphs/contributors)
 
 And special thanks to [@samijaber](https://github.com/samijaber) [@mhevery](https://github.com/mhevery)  and [Builder project](https://github.com/BuilderIO/builder/tree/main/packages/sdks)
-
----
-
-Made with 🍕 by [Quique Fdez Guerra](https://twitter.com/ckgrafico)
