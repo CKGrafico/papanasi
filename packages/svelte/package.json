@@ -23,10 +23,11 @@
   "dependencies": {
     "codejar": "^3.6.0",
     "copy-to-clipboard": "^3.3.2",
-    "ssr-window": "^4.0.2"},
+    "ssr-window": "^4.0.2"
+  },
   "peerDependencies": {
-    "svelte": "^3.x",
-    "highlight.js": "^11.6.0"
+    "highlight.js": "^11.6.0",
+    "svelte": "^3.x"
   },
   "files": [
     "dist",
