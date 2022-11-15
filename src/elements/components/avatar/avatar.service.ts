@@ -44,11 +44,11 @@ class AvatarService {
 
     const color = await randomColor(name);
 
-    debug(`AvatarService getColor: color: ${color}`);
+    debug(`AvatarService getColor: color: ${JSON.stringify(color)}`);
 
     return {
       color: color.foreground,
-      backgroundColor: color.background
+      'background-color': color.background
     };
   }
 
