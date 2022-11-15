@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.112](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.111...v1.0.0-rc.112) (2022-11-15)
+
+**Note:** Version bump only for package @papanasi/solid
+
 # [1.0.0-rc.111](https://github.com/CKGrafico/papanasi/compare/v1.0.0-rc.110...v1.0.0-rc.111) (2022-11-15)
 
 **Note:** Version bump only for package @papanasi/solid
