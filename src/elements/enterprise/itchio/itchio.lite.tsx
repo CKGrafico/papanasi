@@ -10,11 +10,7 @@ export default function Itchio(props: ItchioProps) {
   const state = useStore<ItchioState>({
     loaded: false,
     classes: { base: '' },
-    gameInfo: {
-      title: '',
-      cover_image: null,
-      price: ''
-    },
+    gameInfo: null,
     onClickAction(user: string, game: string, width: number, height: number) {
       itchioService.onClickAction(user, game, width, height);
     }
@@ -38,12 +34,16 @@ export default function Itchio(props: ItchioProps) {
   return (
     <div class={state.classes.base}>
       <div class="pa-itchio__container">
-        <img class="pa-itchio__image" alt={state.gameInfo.title} src={state.gameInfo.cover_image}></img>
+        <Show when={state.loaded}>
+          <img class="pa-itchio__image" alt={state.gameInfo.title} src={state.gameInfo.cover_image}></img>
+        </Show>
         <div class="pa-itchio__info">
-          <div class="pa-itchio__texts">
-            <span class="pa-itchio__title">{state.gameInfo.title}</span>
-            <span class="pa-itchio__price">{state.gameInfo.price}</span>
-          </div>
+          <Show when={state.loaded}>
+            <div class="pa-itchio__texts">
+              <span class="pa-itchio__title">{state.gameInfo.title}</span>
+              <span class="pa-itchio__price">{state.gameInfo.price}</span>
+            </div>
+          </Show>
 
           <span
             class="pa-itchio__children"

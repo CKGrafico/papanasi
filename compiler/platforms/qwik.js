@@ -25,7 +25,12 @@ const DEFAULT_OPTIONS = {
         `export const ${pascalName} = component$((props: ${pascalName}Props) => {`
       )
       // Fix https://github.com/BuilderIO/mitosis/pull/855
-      .replace(/useClientEffect/g, 'useMount');
+      .replace(/useClientEffect/g, 'useMount')
+      // Make all usemounts async just in case
+      .replace(/useMount\$\(\(\) => {/g, 'useMount$(async () => {')
+      // TODO: Temporal
+      .replace(/getData\(\);/g, 'await getData();');
+
     fs.writeFileSync(outFile, result, 'utf8');
   }
 
