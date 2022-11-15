@@ -15,7 +15,7 @@
     "postinstall": "node ./hooks/post-install.hook.js",
     "build-storybook": "build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.109 --force-publish",
+    "package": "lerna version 1.0.0-rc.110 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
