@@ -13,8 +13,8 @@
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "postinstall": "node ./hooks/post-install.hook.js",
-    "build-storybook": "build-storybook",
     "prepare-storybook": "copyfiles packages/react/{src,dist}/**/* packages/react/storybook",
+    "build-storybook": "yarn prepare-storybook && build-storybook",
     "build": "yarn compile",
     "package": "lerna version 1.0.0-rc.113 --force-publish",
     "release": "lerna publish from-package --force-publish"
