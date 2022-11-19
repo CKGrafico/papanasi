@@ -1,6 +1,5 @@
-import { debug } from 'console';
 import { getDocument, getWindow } from 'ssr-window';
-import { querySelectorAllObservable } from '~/helpers';
+import { debug, querySelectorAllObservable } from '~/helpers';
 import './tooltip.css';
 
 const HIDDEN_CLASS = 'is-hidden';
