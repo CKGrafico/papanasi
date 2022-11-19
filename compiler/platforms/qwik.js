@@ -28,7 +28,7 @@ const DEFAULT_OPTIONS = {
       .replace(/useClientEffect/g, 'useMount')
       // Make all usemounts async just in case
       .replace(/useMount\$\(\(\) => {/g, 'useMount$(async () => {')
-      // TODO: Temporal
+      // TODO: Temporal meanwhile we find another why but this is stable
       .replace(/getData\(\);/g, 'await getData();');
 
     fs.writeFileSync(outFile, result, 'utf8');

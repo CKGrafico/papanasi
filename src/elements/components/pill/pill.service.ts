@@ -1,4 +1,4 @@
-import { classesToString } from '~/helpers';
+import { classesToString, debug } from '~/helpers';
 
 class PillService {
   public getClasses(variant: string, intent: string, disabled: boolean, className: string) {
@@ -10,6 +10,7 @@ class PillService {
       className || ''
     ]);
 
+    debug(`PillService getClasses: base: ${base}`);
     return { base };
   }
 }

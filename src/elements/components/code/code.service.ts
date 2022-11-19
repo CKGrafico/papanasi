@@ -1,5 +1,4 @@
-// import { CodeJar } from 'codejar';
-import { classesToString, CodeJar, wait } from '~/helpers';
+import { classesToString, CodeJar, debug, wait } from '~/helpers';
 import type { CodeTheme } from './code.model';
 import { codeThemes } from './code.model';
 
@@ -18,6 +17,7 @@ export class CodeService {
     const base = classesToString(['pa-code', className || '']);
     const editor = classesToString(['pa-code__editor', [language, `language-${language}`]]);
 
+    debug(`CodeService getClasses: base: ${base}, editor: ${editor}`);
     return { base, editor };
   }
 
@@ -25,6 +25,8 @@ export class CodeService {
     this.hljs = (await import('highlight.js/lib/core')).default;
     (await import('highlight.js/lib/common')).default;
     this.jar = CodeJar(codeRef, (editor: HTMLElement) => this.highlightCode(editor));
+
+    debug(`CodeService initialize: language: ${language}, theme: ${theme}`);
 
     this.hljs.configure({
       ignoreUnescapedHTML: true
@@ -34,35 +36,40 @@ export class CodeService {
     this.registerThemes();
     this.updateCurrentTheme(theme);
 
+    debug(`CodeService initialize: hljs and themes registered`);
     callback();
   }
 
   public destroy() {
+    debug(`CodeService destroy: hljs and themes unregistered`);
     this.jar.destroy();
   }
 
   public update(code: string) {
+    debug(`CodeService update: code: ${code}`);
     this.jar.updateCode(code);
   }
 
   public onUpdate(callback: (code: string) => void) {
+    debug(`CodeService onUpdate: callback: ${callback}`);
     this.jar.onUpdate(callback);
   }
 
   public async setEditable(codeRef, editable: boolean) {
     await wait();
+    debug(`CodeService setEditable: editable: ${editable}`);
     codeRef.setAttribute('contenteditable', editable ? 'plaintext-only' : 'false');
   }
 
   public async copy(code: string) {
     const copy = (await import('copy-to-clipboard')).default;
-
+    debug(`CodeService copy: code: ${code}`);
     copy(code);
   }
 
   private async loadLanguage(language: string) {
     const languageSrc = `highlight.js/languages/${language}`;
-    // TODO: Load async
+    // TODO: Load async in next versions
     // const loadedLanguage = (await import(languageSrc)).default;
     // this.hljs.registerLanguage(language, loadedLanguage);
   }
@@ -84,6 +91,7 @@ export class CodeService {
     }
 
     await this.loadLanguage(language);
+    debug(`CodeService registerLanguage: language: ${language}`);
   }
 
   private registerThemes() {
@@ -98,6 +106,8 @@ export class CodeService {
       link.disabled = true;
       document.head.appendChild(link);
 
+      debug(`CodeService registerThemes: theme: ${name}`);
+
       return link;
     });
   }
@@ -107,6 +117,7 @@ export class CodeService {
 
     this.currentThemeIndex = this.styles.findIndex((style) => style.href.includes(theme));
     this.styles[this.currentThemeIndex].removeAttribute('disabled');
+    debug(`CodeService updateCurrentTheme: theme: ${theme}`);
   }
 
   private highlightCode(editor: HTMLElement) {
@@ -117,6 +128,7 @@ export class CodeService {
       return;
     }
 
+    debug(`CodeService highlightCode enabled`);
     editor.querySelectorAll('.hljs-number').forEach((element) => {
       element.setAttribute('style', `--number-color: ${element.textContent}`);
     });

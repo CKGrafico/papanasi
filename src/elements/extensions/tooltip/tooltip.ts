@@ -1,3 +1,4 @@
+import { debug } from 'console';
 import { getDocument, getWindow } from 'ssr-window';
 import { querySelectorAllObservable } from '~/helpers';
 import './tooltip.css';
@@ -11,6 +12,7 @@ function showTooltip(state) {
   state.tooltipElement.style.transform = `translate(${state.x}px, ${state.y}px)`;
   state.tooltipElement.style.width = `${state.width}px`;
   state.tooltipElement.innerText = state.title;
+  debug(`TooltipService showTooltip: state: ${JSON.stringify(state)}`);
 
   setTimeout(() => {
     state.tooltipElement.classList.remove(HIDDEN_CLASS);
@@ -19,6 +21,7 @@ function showTooltip(state) {
 
 function hideTooltip(state) {
   state.tooltipElement.classList.add(HIDDEN_CLASS);
+  debug(`TooltipService hideTooltip: state: ${JSON.stringify(state)}`);
 
   setTimeout(() => {
     state.tooltipElement.style.transform = `translate(-100px, -100px)`;
@@ -33,6 +36,7 @@ function manageElementTitle(element: HTMLElement) {
   element.setAttribute('aria-label', ariaLabel || title);
   element.removeAttribute('title');
 
+  debug(`TooltipService manageElementTitle: title: ${title}`);
   return title;
 }
 
@@ -43,6 +47,7 @@ function onAddElement(rootElement: HTMLElement, element: HTMLElement) {
   const styles = window.getComputedStyle(rootElement);
   const transitionTime = styles.getPropertyValue(`--pa-tooltip-transition-time`).trim();
 
+  debug(`TooltipService onAddElement: transitionTime: ${transitionTime}`);
   const state = {
     tooltipElement: null,
     x: 0,
@@ -61,6 +66,7 @@ function onAddElement(rootElement: HTMLElement, element: HTMLElement) {
     const rect = element.getBoundingClientRect();
     const rootRect = rootElement.getBoundingClientRect();
 
+    debug(`TooltipService onAddElement: mouseenter`);
     state.x = Math.abs(rootRect.x) + rootElement.scrollLeft + rect.x;
     state.y = Math.abs(rootRect.y) + rootElement.scrollTop + rect.y;
     state.height = rect.height;
@@ -77,6 +83,8 @@ function onAddElement(rootElement: HTMLElement, element: HTMLElement) {
     state.width = 0;
     state.title = '';
 
+    debug(`TooltipService onAddElement: mouseleave`);
+
     hideTooltip(state);
   });
 }
@@ -88,6 +96,7 @@ function createTooltipElement(rootElement: HTMLElement) {
   element.setAttribute('aria-hidden', 'true');
 
   rootElement.prepend(element);
+  debug(`TooltipService createTooltipElement`);
 
   return element;
 }
@@ -97,6 +106,7 @@ export function useTooltipExtension(rootElement?: HTMLElement) {
   const element = rootElement || document.body;
 
   if (initialized) {
+    debug(`TooltipService useTooltipExtension: initialized`);
     tooltips.forEach((state) => {
       hideTooltip(state);
       state.tooltipElement.remove();
