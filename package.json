@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
-    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-manager-cache",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-manager-cache --quiet",
     "clean": "rimraf packages/**/{src,dist,lib,types,node_modules,stats.html}",
     "lerna": "lerna run",
     "lint": "run-p lint:**",
@@ -14,6 +14,7 @@
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "postinstall": "node ./hooks/post-install.hook.js",
     "build-storybook": "build-storybook",
+    "prepare-storybook": "copyfiles packages/react/{src,dist}/**/* packages/react/storybook",
     "build": "yarn compile",
     "package": "lerna version 1.0.0-rc.112 --force-publish",
     "release": "lerna publish from-package --force-publish"
@@ -21,6 +22,7 @@
   "dependencies": {
     "codejar": "^3.6.0",
     "copy-to-clipboard": "^3.3.2",
+    "copyfiles": "^2.4.1",
     "ssr-window": "^4.0.2"
   },
   "devDependencies": {

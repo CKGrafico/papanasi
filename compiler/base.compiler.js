@@ -51,7 +51,7 @@ async function compile(defaultOptions) {
     fs.copySync('src', `${outPath}/src`);
 
     // Remove unnecessary files moved
-    const unnecessaryFiles = glob.sync(`${outPath}/src/**/*.{mdx,tsx}`);
+    const unnecessaryFiles = glob.sync(`${outPath}/src/**/*.{mdx,lite.tsx}`);
     unnecessaryFiles.forEach((element) => fs.removeSync(element));
 
     // Fix aliases

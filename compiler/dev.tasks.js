@@ -29,6 +29,13 @@ const ora = require('ora');
         })
     },
     {
+      title: 'Move to Storybook dist',
+      task: () =>
+        execa('yarn prepare-storybook').catch((error) => {
+          throw new Error('Error Preparing React for Storybook' + error);
+        })
+    },
+    {
       title: 'Launch Watcher',
       task: async (ctx, task) => {
         task.title = 'Watching for changes';
@@ -45,6 +52,7 @@ const ora = require('ora');
           try {
             await execa('node ./compiler/platforms/react --dev');
             await execa('yarn lerna --scope=@papanasi/react build');
+            await execa('yarn prepare-storybook');
           } catch (e) {
             spinner.text = `Error compiling ${e.message}.`;
             spinner.fail();
