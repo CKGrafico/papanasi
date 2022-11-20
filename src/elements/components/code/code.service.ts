@@ -22,8 +22,11 @@ export class CodeService {
   }
 
   public async initialize(codeRef, language: string, theme: CodeTheme, callback: () => void) {
-    this.hljs = (await import('highlight.js/lib/core')).default;
-    (await import('highlight.js/lib/common')).default;
+    const core = await import('highlight.js/lib/core');
+    const common = await import('highlight.js/lib/common');
+    this.hljs = core.default || core;
+    common.default || common;
+
     this.jar = CodeJar(codeRef, (editor: HTMLElement) => this.highlightCode(editor));
 
     debug(`CodeService initialize: language: ${language}, theme: ${theme}`);
