@@ -30,7 +30,9 @@ const DEFAULT_OPTIONS = {
       // Add vue dependencies
       .replace('import', "import { ref } from 'vue';\nimport")
       // Replace vue html .values for refs
-      .replace(/\.value \}\}/g, '}}');
+      .replace(/\.value \}\}/g, '}}')
+      // TODO: Temporal meanwhile we find another why but this is stable
+      .replace(/getData\(\);/g, 'getData.bind(this)();');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }

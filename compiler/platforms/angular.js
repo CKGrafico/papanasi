@@ -35,7 +35,9 @@ const DEFAULT_OPTIONS = {
       // Remove keys in loops
       .replace(/\[key\]=".*"/g, '')
       // Add  Optional chaining to nativeElement
-      .replace(/\.nativeElement/g, '?.nativeElement');
+      .replace(/\.nativeElement/g, '?.nativeElement')
+      // TODO: Temporal meanwhile we find another why but this is stable
+      .replace(/getData\(\);/g, 'getData.bind(this)();');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }
