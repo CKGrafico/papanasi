@@ -1,3 +1,9 @@
+import Copy from 'copy-to-clipboard';
+import HighlightCore from 'highlight.js/lib/core';
+import 'highlight.js/lib/languages/css';
+import 'highlight.js/lib/languages/javascript';
+import 'highlight.js/lib/languages/typescript';
+import 'highlight.js/lib/languages/xml';
 import { classesToString, CodeJar, debug, wait } from '~/helpers';
 import type { CodeTheme } from './code.model';
 import { codeThemes } from './code.model';
@@ -22,11 +28,7 @@ export class CodeService {
   }
 
   public async initialize(codeRef, language: string, theme: CodeTheme, callback: () => void) {
-    const core = await import('highlight.js/lib/core');
-    const common = await import('highlight.js/lib/common');
-    this.hljs = core.default || core;
-    common.default || common;
-
+    this.hljs = HighlightCore;
     this.jar = CodeJar(codeRef, (editor: HTMLElement) => this.highlightCode(editor));
 
     debug(`CodeService initialize: language: ${language}, theme: ${theme}`);
@@ -35,7 +37,6 @@ export class CodeService {
       ignoreUnescapedHTML: true
     });
 
-    await this.registerLanguage(language);
     this.registerThemes();
     this.updateCurrentTheme(theme);
 
@@ -65,36 +66,9 @@ export class CodeService {
   }
 
   public async copy(code: string) {
-    const copy = (await import('copy-to-clipboard')).default;
+    const copy = Copy;
     debug(`CodeService copy: code: ${code}`);
     copy(code);
-  }
-
-  private async loadLanguage(language: string) {
-    const languageSrc = `highlight.js/languages/${language}`;
-    // TODO: Load async in next versions
-    // const loadedLanguage = (await import(languageSrc)).default;
-    // this.hljs.registerLanguage(language, loadedLanguage);
-  }
-
-  private async registerLanguage(language: string) {
-    // Highlight does not support those types
-    if (language === 'jsx') {
-      await this.loadLanguage('xml');
-      await this.loadLanguage('javascript');
-
-      return;
-    }
-
-    if (language === 'tsx') {
-      await this.loadLanguage('xml');
-      await this.loadLanguage('typescript');
-
-      return;
-    }
-
-    await this.loadLanguage(language);
-    debug(`CodeService registerLanguage: language: ${language}`);
   }
 
   private registerThemes() {
@@ -124,6 +98,7 @@ export class CodeService {
   }
 
   private highlightCode(editor: HTMLElement) {
+    debugger;
     this.hljs.highlightElement(editor);
 
     // Show colors in css
