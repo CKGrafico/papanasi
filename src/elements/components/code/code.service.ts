@@ -1,17 +1,12 @@
 import Copy from 'copy-to-clipboard';
-import HighlightCore from 'highlight.js/lib/core';
-import 'highlight.js/lib/languages/css';
-import 'highlight.js/lib/languages/javascript';
-import 'highlight.js/lib/languages/typescript';
-import 'highlight.js/lib/languages/xml';
-import { classesToString, CodeJar, debug, wait } from '~/helpers';
+
+import { classesToString, codeCore, CodeJar, codeLanguages, debug, wait } from '~/helpers';
 import type { CodeTheme } from './code.model';
 import { codeThemes } from './code.model';
 
 export class CodeService {
   public styles: HTMLLinkElement[];
   public jar: CodeJar;
-  public hljs;
   public currentThemeIndex: number;
 
   constructor() {
@@ -27,13 +22,19 @@ export class CodeService {
     return { base, editor };
   }
 
-  public async initialize(codeRef, language: string, theme: CodeTheme, callback: () => void) {
-    this.hljs = HighlightCore;
-    this.jar = CodeJar(codeRef, (editor: HTMLElement) => this.highlightCode(editor));
+  public initialize(codeRef, language: string, theme: CodeTheme) {
+    this.jar = CodeJar(codeRef, (editor: HTMLElement) => {
+      if (!editor.innerText) {
+        return;
+      }
+
+      this.registerLanguage(language);
+      this.highlightCode(editor);
+    });
 
     debug(`CodeService initialize: language: ${language}, theme: ${theme}`);
 
-    this.hljs.configure({
+    codeCore.configure({
       ignoreUnescapedHTML: true
     });
 
@@ -41,7 +42,6 @@ export class CodeService {
     this.updateCurrentTheme(theme);
 
     debug(`CodeService initialize: hljs and themes registered`);
-    callback();
   }
 
   public destroy() {
@@ -97,9 +97,17 @@ export class CodeService {
     debug(`CodeService updateCurrentTheme: theme: ${theme}`);
   }
 
+  private registerLanguage(language: string) {
+    if (language === 'javascript' || language === 'typescript') {
+      codeCore.registerLanguage('xml', codeLanguages['xml']);
+    }
+
+    codeCore.registerLanguage(language, codeLanguages[language]);
+    debug(`CodeService registerLanguage: language: ${language}`);
+  }
+
   private highlightCode(editor: HTMLElement) {
-    debugger;
-    this.hljs.highlightElement(editor);
+    codeCore.highlightElement(editor);
 
     // Show colors in css
     if (!editor.classList.contains('language-css')) {

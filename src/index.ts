@@ -1,6 +1,6 @@
 import { initBreakpointChecker } from './helpers';
 import './styles/variables.css';
-export { setDebugLevel, DebugLevel } from './helpers';
+export { setDebugLevel, DebugLevel, addCodeLanguage } from './helpers';
 
 // Init Components
 export { default as Avatar } from './elements/components/avatar';

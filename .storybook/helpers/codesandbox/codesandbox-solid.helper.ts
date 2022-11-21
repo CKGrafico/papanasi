@@ -57,8 +57,7 @@ render(() => <App />, document.getElementById("app"));
     dependencies: projectDependencies,
     devDependencies,
     extraFiles,
-    isTypescript: true,
-    isJSX: true
+    isTypescript: true
   });
 
   return { url, content: previewCode };

@@ -18,13 +18,16 @@ export default function Code(props: CodeProps) {
   });
 
   onMount(() => {
-    setTimeout(() => {
+    async function getData() {
       const service = new CodeService();
 
-      service.initialize(codeRef, props.language, props.theme || 'github', () => (state.loaded = true));
+      service.initialize(codeRef, props.language, props.theme || 'github');
       state.classes = service.getClasses(props.language, props.className || props.classList);
       state.codeService = service;
-    }, 10);
+      state.loaded = true;
+    }
+
+    getData();
   });
 
   onUpdate(() => {

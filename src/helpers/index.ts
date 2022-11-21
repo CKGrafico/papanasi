@@ -1,6 +1,7 @@
 export * from './arg-type.helper';
 export * from './breakpoint.helper';
 export * from './classes.helper';
+export * from './code.helper';
 export * from './codejar.helper';
 export * from './color.helper';
 export * from './debug.helper';

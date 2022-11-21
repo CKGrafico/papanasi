@@ -62,7 +62,7 @@ export function Codesandbox(props: CodesandboxProps) {
   return (
     <div className="codesandbox">
       <Code
-        language="jsx"
+        language="javascript"
         slotCopy={'Copy'}
         theme="github"
         code={content}

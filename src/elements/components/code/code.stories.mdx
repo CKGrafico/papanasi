@@ -27,7 +27,7 @@ import { Customization, Codesandbox } from '../../../../.storybook/components';
       description:
         'Language to highlight, complete list https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md',
       table: {},
-      options: ['jsx', 'typescript', 'css', 'scss', 'json', 'jsx', 'tsx', 'xml', 'markdown'],
+      options: ['javascript', 'typescript', 'css', 'scss', 'json', 'xml', 'markdown'],
       control: { type: 'select' }
     },
     theme: {
@@ -50,7 +50,7 @@ export const Template = (args) => (
 # Code
 
 The Code component is created to highlight code blocks in your application, is a wrapper of [codejar](https://medv.io/codejar/) and [highlight.js](https://highlightjs.org/) and any of the themes or languages supported there are also supported in this library.
-By default we support `javascript`, `jsx`, `typescript`, `tsx`, `css`, or any `xml` based language. If you need other languages you can import them from `highlight.js` like `import 'highlight.js/lib/languages/javascript';`.
+By default we support `javascript`, `jsx`, `typescript`, `tsx`, `css`, `markdown`, or any `xml` based language. If you need other languages you can import them from `highlight.js` like `import jsLanguage from 'highlight.js/lib/languages/javascript';` and add to the dictionary of languages `addCodeLanguage('javascript', jsLanguage')`.
 
 ## Showcase
 
@@ -59,7 +59,7 @@ By default we support `javascript`, `jsx`, `typescript`, `tsx`, `css`, or any `x
     name="Code"
     args={{
       editable: true,
-      language: 'jsx',
+      language: 'javascript',
       theme: 'github',
       disableCopy: false,
       code:
