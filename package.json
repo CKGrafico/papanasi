@@ -16,14 +16,15 @@
     "prepare-storybook": "rimraf packages/react/storybook/** && copyfiles packages/react/{src,dist}/**/* packages/react/storybook",
     "build-storybook": "yarn prepare-storybook && build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.116 --force-publish",
+    "package": "lerna version 1.0.0-rc.117 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
     "codejar": "^3.6.0",
     "copy-to-clipboard": "^3.3.2",
     "copyfiles": "^2.4.1",
-    "ssr-window": "^4.0.2"
+    "ssr-window": "^4.0.2",
+    "highlight.js": "^11.6.0"
   },
   "devDependencies": {
     "@a110/storybook-expand-all": "^1.1.1",
@@ -68,7 +69,6 @@
     "eslint-plugin-storybook": "^0.6.7",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
-    "highlight.js": "^11.6.0",
     "husky": "^8.0.2",
     "lerna": "^6.0.3",
     "listr2": "^5.0.5",

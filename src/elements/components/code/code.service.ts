@@ -1,4 +1,4 @@
-import { classesToString, codeCore, CodeJar, codeLanguages, debug, wait } from '~/helpers';
+import { classesToString, CodeJar, codeLanguages, debug, injectCodeCore, wait } from '~/helpers';
 import type { CodeTheme } from './code.model';
 import { codeThemes } from './code.model';
 
@@ -6,10 +6,13 @@ export class CodeService {
   public styles: HTMLLinkElement[];
   public jar: CodeJar;
   public currentThemeIndex: number;
+  public hljs;
 
   constructor() {
     this.styles = [];
+    this.jar = null;
     this.currentThemeIndex = 0;
+    this.hljs = injectCodeCore();
   }
 
   public getClasses(language: string, className: string) {
@@ -32,7 +35,7 @@ export class CodeService {
 
     debug(`CodeService initialize: language: ${language}, theme: ${theme}`);
 
-    codeCore.configure({
+    this.hljs.configure({
       ignoreUnescapedHTML: true
     });
 
@@ -97,15 +100,15 @@ export class CodeService {
 
   private registerLanguage(language: string) {
     if (language === 'javascript' || language === 'typescript') {
-      codeCore.registerLanguage('xml', codeLanguages['xml']);
+      this.hljs.registerLanguage('xml', codeLanguages['xml']);
     }
 
-    codeCore.registerLanguage(language, codeLanguages[language]);
+    this.hljs.registerLanguage(language, codeLanguages[language]);
     debug(`CodeService registerLanguage: language: ${language}`);
   }
 
   private highlightCode(editor: HTMLElement) {
-    codeCore.highlightElement(editor);
+    this.hljs.highlightElement(editor);
 
     // Show colors in css
     if (!editor.classList.contains('language-css')) {

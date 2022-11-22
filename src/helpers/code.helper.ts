@@ -1,4 +1,3 @@
-import highlightCore from 'highlight.js/lib/core';
 import cssLanguage from 'highlight.js/lib/languages/css';
 import jsLanguage from 'highlight.js/lib/languages/javascript';
 import markdownLanguage from 'highlight.js/lib/languages/markdown';
@@ -13,7 +12,7 @@ export const codeLanguages = {
   markdown: markdownLanguage
 };
 
-export const codeCore = highlightCore;
+export const injectCodeCore = async () => (await import('highlight.js/lib/core')).default;
 
 export function addCodeLanguage(name: string, language) {
   codeLanguages[name] = language;
