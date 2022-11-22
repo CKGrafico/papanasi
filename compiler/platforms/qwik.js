@@ -36,7 +36,8 @@ const DEFAULT_OPTIONS = {
       .replace(/Ref(,|\))/g, 'Ref.current$1')
       // Temporal fixes
       .replace(/.current, (x)/g, ',$1')
-      .replace(/useRef.current/g, 'useRef');
+      .replace(/useRef.current/g, 'useRef')
+      .replace(/const code = codeRef;/g, 'const code = track(() => codeRef.current);');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }

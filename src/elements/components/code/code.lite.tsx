@@ -18,6 +18,9 @@ export default function Code(props: CodeProps) {
   });
 
   onUpdate(() => {
+    // Needed for qwik bug
+    const code = codeRef;
+
     if (!codeRef) {
       return;
     }
@@ -45,7 +48,7 @@ export default function Code(props: CodeProps) {
     state.codeService.onUpdate((code: string) => {
       props.onUpdate && props.onUpdate(code);
     });
-  }, [state.loaded, props.editable]);
+  }, [state.loaded, props.editable, codeRef]);
 
   onUnMount(() => {
     state.loaded && state.codeService.destroy();
