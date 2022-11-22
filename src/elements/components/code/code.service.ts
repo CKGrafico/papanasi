@@ -1,5 +1,3 @@
-import Copy from 'copy-to-clipboard';
-
 import { classesToString, codeCore, CodeJar, codeLanguages, debug, wait } from '~/helpers';
 import type { CodeTheme } from './code.model';
 import { codeThemes } from './code.model';
@@ -66,7 +64,7 @@ export class CodeService {
   }
 
   public async copy(code: string) {
-    const copy = Copy;
+    const copy = (await import('copy-to-clipboard')).default;
     debug(`CodeService copy: code: ${code}`);
     copy(code);
   }
