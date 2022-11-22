@@ -25,9 +25,9 @@ const DEFAULT_OPTIONS = {
         `export const ${pascalName} = component$((props: ${pascalName}Props) => {`
       )
       // Fix https://github.com/BuilderIO/mitosis/pull/855
-      // .replace(/useClientEffect/g, 'useMount')
-      // Make all useClientEffect async just in case
-      .replace(/useClientEffect\$\(\(\) => {/g, 'useClientEffect$(async () => {')
+      .replace(/useClientEffect/g, 'useMount')
+      // Make all usemounts async just in case
+      .replace(/useMount\$\(\(\) => {/g, 'useMount$(async () => {')
       // Make all usewatchs async just in case
       .replace(/useWatch\$\(\(\{ track \}\) => {/g, 'useWatch$(async ({ track }) => {')
       // TODO: Temporal meanwhile we find another why but this is stable
