@@ -1,5 +1,5 @@
 import { getWindow } from 'ssr-window';
-import { addScript, classesToString, debug, waitUntilTrue } from '~/helpers';
+import { classesToString, debug, Itch } from '~/helpers';
 import type { ItchioGameInfo } from './itchio.model';
 
 class ItchioService {
@@ -10,12 +10,10 @@ class ItchioService {
   }
 
   public async getGameData(user: string, game: string, secret: string): Promise<ItchioGameInfo> {
-    const window = getWindow();
-
     debug(`ItchioService getGameData: user: ${user}, game: ${game}`);
 
     return new Promise((resolve) => {
-      window['Itch'].getGameData({
+      Itch.getGameData({
         user: user,
         game: game,
         secret: secret,
@@ -27,16 +25,7 @@ class ItchioService {
     });
   }
 
-  public async loadScript() {
-    const window = getWindow();
-
-    debug('ItchioService loadScript');
-    await addScript('https://static.itch.io/api.js', 'itchio');
-    await waitUntilTrue(() => window['Itch']);
-  }
-
   public async processInfo(user: string, game: string, secret: string) {
-    await this.loadScript();
     const data = await this.getGameData(user, game, secret);
 
     return data;

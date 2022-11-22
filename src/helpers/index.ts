@@ -7,5 +7,6 @@ export * from './color.helper';
 export * from './debug.helper';
 export * from './element.helper';
 export * from './inject-script.helper';
+export * from './itchio.helper';
 export * from './object.helper';
 export * from './wait.helper';

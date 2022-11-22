@@ -16,7 +16,7 @@
     "prepare-storybook": "rimraf packages/react/storybook/** && copyfiles packages/react/{src,dist}/**/* packages/react/storybook",
     "build-storybook": "yarn prepare-storybook && build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.0-rc.123 --force-publish",
+    "package": "lerna version 1.0.0-rc.124 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
