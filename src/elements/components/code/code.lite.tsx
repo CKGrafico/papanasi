@@ -21,7 +21,7 @@ export default function Code(props: CodeProps) {
     async function getData() {
       const service = new CodeService();
 
-      service.initialize(codeRef, props.language, props.theme || 'github');
+      await service.initialize(codeRef, props.language, props.theme || 'github');
       state.classes = service.getClasses(props.language, props.className || props.classList);
       state.codeService = service;
       state.loaded = true;

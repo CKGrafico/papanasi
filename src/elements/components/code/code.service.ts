@@ -12,7 +12,7 @@ export class CodeService {
     this.styles = [];
     this.jar = null;
     this.currentThemeIndex = 0;
-    this.hljs = injectCodeCore();
+    this.hljs = null;
   }
 
   public getClasses(language: string, className: string) {
@@ -23,7 +23,8 @@ export class CodeService {
     return { base, editor };
   }
 
-  public initialize(codeRef, language: string, theme: CodeTheme) {
+  public async initialize(codeRef, language: string, theme: CodeTheme) {
+    this.hljs = await injectCodeCore();
     this.jar = CodeJar(codeRef, (editor: HTMLElement) => {
       if (!editor.innerText) {
         return;
