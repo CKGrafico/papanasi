@@ -1,4 +1,4 @@
-import { For, onMount, onUnMount, onUpdate, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
+import { For, onUnMount, onUpdate, Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import { getObjectValue } from '~/helpers';
 import './code.css';
 import type { CodeProps, CodeState } from './code.model';
@@ -17,7 +17,11 @@ export default function Code(props: CodeProps) {
     }
   });
 
-  onMount(() => {
+  onUpdate(() => {
+    if (!codeRef) {
+      return;
+    }
+
     async function getData() {
       const service = new CodeService();
 
@@ -28,7 +32,7 @@ export default function Code(props: CodeProps) {
     }
 
     getData();
-  });
+  }, [codeRef]);
 
   onUpdate(() => {
     if (!state.loaded) {

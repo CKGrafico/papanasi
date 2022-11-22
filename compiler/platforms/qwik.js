@@ -28,6 +28,8 @@ const DEFAULT_OPTIONS = {
       .replace(/useClientEffect/g, 'useMount')
       // Make all usemounts async just in case
       .replace(/useMount\$\(\(\) => {/g, 'useMount$(async () => {')
+      // Make all usewatchs async just in case
+      .replace(/useWatch\$\(\(\{ track \}\) => {/g, 'useWatch$(async ({ track }) => {')
       // TODO: Temporal meanwhile we find another why but this is stable
       .replace(/getData\(\);/g, 'await getData();');
 
