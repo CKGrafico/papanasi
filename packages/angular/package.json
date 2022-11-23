@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/angular",
-  "version": "1.0.0-rc.126",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Angular UI Library",
@@ -22,6 +22,7 @@
     "codejar": "^3.6.0",
     "copy-to-clipboard": "^3.3.2",
     "copyfiles": "^2.4.1",
+    "highlight.js": "^11.6.0",
     "ssr-window": "^4.0.2"
   },
   "peerDependencies": {
