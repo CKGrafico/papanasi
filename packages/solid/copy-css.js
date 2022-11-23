@@ -8,3 +8,10 @@ cssFiles.forEach((fileName) => {
 
   fs.copySync(fileName, `./dist/index/${file.dir.replace('./src/', '')}/${file.base}`);
 });
+
+const themesFiles = glob.sync(`../../.themes/**.css`);
+themesFiles.forEach((fileName) => {
+  const file = path.parse(fileName);
+
+  fs.copySync(fileName, `./dist/${file.base}`);
+});
