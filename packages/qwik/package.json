@@ -43,7 +43,7 @@
     "build": "qwik build",
     "build.lib": "vite build --mode lib",
     "build.types": "tsc --emitDeclarationOnly",
-    "postbuild": "copyfiles ../../.themes/** ./dist/ --flat"
+    "postbuild": "copyfiles ../../.themes/** ./lib/ --flat"
   },
   "publishConfig": {
     "access": "public"
