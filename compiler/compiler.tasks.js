@@ -71,23 +71,6 @@ const optionDefinitions = [
         })
     },
     {
-      title: `Move themes to corresponding packages`,
-      task: () => {
-        return new Listr(
-          cliConfig.platforms.map((platform) => ({
-            title: `Move ${platform} theme`,
-            task: () =>
-              execa(
-                `copyfiles .themes/** ./packages/${platform}/${platform === 'qwik' ? 'lib' : 'dist'}/ --flat`
-              ).catch((error) => {
-                throw new Error(`Error moving ${platform} theme ${error.message}`);
-              })
-          })),
-          { concurrent: true }
-        );
-      }
-    },
-    {
       title: `Compile Mitosis components: ${cliConfig.elements?.join(', ') || 'all'}`,
       task: () => {
         return new Listr(

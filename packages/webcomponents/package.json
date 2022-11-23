@@ -30,6 +30,7 @@
     "dist"
   ],
   "scripts": {
+    "prebuild": "copyfiles ../../.themes/** ./dist/ --flat",
     "build": "run-s build:**",
     "build:code": "rollup -c",
     "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\"",

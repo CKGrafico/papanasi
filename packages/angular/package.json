@@ -31,7 +31,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "postbuild": "copyfiles ../../.themes/** ./dist/ --flat"
   },
   "publishConfig": {
     "access": "public"

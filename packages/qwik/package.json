@@ -40,9 +40,10 @@
   ],
   "scripts": {
     "prebuild": "yarn install",
-    "build": "qwik build && rollup -c --bundleConfigAsCjs",
+    "build": "qwik build",
     "build.lib": "vite build --mode lib",
-    "build.types": "tsc --emitDeclarationOnly"
+    "build.types": "tsc --emitDeclarationOnly",
+    "postbuild": "copyfiles ../../.themes/** ./dist/ --flat"
   },
   "publishConfig": {
     "access": "public"
