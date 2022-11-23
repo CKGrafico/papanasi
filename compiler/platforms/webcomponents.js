@@ -3,7 +3,7 @@ const fs = require('fs');
 const prependFile = require('prepend-file');
 
 const DEFAULT_OPTIONS = {
-  target: 'webcomponent',
+  target: 'webcomponents',
   extension: 'ts',
   state: '',
   styles: ''

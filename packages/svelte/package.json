@@ -8,7 +8,6 @@
   "module": "./dist/index.js",
   "type": "module",
   "svelte": "../src/index.ts",
-  "style": "./dist/papanasi.css",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {

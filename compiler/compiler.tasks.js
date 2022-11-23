@@ -77,7 +77,9 @@ const optionDefinitions = [
           cliConfig.platforms.map((platform) => ({
             title: `Move ${platform} theme`,
             task: () =>
-              execa(`copyfiles .themes/** ./packages/${platform}/dist/ --flat`).catch((error) => {
+              execa(
+                `copyfiles .themes/** ./packages/${platform}/${platform === 'qwik' ? 'lib' : 'dist'}/ --flat`
+              ).catch((error) => {
                 throw new Error(`Error moving ${platform} theme ${error.message}`);
               })
           })),

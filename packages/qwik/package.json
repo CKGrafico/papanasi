@@ -9,7 +9,6 @@
   "qwik": "./lib/index.qwik.mjs",
   "module": "./lib/index.qwik.mjs",
   "types": "./types/index.d.ts",
-  "style": "./lib/papanasi.css",
   "exports": {
     ".": {
       "import": "./lib/index.qwik.mjs",

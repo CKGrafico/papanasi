@@ -8,7 +8,6 @@
   "main": "dist/cjs/papanasi.js",
   "module": "dist/esm/papanasi.js",
   "types": "dist/types/papanasi.d.ts",
-  "style": "./dist/papanasi.css",
   "exports": {
     ".": {
       "solid": "./dist/index/index.js",

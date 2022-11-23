@@ -6,7 +6,6 @@
   "description": "Papanasi Preact UI Library",
   "main": "./dist/papanasi-preact.umd.js",
   "module": "./dist/papanasi-preact.es.js",
-  "style": "./dist/papanasi.css",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {

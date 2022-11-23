@@ -6,7 +6,7 @@ packages/**/types/
 packages/**/tsconfig.*
 *.log
 storybook-static/
-packages/webcomponent/custom-elements.json
+packages/webcomponents/custom-elements.json
 **/stats.html
 packages/svelte/.svelte-kit
 packages/qwik/tsconfig.tsbuildinfo

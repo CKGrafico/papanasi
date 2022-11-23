@@ -69,10 +69,7 @@ async function compile(defaultOptions) {
 
     // Create specific README
     const data = fs.readFileSync('README.md', 'utf8');
-    const result = data.replace(
-      /\/\[target\].+/g,
-      `/${options.target + (options.target === 'webcomponent' ? 's' : '')}`
-    );
+    const result = data.replace(/\/\[target\].+/g, `/${options.target}`);
 
     fs.writeFileSync(`${outPath}/README.md`, result, 'utf8');
 
@@ -105,7 +102,7 @@ async function compile(defaultOptions) {
       parameters: {
         options: {
           from: 'mitosis',
-          to: options.target,
+          to: options.target === 'webcomponents' ? 'webcomponent' : options.target,
           out: outFile,
           force: true,
           state: options.state,
