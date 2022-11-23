@@ -67,16 +67,6 @@ module.exports = (options) => {
             visualizer()
           ]
         },
-    {
-      input: path.resolve(dir, '../../src/styles/themes/papanasi/index.css'),
-      output: [
-        {
-          file: packageJson.style,
-          sourcemap: 'inline'
-        }
-      ],
-      plugins: [postcss({ ...postcssConfig, inject: false, extract: 'papanasi.css' })]
-    },
     dts && !disableCoreCompilation
       ? {
           input: path.resolve(dir, packageJson.module.replace('.js', '.d.ts')),

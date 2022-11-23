@@ -3,7 +3,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   stories: ['../docs/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  staticDirs: ['../packages/react/storybook/packages/react/dist'],
+  staticDirs: ['../.themes'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

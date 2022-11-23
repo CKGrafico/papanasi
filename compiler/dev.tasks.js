@@ -15,6 +15,13 @@ const ora = require('ora');
         })
     },
     {
+      title: 'Compile Themes',
+      task: () =>
+        execa('yarn themes').catch((error) => {
+          throw new Error('Error compiling Themes' + error);
+        })
+    },
+    {
       title: 'Compile React Components',
       task: () =>
         execa('node ./compiler/platforms/react').catch((error) => {
