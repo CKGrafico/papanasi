@@ -244,7 +244,7 @@ This library born as a pet project to create universal components, easy to exten
       <strong>Code</strong> <br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=angular" alt="Angular status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=preact" alt="Preact status" />
-      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=qwiklabs" alt="Qwik status" />
+      <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=qwiklabs" alt="Qwik status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=react" alt="React status" /><br/>
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=solid" alt="Solid status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=svelte" alt="Svelte status" />
