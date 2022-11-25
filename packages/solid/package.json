@@ -30,7 +30,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c && rollup --config rollup-themes.config.js",
+    "build": "rollup -c",
     "postbuild": "node ./copy-css.js"
   },
   "publishConfig": {
