@@ -63,8 +63,8 @@ module.exports = (options) => {
             }),
             postcss(postcssConfig),
             peerDepsExternal(),
-            commonjs(),
-            visualizer()
+            commonjs()
+            // visualizer() // TODO next version, use a strategy for visualizer
           ]
         },
     dts && !disableCoreCompilation

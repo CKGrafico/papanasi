@@ -21,6 +21,18 @@ module.exports = {
     use.unshift(MiniCssExtractPlugin.loader);
     cssRule.use = use.filter((x) => !x?.loader?.includes('style-loader'));
 
+    config.module.rules.push({
+      test: /code\.tsx$/,
+      loader: 'string-replace-loader',
+      options: {
+        // There is an error on storybook prism implementation and we cannot use <code html tag on the showcase
+        search: '<code',
+        replace: '<div '
+      }
+    });
+
+    config.plugins.push();
+
     options.cache.set = () => Promise.resolve();
 
     config.resolve.plugins = [new TsconfigPathsPlugin()];

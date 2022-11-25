@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
-    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-manager-cache --quiet",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-manager-cache",
     "clean": "rimraf packages/**/{src,dist,lib,types,node_modules,stats.html}",
     "lerna": "lerna run",
     "themes": "node ./compiler/themes.tasks",
@@ -23,8 +23,8 @@
     "codejar": "^3.6.0",
     "copy-to-clipboard": "^3.3.2",
     "copyfiles": "^2.4.1",
-    "ssr-window": "^4.0.2",
-    "highlight.js": "^11.6.0"
+    "highlight.js": "^11.6.0",
+    "ssr-window": "^4.0.2"
   },
   "devDependencies": {
     "@a110/storybook-expand-all": "^1.1.1",
@@ -100,6 +100,7 @@
     "rollup-plugin-vue": "^6.0.0",
     "rollup-preset-solid": "^1.4.0",
     "solid-js": "^1.6.2",
+    "string-replace-loader": "^3.1.0",
     "stylelint": "^14.15.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-standard": "^29.0.0",

@@ -160,3 +160,7 @@ button.sidebar-item.sidebar-item ~ div > a {
 .pa-tooltip {
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+.pa-code {
+  padding: 1rem;
+}
