@@ -4,6 +4,9 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 module.exports = {
   stories: ['../docs/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   staticDirs: ['../.themes'],
+  core: {
+    builder: 'webpack4'
+  },
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -38,6 +41,8 @@ module.exports = {
     config.resolve.plugins = [new TsconfigPathsPlugin()];
 
     config.watch = false;
+
+    options.watchOptions = { ignored: /src/ };
 
     return config;
   }
