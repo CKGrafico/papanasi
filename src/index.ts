@@ -1,4 +1,4 @@
-import { initBreakpointChecker } from './helpers';
+import { initBreakpointChecker, setPlatform, Platform } from './helpers';
 import './styles/variables.css';
 export { setDebugLevel, DebugLevel, addCodeLanguage } from './helpers';
 
@@ -9,10 +9,11 @@ export { default as Code } from './elements/components/code';
 export { default as Pill } from './elements/components/pill';
 export { default as Spinner } from './elements/components/spinner';
 export { default as Itchio } from './elements/enterprise/itchio';
-export { useTooltipExtension } from './elements/extensions/tooltip';
+export { default as useTooltipExtension } from './elements/extensions/tooltip';
 export { default as Column } from './elements/layout/column';
 export { default as Container } from './elements/layout/container';
 export { default as Row } from './elements/layout/row';
 // End Components
 
+setPlatform(Platform.Default);
 initBreakpointChecker();

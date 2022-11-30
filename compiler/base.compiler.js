@@ -26,6 +26,10 @@ const optionDefinitions = [
   { name: 'dev', type: Boolean }
 ];
 
+function pascalName(name) {
+  return name.charAt(0).toUpperCase() + name.slice(1);
+}
+
 async function compile(defaultOptions) {
   const options = {
     ...DEFAULT_OPTIONS,
@@ -73,24 +77,25 @@ async function compile(defaultOptions) {
 
     fs.writeFileSync(`${outPath}/README.md`, result, 'utf8');
 
-    if (!cliConfig.elements) {
-      return;
-    }
+    let fileExports = '$2';
 
     // Export only the elements we want
-    const fileExports = options.elements
-      .map((fileName) => {
-        const file = path.parse(fileName);
-        const name = file.name.replace('.lite', '');
-        const pascalName = name.charAt(0).toUpperCase() + name.slice(1);
-        return `export { default as ${pascalName} } from './${file.dir.replace('src/', '')}';`;
-      })
-      .join('\n');
+    if (cliConfig.elements) {
+      fileExports = options.elements
+        .map((fileName) => {
+          const file = path.parse(fileName);
+          const name = file.name.replace('.lite', '');
+          return `export { default as ${pascalName(name)} } from './${file.dir.replace('src/', '')}';`;
+        })
+        .join('\n');
+    }
+
     const indexData = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
-    const indexResult = indexData.replace(
-      /(\/\/ Init Components)(.+?)(\/\/ End Components)/s,
-      `$1\n${fileExports}\n$3`
-    );
+    const indexResult = indexData
+      // Export only needed components
+      .replace(/(\/\/ Init Components)(.+?)(\/\/ End Components)/s, `$1\n${fileExports}\n$3`)
+      .replace(/Platform.Default/g, `Platform.${pascalName(options.target)}`);
+
     fs.writeFileSync(`${outPath}/src/index.ts`, indexResult, 'utf8');
   }
 

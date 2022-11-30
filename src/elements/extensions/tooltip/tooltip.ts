@@ -100,7 +100,7 @@ function createTooltipElement(rootElement: HTMLElement) {
   return element;
 }
 
-export function useTooltipExtension(rootElement?: HTMLElement) {
+export default function useTooltipExtension(rootElement?: HTMLElement) {
   const document = getDocument();
   const element = rootElement || document.body;
 
