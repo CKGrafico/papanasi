@@ -9,4 +9,5 @@ export * from './element.helper';
 export * from './inject-script.helper';
 export * from './itchio.helper';
 export * from './object.helper';
+export * from './platform.helper';
 export * from './wait.helper';
