@@ -8,6 +8,17 @@
   --pa-button-font-weight: var(--pa-font-weight-medium);
   --pa-button-outline: var(--pa-outline-width);
 
+  background-image: linear-gradient(
+    135deg,
+    var(--pa-color-basic-bright) 25%,
+    var(--pa-color-basic-brightest) 25%,
+    var(--pa-color-basic-brightest) 50%,
+    var(--pa-color-basic-bright) 50%,
+    var(--pa-color-basic-bright) 75%,
+    var(--pa-color-basic-brightest) 75%,
+    var(--pa-color-basic-brightest) 100%
+  );
+  background-size: 5.66px 5.66px;
   background-color: var(--pa-color-basic-brightest);
   border-color: var(--pa-color-basic-bright);
   border-radius: var(--pa-button-radius);
@@ -29,8 +40,23 @@
     outline-color: var(--pa-color-basic-brighter);
   }
 
+  &--outline {
+    background-image: none;
+    background-color: transparent;
+  }
+
   @each $variant in primary, secondary, tertiary {
     &--$(variant) {
+      background-image: linear-gradient(
+        135deg,
+        var(--pa-color-$(variant)-dark) 25%,
+        var(--pa-color-$(variant)-normal) 25%,
+        var(--pa-color-$(variant)-normal) 50%,
+        var(--pa-color-$(variant)-dark) 50%,
+        var(--pa-color-$(variant)-dark) 75%,
+        var(--pa-color-$(variant)-normal) 75%,
+        var(--pa-color-$(variant)-normal) 100%
+      );
       background-color: var(--pa-color-$(variant)-normal);
       border-color: transparent;
       color: var(--pa-color-basic-brightest);
@@ -46,6 +72,7 @@
     }
 
     &--outline&--$(variant) {
+      background-image: none;
       background-color: transparent;
       border-color: var(--pa-color-$(variant)-normal);
       color: var(--pa-color-$(variant)-dark);

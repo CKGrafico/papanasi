@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 :root {
   /* Border */
   --pa-border-radius-small: 255px 15px 225px 15px/15px 225px 15px 255px;
-  --pa-border-width-small: 1px;
+  --pa-border-width-small: 2px;
 
   /* Color Primary */
   --pa-color-primary-brightest: #dbdbdb;
   --pa-color-primary-brighter: #d1d1d1;
   --pa-color-primary-bright: #a8a8a8;
-  --pa-color-primary-normal: #595959;
-  --pa-color-primary-dark: #636363;
-  --pa-color-primary-darker: #474747;
+  --pa-color-primary-normal: #5c5c5c;
+  --pa-color-primary-dark: #4e4d4d;
+  --pa-color-primary-darker: #3e3e3e;
   --pa-color-primary-darkest: #2b2b2b;
 
   /* Color Secondary */
@@ -33,7 +33,7 @@
   --pa-color-tertiary-darkest: #172864;
 
   /* Font */
-  --pa-font-family: 'Source Sans Pro', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --pa-font-family: 'Patrick Hand', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 
   /* Shadow */
   --pa-shadow-normal: var(--pa-color-basic-bright) 0 1px 3px 0;
