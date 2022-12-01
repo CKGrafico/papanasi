@@ -14,9 +14,9 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./papanasi.css": {
-      "import": "./papanasi.css",
-      "require": "./papanasi.css"
+    "./*.css": {
+      "import": "./dist/themes/*.css",
+      "require": "./dist/themes/*.css"
     }
   },
   "dependencies": {
@@ -36,7 +36,7 @@
   ],
   "scripts": {
     "build": "svelte-kit sync && svelte-package",
-    "postbuild": "copyfiles ../../.themes/** ./dist/ --flat"
+    "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat"
   },
   "publishConfig": {
     "access": "public"

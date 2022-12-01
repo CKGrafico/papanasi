@@ -12,9 +12,9 @@
       "import": "./dist/papanasi-webcomponents.es.js",
       "require": "./dist/papanasi-webcomponents.umd.js"
     },
-    "./papanasi.css": {
-      "import": "./dist/papanasi.css",
-      "require": "./dist/papanasi.css"
+    "./*.css": {
+      "import": "./dist/themes/*.css",
+      "require": "./dist/themes/*.css"
     },
     "./custom-elements.json": {
       "import": "./custom-elements.json",
@@ -30,7 +30,7 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "copyfiles ../../.themes/** ./dist/ --flat",
+    "prebuild": "copyfiles ../../.themes/** ./dist/themes --flat",
     "build": "run-s build:**",
     "build:code": "rollup -c",
     "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\"",

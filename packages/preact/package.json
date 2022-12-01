@@ -12,9 +12,9 @@
       "import": "./dist/papanasi-preact.es.js",
       "require": "./dist/papanasi-preact.umd.js"
     },
-    "./papanasi.css": {
-      "import": "./dist/papanasi.css",
-      "require": "./dist/papanasi.css"
+    "./*.css": {
+      "import": "./dist/themes/*.css",
+      "require": "./dist/themes/*.css"
     }
   },
   "dependencies": {
@@ -33,7 +33,7 @@
   "scripts": {
     "prebuild": "yarn install",
     "build": "rollup -c",
-    "postbuild": "copyfiles ../../.themes/** ./dist/ --flat"
+    "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat"
   },
   "publishConfig": {
     "access": "public"

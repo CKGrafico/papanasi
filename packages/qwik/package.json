@@ -19,9 +19,9 @@
       "import": "./lib/style.css",
       "require": "./lib/style.css"
     },
-    "./papanasi.css": {
-      "import": "./lib/papanasi.css",
-      "require": "./lib/papanasi.css"
+    "./*.css": {
+      "import": "./lib/themes/*.css",
+      "require": "./lib/themes/*.css"
     }
   },
   "dependencies": {
@@ -43,7 +43,7 @@
     "build": "qwik build",
     "build.lib": "vite build --mode lib",
     "build.types": "tsc --emitDeclarationOnly",
-    "postbuild": "copyfiles ../../.themes/** ./lib/ --flat"
+    "postbuild": "copyfiles ../../.themes/** ./lib/themes --flat"
   },
   "publishConfig": {
     "access": "public"

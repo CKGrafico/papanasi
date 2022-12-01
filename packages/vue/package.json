@@ -12,9 +12,9 @@
       "import": "./dist/papanasi-vue.es.js",
       "require": "./dist/papanasi-vue.umd.js"
     },
-    "./papanasi.css": {
-      "import": "./dist/papanasi.css",
-      "require": "./dist/papanasi.css"
+    "./*.css": {
+      "import": "./dist/themes/*.css",
+      "require": "./dist/themes/*.css"
     }
   },
   "dependencies": {
@@ -32,7 +32,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "postbuild": "copyfiles ../../.themes/** ./dist/ --flat"
+    "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat"
   },
   "publishConfig": {
     "access": "public"
