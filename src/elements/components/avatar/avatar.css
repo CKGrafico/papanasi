@@ -4,6 +4,8 @@
   display: inline-flex;
 
   &__container {
+    background-color: var(--pa-avatar-background);
+    color: var(--pa-avatar-foreground);
     display: inline-flex;
     justify-content: center;
     align-items: center;

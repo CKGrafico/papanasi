@@ -47,8 +47,8 @@ class AvatarService {
     debug(`AvatarService getColor: color: ${JSON.stringify(color)}`);
 
     return {
-      color: color.foreground,
-      'background-color': color.background
+      '--pa-avatar-foreground': color.foreground,
+      '--pa-avatar-background': color.background
     };
   }
 

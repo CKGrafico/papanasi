@@ -20,8 +20,8 @@
 
   @each $variant in primary, secondary, tertiary {
     &--$(variant) &__container {
-      background-color: var(--pa-color-$(variant)-normal);
-      color: var(--pa-color-basic-brightest);
+      --pa-avatar-background: var(--pa-color-$(variant)-normal);
+      --pa-avatar-foreground: var(--pa-color-basic-brightest);
     }
   }
 

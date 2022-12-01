@@ -5,11 +5,11 @@
 
   --pa-button-radius: var(--pa-border-radius-small);
   --pa-button-border-width: var(--pa-border-width-small);
-  --pa-button-font-weight: var(--pa-font-weight-medium);
+  --pa-button-font-weight: var(--pa-font-weight-normal);
   --pa-button-outline: var(--pa-outline-width);
 
   background-image: linear-gradient(
-    135deg,
+    var(--pa-stripe-angle),
     var(--pa-color-basic-bright) 25%,
     var(--pa-color-basic-brightest) 25%,
     var(--pa-color-basic-brightest) 50%,
@@ -18,7 +18,7 @@
     var(--pa-color-basic-brightest) 75%,
     var(--pa-color-basic-brightest) 100%
   );
-  background-size: 5.66px 5.66px;
+  background-size: var(--pa-stripe-size);
   background-color: var(--pa-color-basic-brightest);
   border-color: var(--pa-color-basic-bright);
   border-radius: var(--pa-button-radius);
@@ -26,13 +26,13 @@
   border-width: var(--pa-button-border-width);
   color: var(--pa-color-basic-darker);
   font-family: var(--pa-font-family);
+  font-size: var(--pa-font-size-normal);
   font-weight: var(--pa-button-font-weight);
   outline: var(--pa-button-outline) solid transparent;
   transition-duration: var(--pa-transition-duration-normal);
   transition-property: var(--pa-transition-colors);
 
   &:hover {
-    background-color: var(--pa-color-basic-brighter);
     border-color: var(--pa-color-basic-normal);
   }
 
@@ -48,7 +48,7 @@
   @each $variant in primary, secondary, tertiary {
     &--$(variant) {
       background-image: linear-gradient(
-        135deg,
+        var(--pa-stripe-angle),
         var(--pa-color-$(variant)-dark) 25%,
         var(--pa-color-$(variant)-normal) 25%,
         var(--pa-color-$(variant)-normal) 50%,
@@ -62,8 +62,7 @@
       color: var(--pa-color-basic-brightest);
 
       &:hover {
-        background-color: var(--pa-color-$(variant)-dark);
-        border-color: var(--pa-color-$(variant)-dark);
+        border-color: var(--pa-color-$(variant)-darkest);
       }
 
       &:active {
@@ -79,20 +78,29 @@
 
       &:hover {
         background-color: var(--pa-color-$(variant)-brightest);
-        border-color: var(--pa-color-$(variant)-dark);
-        color: var(--pa-color-$(variant)-darker);
+        border-color: var(--pa-color-$(variant)-darkest);
+        color: var(--pa-color-$(variant)-darkest);
       }
     }
   }
 
   @each $intent in info, success, warning, error {
     &.is-$(intent) {
+      background-image: linear-gradient(
+        var(--pa-stripe-angle),
+        var(--pa-color-$(intent)-brighter) 25%,
+        var(--pa-color-$(intent)-bright) 25%,
+        var(--pa-color-$(intent)-bright) 50%,
+        var(--pa-color-$(intent)-brighter) 50%,
+        var(--pa-color-$(intent)-brighter) 75%,
+        var(--pa-color-$(intent)-bright) 75%,
+        var(--pa-color-$(intent)-bright) 100%
+      );
       background-color: var(--pa-color-$(intent)-bright);
-      color: var(--pa-color-$(intent)-darkest);
+      color: var(--pa-color-$(intent)-darker);
       border-color: transparent;
 
       &:hover {
-        background-color: var(--pa-color-$(intent)-normal);
         border-color: var(--pa-color-$(intent)-normal);
       }
 
@@ -102,12 +110,12 @@
     }
 
     &--outline&.is-$(intent) {
+      background-image: none;
       background-color: transparent;
       border-color: var(--pa-color-$(intent)-bright);
       color: var(--pa-color-$(intent)-normal);
 
       &:hover {
-        background-color: var(--pa-color-$(intent)-brightest);
         border-color: var(--pa-color-$(intent)-normal);
         color: var(--pa-color-$(intent)-darker);
       }
@@ -115,6 +123,6 @@
   }
 
   &.is-disabled {
-    opacity: 0.75;
+    opacity: 0.5;
   }
 }
