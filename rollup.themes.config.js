@@ -21,7 +21,7 @@ module.exports = () => {
           sourcemap: 'inline'
         }
       ],
-      plugins: [postcss({ ...postcssConfig, inject: false, extract: 'papanasi.css' })]
+      plugins: [postcss({ ...postcssConfig, inject: false, extract: `${cliConfig.theme}.css` })]
     }
   ];
 };

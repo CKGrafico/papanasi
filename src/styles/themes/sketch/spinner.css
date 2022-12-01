@@ -1,0 +1,93 @@
+@import '../../build.css';
+
+.pa-spinner {
+  --pa-spinner-linecap: round;
+  --pa-spinner-stroke: 6;
+  --pa-spinner-offset: 200;
+  --pa-spinner-duration: 4s;
+
+  @mixin shared-styles;
+
+  &--full,
+  &--fullscreen {
+    @mixin background-opacity var(--pa-color-basic-brightest), 0.2;
+    backdrop-filter: blur(3px);
+    z-index: var(--pa-zindex-max);
+  }
+
+  &__icon {
+    animation: rotator270 var(--pa-spinner-duration) linear infinite;
+  }
+
+  &__path {
+    animation: dash var(--pa-spinner-duration) ease-in-out infinite,
+      colors calc(var(--pa-spinner-duration) * 4) ease-in-out infinite;
+    stroke-dasharray: var(--pa-spinner-offset);
+    stroke-linecap: var(--pa-spinner-linecap);
+    stroke-width: var(--pa-spinner-stroke);
+  }
+
+  @keyframes colors {
+    0% {
+      stroke: var(--pa-color-basic-dark);
+    }
+
+    50% {
+      stroke: var(--pa-color-basic-darker);
+    }
+
+    100% {
+      stroke: var(--pa-color-basic-dark);
+    }
+  }
+
+  @each $variant in primary, secondary, tertiary {
+    &--$(variant) &--full,
+    &--$(variant) &--fullscreen {
+      @mixin background-opacity var(--pa-color-$(variant)-brightest), 0.2;
+    }
+
+    &--$(variant) &__path {
+      animation: dash var(--pa-spinner-duration) ease-in-out infinite,
+        colors-$(variant) calc(var(--pa-spinner-duration) * 4) ease-in-out infinite;
+
+      @keyframes colors-$(variant) {
+        0% {
+          stroke: var(--pa-color-$(variant)-normal);
+        }
+
+        50% {
+          stroke: var(--pa-color-$(variant)-darker);
+        }
+
+        100% {
+          stroke: var(--pa-color-$(variant)-normal);
+        }
+      }
+    }
+  }
+
+  @keyframes rotator270 {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: var(--pa-spinner-offset);
+    }
+    50% {
+      stroke-dashoffset: var(--pa-spinner-offset) / 4;
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: var(--pa-spinner-offset);
+      transform: rotate(450deg);
+    }
+  }
+}

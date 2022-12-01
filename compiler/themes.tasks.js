@@ -2,7 +2,7 @@ const { Listr } = require('listr2');
 
 (async () => {
   const execa = (await import('execa')).command;
-  const themes = ['papanasi'];
+  const themes = ['papanasi', 'sketch'];
 
   const tasks = new Listr([
     {
