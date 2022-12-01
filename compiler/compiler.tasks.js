@@ -71,7 +71,7 @@ const optionDefinitions = [
         })
     },
     {
-      title: `Compile Mitosis components: ${cliConfig.elements?.join(', ') || 'all'}`,
+      title: `Compile Mitosis Elements: ${cliConfig.elements?.join(', ') || 'all'}`,
       task: () => {
         return new Listr(
           cliConfig.platforms.map((platform) => ({
