@@ -1,0 +1,121 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { useThemeExtension } from '../../../../packages/react/src';
+import { Customization, Codesandbox } from '../../../../.storybook/components';
+
+<Meta
+  title="🧩Elements/Extensions/ThemeSwitcher"
+  argTypes={{
+    theme: {
+      name: 'theme',
+      description: 'The theme to switch on client side',
+      table: {},
+      control: 'text'
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div className="tooltip-example">
+    {(() => {
+      useThemeExtension();
+      return '';
+    })()}
+    <div>
+      <Button variant="primary">{args.theme}</Button>
+    </div>
+  </div>
+);
+
+# Theme
+
+Todo...
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Theme"
+    args={{
+      theme: 'papanasi'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Properties
+
+<ArgsTable story="Theme" />
+
+## How to use this extension
+
+### Angular
+
+<Codesandbox
+  extensions={['useThemeExtension']}
+  platform="angular"
+  code={`
+    <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Preact
+
+<Codesandbox
+  extensions={['useThemeExtension']}
+  platform="preact"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Qwik
+
+<Codesandbox
+  extensions={['useThemeExtension']}
+  platform="qwik"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### React
+
+<Codesandbox
+  extensions={['useThemeExtension']}
+  platform="react"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Solid
+
+<Codesandbox
+  extensions={['useThemeExtension']}
+  platform="solid"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  extensions={['useThemeExtension']}
+  platform="svelte"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Vue
+
+<Codesandbox
+  extensions={['useThemeExtension']}
+  platform="vue"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Web Components
+
+<Codesandbox
+  extensions={['useThemeExtension']}
+  platform="webcomponents"
+  code={`<span title="Example of a tooltip">Hover me</span>`}
+/>
