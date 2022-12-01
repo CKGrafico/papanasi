@@ -37,7 +37,7 @@
   --pa-font-size-normal: 1.05rem;
 
   /* Shadow */
-  --pa-shadow-normal: var(--pa-color-basic-bright) 0 1px 3px 0;
+  --pa-shadow-normal: none;
 
   /* Stripe */
   --pa-stripe-angle: 135deg;

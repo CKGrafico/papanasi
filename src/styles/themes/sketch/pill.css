@@ -6,6 +6,16 @@
   --pa-pill-radius: 10rem;
   --pa-pill-font-weight: var(--pa-font-weight-medium);
 
+  background-image: linear-gradient(
+    var(--pa-stripe-angle),
+    var(--pa-color-$(variant)-dark) 25%,
+    var(--pa-color-$(variant)-normal) 25%,
+    var(--pa-color-$(variant)-normal) 50%,
+    var(--pa-color-$(variant)-dark) 50%,
+    var(--pa-color-$(variant)-dark) 75%,
+    var(--pa-color-$(variant)-normal) 75%,
+    var(--pa-color-$(variant)-normal) 100%
+  );
   background-color: var(--pa-color-basic-brightest);
   border-color: var(--pa-color-basic-bright);
   border-radius: var(--pa-pill-radius);
@@ -14,9 +24,20 @@
   font-weight: var(--pa-pill-font-weight);
   transition-duration: var(--pa-transition-duration-normal);
   transition-property: var(--pa-transition-colors);
+  background-size: var(--pa-stripe-size);
 
   @each $variant in primary, secondary, tertiary {
     &--$(variant) {
+      background-image: linear-gradient(
+        var(--pa-stripe-angle),
+        var(--pa-color-$(variant)-dark) 25%,
+        var(--pa-color-$(variant)-normal) 25%,
+        var(--pa-color-$(variant)-normal) 50%,
+        var(--pa-color-$(variant)-dark) 50%,
+        var(--pa-color-$(variant)-dark) 75%,
+        var(--pa-color-$(variant)-normal) 75%,
+        var(--pa-color-$(variant)-normal) 100%
+      );
       background-color: var(--pa-color-$(variant)-normal);
       border-color: transparent;
       color: var(--pa-color-basic-brightest);
@@ -25,8 +46,18 @@
 
   @each $intent in info, success, warning, error {
     &.is-$(intent) {
+      background-image: linear-gradient(
+        var(--pa-stripe-angle),
+        var(--pa-color-$(intent)-brighter) 25%,
+        var(--pa-color-$(intent)-bright) 25%,
+        var(--pa-color-$(intent)-bright) 50%,
+        var(--pa-color-$(intent)-brighter) 50%,
+        var(--pa-color-$(intent)-brighter) 75%,
+        var(--pa-color-$(intent)-bright) 75%,
+        var(--pa-color-$(intent)-bright) 100%
+      );
       background-color: var(--pa-color-$(intent)-bright);
-      color: var(--pa-color-$(intent)-darkest);
+      color: var(--pa-color-$(intent)-darker);
     }
   }
 }

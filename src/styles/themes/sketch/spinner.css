@@ -1,17 +1,17 @@
 @import '../../build.css';
 
 .pa-spinner {
-  --pa-spinner-linecap: round;
-  --pa-spinner-stroke: 6;
-  --pa-spinner-offset: 200;
-  --pa-spinner-duration: 4s;
+  --pa-spinner-linecap: square;
+  --pa-spinner-stroke: 4;
+  --pa-spinner-offset: 16;
+  --pa-spinner-duration: 6s;
 
   @mixin shared-styles;
 
   &--full,
   &--fullscreen {
     @mixin background-opacity var(--pa-color-basic-brightest), 0.2;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(1px);
     z-index: var(--pa-zindex-max);
   }
 

@@ -22,6 +22,8 @@
     border-bottom: 0;
     transition-duration: var(--pa-transition-duration-normal);
     transition-property: var(--pa-transition-colors);
+    padding-bottom: 0.5rem;
+    padding-top: 0.15rem;
 
     &:hover {
       background-color: var(--pa-color-basic-brighter);
