@@ -2,7 +2,7 @@
 
 .pa-container {
   width: 100%;
-  max-width: var(--pa-grid-container-max-width);
+  max-width: var(--pa-grid-max-width);
 
   &--fluid {
     max-width: 100%;
