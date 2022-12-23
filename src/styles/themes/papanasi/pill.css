@@ -10,6 +10,7 @@
   border-color: var(--pa-color-basic-bright);
   border-radius: var(--pa-pill-radius);
   color: var(--pa-color-basic-darker);
+  font-family: var(--pa-font-family);
   font-weight: var(--pa-pill-font-weight);
   transition-duration: var(--pa-transition-duration-normal);
   transition-property: var(--pa-transition-colors);

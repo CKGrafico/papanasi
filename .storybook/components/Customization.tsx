@@ -46,6 +46,11 @@ export function Customization(props: CustomizationProps) {
       name: 'Papanasi',
       value: 'papanasi',
       css: `/papanasi.css?${performance.now()}`
+    },
+    {
+      name: 'Sketch',
+      value: 'sketch',
+      css: `/sketch.css?${performance.now()}`
     }
   ];
 

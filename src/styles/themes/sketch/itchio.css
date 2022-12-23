@@ -14,10 +14,10 @@
   @mixin shared-styles;
 
   &__container {
+    font-family: var(--pa-font-family);
     background-color: var(--pa-itchio-background);
     border-radius: var(--pa-itchio-radius);
     padding: var(--pa-itchio-padding);
-    font-family: var(--pa-font-family);
   }
 
   &__image {

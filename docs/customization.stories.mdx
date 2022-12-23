@@ -46,11 +46,22 @@ Our configured **Responsive Suffixes** are the same as our default breakpoints:
 --pa-breakpoint-xxl: 1920px; // @xxs`}
 ></Code>
 
+## Themes
+
+To create a custom theme for your application is easy as create a `.css` file and override the `custom properties` or just add new css values to the `BEM Classes` explained above.
+
+To help the user by default we are exporting our library without themes but there are also some default ones that you can use as base for your custom one, those are `papanasi.css`, `sketch.css`.
+
+Import them as any other file in your project, for example in a `react` project you can import like this:
+
+<Code language="javascript" code={`import "@papanasi/react/sketch.css";`}></Code>
+
+
 ## CSS Custom Properties
 
 We have defined a list of custom properties that we use to customize the components. You can easily override them in your project.
 
-For example if we want to modify the **variants**, there are 3 different groups of properties and those are the ones from the basi theme called `papanasi.css`:
+For example if we want to modify the **variants**, there are 3 different groups of properties and those are the ones from the basic theme called `papanasi.css`:
 
 <Code
   language="css"

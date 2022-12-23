@@ -16,9 +16,9 @@
       "require": "./dist/cjs/papanasi.js",
       "node": "./dist/cjs/papanasi.js"
     },
-    "./papanasi.css": {
-      "import": "./dist/papanasi.css",
-      "require": "./dist/papanasi.css"
+    "./*.css": {
+      "import": "./dist/themes/*.css",
+      "require": "./dist/themes/*.css"
     }
   },
   "dependencies": {

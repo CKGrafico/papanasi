@@ -1,0 +1,53 @@
+@import '../../build.css';
+
+.pa-avatar {
+  --pa-avatar-size: 3rem;
+  --pa-avatar-padding: 0.25rem;
+  --pa-avatar-radius: 100%;
+  --pa-avatar-border-width: var(--pa-border-width-small);
+  --pa-avatar-initials-weight: var(--pa-font-weight-medium);
+  --pa-avatar-background: transparent;
+  --pa-avatar-foreground: transparent;
+
+  @mixin shared-styles;
+
+  &__container {
+    border-radius: var(--pa-avatar-radius);
+    box-sizing: border-box;
+    font-family: var(--pa-font-family);
+    font-size: var(--pa-font-size-normal);
+    font-weight: var(--pa-avatar-initials-weight);
+    height: var(--pa-avatar-size);
+    padding: var(--pa-avatar-padding);
+    width: var(--pa-avatar-size);
+    background-image: linear-gradient(
+      var(--pa-stripe-angle),
+      var(--pa-avatar-background) 25%,
+      transparent 25%,
+      transparent 50%,
+      var(--pa-avatar-background) 50%,
+      var(--pa-avatar-background) 75%,
+      transparent 75%,
+      transparent 100%
+    );
+    background-size: var(--pa-stripe-size);
+    background-color: transparent;
+    border-width: var(--pa-avatar-border-width);
+    border-style: dashed;
+    border-color: var(--pa-avatar-background);
+  }
+
+  @each $variant in primary, secondary, tertiary {
+    &--$(variant) &__container {
+      --pa-avatar-background: var(--pa-color-$(variant)-brightest);
+      --pa-avatar-foreground: var(--pa-color-$(variant)-darkest);
+    }
+  }
+
+  &__image {
+    border-radius: var(--pa-avatar-radius);
+    box-sizing: border-box;
+    max-width: calc(100% + var(--pa-avatar-padding) * 2);
+    max-height: calc(100% + var(--pa-avatar-padding) * 2);
+  }
+}

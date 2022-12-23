@@ -13,5 +13,5 @@ const themesFiles = glob.sync(`../../.themes/**.css`);
 themesFiles.forEach((fileName) => {
   const file = path.parse(fileName);
 
-  fs.copySync(fileName, `./dist/${file.base}`);
+  fs.copySync(fileName, `./dist/themes/${file.base}`);
 });
