@@ -25,7 +25,8 @@
     border-color: var(--pa-color-basic-normal);
   }
 
-  &:active {
+  &:active,
+  &:focus {
     outline-color: var(--pa-color-basic-brighter);
   }
 
@@ -40,7 +41,8 @@
         border-color: var(--pa-color-$(variant)-dark);
       }
 
-      &:active {
+      &:active,
+      &:focus {
         outline-color: var(--pa-color-$(variant)-brighter);
       }
     }
@@ -69,7 +71,8 @@
         border-color: var(--pa-color-$(intent)-normal);
       }
 
-      &:active {
+      &:active,
+      &:focus {
         outline-color: var(--pa-color-$(intent)-brighter);
       }
     }
