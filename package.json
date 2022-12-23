@@ -2,7 +2,7 @@
   "name": "papanasi",
   "private": true,
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
