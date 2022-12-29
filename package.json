@@ -2,7 +2,7 @@
   "name": "papanasi",
   "private": true,
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
@@ -16,7 +16,7 @@
     "postinstall": "node ./hooks/post-install.hook.js",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.0.1 --force-publish",
+    "package": "lerna version 1.0.2 --force-publish",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {

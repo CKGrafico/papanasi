@@ -12,9 +12,13 @@
       "import": "./dist/papanasi-react.es.js",
       "require": "./dist/papanasi-react.umd.js"
     },
-    "./*.css": {
-      "import": "./dist/themes/*.css",
-      "require": "./dist/themes/*.css"
+    "./papanasi.css": {
+      "import": "./dist/themes/papanasi.css",
+      "require": "./dist/themes/papanasi.css"
+    },
+    "./sketch.css": {
+      "import": "./dist/themes/sketch.css",
+      "require": "./dist/themes/sketch.css"
     }
   },
   "dependencies": {

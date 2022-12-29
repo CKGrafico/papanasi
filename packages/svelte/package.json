@@ -14,9 +14,13 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./*.css": {
-      "import": "./dist/themes/*.css",
-      "require": "./dist/themes/*.css"
+    "./papanasi.css": {
+      "import": "./dist/themes/papanasi.css",
+      "require": "./dist/themes/papanasi.css"
+    },
+    "./sketch.css": {
+      "import": "./dist/themes/sketch.css",
+      "require": "./dist/themes/sketch.css"
     }
   },
   "dependencies": {
