@@ -81,11 +81,12 @@ export function Customization(props: CustomizationProps) {
                 <Row>
                   {themes.map((theme) => (
                     <Column basic={'content'} key={theme.value}>
-                      <div
-                        className={`customization__theme ${selected === theme.value ? 'is-selected' : ''}`}
-                        onClick={() => onSelectTheme(theme.value)}
-                      >
-                        <div className={`customization__button`} title={theme.name}>
+                      <div className={`customization__theme ${selected === theme.value ? 'is-selected' : ''}`}>
+                        <div
+                          className={`customization__button`}
+                          title={theme.name}
+                          onClick={() => onSelectTheme(theme.value)}
+                        >
                           {theme.name}
                         </div>
                       </div>

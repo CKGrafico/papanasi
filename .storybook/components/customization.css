@@ -28,12 +28,16 @@
   }
 
   &__button {
-    --size: 80%;
+    --size: 90%;
 
-    background-color: red;
+    background-color: #e6e1fc; /* move to variables */
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: #483f6f;
   }
 
   &__theme.is-selected &__button {
-    background-color: yellow;
+    background-color: #ad99ff;
   }
 }
