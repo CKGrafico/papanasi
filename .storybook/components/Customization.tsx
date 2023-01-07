@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMemo, useState } from 'react';
-import { Code, Column, Container, Row } from '../../packages/react/src';
+import { Code, Column, Container, Row, useTooltipExtension } from '../../packages/react/src';
 import './customization.css';
 
 type CustomizationProps = {
@@ -35,13 +35,9 @@ export function Customization(props: CustomizationProps) {
 
   const [selected, setSelected] = useState('papanasi');
   const [customCss, setCustomCss] = useState('');
+  useTooltipExtension();
 
   const themes = [
-    {
-      name: 'None',
-      value: 'none',
-      css: ''
-    },
     {
       name: 'Papanasi',
       value: 'papanasi',
@@ -51,13 +47,18 @@ export function Customization(props: CustomizationProps) {
       name: 'Sketch',
       value: 'sketch',
       css: `/sketch.css?${performance.now()}`
+    },
+    {
+      name: 'None',
+      value: 'none',
+      css: ''
     }
   ];
 
   const stylePath = useMemo(() => themes?.find((x) => x.value === selected)?.css, [selected]);
 
-  function onChangeSelect(event) {
-    setSelected(event.target.value);
+  function onSelectTheme(theme) {
+    setSelected(theme);
   }
 
   function onChangeCss(text) {
@@ -71,38 +72,47 @@ export function Customization(props: CustomizationProps) {
 
       {!hidden && (
         <Container className="customization">
-          {showSelect && (
-            <div className="customization__theme">
-              <span className="customization__sublabel">Choose a theme</span>
-              <select onChange={onChangeSelect} defaultValue={selected} className="customization__select">
-                {themes.map((theme) => (
-                  <option key={theme.value} value={theme.value}>
-                    {theme.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
-          {css && selected !== 'none' && showCode && (
-            <>
-              <Row>
-                <Column xs={'content'} className="customization__label">
-                  Customize CSS properties
-                </Column>
-              </Row>
-              <Row>
-                <Column xs={'fill'}>
-                  <Code
-                    onUpdate={onChangeCss}
-                    editable
-                    theme="github"
-                    code={templateCSS(css, selector)}
-                    language={'css'}
-                  />
-                </Column>
-              </Row>
-            </>
-          )}
+          <Row className="customization__row">
+            {showSelect && (
+              <Column basic={3} className="customization__properties">
+                <Row>
+                  <Column className="customization__label">Choose a Theme</Column>
+                </Row>
+                <Row>
+                  {themes.map((theme) => (
+                    <Column basic={'content'} key={theme.value}>
+                      <div
+                        className={`customization__theme ${selected === theme.value ? 'is-selected' : ''}`}
+                        onClick={() => onSelectTheme(theme.value)}
+                      >
+                        <div className={`customization__button`} title={theme.name}>
+                          {theme.name}
+                        </div>
+                      </div>
+                    </Column>
+                  ))}
+                </Row>
+              </Column>
+            )}
+            {css && selected !== 'none' && showCode && (
+              <Column basic={8} className="customization__properties">
+                <Row>
+                  <Column className="customization__label">Edit CSS Variables</Column>
+                </Row>
+                <Row>
+                  <Column>
+                    <Code
+                      onUpdate={onChangeCss}
+                      editable
+                      theme="github"
+                      code={templateCSS(css, selector)}
+                      language={'css'}
+                    />
+                  </Column>
+                </Row>
+              </Column>
+            )}
+          </Row>
         </Container>
       )}
     </>
