@@ -15,16 +15,25 @@
     flex-direction: column !important; /* Because Storybook bisc styles... */
   }
 
-  &__theme {
+  &__theme,
+  &__button {
     --size: 5rem;
 
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: var(--size);
     width: var(--size);
     max-width: var(--size);
+  }
 
-    &.is-selected {
-      background-color: yellow;
-    }
+  &__button {
+    --size: 80%;
+
+    background-color: red;
+  }
+
+  &__theme.is-selected &__button {
+    background-color: yellow;
   }
 }
