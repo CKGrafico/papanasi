@@ -2581,10 +2581,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@builder.io/eslint-plugin-mitosis@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@builder.io/eslint-plugin-mitosis/-/eslint-plugin-mitosis-0.0.11.tgz#e8878111af40b5b736d89b5f120ba219cf147c1e"
-  integrity sha512-OBXaDifxExwJA+qm0QRnV9xvknmLuTB0mySr9kyN+rfP7Nmi36VxewjyeTvB709IVRa8Tqo5eSNMmabgHbi7ug==
+"@builder.io/eslint-plugin-mitosis@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@builder.io/eslint-plugin-mitosis/-/eslint-plugin-mitosis-0.0.14.tgz#108dc0aace19e8ce697c6bad63b0cb26b24fbecd"
+  integrity sha512-u1fDN00/NdhyrftEHnUPXMivCK73egVPiZmdgkIgp2F757+7DNwPUtpLDP7kiPdQMhZurP26meZ/bORbQTcHAw==
   dependencies:
     "@babel/types" "7.12.6"
     ts-pattern "^3.3.5"
@@ -2651,10 +2651,10 @@
     typescript "^4.8.4"
     vue "~2.6"
 
-"@builder.io/qwik@^0.13.3":
-  version "0.13.3"
-  resolved "https://registry.yarnpkg.com/@builder.io/qwik/-/qwik-0.13.3.tgz#31a65aa112c55d78d3b805fff6ef4577953b7260"
-  integrity sha512-revtQDBww5lYM6oEsmdRk0n+Z38sFghxjbpyNZFjN3h20FHoym7fXwxSUag+0wdeU9c3CRWDKoLJFtnngcLfCg==
+"@builder.io/qwik@^0.22.1":
+  version "0.22.1"
+  resolved "https://registry.yarnpkg.com/@builder.io/qwik/-/qwik-0.22.1.tgz#aeaf433cf64b9c6838bf7e7b6e4d1827fbf0cdee"
+  integrity sha512-mJNk6LMiiQ/IF7K4rcwV2Tn5FZY+qjIxvESXGTWDbH7HomHT6i3tqq82kIKxX1LNWnaJbzNEu1sDSQLmMlsPVw==
 
 "@builder.io/react@^1.1.50":
   version "1.1.52"
@@ -2723,10 +2723,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.1.1.tgz#c9c61d9fe5ca5ac664e1153bb0aa0eba1c6d6308"
   integrity sha512-jwx+WCqszn53YHOfvFMJJRd/B2GqkCBt+1MJSG6o5/s8+ytHMvDZXsJgUEWLk12UnLd7HYKac4BYU5i/Ron1Cw==
 
-"@custom-elements-manifest/analyzer@^0.6.6":
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/@custom-elements-manifest/analyzer/-/analyzer-0.6.6.tgz#52db8a3f6c575821d05694ff5a0295c0cb4bbb07"
-  integrity sha512-aPBZBdkrGcQPhgPPEucgw66vfOfLpS80GOGzDXE8NZuO/VmTdy3QQNAsuD4MPJmv9eRPV9W2V7ezodS5g8erng==
+"@custom-elements-manifest/analyzer@^0.6.9":
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/@custom-elements-manifest/analyzer/-/analyzer-0.6.9.tgz#556224d182334a57bc7040ea84760af803101950"
+  integrity sha512-N6GQtDYf9yiFpf0fpjwQ7rtKlBbt9CDqXGenfrMQlo7RfC5HJVH9ZkrKsNBETiV01WPdvUBJRgag+Tbafb+jXA==
   dependencies:
     "@custom-elements-manifest/find-dependencies" "^0.0.5"
     "@github/catalyst" "^1.6.0"

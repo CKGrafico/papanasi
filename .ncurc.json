@@ -1,8 +1,6 @@
 {
   "reject": [
-    "@builder.io/eslint-plugin-mitosis",
     "@builder.io/mitosis-cli",
-    "@builder.io/qwik",
     "mini-css-extract-plugin",
     "ora",
     "typescript"
