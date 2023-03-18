@@ -31,7 +31,7 @@ const ora = require('ora');
     {
       title: 'Bundle React',
       task: () =>
-        execa('yarn lerna --scope=@papanasi/react build').catch((error) => {
+        execa('yarn lerna --verbose --scope=@papanasi/react build').catch((error) => {
           throw new Error('Error bundling React ' + error);
         })
     },
@@ -51,7 +51,7 @@ const ora = require('ora');
 
           try {
             await execa('node ./compiler/platforms/react --dev');
-            await execa('yarn lerna --scope=@papanasi/react build');
+            await execa('yarn lerna --verbose --scope=@papanasi/react build');
           } catch (e) {
             spinner.text = `Error compiling ${e.message}.`;
             spinner.fail();

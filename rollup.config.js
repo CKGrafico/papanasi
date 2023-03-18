@@ -37,16 +37,17 @@ module.exports = (options) => {
             {
               file: packageJson.main,
               format: 'cjs',
-              sourcemap: true
+              sourcemap: true,
+              inlineDynamicImports: true
             },
             {
               file: packageJson.module,
               format: 'esm',
-              sourcemap: true
+              sourcemap: true,
+              inlineDynamicImports: true
             }
           ],
           treeshake: true,
-          inlineDynamicImports: true,
           external,
           plugins: [
             ...plugins,

@@ -93,7 +93,7 @@ const optionDefinitions = [
       title: `Bundle Packages: ${cliConfig.platforms?.join(', ') || ''}`,
       task: () =>
         execa(
-          `yarn lerna --scope=@papanasi/${
+          `yarn lerna --verbose --scope=@papanasi/${
             cliConfig.platforms.length > 1 ? `{${cliConfig.platforms?.join(',')}}` : cliConfig.platforms
           } build`
         ).catch((error) => {
