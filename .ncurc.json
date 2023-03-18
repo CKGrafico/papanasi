@@ -3,7 +3,6 @@
     "@builder.io/eslint-plugin-mitosis",
     "@builder.io/mitosis-cli",
     "@builder.io/qwik",
-    "@custom-elements-manifest/analyzer",
     "mini-css-extract-plugin",
     "ora",
     "typescript"
