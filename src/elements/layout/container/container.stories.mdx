@@ -7,6 +7,14 @@ import { Customization, Codesandbox } from '../../../../.storybook/components';
   title="🧩Elements/Layout/Container"
   component={Container}
   argTypes={{
+    centered: {
+      name: 'centered',
+      description: 'Let the content to be centered',
+      table: {},
+      control: {
+        type: 'boolean'
+      }
+    },
     fluid: {
       name: 'fluid',
       description: 'Let the container grow to max',
@@ -22,7 +30,7 @@ export const Template = (args) => <Container {...args}>Container</Container>;
 
 # Container
 
-Containers are the most simple element from layout category, are use to contain any other elements as wrapper and will adapt its width to `--pa-grid-container-max-width` or can be adapted to `100%` using `fluid` property.
+Containers are the most simple element from layout category, are use to contain any other elements as wrapper and will adapt its width to `--pa-grid-container-max-width` or can be adapted to `100%` using `fluid` property, if you want to center the content you can set `centered` to `true`.
 
 ## Showcase
 
@@ -30,7 +38,8 @@ Containers are the most simple element from layout category, are use to contain 
   <Story
     name="Container"
     args={{
-      fluid: false
+      fluid: false,
+      centered: false
     }}
   >
     {Template.bind({})}

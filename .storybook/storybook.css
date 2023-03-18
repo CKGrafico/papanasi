@@ -136,7 +136,6 @@ button.sidebar-item.sidebar-item ~ div > a {
     @mixin background-opacity var(--pa-color-primary-brightest), 0.25;
     color: var(--pa-color-primary-darkest);
     padding: 0.25rem;
-    justify-content: center;
 
     &.is-highlighted {
       @mixin background-opacity var(--pa-color-primary-brightest), 0.8;

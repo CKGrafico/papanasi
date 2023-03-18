@@ -1,4 +1,4 @@
-import { Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { useMetadata, useStore } from '@builder.io/mitosis';
 import './row.css';
 import type { RowProps, RowState } from './row.model';
 import { rowService } from './row.service';
@@ -22,9 +22,5 @@ export default function Row(props: RowProps) {
     }
   });
 
-  return (
-    <Show when={state.loaded}>
-      <div class={state.classes.base}>{props.children}</div>
-    </Show>
-  );
+  return <div class={state.classes.base}>{props.children}</div>;
 }

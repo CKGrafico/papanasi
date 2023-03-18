@@ -32,6 +32,12 @@
   margin-right: var(--pa-grid-gutter-horizontal);
   margin-top: var(--pa-grid-gutter-vertical);
 
+  &--centered {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
   @each $breakpoint in var(--internal-breakpoints) {
     @each $value in var(--internal-columns) {
       @mixin breakpoint-modifier $breakpoint, $value {

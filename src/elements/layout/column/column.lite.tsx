@@ -9,6 +9,7 @@ export default function Column(props: ColumnProps) {
   const state = useStore<ColumnState>({
     get classes() {
       return columnService.getClasses(
+        props.centered || false,
         props.basic,
         props.xxs,
         props.xs,

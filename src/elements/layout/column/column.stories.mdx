@@ -8,6 +8,14 @@ import { Customization, Codesandbox } from '../../../../.storybook/components';
   title="🧩Elements/Layout/Column"
   component={Column}
   argTypes={{
+    centered: {
+      name: 'centered',
+      description: 'Let the content to be centered',
+      table: {},
+      control: {
+        type: 'boolean'
+      }
+    },
     ...getBreakpointArgTypes('Column size in {breakpoint}', [
       1,
       2,
@@ -44,12 +52,17 @@ export const Template = (args) => (
 
 Columns are layout elements that will be essential to create grids, they work very well if being children of rows, but can work also alone.
 
-The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, `xl` and `xxl` and the supported sizes are: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `content`, `fill` and `hide`.
+The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, `xl` and `xxl` and the supported sizes are: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `content`, `fill` and `hide`, if you want to center the content you can set `centered` to `true`.
 
 ## Showcase
 
 <Canvas>
-  <Story name="Column" args={{}}>
+  <Story
+    name="Column"
+    args={{
+      centered: false
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>

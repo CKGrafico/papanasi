@@ -8,7 +8,7 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Container(props: ContainerProps) {
   const state = useStore<ContainerState>({
     get classes() {
-      return containerService.getClasses(props.fluid, props.className || props.classList);
+      return containerService.getClasses(props.centered || false, props.fluid, props.className || props.classList);
     }
   });
 
