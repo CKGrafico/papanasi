@@ -29,7 +29,7 @@
     "ssr-window": "^4.0.2"
   },
   "peerDependencies": {
-    "@angular/core": "^12.x || ^13.x"
+    "@angular/core": "^12.x || ^13.x || ^14.x || ^15.x"
   },
   "files": [
     "dist"

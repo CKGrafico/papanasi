@@ -1,9 +1,5 @@
 {
   "reject": [
-    "@angular/core",
-    "@babel/core",
-    "@babel/plugin-proposal-decorators",
-    "@babel/preset-typescript",
     "@builder.io/eslint-plugin-mitosis",
     "@builder.io/mitosis-cli",
     "@builder.io/qwik",
@@ -12,7 +8,6 @@
     "stylelint-config-prettier",
     "stylelint-config-standard",
     "stylelint-prettier",
-    "svelte",
     "mini-css-extract-plugin",
     "ora",
     "typescript"
