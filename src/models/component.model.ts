@@ -6,7 +6,7 @@ export type BaseProps = {
 };
 
 export type BaseState = {
-  loaded: boolean;
+  loaded?: boolean;
 };
 
 export type Children = any; // TODO

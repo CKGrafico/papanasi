@@ -26,10 +26,10 @@ const DEFAULT_OPTIONS = {
       )
       // Fix https://github.com/BuilderIO/mitosis/pull/855
       // .replace(/useClientEffect/g, 'useMount')
-      // Make all useMount async just in case
-      .replace(/useMount\$\(\(/g, 'useMount$(async (')
       // Make all useTask async just in case
       .replace(/useTask\$\(\(/g, 'useTask$(async (')
+      // Make all useMount to useTask async just in case
+      .replace(/useMount\$\(\(/g, 'useTask$(async (')
       // Make all useWatch async just in case
       .replace(/useWatch\$\(\(/g, 'useWatch$(async (')
       // TODO: Temporal meanwhile we find another why but this is stable
