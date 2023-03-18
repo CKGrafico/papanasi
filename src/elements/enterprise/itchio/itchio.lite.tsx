@@ -9,7 +9,9 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Itchio(props: ItchioProps) {
   const state = useStore<ItchioState>({
     loaded: false,
-    classes: { base: '' },
+    get classes() {
+      return itchioService.getClasses(props.className);
+    },
     gameInfo: null,
     onClickAction(user: string, game: string, width: number, height: number) {
       itchioService.onClickAction(user, game, width, height);
@@ -18,7 +20,6 @@ export default function Itchio(props: ItchioProps) {
 
   onInit(() => {
     async function getData() {
-      state.classes = itchioService.getClasses(props.className);
       const data = await itchioService.processInfo(props.user, props.game, props.secret);
 
       state.gameInfo = data;
