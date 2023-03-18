@@ -1,0 +1,35 @@
+{
+  "reject": [
+    "@angular/core",
+    "@babel/core",
+    "@babel/plugin-proposal-decorators",
+    "@babel/preset-typescript",
+    "@builder.io/eslint-plugin-mitosis",
+    "@builder.io/mitosis-cli",
+    "@builder.io/qwik",
+    "@custom-elements-manifest/analyzer",
+    "@storybook/addon-actions",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    "@storybook/builder-webpack4",
+    "@storybook/manager-webpack4",
+    "@storybook/react",
+    "@sveltejs/adapter-auto",
+    "@sveltejs/kit",
+    "@sveltejs/package",
+    "rollup-preset-solid",
+    "solid-js",
+    "stylelint",
+    "stylelint-config-prettier",
+    "stylelint-config-standard",
+    "stylelint-prettier",
+    "svelte",
+    "tsconfig-paths-webpack-plugin",
+    "typescript",
+    "vite",
+
+
+    
+    "ora"
+  ]
+}

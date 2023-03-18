@@ -22,10 +22,10 @@
     }
   },
   "dependencies": {
-    "codejar": "^3.6.0",
-    "copy-to-clipboard": "^3.3.2",
+    "codejar": "^3.7.0",
+    "copy-to-clipboard": "^3.3.3",
     "copyfiles": "^2.4.1",
-    "highlight.js": "^11.6.0",
+    "highlight.js": "^11.7.0",
     "ssr-window": "^4.0.2"
   },
   "peerDependencies": {
