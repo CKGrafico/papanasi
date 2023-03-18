@@ -22,6 +22,8 @@ const DEFAULT_OPTIONS = {
           !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
         }[pa-$1], $2", exportAs: "pa-$1", encapsulation: 2`
       )
+      // Enable as default
+      .replace(/export class/, 'export default class')
       // Enable children
       .replace(/(,\n)?(\} from \"\@angular\/core\"\;)/, ', ContentChildren, QueryList $2')
       .replace(

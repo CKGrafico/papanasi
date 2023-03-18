@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onInit, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './avatar.css';
 import type { AvatarProps, AvatarState } from './avatar.model';
 import { avatarService } from './avatar.service';
@@ -14,7 +14,7 @@ export default function Avatar(props: AvatarProps) {
     source: null
   });
 
-  onMount(() => {
+  onInit(() => {
     state.loaded = true;
     state.classes = avatarService.getClasses(props.variant, props.disabled, props.className || props.classList);
     avatarService.getStyles(props.name, props.variant).then((newStyles) => (state.styles = newStyles));

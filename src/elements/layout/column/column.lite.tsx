@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onInit, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './column.css';
 import type { ColumnProps, ColumnState } from './column.model';
 import { columnService } from './column.service';
@@ -11,7 +11,7 @@ export default function Column(props: ColumnProps) {
     classes: { base: '' }
   });
 
-  onMount(() => {
+  onInit(() => {
     state.loaded = true;
     state.classes = columnService.getClasses(
       props.basic,

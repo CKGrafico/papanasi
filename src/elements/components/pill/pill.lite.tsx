@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onInit, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './pill.css';
 import type { PillProps, PillState } from './pill.model';
 import { pillService } from './pill.service';
@@ -11,7 +11,7 @@ export default function Pill(props: PillProps) {
     classes: { base: '' }
   });
 
-  onMount(() => {
+  onInit(() => {
     state.loaded = true;
     state.classes = pillService.getClasses(
       props.variant,

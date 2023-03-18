@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onInit, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { debug } from '~/helpers';
 import './itchio.css';
 import type { ItchioProps, ItchioState } from './itchio.model';
@@ -16,7 +16,7 @@ export default function Itchio(props: ItchioProps) {
     }
   });
 
-  onMount(() => {
+  onInit(() => {
     async function getData() {
       state.classes = itchioService.getClasses(props.className);
       const data = await itchioService.processInfo(props.user, props.game, props.secret);

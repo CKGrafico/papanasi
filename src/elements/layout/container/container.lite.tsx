@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onInit, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './container.css';
 import type { ContainerProps, ContainerState } from './container.model';
 import { containerService } from './container.service';
@@ -11,7 +11,7 @@ export default function Container(props: ContainerProps) {
     classes: { base: '' }
   });
 
-  onMount(() => {
+  onInit(() => {
     state.loaded = true;
     state.classes = containerService.getClasses(props.fluid, props.className || props.classList);
   });

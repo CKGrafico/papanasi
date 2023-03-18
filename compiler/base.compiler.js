@@ -84,7 +84,9 @@ async function compile(defaultOptions) {
         .map((fileName) => {
           const file = path.parse(fileName);
           const name = file.name.replace('.lite', '');
-          return `export { default as ${pascalName(name)} } from './${file.dir.replace('src/', '')}';`;
+          return `export { default as ${pascalName(name)} } from './${file.dir
+            .replace(/\\/g, '/')
+            .replace('src/', '')}';`;
         })
         .join('\n');
     }

@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onInit, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './spinner.css';
 import type { SpinnerProps, SpinnerState } from './spinner.model';
 import { spinnerService } from './spinner.service';
@@ -10,7 +10,7 @@ export default function Spinner(props: SpinnerProps) {
     classes: { base: '' }
   });
 
-  onMount(() => {
+  onInit(() => {
     state.loaded = true;
     state.classes = spinnerService.getClasses(
       props.variant,

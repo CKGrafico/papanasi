@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onInit, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './button.css';
 import type { ButtonProps, ButtonState } from './button.model';
 import { buttonService } from './button.service';
@@ -11,7 +11,7 @@ export default function Button(props: ButtonProps) {
     classes: { base: '' }
   });
 
-  onMount(() => {
+  onInit(() => {
     state.loaded = true;
     state.classes = buttonService.getClasses(
       props.variant,

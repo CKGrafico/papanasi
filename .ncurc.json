@@ -1,6 +1,5 @@
 {
   "reject": [
-    "@builder.io/mitosis-cli",
     "mini-css-extract-plugin",
     "ora",
     "typescript"

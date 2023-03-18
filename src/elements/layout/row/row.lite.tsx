@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onInit, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import './row.css';
 import type { RowProps, RowState } from './row.model';
 import { rowService } from './row.service';
@@ -11,7 +11,7 @@ export default function Row(props: RowProps) {
     classes: { base: '' }
   });
 
-  onMount(() => {
+  onInit(() => {
     state.loaded = true;
     state.classes = rowService.getClasses(
       props.basic,
