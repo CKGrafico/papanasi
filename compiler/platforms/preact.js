@@ -1,4 +1,4 @@
-const compiler = require('../base.compiler');
+import compiler from '../base.compiler.js';
 
 const DEFAULT_OPTIONS = {
   target: 'preact',

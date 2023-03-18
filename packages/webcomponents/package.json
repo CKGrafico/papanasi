@@ -4,6 +4,7 @@
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
+  "type": "module",
   "main": "./dist/papanasi-webcomponents.umd.js",
   "module": "./dist/papanasi-webcomponents.es.js",
   "types": "./dist/index.d.ts",

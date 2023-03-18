@@ -4,6 +4,7 @@
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Preact UI Library",
+  "type": "module",
   "main": "./dist/papanasi-preact.umd.js",
   "module": "./dist/papanasi-preact.es.js",
   "types": "./dist/index.d.ts",

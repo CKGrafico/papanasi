@@ -1,16 +1,18 @@
-const path = require('path');
-const commonjs = require('@rollup/plugin-commonjs');
-const resolve = require('@rollup/plugin-node-resolve');
-const babel = require('@rollup/plugin-babel').default;
-const { visualizer } = require('rollup-plugin-visualizer');
-const dtsPlugin = require('rollup-plugin-dts').default;
-const typescript = require('rollup-plugin-ts');
-const postcss = require('rollup-plugin-postcss');
-const peerDepsExternal = require('rollup-plugin-peer-deps-external');
-const json = require('@rollup/plugin-json');
-const postcssConfig = require('./postcss.config.js');
+import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import path from 'path';
+import dtsPlugin from 'rollup-plugin-dts';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
+import typescript from 'rollup-plugin-ts';
+//import { visualizer } from 'rollup-plugin-visualizer';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import tsconfig from './tsconfig.json' assert { type: 'json' };
 
-module.exports = (options) => {
+export default async (options) => {
   const {
     dir,
     packageJson,
@@ -23,7 +25,11 @@ module.exports = (options) => {
     disableCoreCompilation = false
   } = options;
 
-  const tsconfig = require(path.resolve(__dirname, './tsconfig.json'));
+  const __dirname = dirname(fileURLToPath(import.meta.url));
+  const dirnameConfig = path.resolve(__dirname, dir);
+
+  const postcssConfig = (await import('./postcss.config.cjs')).default;
+
   tsconfig.compilerOptions = { ...tsconfig.compilerOptions, ...compilerOptions };
 
   const defaultPresets = ['@babel/preset-env', ['@babel/preset-typescript', tsconfig.compilerOptions]];
@@ -32,7 +38,7 @@ module.exports = (options) => {
     disableCoreCompilation
       ? null
       : {
-          input: options.input || path.resolve(dir, 'src/index.ts'),
+          input: options.input || path.resolve(dirnameConfig, 'src/index.ts'),
           output: [
             {
               file: packageJson.main,
@@ -51,8 +57,7 @@ module.exports = (options) => {
           external,
           plugins: [
             ...plugins,
-
-            resolve.nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
+            nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
             json(),
             typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
             babel({
@@ -70,8 +75,8 @@ module.exports = (options) => {
         },
     dts && !disableCoreCompilation
       ? {
-          input: path.resolve(dir, packageJson.module.replace('.js', '.d.ts')),
-          output: [{ file: path.resolve(dir, 'dist/index.d.ts'), format: 'esm' }],
+          input: path.resolve(dirnameConfig, packageJson.module.replace('.js', '.d.ts')),
+          output: [{ file: path.resolve(dirnameConfig, 'dist/index.d.ts'), format: 'esm' }],
           plugins: [dtsPlugin()]
         }
       : null

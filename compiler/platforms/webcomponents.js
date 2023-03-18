@@ -1,6 +1,6 @@
-const compiler = require('../base.compiler');
-const fs = require('fs');
-const prependFile = require('prepend-file');
+import fs from 'fs';
+import prependFile from 'prepend-file';
+import compiler from '../base.compiler.js';
 
 const DEFAULT_OPTIONS = {
   target: 'webcomponents',

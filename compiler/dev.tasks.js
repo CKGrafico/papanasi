@@ -1,7 +1,7 @@
-const { Listr } = require('listr2');
-const chokidar = require('chokidar');
-const path = require('path');
-const ora = require('ora');
+import chokidar from 'chokidar';
+import { Listr } from 'listr2';
+import ora from 'ora';
+import path from 'path';
 
 (async () => {
   const execa = (await import('execa')).command;

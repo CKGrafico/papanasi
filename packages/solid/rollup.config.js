@@ -1,10 +1,11 @@
-const config = require('../../rollup.config');
-const withSolid = require('rollup-preset-solid').default;
+import withSolid from 'rollup-preset-solid';
+import config from '../../rollup.config.js';
+import packageJson from './package.json' assert { type: 'json' };
 
-module.exports = withSolid(
-  config({
-    dir: __dirname,
-    packageJson: require('./package.json'),
+export default withSolid(
+  await config({
+    dir: './packages/solid',
+    packageJson,
     compilerOptions: {
       jsx: 'preserve',
       jsxImportSource: 'solid-js'

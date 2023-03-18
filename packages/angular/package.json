@@ -4,6 +4,7 @@
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Angular UI Library",
+  "type": "module",
   "main": "./dist/papanasi-angular.umd.js",
   "module": "./dist/papanasi-angular.es.js",
   "types": "./dist/index.d.ts",

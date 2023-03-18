@@ -4,9 +4,9 @@
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "type": "module",
   "svelte": "../src/index.ts",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -39,7 +39,7 @@
     "src"
   ],
   "scripts": {
-    "build": "svelte-kit sync && svelte-package",
+    "build": "svelte-kit sync && svelte-package --input src --output dist",
     "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat"
   },
   "publishConfig": {

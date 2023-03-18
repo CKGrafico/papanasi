@@ -1,14 +1,13 @@
-const glob = require('glob');
-const fs = require('fs-extra');
-const path = require('path');
-const postcss = require('postcss');
-const postcssConfig = require('../postcss.config');
-const filesystemTools = require('gluegun/filesystem');
-const stringTools = require('gluegun/strings');
-const printTools = require('gluegun/print');
-const commandLineArgs = require('command-line-args');
-const ora = require('ora');
-const compileCommand = require('@builder.io/mitosis-cli/dist/commands/compile');
+import compileCommand from '@builder.io/mitosis-cli/dist/commands/compile.js';
+import commandLineArgs from 'command-line-args';
+import fs from 'fs-extra';
+import glob from 'glob';
+import filesystemTools from 'gluegun/filesystem.js';
+import printTools from 'gluegun/print.js';
+import stringTools from 'gluegun/strings.js';
+import ora from 'ora';
+import path from 'path';
+import postcss from 'postcss';
 
 const DEFAULT_OPTIONS = {
   elements: 'src/**/*.lite.tsx',
@@ -135,6 +134,8 @@ async function compile(defaultOptions) {
   }
 
   async function compileCssFileForOutputSrc(outFile) {
+    const postcssConfig = (await import('../postcss.config.cjs')).default;
+
     const name = outFile.replace(/\..*/, '.css');
     const data = fs.readFileSync(name, 'utf8');
     const result = await postcss(postcssConfig.plugins).process(data, { from: name, to: name });
@@ -157,6 +158,6 @@ async function compile(defaultOptions) {
   }
 }
 
-module.exports = {
+export default {
   compile
 };

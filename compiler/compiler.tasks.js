@@ -1,5 +1,5 @@
-const { Listr } = require('listr2');
-const commandLineArgs = require('command-line-args');
+import commandLineArgs from 'command-line-args';
+import { Listr } from 'listr2';
 
 const optionDefinitions = [
   { name: 'elements', alias: 'e', type: String, multiple: true },

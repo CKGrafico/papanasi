@@ -4,6 +4,7 @@
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi React UI Library",
+  "type": "module",
   "main": "./dist/papanasi-react.umd.js",
   "module": "./dist/papanasi-react.es.js",
   "types": "./dist/index.d.ts",

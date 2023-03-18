@@ -1,6 +1,6 @@
-const compiler = require('../base.compiler');
-const htmlTags = require('html-tags');
-const fs = require('fs');
+import fs from 'fs';
+import htmlTags from 'html-tags';
+import compiler from '../base.compiler.js';
 
 const DEFAULT_OPTIONS = {
   target: 'angular',

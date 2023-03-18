@@ -4,6 +4,7 @@
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Vue UI Library",
+  "type": "module",
   "main": "./dist/papanasi-vue.umd.js",
   "module": "./dist/papanasi-vue.es.js",
   "types": "./dist/index.d.ts",

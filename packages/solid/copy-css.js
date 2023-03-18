@@ -1,6 +1,6 @@
-const glob = require('glob');
-const fs = require('fs-extra');
-const path = require('path');
+import fs from 'fs-extra';
+import glob from 'glob';
+import path from 'path';
 
 const cssFiles = glob.sync(`./src/**/*.css`);
 cssFiles.forEach((fileName) => {

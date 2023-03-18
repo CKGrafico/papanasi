@@ -3,6 +3,7 @@
   "private": true,
   "license": "MIT",
   "version": "1.0.2",
+  "type": "module",
   "scripts": {
     "compile": "node ./compiler",
     "dev": "node ./compiler/dev.tasks",
