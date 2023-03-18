@@ -4,10 +4,6 @@
     "@builder.io/mitosis-cli",
     "@builder.io/qwik",
     "@custom-elements-manifest/analyzer",
-    "stylelint",
-    "stylelint-config-prettier",
-    "stylelint-config-standard",
-    "stylelint-prettier",
     "mini-css-extract-plugin",
     "ora",
     "typescript"

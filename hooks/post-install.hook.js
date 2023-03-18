@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import glob from 'glob';
-import mainPackageJson from '../package.json';
+import mainPackageJson from '../package.json' assert { type: 'json' };
 const dependencies = mainPackageJson.dependencies;
 const packagesJson = glob.sync(`./packages/**/package.json`);
 
