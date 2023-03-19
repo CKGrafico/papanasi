@@ -11,7 +11,7 @@ const DEFAULT_OPTIONS = {
 
 (async () => {
   function customReplace(props) {
-    const { outFile, file, outPath, isFirstCompilation } = props;
+    const { name, pascalName, outFile, file, outPath, isFirstCompilation } = props;
 
     if (isFirstCompilation) {
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
@@ -25,14 +25,33 @@ const DEFAULT_OPTIONS = {
     }
 
     const data = fs.readFileSync(outFile, 'utf8');
-    const name = file.name.replace('.lite', '');
-    const pascalName = name.charAt(0).toUpperCase() + name.slice(1);
+
+    let typesFileData = fs.readFileSync(`${outFile.replace(`${name}.vue`, '')}/${name}.model.ts`, 'utf8');
+
+    let propTypes = typesFileData
+      // Remove import type
+      .replace(/import type/g, 'import')
+      // Remove everything except the type
+      .match(/export interface .*Props([\s\S]*?)}/g);
+    propTypes = propTypes && propTypes[0].replace(/export/, '');
+
+    let propTypesDependencies = typesFileData.match(/import ([\s\S]*?)export/gm);
+    propTypesDependencies = propTypesDependencies && propTypesDependencies[0].replace(/export/g, '');
+
+    const othertypes = typesFileData
+      .match(/type (.*) =/g)
+      ?.map((x) => x.replace(/type (.*) =/, '$1'))
+      .filter((x) => !x.includes('Props'))
+      .join(',');
 
     const result = data
-      // Inject types as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
-      .replace(/import/, `import { ${pascalName}Props } from './${name}.model';\nimport`)
-      // Type defineProps
-      .replace(/defineProps\(\[(.|\n)*\]\);/gm, `defineProps<${pascalName}Props>();`)
+      // Import proptypes dependencies
+      .replace(
+        /import/,
+        `${propTypesDependencies}\n ${othertypes ? `import {${othertypes}} from './${name}.model'; \n` : ''}import`
+      )
+      // Type defineProps and Inject types as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
+      .replace(/(const props = defineProps)\(\[(.|\n)*\]\);/gm, `export ${propTypes}\n$1<${pascalName}Props>();`)
       // Enable children
       .replace(/this\.children/, 'this.$slots.default()')
       // Add vue dependencies

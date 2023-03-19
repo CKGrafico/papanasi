@@ -155,13 +155,15 @@ async function compile(defaultOptions) {
   for (const fileName of files) {
     const file = path.parse(fileName);
     const isFirstCompilation = !fs.existsSync(`${outPath}/src`) || options.isDev;
+    const name = file.name.replace('.lite', '');
+    const namePascal = pascalName(name);
 
     spinner.text = fileName;
 
     copyBasicFilesOnFirstCompilation(isFirstCompilation, fileName);
     const { outFile } = await compileMitosisComponent(fileName);
     replacePropertiesFromCompiledFiles(outFile);
-    options.customReplace({ file, outFile, outPath, isFirstCompilation });
+    options.customReplace({ name, pascalName: namePascal, file, outFile, outPath, isFirstCompilation });
     await compileCssFileForOutputSrc(outFile);
 
     spinner.stop();
