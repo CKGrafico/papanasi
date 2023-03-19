@@ -11,7 +11,7 @@ const DEFAULT_OPTIONS = {
 
 (async () => {
   function customReplace(props) {
-    const { outFile, outPath, isFirstCompilation } = props;
+    const { outFile, file, outPath, isFirstCompilation } = props;
 
     if (isFirstCompilation) {
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
@@ -25,13 +25,22 @@ const DEFAULT_OPTIONS = {
     }
 
     const data = fs.readFileSync(outFile, 'utf8');
+    const name = file.name.replace('.lite', '');
+    const pascalName = name.charAt(0).toUpperCase() + name.slice(1);
+
     const result = data
+      // Import types
+      .replace(/import/, `import type { ${pascalName}Props } from './${name}.model';\nimport`)
+      // Type defineProps
+      .replace(/defineProps\(\[(.|\n)*\]\);/gm, `defineProps<${pascalName}Props>();`)
       // Enable children
       .replace(/this\.children/, 'this.$slots.default()')
       // Add vue dependencies
       // .replace('import', "import { ref } from 'vue';\nimport")
       // Replace vue html .values for refs
       .replace(/\.value \}\}/g, '}}')
+      // Enable Typescript
+      .replace(/script setup/g, 'script setup lang="ts"')
       // TODO: Temporal meanwhile we find another why but this is stable
       .replace(/getData\(\);/g, 'getData.bind(this)();');
 

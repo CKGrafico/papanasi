@@ -17,7 +17,7 @@
     "postinstall": "node ./hooks/post-install.hook.js",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.1.0-alpha.1 --force-publish",
+    "package": "lerna version 1.1.0-alpha.2 --force-publish",
     "postpackage": "node ./hooks/post-package.hook.js",
     "release": "lerna publish from-package --force-publish"
   },
@@ -60,7 +60,6 @@
     "@types/react": "^18.0.28",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
-    "@vue/babel-preset-app": "^5.0.8",
     "autoprefixer": "^10.4.14",
     "chokidar-cli": "^3.0.0",
     "command-line-args": "^5.2.1",
@@ -113,7 +112,8 @@
     "ts-node": "10.9.1",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "^4.9.5",
-    "vite": "^4.2.0"
+    "vite": "^4.2.0",
+    "vue": "^3.2.47"
   },
   "husky": {
     "hooks": {
