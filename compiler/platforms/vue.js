@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs-extra';
 import compiler from '../base.compiler.js';
 
 const DEFAULT_OPTIONS = {
@@ -26,11 +26,13 @@ const DEFAULT_OPTIONS = {
 
     const data = fs.readFileSync(outFile, 'utf8');
 
-    let typesFileData = fs.readFileSync(`${outFile.replace(`${name}.vue`, '')}/${name}.model.ts`, 'utf8');
+    let typesFileData = fs
+      .readFileSync(`${outFile.replace(`${name}.vue`, '')}/${name}.model.ts`, 'utf8')
+      // Remove import type
+      .replace(/import type/g, 'import');
 
     let propTypes = typesFileData
-      // Remove import type
-      .replace(/import type/g, 'import')
+
       // Remove everything except the type
       .match(/export interface .*Props([\s\S]*?)}/g);
     propTypes = propTypes && propTypes[0].replace(/export/, '');
