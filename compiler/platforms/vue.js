@@ -27,10 +27,16 @@ const DEFAULT_OPTIONS = {
     const data = fs.readFileSync(outFile, 'utf8');
     const name = file.name.replace('.lite', '');
     const pascalName = name.charAt(0).toUpperCase() + name.slice(1);
+    let typesFileData = fs.readFileSync(`${outFile.replace(`${name}.vue`, '')}/${name}.model.ts`, 'utf8');
+    typesFileData = typesFileData
+      // Remove exports
+      .replace(/export/g, '')
+      // Remove import type
+      .replace(/import type/g, 'import');
 
     const result = data
-      // Import types
-      .replace(/import/, `import type { ${pascalName}Props } from './${name}.model';\nimport`)
+      // Inject types as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
+      .replace(/import/, `${typesFileData}\nimport`)
       // Type defineProps
       .replace(/defineProps\(\[(.|\n)*\]\);/gm, `defineProps<${pascalName}Props>();`)
       // Enable children
