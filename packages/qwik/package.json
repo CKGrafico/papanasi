@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/qwik",
-  "version": "1.1.0-alpha.0",
+  "version": "1.1.0-alpha.1",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Qwik UI Library",
@@ -27,7 +27,6 @@
   "dependencies": {
     "codejar": "^3.7.0",
     "copy-to-clipboard": "^3.3.3",
-    "copyfiles": "^2.4.1",
     "highlight.js": "^11.7.0",
     "ssr-window": "^4.0.2"
   },

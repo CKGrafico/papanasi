@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/webcomponents",
-  "version": "1.1.0-alpha.0",
+  "version": "1.1.0-alpha.1",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
@@ -42,7 +42,8 @@
     "build:styles-classes-css": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.css\"",
     "build:styles-classes-states": "replace \"(::part\\(.*?)\\.(pa-|is-|has-)(.*?)(\\))\" \"$1 $2$3$4\" ./dist -r --include=\"*.css\"",
     "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\"",
-    "build:schema": "custom-elements-manifest analyze"
+    "build:schema": "custom-elements-manifest analyze",
+    "postbuild": "renamer --find papanasi-webcomponents.es.d.ts --replace index.d.ts ./dist/* --silent && rimraf ./dist/papanasi-webcomponents.umd.d.ts"
   },
   "publishConfig": {
     "access": "public"
