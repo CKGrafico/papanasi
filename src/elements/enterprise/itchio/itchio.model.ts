@@ -6,7 +6,7 @@ export type ItchioGameInfo = {
   price: string;
 };
 
-export type ItchioProps = {
+export interface ItchioProps extends BaseProps {
   user: string;
   game: string;
   width?: number;
@@ -14,10 +14,10 @@ export type ItchioProps = {
   onLoad?: (info: ItchioGameInfo) => void;
   secret?: string;
   slotLoading?: Children;
-} & BaseProps;
+}
 
-export type ItchioState = {
+export interface ItchioState extends BaseState {
   classes: { base: string };
   gameInfo: ItchioGameInfo;
   onClickAction: (user: string, game: string, width: number, height: number) => void;
-} & BaseState;
+}

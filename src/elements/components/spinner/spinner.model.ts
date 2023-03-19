@@ -1,11 +1,11 @@
 import type { BaseProps, BaseState, Dynamic, Variant } from '~/models';
 
-export type SpinnerProps = {
+export interface SpinnerProps extends BaseProps {
   variant?: Dynamic<Variant>;
   full?: boolean;
   fullscreen?: boolean;
-} & BaseProps;
+}
 
-export type SpinnerState = {
+export interface SpinnerState extends BaseState {
   classes: { base: string };
-} & BaseState;
+}

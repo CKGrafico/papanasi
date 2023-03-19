@@ -26,30 +26,13 @@ const DEFAULT_OPTIONS = {
 
     const data = fs.readFileSync(outFile, 'utf8');
     const name = file.name.replace('.lite', '');
-
-    let typesFileData = fs.readFileSync(`${outFile.replace(`${name}.vue`, '')}/${name}.model.ts`, 'utf8');
-
-    let propTypes = typesFileData
-      // Remove import type
-      .replace(/import type/g, 'import')
-      // Remove everything except the type
-      .match(/export type .*Props = ([\s\S]*?)BaseProps;/gm);
-    propTypes = propTypes && propTypes[0].replace(/export type .*Props = /, '').slice(0, -1);
-
-    let propTypesDependencies = typesFileData.match(/import ([\s\S]*?)export/gm);
-    propTypesDependencies = propTypesDependencies && propTypesDependencies[0].replace(/export/g, '');
-
-    const othertypes = typesFileData
-      .match(/type (.*) =/g)
-      .map((x) => x.replace(/type (.*) =/, '$1'))
-      .filter((x) => !x.includes('Props'))
-      .join(',');
+    const pascalName = name.charAt(0).toUpperCase() + name.slice(1);
 
     const result = data
-      // Import proptypes dependencies
-      .replace(/import/, `${propTypesDependencies}\n import {${othertypes}} from './${name}.model'; \nimport`)
-      // Type defineProps and Inject types as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
-      .replace(/defineProps\(\[(.|\n)*\]\);/gm, `defineProps<${propTypes}>();`)
+      // Inject types as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
+      .replace(/import/, `import { ${pascalName}Props } from './${name}.model';\nimport`)
+      // Type defineProps
+      .replace(/defineProps\(\[(.|\n)*\]\);/gm, `defineProps<${pascalName}Props>();`)
       // Enable children
       .replace(/this\.children/, 'this.$slots.default()')
       // Add vue dependencies
