@@ -34,8 +34,6 @@ const DEFAULT_OPTIONS = {
       .join('\n')
       // Remove type imports, should be injected
       .replace(/import type .*/g, '');
-    // Remove all the consts as are not needed
-    // .replace(/export const .*/g, '');
 
     const result = data
       // Inject needed types to this file as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
@@ -53,6 +51,22 @@ const DEFAULT_OPTIONS = {
       // TODO: Temporal meanwhile we find another why but this is stable
       .replace(/getData\(\);/g, 'getData.bind(this)();');
 
+    // Once replaces are done, vue needs to merge all the Props interfaces in one
+    const a = result.match(/export interface .*Props ?(\n? ? ?)?extends([\s\S]*?){/gm);
+    const b =
+      a &&
+      a[0] &&
+      a[0]
+        .replace(/export interface.*extends ?/, '')
+        .replace(/ ?{ ?/, '')
+        .replace(/, /, ',')
+        .split(',');
+    // TODO continue injection
+    console.log(name, b);
+
+    if (name === 'column') {
+      console.log(name);
+    }
     fs.writeFileSync(outFile, result, 'utf8');
   }
 
