@@ -32,6 +32,8 @@ const DEFAULT_OPTIONS = {
       .replace(/useMount\$\(\(/g, 'useTask$(async (')
       // Make all useWatch async just in case
       .replace(/useWatch\$\(\(/g, 'useWatch$(async (')
+      // Then import useTask$,
+      .replace(/useMount\$,/g, 'useTask$,')
       // TODO: Temporal meanwhile we find another why but this is stable
       .replace(/getData\(\);/g, 'await getData();')
       // Looks like current is not working on qwik https://github.com/BuilderIO/mitosis/pull/596/files#diff-c2c57a93631396da54ba47a5b70cd81470ce51c3a6485c889e20960ab7f2915c

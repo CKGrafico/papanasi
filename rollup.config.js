@@ -22,7 +22,8 @@ export default async (options) => {
     compilerOptions = {},
     babelPresets = [],
     babelPlugins = [],
-    disableCoreCompilation = false
+    disableCoreCompilation = false,
+    cancelBrowserListForTypescript = false
   } = options;
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -59,7 +60,10 @@ export default async (options) => {
             ...plugins,
             nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
             json(),
-            typescript({ tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true } }),
+            typescript({
+              browserslist: cancelBrowserListForTypescript ? false : undefined,
+              tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true }
+            }),
             babel({
               plugins: [['@babel/plugin-proposal-decorators', { legacy: true }, ...babelPlugins]],
               extensions: ['.js', '.ts', '.tsx'],
