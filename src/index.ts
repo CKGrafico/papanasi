@@ -16,5 +16,5 @@ export { default as Row } from './elements/layout/row';
 // End Components
 
 setPlatform(Platform.Default);
-setVersion('60.0.0');
+setVersion('0.0.0');
 initBreakpointChecker();

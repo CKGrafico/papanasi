@@ -16,7 +16,8 @@ export default async (options) => {
   const {
     dir,
     packageJson,
-    plugins = [],
+    prePlugins = [],
+    postPlugins = [],
     external = [],
     dts = true,
     compilerOptions = {},
@@ -57,13 +58,14 @@ export default async (options) => {
           treeshake: true,
           external,
           plugins: [
-            ...plugins,
+            ...prePlugins,
             nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
             json(),
             typescript({
               browserslist: cancelBrowserListForTypescript ? false : undefined,
               tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true }
             }),
+            ...postPlugins,
             babel({
               plugins: [['@babel/plugin-proposal-decorators', { legacy: true }, ...babelPlugins]],
               extensions: ['.js', '.ts', '.tsx'],
