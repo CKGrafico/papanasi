@@ -10,4 +10,5 @@ export * from './inject-script.helper';
 export * from './itchio.helper';
 export * from './object.helper';
 export * from './platform.helper';
+export * from './version.helper';
 export * from './wait.helper';

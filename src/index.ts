@@ -1,6 +1,6 @@
-import { initBreakpointChecker, setPlatform, Platform } from './helpers';
+import { initBreakpointChecker, setPlatform, setVersion, Platform } from './helpers';
 import './styles/variables.css';
-export { setDebugLevel, DebugLevel, addCodeLanguage } from './helpers';
+export { setDebugLevel, DebugLevel, addCodeLanguage, getPlatform, getVersion } from './helpers';
 
 // Init Components
 export { default as Avatar } from './elements/components/avatar';
@@ -16,4 +16,5 @@ export { default as Row } from './elements/layout/row';
 // End Components
 
 setPlatform(Platform.Default);
+setVersion('60.0.0');
 initBreakpointChecker();

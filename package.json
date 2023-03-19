@@ -18,6 +18,7 @@
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "build": "yarn compile",
     "package": "lerna version preminor --force-publish",
+    "postpackage": "node ./hooks/post-package.hook.js",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {

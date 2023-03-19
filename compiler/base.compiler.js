@@ -95,6 +95,7 @@ async function compile(defaultOptions) {
     const indexResult = indexData
       // Export only needed components
       .replace(/(\/\/ Init Components)(.+?)(\/\/ End Components)/s, `$1\n${fileExports}\n$3`)
+      // Set the current platform
       .replace(/Platform.Default/g, `Platform.${pascalName(options.target)}`);
 
     fs.writeFileSync(`${outPath}/src/index.ts`, indexResult, 'utf8');
