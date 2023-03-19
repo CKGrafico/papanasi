@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import glob from 'glob';
 import compiler from '../base.compiler.js';
 
 const DEFAULT_OPTIONS = {
@@ -45,6 +46,9 @@ const DEFAULT_OPTIONS = {
       ?.map((x) => x.replace(/type (.*) =/, '$1'))
       .filter((x) => !x.includes('Props'))
       .join(',');
+
+    const allTheNeededTypes = glob.sync([`src/models/**/*.model.ts`, `src/**/${name}.model.ts`]);
+    //TODO: get all the content and inject into the component...
 
     const result = data
       // Import proptypes dependencies
