@@ -16,6 +16,7 @@ const DEFAULT_OPTIONS = {
   target: '',
   extension: '',
   state: '',
+  api: '',
   styles: '',
   customReplace: (outFile, isFirstCompilation) => null
 };
@@ -109,9 +110,15 @@ async function compile(defaultOptions) {
       parameters: {
         options: {
           from: 'mitosis',
-          to: options.target === 'webcomponents' ? 'webcomponent' : options.target,
+          to:
+            options.target === 'webcomponents'
+              ? 'webcomponent'
+              : options.target || options.target === 'vue'
+              ? 'vue3'
+              : options.target,
           out: outFile,
           force: true,
+          api: options.api,
           state: options.state,
           styles: options.styles
         },

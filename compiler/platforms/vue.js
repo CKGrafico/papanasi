@@ -4,6 +4,7 @@ import compiler from '../base.compiler.js';
 const DEFAULT_OPTIONS = {
   target: 'vue',
   extension: 'vue',
+  api: 'composition',
   state: '',
   styles: ''
 };
@@ -28,7 +29,7 @@ const DEFAULT_OPTIONS = {
       // Enable children
       .replace(/this\.children/, 'this.$slots.default()')
       // Add vue dependencies
-      .replace('import', "import { ref } from 'vue';\nimport")
+      // .replace('import', "import { ref } from 'vue';\nimport")
       // Replace vue html .values for refs
       .replace(/\.value \}\}/g, '}}')
       // TODO: Temporal meanwhile we find another why but this is stable
