@@ -17,14 +17,13 @@
     "postinstall": "node ./hooks/post-install.hook.js",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "build": "yarn compile",
-    "package": "lerna version preminor --force-publish",
+    "package": "lerna version 1.1.0-alpha.1 --force-publish",
     "postpackage": "node ./hooks/post-package.hook.js",
     "release": "lerna publish from-package --force-publish"
   },
   "dependencies": {
     "codejar": "^3.7.0",
     "copy-to-clipboard": "^3.3.3",
-    "copyfiles": "^2.4.1",
     "highlight.js": "^11.7.0",
     "ssr-window": "^4.0.2"
   },
@@ -65,6 +64,7 @@
     "autoprefixer": "^10.4.14",
     "chokidar-cli": "^3.0.0",
     "command-line-args": "^5.2.1",
+    "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
@@ -90,6 +90,7 @@
     "prepend-file": "^2.0.1",
     "prettier": "^2.8.4",
     "prettier-stylelint": "^0.4.2",
+    "renamer": "^4.0.0",
     "replace": "^1.2.2",
     "replace-in-file": "^6.3.5",
     "rimraf": "^4.4.0",
