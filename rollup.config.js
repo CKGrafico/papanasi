@@ -7,10 +7,13 @@ import dtsPlugin from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-ts';
+import * as tsModule from 'typescript';
 //import { visualizer } from 'rollup-plugin-visualizer';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import tsconfig from './tsconfig.json' assert { type: 'json' };
+
+const ts = tsModule.default;
 
 export default async (options) => {
   const {
@@ -63,7 +66,26 @@ export default async (options) => {
             json(),
             typescript({
               browserslist: cancelBrowserListForTypescript ? false : undefined,
-              tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true }
+              tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true },
+              transformers: {
+                afterDeclarations: [
+                  function fixDeclarationFactory(context) {
+                    return function fixDeclaration(source) {
+                      function visitor(node) {
+                        if (node.kind === ts.SyntaxKind.StringLiteral && node.text.includes('./elements')) {
+                          return context.factory.createIdentifier(
+                            `'${node.text.replace('./elements', '../src/elements')}'`
+                          );
+                        }
+
+                        return ts.visitEachChild(node, visitor, context);
+                      }
+
+                      return ts.visitEachChild(source, visitor, context);
+                    };
+                  }
+                ]
+              }
             }),
             ...postPlugins,
             babel({
