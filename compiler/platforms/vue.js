@@ -27,10 +27,6 @@ const DEFAULT_OPTIONS = {
         .trim();
 
       if (interfaceName.includes('Props')) {
-        if (pascalName === 'Column') {
-          console.log(1);
-        }
-
         interfacesWithProps[interfaceName] = match[2].trim();
       }
     }
@@ -51,11 +47,25 @@ const DEFAULT_OPTIONS = {
     const interfacesContent = ['// Original props \n', currentInterfacePropsContent];
 
     extensions.forEach((extension) => {
-      interfacesContent.push(`// Props from ${extension}\n`);
-      interfacesContent.push(interfacesWithProps[extension]);
-    });
+      let extensionName = extension;
+      let replacers = null;
 
-    // TODO: GENERICS!!
+      // If the extension has generics
+      if (extension.includes('<')) {
+        extensionName = extension.replace(/<.*>/g, '<T>');
+        const generics = extension.match(/<.*>/g);
+        replacers = generics && generics[0].replace(/</g, '').replace(/>/g, '');
+      }
+
+      let content = interfacesWithProps[extensionName];
+
+      if (replacers) {
+        content = content.replace(/T/g, replacers);
+      }
+
+      interfacesContent.push(`// Props from ${extensionName}\n`);
+      interfacesContent.push(content);
+    });
 
     return interfacesContent;
   }
@@ -68,11 +78,11 @@ const DEFAULT_OPTIONS = {
     return (
       result
         // Deprecate the old props interface
-        .replace(`export interface ${pascalName}Props`, `export interface __${pascalName}Props__`)
+        .replace(`export interface ${pascalName}Props`, `interface __${pascalName}Props__`)
         // Add the new props interface
         .replace(
-          `export interface __${pascalName}Props__`,
-          `// This interface is auto generated to join the interfaces \nexport interface ${newPropsInterface}\n\nexport interface __${pascalName}Props__`
+          `interface __${pascalName}Props__`,
+          `// This interface is auto generated to join the interfaces \nexport interface ${newPropsInterface}\n\ninterface __${pascalName}Props__`
         )
     );
   }
