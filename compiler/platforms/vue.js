@@ -11,8 +11,73 @@ const DEFAULT_OPTIONS = {
 };
 
 (async () => {
+  function getAllTheInterfacesFromPropsInComponent(result) {
+    const regex1 = /(?<=export interface )\w+(?=\s*\{[\s\S]*?\})[\s\S]*?(?<=\})/g;
+    const interfacesWithProps = {};
+    let match;
+
+    while ((match = regex1.exec(result)) !== null) {
+      const [interfaceDef] = match;
+      const interfaceName = interfaceDef.split('{')[0].replace(/\n\s*/g, '').replace(/\{/g, '').trim();
+
+      if (interfaceName.includes('Props')) {
+        interfacesWithProps[interfaceName] = match[0]
+          .replace(/\n\s*/g, '')
+          .replace(/\{/g, '')
+          .replace(/\}/g, '')
+          .replace(interfaceName, '')
+          .trim();
+      }
+    }
+
+    return interfacesWithProps;
+  }
+
+  function searchComponentPropsInterface(result, interfacesWithProps, pascalName) {
+    // Now search our component props interface
+    const regex = new RegExp(`interface\\s+${pascalName}Props\\s+extends\\s+([^{]+){([^}]+)}`, 'g');
+    let matches;
+    const interfacesContent = ['// Original props \n'];
+    while ((matches = regex.exec(result)) !== null) {
+      const [, extensions, content] = matches;
+      const extensionsArray = extensions.split(',').map((e) => e.trim());
+
+      interfacesContent.push(content);
+
+      extensionsArray.forEach((extension) => {
+        interfacesContent.push(`// Props from ${extension}\n`);
+        interfacesContent.push(interfacesWithProps[extension]);
+      });
+    }
+
+    return interfacesContent;
+  }
+
+  function addNewPropsInterfacesForComponent(result, interfacesContent, pascalName) {
+    // Create the new props interface
+    const newPropsInterface = ` ${pascalName}Props {${interfacesContent.join('\n')}}`;
+
+    // Deprecate the old props interface
+    return (
+      result
+        // Deprecate the old props interface
+        .replace(`export interface ${pascalName}Props`, `export interface __${pascalName}Props__`)
+        // Add the new props interface
+        .replace(
+          `export interface __${pascalName}Props__`,
+          `// This interface is auto generated to join the interfaces \nexport interface ${newPropsInterface}\n\nexport interface __${pascalName}Props__`
+        )
+    );
+  }
+
+  function mergeAllPropsInterfaceIntoNewInterface(result, pascalName) {
+    const interfacesWithProps = getAllTheInterfacesFromPropsInComponent(result);
+    const interfacesContent = searchComponentPropsInterface(result, interfacesWithProps, pascalName);
+    return addNewPropsInterfacesForComponent(result, interfacesContent, pascalName);
+  }
+
   function customReplace(props) {
-    const { name, pascalName, outFile, file, outPath, isFirstCompilation } = props;
+    const { name, pascalName, outFile, outPath, isFirstCompilation } = props;
 
     if (isFirstCompilation) {
       const data = fs.readFileSync(`${outPath}/src/index.ts`, 'utf8');
@@ -35,7 +100,7 @@ const DEFAULT_OPTIONS = {
       // Remove type imports, should be injected
       .replace(/import type .*/g, '');
 
-    const result = data
+    let result = data
       // Inject needed types to this file as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
       .replace(/(<script setup)/g, `<script lang="ts">${allTheNeededTypes}</script>\n$1`)
       // Type defineProps and Inject types as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
@@ -51,18 +116,7 @@ const DEFAULT_OPTIONS = {
       // TODO: Temporal meanwhile we find another why but this is stable
       .replace(/getData\(\);/g, 'getData.bind(this)();');
 
-    // Once replaces are done, vue needs to merge all the Props interfaces in one
-    const a = result.match(/export interface .*Props ?(\n? ? ?)?extends([\s\S]*?){/gm);
-    const b =
-      a &&
-      a[0] &&
-      a[0]
-        .replace(/export interface.*extends ?/, '')
-        .replace(/ ?{ ?/, '')
-        .replace(/, /, ',')
-        .split(',');
-    // TODO continue injection
-    console.log(name, b);
+    result = mergeAllPropsInterfaceIntoNewInterface(result, pascalName);
 
     if (name === 'column') {
       console.log(name);
