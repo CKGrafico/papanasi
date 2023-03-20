@@ -10,7 +10,7 @@ function setCorrrectVersion(file) {
   }
 
   const data = fs.readFileSync(file, 'utf8');
-  const result = data.replace(/setVersion\((\'|\")(.*)(\'|\")\);/gs, `setVersion($3${version}$3);`);
+  const result = data.replace(/setVersion\((\'|\")(.*)(\'|\")\);/g, `setVersion($3${version}$3);`);
 
   fs.writeFileSync(file, result, 'utf8');
 }
