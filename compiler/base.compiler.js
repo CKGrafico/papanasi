@@ -106,16 +106,14 @@ async function compile(defaultOptions) {
     const file = path.parse(filepath);
     const outFile = `${outPath}/${file.dir}/${file.name.replace('.lite', '')}.${options.extension}`;
 
+    let to = options.target === 'webcomponents' ? 'webcomponent' : options.target;
+    to = to === 'vue' ? 'vue3' : to;
+
     await compileCommand.run({
       parameters: {
         options: {
           from: 'mitosis',
-          to:
-            options.target === 'webcomponents'
-              ? 'webcomponent'
-              : options.target || options.target === 'vue'
-              ? 'vue3'
-              : options.target,
+          to,
           out: outFile,
           force: true,
           api: options.api,
