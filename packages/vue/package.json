@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/vue",
-  "version": "1.1.0-alpha.4",
+  "version": "1.1.0-alpha.5",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Vue UI Library",
@@ -37,7 +37,7 @@
   "scripts": {
     "build": "rollup -c",
     "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat && rimraf --glob ./dist/*.d.ts && npm run typings",
-    "typings": "vue-tsc --declaration --emitDeclarationOnly --project . --outFile ./dist/index.d.ts"
+    "typings": "vue-tsc --declaration --emitDeclarationOnly --project . --outFile ./dist/index.d.ts && replace 'packages/vue/src/index' '@papanasi/vue' ./dist/index.d.ts --silent"
   },
   "publishConfig": {
     "access": "public"
