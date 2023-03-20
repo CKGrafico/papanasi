@@ -11,7 +11,7 @@ const DEFAULT_OPTIONS = {
 };
 
 (async () => {
-  function getAllTheInterfacesFromPropsInComponent(result) {
+  function getAllTheInterfacesFromPropsInComponent(result, pascalName) {
     const regex1 = /interface\s+([^{]+){([^}]+)}/g;
     const interfacesWithProps = {};
     let match;
@@ -27,13 +27,11 @@ const DEFAULT_OPTIONS = {
         .trim();
 
       if (interfaceName.includes('Props')) {
-        interfacesWithProps[interfaceName] = match[0]
-          .replace(/interface/g, '')
-          .replace(/(extends)/g, ' $1')
-          .replace(/\{/g, '')
-          .replace(/\}/g, '')
-          .replace(interfaceName, '')
-          .trim();
+        if (pascalName === 'Column') {
+          console.log(1);
+        }
+
+        interfacesWithProps[interfaceName] = match[2].trim();
       }
     }
 
@@ -80,7 +78,7 @@ const DEFAULT_OPTIONS = {
   }
 
   function mergeAllPropsInterfaceIntoNewInterface(result, pascalName) {
-    const interfacesWithProps = getAllTheInterfacesFromPropsInComponent(result);
+    const interfacesWithProps = getAllTheInterfacesFromPropsInComponent(result, pascalName);
     const interfacesContent = searchComponentPropsInterface(result, interfacesWithProps, pascalName);
     return addNewPropsInterfacesForComponent(result, interfacesContent, pascalName);
   }
