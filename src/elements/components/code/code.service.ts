@@ -68,7 +68,7 @@ export class CodeService implements ICodeService {
   }
 
   public async copy(code: string) {
-    const copy = (await import('copy-to-clipboard')).default;
+    const copy = ((await import('copy-to-clipboard')) as any).default;
     debug(`CodeService copy: code: ${code}`);
     copy(code);
   }

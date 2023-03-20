@@ -105,6 +105,13 @@ const DEFAULT_OPTIONS = {
         .replace(/\/helpers\.vue/g, '');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
+
+      // Add .vue to all the indexes in src folder
+      glob.sync(`${outPath}/src/elements/**/index.ts`).map((src) => {
+        const data = fs.readFileSync(src, 'utf8');
+
+        fs.writeFileSync(src, data.replace("';", ".vue';"), 'utf8');
+      });
     }
 
     const data = fs.readFileSync(outFile, 'utf8');
