@@ -12,17 +12,24 @@ const DEFAULT_OPTIONS = {
 
 (async () => {
   function getAllTheInterfacesFromPropsInComponent(result) {
-    const regex1 = /(?<=export interface )\w+(?=\s*\{[\s\S]*?\})[\s\S]*?(?<=\})/g;
+    const regex1 = /interface\s+([^{]+){([^}]+)}/g;
     const interfacesWithProps = {};
     let match;
 
     while ((match = regex1.exec(result)) !== null) {
       const [interfaceDef] = match;
-      const interfaceName = interfaceDef.split('{')[0].replace(/\n\s*/g, '').replace(/\{/g, '').trim();
+      const interfaceName = interfaceDef
+        .split('{')[0]
+        .replace(/\n\s*/g, '')
+        .replace(/\{/g, '')
+        .replace(/interface/g, '')
+        .replace(/(extends)/g, ' $1')
+        .trim();
 
       if (interfaceName.includes('Props')) {
         interfacesWithProps[interfaceName] = match[0]
-          .replace(/\n\s*/g, '')
+          .replace(/interface/g, '')
+          .replace(/(extends)/g, ' $1')
           .replace(/\{/g, '')
           .replace(/\}/g, '')
           .replace(interfaceName, '')
@@ -34,21 +41,23 @@ const DEFAULT_OPTIONS = {
   }
 
   function searchComponentPropsInterface(result, interfacesWithProps, pascalName) {
-    // Now search our component props interface
-    const regex = new RegExp(`interface\\s+${pascalName}Props\\s+extends\\s+([^{]+){([^}]+)}`, 'g');
-    let matches;
-    const interfacesContent = ['// Original props \n'];
-    while ((matches = regex.exec(result)) !== null) {
-      const [, extensions, content] = matches;
-      const extensionsArray = extensions.split(',').map((e) => e.trim());
+    const [currentInterfacePropsName, currentInterfacePropsContent] = Object.entries(interfacesWithProps).find(
+      ([interfaceName]) => interfaceName.includes(pascalName)
+    );
+    const extensions = currentInterfacePropsName
+      .replace(/.*extends/, '')
+      .trim()
+      .split(',')
+      .map((e) => e.trim());
 
-      interfacesContent.push(content);
+    const interfacesContent = ['// Original props \n', currentInterfacePropsContent];
 
-      extensionsArray.forEach((extension) => {
-        interfacesContent.push(`// Props from ${extension}\n`);
-        interfacesContent.push(interfacesWithProps[extension]);
-      });
-    }
+    extensions.forEach((extension) => {
+      interfacesContent.push(`// Props from ${extension}\n`);
+      interfacesContent.push(interfacesWithProps[extension]);
+    });
+
+    // TODO: GENERICS!!
 
     return interfacesContent;
   }
