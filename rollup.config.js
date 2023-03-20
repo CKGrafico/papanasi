@@ -66,26 +66,7 @@ export default async (options) => {
             json(),
             typescript({
               browserslist: cancelBrowserListForTypescript ? false : undefined,
-              tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true },
-              transformers: {
-                afterDeclarations: [
-                  function fixDeclarationFactory(context) {
-                    return function fixDeclaration(source) {
-                      function visitor(node) {
-                        if (node.kind === ts.SyntaxKind.StringLiteral && node.text.includes('./elements')) {
-                          return context.factory.createIdentifier(
-                            `'${node.text.replace('./elements', '../src/elements')}'`
-                          );
-                        }
-
-                        return ts.visitEachChild(node, visitor, context);
-                      }
-
-                      return ts.visitEachChild(source, visitor, context);
-                    };
-                  }
-                ]
-              }
+              tsconfig: { ...tsconfig.compilerOptions, emitDeclarationOnly: true }
             }),
             ...postPlugins,
             babel({

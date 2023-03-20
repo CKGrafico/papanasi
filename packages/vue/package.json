@@ -36,7 +36,8 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat && renamer --find papanasi-vue.es.d.ts --replace index.d.ts ./dist/* --silent && rimraf ./dist/papanasi-vue.umd.d.ts"
+    "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat && rimraf --glob ./dist/*.d.ts && npm run typings",
+    "typings": "vue-tsc --declaration --emitDeclarationOnly --project . --outFile ./dist/index.d.ts"
   },
   "publishConfig": {
     "access": "public"

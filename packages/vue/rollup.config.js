@@ -5,7 +5,7 @@ import packageJson from './package.json' assert { type: 'json' };
 export default config({
   dir: './packages/vue',
   packageJson,
-  postPlugins: [vue({ template: { optimizeSSR: true } })],
+  postPlugins: [vue()],
   external: ['vue'],
   dts: false
 });
