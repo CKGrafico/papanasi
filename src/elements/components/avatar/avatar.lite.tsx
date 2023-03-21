@@ -7,9 +7,6 @@ useMetadata({ isAttachedToShadowDom: true });
 
 export default function Avatar(props: AvatarProps) {
   const state = useStore<AvatarState>({
-    get rootClasses() {
-      return `${props.className || props.classList} ${state.classes.base}`;
-    },
     get classes() {
       return avatarService.getClasses(props.variant, props.disabled, props.className || props.classList);
     },
@@ -31,7 +28,7 @@ export default function Avatar(props: AvatarProps) {
   });
 
   return (
-    <div class={state.rootClasses} title={props.name}>
+    <div class={state.classes.base} title={props.name}>
       <Show when={state.styles.container}>
         <div class={state.classes.container} style={state.styles.container}>
           <Show when={state.source}>
