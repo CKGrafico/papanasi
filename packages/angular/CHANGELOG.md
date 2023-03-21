@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.9](https://github.com/CKGrafico/papanasi/compare/v1.1.0-alpha.7...v1.1.0-alpha.9) (2023-03-21)
+
+**Note:** Version bump only for package @papanasi/angular
+
 # [1.1.0-alpha.7](https://github.com/CKGrafico/papanasi/compare/v1.1.0-alpha.6...v1.1.0-alpha.7) (2023-03-21)
 
 **Note:** Version bump only for package @papanasi/angular
