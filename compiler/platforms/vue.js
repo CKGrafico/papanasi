@@ -133,6 +133,10 @@ const DEFAULT_OPTIONS = {
       .replace(/this\.children/, 'this.$slots.default()')
       // Add ? to .value variables
       .replace(/\.value/g, '?.value')
+      // Replace classname for class
+      .replace(/\.className/g, '.class')
+      //Fix using value in computed properties and classes
+      .replace(/classes\.(?!value)(.*`)/g, 'classes.value.$1')
       // remove ? from left hand assigments
       .replace(/\?\.value =/g, '.value =')
       // Replace vue html .values for refs

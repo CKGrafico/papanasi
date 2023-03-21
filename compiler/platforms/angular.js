@@ -24,6 +24,9 @@ const DEFAULT_OPTIONS = {
       )
       // Enable as default
       .replace(/export class/, 'export default class')
+      // Replace classname for class
+      .replace(/\.className/g, '.class')
+      .replace(/className(\:|\")/g, 'class$1')
       // Enable children
       .replace(/(,\n)?(\} from \"\@angular\/core\"\;)/, ', ContentChildren, QueryList $2')
       .replace(

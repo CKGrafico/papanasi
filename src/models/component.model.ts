@@ -12,5 +12,6 @@ export interface BaseProps {
 }
 
 export interface BaseState {
+  rootClasses?: string;
   loaded?: boolean;
 }

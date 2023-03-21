@@ -21,6 +21,7 @@ const DEFAULT_OPTIONS = {
     const result = data
       // Fix class name
       .replace(/class /, 'export default class ')
+
       .replace(
         /customElements\.define\("(.*)",(.*)\);/g,
         'customElements.get("pa-$1") || customElements.define("pa-$1", $2);'
@@ -29,6 +30,8 @@ const DEFAULT_OPTIONS = {
       .replace(/class=/g, 'part=')
       .replace(/el\.setAttribute\("class"/g, 'el.setAttribute("part"')
       .replace(/el\.className ?= ?\n?(.*);/g, 'el.setAttribute("part",$1);')
+      // Replace classname for class
+      .replace(/\.className/g, '.class')
       // Enable children
       .replace(
         /this\.props\.children/,

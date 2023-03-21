@@ -17,7 +17,7 @@
     "postinstall": "node ./hooks/post-install.hook.js",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "build": "yarn compile",
-    "package": "lerna version 1.1.0-alpha.7 --force-publish",
+    "package": "lerna version 1.1.0-alpha.9 --force-publish",
     "postpackage": "node ./hooks/post-package.hook.js",
     "release": "lerna publish from-package --force-publish"
   },
