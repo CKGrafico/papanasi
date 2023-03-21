@@ -131,8 +131,10 @@ const DEFAULT_OPTIONS = {
       .replace(/(const props = defineProps)\(\[(.|\n)*\]\);/gm, `$1<${pascalName}Props>();`)
       // Enable children
       .replace(/this\.children/, 'this.$slots.default()')
-      // Add vue dependencies
-      // .replace('import', "import { ref } from 'vue';\nimport")
+      // Add ? to .value variables
+      .replace(/\.value/g, '?.value')
+      // remove ? from left hand assigments
+      .replace(/\?\.value =/g, '.value =')
       // Replace vue html .values for refs
       .replace(/\.value \}\}/g, '}}')
       // Enable Typescript
