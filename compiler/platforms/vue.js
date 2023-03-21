@@ -124,6 +124,26 @@ const DEFAULT_OPTIONS = {
       // Remove type imports, should be injected
       .replace(/import type .*/g, '');
 
+    // First try to fix the problem with watchers and names
+    ////////////////////
+    /watch\(\s*\(\s*\)\s*=>\s*\[\s*(\w+)\.value\s*,\s*props\.editable\s*,\s*(\w+)\.value\s*\]\s*,\s*\{\s*immediate:\s*true\s*\}\s*\)/g;
+
+    if (name === 'code') {
+      console.log(1);
+    }
+
+    const watchRegex = /watch\(\s*\(\)\s*=>\s*\[(.*)\],\s*\(\[(.*)\]\s*\) ?=>\s*{([\s\S]*?)},\n/g;
+
+    let match;
+    while ((match = watchRegex.exec(data)) !== null) {
+      const args = match[2].trim().split(/\s*,\s*/);
+      const callback = match[3].trim();
+      console.log('Arguments:', args);
+      console.log('Callback:', callback);
+    }
+
+    ////////////////////
+
     let result = data
       // Inject needed types to this file as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
       .replace(/(<script setup)/g, `<script lang="ts">${allTheNeededTypes}</script>\n$1`)
@@ -132,13 +152,13 @@ const DEFAULT_OPTIONS = {
       // Enable children
       .replace(/this\.children/, 'this.$slots.default()')
       // Add ? to .value variables
-      .replace(/\.value/g, '?.value')
+      // .replace(/\.value/g, '?.value')
       // Replace classname for class
       .replace(/\.className/g, '.class')
       //Fix using value in computed properties and classes
-      .replace(/classes\.(?!value)(.*`)/g, 'classes.value.$1')
+      // .replace(/classes\.(?!value)(.*`)/g, 'classes.value.$1')
       // remove ? from left hand assigments
-      .replace(/\?\.value =/g, '.value =')
+      // .replace(/\?\.value =/g, '.value =')
       // Replace vue html .values for refs
       .replace(/\.value \}\}/g, '}}')
       // Enable Typescript
@@ -148,9 +168,6 @@ const DEFAULT_OPTIONS = {
 
     result = mergeAllPropsInterfaceIntoNewInterface(result, pascalName);
 
-    if (name === 'column') {
-      console.log(name);
-    }
     fs.writeFileSync(outFile, result, 'utf8');
   }
 
