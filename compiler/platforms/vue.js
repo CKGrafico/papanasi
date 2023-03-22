@@ -126,25 +126,29 @@ const DEFAULT_OPTIONS = {
 
     // First try to fix the problem with watchers and names
     ////////////////////
-    /watch\(\s*\(\s*\)\s*=>\s*\[\s*(\w+)\.value\s*,\s*props\.editable\s*,\s*(\w+)\.value\s*\]\s*,\s*\{\s*immediate:\s*true\s*\}\s*\)/g;
-
-    if (name === 'code') {
-      console.log(1);
-    }
-
     const watchRegex = /watch\(\s*\(\)\s*=>\s*\[(.*)\],\s*\(\[(.*)\]\s*\) ?=>\s*{([\s\S]*?)},\n/g;
 
     let match;
+    let result = data;
     while ((match = watchRegex.exec(data)) !== null) {
-      const args = match[2].trim().split(/\s*,\s*/);
-      const callback = match[3].trim();
-      console.log('Arguments:', args);
-      console.log('Callback:', callback);
-    }
+      let callbackRegex = match[3].trim();
+      let parametersRegex = match[2].trim();
+      const parameters = parametersRegex.split(/\s*,\s*/);
 
+      parameters.forEach((parameter) => {
+        parametersRegex = parametersRegex.replace(new RegExp(parameter, 'g'), `___${parameter}`);
+        callbackRegex = callbackRegex.replace(new RegExp(`props\\.${parameter}`, 'g'), parameter);
+        callbackRegex = callbackRegex.replace(new RegExp(`${parameter}\\.value`, 'g'), `${parameter}`);
+        callbackRegex = callbackRegex.replace(new RegExp(parameter, 'g'), `___${parameter}`);
+      });
+
+      result = result
+        .replace(match[3], callbackRegex)
+        .replace(new RegExp(`(watch.*)(\\s.*)?(\\s.*\\(\\[)(${match[2].trim()})(\\])`), `$1$2$3${parametersRegex}$5`);
+    }
     ////////////////////
 
-    let result = data
+    result = result
       // Inject needed types to this file as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
       .replace(/(<script setup)/g, `<script lang="ts">${allTheNeededTypes}</script>\n$1`)
       // Type defineProps and Inject types as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
