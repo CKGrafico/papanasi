@@ -41,9 +41,10 @@ const DEFAULT_OPTIONS = {
       // Temporal fixes
       .replace(/.current, (x)/g, ',$1')
       .replace(/useRef.current/g, 'useRef')
-      .replace(/const code = codeRef;/g, 'const code = track(() => codeRef.current);');
-    // .replace(/state.codeService = service;/g, 'state.codeService = noSerialize(service);')
-    // .replace(/} from "@builder.io\/qwik";/g, 'noSerialize} from "@builder.io/qwik";');
+      .replace(/const code = codeRef;/g, 'const code = track(() => codeRef.current);')
+      .replace(/state.codeService = service;/g, 'state.codeService = noSerialize(service);')
+      .replace(/} from "@builder.io\/qwik";/g, ', noSerialize} from "@builder.io/qwik";')
+      .replace(/(import[\s\S]*,)([\s]*, noSerialize)/g, '$1 noSerialize');
 
     fs.writeFileSync(outFile, result, 'utf8');
   }
