@@ -109,7 +109,7 @@
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-icon.svg" width="41" title="Svelte Kit"> <br/>
       <strong>Svelte Kit</strong> <br/>
       <sub>
-        <a href="https://codesandbox.io/p/sandbox/cranky-lamport-2t12j5" target="_blank"><img src="https://img.shields.io/badge/Demo-FF3E00?logoColor=white&logo=svelte" alt="Svelte Kit Demo" /></a>
+        <a href="https://codesandbox.io/p/sandbox/papanasi-sveltekit-demo-papanasi-svelte-fz7ody" target="_blank"><img src="https://img.shields.io/badge/Demo-FF3E00?logoColor=white&logo=svelte" alt="Svelte Kit Demo" /></a>
       </sub>
     </td>
     <td align="center" width="140">
@@ -123,7 +123,7 @@
       <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/qwik.svg" width="41" title="Qwik City"> <br/>
       <strong>Qwik City</strong> <br/>
       <sub>
-        <a href="https://stackblitz.com/edit/qwik-starter-tudfze" target="_blank"><img src="https://img.shields.io/badge/Demo-5048d7?logoColor=white&logo=qwiklabs" alt="Svelte Kit Demo" /></a>
+        <a href="https://stackblitz.com/edit/qwik-starter-tudfze" target="_blank"><img src="https://img.shields.io/badge/Demo-5048d7?logoColor=white&logo=qwiklabs" alt="Qwik Demo" /></a>
       </sub>
     </td>
   </tr>

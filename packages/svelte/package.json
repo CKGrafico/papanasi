@@ -7,7 +7,7 @@
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "svelte": "../src/index.ts",
+  "svelte": "./src/index.ts",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
