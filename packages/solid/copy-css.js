@@ -15,3 +15,5 @@ themesFiles.forEach((fileName) => {
 
   fs.copySync(fileName, `./dist/themes/${file.base}`);
 });
+
+fs.copySync('../../src/styles/variables.css', `./dist/index/styles/variables.css`);
