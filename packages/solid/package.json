@@ -32,8 +32,7 @@
     "ssr-window": "^4.0.2"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "build": "rollup -c",
