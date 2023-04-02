@@ -15,7 +15,9 @@ const DEFAULT_OPTIONS = {
     const data = fs.readFileSync(outFile, 'utf8');
     const result = data
       // fix keys
-      .replace(/ key\=/g, ' data-key=');
+      .replace(/ key\=/g, ' data-key=')
+      // Replace classname for class
+      .replace(/\.className/g, '.class');
     fs.writeFileSync(outFile, result, 'utf8');
   }
 
