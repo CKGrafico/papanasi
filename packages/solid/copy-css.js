@@ -6,7 +6,7 @@ const cssFiles = glob.sync(`./src/**/*.css`);
 cssFiles.forEach((fileName) => {
   const file = path.parse(fileName);
 
-  fs.copySync(fileName, `./dist/index/${file.dir.replace('./src/', '')}/${file.base}`);
+  fs.copySync(fileName, `./dist/index${file.dir.replace('src', '')}/${file.base}`);
 });
 
 const themesFiles = glob.sync(`../../.themes/**.css`);
@@ -15,5 +15,3 @@ themesFiles.forEach((fileName) => {
 
   fs.copySync(fileName, `./dist/themes/${file.base}`);
 });
-
-fs.copySync('../../src/styles/variables.css', `./dist/index/styles/variables.css`);
