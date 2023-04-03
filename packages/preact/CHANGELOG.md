@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.18](https://github.com/CKGrafico/papanasi/compare/v1.1.0-alpha.17...v1.1.0-alpha.18) (2023-04-03)
+
+**Note:** Version bump only for package @papanasi/preact
+
 **Note:** Version bump only for package @papanasi/preact
 
 # [1.1.0-alpha.17](https://github.com/CKGrafico/papanasi/compare/v1.1.0-alpha.16...v1.1.0-alpha.17) (2023-04-02)
