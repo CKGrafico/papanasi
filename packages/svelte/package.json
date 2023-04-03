@@ -1,6 +1,6 @@
 {
   "name": "@papanasi/svelte",
-  "version": "1.1.0-alpha.19",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
