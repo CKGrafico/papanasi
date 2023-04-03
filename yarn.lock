@@ -1389,7 +1389,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-syntax-jsx@^7.12.1", "@babel/plugin-syntax-jsx@^7.16.5", "@babel/plugin-syntax-jsx@^7.17.12":
+"@babel/plugin-syntax-jsx@^7.16.5", "@babel/plugin-syntax-jsx@^7.17.12":
   version "7.17.12"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.17.12.tgz#834035b45061983a491f60096f61a2e7c5674a47"
   integrity sha512-spyY3E3AURfxh/RHtjx5j6hs8am5NbUBGfcZ2vB3uShSpZdQyXSf5rR5Mk76vbtlAZOelyVQ71Fg0x9SG4fsog==
@@ -2300,7 +2300,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.18.6"
     "@babel/plugin-transform-react-pure-annotations" "^7.18.6"
 
-"@babel/preset-typescript@^7.12.7", "@babel/preset-typescript@^7.13.0", "@babel/preset-typescript@^7.16.7":
+"@babel/preset-typescript@^7.12.7", "@babel/preset-typescript@^7.13.0":
   version "7.17.12"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.17.12.tgz#40269e0a0084d56fc5731b6c40febe1c9a4a3e8c"
   integrity sha512-S1ViF8W2QwAKUGJXxP9NAfNaqGDdEBJKpYkxHf5Yy2C4NPPzXGeR3Lhk7G8xJaaLcFTRfNjVbtbVtm8Gb0mqvg==
@@ -2584,14 +2584,13 @@
     "@babel/types" "7.12.6"
     ts-pattern "^3.3.5"
 
-"@builder.io/mitosis-cli@0.0.52":
-  version "0.0.52"
-  resolved "https://registry.yarnpkg.com/@builder.io/mitosis-cli/-/mitosis-cli-0.0.52.tgz#fb85105d333d605205ad9449414b5897b12f2d58"
-  integrity sha512-bVNW47ZLMPc6c6WhOYG0epLWOJ579iDl7DnC7Nn8ZFCPm8bWyMh/u2WlJG1Fl+LE2oUJ258yB7dMAwfir8FbfQ==
+"@builder.io/mitosis-cli@0.0.55":
+  version "0.0.55"
+  resolved "https://registry.yarnpkg.com/@builder.io/mitosis-cli/-/mitosis-cli-0.0.55.tgz#9e13db87c7edb8467ae8c4d581427023962fab79"
+  integrity sha512-Gqi6+WRjwRDMbZSwaYXTmSSltQVECJo9DamOMNn/5OLZ8N1bMpuBOE9UTycdAgiA9DMvCFCU8ka+UMV0xPpXdA==
   dependencies:
     "@babel/core" "^7.17.8"
-    "@babel/preset-typescript" "^7.16.7"
-    "@builder.io/mitosis" "0.0.93"
+    "@builder.io/mitosis" "0.0.96"
     "@vue/compiler-sfc" "^3.1.5"
     babel-preset-solid "^1.3.13"
     chalk "^4.1.0"
@@ -2612,17 +2611,17 @@
     vue-template-es2015-compiler "^1.9.1"
     vue-template-validator "^1.1.5"
 
-"@builder.io/mitosis@0.0.93":
-  version "0.0.93"
-  resolved "https://registry.yarnpkg.com/@builder.io/mitosis/-/mitosis-0.0.93.tgz#99d1fa20392274cce200fae05f7361a4d0ccc9d2"
-  integrity sha512-/wsuYaC/cC78S2kMVka2N+HZT/7ijPGBZLPsoU/7iLxfsfiXJmzBJd7eSy0v30Et6WhCc02/X7jvUrcmzGbzQA==
+"@builder.io/mitosis@0.0.96":
+  version "0.0.96"
+  resolved "https://registry.yarnpkg.com/@builder.io/mitosis/-/mitosis-0.0.96.tgz#d144d05a56c5b053dff04190194697f0a8f92af1"
+  integrity sha512-xsaR/Q9XYHHfTTmTNTZKzZWQZcGgpWSV2wN/hSQOc9iRAmmX8iWK7K+d8AZlm0cd79hDKC+76Xi4SMXKXYQARA==
   dependencies:
     "@angular/compiler" "^11.2.11"
     "@babel/core" "7.14.5"
     "@babel/generator" "^7.14.3"
     "@babel/plugin-proposal-class-properties" "^7.13.0"
     "@babel/plugin-syntax-decorators" "^7.12.1"
-    "@babel/plugin-syntax-jsx" "^7.12.1"
+    "@babel/plugin-syntax-typescript" "^7.20.0"
     "@babel/plugin-transform-react-jsx" "^7.13.12"
     "@babel/preset-typescript" "^7.13.0"
     "@builder.io/react" "^1.1.50"
@@ -2647,7 +2646,7 @@
     postcss-load-config "^4.0.1"
     prettier-plugin-marko "^1.2.2"
     prettier-plugin-organize-imports "2.3.4"
-    prettier-plugin-svelte "^2.7.0"
+    prettier-plugin-svelte "^2.10.0"
     sass "^1.56.1"
     svelte "^3.30.0"
     svelte-preprocess "^4.10.7"
@@ -16052,10 +16051,10 @@ prettier-plugin-organize-imports@2.3.4:
   resolved "https://registry.yarnpkg.com/prettier-plugin-organize-imports/-/prettier-plugin-organize-imports-2.3.4.tgz#65473861ae5ab7960439fff270a2258558fbe9ba"
   integrity sha512-R8o23sf5iVL/U71h9SFUdhdOEPsi3nm42FD/oDYIZ2PQa4TNWWuWecxln6jlIQzpZTDMUeO1NicJP6lLn2TtRw==
 
-prettier-plugin-svelte@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-svelte/-/prettier-plugin-svelte-2.7.0.tgz#ecfa4fe824238a4466a3497df1a96d15cf43cabb"
-  integrity sha512-fQhhZICprZot2IqEyoiUYLTRdumULGRvw0o4dzl5jt0jfzVWdGqeYW27QTWAeXhoupEZJULmNoH3ueJwUWFLIA==
+prettier-plugin-svelte@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-svelte/-/prettier-plugin-svelte-2.10.0.tgz#ce8f641f97cfe085fa093cb2beb13e64c5e7f9de"
+  integrity sha512-GXMY6t86thctyCvQq+jqElO+MKdB09BkL3hexyGP3Oi8XLKRFaJP1ud/xlWCZ9ZIa2BxHka32zhHfcuU+XsRQg==
 
 prettier-stylelint@^0.4.2:
   version "0.4.2"

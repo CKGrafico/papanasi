@@ -36,12 +36,8 @@ const DEFAULT_OPTIONS = {
       .replace(/useMount\$,/g, 'useTask$,')
       // TODO: Temporal meanwhile we find another why but this is stable
       .replace(/getData\(\);/g, 'await getData();')
-      // Looks like current is not working on qwik https://github.com/BuilderIO/mitosis/pull/596/files#diff-c2c57a93631396da54ba47a5b70cd81470ce51c3a6485c889e20960ab7f2915c
-      .replace(/Ref(,|\))/g, 'Ref.current$1')
-      // Temporal fixes
-      .replace(/.current, (x)/g, ',$1')
-      .replace(/useRef.current/g, 'useRef')
-      .replace(/const code = codeRef;/g, 'const code = track(() => codeRef.current);')
+      // Signal needs to be typed
+      .replace(/useSignal\(\)/g, 'useSignal<any>()')
       .replace(/state.codeService = service;/g, 'state.codeService = noSerialize(service);')
       .replace(/} from "@builder.io\/qwik";/g, ', noSerialize} from "@builder.io/qwik";')
       .replace(/(import[\s\S]*,)([\s]*, noSerialize)/g, '$1 noSerialize');
