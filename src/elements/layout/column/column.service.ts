@@ -2,6 +2,7 @@ import { classesToString, getBreakpointClasses } from '~/helpers';
 
 class ColumnService {
   public getClasses(
+    centered: boolean,
     basic: number | string,
     xxs: number | string,
     xs: number | string,
@@ -14,6 +15,7 @@ class ColumnService {
   ) {
     const base = classesToString([
       'pa-column',
+      [centered, `pa-column--centered`],
       getBreakpointClasses(basic, xxs, xs, s, m, l, xl, xxl, 'pa-column--'),
       className || ''
     ]);

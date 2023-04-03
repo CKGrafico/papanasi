@@ -1,7 +1,8 @@
 // from https://static.itch.io/api.js
 export const Itch: any = {};
+import { ofetch } from 'ofetch';
 
-Itch.getGameData = function (opts) {
+Itch.getGameData = async function (opts) {
   if (opts == null) {
     opts = {};
   }
@@ -16,19 +17,8 @@ Itch.getGameData = function (opts) {
   if (opts.secret) {
     url = url + '?secret=' + opts.secret;
   }
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url);
-  xhr.addEventListener(
-    'readystatechange',
-    (function (_this) {
-      return function (e) {
-        if (xhr.readyState !== 4) {
-          return;
-        }
-        const game = JSON.parse(xhr.responseText);
-        return typeof opts.onComplete === 'function' ? opts.onComplete(game) : void 0;
-      };
-    })(this)
-  );
-  return xhr.send();
+
+  const game = await ofetch(url, { parseResponse: JSON.parse });
+
+  return typeof opts.onComplete === 'function' ? opts.onComplete(game) : void 0;
 };

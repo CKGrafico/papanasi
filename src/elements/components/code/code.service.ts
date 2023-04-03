@@ -1,8 +1,8 @@
 import { classesToString, CodeJar, codeLanguages, debug, injectCodeCore, wait } from '~/helpers';
-import type { CodeTheme } from './code.model';
+import type { CodeTheme, ICodeService } from './code.model';
 import { codeThemes } from './code.model';
 
-export class CodeService {
+export class CodeService implements ICodeService {
   public styles: HTMLLinkElement[];
   public jar: CodeJar;
   public currentThemeIndex: number;
@@ -68,7 +68,7 @@ export class CodeService {
   }
 
   public async copy(code: string) {
-    const copy = (await import('copy-to-clipboard')).default;
+    const copy = ((await import('copy-to-clipboard')) as any).default;
     debug(`CodeService copy: code: ${code}`);
     copy(code);
   }

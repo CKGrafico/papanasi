@@ -1,5 +1,5 @@
-const { Listr } = require('listr2');
-const commandLineArgs = require('command-line-args');
+import commandLineArgs from 'command-line-args';
+import { Listr } from 'listr2';
 
 const optionDefinitions = [
   { name: 'elements', alias: 'e', type: String, multiple: true },
@@ -93,7 +93,7 @@ const optionDefinitions = [
       title: `Bundle Packages: ${cliConfig.platforms?.join(', ') || ''}`,
       task: () =>
         execa(
-          `yarn lerna --scope=@papanasi/${
+          `yarn lerna --verbose --scope=@papanasi/${
             cliConfig.platforms.length > 1 ? `{${cliConfig.platforms?.join(',')}}` : cliConfig.platforms
           } build`
         ).catch((error) => {

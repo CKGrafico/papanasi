@@ -1,4 +1,4 @@
-const { Listr } = require('listr2');
+import { Listr } from 'listr2';
 
 (async () => {
   const execa = (await import('execa')).command;

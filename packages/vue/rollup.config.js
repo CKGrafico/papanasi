@@ -1,10 +1,11 @@
-const config = require('../../rollup.config');
-const vue = require('rollup-plugin-vue');
+import vue from 'rollup-plugin-vue';
+import config from '../../rollup.config.js';
+import packageJson from './package.json' assert { type: 'json' };
 
-module.exports = config({
-  dir: __dirname,
-  packageJson: require('./package.json'),
-  plugins: [vue()],
+export default config({
+  dir: './packages/vue',
+  packageJson,
+  postPlugins: [vue({ template: { optimizeSSR: true } })],
   external: ['vue'],
   dts: false
 });

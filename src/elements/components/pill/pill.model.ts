@@ -1,11 +1,11 @@
 import type { BaseProps, BaseState, Dynamic, Intent, Variant } from '~/models';
 
-export type PillProps = {
+export interface PillProps extends BaseProps {
   variant?: Dynamic<Variant>;
   intent?: Dynamic<Intent>;
   disabled?: boolean;
-} & BaseProps;
+}
 
-export type PillState = {
+export interface PillState extends BaseState {
   classes: { base: string };
-} & BaseState;
+}

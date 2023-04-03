@@ -1,9 +1,10 @@
 import type { BaseProps, BaseState } from '~/models';
 
-export type ContainerProps = {
+export interface ContainerProps extends BaseProps {
   fluid?: boolean;
-} & BaseProps;
+  centered?: boolean;
+}
 
-export type ContainerState = {
+export interface ContainerState extends BaseState {
   classes: { base: string };
-} & BaseState;
+}

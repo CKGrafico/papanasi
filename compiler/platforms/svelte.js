@@ -1,5 +1,5 @@
-const compiler = require('../base.compiler');
-const fs = require('fs');
+import fs from 'fs';
+import compiler from '../base.compiler.js';
 
 const DEFAULT_OPTIONS = {
   target: 'svelte',

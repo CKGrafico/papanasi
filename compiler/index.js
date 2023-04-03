@@ -1,1 +1,1 @@
-require('./compiler.tasks');
+import './compiler.tasks.js';

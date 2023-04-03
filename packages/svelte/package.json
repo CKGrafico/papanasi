@@ -1,13 +1,13 @@
 {
   "name": "@papanasi/svelte",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Svelte UI Library",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "type": "module",
-  "svelte": "../src/index.ts",
+  "svelte": "./src/index.ts",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -24,10 +24,10 @@
     }
   },
   "dependencies": {
-    "codejar": "^3.6.0",
-    "copy-to-clipboard": "^3.3.2",
-    "copyfiles": "^2.4.1",
-    "highlight.js": "^11.6.0",
+    "codejar": "^3.7.0",
+    "copy-to-clipboard": "^3.3.3",
+    "highlight.js": "^11.7.0",
+    "ofetch": "^1.0.1",
     "ssr-window": "^4.0.2"
   },
   "peerDependencies": {
@@ -39,7 +39,7 @@
     "src"
   ],
   "scripts": {
-    "build": "svelte-kit sync && svelte-package",
+    "build": "svelte-kit sync && svelte-package --input src --output dist",
     "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat"
   },
   "publishConfig": {

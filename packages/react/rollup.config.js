@@ -1,8 +1,9 @@
-const config = require('../../rollup.config');
+import config from '../../rollup.config.js';
+import packageJson from './package.json' assert { type: 'json' };
 
-module.exports = config({
-  dir: __dirname,
-  packageJson: require('./package.json'),
+export default config({
+  dir: './packages/react',
+  packageJson,
   babelPresets: ['@babel/preset-react'],
   compilerOptions: {
     jsx: 'react',

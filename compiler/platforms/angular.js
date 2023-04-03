@@ -1,6 +1,6 @@
-const compiler = require('../base.compiler');
-const htmlTags = require('html-tags');
-const fs = require('fs');
+import fs from 'fs';
+import htmlTags from 'html-tags';
+import compiler from '../base.compiler.js';
 
 const DEFAULT_OPTIONS = {
   target: 'angular',
@@ -22,6 +22,11 @@ const DEFAULT_OPTIONS = {
           !htmlTags.includes(file.name.replace('.lite', '')) ? '$1,' : ''
         }[pa-$1], $2", exportAs: "pa-$1", encapsulation: 2`
       )
+      // Enable as default
+      .replace(/export class/, 'export default class')
+      // Replace classname for class
+      .replace(/\.className/g, '.class')
+      .replace(/className(\:|\")/g, 'class$1')
       // Enable children
       .replace(/(,\n)?(\} from \"\@angular\/core\"\;)/, ', ContentChildren, QueryList $2')
       .replace(

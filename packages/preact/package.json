@@ -1,9 +1,10 @@
 {
   "name": "@papanasi/preact",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Preact UI Library",
+  "type": "module",
   "main": "./dist/papanasi-preact.umd.js",
   "module": "./dist/papanasi-preact.es.js",
   "types": "./dist/index.d.ts",
@@ -22,10 +23,10 @@
     }
   },
   "dependencies": {
-    "codejar": "^3.6.0",
-    "copy-to-clipboard": "^3.3.2",
-    "copyfiles": "^2.4.1",
-    "highlight.js": "^11.6.0",
+    "codejar": "^3.7.0",
+    "copy-to-clipboard": "^3.3.3",
+    "highlight.js": "^11.7.0",
+    "ofetch": "^1.0.1",
     "ssr-window": "^4.0.2"
   },
   "peerDependencies": {
@@ -37,7 +38,7 @@
   "scripts": {
     "prebuild": "yarn install",
     "build": "rollup -c",
-    "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat"
+    "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat && rimraf ./dist/papanasi-preact.es.d.ts&& rimraf ./dist/papanasi-preact.umd.d.ts"
   },
   "publishConfig": {
     "access": "public"

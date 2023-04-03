@@ -1,7 +1,9 @@
 import type { BaseProps, BaseState, BreakpointProps } from '~/models';
 
-export type RowProps = BaseProps & BreakpointProps<'row' | 'column' | 'row-reverse' | 'column-reverse'> & BaseProps;
+export interface RowProps extends BreakpointProps<'row' | 'column' | 'row-reverse' | 'column-reverse'>, BaseProps {
+  centered?: boolean;
+}
 
-export type RowState = {
+export interface RowState extends BaseState {
   classes: { base: string };
-} & BaseState;
+}

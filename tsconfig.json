@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es5",
+    "target": "ES5",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,

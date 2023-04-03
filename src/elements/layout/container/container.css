@@ -4,6 +4,13 @@
   width: 100%;
   max-width: var(--pa-grid-max-width);
 
+  &--centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
   &--fluid {
     max-width: 100%;
   }

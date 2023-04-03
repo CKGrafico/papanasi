@@ -1,9 +1,10 @@
 {
   "name": "@papanasi/angular",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Angular UI Library",
+  "type": "module",
   "main": "./dist/papanasi-angular.umd.js",
   "module": "./dist/papanasi-angular.es.js",
   "types": "./dist/index.d.ts",
@@ -22,21 +23,22 @@
     }
   },
   "dependencies": {
-    "codejar": "^3.6.0",
-    "copy-to-clipboard": "^3.3.2",
-    "copyfiles": "^2.4.1",
-    "highlight.js": "^11.6.0",
+    "codejar": "^3.7.0",
+    "copy-to-clipboard": "^3.3.3",
+    "highlight.js": "^11.7.0",
+    "ofetch": "^1.0.1",
     "ssr-window": "^4.0.2"
   },
   "peerDependencies": {
-    "@angular/core": "^12.x || ^13.x"
+    "@angular/common": "^12.x || ^13.x || ^14.x || ^15.x",
+    "@angular/core": "^12.x || ^13.x || ^14.x || ^15.x"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "rollup -c",
-    "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat"
+    "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat && renamer --find papanasi-angular.es.d.ts --replace index.d.ts ./dist/* --silent && rimraf ./dist/papanasi-angular.umd.d.ts"
   },
   "publishConfig": {
     "access": "public"

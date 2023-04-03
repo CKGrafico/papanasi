@@ -1,9 +1,10 @@
 {
   "name": "@papanasi/solid",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Solid JS UI Library",
+  "type": "module",
   "source": "./solid-index.tsx",
   "main": "dist/cjs/papanasi.js",
   "module": "dist/esm/papanasi.js",

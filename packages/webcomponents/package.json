@@ -1,9 +1,10 @@
 {
   "name": "@papanasi/webcomponents",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "ckgrafico/papanasi",
   "description": "Papanasi Web Components UI Library",
+  "type": "module",
   "main": "./dist/papanasi-webcomponents.umd.js",
   "module": "./dist/papanasi-webcomponents.es.js",
   "types": "./dist/index.d.ts",
@@ -37,11 +38,12 @@
     "prebuild": "copyfiles ../../.themes/** ./dist/themes --flat",
     "build": "run-s build:**",
     "build:code": "rollup -c",
-    "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\"",
-    "build:styles-classes-css": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.css\"",
-    "build:styles-classes-states": "replace \"(::part\\(.*?)\\.(pa-|is-|has-)(.*?)(\\))\" \"$1 $2$3$4\" ./dist -r --include=\"*.css\"",
-    "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\"",
-    "build:schema": "custom-elements-manifest analyze"
+    "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\" --silent",
+    "build:styles-classes-css": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.css\" --silent",
+    "build:styles-classes-states": "replace \"(::part\\(.*?)\\.(pa-|is-|has-)(.*?)(\\))\" \"$1 $2$3$4\" ./dist -r --include=\"*.css\" --silent",
+    "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\" --silent",
+    "build:schema": "custom-elements-manifest analyze",
+    "postbuild": "renamer --find papanasi-webcomponents.es.d.ts --replace index.d.ts ./dist/* --silent && rimraf ./dist/papanasi-webcomponents.umd.d.ts"
   },
   "publishConfig": {
     "access": "public"

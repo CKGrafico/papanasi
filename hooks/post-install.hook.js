@@ -1,6 +1,6 @@
-const fs = require('fs-extra');
-const glob = require('glob');
-const mainPackageJson = require('../package.json');
+import fs from 'fs-extra';
+import glob from 'glob';
+import mainPackageJson from '../package.json' assert { type: 'json' };
 const dependencies = mainPackageJson.dependencies;
 const packagesJson = glob.sync(`./packages/**/package.json`);
 

@@ -1,14 +1,13 @@
-const glob = require('glob');
-const fs = require('fs-extra');
-const path = require('path');
-const postcss = require('postcss');
-const postcssConfig = require('../postcss.config');
-const filesystemTools = require('gluegun/filesystem');
-const stringTools = require('gluegun/strings');
-const printTools = require('gluegun/print');
-const commandLineArgs = require('command-line-args');
-const ora = require('ora');
-const compileCommand = require('@builder.io/mitosis-cli/dist/commands/compile');
+import compileCommand from '@builder.io/mitosis-cli/dist/commands/compile.js';
+import commandLineArgs from 'command-line-args';
+import fs from 'fs-extra';
+import glob from 'glob';
+import filesystemTools from 'gluegun/filesystem.js';
+import printTools from 'gluegun/print.js';
+import stringTools from 'gluegun/strings.js';
+import ora from 'ora';
+import path from 'path';
+import postcss from 'postcss';
 
 const DEFAULT_OPTIONS = {
   elements: 'src/**/*.lite.tsx',
@@ -17,6 +16,7 @@ const DEFAULT_OPTIONS = {
   target: '',
   extension: '',
   state: '',
+  api: '',
   styles: '',
   customReplace: (outFile, isFirstCompilation) => null
 };
@@ -85,7 +85,9 @@ async function compile(defaultOptions) {
         .map((fileName) => {
           const file = path.parse(fileName);
           const name = file.name.replace('.lite', '');
-          return `export { default as ${pascalName(name)} } from './${file.dir.replace('src/', '')}';`;
+          return `export { default as ${pascalName(name)} } from './${file.dir
+            .replace(/\\/g, '/')
+            .replace('src/', '')}';`;
         })
         .join('\n');
     }
@@ -94,6 +96,7 @@ async function compile(defaultOptions) {
     const indexResult = indexData
       // Export only needed components
       .replace(/(\/\/ Init Components)(.+?)(\/\/ End Components)/s, `$1\n${fileExports}\n$3`)
+      // Set the current platform
       .replace(/Platform.Default/g, `Platform.${pascalName(options.target)}`);
 
     fs.writeFileSync(`${outPath}/src/index.ts`, indexResult, 'utf8');
@@ -103,13 +106,17 @@ async function compile(defaultOptions) {
     const file = path.parse(filepath);
     const outFile = `${outPath}/${file.dir}/${file.name.replace('.lite', '')}.${options.extension}`;
 
+    let to = options.target === 'webcomponents' ? 'webcomponent' : options.target;
+    to = to === 'vue' ? 'vue3' : to;
+
     await compileCommand.run({
       parameters: {
         options: {
           from: 'mitosis',
-          to: options.target === 'webcomponents' ? 'webcomponent' : options.target,
+          to,
           out: outFile,
           force: true,
+          api: options.api,
           state: options.state,
           styles: options.styles
         },
@@ -135,6 +142,8 @@ async function compile(defaultOptions) {
   }
 
   async function compileCssFileForOutputSrc(outFile) {
+    const postcssConfig = (await import('../postcss.config.cjs')).default;
+
     const name = outFile.replace(/\..*/, '.css');
     const data = fs.readFileSync(name, 'utf8');
     const result = await postcss(postcssConfig.plugins).process(data, { from: name, to: name });
@@ -144,19 +153,21 @@ async function compile(defaultOptions) {
   for (const fileName of files) {
     const file = path.parse(fileName);
     const isFirstCompilation = !fs.existsSync(`${outPath}/src`) || options.isDev;
+    const name = file.name.replace('.lite', '');
+    const namePascal = pascalName(name);
 
     spinner.text = fileName;
 
     copyBasicFilesOnFirstCompilation(isFirstCompilation, fileName);
     const { outFile } = await compileMitosisComponent(fileName);
     replacePropertiesFromCompiledFiles(outFile);
-    options.customReplace({ file, outFile, outPath, isFirstCompilation });
+    options.customReplace({ name, pascalName: namePascal, file, outFile, outPath, isFirstCompilation });
     await compileCssFileForOutputSrc(outFile);
 
     spinner.stop();
   }
 }
 
-module.exports = {
+export default {
   compile
 };

@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { onInit, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { debug } from '~/helpers';
 import './itchio.css';
 import type { ItchioProps, ItchioState } from './itchio.model';
@@ -9,16 +9,17 @@ useMetadata({ isAttachedToShadowDom: true });
 export default function Itchio(props: ItchioProps) {
   const state = useStore<ItchioState>({
     loaded: false,
-    classes: { base: '' },
+    get classes() {
+      return itchioService.getClasses(props.className);
+    },
     gameInfo: null,
     onClickAction(user: string, game: string, width: number, height: number) {
       itchioService.onClickAction(user, game, width, height);
     }
   });
 
-  onMount(() => {
+  onInit(() => {
     async function getData() {
-      state.classes = itchioService.getClasses(props.className);
       const data = await itchioService.processInfo(props.user, props.game, props.secret);
 
       state.gameInfo = data;

@@ -1,7 +1,7 @@
-const { Listr } = require('listr2');
-const chokidar = require('chokidar');
-const path = require('path');
-const ora = require('ora');
+import chokidar from 'chokidar';
+import { Listr } from 'listr2';
+import ora from 'ora';
+import path from 'path';
 
 (async () => {
   const execa = (await import('execa')).command;
@@ -31,7 +31,7 @@ const ora = require('ora');
     {
       title: 'Bundle React',
       task: () =>
-        execa('yarn lerna --scope=@papanasi/react build').catch((error) => {
+        execa('yarn lerna --verbose --scope=@papanasi/react build').catch((error) => {
           throw new Error('Error bundling React ' + error);
         })
     },
@@ -51,7 +51,7 @@ const ora = require('ora');
 
           try {
             await execa('node ./compiler/platforms/react --dev');
-            await execa('yarn lerna --scope=@papanasi/react build');
+            await execa('yarn lerna --verbose --scope=@papanasi/react build');
           } catch (e) {
             spinner.text = `Error compiling ${e.message}.`;
             spinner.fail();
