@@ -27,6 +27,7 @@
     "codejar": "^3.7.0",
     "copy-to-clipboard": "^3.3.3",
     "highlight.js": "^11.7.0",
+    "ofetch": "^1.0.1",
     "ssr-window": "^4.0.2"
   },
   "peerDependencies": {

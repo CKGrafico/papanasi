@@ -25,6 +25,12 @@ module.exports = {
     cssRule.use = use.filter((x) => !x?.loader?.includes('style-loader'));
 
     config.module.rules.push({
+      test: /\.mjs$/,
+      include: /node_modules/,
+      type: 'javascript/auto'
+    });
+
+    config.module.rules.push({
       test: /code\.tsx$/,
       loader: 'string-replace-loader',
       options: {
