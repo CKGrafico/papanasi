@@ -34,6 +34,8 @@ const DEFAULT_OPTIONS = {
       .replace(/useWatch\$\(\(/g, 'useWatch$(async (')
       // Then import useTask$,
       .replace(/useMount\$,/g, 'useTask$,')
+      // Replace classname for class
+      .replace(/\.className/g, '.class')
       // TODO: Temporal meanwhile we find another why but this is stable
       .replace(/getData\(\);/g, 'await getData();')
       // Signal needs to be typed
