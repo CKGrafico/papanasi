@@ -4,11 +4,17 @@ import './toast.css';
 import { ToastPayload } from './toast.model';
 
 const themes = {};
-const actions: any = {};
+
+const actions: {
+  [key: string]: (payload: ToastPayload) => void;
+} = {};
 
 function actionFactory(name) {
   return (payload: ToastPayload) => {
-    toastBus.publish(payload);
+    toastBus.publish({
+      id: `${Math.random()}`,
+      ...payload
+    });
   };
 }
 

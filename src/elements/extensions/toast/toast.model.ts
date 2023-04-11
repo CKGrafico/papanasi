@@ -6,6 +6,7 @@ export interface ToastProps extends BaseProps {
 
 export interface ToastState extends BaseState {
   classes: { base: string };
+  toasts: ToastPayload[];
   onChangeBus: (event: ToastChannelEvent<ToastPayload>) => void;
   toastSubscription: {
     unsubscribe(): void;
@@ -13,6 +14,7 @@ export interface ToastState extends BaseState {
 }
 
 export type ToastPayload = {
+  id?: string;
   message: string;
 };
 

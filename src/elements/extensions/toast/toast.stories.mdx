@@ -21,11 +21,11 @@ export const Template = (args) => (
       return '';
     })()}
     <div>
-      <Toast>{Math.random()}</Toast>
+      <Toast />
       <span
         onClick={() => {
           // toast.success({ message: 'example' })
-          window.toast.success({ message: 'example' });
+          window.toast.success({ message: 'example' + Math.random() });
         }}
       >
         Click me
