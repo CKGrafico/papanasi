@@ -28,6 +28,7 @@ const DEFAULT_OPTIONS = {
         .replace(/\{/g, '')
         .replace(/interface/g, '')
         .replace(/(extends)/g, ' $1')
+        .replace(/\r/g, ' ')
         .trim();
 
       if (interfaceName.includes('Props')) {
