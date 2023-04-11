@@ -16,10 +16,6 @@ const DEFAULT_OPTIONS = {
     const interfacesWithProps = {};
     let match;
 
-    if (pascalName.includes('olumn')) {
-      console.log(pascalName);
-    }
-
     while ((match = regex1.exec(result)) !== null) {
       const [interfaceDef] = match;
       const interfaceName = interfaceDef
@@ -28,7 +24,7 @@ const DEFAULT_OPTIONS = {
         .replace(/\{/g, '')
         .replace(/interface/g, '')
         .replace(/(extends)/g, ' $1')
-        .replace(/\r/g, ' ')
+        .replace(/(\r\n|\n|\r)/g, ' ')
         .trim();
 
       if (interfaceName.includes('Props')) {
