@@ -16,6 +16,10 @@ const DEFAULT_OPTIONS = {
     const interfacesWithProps = {};
     let match;
 
+    if (pascalName.includes('olumn')) {
+      console.log(pascalName);
+    }
+
     while ((match = regex1.exec(result)) !== null) {
       const [interfaceDef] = match;
       const interfaceName = interfaceDef
