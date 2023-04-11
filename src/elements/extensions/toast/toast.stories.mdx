@@ -1,7 +1,6 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
-import { useToastExtension } from '../../../../packages/react/src';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
-import { ToastContainer } from '../../../../packages/react/src';
+import { Toast, useToastExtension } from '../../../../packages/react/src';
 
 <Meta
   title="🧩Elements/Extensions/Toast"
@@ -18,12 +17,19 @@ import { ToastContainer } from '../../../../packages/react/src';
 export const Template = (args) => (
   <div className="toast-example">
     {(() => {
-      window.toast = useToastExtension(document.body.querySelector('.toast-example'));
+      window.toast = useToastExtension();
       return '';
     })()}
     <div>
-      <ToastContainer />
-      <span onClick={() => window.toast.success('test')}>Click me</span>
+      <Toast>{Math.random()}</Toast>
+      <span
+        onClick={() => {
+          // toast.success({ message: 'example' })
+          window.toast.success({ message: 'example' });
+        }}
+      >
+        Click me
+      </span>
     </div>
   </div>
 );

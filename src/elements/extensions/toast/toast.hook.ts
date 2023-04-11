@@ -1,15 +1,14 @@
-import { getDocument } from 'ssr-window';
 import { debug } from '~/helpers';
 import { toastBus } from './toast.bus';
 import './toast.css';
+import { ToastPayload } from './toast.model';
 
 const themes = {};
 const actions: any = {};
 
 function actionFactory(name) {
-  return (options: any) => {
-    console.log('action triggered');
-    toastBus.publish('ACTIONNNNNN', options);
+  return (payload: ToastPayload) => {
+    toastBus.publish(payload);
   };
 }
 
@@ -21,23 +20,16 @@ function createTheme(name: string) {
 
   debug(`ToastService createTheme: ${name}: ${JSON.stringify(theme)}`);
 
-  toastBus.register('ACTIONNNNNN', { type: Object });
+  toastBus.register();
   themes[name] = theme;
   actions[name] = actionFactory(name);
-
-  setTimeout(() => {
-    toastBus.subscribe('ACTIONNNNNN', () => console.log(11111));
-  }, 1000);
 }
 
-function triggerCustomAction(name: string, options: any) {
-  return actions[name](options);
+function triggerCustomAction(name: string, payload: ToastPayload) {
+  return actions[name](payload);
 }
 
-export default function useTooltipExtension(rootElement?: HTMLElement) {
-  const document = getDocument();
-  const element = rootElement || document.body;
-
+export default function useToastExtension() {
   createTheme('success');
   createTheme('error');
 
