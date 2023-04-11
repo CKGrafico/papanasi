@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
-import { useTooltipExtension } from '../../../../packages/react/src';
+import { useToastExtension } from '../../../../packages/react/src';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
+import { ToastContainer } from '../../../../packages/react/src';
 
 <Meta
   title="🧩Elements/Extensions/Toast"
@@ -17,13 +18,12 @@ import { Customization, Codesandbox } from '../../../../.storybook/components';
 export const Template = (args) => (
   <div className="toast-example">
     {(() => {
-      useToastExtension(document.body.querySelector('.toast-example'));
+      window.toast = useToastExtension(document.body.querySelector('.toast-example'));
       return '';
     })()}
-    <div style={{ maxHeight: '200px', overflow: 'scroll' }}>
-      <span {...args} style={{ fontSize: '3rem' }}>
-        Hover me
-      </span>
+    <div>
+      <ToastContainer />
+      <span onClick={() => window.toast.success('test')}>Click me</span>
     </div>
   </div>
 );
