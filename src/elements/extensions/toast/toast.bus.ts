@@ -19,5 +19,5 @@ export const toastBus = {
   subscribe,
   register,
   publish,
-  state
+  state: () => state
 };

@@ -1,7 +1,6 @@
 import { For, onMount, onUnMount, useMetadata, useStore } from '@builder.io/mitosis';
-import { toastBus } from './toast.bus';
 import './toast.css';
-import type { ToastChannelEvent, ToastPayload, ToastProps, ToastState } from './toast.model';
+import type { ToastProps, ToastState } from './toast.model';
 import { toastService } from './toast.service';
 
 useMetadata({ isAttachedToShadowDom: true });
@@ -11,11 +10,10 @@ export default function Toast(props: ToastProps) {
     get classes() {
       return toastService.getClasses(props.disabled, props.className || props.classList);
     },
-    onChangeBus(event: ToastChannelEvent<ToastPayload>) {
-      state.toasts = toastBus.state;
+    get toasts() {
+      return toastService.getToasts();
     },
-    toastSubscription: null,
-    toasts: []
+    toastSubscription: null
   });
 
   onMount(() => {
@@ -23,8 +21,7 @@ export default function Toast(props: ToastProps) {
       return;
     }
 
-    const subscription = toastBus.subscribe(state.onChangeBus);
-    state.toastSubscription = subscription;
+    state.toastSubscription = toastService.subscribe();
   });
 
   onUnMount(() => {
