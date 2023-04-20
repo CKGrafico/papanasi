@@ -21,6 +21,7 @@ export default function Toast(props: ToastProps) {
       return;
     }
 
+    // This approach doesnt work looks like is not reactive enough
     state.toastSubscription = toastService.subscribe();
   });
 
