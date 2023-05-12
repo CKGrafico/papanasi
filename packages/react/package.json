@@ -23,6 +23,7 @@
     }
   },
   "dependencies": {
+    "@trutoo/event-bus": "^2.2.0",
     "codejar": "^3.7.0",
     "copy-to-clipboard": "^3.3.3",
     "highlight.js": "^11.7.0",

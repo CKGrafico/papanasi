@@ -1,0 +1,133 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Customization, Codesandbox } from '../../../../.storybook/components';
+import { Toast, useToastExtension } from '../../../../packages/react/src';
+
+<Meta
+  title="🧩Elements/Extensions/Toast"
+  argTypes={{
+    title: {
+      name: 'title',
+      description: 'A sample of attribute title',
+      table: {},
+      control: 'text'
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div className="toast-example">
+    {(() => {
+      window.toast = useToastExtension();
+      return '';
+    })()}
+    <div>
+      <Toast />
+      <span
+        onClick={() => {
+          // toast.success({ message: 'example' })
+          window.toast.success({ message: 'example' + Math.random() });
+        }}
+      >
+        Click me
+      </span>
+    </div>
+  </div>
+);
+
+# Toast
+
+TODO
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Toast"
+    args={{
+      title: 'Title of my tooltip'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization showCode={false} />
+
+### Properties
+
+<ArgsTable story="Tooltip" />
+
+## How to use this extension
+
+### Angular
+
+<Codesandbox
+  extensions={['useTooltipExtension']}
+  platform="angular"
+  code={`
+    <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Preact
+
+<Codesandbox
+  extensions={['useTooltipExtension']}
+  platform="preact"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Qwik
+
+<Codesandbox
+  extensions={['useTooltipExtension']}
+  platform="qwik"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### React
+
+<Codesandbox
+  extensions={['useTooltipExtension']}
+  platform="react"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Solid
+
+<Codesandbox
+  extensions={['useTooltipExtension']}
+  platform="solid"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  extensions={['useTooltipExtension']}
+  platform="svelte"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Vue
+
+<Codesandbox
+  extensions={['useTooltipExtension']}
+  platform="vue"
+  code={`
+  <span title="Example of a tooltip">Hover me</span>`}
+/>
+
+### Web Components
+
+<Codesandbox
+  extensions={['useTooltipExtension']}
+  platform="webcomponents"
+  code={`<span title="Example of a tooltip">Hover me</span>`}
+/>
