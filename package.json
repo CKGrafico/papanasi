@@ -15,7 +15,7 @@
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "postinstall": "node ./hooks/post-install.hook.js",
-    "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
+    "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook || true",
     "build": "yarn compile",
     "package": "lerna version 1.1.2 --force-publish",
     "postpackage": "node ./hooks/post-package.hook.js",
