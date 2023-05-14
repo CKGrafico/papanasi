@@ -1,4 +1,5 @@
 import fs from 'fs';
+import glob from 'glob';
 import compiler from '../base.compiler.js';
 
 const DEFAULT_OPTIONS = {
@@ -21,6 +22,18 @@ const DEFAULT_OPTIONS = {
         .replace(/\/helpers\.svelte/g, '');
 
       fs.writeFileSync(`${outPath}/src/index.ts`, result, 'utf8');
+
+      // Add .svelte to all the indexes in src folder
+      glob.sync(`${outPath}/src/elements/**/index.ts`).map((src) => {
+        const data = fs
+          .readFileSync(src, 'utf8')
+          // add svelte to index
+          .replace(/(export { default } from)(.*)(';)/g, '$1$2.svelte$3')
+          // but remove from hooks
+          .replace(/\.hook\.svelte/g, '.hook');
+
+        fs.writeFileSync(src, data, 'utf8');
+      });
     }
 
     const data = fs.readFileSync(outFile, 'utf8');
