@@ -1,0 +1,105 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Breadcrumb } from '../../../../packages/react/src';
+import { Codesandbox } from '../../../../.storybook/components';
+
+<Meta
+  title="🧩Elements/Components/Breadcrumb"
+  component={Breadcrumb}
+  argTypes={{
+    separator: {
+      name: 'separator',
+      description: 'String used to separate items',
+      table: {},
+      control: { type: 'text' }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <Breadcrumb
+    {...args}
+    items={[
+      { label: 'Home', href: '#' },
+      { label: 'Library', href: '#' },
+      { label: 'Data' }
+    ]}
+  />
+);
+
+# Breadcrumb
+
+Breadcrumbs display the current location within a hierarchy and allow navigation.
+
+## Showcase
+
+<Canvas>
+  <Story name="Breadcrumb" args={{ separator: '/' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Properties
+
+<ArgsTable story="Breadcrumb" of={Breadcrumb} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Breadcrumb']}
+  platform="angular"
+  code={`<nav pa-breadcrumb [items]="[{ label: 'Home', href: '/' }, { label: 'Current' }]"></nav>`}
+/>
+
+### Preact
+
+<Codesandbox
+  components={['Breadcrumb']}
+  platform="preact"
+  code={`<Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Current' }]} />`}
+/>
+
+### Qwik
+
+<Codesandbox
+  components={['Breadcrumb']}
+  platform="qwik"
+  code={`<Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Current' }]} />`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Breadcrumb']}
+  platform="react"
+  code={`<Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Current' }]} />`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Breadcrumb']}
+  platform="solid"
+  code={`<Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Current' }]} />`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Breadcrumb']}
+  platform="svelte"
+  code={`<Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Current' }]} />`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Breadcrumb']}
+  platform="vue"
+  code={`<Breadcrumb :items="[{ label: 'Home', href: '/' }, { label: 'Current' }]" />`}
+/>
+
+### Web Components
+
+<Codesandbox components={['Breadcrumb']} platform="webcomponents" code={`<pa-breadcrumb items='[{ "label": "Home", "href": "/" }, { "label": "Current" }]' ></pa-breadcrumb>`} />

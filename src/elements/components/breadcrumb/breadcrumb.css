@@ -1,0 +1,25 @@
+@import '~/styles/build.css';
+
+.pa-breadcrumb {
+  display: block;
+}
+
+.pa-breadcrumb__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.pa-breadcrumb__item {
+  display: flex;
+  align-items: center;
+}
+
+.pa-breadcrumb__link {
+  text-decoration: none;
+}
+
+.pa-breadcrumb__separator {
+  margin: 0 0.5rem;
+}
