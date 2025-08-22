@@ -4,6 +4,7 @@ export { setDebugLevel, DebugLevel, addCodeLanguage, getPlatform, getVersion } f
 
 // Init Components
 export { default as Avatar } from './elements/components/avatar';
+export { default as Breadcrumb } from './elements/components/breadcrumb';
 export { default as Button } from './elements/components/button';
 export { default as Code } from './elements/components/code';
 export { default as Pill } from './elements/components/pill';
