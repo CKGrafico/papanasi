@@ -1,14 +1,9 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const fs = require('fs');
-const path = require('path');
-
-const themeDir = path.resolve(__dirname, '../.themes');
-const staticDirs = fs.existsSync(themeDir) ? ['../.themes'] : [];
 
 module.exports = {
   stories: ['../docs/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  staticDirs,
+  staticDirs: ['../.themes'],
   core: {
     builder: 'webpack4'
   },
