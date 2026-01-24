@@ -1,11 +1,11 @@
 export type Children =
+  | JSX.Element
   | string
   | number
   | boolean
   | null
   | undefined
-  | Children[]
-  | { [key: string]: unknown };
+  | Iterable<Children>;
 
 export type CSS = Partial<CSSStyleDeclaration> & {
   [key: string]: Partial<CSSStyleDeclaration> | string;
