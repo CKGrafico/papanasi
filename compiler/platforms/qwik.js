@@ -1,5 +1,6 @@
 import fs from 'fs';
 import compiler from '../base.compiler.js';
+import { replaceClassName } from '../transforms/replacements.js';
 
 const DEFAULT_OPTIONS = {
   target: 'qwik',
@@ -16,7 +17,7 @@ const DEFAULT_OPTIONS = {
     const pascalName = name.charAt(0).toUpperCase() + name.slice(1);
 
     const data = fs.readFileSync(outFile, 'utf8');
-    const result = data
+    const result = replaceClassName(data)
       // Import types
       .replace(/import/, `import type { ${pascalName}Props } from './${name}.model';\nimport './${name}.css';\nimport`)
       // fix props on qwik
@@ -34,8 +35,6 @@ const DEFAULT_OPTIONS = {
       .replace(/useWatch\$\(\(/g, 'useWatch$(async (')
       // Then import useTask$,
       .replace(/useMount\$,/g, 'useTask$,')
-      // Replace classname for class
-      .replace(/\.className/g, '.class')
       // Signal needs to be typed
       .replace(/useSignal\(\)/g, 'useSignal<any>()')
       .replace(/state.codeService = service;/g, 'state.codeService = noSerialize(service);')

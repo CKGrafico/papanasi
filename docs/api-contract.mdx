@@ -1,0 +1,48 @@
+﻿import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/API Contract" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+
+# API contract (2.0)
+
+This document defines the stable component API surface across platforms.
+
+## Naming conventions
+
+- Use kebab-case for CSS classes, PascalCase for component names, camelCase for props.
+- Prefer descriptive props over abbreviations.
+
+## Core props
+
+- `variant`: visual style, mapped to theme tokens.
+- `size`: component sizing scale.
+- `intent`: semantic intent (info, success, warning, error).
+- `disabled`: consistent disabled behavior and styling.
+- `loading`: consistent loading behavior and a11y cues.
+
+Example:
+
+```tsx
+<Button variant="primary" size="m" intent="success" disabled={false} />
+```
+
+## Slots and content
+
+- Named slots are preferred over ad-hoc string props.
+- Default slot is used for primary content.
+- Slot naming should be stable across frameworks.
+
+## Events
+
+- Event props use the `onX` naming (e.g. `onClick`, `onChange`).
+- Events must pass a stable payload shape.
+
+## Accessibility
+
+- All interactive components must expose `aria-*` props.
+- Default roles and ARIA attributes are set in the component.
+- Focus management should be explicit for overlays and menus.
+
+## Versioning
+
+- Breaking changes require a major bump and a migration note.
+- Deprecated props remain for one major version.

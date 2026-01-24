@@ -1,4 +1,4 @@
-# Backlog - Papanasi 2.0
+﻿# Backlog - Papanasi 2.0
 
 This backlog captures what is outdated today and what should be done differently for a sustainable revival.
 
@@ -27,23 +27,23 @@ This backlog captures what is outdated today and what should be done differently
 
 ### P0 (Foundational)
 
-- **BL-001** Upgrade Storybook to current major version and remove `openssl-legacy-provider` dependency.
-- **BL-002** Refresh docs structure and encoding; remove archived disclaimers; rebuild landing docs.
-- **BL-003** Define the 2.0 component API contract (props naming, variants, sizes, slots, states, a11y).
-- **BL-004** Establish a token system and theme contract; align existing themes to it.
-- **BL-005** Decide platform support tiers and update build pipeline accordingly.
-- **BL-006** Update MDX docs to use supported Storybook doc blocks (`ArgTypes`/`Controls`) and remove legacy patterns.
-- **BL-007** Align Storybook story globs with MDX-only docs to avoid missing-story warnings.
+- [x] **BL-001** Upgrade Storybook to current major version and remove `openssl-legacy-provider` dependency.
+- [x] **BL-002** Refresh docs structure and encoding; remove archived disclaimers; rebuild landing docs.
+- [x] **BL-003** Define the 2.0 component API contract (props naming, variants, sizes, slots, states, a11y).
+- [x] **BL-004** Establish a token system and theme contract; align existing themes to it.
+- [x] **BL-005** Decide platform support tiers and update build pipeline accordingly.
+- [x] **BL-006** Update MDX docs to use supported Storybook doc blocks (`ArgTypes`/`Controls`) and remove legacy patterns.
+- [x] **BL-007** Align Storybook story globs with MDX-only docs to avoid missing-story warnings.
 
 ### P1 (Compiler and Build)
 
-- **BL-010** Review Mitosis output patches per platform and replace TODO hacks with stable transforms.
-- **BL-011** Update monorepo tooling strategy (Lerna modernization or alternative).
-- **BL-012** Improve type safety in shared helpers and base models (remove `any`, improve generics).
-- **BL-013** Normalize component exports and fix `--elements` compile breakage in `src/index.ts`.
-- **BL-014** Refresh Browserslist data during builds to remove stale caniuse warnings.
-- **BL-015** Audit PostCSS plugin stack to remove deprecated APIs or pin compatible versions.
-- **BL-016** Reduce Storybook bundle size (docs split, addon review, or build optimization).
+- [x] **BL-010** Review Mitosis output patches per platform and replace TODO hacks with stable transforms.
+- [x] **BL-011** Update monorepo tooling strategy (Lerna modernization or alternative).
+- [x] **BL-012** Improve type safety in shared helpers and base models (remove `any`, improve generics).
+- [x] **BL-013** Normalize component exports and fix `--elements` compile breakage in `src/index.ts`.
+- [x] **BL-014** Refresh Browserslist data during builds to remove stale caniuse warnings.
+- [x] **BL-015** Audit PostCSS plugin stack to remove deprecated APIs or pin compatible versions.
+- [x] **BL-016** Reduce Storybook bundle size (docs split, addon review, or build optimization).
 
 ### P2 (Components and UX)
 
@@ -63,3 +63,4 @@ This backlog captures what is outdated today and what should be done differently
 - **BL-040** Add lint/type/test pipelines per platform.
 - **BL-041** Add visual regression testing and a11y checks for core components.
 - **BL-042** Add release automation and semantic versioning workflow.
+

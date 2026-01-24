@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     require('postcss-import'),
+    require('postcss-mixins'),
     require('postcss-at-rules-variables')({
       atRules: ['each', 'mixin', 'custom-media'],
       variables: {
@@ -10,10 +11,9 @@ module.exports = {
         ['--internal-flex-directions']: ['row', 'column', 'row-reverse', 'column-reverse'].join(', ')
       }
     }),
-    require('postcss-calc')({ preserve: false }),
     require('postcss-each'),
     require('postcss-nested'),
-    require('postcss-mixins'),
+    require('postcss-calc')({ preserve: false }),
     require('autoprefixer'),
     require('postcss-discard-comments')
   ],

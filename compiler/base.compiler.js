@@ -78,17 +78,31 @@ async function compile(defaultOptions) {
     fs.writeFileSync(`${outPath}/README.md`, result, 'utf8');
 
     let fileExports = '$2';
+    let extensionExports = '$2';
 
     // Export only the elements we want
     if (cliConfig.elements) {
-      fileExports = options.elements
-        .map((fileName) => {
-          const file = path.parse(fileName);
-          const name = file.name.replace('.lite', '');
-          return `export { default as ${pascalName(name)} } from './${file.dir
+      const exportLines = options.elements.map((fileName) => {
+        const file = path.parse(fileName);
+        const name = file.name.replace('.lite', '');
+        return {
+          name,
+          line: `export { default as ${pascalName(name)} } from './${file.dir
             .replace(/\\/g, '/')
-            .replace('src/', '')}';`;
-        })
+            .replace('src/', '')}';`
+        };
+      });
+
+      fileExports = exportLines.map((entry) => entry.line).join('\n');
+
+      const extensionExportMap = {
+        toast: "export { default as useToastExtension } from './elements/extensions/toast';"
+      };
+
+      const selectedNames = new Set(exportLines.map((entry) => entry.name));
+      extensionExports = Object.entries(extensionExportMap)
+        .filter(([name]) => selectedNames.has(name))
+        .map(([, line]) => line)
         .join('\n');
     }
 
@@ -96,6 +110,8 @@ async function compile(defaultOptions) {
     const indexResult = indexData
       // Export only needed components
       .replace(/(\/\/ Init Components)(.+?)(\/\/ End Components)/s, `$1\n${fileExports}\n$3`)
+      // Export only needed extensions
+      .replace(/(\/\/ Init Extensions)(.+?)(\/\/ End Extensions)/s, `$1\n${extensionExports}\n$3`)
       // Set the current platform
       .replace(/Platform.Default/g, `Platform.${pascalName(options.target)}`);
 

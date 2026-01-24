@@ -1,10 +1,12 @@
-import { Meta } from '@storybook/addon-docs';
+﻿import { Meta } from '@storybook/blocks';
 import { Code } from '../packages/react/src';
 import { Customization } from '../.storybook/components';
 
-<Meta title="📗Documentation/Customization" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+<Meta title="Documentation/Customization" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
 
 # Customization
+
+For the full token contract and theme rules, see the Tokens and themes guide.
 
 When you load a **papanasi** component and you've previously loaded the corresponding `papanasi.css` file, a basic style library will be added to the component.
 To easy customize the different components that this library brings, we have provided two different methods, using **BEM Classes** and **CSS Custom Properties**.
@@ -132,3 +134,4 @@ We have also defined some **intents** to be used in some components:
 There are some other custom properties that you can easily modify, please check the [complete list in the repository](https://github.com/CKGrafico/papanasi/blob/main/styles/variables.css).
 
 <Customization hidden={true} />
+

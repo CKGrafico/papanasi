@@ -1,4 +1,7 @@
 :root {
+  /* Theme */
+  --pa-theme-name: papanasi;
+
   /* Color Primary */
   --pa-color-primary-brightest: #b9daff;
   --pa-color-primary-brighter: #a4cfff;

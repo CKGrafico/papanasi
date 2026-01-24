@@ -1,6 +1,7 @@
 import fs from 'fs';
 import htmlTags from 'html-tags';
 import compiler from '../base.compiler.js';
+import { replaceClassName } from '../transforms/replacements.js';
 
 const DEFAULT_OPTIONS = {
   target: 'angular',
@@ -14,7 +15,7 @@ const DEFAULT_OPTIONS = {
     const { file, outFile } = props;
 
     const data = fs.readFileSync(outFile, 'utf8');
-    const result = data
+    const result = replaceClassName(data)
       // Add selector to be a directive because in angular you cannot use existing tags
       .replace(
         /selector: ?["|'](.+), (.*)["|']/,
@@ -24,9 +25,6 @@ const DEFAULT_OPTIONS = {
       )
       // Enable as default
       .replace(/export class/, 'export default class')
-      // Replace classname for class
-      .replace(/\.className/g, '.class')
-      .replace(/className(\:|\")/g, 'class$1')
       // Enable children
       .replace(/(,\n)?(\} from \"\@angular\/core\"\;)/, ', ContentChildren, QueryList $2')
       .replace(

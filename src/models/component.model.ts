@@ -1,4 +1,11 @@
-export type Children = any;
+export type Children =
+  | string
+  | number
+  | boolean
+  | null
+  | undefined
+  | Children[]
+  | { [key: string]: unknown };
 
 export type CSS = Partial<CSSStyleDeclaration> & {
   [key: string]: Partial<CSSStyleDeclaration> | string;

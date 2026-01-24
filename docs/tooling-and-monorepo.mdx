@@ -1,0 +1,26 @@
+﻿import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/Tooling and Monorepo" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+
+# Tooling and monorepo
+
+The repo uses Yarn v1 workspaces with Lerna for package orchestration.
+
+## Tooling overview
+
+- Yarn v1 for dependency management and scripts.
+- Lerna v6 with `useWorkspaces` enabled for package builds.
+- Rollup for package bundling.
+
+## Common commands
+
+```bash
+yarn install
+yarn compile
+yarn build-storybook
+```
+
+## Publishing flow
+
+- `yarn package` to version packages.
+- `yarn release` to publish.

@@ -1,0 +1,40 @@
+﻿import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/Tokens and Themes" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+
+# Tokens and themes
+
+Papanasi uses CSS custom properties as design tokens. Tokens are defined in the base file and overridden by themes.
+
+## Token layers
+
+1. **Base tokens**: `src/styles/variables.css`
+2. **Theme tokens**: `src/styles/themes/*/variables.css`
+3. **Compiled themes**: `.themes/*.css`
+
+## Required theme contract
+
+Every theme must define these tokens:
+
+- `--pa-theme-name`
+- `--pa-color-primary-*`, `--pa-color-secondary-*`, `--pa-color-tertiary-*`
+- `--pa-font-family`
+- `--pa-shadow-normal`
+
+Example:
+
+```css
+:root {
+  --pa-theme-name: papanasi;
+  --pa-color-primary-normal: #017aff;
+  --pa-font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --pa-shadow-normal: var(--pa-color-basic-bright) 0 1px 3px 0;
+}
+```
+
+## Adding a new theme
+
+1. Create a theme folder under `src/styles/themes/<name>`.
+2. Add a `variables.css` that defines the required tokens.
+3. Add component overrides as needed.
+4. Run `yarn themes` to compile the theme into `.themes/<name>.css`.

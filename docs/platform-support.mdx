@@ -1,0 +1,37 @@
+﻿import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/Platform Support" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+
+# Platform support tiers
+
+Papanasi targets multiple frameworks. To keep builds sustainable, platforms are grouped into tiers.
+
+## Core platforms
+
+- React
+- Vue
+- Svelte
+- Web Components
+
+These are compiled by default with `yarn compile`.
+
+## Extended platforms
+
+- Angular
+- Preact
+- Qwik
+- Solid
+
+Build them with:
+
+```bash
+yarn compile --tier extended
+```
+
+## Custom platform list
+
+You can build a subset by specifying platforms directly:
+
+```bash
+yarn compile --platforms react vue
+```

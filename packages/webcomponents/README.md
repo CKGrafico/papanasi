@@ -1,11 +1,11 @@
-<h1 align="center">
+﻿<h1 align="center">
   <a href="#"><img src="https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-text.svg"  width="400" alt="Papanasi"></a>
   <p align="center">The Universal UI Library</p>
 </h1>
 
-### 🔍 Overview
+## Overview
 
-🥯Papanasi _(pronunced pɑpənæʃ or papanash)_ is a **UI library to use cross Frameworks**. A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. Is based on the [Mitosis](https://github.com/BuilderIO/mitosis) library and documented using [Storybook](https://storybook.js.org/).
+Papanasi is a UI library to use cross-frameworks. A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue, and Web Components. It is based on the Mitosis library and documented using Storybook.
 
 <p align="center">
   <a href="https://www.npmjs.com/search?q=%40papanasi"><img src="https://img.shields.io/npm/v/@papanasi/react?color=cb0303&logo=npm&label=version" alt="Package version" /></a>
@@ -14,7 +14,7 @@
   <a href="https://github.com/sponsors/CKGrafico"><img src="https://img.shields.io/badge/Support-project?logo=ko-fi&color=ea4aaa&logoColor=white" alt="Sponsor" /></a>
 </p>
 
-### 🚀 Platforms 
+## Platforms
 
 <table align="center">
   <tr>
@@ -87,7 +87,12 @@
   </tr>
 </table>
 
-### 🔮 Demos 
+## Platform tiers
+
+- Core: React, Vue, Svelte, Web Components.
+- Extended: Angular, Preact, Qwik, Solid.
+
+## Demos
 
 <table align="center">
   <tr>
@@ -130,7 +135,7 @@
 </table>
 
 
-### 📣 Manifesto
+## Manifesto
 
 This library born as a pet project to create universal components, easy to extend in any project and easy to use with any framework, is based on the next principles:
 
@@ -145,7 +150,7 @@ This library born as a pet project to create universal components, easy to exten
 * ...should be inspired by other UI Libraries and **don't reinvent the wheel**.
 * ...should be easy to create new **variants**.
 
-### 🧩 Elements Showcase
+## Elements Showcase
 
 <table align="center">
   <tr>
@@ -165,7 +170,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-layout-container--container" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-layout-container--container" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
       <img src="https://tabler-icons.io/static/tabler-icons/icons/layout-rows.svg" width="55" title="Row"> <br/>
@@ -178,7 +183,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-layout-row--row" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-layout-row--row" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
       <img src="https://tabler-icons.io/static/tabler-icons/icons/layout-columns.svg" width="55" title="Column"> <br/>
@@ -191,7 +196,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-layout-column--column" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-layout-column--column" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
       <img src="https://tabler-icons.io/static/tabler-icons/icons/layout-board-split.svg" width="55" title="Grid"> <br/>
@@ -204,7 +209,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-layout-grid--grid" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-layout-grid--grid" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
   <tr>
@@ -224,7 +229,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-components-avatar--avatar" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-components-avatar--avatar" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
       <img src="https://tabler-icons.io/static/tabler-icons/icons/rectangle.svg" width="55" title="Button"> <br/>
@@ -237,7 +242,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-components-button--button" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-components-button--button" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
       <img src="https://tabler-icons.io/static/tabler-icons/icons/code-circle.svg" width="55" title="Code"> <br/>
@@ -250,7 +255,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=red&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=green&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-components-code--code" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-components-code--code" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
     <td align="center">
       <img src="https://tabler-icons.io/static/tabler-icons/icons/pill.svg" width="55" title="Pill"> <br/>
@@ -263,7 +268,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-components-pill--pill" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-components-pill--pill" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
   <tr>
@@ -278,7 +283,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-components-spinner--spinner" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-components-spinner--spinner" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
   <tr>
@@ -298,7 +303,7 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-enterprise-itchio--itchio" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-enterprise-itchio--itchio" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
   <tr>
@@ -318,12 +323,12 @@ This library born as a pet project to create universal components, easy to exten
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=svelte" alt="Svelte status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=success&logo=vuedotjs" alt="Vue status" />
       <img src="https://img.shields.io/static/v1?message=%20&labelColor=5c5c5c&logoColor=white&label=%20&color=yellow&logo=w3c" alt="W3c status" /><br/>
-      <a href="https://papanasi.js.org/?path=/docs/🧩elements-extensions-tooltip--tooltip" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
+      <a href="https://papanasi.js.org/?path=/docs/elements-extensions-tooltip--tooltip" target="_blank"><img src="https://img.shields.io/badge/Preview%20Element-FF4785?logoColor=white&logo=storybook" alt="Preview" /></a>
     </td>
   </tr>
 </table>
 
-### 📚 Setup and scripts
+## Setup and scripts
 With **npm**:
 
 ```
@@ -335,7 +340,7 @@ With **yarn**:
 $ yarn add @papanasi/webcomponents
 ```
 
-### 🪲 Debugger
+## Debugger
 To debug elements you can use `setDebugLevel` function from `@papanasi/webcomponents
 
 ```js	
@@ -344,15 +349,20 @@ window.addEventListener('load', () => {
 });
 ```
 
-### 📗 Documentation
+## Documentation
 
 To learn more about Papanasi, check [the documentation](http://papanasi.js.org/).
 
-### 📃 License
+- API contract: http://papanasi.js.org/?path=/docs/documentation-api-contract
+- Tokens and themes: http://papanasi.js.org/?path=/docs/documentation-tokens-and-themes
+- Platform support: http://papanasi.js.org/?path=/docs/documentation-platform-support
+- Tooling and monorepo: http://papanasi.js.org/?path=/docs/documentation-tooling-and-monorepo
+
+## License
 
 [MIT](http://opensource.org/licenses/MIT)
 
-### 🚀 Contributing
+## Contributing
 
 [Contributing Guidelines](https://github.com/CKGrafico/papanasi/blob/main/CONTRIBUTING.md)
 
@@ -368,6 +378,12 @@ You can choose which frameworks to build by passing the `--platforms`:
 > yarn compile --platforms react vue
 ```
 
+You can build a tier of platforms:
+
+```
+> yarn compile --tier extended
+```
+
 It is also possible to specify which components to build `--elements`:
 
 ```
@@ -378,6 +394,12 @@ If you want to disable the linting use `--no-lint`:
 
 ```
 > yarn compile --no-lint
+```
+
+If you want to refresh Browserslist data:
+
+```
+> yarn compile --update-browserslist
 ```
 
 To contribute and watch the changes in local environment just use:
@@ -392,7 +414,7 @@ Finally, to launch storybook use:
 > yarn start
 ```
 
-### Our Sponsors
+## Our Sponsors
 
 <table>
 <tr>
@@ -401,7 +423,11 @@ Finally, to launch storybook use:
 </tr>
 </table>
 
-### Thanks to everyone who contributed:
+## Thanks to everyone who contributed:
 [![Contributors](https://contrib.rocks/image?repo=ckgrafico/papanasi)](https://github.com/CKGrafico/papanasi/graphs/contributors)
 
 And special thanks to [@samijaber](https://github.com/samijaber) [@mhevery](https://github.com/mhevery)  and [Builder project](https://github.com/BuilderIO/builder/tree/main/packages/sdks)
+
+
+
+

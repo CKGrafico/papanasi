@@ -1,17 +1,23 @@
 import commandLineArgs from 'command-line-args';
 import { Listr } from 'listr2';
 
+const PLATFORM_TIERS = {
+  core: ['react', 'vue', 'svelte', 'webcomponents'],
+  extended: ['angular', 'preact', 'qwik', 'solid']
+};
+
 const optionDefinitions = [
   { name: 'elements', alias: 'e', type: String, multiple: true },
   {
     name: 'platforms',
     alias: 'p',
     type: String,
-    multiple: true,
-    defaultValue: ['angular', 'preact', 'qwik', 'react', 'solid', 'svelte', 'vue', 'webcomponents']
+    multiple: true
   },
+  { name: 'tier', type: String, defaultValue: 'core' },
   { name: 'lint', type: Boolean, defaultValue: true },
-  { name: 'no-lint', type: Boolean }
+  { name: 'no-lint', type: Boolean },
+  { name: 'update-browserslist', type: Boolean }
 ];
 
 (async () => {
@@ -19,6 +25,9 @@ const optionDefinitions = [
 
   const cliConfig = commandLineArgs(optionDefinitions);
   cliConfig.lint = cliConfig.lint && !cliConfig['no-lint'];
+
+  const tierPlatforms = PLATFORM_TIERS[cliConfig.tier] || PLATFORM_TIERS.core;
+  cliConfig.platforms = cliConfig.platforms?.length ? cliConfig.platforms : [...tierPlatforms];
 
   const tasks = new Listr([
     {
@@ -57,6 +66,14 @@ const optionDefinitions = [
                   { concurrent: true }
                 );
               }
+            },
+            {
+              title: 'Refresh Browserslist data',
+              enabled: () => cliConfig['update-browserslist'],
+              task: () =>
+                execa('yarn browserslist:update').catch(() => {
+                  throw new Error('Cannot refresh Browserslist data');
+                })
             }
           ],
           { concurrent: true }

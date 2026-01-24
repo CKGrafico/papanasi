@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import glob from 'glob';
 import compiler from '../base.compiler.js';
+import { replaceClassName } from '../transforms/replacements.js';
 
 const DEFAULT_OPTIONS = {
   target: 'vue',
@@ -154,7 +155,7 @@ const DEFAULT_OPTIONS = {
     }
     ////////////////////
 
-    result = result
+    result = replaceClassName(result)
       // Inject needed types to this file as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
       .replace(/(<script setup)/g, `<script lang="ts">${allTheNeededTypes}</script>\n$1`)
       // Type defineProps and Inject types as cannot be imported in vue https://vuejs.org/guide/typescript/composition-api.html
@@ -163,8 +164,6 @@ const DEFAULT_OPTIONS = {
       .replace(/this\.children/, 'this.$slots.default()')
       // Add ? to .value variables
       // .replace(/\.value/g, '?.value')
-      // Replace classname for class
-      .replace(/\.className/g, '.class')
       //Fix using value in computed properties and classes
       // .replace(/classes\.(?!value)(.*`)/g, 'classes.value.$1')
       // remove ? from left hand assigments

@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 :root {
+  /* Theme */
+  --pa-theme-name: sketch;
+
   /* Border */
   --pa-border-radius-small: 255px 15px 225px 15px/15px 225px 15px 255px;
   --pa-border-width-small: 2px;
