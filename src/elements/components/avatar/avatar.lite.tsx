@@ -20,11 +20,9 @@ export default function Avatar(props: AvatarProps) {
   });
 
   onInit(() => {
-    async function getData() {
-      state.styles = await avatarService.getStyles(props.name, props.variant);
-    }
-
-    getData();
+    avatarService.getStyles(props.name, props.variant).then((nextStyles) => {
+      state.styles = nextStyles;
+    });
   });
 
   return (

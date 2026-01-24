@@ -38,10 +38,9 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "yarn install",
     "build": "rollup -c",
     "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat && rimraf --glob ./dist/*.d.ts && npm run typings",
-    "typings": "tsc --declaration --emitDeclarationOnly --project . --outFile ./dist/index.d.ts && replace '\"index\"' '@papanasi/react' ./dist/index.d.ts --silent"
+    "typings": "tsc --declaration --emitDeclarationOnly --project ./tsconfig.typings.json --outFile ./dist/index.d.ts && replace '\"index\"' '@papanasi/react' ./dist/index.d.ts --silent"
   },
   "publishConfig": {
     "access": "public"

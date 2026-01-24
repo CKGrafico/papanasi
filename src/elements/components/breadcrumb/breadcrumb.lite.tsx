@@ -10,7 +10,7 @@ export default function Breadcrumb(props: BreadcrumbProps) {
     get classes() {
       return breadcrumbService.getClasses(props.className || props.classList);
     },
-    get separator() {
+    get separatorText() {
       return props.separator || '/';
     }
   });
@@ -30,7 +30,7 @@ export default function Breadcrumb(props: BreadcrumbProps) {
                 <span class="pa-breadcrumb__link">{item.label}</span>
               </Show>
               <Show when={index !== props.items.length - 1}>
-                <span class="pa-breadcrumb__separator">{state.separator}</span>
+                <span class="pa-breadcrumb__separator">{state.separatorText}</span>
               </Show>
             </li>
           )}

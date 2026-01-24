@@ -172,9 +172,7 @@ const DEFAULT_OPTIONS = {
       // Replace vue html .values for refs
       .replace(/\.value \}\}/g, '}}')
       // Enable Typescript
-      .replace(/script setup/g, 'script setup lang="ts"')
-      // TODO: Temporal meanwhile we find another why but this is stable
-      .replace(/getData\(\);/g, 'getData.bind(this)();');
+      .replace(/script setup/g, 'script setup lang="ts"');
 
     result = mergeAllPropsInterfaceIntoNewInterface(result, pascalName);
 

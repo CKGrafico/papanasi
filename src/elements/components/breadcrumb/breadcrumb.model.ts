@@ -12,5 +12,5 @@ export interface BreadcrumbProps extends BaseProps {
 
 export interface BreadcrumbState extends BaseState {
   classes: { base: string };
-  separator: string;
+  separatorText: string;
 }

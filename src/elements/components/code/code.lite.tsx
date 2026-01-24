@@ -25,16 +25,13 @@ export default function Code(props: CodeProps) {
       return;
     }
 
-    async function getData() {
-      const service = new CodeService();
+    const service = new CodeService();
 
-      await service.initialize(codeRef, props.language, props.theme || 'github');
+    service.initialize(codeRef, props.language, props.theme || 'github').then(() => {
       state.classes = service.getClasses(props.language, props.className || props.classList);
       state.codeService = service;
       state.loaded = true;
-    }
-
-    getData();
+    });
   }, [codeRef]);
 
   onUpdate(() => {
@@ -86,7 +83,7 @@ export default function Code(props: CodeProps) {
             )}
           </For>
 
-          <Show when={!props.disableCopy && props.slotCopy}>
+          <Show when={!props.disableCopy && Boolean(props.slotCopy)}>
             <span class="pa-code__action pa-code__action--copy" onClick={() => state.codeService.copy(props.code)}>
               <span class="pa-code__link">{props.slotCopy}</span>
             </span>

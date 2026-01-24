@@ -10,10 +10,19 @@ module.exports = {
     options: {}
   },
   addons: [
-    '@storybook/addon-links',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false,
+        backgrounds: false,
+        viewport: false,
+        measure: false,
+        outline: false,
+        toolbars: false,
+        docs: false
+      }
+    },
     '@storybook/addon-docs',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
     '@storybook/addon-postcss'
   ],
   typescript: {

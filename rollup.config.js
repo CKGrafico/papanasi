@@ -30,7 +30,7 @@ export default async (options) => {
     babelPresets = [],
     babelPlugins = [],
     disableCoreCompilation = false,
-    cancelBrowserListForTypescript = false
+    cancelBrowserListForTypescript = true
   } = options;
 
   const __dirname = dirname(fileURLToPath(import.meta.url));

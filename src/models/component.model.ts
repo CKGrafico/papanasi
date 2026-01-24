@@ -1,4 +1,4 @@
-export type Children = any; // TODO
+export type Children = any;
 
 export type CSS = Partial<CSSStyleDeclaration> & {
   [key: string]: Partial<CSSStyleDeclaration> | string;

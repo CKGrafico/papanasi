@@ -19,17 +19,13 @@ export default function Itchio(props: ItchioProps) {
   });
 
   onInit(() => {
-    async function getData() {
-      const data = await itchioService.processInfo(props.user, props.game, props.secret);
-
+    itchioService.processInfo(props.user, props.game, props.secret).then((data) => {
       state.gameInfo = data;
       state.loaded = true;
 
       debug('ItchioService callback processed info');
       props.onLoad && props.onLoad(data);
-    }
-
-    getData();
+    });
   });
 
   return (
