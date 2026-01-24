@@ -1,6 +1,11 @@
 import postcss from 'rollup-plugin-postcss';
-
 import commandLineArgs from 'command-line-args';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const optionDefinitions = [
   { name: 'config', alias: 'c', type: String },

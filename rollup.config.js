@@ -11,7 +11,10 @@ import * as tsModule from 'typescript';
 //import { visualizer } from 'rollup-plugin-visualizer';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import tsconfig from './tsconfig.json' assert { type: 'json' };
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const tsconfig = require('./tsconfig.json');
 
 const ts = tsModule.default;
 

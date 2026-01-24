@@ -1,5 +1,8 @@
 import config from '../../rollup.config.js';
-import packageJson from './package.json' assert { type: 'json' };
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const packageJson = require('./package.json');
 
 export default config({
   dir: './packages/react',

@@ -1,6 +1,9 @@
 import fs from 'fs-extra';
 import glob from 'glob';
-import lernaJson from '../lerna.json' assert { type: 'json' };
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const lernaJson = require('../lerna.json');
 const version = lernaJson.version;
 const filesToReplace = glob.sync(`./packages/**/{,!node_modules)/**/}*.{js,ts,map,cjs,mjs}`);
 

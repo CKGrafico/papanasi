@@ -1,6 +1,9 @@
 import withSolid from 'rollup-preset-solid';
 import config from '../../rollup.config.js';
-import packageJson from './package.json' assert { type: 'json' };
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const packageJson = require('./package.json');
 
 export default withSolid(
   await config({

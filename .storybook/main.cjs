@@ -1,20 +1,24 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  stories: ['../docs/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  staticDirs: ['../.themes'],
-  core: {
-    builder: 'webpack4'
+  stories: ['../docs/**/*.mdx', '../src/**/*.mdx'],
+  staticDirs: ['../.themes', { from: '../docs/resources', to: '/' }],
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {}
   },
   addons: [
     '@storybook/addon-links',
+    '@storybook/addon-docs',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-postcss',
-    '@a110/storybook-expand-all'
+    '@storybook/addon-postcss'
   ],
-  framework: '@storybook/react',
+  typescript: {
+    reactDocgen: false
+  },
   webpackFinal: async (config, options) => {
     // Extract css files
     const cssRule = config.module.rules.find((x) => x.test.toString().includes('css'));
@@ -37,6 +41,21 @@ module.exports = {
         // There is an error on storybook prism implementation and we cannot use <code html tag on the showcase
         search: '<code',
         replace: '<div '
+      }
+    });
+
+    config.module.rules.push({
+      test: /\.[jt]sx?$/,
+      include: [path.resolve(__dirname), path.resolve(__dirname, '../src'), path.resolve(__dirname, '../packages')],
+      use: {
+        loader: require.resolve('babel-loader'),
+        options: {
+          presets: [
+            [require.resolve('@babel/preset-env'), { targets: 'defaults' }],
+            require.resolve('@babel/preset-react'),
+            require.resolve('@babel/preset-typescript')
+          ]
+        }
       }
     });
 
