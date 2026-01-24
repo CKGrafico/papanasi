@@ -19,8 +19,6 @@ export default function Code(props: CodeProps) {
 
   onUpdate(() => {
     // Needed for qwik bug
-    const code = codeRef;
-
     if (!codeRef) {
       return;
     }
