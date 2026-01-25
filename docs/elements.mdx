@@ -1,8 +1,8 @@
-﻿import { Meta, Canvas } from '@storybook/blocks';
-import { Container, Row, Column, Button, Avatar, Itchio, useTooltipExtension } from '../packages/react/src';
+﻿import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as Stories from './elements.stories';
 import { Customization } from '../.storybook/components';
 
-<Meta title="Documentation/Elements" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+<Meta of={Stories} />
 
 # Typology of Elements
 
@@ -16,25 +16,7 @@ What makes these from Papanasi different is that they are **fully customizable**
 
 Some examples are `Container`, `Row` and `Column`.
 
-<Canvas>
-  <Container>
-    <Row>
-      <Column>Row 1 - Column 1 of 3</Column>
-      <Column>Row 1 - Column 2 of 3</Column>
-      <Column>Row 1 - Column 3 of 3</Column>
-    </Row>
-    <Row>
-      <Column>Row 2 - Column 1 of 3</Column>
-      <Column>Row 2 - Column 2 of 3</Column>
-      <Column>Row 2 - Column 3 of 3</Column>
-    </Row>
-    <Row>
-      <Column>Row 3 - Column 1 of 3</Column>
-      <Column>Row 3 - Column 2 of 3</Column>
-      <Column>Row 3 - Column 3 of 3</Column>
-    </Row>
-  </Container>
-</Canvas>
+<Canvas of={Stories.LayoutExample} />
 
 ## Components
 
@@ -42,13 +24,7 @@ Are the core of **Papanasi**, all the components should follow the [manifesto](h
 
 Most popular components are `Button` or `Avatar`:
 
-<Canvas>
-  <Button variant="primary">Primary</Button>
-  <Button variant="tertiary" outline>
-    Tertiary
-  </Button>
-  <Avatar name="Alis Mug" />
-</Canvas>
+<Canvas of={Stories.ComponentsExample} />
 
 ## Enterprise
 
@@ -56,11 +32,7 @@ Those elements are the ones that are **specific for a company or library**, and 
 
 The first enterprise component was `Itchio`:
 
-<Canvas>
-  <Itchio user="ckgrafico" game="alice-ring" width={800} height={600}>
-    <span>Click me</span>
-  </Itchio>
-</Canvas>
+<Canvas of={Stories.EnterpriseExample} />
 
 ## Extensions
 
@@ -68,17 +40,7 @@ Papanasi extensions are **plugins** that can be used to extend our functionality
 
 A good example of an extension is the `Tooltip`:
 
-<Canvas>
-  {(() => {
-    useTooltipExtension(document.body.querySelector('.tooltip-example'));
-    return '';
-  })()}
-  <div className="tooltip-example">
-    <span title="Example tooltip" style={{ fontSize: '3rem' }}>
-      Hover me
-    </span>
-  </div>
-</Canvas>
+<Canvas of={Stories.ExtensionsExample} />
 
 <Customization hidden={true} />
 

@@ -1,32 +1,9 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Container } from '../../../../packages/react/src';
-import { variants, Intent, intents } from '../../../models';
+import * as Stories from './container.stories';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
 
-<Meta
-  title="Elements/Layout/Container"
-  component={Container}
-  argTypes={{
-    centered: {
-      name: 'centered',
-      description: 'Let the content to be centered',
-      table: {},
-      control: {
-        type: 'boolean'
-      }
-    },
-    fluid: {
-      name: 'fluid',
-      description: 'Let the container grow to max',
-      table: {},
-      control: {
-        type: 'boolean'
-      }
-    }
-  }}
-/>
-
-export const Template = (args) => <Container {...args}>Container</Container>;
+<Meta of={Stories} />
 
 # Container
 
@@ -34,17 +11,7 @@ Containers are the most simple element from layout category, are use to contain 
 
 ## Showcase
 
-<Canvas>
-  <Story
-    name="Container"
-    args={{
-      fluid: false,
-      centered: false
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Customization
 

@@ -25,14 +25,12 @@
     }
   },
   "dependencies": {
-    "@trutoo/event-bus": "^2.2.0",
-    "baseline-browser-mapping": "^2.9.18",
-    "caniuse-lite": "^1.0.30001766",
-    "codejar": "^3.7.0",
+    "@trutoo/event-bus": "^3.0.0",
+    "codejar": "^4.3.0",
     "copy-to-clipboard": "^3.3.3",
-    "highlight.js": "^11.7.0",
-    "ofetch": "^1.0.1",
-    "ssr-window": "^4.0.2"
+    "highlight.js": "^11.11.1",
+    "ofetch": "^1.5.1",
+    "ssr-window": "^5.0.1"
   },
   "peerDependencies": {
     "highlight.js": "^11.6.0",

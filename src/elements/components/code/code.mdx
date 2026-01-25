@@ -1,51 +1,9 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Code } from '../../../../packages/react/src';
+import * as Stories from './code.stories';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
 
-<Meta
-  title="Elements/Components/Code"
-  component={Code}
-  argTypes={{
-    editable: {
-      name: 'editable',
-      description: 'Let the user edit the code',
-      table: {},
-      control: {
-        type: 'boolean'
-      }
-    },
-    disableCopy: {
-      name: 'disableCopy',
-      description: 'Disable the copy button',
-      table: {},
-      control: {
-        type: 'boolean'
-      }
-    },
-    language: {
-      name: 'language',
-      description:
-        'Language to highlight, complete list https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md',
-      table: {},
-      options: ['javascript', 'typescript', 'css', 'scss', 'json', 'xml', 'markdown'],
-      control: { type: 'select' }
-    },
-    theme: {
-      name: 'theme',
-      description:
-        'Theme to use in the editor, are from https://github.com/highlightjs/highlight.js/tree/main/src/styles but not all are included',
-      table: {},
-      options: ['default', 'dark', 'atom-one-light', 'atom-one-dark', 'github', 'monokai'],
-      control: { type: 'select' }
-    }
-  }}
-/>
-
-export const Template = (args) => (
-  <div>
-    <Code {...args} slotCopy={<span>Copy</span>}></Code>
-  </div>
-);
+<Meta of={Stories} />
 
 # Code
 
@@ -54,35 +12,7 @@ By default we support `javascript`, `jsx`, `typescript`, `tsx`, `css`, `markdown
 
 ## Showcase
 
-<Canvas>
-  <Story
-    name="Code"
-    args={{
-      editable: true,
-      language: 'javascript',
-      theme: 'github',
-      disableCopy: false,
-      code:
-        "import React from 'react'; \n\n" +
-        'type CardProps = { \n' +
-        '  title: string, \n' +
-        '  paragraph: string \n' +
-        '} \n\n' +
-        'export const Card = (props: CardProps) => { \n' +
-        '  const { title, paragraph } = props; \n\n' +
-        '  return ( \n' +
-        '    <aside> \n' +
-        '      <h2>{title}</h2> \n' +
-        '      <p>{paragraph}</p> \n' +
-        '    </aside> \n' +
-        '  ); \n' +
-        '}; \n\n' +
-        "const el = <Card title='Hello and welcome!' paragraph='To this papanasi' />\n"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Customization
 

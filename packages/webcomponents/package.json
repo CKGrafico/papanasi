@@ -27,9 +27,9 @@
     }
   },
   "dependencies": {
-    "codejar": "^3.6.0",
-    "copy-to-clipboard": "^3.3.2",
-    "ssr-window": "^4.0.2"
+    "codejar": "^4.3.0",
+    "copy-to-clipboard": "^3.3.3",
+    "ssr-window": "^5.0.1"
   },
   "files": [
     "dist"

@@ -1,30 +1,9 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Breadcrumb } from '../../../../packages/react/src';
+import * as Stories from './breadcrumb.stories';
 import { Codesandbox } from '../../../../.storybook/components';
 
-<Meta
-  title="Elements/Components/Breadcrumb"
-  component={Breadcrumb}
-  argTypes={{
-    separator: {
-      name: 'separator',
-      description: 'String used to separate items',
-      table: {},
-      control: { type: 'text' }
-    }
-  }}
-/>
-
-export const Template = (args) => (
-  <Breadcrumb
-    {...args}
-    items={[
-      { label: 'Home', href: '#' },
-      { label: 'Library', href: '#' },
-      { label: 'Data' }
-    ]}
-  />
-);
+<Meta of={Stories} />
 
 # Breadcrumb
 
@@ -32,11 +11,7 @@ Breadcrumbs display the current location within a hierarchy and allow navigation
 
 ## Showcase
 
-<Canvas>
-  <Story name="Breadcrumb" args={{ separator: '/' }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Properties
 

@@ -1,52 +1,10 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
-import { Column, Container, Row } from '../../../../packages/react/src';
-import { variants, Intent, intents } from '../../../models';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Column } from '../../../../packages/react/src';
 import { getBreakpointArgTypes } from '../../../helpers';
+import * as Stories from './column.stories';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
 
-<Meta
-  title="Elements/Layout/Column"
-  component={Column}
-  argTypes={{
-    centered: {
-      name: 'centered',
-      description: 'Let the content to be centered',
-      table: {},
-      control: {
-        type: 'boolean'
-      }
-    },
-    ...getBreakpointArgTypes('Column size in {breakpoint}', [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      'content',
-      'fill',
-      'hide'
-    ])
-  }}
-/>
-
-export const Template = (args) => (
-  <Container>
-    <Row>
-      <Column {...args} className="is-highlighted">
-        Column
-      </Column>
-      <Column>Column Auto</Column>
-      <Column>Column Auto</Column>
-    </Row>
-  </Container>
-);
+<Meta of={Stories} />
 
 # Column
 
@@ -56,16 +14,7 @@ The size of a column can be different for each breakpoint: `xs`, `s`, `m`, `l`, 
 
 ## Showcase
 
-<Canvas>
-  <Story
-    name="Column"
-    args={{
-      centered: false
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Customization
 

@@ -1,44 +1,9 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Spinner } from '../../../../packages/react/src';
-import { variants, Variant, Intent, intents } from '../../../models';
+import * as Stories from './spinner.stories';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
 
-<Meta
-  title="Elements/Components/Spinner"
-  component={Spinner}
-  argTypes={{
-    full: {
-      name: 'full',
-      description: 'Show a full spinner',
-      table: {},
-      control: {
-        type: 'boolean'
-      }
-    },
-    fullscreen: {
-      name: 'fullscreen',
-      description: 'Show a full screen spinner',
-      table: {},
-      control: {
-        type: 'boolean'
-      }
-    }
-  }}
-/>
-
-export const Template = (args) => (
-  <div>
-    <>
-      {variants.map((variant) => {
-        if (variant.value === Variant.Basic) {
-          return <Spinner key={variant.key} {...args} variant={variant.value} />;
-        } else {
-          return <Spinner key={variant.key} variant={variant.value} />;
-        }
-      })}
-    </>
-  </div>
-);
+<Meta of={Stories} />
 
 # Spinner
 
@@ -48,17 +13,7 @@ You can also force to be `full` or `fullscreen` spinner if you don't want it inl
 
 ## Showcase
 
-<Canvas>
-  <Story
-    name="Spinner"
-    args={{
-      full: false,
-      fullscreen: false
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Customization
 

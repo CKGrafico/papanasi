@@ -1,38 +1,8 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
-import { Toast, useToastExtension } from '../../../../packages/react/src';
+import * as Stories from './toast.stories';
 
-<Meta
-  title="Elements/Extensions/Toast"
-  argTypes={{
-    title: {
-      name: 'title',
-      description: 'A sample of attribute title',
-      table: {},
-      control: 'text'
-    }
-  }}
-/>
-
-export const Template = (args) => (
-  <div className="toast-example">
-    {(() => {
-      window.toast = useToastExtension();
-      return '';
-    })()}
-    <div>
-      <Toast />
-      <span
-        onClick={() => {
-          // toast.success({ message: 'example' })
-          window.toast.success({ message: 'example' + Math.random() });
-        }}
-      >
-        Click me
-      </span>
-    </div>
-  </div>
-);
+<Meta of={Stories} />
 
 # Toast
 
@@ -40,16 +10,7 @@ TODO
 
 ## Showcase
 
-<Canvas>
-  <Story
-    name="Toast"
-    args={{
-      title: 'Title of my tooltip'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Customization
 

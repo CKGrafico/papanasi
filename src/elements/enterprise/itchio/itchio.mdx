@@ -1,14 +1,9 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
-import { Itchio, Button } from '../../../../packages/react/src';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Itchio } from '../../../../packages/react/src';
+import * as Stories from './itchio.stories';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
 
-<Meta title="Elements/Enterprise/Itchio" component={Itchio} />
-
-export const Template = (args) => (
-  <Itchio {...args}>
-    <Button variant="tertiary">Buy it</Button>
-  </Itchio>
-);
+<Meta of={Stories} />
 
 # Itchio
 
@@ -16,14 +11,7 @@ A component to show a widget with your game from https://itch.io, also accepts a
 
 ## Showcase
 
-<Canvas>
-  <Story
-    name="Itchio"
-    args={{ user: 'ckgrafico', game: 'alice-ring', width: 800, height: 600, secret: '', slotLoading: 'Loading...' }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Customization
 

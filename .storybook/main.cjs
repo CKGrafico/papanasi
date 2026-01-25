@@ -5,29 +5,28 @@ const path = require('path');
 module.exports = {
   stories: ['../docs/**/*.mdx', '../src/**/*.mdx'],
   staticDirs: ['../.themes', { from: '../docs/resources', to: '/' }],
+
   framework: {
     name: '@storybook/react-webpack5',
     options: {}
   },
+
   addons: [
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false,
-        backgrounds: false,
-        viewport: false,
-        measure: false,
-        outline: false,
-        toolbars: false,
-        docs: false
-      }
-    },
     '@storybook/addon-docs',
-    '@storybook/addon-postcss'
+    {
+      name: '@storybook/addon-styling-webpack',
+      options: {
+        postCss: {
+          implementation: require('postcss')
+        }
+      }
+    }
   ],
+
   typescript: {
     reactDocgen: false
   },
+
   webpackFinal: async (config, options) => {
     // Extract css files
     const cssRule = config.module.rules.find((x) => x.test.toString().includes('css'));
@@ -79,5 +78,14 @@ module.exports = {
     options.watchOptions = { ignored: /src/ };
 
     return config;
+  },
+
+  features: {
+    actions: false,
+    backgrounds: false,
+    viewport: false,
+    measure: false,
+    outline: false,
+    toolbars: false
   }
 };

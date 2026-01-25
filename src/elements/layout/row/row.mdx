@@ -1,24 +1,10 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
-import { Row, Container, Column } from '../../../../packages/react/src';
-import { variants, Intent, intents } from '../../../models';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
+import { Row } from '../../../../packages/react/src';
 import { getBreakpointArgTypes } from '../../../helpers';
+import * as Stories from './row.stories';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
 
-<Meta
-  title="Elements/Layout/Row"
-  component={Row}
-  argTypes={{
-    ...getBreakpointArgTypes('Direction in {breakpoint}', ['', 'row', 'column', 'row-reverse', 'column-reverse'])
-  }}
-/>
-
-export const Template = (args) => (
-  <Container>
-    <Row {...args}>
-      <Column>Row</Column>
-    </Row>
-  </Container>
-);
+<Meta of={Stories} />
 
 # Row
 
@@ -28,11 +14,7 @@ The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`,
 
 ## Showcase
 
-<Canvas>
-  <Story name="Row" args={{}}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Customization
 

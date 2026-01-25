@@ -1,4 +1,4 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
+﻿import { Preview, Meta, Story, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Column, Container, Row } from '../../../../packages/react/src';
 import { variants, Intent, intents } from '../../../models';
 import { getBreakpointArgTypes } from '../../../helpers';
@@ -72,11 +72,11 @@ Grids are not components itslef but the association between `Containers`, `Rows`
 
 ## Showcase
 
-<Canvas>
+<Preview>
   <Story name="Grid" args={{ fluid: true }}>
     {Template.bind({})}
   </Story>
-</Canvas>
+</Preview>
 
 ### Customization
 

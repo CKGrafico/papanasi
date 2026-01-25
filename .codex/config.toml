@@ -1,0 +1,10 @@
+﻿sandbox_mode = "danger-full-access"
+shell_snapshot = true
+web_search_request = true
+startup_timeout_seconds = 120
+approval_policy = "never"
+
+[mcp_servers.playwright]
+startup_timeout_seconds = 120
+command = "npx"
+args = ["@playwright/mcp@latest", "--extension"]

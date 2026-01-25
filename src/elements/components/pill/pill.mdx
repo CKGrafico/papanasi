@@ -1,31 +1,9 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Pill } from '../../../../packages/react/src';
-import { variants, Intent, intents } from '../../../models';
+import * as Stories from './pill.stories';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
 
-<Meta
-  title="Elements/Components/Pill"
-  component={Pill}
-  argTypes={{
-    intent: {
-      name: 'intent',
-      description: 'Specify a temporary intent for the pill',
-      table: {},
-      options: intents.map((x) => x.value),
-      control: { type: 'select' }
-    }
-  }}
-/>
-
-export const Template = (args) => (
-  <div>
-    {variants.map((variant) => (
-      <Pill key={variant.key} {...args} variant={variant.value}>
-        {variant.key}
-      </Pill>
-    ))}
-  </div>
-);
+<Meta of={Stories} />
 
 # Pill
 
@@ -34,11 +12,7 @@ There are 3 different variants `primary`, `secondary` and `tertiary` or the one 
 
 ## Showcase
 
-<Canvas>
-  <Story name="Pill" args={{ intent: '' }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Customization
 

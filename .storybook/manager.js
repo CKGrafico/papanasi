@@ -1,4 +1,4 @@
-import { addons } from '@storybook/manager-api';
+import { addons } from 'storybook/manager-api';
 import { initialize } from './initialize';
 import './storybook.css';
 import { Themes } from './theme';

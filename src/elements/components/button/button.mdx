@@ -1,47 +1,9 @@
-﻿import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks';
+﻿import { Canvas, Meta, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Button } from '../../../../packages/react/src';
-import { variants, Intent, intents } from '../../../models';
+import * as Stories from './button.stories';
 import { Customization, Codesandbox } from '../../../../.storybook/components';
 
-<Meta
-  title="Elements/Components/Button"
-  component={Button}
-  argTypes={{
-    outline: {
-      name: 'outline',
-      description: 'Modify button to be outlined',
-      table: {},
-      control: {
-        type: 'boolean'
-      }
-    },
-    disabled: {
-      name: 'disabled',
-      description: 'Disable actions in the button',
-      table: {},
-      control: {
-        type: 'boolean'
-      }
-    },
-    intent: {
-      name: 'intent',
-      description: 'Specify a temporary intent for the button',
-      table: {},
-      options: intents.map((x) => x.value),
-      control: { type: 'select' }
-    }
-  }}
-/>
-
-export const Template = (args) => (
-  <div>
-    {variants.map((variant) => (
-      <Button key={variant.key} {...args} variant={variant.value}>
-        {variant.key}
-      </Button>
-    ))}
-  </div>
-);
+<Meta of={Stories} />
 
 # Button
 
@@ -52,17 +14,7 @@ You can customize variants changing the variables, more info in the [variables p
 
 ## Showcase
 
-<Canvas>
-  <Story
-    name="Button"
-    args={{
-      outline: false,
-      disabled: false
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={Stories.Showcase} />
 
 ### Customization
 
