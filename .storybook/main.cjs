@@ -3,7 +3,12 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  stories: ['../docs/**/*.mdx', '../src/**/*.mdx'],
+  stories: [
+  '../docs/**/*.mdx',
+  '../src/**/*.mdx',
+  '../docs/**/*.stories.@(js|jsx|ts|tsx)',
+  '../src/**/*.stories.@(js|jsx|ts|tsx)'
+],
   staticDirs: ['../.themes', { from: '../docs/resources', to: '/' }],
 
   framework: {
