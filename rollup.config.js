@@ -6,7 +6,6 @@ import path from 'path';
 import dtsPlugin from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
-import typescript from 'rollup-plugin-ts';
 import * as tsModule from 'typescript';
 //import { visualizer } from 'rollup-plugin-visualizer';
 import { dirname } from 'path';
@@ -15,6 +14,7 @@ import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
 const tsconfig = require('./tsconfig.json');
+const typescript = require('rollup-plugin-ts');
 
 const ts = tsModule.default;
 
@@ -42,6 +42,8 @@ export default async (options) => {
 
   const defaultPresets = ['@babel/preset-env', ['@babel/preset-typescript', tsconfig.compilerOptions]];
 
+  const externals = Array.from(new Set([...external, '@trutoo/event-bus', 'ofetch']));
+
   const inputs = [
     disableCoreCompilation
       ? null
@@ -62,10 +64,14 @@ export default async (options) => {
             }
           ],
           treeshake: true,
-          external,
+          external: externals,
           plugins: [
             ...prePlugins,
-            nodeResolve({ extensions: ['.js', '.ts', '.tsx'] }),
+            nodeResolve({
+              extensions: ['.mjs', '.js', '.cjs', '.ts', '.tsx'],
+              mainFields: ['module', 'main'],
+              exportConditions: ['default', 'import', 'module']
+            }),
             json(),
             typescript({
               browserslist: cancelBrowserListForTypescript ? false : undefined,

@@ -29,7 +29,7 @@ export default function Breadcrumb(props: BreadcrumbProps) {
               <Show when={!item.href}>
                 <span class="pa-breadcrumb__link">{item.label}</span>
               </Show>
-              <Show when={index !== props.items.length - 1}>
+              <Show when={Number(index) !== props.items.length - 1}>
                 <span class="pa-breadcrumb__separator">{state.separatorText}</span>
               </Show>
             </li>

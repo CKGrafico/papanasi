@@ -24,13 +24,6 @@ export const Showcase: Story = {
     separator: '/'
   },
   render: (args) => (
-    <Breadcrumb
-      {...args}
-      items={[
-        { label: 'Home', href: '#' },
-        { label: 'Library', href: '#' },
-        { label: 'Data' }
-      ]}
-    />
+    <Breadcrumb {...args} items={[{ label: 'Home', href: '#' }, { label: 'Library', href: '#' }, { label: 'Data' }]} />
   )
 };

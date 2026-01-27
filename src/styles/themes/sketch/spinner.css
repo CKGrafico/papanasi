@@ -20,7 +20,8 @@
   }
 
   &__path {
-    animation: dash var(--pa-spinner-duration) ease-in-out infinite,
+    animation:
+      dash var(--pa-spinner-duration) ease-in-out infinite,
       colors calc(var(--pa-spinner-duration) * 4) ease-in-out infinite;
     stroke-dasharray: var(--pa-spinner-offset);
     stroke-linecap: var(--pa-spinner-linecap);
@@ -48,7 +49,8 @@
     }
 
     &--$(variant) &__path {
-      animation: dash var(--pa-spinner-duration) ease-in-out infinite,
+      animation:
+        dash var(--pa-spinner-duration) ease-in-out infinite,
         colors-$(variant) calc(var(--pa-spinner-duration) * 4) ease-in-out infinite;
 
       @keyframes colors-$(variant) {

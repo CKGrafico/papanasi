@@ -1,6 +1,6 @@
 import { classesToString, debug } from '~/helpers';
 import { toastBus } from './toast.bus';
-import { ToastChannelEvent, ToastPayload } from './toast.model';
+import { ToastChannelEvent, ToastPayload, ToastSubscription } from './toast.model';
 
 class ToastService {
   private toasts: ToastPayload[] = [];
@@ -21,7 +21,7 @@ class ToastService {
     return this.toasts;
   }
 
-  public subscribe() {
+  public subscribe(): ToastSubscription {
     debug('ToastService subscribe');
     return toastBus.subscribe(this.onChangeToasts);
   }

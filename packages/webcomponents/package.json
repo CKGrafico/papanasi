@@ -48,5 +48,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "f2eefa7b93814a19363b851fc037688813bc9ed8"
+  "gitHead": "f2eefa7b93814a19363b851fc037688813bc9ed8",
+  "customElements": "custom-elements.json"
 }

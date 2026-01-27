@@ -4,5 +4,10 @@
     "jsx": "preserve",
     "types": ["vue"]
   },
-  "include": ["src/**/*", "src/**/*.vue"]
+  "include": ["src/**/*", "src/**/*.vue"],
+  "exclude": [
+    "src/**/*.stories.*",
+    "src/**/*.mdx",
+    "../../src/**/*"
+  ]
 }

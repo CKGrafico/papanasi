@@ -24,7 +24,9 @@ export default function Itchio(props: ItchioProps) {
       state.loaded = true;
 
       debug('ItchioService callback processed info');
-      props.onLoad && props.onLoad(data);
+      if (props.onLoad) {
+        props.onLoad(data);
+      }
     });
   });
 

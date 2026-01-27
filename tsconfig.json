@@ -16,6 +16,7 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "importsNotUsedAsValues": "preserve",
+    "ignoreDeprecations": "5.0",
     "paths": {
       "~/helpers/*": [
         "./src/helpers/*"

@@ -4,5 +4,11 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": [
+    "src/**/*.stories.*",
+    "src/**/*.mdx",
+    "src/**/*.spec.*",
+    "src/**/*.test.*"
+  ]
 }

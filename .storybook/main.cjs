@@ -59,13 +59,18 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.[jt]sx?$/,
-      include: [path.resolve(__dirname), path.resolve(__dirname, '../src'), path.resolve(__dirname, '../packages')],
+      include: [
+        path.resolve(__dirname),
+        path.resolve(__dirname, '../src'),
+        path.resolve(__dirname, '../packages'),
+        path.resolve(__dirname, '../docs')
+      ],
       use: {
         loader: require.resolve('babel-loader'),
         options: {
           presets: [
             [require.resolve('@babel/preset-env'), { targets: 'defaults' }],
-            require.resolve('@babel/preset-react'),
+            [require.resolve('@babel/preset-react'), { runtime: 'automatic' }],
             require.resolve('@babel/preset-typescript')
           ]
         }

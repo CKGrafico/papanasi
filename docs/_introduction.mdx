@@ -1,7 +1,8 @@
 ﻿import { Meta, Description } from '@storybook/addon-docs/blocks';
+import * as Stories from './_introduction.stories';
 import Readme from '../README.md';
 
-<Meta title="Documentation/Introduction" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+<Meta of={Stories} />
 
 <Description markdown={Readme} />
 

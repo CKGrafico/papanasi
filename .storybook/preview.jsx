@@ -1,5 +1,6 @@
 import './storybook.css';
 import { Themes } from './theme';
+import React from 'react';
 
 export const parameters = {
   viewMode: 'docs',
