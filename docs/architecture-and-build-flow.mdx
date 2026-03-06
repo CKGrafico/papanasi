@@ -1,0 +1,68 @@
+﻿import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation/Architecture and Build Flow" parameters={{ previewTabs: { canvas: { hidden: true } } }} />
+
+# Architecture and build flow
+
+This page describes how Papanasi is organized and how source code becomes published multi-platform packages.
+
+## Monorepo shape
+
+- `src/`: source of truth for components, extensions, models, helpers, and styles.
+- `compiler/`: compile orchestration and platform-specific post-processing.
+- `packages/*`: per-platform package outputs and bundling configs.
+- `docs/` and `.storybook/`: documentation and Storybook setup.
+- `.themes/`: compiled theme artifacts copied into package outputs during postbuild.
+
+## Source of truth model
+
+Papanasi components are authored once in Mitosis (`src/**/*.lite.tsx`) and shared styles/models/helpers are reused across all platforms.
+
+Typical component folder:
+
+- `{name}.lite.tsx` for render/state/lifecycle.
+- `{name}.model.ts` for props/state contracts.
+- `{name}.service.ts` for business or styling logic.
+- `{name}.css` for component styles.
+- `{name}.stories.tsx` and `{name}.mdx` for docs.
+
+## Compile pipeline
+
+1. `compiler/base.compiler.js` discovers source elements and invokes the Mitosis compiler target-by-target.
+2. `compiler/platforms/*.js` applies platform-specific `customReplace` fixes after compilation.
+3. Generated code lands in `packages/<platform>/src`.
+4. Package builds (mostly Rollup; Qwik via Vite; Svelte via svelte-package) generate final output (`dist`, `lib`, `types`).
+5. Theme CSS is built separately (`yarn themes`) and copied into package outputs.
+
+## Build entry points
+
+- `yarn compile`: compile core platform tier (`react`, `vue`, `svelte`, `webcomponents`) and bundle them.
+- `yarn compile --tier extended`: compile extended tier (`angular`, `preact`, `qwik`, `solid`).
+- `yarn compile --platforms <list>`: compile specific platforms only.
+- `yarn themes`: build theme artifacts from `src/styles/themes/*`.
+
+## Where to make changes
+
+### Add a component
+
+1. Add a component folder in `src/elements/*`.
+2. Export it in `src/index.ts`.
+3. Run `yarn compile` and verify generated package outputs.
+
+### Fix a platform-specific generation issue
+
+1. Update `compiler/platforms/<platform>.js` custom replacement logic.
+2. Re-run compilation for that platform.
+3. Validate generated source in `packages/<platform>/src` and build output.
+
+### Add a theme
+
+1. Create `src/styles/themes/<name>/` with `variables.css` and `index.css`.
+2. Include the theme in `compiler/themes.tasks.js`.
+3. Run `yarn themes`.
+
+### Release
+
+1. Run compile/build workflows and verify package outputs.
+2. Version with `yarn package`.
+3. Publish with `yarn release`.

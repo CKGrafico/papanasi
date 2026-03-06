@@ -9,16 +9,28 @@ The repo uses Yarn v1 workspaces with Lerna for package orchestration.
 ## Tooling overview
 
 - Yarn v1 for dependency management and scripts.
-- Lerna v6 with `useWorkspaces` enabled for package builds.
-- Rollup for package bundling.
+- Lerna v9 for package orchestration (`lerna run`, `lerna version`, `lerna publish`).
+- Rollup for most package bundling.
+- Vite/Qwik optimizer for the Qwik package and Svelte Kit packaging for Svelte.
+- A custom compiler pipeline in `compiler/*` to transform Mitosis source to each platform.
 
 ## Common commands
 
 ```bash
 yarn install
 yarn compile
+yarn compile --tier extended
+yarn compile --platforms react vue
+yarn themes
 yarn build-storybook
 ```
+
+## Build flow
+
+1. `yarn compile` runs pre-tasks (`clean`, optional lint, optional Browserslist refresh).
+2. Themes are compiled into `.themes/*.css`.
+3. Mitosis source (`src/**/*.lite.tsx`) is compiled into platform package sources (`packages/*/src`).
+4. Lerna runs package `build` scripts to generate distributables (`dist`, `lib`, `types` depending on platform).
 
 ## Publishing flow
 
