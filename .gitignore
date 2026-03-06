@@ -12,3 +12,6 @@ packages/webcomponents/custom-elements.json
 packages/svelte/.svelte-kit
 packages/qwik/tsconfig.tsbuildinfo
 .themes/
+/.agents/skills/backlog-curator
+.vscode/settings.json
+/.agents/skills/senior-frontend

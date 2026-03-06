@@ -1,0 +1,51 @@
+items:
+  - id: BL-100
+    title: Establish v2 quality and CI platform matrix
+    description: Implement repository-level lint, type-check, build, and smoke-test workflows across core and extended platforms with caching and failure gates to create a reliable scalable baseline.
+    priority: HIGH
+    estimated_hours: 10
+    status: READY
+    created_at: "2026-03-06T15:15:14Z"
+    tags: [infrastructure, ci, quality, scalability]
+    dependencies: []
+
+  - id: BL-101
+    title: Harden multi-platform compiler transforms
+    description: Replace remaining fragile regex post-processing in compiler/platforms with deterministic transforms and add compilation contract checks to prevent regressions across React Vue Svelte Qwik Angular Solid Preact and Web Components outputs.
+    priority: HIGH
+    estimated_hours: 10
+    status: READY
+    created_at: "2026-03-06T15:15:14Z"
+    tags: [compiler, reliability, scalability]
+    dependencies: [BL-100]
+
+  - id: BL-102
+    title: Deliver v2 UX correctness and accessibility baseline
+    description: Fix intent semantics and enforce consistent accessible defaults aria behavior keyboard states and focus handling across components with docs guidance to ensure predictable user experience.
+    priority: HIGH
+    estimated_hours: 8
+    status: READY
+    created_at: "2026-03-06T15:15:14Z"
+    tags: [ux, accessibility, components]
+    dependencies: [BL-100]
+
+  - id: BL-103
+    title: Rebuild toast and extension runtime architecture
+    description: Reimplement toast and extension state flow with reactive updates deterministic lifecycle cleanup typed events and theme-aware behavior to remove current instability and improve runtime UX.
+    priority: HIGH
+    estimated_hours: 8
+    status: READY
+    created_at: "2026-03-06T15:15:14Z"
+    tags: [ux, runtime, extensions, reliability]
+    dependencies: [BL-102]
+
+  - id: BL-104
+    title: Enforce v2 performance budgets and delivery optimization
+    description: Introduce measurable bundle and runtime budgets optimize docs and package artifacts remove avoidable runtime costs and define performance checks in CI for sustainable modern delivery.
+    priority: HIGH
+    estimated_hours: 8
+    status: READY
+    created_at: "2026-03-06T15:15:14Z"
+    tags: [performance, build, runtime, modern]
+    dependencies: [BL-100]
+

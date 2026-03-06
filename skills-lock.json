@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "backlog-curator": {
+      "source": "rysweet/amplihack",
+      "sourceType": "github",
+      "computedHash": "958ee99bc5e4f24ae2c753bac526516c7aff28231e957e096b9d06c13089ffb9"
+    },
+    "senior-frontend": {
+      "source": "davila7/claude-code-templates",
+      "sourceType": "github",
+      "computedHash": "e0e83f80d3eb965b1e36acb8a336333a5db1152ddacdc07e19bd715187a6a455"
+    }
+  }
+}
