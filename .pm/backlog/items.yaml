@@ -4,7 +4,7 @@ items:
     description: Implement repository-level lint, type-check, build, and smoke-test workflows across core and extended platforms with caching and failure gates to create a reliable scalable baseline.
     priority: HIGH
     estimated_hours: 10
-    status: READY
+    status: DONE
     created_at: "2026-03-06T15:15:14Z"
     tags: [infrastructure, ci, quality, scalability]
     dependencies: []
@@ -14,7 +14,7 @@ items:
     description: Replace remaining fragile regex post-processing in compiler/platforms with deterministic transforms and add compilation contract checks to prevent regressions across React Vue Svelte Qwik Angular Solid Preact and Web Components outputs.
     priority: HIGH
     estimated_hours: 10
-    status: READY
+    status: DONE
     created_at: "2026-03-06T15:15:14Z"
     tags: [compiler, reliability, scalability]
     dependencies: [BL-100]

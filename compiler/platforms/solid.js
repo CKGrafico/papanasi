@@ -1,5 +1,7 @@
 import fs from 'fs';
 import compiler from '../base.compiler.js';
+import { replaceClassNameMemberAccess } from '../transforms/replacements.js';
+import { applyConditionalReplacements } from '../transforms/text.js';
 
 const DEFAULT_OPTIONS = {
   target: 'solid',
@@ -13,11 +15,15 @@ const DEFAULT_OPTIONS = {
     const { outFile } = props;
 
     const data = fs.readFileSync(outFile, 'utf8');
-    const result = data
-      // fix keys
-      .replace(/ key\=/g, ' data-key=')
-      // Replace classname for class
-      .replace(/\.className/g, '.class');
+    const withClassNameFixed = replaceClassNameMemberAccess(data);
+    const result = applyConditionalReplacements(withClassNameFixed, [
+      {
+        // fix keys
+        pattern: / key\=/g,
+        replacement: ' data-key='
+      }
+    ]);
+
     fs.writeFileSync(outFile, result, 'utf8');
   }
 

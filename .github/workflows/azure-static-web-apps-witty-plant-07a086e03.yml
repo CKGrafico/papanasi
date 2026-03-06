@@ -1,28 +1,34 @@
 name: Azure Static Web Apps CI/CD
 
 on:
-  push:
+  workflow_run:
+    workflows:
+      - Quality Matrix
+    types:
+      - completed
     branches:
       - main
+  pull_request:
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push'
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: true
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: yarn
 
       - name: install, build
         run: |
-          yarn
-          yarn build --no-lint
-          yarn build-storybook
+          yarn --frozen-lockfile
+          yarn ci:quality:core
+          yarn ci:storybook
 
       - name: Build And Deploy
         id: builddeploy
@@ -35,17 +41,21 @@ jobs:
           skip_api_build: true
           app_location: '/storybook-static' # App source code path
   build_pr:
-    if: github.event_name != 'push' || (github.event_name == 'pull_request')
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     name: Build PR
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: true
 
-      - name: install, build, test
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: install, build
         run: |
-          yarn
-          yarn build
-          yarn build-storybook
-          yarn test
+          yarn --frozen-lockfile
+          yarn ci:quality:core
+          yarn ci:storybook

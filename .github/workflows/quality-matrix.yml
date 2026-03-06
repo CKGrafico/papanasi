@@ -1,0 +1,100 @@
+name: Quality Matrix
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint_typecheck:
+    name: Lint and Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Run lint and typecheck
+        run: yarn ci:lint && yarn ci:typecheck
+
+  compile_core:
+    name: Core Compile (${{ matrix.platform }})
+    runs-on: ubuntu-latest
+    needs: lint_typecheck
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [react, vue, svelte, webcomponents]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Compile matrix platform
+        env:
+          npm_config_platform: ${{ matrix.platform }}
+        run: yarn ci:compile:platform
+
+  compile_extended:
+    name: Extended Compile (${{ matrix.platform }})
+    runs-on: ubuntu-latest
+    needs: lint_typecheck
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [angular, preact, qwik, solid]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Compile matrix platform
+        env:
+          npm_config_platform: ${{ matrix.platform }}
+        run: yarn ci:compile:platform
+
+  storybook_smoke:
+    name: Storybook Smoke
+    runs-on: ubuntu-latest
+    needs: compile_core
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Build Storybook
+        run: yarn ci:storybook

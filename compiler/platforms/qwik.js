@@ -1,6 +1,8 @@
 import fs from 'fs';
 import compiler from '../base.compiler.js';
+import { ensureImport, ensureNamedImport } from '../transforms/imports.js';
 import { replaceClassName } from '../transforms/replacements.js';
+import { applyConditionalReplacements } from '../transforms/text.js';
 
 const DEFAULT_OPTIONS = {
   target: 'qwik',
@@ -17,29 +19,49 @@ const DEFAULT_OPTIONS = {
     const pascalName = name.charAt(0).toUpperCase() + name.slice(1);
 
     const data = fs.readFileSync(outFile, 'utf8');
-    const result = replaceClassName(data)
-      // Import types
-      .replace(/import/, `import type { ${pascalName}Props } from './${name}.model';\nimport './${name}.css';\nimport`)
-      // fix props on qwik
-      .replace(
-        /export const (.*) = component\$\(\((props)\) => \{/g,
-        `export const ${pascalName} = component$((props: ${pascalName}Props) => {`
-      )
-      // Fix https://github.com/BuilderIO/mitosis/pull/855
-      // .replace(/useClientEffect/g, 'useMount')
-      // Make all useTask async just in case
-      .replace(/useTask\$\(\(/g, 'useTask$(async (')
-      // Make all useMount to useTask async just in case
-      .replace(/useMount\$\(\(/g, 'useTask$(async (')
-      // Make all useWatch async just in case
-      .replace(/useWatch\$\(\(/g, 'useWatch$(async (')
-      // Then import useTask$,
-      .replace(/useMount\$,/g, 'useTask$,')
-      // Signal needs to be typed
-      .replace(/useSignal\(\)/g, 'useSignal<any>()')
-      .replace(/state.codeService = service;/g, 'state.codeService = noSerialize(service);')
-      .replace(/} from "@builder.io\/qwik";/g, ', noSerialize} from "@builder.io/qwik";')
-      .replace(/(import[\s\S]*,)([\s]*, noSerialize)/g, '$1 noSerialize');
+    const withClassNameFixed = replaceClassName(data);
+    const withTypeImport = ensureImport(withClassNameFixed, `import type { ${pascalName}Props } from './${name}.model';`);
+    const withCssImport = ensureImport(withTypeImport, `import './${name}.css';`);
+    const withNoSerializeImport = ensureNamedImport(withCssImport, {
+      moduleName: '@builder.io/qwik',
+      importName: 'noSerialize'
+    });
+    const result = applyConditionalReplacements(withNoSerializeImport, [
+      {
+        // fix props on qwik
+        pattern: /export const (.*) = component\$\(\((props)\) => \{/g,
+        replacement: `export const ${pascalName} = component$((props: ${pascalName}Props) => {`
+      },
+      {
+        // Make all useTask async just in case
+        pattern: /useTask\$\(\(/g,
+        replacement: 'useTask$(async ('
+      },
+      {
+        // Make all useMount to useTask async just in case
+        pattern: /useMount\$\(\(/g,
+        replacement: 'useTask$(async ('
+      },
+      {
+        // Make all useWatch async just in case
+        pattern: /useWatch\$\(\(/g,
+        replacement: 'useWatch$(async ('
+      },
+      {
+        // Then import useTask$,
+        pattern: /useMount\$,/g,
+        replacement: 'useTask$,'
+      },
+      {
+        // Signal needs to be typed
+        pattern: /useSignal\(\)/g,
+        replacement: 'useSignal<any>()'
+      },
+      {
+        pattern: /state.codeService = service;/g,
+        replacement: 'state.codeService = noSerialize(service);'
+      }
+    ]);
 
     fs.writeFileSync(outFile, result, 'utf8');
   }

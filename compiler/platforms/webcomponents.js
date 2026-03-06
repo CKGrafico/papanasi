@@ -1,6 +1,8 @@
 import fs from 'fs';
 import prependFile from 'prepend-file';
 import compiler from '../base.compiler.js';
+import { replaceClassNameMemberAccess } from '../transforms/replacements.js';
+import { applyConditionalReplacements } from '../transforms/text.js';
 
 const DEFAULT_OPTIONS = {
   target: 'webcomponents',
@@ -18,25 +20,35 @@ const DEFAULT_OPTIONS = {
 
     // Make component exportable
     const data = fs.readFileSync(outFile, 'utf8');
-    const result = data
-      // Fix class name
-      .replace(/class /, 'export default class ')
-
-      .replace(
-        /customElements\.define\("(.*)",(.*)\);/g,
-        'customElements.get("pa-$1") || customElements.define("pa-$1", $2);'
-      )
-      // Fix part selectors
-      .replace(/class=/g, 'part=')
-      .replace(/el\.setAttribute\("class"/g, 'el.setAttribute("part"')
-      .replace(/el\.className ?= ?\n?(.*);/g, 'el.setAttribute("part",$1);')
-      // Replace classname for class
-      .replace(/\.className/g, '.class')
-      // Enable children
-      .replace(
-        /this\.props\.children/,
-        'this.shadowRoot.querySelector("slot").assignedNodes().filter((x,i) => i % 2 !== 0 )'
-      );
+    const withClassNameFixed = replaceClassNameMemberAccess(data).replace(
+      /el\.className ?= ?\n?(.*);/g,
+      'el.setAttribute("part",$1);'
+    );
+    const result = applyConditionalReplacements(withClassNameFixed, [
+      {
+        // Fix class name
+        pattern: /class /,
+        replacement: 'export default class '
+      },
+      {
+        pattern: /customElements\.define\("(.*)",(.*)\);/g,
+        replacement: 'customElements.get("pa-$1") || customElements.define("pa-$1", $2);'
+      },
+      {
+        // Fix part selectors
+        pattern: /class=/g,
+        replacement: 'part='
+      },
+      {
+        pattern: /el\.setAttribute\("class"/g,
+        replacement: 'el.setAttribute("part"'
+      },
+      {
+        // Enable children
+        pattern: /this\.props\.children/,
+        replacement: 'this.shadowRoot.querySelector("slot").assignedNodes().filter((x,i) => i % 2 !== 0 )'
+      }
+    ]);
 
     fs.writeFileSync(outFile, result, 'utf8');
   }

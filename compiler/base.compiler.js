@@ -8,6 +8,7 @@ import stringTools from 'gluegun/strings.js';
 import ora from 'ora';
 import path from 'path';
 import postcss from 'postcss';
+import { assertCompileContracts } from './contracts/rules.js';
 
 const DEFAULT_OPTIONS = {
   elements: 'src/**/*.lite.tsx',
@@ -179,6 +180,7 @@ async function compile(defaultOptions) {
     replacePropertiesFromCompiledFiles(outFile);
     options.customReplace({ name, pascalName: namePascal, file, outFile, outPath, isFirstCompilation });
     await compileCssFileForOutputSrc(outFile);
+    assertCompileContracts({ outFile, target: options.target });
 
     spinner.stop();
   }
